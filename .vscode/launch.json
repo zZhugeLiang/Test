@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://nlbc15Alucol",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 22,
+            "schemaUpdateMode": "Recreate"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
+        }
+    ]
+}
