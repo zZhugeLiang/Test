@@ -1,13 +1,13 @@
-table 50007 "ACO Category"
+table 50008 "ACO Profile"
 {
-    Caption = 'Category';
+    Caption = 'Profile';
     DrillDownPageId = "ACO Categories";
     LookupPageId = "ACO Categories";
     DataClassification = CustomerContent;
 
     fields
     {
-        field(1; "Code"; Code[50])
+        field(1; "Code"; Code[30])
         {
             Caption = 'Code';
             DataClassification = CustomerContent;
@@ -19,9 +19,10 @@ table 50007 "ACO Category"
             DataClassification = CustomerContent;
         }
 
-        field(3; "Calculate Minimum Circumf."; Boolean)
+        field(3; "Category"; Code[50])
         {
-            Caption = 'Calculate Minimum Circumference';
+            Caption = 'Category';
+            TableRelation = "ACO Category";
             DataClassification = CustomerContent;
         }
 

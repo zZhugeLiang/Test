@@ -1,6 +1,8 @@
 table 50004 "ACO Layer Thickness"
 {
     Caption = 'Layer Thickness';
+    DrillDownPageId = "ACO Layer Thicknesses";
+    LookupPageId = "ACO Layer Thicknesses";
     DataClassification = CustomerContent;
 
     fields

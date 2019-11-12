@@ -1,6 +1,8 @@
 table 50005 "ACO Color"
 {
     Caption = 'Color';
+    DrillDownPageId = "ACO Colors";
+    LookupPageId = "ACO Colors";
     DataClassification = CustomerContent;
 
     fields

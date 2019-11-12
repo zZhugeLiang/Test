@@ -1,6 +1,8 @@
 table 50001 "ACO Price Scheme"
 {
     Caption = 'Price Scheme';
+    DrillDownPageId = "ACO Price Schemes";
+    LookupPageId = "ACO Price Schemes";
     DataClassification = CustomerContent;
 
     fields

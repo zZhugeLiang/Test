@@ -1,6 +1,9 @@
 table 50003 "ACO Pretreatment"
 {
     Caption = 'Pretreatment';
+    DrillDownPageId = "ACO Pretreatments";
+    LookupPageId = "ACO Pretreatments";
+
     DataClassification = CustomerContent;
 
     fields
