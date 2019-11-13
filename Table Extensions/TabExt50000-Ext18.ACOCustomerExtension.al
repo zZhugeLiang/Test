@@ -38,25 +38,23 @@ tableextension 50000 "ACO Customer Extension" extends Customer
             DataClassification = CustomerContent;
         }
 
-        field(50006; "ACO Price Scheme"; Code[10])
+        field(50006; "ACO Price Scheme Code"; Code[10])
         {
-            Caption = 'Price Scheme';
+            Caption = 'Price Scheme Code';
             DataClassification = CustomerContent;
             TableRelation = "ACO Price Scheme";
         }
 
         field(50007; "ACO Comment Bath Card"; Text[100])
         {
-            Caption = 'Price Scheme';
+            Caption = 'Comment Bath Card';
             DataClassification = CustomerContent;
-            TableRelation = "ACO Price Scheme";
         }
 
         field(50008; "ACO Comment Sales Order"; Text[100])
         {
             Caption = 'Comment Sales Order';
             DataClassification = CustomerContent;
-            TableRelation = "ACO Price Scheme";
         }
 
         field(50009; "ACO Package Label Nos."; Code[20])

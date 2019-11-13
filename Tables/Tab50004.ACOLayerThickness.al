@@ -32,7 +32,7 @@ table 50004 "ACO Layer Thickness"
 
         field(5; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension';
+            Caption = 'Dimension Code';
             TableRelation = Dimension;
             DataClassification = CustomerContent;
         }

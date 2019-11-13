@@ -32,14 +32,14 @@ table 50005 "ACO Color"
 
         field(5; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension';
+            Caption = 'Dimension Code';
             TableRelation = Dimension;
             DataClassification = CustomerContent;
         }
 
         field(6; "Color Group Code"; Code[20])
         {
-            Caption = 'Dimension';
+            Caption = 'Color Group Code';
             TableRelation = "VAT Product Posting Group";
             DataClassification = CustomerContent;
         }

@@ -48,18 +48,18 @@ table 50003 "ACO Pretreatment"
 
         field(7; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension';
+            Caption = 'Dimension Code';
             TableRelation = Dimension;
             DataClassification = CustomerContent;
         }
 
-        field(8; "Thin Staining Time"; Integer)
+        field(8; "Thin Staining Time"; Decimal)
         {
             Caption = 'Thin Staining Time [min]';
             DataClassification = CustomerContent;
         }
 
-        field(9; "Thick Staining Time"; Integer)
+        field(9; "Thick Staining Time"; Decimal)
         {
             Caption = 'Thick Staining Time [min]';
             DataClassification = CustomerContent;
@@ -71,19 +71,19 @@ table 50003 "ACO Pretreatment"
             DataClassification = CustomerContent;
         }
 
-        field(11; "Aucos"; Integer)
+        field(11; "Aucos"; Boolean)
         {
             Caption = 'Aucos';
             DataClassification = CustomerContent;
         }
 
-        field(12; "Aucos Sealing Time"; Decimal)
+        field(12; "Aucos Sealing Time"; Boolean)
         {
             Caption = 'Aucos Sealing Time';
             DataClassification = CustomerContent;
         }
 
-        field(13; "Aucos Flushing Time"; Decimal)
+        field(13; "Aucos Flushing Time"; Boolean)
         {
             Caption = 'Aucos Flushing Time';
             DataClassification = CustomerContent;

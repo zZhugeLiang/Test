@@ -32,7 +32,7 @@ pageextension 50000 "ACO Customer Card" extends "Customer Card"
                     ApplicationArea = All;
                 }
 
-                field("ACO Price Scheme"; "ACO Price Scheme")
+                field("ACO Price Scheme Code"; "ACO Price Scheme Code")
                 {
                     ApplicationArea = All;
                 }
