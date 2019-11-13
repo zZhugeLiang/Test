@@ -7,7 +7,7 @@ table 50005 "ACO Color"
 
     fields
     {
-        field(1; "Code"; Code[10])
+        field(1; "Code"; Code[20])
         {
             Caption = 'Code';
             DataClassification = CustomerContent;
@@ -30,10 +30,10 @@ table 50005 "ACO Color"
             DataClassification = CustomerContent;
         }
 
-        field(5; "Dimension Code"; Code[20]) // Ask EWI if default dimension code
+        field(5; "Dimension Code"; Code[20])
         {
             Caption = 'Dimension';
-            TableRelation = "VAT Product Posting Group";
+            TableRelation = Dimension;
             DataClassification = CustomerContent;
         }
 

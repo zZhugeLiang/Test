@@ -49,17 +49,17 @@ table 50003 "ACO Pretreatment"
         field(7; "Dimension Code"; Code[20])
         {
             Caption = 'Dimension';
-            TableRelation = "VAT Product Posting Group";
+            TableRelation = Dimension;
             DataClassification = CustomerContent;
         }
 
-        field(8; "ACO Thin Staining Time"; Integer)
+        field(8; "Thin Staining Time"; Integer)
         {
             Caption = 'Thin Staining Time [min]';
             DataClassification = CustomerContent;
         }
 
-        field(9; "ACO Thick Staining Time"; Integer)
+        field(9; "Thick Staining Time"; Integer)
         {
             Caption = 'Thick Staining Time [min]';
             DataClassification = CustomerContent;

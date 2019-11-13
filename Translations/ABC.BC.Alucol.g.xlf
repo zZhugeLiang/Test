@@ -148,10 +148,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Aucos Sealing Time - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 545940338 - Field 875789393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Aucos Flushing</source>
+        <trans-unit id="Table 545940338 - Field 3871961270 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Flushing Time</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Aucos Flushing - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Aucos Flushing Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 525159504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>British Standard</source>
@@ -189,7 +189,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Layer Thickness</source>
+          <source>Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Property Caption</note>
         </trans-unit>
@@ -238,6 +238,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Gold Time - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 391613001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 391613001 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color Group - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 391613001 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color Group - Field Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3033071631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Category</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -253,45 +268,120 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3033071631 - Field 505065745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Minimum Current Density [A/dm²]</source>
+        <trans-unit id="Table 3033071631 - Field 1180820715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calculate Minimum Circumference</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Minimum Current Density - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Calculate Minimum Circumf. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3033071631 - Field 4273034007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Short Length Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add Short Length Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3033071631 - Field 1866954775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Inner Cathode Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add Inner Cathode Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3033071631 - Field 2829935071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add High Weight Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add High Weight Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3033071631 - Field 3496677638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Height Level Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add Height Level Charge - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 71536763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Maximum Current Density [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3033071631 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension</source>
+        <trans-unit id="Table 3974017570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Dimension Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3033071631 - Field 274193969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension</source>
+        <trans-unit id="Table 3974017570 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Color Group Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3033071631 - Field 125494684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Coloring Time [min]</source>
+        <trans-unit id="Table 3974017570 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Coloring Time - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3033071631 - Field 3454061613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Minimum Gold Time [min]</source>
+        <trans-unit id="Table 3974017570 - Field 3702373668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Category</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Minimum Gold Time - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Category - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3033071631 - Field 486467919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Maximum Gold Time [min]</source>
+        <trans-unit id="Table 3974017570 - Field 4273034007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Short Length Charge</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Maximum Gold Time - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add Short Length Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 1866954775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Inner Cathode Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add Inner Cathode Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2829935071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add High Weight Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add High Weight Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3496677638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Height Level Charge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add Height Level Charge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 71536763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maximum Current Density [A/dm²]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Maximum Current Density - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1037002210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price Schemes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Price Schemes - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1037002210 - Action 637021826 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prices</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Price Schemes - Action PriceSchemePrices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 165657317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price Scheme Prices</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Price Scheme Prices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 300980991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pretreatments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pretreatments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3595491298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thicknesses</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Layer Thicknesses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1459384309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Colors - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3577273184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Groups</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Color Groups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2624490701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Categories</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Categories - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3486886417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>OVIS Mail</source>
@@ -367,6 +457,11 @@
           <source>Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Item Extension - Field ACO Color - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 641095589 - Field 3033071631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Item Extension - Field ACO Category - Property Caption</note>
         </trans-unit>
       </group>
     </body>

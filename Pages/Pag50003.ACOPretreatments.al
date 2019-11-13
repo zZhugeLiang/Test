@@ -44,11 +44,11 @@ page 50003 "ACO Pretreatments"
                 {
                     ApplicationArea = All;
                 }
-                field("ACO Thin Staining Time"; "ACO Thin Staining Time")
+                field("Thin Staining Time"; "Thin Staining Time")
                 {
                     ApplicationArea = All;
                 }
-                field("ACO Thick Staining Time"; "ACO Thick Staining Time")
+                field("Thick Staining Time"; "Thick Staining Time")
                 {
                     ApplicationArea = All;
                 }
