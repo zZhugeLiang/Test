@@ -5,7 +5,7 @@
             "type": "al",
             "request": "launch",
             "name": "Your own server",
-            "server": "http://nlbc15Alucol",
+            "server": "http://nlbc15Alucol2",
             "serverInstance": "BC",
             "authentication": "UserPassword",
             "startupObjectId": 22,

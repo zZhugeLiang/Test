@@ -13,7 +13,9 @@ tableextension 50001 "VZK Item Extension" extends Item
                 ACOPretreatment: Record "ACO Pretreatment";
             begin
                 if ACOPretreatment.Get("ACO Pretreatment Code") then
-                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment.Code);
+                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment.Code)
+                else
+                    ACODeleteDefaultDimension(ACOPretreatment."Dimension Code");
             end;
         }
         field(50001; "ACO Layer Thickness Code"; Code[10])
@@ -26,8 +28,10 @@ tableextension 50001 "VZK Item Extension" extends Item
             var
                 ACOLayerThickness: Record "ACO Layer Thickness";
             begin
-                if ACOLayerThickness.Get("ACO Pretreatment Code") then
-                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Code", ACOLayerThickness.Code);
+                if ACOLayerThickness.Get("ACO Layer Thickness Code") then
+                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Code", ACOLayerThickness.Code)
+                else
+                    ACODeleteDefaultDimension(ACOLayerThickness."Dimension Code");
             end;
         }
 
@@ -41,8 +45,10 @@ tableextension 50001 "VZK Item Extension" extends Item
             var
                 ACOColor: Record "ACO Color";
             begin
-                if ACOColor.Get("ACO Pretreatment Code") then
-                    ACOInsertDefaultDimension(ACOColor."Dimension Code", ACOColor.Code);
+                if ACOColor.Get("ACO Color Code") then
+                    ACOInsertDefaultDimension(ACOColor."Dimension Code", ACOColor.Code)
+                else
+                    ACODeleteDefaultDimension(ACOColor."Dimension Code");
             end;
         }
 
@@ -58,12 +64,26 @@ tableextension 50001 "VZK Item Extension" extends Item
     var
         DefaultDimension: Record "Default Dimension";
     begin
-        DefaultDimension.Init();
-        DefaultDimension."Table ID" := Database::Item;
-        DefaultDimension."No." := "No.";
-        DefaultDimension."Dimension Code" := DimensionCode;
-        DefaultDimension."Dimension Value Code" := DimensionValueCode;
-        DefaultDimension."Value Posting" := DefaultDimension."Value Posting"::" ";
-        DefaultDimension.Insert();
+        if DefaultDimension.Get(Database::Item, "No.", DimensionCode) then begin
+            DefaultDimension."Dimension Value Code" := DimensionValueCode;
+            DefaultDimension."Value Posting" := DefaultDimension."Value Posting"::" ";
+            DefaultDimension.Modify(true);
+        end else begin
+            DefaultDimension.Init();
+            DefaultDimension."Table ID" := Database::Item;
+            DefaultDimension."No." := "No.";
+            DefaultDimension."Dimension Code" := DimensionCode;
+            DefaultDimension."Dimension Value Code" := DimensionValueCode;
+            DefaultDimension."Value Posting" := DefaultDimension."Value Posting"::" ";
+            DefaultDimension.Insert(true);
+        end;
+    end;
+
+    local procedure ACODeleteDefaultDimension(DimensionCode: Code[20])
+    var
+        DefaultDimension: Record "Default Dimension";
+    begin
+        if DefaultDimension.Get(Database::Item, "No.", DimensionCode) then
+            DefaultDimension.Delete(true);
     end;
 }

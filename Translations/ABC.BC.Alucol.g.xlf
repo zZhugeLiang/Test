@@ -119,7 +119,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension</source>
+          <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Code - Property Caption</note>
         </trans-unit>
@@ -184,7 +184,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4213692988 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension</source>
+          <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Dimension Code - Property Caption</note>
         </trans-unit>
@@ -214,12 +214,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension</source>
+          <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 274193969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension</source>
+          <source>Color Group Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Color Group Code - Property Caption</note>
         </trans-unit>
@@ -453,10 +453,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Week Capacity - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2847388252 - Field 1920261143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>Price Scheme</source>
+        <trans-unit id="TableExtension 2847388252 - Field 1256564548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Price Scheme Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Price Scheme - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Price Scheme Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 1870249447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Comment Bath Card</source>
