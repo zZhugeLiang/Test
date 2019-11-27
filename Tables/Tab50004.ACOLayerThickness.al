@@ -35,6 +35,20 @@ table 50004 "ACO Layer Thickness"
             Caption = 'Dimension Code';
             TableRelation = Dimension;
             DataClassification = CustomerContent;
+            trigger OnLookup()
+            var
+                GLSetup: Record "General Ledger Setup";
+                DimensionValue: Record "Dimension Value";
+                DimensionValueList: Page "Dimension Value List";
+            begin
+                GLSetup.Get();
+                GLSetup.TestField("Shortcut Dimension 3 Code");
+                DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
+                DimensionValueList.LookupMode(true);
+                DimensionValueList.SetTableView(DimensionValue);
+                if DimensionValueList.RunModal() = Action::LookupOK then
+                    "Dimension Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Code"));
+            end;
         }
     }
 

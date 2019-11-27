@@ -1,8 +1,8 @@
 table 50008 "ACO Profile"
 {
     Caption = 'Profile';
-    DrillDownPageId = "ACO Categories";
-    LookupPageId = "ACO Categories";
+    DrillDownPageId = "ACO Profiles";
+    LookupPageId = "ACO Profiles";
     DataClassification = CustomerContent;
 
     fields
@@ -26,35 +26,90 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(4; "Add Short Length Charge"; Boolean)
+        field(4; "Circumference"; Decimal)
         {
-            Caption = 'Add Short Length Charge';
+            Caption = 'Circumference [mm]';
             DataClassification = CustomerContent;
         }
 
-        field(5; "Add Inner Cathode Charge"; Boolean)
+        field(5; "Weight per meter"; Decimal)
         {
-            Caption = 'Add Inner Cathode Charge';
+            Caption = 'Weight per meter [kg]';
             DataClassification = CustomerContent;
         }
 
-        field(6; "Add High Weight Charge"; Boolean)
+        field(6; "Not Measurable"; Boolean)
         {
-            Caption = 'Add High Weight Charge';
+            Caption = 'Not Measurable';
             DataClassification = CustomerContent;
         }
 
-        field(7; "Add Height Level Charge"; Boolean)
+        field(7; Hollow; Boolean)
         {
-            Caption = 'Add Height Level Charge';
+            Caption = 'Hollow';
             DataClassification = CustomerContent;
         }
 
-        field(8; "Maximum Current Density"; Decimal)
+        field(8; "Area"; Decimal)
+        {
+            Caption = 'Area';
+            DataClassification = CustomerContent;
+        }
+
+        field(9; "Extra Flushing"; Boolean)
+        {
+            Caption = 'Extra Flushing';
+            DataClassification = CustomerContent;
+        }
+
+        field(10; "Correction Factor"; Decimal)
+        {
+            Caption = 'Correction Factor';
+            DataClassification = CustomerContent;
+        }
+
+        field(11; "Height Level"; Integer)
+        {
+            Caption = 'Height Level [mm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(12; "ACO Comment Bath Card"; Text[100])
+        {
+            Caption = 'Comment Bath Card';
+            DataClassification = CustomerContent;
+        }
+
+        field(13; "ACO Comment Work Note"; Text[100])
+        {
+            Caption = 'Comment Sales Order';
+            DataClassification = CustomerContent;
+        }
+
+        field(15; Bent; Boolean)
+        {
+            Caption = 'Bent';
+            DataClassification = CustomerContent;
+        }
+
+        field(16; "Minimum Current Density"; Decimal)
         {
             Caption = 'Maximum Current Density [A/dm²]';
             DataClassification = CustomerContent;
         }
+
+        field(17; "Maximum Current Density"; Decimal)
+        {
+            Caption = 'Maximum Current Density [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        // field(18; Documents; Blob)
+        // {
+        //     Caption = 'Documents';
+        //     DataClassification = CustomerContent;
+        // }
+
     }
 
     keys

@@ -119,7 +119,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Code</source>
+          <source>Dimension Value Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Code - Property Caption</note>
         </trans-unit>
@@ -214,7 +214,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Code</source>
+          <source>Dimension Value Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Code - Property Caption</note>
         </trans-unit>
@@ -318,25 +318,65 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Category - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 4273034007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add Short Length Charge</source>
+        <trans-unit id="Table 3974017570 - Field 926410393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Circumference [mm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add Short Length Charge - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Circumference - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 1866954775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add Inner Cathode Charge</source>
+        <trans-unit id="Table 3974017570 - Field 1046967024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Weight per meter [kg]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add Inner Cathode Charge - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Weight per meter - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 2829935071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add High Weight Charge</source>
+        <trans-unit id="Table 3974017570 - Field 3007047366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Measurable</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add High Weight Charge - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Not Measurable - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3496677638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add Height Level Charge</source>
+        <trans-unit id="Table 3974017570 - Field 1644361513 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hollow</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Add Height Level Charge - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Hollow - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 1064475362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra Flushing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Extra Flushing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 115750533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correction Factor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Correction Factor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 4111052763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Height Level [mm]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Height Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 1870249447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comment Bath Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field ACO Comment Bath Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 1539383953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comment Sales Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field ACO Comment Work Note - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 656188335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bent</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Bent - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 505065745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maximum Current Density [A/dm²]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Minimum Current Density - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 71536763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Maximum Current Density [A/dm²]</source>
@@ -382,6 +422,36 @@
           <source>Categories</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Categories - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2364621519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profiles</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profiles - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profiles</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Control 1805007635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Production Parameters</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control ProductionParameters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Control 3324780168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Control 503024588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control Comments - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2421741815 - Control 2335191362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Production</source>

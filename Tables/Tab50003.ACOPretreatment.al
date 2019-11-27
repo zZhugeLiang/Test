@@ -48,9 +48,23 @@ table 50003 "ACO Pretreatment"
 
         field(7; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension Code';
-            TableRelation = Dimension;
+            Caption = 'Dimension Value Code';
+            // TableRelation = Dimension;
             DataClassification = CustomerContent;
+            trigger OnLookup()
+            var
+                GLSetup: Record "General Ledger Setup";
+                DimensionValue: Record "Dimension Value";
+                DimensionValueList: Page "Dimension Value List";
+            begin
+                GLSetup.Get();
+                GLSetup.TestField("Global Dimension 1 Code");
+                DimensionValue.SetRange("Dimension Code", GLSetup."Global Dimension 1 Code");
+                DimensionValueList.LookupMode(true);
+                DimensionValueList.SetTableView(DimensionValue);
+                if DimensionValueList.RunModal() = Action::LookupOK then
+                    "Dimension Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Code"));
+            end;
         }
 
         field(8; "Thin Staining Time"; Decimal)
