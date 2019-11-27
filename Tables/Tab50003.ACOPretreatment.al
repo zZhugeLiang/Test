@@ -46,7 +46,7 @@ table 50003 "ACO Pretreatment"
             DataClassification = CustomerContent;
         }
 
-        field(7; "Dimension Code"; Code[20])
+        field(7; "Dimension Value Code"; Code[20])
         {
             Caption = 'Dimension Value Code';
             // TableRelation = Dimension;
@@ -63,7 +63,7 @@ table 50003 "ACO Pretreatment"
                 DimensionValueList.LookupMode(true);
                 DimensionValueList.SetTableView(DimensionValue);
                 if DimensionValueList.RunModal() = Action::LookupOK then
-                    "Dimension Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Code"));
+                    "Dimension Value Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Value Code"));
             end;
         }
 

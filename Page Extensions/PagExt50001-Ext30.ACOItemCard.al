@@ -6,7 +6,7 @@ pageextension 50001 "ACO Item Card" extends "Item Card"
         {
             group(Production)
             {
-                field("ACO Pretreatment"; "ACO Pretreatment Code")
+                field("ACO Pretreatment"; "ACO Pretreatment")
                 {
                     ApplicationArea = All;
                 }
@@ -16,7 +16,7 @@ pageextension 50001 "ACO Item Card" extends "Item Card"
                     ApplicationArea = All;
                 }
 
-                field("ACO Color"; "ACO Color Code")
+                field("ACO Color"; "ACO Color")
                 {
                     ApplicationArea = All;
                 }

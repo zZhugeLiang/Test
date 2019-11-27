@@ -40,7 +40,7 @@ page 50003 "ACO Pretreatments"
                 {
                     ApplicationArea = All;
                 }
-                field("Dimension Code"; "Dimension Code")
+                field("Dimension Value Code"; "Dimension Value Code")
                 {
                     ApplicationArea = All;
                 }

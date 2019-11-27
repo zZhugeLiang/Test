@@ -30,9 +30,9 @@ table 50004 "ACO Layer Thickness"
             DataClassification = CustomerContent;
         }
 
-        field(5; "Dimension Code"; Code[20])
+        field(5; "Dimension Value Code"; Code[20])
         {
-            Caption = 'Dimension Code';
+            Caption = 'Dimension Value Code';
             TableRelation = Dimension;
             DataClassification = CustomerContent;
             trigger OnLookup()
@@ -47,7 +47,7 @@ table 50004 "ACO Layer Thickness"
                 DimensionValueList.LookupMode(true);
                 DimensionValueList.SetTableView(DimensionValue);
                 if DimensionValueList.RunModal() = Action::LookupOK then
-                    "Dimension Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Code"));
+                    "Dimension Value Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Value Code"));
             end;
         }
     }

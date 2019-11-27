@@ -2,9 +2,9 @@ tableextension 50001 "VZK Item Extension" extends Item
 {
     fields
     {
-        field(50000; "ACO Pretreatment Code"; Code[10])
+        field(50000; "ACO Pretreatment"; Code[10])
         {
-            Caption = ' Pretreatment Code';
+            Caption = ' Pretreatment';
             TableRelation = "ACO Pretreatment";
             DataClassification = CustomerContent;
 
@@ -12,16 +12,16 @@ tableextension 50001 "VZK Item Extension" extends Item
             var
                 ACOPretreatment: Record "ACO Pretreatment";
             begin
-                if ACOPretreatment.Get("ACO Pretreatment Code") then
-                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment.Code)
+                if ACOPretreatment.Get("ACO Pretreatment") then
+                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Value Code", ACOPretreatment.Code)
                 else
-                    if ACOPretreatment.Get(xRec."ACO Pretreatment Code") then
-                        ACODeleteDefaultDimension(ACOPretreatment."Dimension Code", '');
+                    if ACOPretreatment.Get(xRec."ACO Pretreatment") then
+                        ACODeleteDefaultDimension(ACOPretreatment."Dimension Value Code", '');
             end;
         }
         field(50001; "ACO Layer Thickness Code"; Code[10])
         {
-            Caption = 'Layer Thickness Code';
+            Caption = 'Layer Thickness';
             TableRelation = "ACO Layer Thickness";
             DataClassification = CustomerContent;
 
@@ -30,36 +30,36 @@ tableextension 50001 "VZK Item Extension" extends Item
                 ACOLayerThickness: Record "ACO Layer Thickness";
             begin
                 if ACOLayerThickness.Get("ACO Layer Thickness Code") then
-                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Code", ACOLayerThickness.Code)
+                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Value Code", ACOLayerThickness.Code)
                 else
                     if ACOLayerThickness.Get(xRec."ACO Layer Thickness Code") then
-                        ACODeleteDefaultDimension(ACOLayerThickness."Dimension Code", '');
+                        ACODeleteDefaultDimension(ACOLayerThickness."Dimension Value Code", '');
             end;
         }
 
-        field(50002; "ACO Color Code"; Code[20])
+        field(50002; "ACO Color"; Code[20])
         {
-            Caption = 'Color Code';
-            DataClassification = CustomerContent;
+            Caption = 'Color';
             TableRelation = "ACO Color";
+            DataClassification = CustomerContent;
 
             trigger OnValidate()
             var
                 ACOColor: Record "ACO Color";
             begin
-                if ACOColor.Get("ACO Color Code") then
-                    ACOInsertDefaultDimension(ACOColor."Dimension Code", ACOColor.Code)
+                if ACOColor.Get("ACO Color") then
+                    ACOInsertDefaultDimension(ACOColor."Dimension Value Code", ACOColor.Code)
                 else
-                    if ACOColor.Get(xRec."ACO Color Code") then
-                        ACODeleteDefaultDimension(ACOColor."Dimension Code", '');
+                    if ACOColor.Get(xRec."ACO Color") then
+                        ACODeleteDefaultDimension(ACOColor."Dimension Value Code", '');
             end;
         }
 
         field(50003; "ACO Category Code"; Code[50])
         {
             Caption = 'Category Code';
-            DataClassification = CustomerContent;
             TableRelation = "ACO Category";
+            DataClassification = CustomerContent;
         }
     }
 

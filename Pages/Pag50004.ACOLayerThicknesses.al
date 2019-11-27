@@ -28,7 +28,7 @@ page 50004 "ACO Layer Thicknesses"
                 {
                     ApplicationArea = All;
                 }
-                field("Dimension Code"; "Dimension Code")
+                field("Dimension Value Code"; "Dimension Value Code")
                 {
                     ApplicationArea = All;
                 }

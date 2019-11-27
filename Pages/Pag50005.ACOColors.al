@@ -28,11 +28,11 @@ page 50005 "ACO Colors"
                 {
                     ApplicationArea = All;
                 }
-                field("Dimension Code"; "Dimension Code")
+                field("Dimension Code"; "Dimension Value Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Color Group Code"; "Color Group Code")
+                field("Color Group Code"; "Color Group")
                 {
                     ApplicationArea = All;
                 }
