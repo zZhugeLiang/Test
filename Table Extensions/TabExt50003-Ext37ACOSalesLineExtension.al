@@ -8,6 +8,7 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
             TableRelation = "ACO Pretreatment";
             DataClassification = CustomerContent;
         }
+
         field(50001; "ACO Layer Thickness"; Code[10])
         {
             Caption = 'Layer Thickness';
@@ -26,6 +27,78 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Category';
             TableRelation = "ACO Category";
+            DataClassification = CustomerContent;
+        }
+
+        field(50004; "Thin Staining Time"; Decimal)
+        {
+            Caption = 'Thin Staining Time [min]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50005; "Thick Staining Time"; Decimal)
+        {
+            Caption = 'Thick Staining Time [min]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50006; "Do Not Calculate Short Length"; Boolean)
+        {
+            Caption = 'Do Not Calculate Short Length';
+            DataClassification = CustomerContent;
+        }
+
+        field(50007; "Aucos"; Boolean)
+        {
+            Caption = 'Aucos';
+            DataClassification = CustomerContent;
+        }
+
+        field(50008; "Aucos Sealing Time"; Boolean)
+        {
+            Caption = 'Aucos Sealing Time';
+            DataClassification = CustomerContent;
+        }
+
+        field(50009; "Aucos Flushing Time"; Boolean)
+        {
+            Caption = 'Aucos Flushing Time';
+            DataClassification = CustomerContent;
+        }
+
+        field(50010; "British Standard"; Boolean)
+        {
+            Caption = 'British Standard';
+            DataClassification = CustomerContent;
+        }
+
+        field(50011; "Minimum Current Density Color"; Decimal)
+        {
+            Caption = 'Minimum Current Density Color [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50012; "Maximum Current Density Color"; Decimal)
+        {
+            Caption = 'Maximum Current Density Color [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50013; "Minimum Current Density LT"; Decimal)
+        {
+            Caption = 'Minimum Current Density Layer Thickness [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50014; "Maximum Current Density LT"; Decimal)
+        {
+            Caption = 'Maximum Current Density Layer Thickness [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50015; "Maximum Curr. Density Category"; Decimal)
+        {
+            Caption = 'Maximum Current Density Category [A/dm²]';
             DataClassification = CustomerContent;
         }
     }

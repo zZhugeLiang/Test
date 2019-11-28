@@ -1,10 +1,10 @@
-page 50009 "ACO Profile Card"
+page 50011 "ACO Profile Customer Card"
 {
-    Caption = 'Profile Card';
+    Caption = 'Profile Customer Card';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "ACO Profile";
+    SourceTable = "ACO Profile Customer";
 
     layout
     {
@@ -13,85 +13,70 @@ page 50009 "ACO Profile Card"
             group(General)
             {
                 Caption = 'General';
-                field("Code"; "Code")
+
+                field("Customer No."; "Customer No.")
                 {
                     ApplicationArea = All;
                 }
 
-                field(Description; Description)
+                field("Customer Name"; "Customer Name")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Profile Code"; "Profile Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Profile Description"; "Profile Description")
                 {
                     ApplicationArea = All;
                 }
             }
 
+            group(AddressInformation)
+            {
+                Caption = 'Address';
+
+                field("Ship-to Code"; "Ship-to Code")
+                {
+                    ApplicationArea = All;
+                }
+                field(Address; Address)
+                {
+                    ApplicationArea = All;
+                }
+                field("Post Code"; "Post Code")
+                {
+                    ApplicationArea = All;
+                }
+                field(City; City)
+                {
+                    ApplicationArea = All;
+                }
+            }
             group(ProductionParameters)
             {
                 Caption = 'Production Parameters';
 
-                field(Hollow; Hollow)
+                field("Packaging Instructions"; "Packaging Instructions")
                 {
                     ApplicationArea = All;
                 }
-                field(Bent; Bent)
+                field(Euras; Euras)
                 {
                     ApplicationArea = All;
                 }
-                field("Extra Flushing"; "Extra Flushing")
+                field("Extra to Enumerate"; "Extra to Enumerate")
                 {
                     ApplicationArea = All;
                 }
-                field("Area"; "Area")
+                field("Thick Staining Time"; "Thick Staining Time")
                 {
                     ApplicationArea = All;
                 }
-                field("Not Measurable"; "Not Measurable")
-                {
-                    ApplicationArea = All;
-                }
-
-                field("Weight per meter"; "Weight per meter")
-                {
-                    ApplicationArea = All;
-                }
-                field("Category"; "Category")
-                {
-                    ApplicationArea = All;
-                }
-                field("Circumference"; "Circumference")
-                {
-                    ApplicationArea = All;
-                }
-                field("Correction Factor"; "Correction Factor")
-                {
-                    ApplicationArea = All;
-                }
-                field("Height Level"; "Height Level")
-                {
-                    ApplicationArea = All;
-                }
-                field("Minimum Current Density"; "Minimum Current Density")
-                {
-                    ApplicationArea = All;
-                }
-                field("Maximum Current Density"; "Maximum Current Density")
-                {
-                    ApplicationArea = All;
-                }
-
-            }
-            group(Documents)
-            {
-                Caption = 'Documents';
-            }
-            group(Comments)
-            {
-                Caption = 'Comments';
-                field("ACO Comment Bath Card"; "ACO Comment Bath Card")
-                {
-                    ApplicationArea = All;
-                }
-
-                field("ACO Comment Work Note"; "ACO Comment Work Note")
+                field("Thin Staining Time"; "Thin Staining Time")
                 {
                     ApplicationArea = All;
                 }

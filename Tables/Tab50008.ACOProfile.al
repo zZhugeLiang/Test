@@ -82,7 +82,7 @@ table 50008 "ACO Profile"
 
         field(13; "ACO Comment Work Note"; Text[100])
         {
-            Caption = 'Comment Sales Order';
+            Caption = 'Comment Work Note';
             DataClassification = CustomerContent;
         }
 
