@@ -34,4 +34,18 @@ page 50008 "ACO Profiles"
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(ProfileCustomers)
+            {
+                Caption = 'Profile Customers';
+                ApplicationArea = All;
+                RunObject = Page "ACO Profile Customers";
+                RunPageLink = "Profile Code" = field("Code");
+            }
+        }
+    }
 }

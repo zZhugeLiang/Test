@@ -388,25 +388,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1025398750 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Name</source>
+        <trans-unit id="Table 1025398750 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 131416759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
@@ -518,6 +518,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profiles - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2364621519 - Action 339208784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Customers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profiles - Action ProfileCustomers - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3325455334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -542,6 +547,11 @@
           <source>Comments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control Comments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 339208784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Customers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action ProfileCustomers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3197234571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customers</source>

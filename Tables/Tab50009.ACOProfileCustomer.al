@@ -7,25 +7,14 @@ table 50009 "ACO Profile Customer"
 
     fields
     {
-        //     {	Klantnummer
-        // 	Klantnaam
-        // 	Artikelnummer klant
-        // 	Artikelomschrijving klant
-        // 	Status (actief (standaard) of inactief)
-        // 	Prijsschema toeslagen Code10 (Zie Functioneel Ontwerp klantenkaart
-        // o	Tabblad Adresgegevens:
-        // 	Verzendcode
-        // 	Adres
-        // 	Postcode
-        // 	Woonplaats
-        // o	Tabblad Productieparameters:
-        // 	Verpakkingsvoorschrift = jpg/pdf/xlsx
-        // 	Euras Boolean. Dit veld is benodigd voor het productieproces
-        // 	Extra uittellen Decimal. Dit veld is benodigd voor het productieproces
-        // 	Beitstijd dikke beits Decimal. Dit veld is benodigd voor het productieproces
-        // 	Beitstijd dunne beits Decimal. Dit veld is benodigd voor het productieproces
+        field(1; "Profile Code"; Code[30])
+        {
+            Caption = 'Profile Code';
+            TableRelation = "ACO Profile";
+            DataClassification = CustomerContent;
+        }
 
-        field(1; "Customer No."; Code[20])
+        field(2; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';
             TableRelation = Customer;
@@ -57,22 +46,15 @@ table 50009 "ACO Profile Customer"
             end;
         }
 
-        field(2; "Profile Code"; Code[30])
-        {
-            Caption = 'Profile Code';
-            TableRelation = "ACO Profile";
-            DataClassification = CustomerContent;
-        }
-
-        field(3; "Customer Name"; Text[100])
-        {
-            Caption = 'Customer Name';
-            DataClassification = CustomerContent;
-        }
-
-        field(4; "Profile Description"; Text[100])
+        field(3; "Profile Description"; Text[100])
         {
             Caption = 'Profile Description';
+            DataClassification = CustomerContent;
+        }
+
+        field(4; "Customer Name"; Text[100])
+        {
+            Caption = 'Customer Name';
             DataClassification = CustomerContent;
         }
 
@@ -169,7 +151,7 @@ table 50009 "ACO Profile Customer"
 
     keys
     {
-        key(PK; "Customer No.", "Profile Code")
+        key(PK; "Profile Code", "Customer No.")
         {
             Clustered = true;
         }

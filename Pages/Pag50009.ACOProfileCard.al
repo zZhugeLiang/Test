@@ -102,14 +102,12 @@ page 50009 "ACO Profile Card"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(ProfileCustomers)
             {
+                Caption = 'Profile Customers';
                 ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-
-                end;
+                RunObject = Page "ACO Profile Customers";
+                RunPageLink = "Profile Code" = field("Code");
             }
         }
     }

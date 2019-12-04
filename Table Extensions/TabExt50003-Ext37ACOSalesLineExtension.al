@@ -101,5 +101,37 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
             Caption = 'Maximum Current Density Category [A/dm²]';
             DataClassification = CustomerContent;
         }
+
+        field(50016; "Profile Code"; Code[30])
+        {
+            Caption = 'Profile Code';
+            DataClassification = CustomerContent;
+        }
+
+        field(50017; "Profile Description"; Text[100])
+        {
+            Caption = 'Profile Description';
+            DataClassification = CustomerContent;
+        }
+
+        field(50018; "Profile Category"; Code[50])
+        {
+            Caption = 'Profile Category';
+            TableRelation = "ACO Category";
+            DataClassification = CustomerContent;
+        }
+
+        field(50019; "Profile Circumference"; Decimal)
+        {
+            Caption = 'Profile Circumference [mm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50020; "Weight per meter"; Decimal)
+        {
+            Caption = 'Weight per meter [kg]';
+            DataClassification = CustomerContent;
+        }
+
     }
 }
