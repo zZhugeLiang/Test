@@ -383,6 +383,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3058883905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document1 Filename</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Document1 Filename - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2463083930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Document1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 441877472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document2 Filename</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Document2 Filename - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 549994079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Document2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2912869407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document3 Filename</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Document3 Filename - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 1187690696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Document3 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1025398750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -552,6 +582,11 @@
           <source>Profile Customers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action ProfileCustomers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 226101114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Document 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloudDocument1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3197234571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customers</source>
@@ -802,6 +837,31 @@
           <source>Maximum Current Density Category [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field Maximum Curr. Density Category - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1061602348 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1061602348 - Field 131416759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Profile Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field Profile Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1061602348 - Field 2693771037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Profile Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field Profile Category - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1061602348 - Field 427338520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Profile Circumference [mm]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field Profile Circumference - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1061602348 - Field 1046967024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Weight per meter [kg]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field Weight per meter - Property Caption</note>
         </trans-unit>
       </group>
     </body>
