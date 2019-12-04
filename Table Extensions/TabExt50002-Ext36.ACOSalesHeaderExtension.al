@@ -37,5 +37,30 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
+        // field(50006; "ACO Number of Units"; Decimal)
+        // {
+        //     Caption = 'Number of Units';
+        //     DataClassification = CustomerContent;
+        // }
+
+        // field(50007; "ACO Blockade Status Inactive"; Decimal)
+        // {
+        //     Caption = 'Blockade Status Inactive';
+        //     DataClassification = CustomerContent;
+        // }
+
+
+        // field(50008; "ACO Calculate Line Amount"; Decimal)
+        // {
+        //     Caption = 'Number of Units';
+        //     DataClassification = CustomerContent;
+        // }
+
+
+        // field(50009; "ACO Number of Units"; Decimal)
+        // {
+        //     Caption = 'Number of Units';
+        //     DataClassification = CustomerContent;
+        // }
     }
 }

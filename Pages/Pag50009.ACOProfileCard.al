@@ -86,12 +86,12 @@ page 50009 "ACO Profile Card"
             group(Comments)
             {
                 Caption = 'Comments';
-                field("ACO Comment Bath Card"; "ACO Comment Bath Card")
+                field("ACO Comment Bath Card"; "Comment Bath Card")
                 {
                     ApplicationArea = All;
                 }
 
-                field("ACO Comment Work Note"; "ACO Comment Work Note")
+                field("ACO Comment Work Note"; "Comment Work Note")
                 {
                     ApplicationArea = All;
                 }
