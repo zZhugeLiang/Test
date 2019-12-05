@@ -175,16 +175,16 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50029; "ACO Minimum Current Density"; Decimal)
-        {
-            Caption = 'Maximum Current Density [A/dm²]';
-            DataClassification = CustomerContent;
-        }
+        // field(50029; "ACO Minimum Current Density"; Decimal)
+        // {
+        //     Caption = 'Maximum Current Density [A/dm²]';
+        //     DataClassification = CustomerContent;
+        // }
 
-        field(50030; "ACO Maximum Current Density"; Decimal)
-        {
-            Caption = 'Maximum Current Density [A/dm²]';
-            DataClassification = CustomerContent;
-        }
+        // field(50030; "ACO Maximum Current Density"; Decimal)
+        // {
+        //     Caption = 'Maximum Current Density [A/dm²]';
+        //     DataClassification = CustomerContent;
+        // }
     }
 }
