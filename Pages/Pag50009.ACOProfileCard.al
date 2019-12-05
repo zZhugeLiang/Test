@@ -82,6 +82,58 @@ page 50009 "ACO Profile Card"
             group(Documents)
             {
                 Caption = 'Documents';
+
+                field("Document1 Filename"; "Document1 Filename")
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                    begin
+                        Document1.CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', "Document1 Filename", InStr);
+                        CopyStream(OutStr, InStr);
+
+                        Modify();
+                    end;
+                }
+                field("Document2 Filename"; "Document2 Filename")
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                    begin
+                        Document1.CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', "Document2 Filename", InStr);
+                        CopyStream(OutStr, InStr);
+
+                        Modify();
+                    end;
+                }
+                field("Document3 Filename"; "Document3 Filename")
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                    begin
+                        Document1.CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', "Document3 Filename", InStr);
+                        CopyStream(OutStr, InStr);
+
+                        Modify();
+                    end;
+                }
             }
             group(Comments)
             {
@@ -109,10 +161,51 @@ page 50009 "ACO Profile Card"
                 RunObject = Page "ACO Profile Customers";
                 RunPageLink = "Profile Code" = field("Code");
             }
+
+            action(DownloudDocument1)
+            {
+                Caption = 'Download Document 1';
+                ApplicationArea = All;
+                Image = Document;
+
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    Document1.CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Document1 Filename")
+                end;
+            }
+
+            action(DownloudDocument2)
+            {
+                Caption = 'Download Document 2';
+                ApplicationArea = All;
+                Image = Document;
+
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    Document1.CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Document2 Filename")
+                end;
+            }
+
+            action(DownloudDocument3)
+            {
+                Caption = 'Download Document 3';
+                ApplicationArea = All;
+                Image = Document;
+
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    Document1.CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Document3 Filename")
+                end;
+            }
         }
     }
-
-    var
-        myInt: Integer;
-
 }

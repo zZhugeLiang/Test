@@ -104,12 +104,33 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        // field(18; Documents; Blob)
-        // {
-        //     Caption = 'Documents';
-        //     DataClassification = CustomerContent;
-        // }
-
+        field(18; "Document1 Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(19; Document1; Blob)
+        {
+            Caption = 'Document 1';
+            DataClassification = CustomerContent;
+        }
+        field(20; "Document2 Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(21; Document2; Blob)
+        {
+            Caption = 'Document 2';
+            DataClassification = CustomerContent;
+        }
+        field(22; "Document3 Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(23; Document3; Blob)
+        {
+            Caption = 'Document 3';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
