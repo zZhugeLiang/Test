@@ -74,13 +74,13 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(12; "ACO Comment Bath Card"; Text[100])
+        field(12; "Comment Bath Card"; Text[100])
         {
             Caption = 'Comment Bath Card';
             DataClassification = CustomerContent;
         }
 
-        field(13; "ACO Comment Work Note"; Text[100])
+        field(13; "Comment Work Note"; Text[100])
         {
             Caption = 'Comment Work Note';
             DataClassification = CustomerContent;

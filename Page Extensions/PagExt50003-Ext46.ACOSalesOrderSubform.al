@@ -4,7 +4,7 @@ pageextension 50003 "ACO Sales Order Subform" extends "Sales Order Subform"
     {
         addlast(Control1)
         {
-            field("British Standard"; "British Standard")
+            field("British Standard"; "ACO British Standard")
             {
                 ApplicationArea = All;
             }

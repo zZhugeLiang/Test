@@ -2,9 +2,11 @@ page 50008 "ACO Profiles"
 {
     Caption = 'Profiles';
     PageType = List;
-    ApplicationArea = All;
+
     UsageCategory = Lists;
+    CardPageId = "ACO Profile Card";
     SourceTable = "ACO Profile";
+    ApplicationArea = All;
 
     layout
     {
