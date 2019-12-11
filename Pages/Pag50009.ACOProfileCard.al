@@ -83,6 +83,51 @@ page 50009 "ACO Profile Card"
             group(Documents)
             {
                 Caption = 'Documents';
+                field("Picture Filename"; "Picture Filename")
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                    begin
+                        Picture.CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', "Picture Filename", InStr);
+                        CopyStream(OutStr, InStr);
+                        Modify();
+                    end;
+                }
+                field("Clamping Method Filename"; "Clamping Method Filename")
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                    begin
+                        "Clamping Method".CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', "Clamping Method Filename", InStr);
+                        CopyStream(OutStr, InStr);
+                        Modify();
+                    end;
+                }
+                field("Packaging Instr. Filename"; "Packaging Instr. Filename")
+                {
+                    ApplicationArea = All;
+                    AssistEdit = true;
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                    begin
+                        "Packaging Instructions".CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', "Packaging Instr. Filename", InStr);
+                        CopyStream(OutStr, InStr);
+                        Modify();
+                    end;
+                }
             }
             group(Comments)
             {
@@ -109,6 +154,46 @@ page 50009 "ACO Profile Card"
                 ApplicationArea = All;
                 RunObject = Page "ACO Profile Customers";
                 RunPageLink = "Profile Code" = field("Code");
+            }
+
+            action(DownloadPicture)
+            {
+                Caption = 'Download Picture';
+                ApplicationArea = All;
+                Image = Document;
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    Picture.CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Picture Filename")
+                end;
+            }
+            action(DownloadClampingMethod)
+            {
+                Caption = 'Download Clamping Method';
+                ApplicationArea = All;
+                Image = Document;
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    "Clamping Method".CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Clamping Method Filename")
+                end;
+            }
+            action(DownloadPackagingInstructions)
+            {
+                Caption = 'Download Packaging Instructions';
+                ApplicationArea = All;
+                Image = Document;
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    "Packaging Instructions".CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename")
+                end;
             }
         }
     }

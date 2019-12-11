@@ -608,6 +608,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action ProfileCustomers - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 3389481820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Picture</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPicture - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 1169933228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Clamping Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadClampingMethod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 2656612740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPackagingInstructions - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3197234571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customers</source>
           <note from="Developer" annotates="general" priority="2"></note>
