@@ -4,7 +4,7 @@ page 50006 "ACO Color Groups"
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "ACO Color";
+    SourceTable = "ACO Color Group";
 
     layout
     {
