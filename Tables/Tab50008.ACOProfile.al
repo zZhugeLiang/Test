@@ -86,6 +86,12 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
+        field(14; "Extra to Enumerate"; Integer)
+        {
+            Caption = 'Extra to Enumerate [mm]';
+            DataClassification = CustomerContent;
+        }
+
         field(15; Bent; Boolean)
         {
             Caption = 'Bent';
@@ -104,12 +110,56 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        // field(18; Documents; Blob)
-        // {
-        //     Caption = 'Documents';
-        //     DataClassification = CustomerContent;
-        // }
+        field(18; "Thick Staining Time"; Decimal)
+        {
+            Caption = 'Thick Staining Time [min]';
+            DataClassification = CustomerContent;
+        }
 
+        field(19; "Thin Staining Time"; Decimal)
+        {
+            Caption = 'Thin Staining Time [min]';
+            DataClassification = CustomerContent;
+        }
+
+        field(20; "Picture Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+
+        field(21; Picture; Blob)
+        {
+            Caption = 'Picture';
+            DataClassification = CustomerContent;
+        }
+
+        field(22; "Clamping Method Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+
+        field(23; "Clamping Method"; Blob)
+        {
+            Caption = 'Clamping Method';
+            DataClassification = CustomerContent;
+        }
+
+        field(24; "Packaging Instr. Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+
+        field(25; "Packaging Instructions"; Blob)
+        {
+            Caption = 'Packaging Instructions';
+            DataClassification = CustomerContent;
+        }
+
+        field(26; "Euras"; Boolean)
+        {
+            Caption = 'Euras';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

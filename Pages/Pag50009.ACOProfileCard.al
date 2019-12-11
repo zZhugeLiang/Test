@@ -22,6 +22,7 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
+
             }
 
             group(ProductionParameters)

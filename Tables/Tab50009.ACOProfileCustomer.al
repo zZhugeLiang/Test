@@ -151,7 +151,7 @@ table 50009 "ACO Profile Customer"
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.")
+        key(PK; "Profile Code", "Customer No.", "Ship-to Code")
         {
             Clustered = true;
         }
