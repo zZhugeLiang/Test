@@ -1,4 +1,4 @@
-pageextension 50002 "ACO Sales Order" extends "Sales Order"
+pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 {
     layout
     {

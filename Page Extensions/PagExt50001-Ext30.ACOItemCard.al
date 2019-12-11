@@ -1,4 +1,4 @@
-pageextension 50001 "ACO Item Card" extends "Item Card"
+pageextension 50001 "ACO Item Card Extension" extends "Item Card"
 {
     layout
     {

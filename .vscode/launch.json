@@ -9,7 +9,7 @@
             "serverInstance": "BC",
             "authentication": "UserPassword",
             "startupObjectId": 22,
-            "schemaUpdateMode": "Recreate"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
+            "schemaUpdateMode": "Synchronize"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
         }
     ]
 }

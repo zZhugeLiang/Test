@@ -1,4 +1,4 @@
-pageextension 50000 "ACO Customer Card" extends "Customer Card"
+pageextension 50000 "ACO Customer Card Extension" extends "Customer Card"
 {
     layout
     {
