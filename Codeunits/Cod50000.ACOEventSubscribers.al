@@ -17,6 +17,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Thick Staining Time" := Customer."ACO Thick Staining Time";
             Rec."ACO Thin Staining Time" := Customer."ACO Thin Staining Time";
             Rec."ACO Week Capacity" := Customer."ACO Week Capacity";
+            Rec."ACO Customer Comment" := Customer."ACO Comment Sales Order";
         end;
     end;
 
@@ -24,43 +25,45 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnAfterValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
         Item: Record Item;
+        ACOProfileCustomer: Record "ACO Profile Customer";
     begin
         if Rec.IsTemporary() then
             exit;
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
-                Rec.Validate("ACO Pretreatment", Rec."ACO Pretreatment");
-                Rec.Validate("ACO Color", Rec."ACO Color");
-                Rec.Validate("ACO Layer Thickness", Rec."ACO Layer Thickness");
-                Rec.Validate("ACO Category", Rec."ACO Category");
+                //Rec.Validate("ACO Pretreatment", Rec."ACO Pretreatment");
+                //Rec.Validate("ACO Profile Code", Item);
+                Rec.Validate("ACO Color", Item."ACO Color");
+                //Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness");
+                //if
+                //Rec.Validate("ACO Category", Rec."ACO Category");
                 //Rec."ACO Profile Code";
             end;
     end;
 
+    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Pretreatment', false, false)]
+    // local procedure SalesLine_OnAfterValidate_ACOPretreatment(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    // var
+    //     Item: Record Item;
+    //     ACOPretreatment: Record "ACO Pretreatment";
+    // begin
+    //     if Rec.IsTemporary() then
+    //         exit;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Pretreatment', false, false)]
-    local procedure SalesLine_OnAfterValidate_ACOPretreatment(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        Item: Record Item;
-        ACOPretreatment: Record "ACO Pretreatment";
-    begin
-        if Rec.IsTemporary() then
-            exit;
-
-        if Rec.Type = Rec.Type::Item then
-            if Item.Get(Rec."No.") then
-                if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
-                    Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
-                    Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
-                    Rec."ACO Thick Staining Time PT" := ACOPretreatment."Thick Staining Time";
-                    Rec."ACO Thin Staining Time PT" := ACOPretreatment."Thin Staining Time";
-                    Rec."ACO Do Not Calc. Short Length" := ACOPretreatment."Do Not Calculate Short Length";
-                    Rec."ACO Aucos" := ACOPretreatment.Aucos;
-                    Rec."ACO Aucos Flushing Time" := ACOPretreatment."Aucos Flushing Time";
-                    Rec."ACO British Standard" := ACOPretreatment."British Standard";
-                end;
-    end;
+    //     if Rec.Type = Rec.Type::Item then
+    //         if Item.Get(Rec."No.") then
+    //             if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
+    //                 Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
+    //                 Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
+    //                 Rec."ACO Thick Staining Time PT" := ACOPretreatment."Thick Staining Time";
+    //                 Rec."ACO Thin Staining Time PT" := ACOPretreatment."Thin Staining Time";
+    //                 Rec."ACO Do Not Calc. Short Length" := ACOPretreatment."Do Not Calculate Short Length";
+    //                 Rec."ACO Aucos" := ACOPretreatment.Aucos;
+    //                 Rec."ACO Aucos Flushing Time" := ACOPretreatment."Aucos Flushing Time";
+    //                 Rec."ACO British Standard" := ACOPretreatment."British Standard";
+    //             end;
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Color', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOColor(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
@@ -96,20 +99,20 @@ codeunit 50000 "ACO Event Subscribers"
                 end;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Category', false, false)]
-    local procedure SalesLine_OnAfterValidate_ACOCategory(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        Item: Record Item;
-        ACOCategory: Record "ACO Category";
-    begin
-        if Rec.IsTemporary() then
-            exit;
+    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Category', false, false)]
+    // local procedure SalesLine_OnAfterValidate_ACOCategory(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    // var
+    //     Item: Record Item;
+    //     ACOCategory: Record "ACO Category";
+    // begin
+    //     if Rec.IsTemporary() then
+    //         exit;
 
-        if Rec.Type = Rec.Type::Item then
-            if Item.Get(Rec."No.") then
-                if ACOCategory.Get(Item."ACO Category Code") then
-                    Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";
-    end;
+    //     if Rec.Type = Rec.Type::Item then
+    //         if Item.Get(Rec."No.") then
+    //             if ACOCategory.Get(Item."ACO Category Code") then
+    //                 Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Profile Code', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOProfileCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
@@ -150,6 +153,12 @@ codeunit 50000 "ACO Event Subscribers"
                 end;
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Receipt Bag', false, false)]
+    local procedure SalesLine_OnAfterValidate_ACOReceiptBag(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    begin
+        if Rec."ACO Shipping Bag" = '' then
+            Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
+    end;
     // [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
     // local procedure SalesHeader_OnAfterValidate_ACONumberofUnits(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
     // var

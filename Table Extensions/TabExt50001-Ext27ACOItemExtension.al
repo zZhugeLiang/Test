@@ -1,4 +1,4 @@
-tableextension 50001 "VZK Item Extension" extends Item
+tableextension 50001 "ACO Item Extension" extends Item
 {
     fields
     {

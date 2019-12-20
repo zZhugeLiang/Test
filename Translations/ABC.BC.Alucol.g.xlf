@@ -748,25 +748,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Package Label Layout Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 641095589 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+        <trans-unit id="TableExtension 607252771 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source> Pretreatment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Item Extension - Field ACO Pretreatment - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Pretreatment - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 641095589 - Field 1537599719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+        <trans-unit id="TableExtension 607252771 - Field 1537599719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Item Extension - Field ACO Layer Thickness Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Layer Thickness Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 641095589 - Field 4064269812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+        <trans-unit id="TableExtension 607252771 - Field 4064269812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Item Extension - Field ACO Color - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Color - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 641095589 - Field 1234665324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+        <trans-unit id="TableExtension 607252771 - Field 1234665324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Category Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Item Extension - Field ACO Category Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Category Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Euras Customer</source>
@@ -808,185 +808,270 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Calculate Line Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 3445842965 - Field 2251616525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Rerun</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Rerun - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 2493101769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Rerun Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Rerun Reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 330489604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Shipping Shelf</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Logged In - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 4253668107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Logged In DateTime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Logged In DateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 1004138199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Delivery Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 3143674206 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Customer Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Customer Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 2091340610 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Large Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Large Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 2507928795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Blocked State Inactive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Blocked State Inactive - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source> Pretreatment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Pretreatment - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Pretreatment - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Layer Thickness - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Layer Thickness - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 4064269812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 4064269812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Color - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Color - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3033071631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3033071631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Category</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Category - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Category - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1359801010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1359801010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Thin Staining Time [min] Pretreatment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Thin Staining Time PT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Thin Staining Time PT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1688549956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1688549956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Thick Staining Time [min] Pretreatment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Thick Staining Time PT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Thick Staining Time PT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2647857162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2647857162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Do Not Calculate Short Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Do Not Calc. Short Length - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Do Not Calc. Short Length - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3704441842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3704441842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Aucos</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Aucos - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Aucos - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3656815692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3656815692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Aucos Sealing Time</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Aucos Sealing Time - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Aucos Sealing Time - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3317355465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3317355465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Aucos Flushing Time</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Aucos Flushing Time - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Aucos Flushing Time - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2171841683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2171841683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>British Standard</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO British Standard - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO British Standard - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 4136953911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 4136953911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Minimum Current Density Color [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Min. Current Density Color - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Min. Current Density Color - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3891087733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3891087733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Maximum Current Density Color [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Max. Current Density Color - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Max. Current Density Color - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3458544494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3458544494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Minimum Current Density Layer Thickness [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Minimum Current Density LT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Minimum Current Density LT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 565968160 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 565968160 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Maximum Current Density Layer Thickness [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Maximum Current Density LT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Maximum Current Density LT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1508541975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1508541975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Maximum Current Density Category [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Max. Cur. Density Category - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Max. Cur. Density Category - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 940324757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 940324757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Profile Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Profile Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2059852500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2059852500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Profile Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Profile Description - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2312112154 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2312112154 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Profile Category</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Profile Category - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Category - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2463751251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2463751251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Circumference [mm] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Profile Circumference - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Circumference - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2353320337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2353320337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Not Measurable</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Not Measurable - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Not Measurable - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1361531451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Area Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Area - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Area Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1755502757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1755502757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Extra Flushing Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Extra Flushing - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Extra Flushing - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3165529111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3165529111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Correction Factor Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Correction Factor Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Correction Factor Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 225895673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 225895673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Height Level [mm] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Height Level Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Height Level Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1870249447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1870249447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Comment Bath Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Comment Bath Card - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Comment Bath Card - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1539383953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1539383953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Comment Work Note</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Comment Work Note - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Comment Work Note - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3686455765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3686455765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Bent Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Bent Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Bent Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 1633782130 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 1633782130 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Minimum Current Density Pretreatment [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Minimum Current Density PT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Minimum Current Density PT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2483521852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2483521852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Maximum Current Density Pretreatment [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Maximum Current Density PT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Maximum Current Density PT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 579148856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 579148856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Maximum Current Density Profile [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Max. Curr. Density Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Max. Curr. Density Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3764892646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3764892646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Minimum Current Density Profile [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Min. Curr. Density Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Min. Curr. Density Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 3284328635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3284328635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Thin Staining Time [min] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Thin Staining Time Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Thin Staining Time Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 645894441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 645894441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Thick Staining Time [min] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Thick St. Time Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Thick St. Time Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 2332128290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 2332128290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Euras Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Euras Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Euras Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1061602348 - Field 4229778773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 4229778773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Extra to Enumerate [mm] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VZK Sales Line Extension - Field ACO Extra to Enumerate Profile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Extra to Enumerate Profile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2203568108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Receipt Shelf</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Qty. After Production - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 975303093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Calculate Line Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Calculate Line Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 779385951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Receipt Shelf</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Receipt Bag - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 3137948029 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Shipping Bag</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Shipping Bag - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 219284470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Circumference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Circumference - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Area - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2347744687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Holder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Holder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 127857927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Receipt Shelf</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Receipt Shelf - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2328278277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Shipping Shelf</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Shipping Shelf - Property Caption</note>
         </trans-unit>
       </group>
     </body>

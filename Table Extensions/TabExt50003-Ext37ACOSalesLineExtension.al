@@ -1,66 +1,52 @@
-tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
+tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 {
     fields
     {
-        field(50000; "ACO Pretreatment"; Code[10])
-        {
-            Caption = ' Pretreatment';
-            TableRelation = "ACO Pretreatment";
-            DataClassification = CustomerContent;
-        }
-
-        field(50001; "ACO Layer Thickness"; Code[10])
+        field(50000; "ACO Layer Thickness"; Code[10])
         {
             Caption = 'Layer Thickness';
             TableRelation = "ACO Layer Thickness";
             DataClassification = CustomerContent;
         }
 
-        field(50002; "ACO Color"; Code[20])
+        field(50001; "ACO Color"; Code[20])
         {
             Caption = 'Color';
             TableRelation = "ACO Color";
             DataClassification = CustomerContent;
         }
 
-        field(50003; "ACO Category"; Code[50])
-        {
-            Caption = 'Category';
-            TableRelation = "ACO Category";
-            DataClassification = CustomerContent;
-        }
-
-        field(50004; "ACO Thin Staining Time PT"; Decimal)
+        field(50002; "ACO Thin Staining Time PT"; Decimal)
         {
             Caption = 'Thin Staining Time [min] Pretreatment';
             DataClassification = CustomerContent;
         }
 
-        field(50005; "ACO Thick Staining Time PT"; Decimal)
+        field(50003; "ACO Thick Staining Time PT"; Decimal)
         {
             Caption = 'Thick Staining Time [min] Pretreatment';
             DataClassification = CustomerContent;
         }
 
-        field(50006; "ACO Do Not Calc. Short Length"; Boolean)
+        field(50004; "ACO Do Not Calc. Short Length"; Boolean)
         {
             Caption = 'Do Not Calculate Short Length';
             DataClassification = CustomerContent;
         }
 
-        field(50007; "ACO Aucos"; Boolean)
+        field(50005; "ACO Aucos"; Boolean)
         {
             Caption = 'Aucos';
             DataClassification = CustomerContent;
         }
 
-        field(50008; "ACO Aucos Sealing Time"; Boolean)
+        field(50006; "ACO Aucos Sealing Time"; Boolean)
         {
             Caption = 'Aucos Sealing Time';
             DataClassification = CustomerContent;
         }
 
-        field(50009; "ACO Aucos Flushing Time"; Boolean)
+        field(50007; "ACO Aucos Flushing Time"; Boolean)
         {
             Caption = 'Aucos Flushing Time';
             DataClassification = CustomerContent;
@@ -144,7 +130,7 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50022; "ACO Area"; Decimal)
+        field(50022; "ACO Area Profile"; Decimal)
         {
             Caption = 'Area Profile';
             DataClassification = CustomerContent;
@@ -272,6 +258,58 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
         //     DataClassification = CustomerContent;
         // }
 
+        field(50044; "ACO Qty. After Production"; Text[20])
+        {
+            Caption = 'Receipt Shelf';
+            DataClassification = CustomerContent;
+        }
 
+        field(50045; "ACO Calculate Line Amount"; Boolean)
+        {
+            Caption = 'Calculate Line Amount';
+            DataClassification = CustomerContent;
+        }
+
+        field(50046; "ACO Receipt Bag"; Text[20])
+        {
+            Caption = 'Receipt Shelf';
+            DataClassification = CustomerContent;
+        }
+
+        field(50047; "ACO Shipping Bag"; Text[20])
+        {
+            Caption = 'Shipping Bag';
+            DataClassification = CustomerContent;
+        }
+
+        field(50048; "ACO Circumference"; Decimal)
+        {
+            Caption = 'Circumference';
+            DataClassification = CustomerContent;
+        }
+
+        field(50049; "ACO Area"; Decimal)
+        {
+            Caption = 'Area';
+            DataClassification = CustomerContent;
+        }
+
+        field(50050; "ACO Holder"; Code[20])
+        {
+            Caption = 'Holder';
+            DataClassification = CustomerContent;
+        }
+
+        field(50051; "ACO Receipt Shelf"; Text[20])
+        {
+            Caption = 'Receipt Shelf';
+            DataClassification = CustomerContent;
+        }
+
+        field(50052; "ACO Shipping Shelf"; Text[20])
+        {
+            Caption = 'Shipping Shelf';
+            DataClassification = CustomerContent;
+        }
     }
 }
