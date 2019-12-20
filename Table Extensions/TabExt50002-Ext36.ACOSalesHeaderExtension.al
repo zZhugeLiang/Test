@@ -37,49 +37,42 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
-        field(50006; "ACO Number of Units"; Decimal)
+        field(50007; "ACO Calculate Line Amount"; Decimal)
         {
             Caption = 'Number of Units';
             DataClassification = CustomerContent;
         }
 
-        field(50007; "ACO Blockade Status Inactive"; Decimal)
-        {
-            Caption = 'Blockade Status Inactive';
-            DataClassification = CustomerContent;
-        }
-
-
-        field(50008; "ACO Calculate Line Amount"; Decimal)
-        {
-            Caption = 'Number of Units';
-            DataClassification = CustomerContent;
-        }
-
-
-        // field(50009; "ACO Number of Units"; Decimal)
-        // {
-        //     Caption = 'Number of Units';
-        //     DataClassification = CustomerContent;
-        // }
-
-
-        field(50010; "ACO Rerun"; Text[20])
+        field(50008; "ACO Rerun"; Text[20])
         {
             Caption = 'Rerun';
             DataClassification = CustomerContent;
         }
 
-        field(50011; "ACO Rerun Reason"; Text[20])
+        field(50009; "ACO Rerun Reason"; Text[20])
         {
             Caption = 'Rerun Reason';
             DataClassification = CustomerContent;
         }
 
-
-        field(50012; "ACO Logged In"; Text[20])
+        field(50010; "ACO Delivery Date"; Date)
         {
-            Caption = 'Shipping Shelf';
+            Caption = 'Delivery Date';
+            DataClassification = CustomerContent;
+        }
+        field(50011; "ACO Delivery Week"; Integer)
+        {
+            Caption = 'Delivery Week';
+            MinValue = 0;
+            MaxValue = 54;
+            DataClassification = CustomerContent;
+        }
+
+        field(50012; "ACO Delivery Year"; Integer)
+        {
+            Caption = 'Delivery Year';
+            MinValue = 0;
+            MaxValue = 9999;
             DataClassification = CustomerContent;
         }
 
@@ -89,54 +82,48 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
-        // field(50014; "ACO Logged In Week"; Integer) // Welk type?
-        // {
-        //     Caption = 'Logged In Week';
-        //     DataClassification = CustomerContent;
-        // }
-
-        // field(50015; "ACO Logged In Year"; Integer) // Welk type?
-        // {
-        //     Caption = 'Logged In Year';
-        //     DataClassification = CustomerContent;
-        // }
-
-        field(50016; "ACO Delivery Date"; Date)
+        field(50014; "ACO Logged In Week"; Integer)
         {
-            Caption = 'Delivery Date';
+            Caption = 'Logged In Week';
+            MinValue = 0;
+            MaxValue = 54;
             DataClassification = CustomerContent;
         }
 
-        // field(50017; "ACO Document Date Week"; Integer) // Welk type?
-        // {
-        //     Caption = 'Document Date Week';
-        //     DataClassification = CustomerContent;
-        // }
+        field(50015; "ACO Logged In Year"; Integer)
+        {
+            Caption = 'Logged In Year';
+            MinValue = 0;
+            MaxValue = 9999;
+            DataClassification = CustomerContent;
+        }
 
-        // field(50018; "ACO Document Date Year"; Integer) // Welk type?
-        // {
-        //     Caption = 'Document Date Year';
-        //     DataClassification = CustomerContent;
-        // }
+        field(50016; "ACO Document Date Week"; Integer)
+        {
+            Caption = 'Document Date Week';
+            MinValue = 0;
+            MaxValue = 54;
+            DataClassification = CustomerContent;
+        }
 
-        field(50019; "ACO Customer Comment"; Text[100])
+        field(50017; "ACO Document Date Year"; Integer)
+        {
+            Caption = 'Document Date Year';
+            MinValue = 0;
+            MaxValue = 9999;
+            DataClassification = CustomerContent;
+        }
+
+        field(50018; "ACO Customer Comment"; Text[100])
         {
             Caption = 'Customer Comment';
             DataClassification = CustomerContent;
         }
 
-        field(50020; "ACO Large Line"; Boolean)
+        field(50019; "ACO Large Line"; Boolean)
         {
             Caption = 'Large Line';
             DataClassification = CustomerContent;
         }
-
-        field(50021; "ACO Blocked State Inactive"; Boolean)
-        {
-            Caption = 'Blocked State Inactive';
-            DataClassification = CustomerContent;
-        }
-
-
     }
 }

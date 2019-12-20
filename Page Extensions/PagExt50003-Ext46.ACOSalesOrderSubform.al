@@ -4,6 +4,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     {
         addlast(Control1)
         {
+            field("ACO Number of Units"; "ACO Number of Units")
+            {
+                ApplicationArea = All;
+            }
             field("British Standard"; "ACO British Standard")
             {
                 ApplicationArea = All;
@@ -36,6 +40,14 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Area Profile"; "ACO Area Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Euras Profile"; "ACO Euras Profile")
+            {
+                ApplicationArea = All;
+            }
             // field("ACO Clamping Method"; "ACO Clamping Method")
             // {
             //     ApplicationArea = All;
@@ -46,6 +58,15 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             // }     
             field("ACO Area"; "ACO Area")
             {
+                ApplicationArea = All;
+            }
+            field("ACO Sawing"; "ACO Sawing")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Final Length"; "ACO Final Length")
+            {
+                Editable = "ACO Sawing";
                 ApplicationArea = All;
             }
         }
