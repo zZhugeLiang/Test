@@ -224,6 +224,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Number of Units';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                Item: Record Item;
+                ItemUnitOfMeasure: Record "Item Unit of Measure";
+                NewQuantity: Decimal;
+            begin
+                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemUnitOfMeasure.Get(Rec."No.", Item."Sales Unit of Measure") then begin
+                    NewQuantity := ItemUnitOfMeasure."Qty. per Unit of Measure" * "ACO Number of Units";
+                    Validate(Quantity, NewQuantity);
+                end;
+            end;
         }
         // field(50035; "ACO Holders Profile"; Code[20])
         // {

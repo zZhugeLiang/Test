@@ -119,7 +119,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Value Code</source>
+          <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Value Code - Property Caption</note>
         </trans-unit>

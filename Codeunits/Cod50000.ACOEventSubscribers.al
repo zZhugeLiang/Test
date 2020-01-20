@@ -56,6 +56,8 @@ codeunit 50000 "ACO Event Subscribers"
                 //Rec.Validate("ACO Pretreatment", Rec."ACO Pretreatment");
                 Rec.Validate("ACO Profile Code");
                 Rec.Validate("ACO Color", Item."ACO Color");
+
+                Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
                 //Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness");
                 //if
                 //Rec.Validate("ACO Category", Rec."ACO Category");
@@ -194,19 +196,17 @@ codeunit 50000 "ACO Event Subscribers"
             Rec.Validate(Quantity, Rec."ACO Number of Units" * ACOProfile."Area");
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
-    local procedure SalesLine_OnAfterValidate_RoutingNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        Item: Record Item;
-    begin
-        if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then
-            Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
-    end;
+    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Routing No.', false, false)]
+    // local procedure SalesLine_OnAfterValidate_RoutingNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    // var
+    //     Item: Record Item;
+    // begin
+    //     if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then
+    //         Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Final Length', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOFinalLength(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        Item: Record Item;
     begin
         Rec."ACO Qty. After Production" := Rec.Quantity;
     end;

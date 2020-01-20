@@ -1,4 +1,4 @@
-// table 50012 "ACO Distance Holder"
+// table 50012 "ACO  Holder Combination"
 // {
 //     Caption = 'Holder';
 //     // DrillDownPageId = "ACO Holders";

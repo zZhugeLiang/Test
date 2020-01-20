@@ -39,20 +39,20 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
 
         field(50007; "ACO Calculate Line Amount"; Decimal)
         {
-            Caption = 'Number of Units';
-            DataClassification = CustomerContent;
+            Caption = 'DEPRECATED?';
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50008; "ACO Rerun"; Text[20])
         {
             Caption = 'Rerun';
-            DataClassification = CustomerContent;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50009; "ACO Rerun Reason"; Text[20])
         {
             Caption = 'Rerun Reason';
-            DataClassification = CustomerContent;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50010; "ACO Delivery Date"; Date)
@@ -79,7 +79,8 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         field(50013; "ACO Logged In DateTime"; DateTime)
         {
             Caption = 'Logged In DateTime';
-            DataClassification = CustomerContent;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50014; "ACO Logged In Week"; Integer)
@@ -87,7 +88,8 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             Caption = 'Logged In Week';
             MinValue = 0;
             MaxValue = 54;
-            DataClassification = CustomerContent;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50015; "ACO Logged In Year"; Integer)
@@ -95,7 +97,8 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             Caption = 'Logged In Year';
             MinValue = 0;
             MaxValue = 9999;
-            DataClassification = CustomerContent;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50016; "ACO Document Date Week"; Integer)
@@ -103,7 +106,8 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             Caption = 'Document Date Week';
             MinValue = 0;
             MaxValue = 54;
-            DataClassification = CustomerContent;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50017; "ACO Document Date Year"; Integer)
@@ -111,19 +115,26 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             Caption = 'Document Date Year';
             MinValue = 0;
             MaxValue = 9999;
-            DataClassification = CustomerContent;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50018; "ACO Customer Comment"; Text[100])
         {
             Caption = 'Customer Comment';
-            DataClassification = CustomerContent;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50019; "ACO Large Line"; Boolean)
         {
             Caption = 'Large Line';
-            DataClassification = CustomerContent;
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50020; "ACO Logged In"; Boolean)
+        {
+            Caption = 'Logged In';
+            DataClassification = CustomerContent;//zichtbaar
         }
     }
 }
