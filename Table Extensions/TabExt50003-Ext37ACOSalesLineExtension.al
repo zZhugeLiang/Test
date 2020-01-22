@@ -237,21 +237,24 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 end;
             end;
         }
-        // field(50035; "ACO Holders Profile"; Code[20])
-        // {
-        //     Caption = 'Holders Profile';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(50036; "ACO Clamping Method Profile"; Option)
-        // {
-        //     Caption = 'Clamping Method Profile';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(50037; "ACO Type of Clamp Profile"; Option)
-        // {
-        //     Caption = 'Type of Clamp Profile';
-        //     DataClassification = CustomerContent;
-        // }
+
+        field(50035; "ACO Holders Profile"; Code[20])
+        {
+            Caption = 'Holders Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50036; "ACO Attach Method Code Profile"; Code[10])
+        {
+            Caption = 'Attach Method Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50037; "ACO Type of Clamp Profile"; Text[100])
+        {
+            Caption = 'Type of Clamp Profile';
+            DataClassification = CustomerContent;
+        }
 
         field(50038; "ACO Helix Profile"; Decimal)
         {
@@ -328,6 +331,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50050; "ACO Shipping Shelf"; Text[20])
         {
             Caption = 'Shipping Shelf';
+            DataClassification = CustomerContent;
+        }
+
+        field(50051; "ACO Charges per Bath Profile"; Decimal)
+        {
+            Caption = 'Charges per Bath Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50052; "ACO Quantity Charges"; Decimal)
+        {
+            Caption = 'Quantity Charges';
             DataClassification = CustomerContent;
         }
     }

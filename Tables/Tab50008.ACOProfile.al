@@ -166,16 +166,16 @@ table 50008 "ACO Profile"
             Caption = 'Holders';
             DataClassification = CustomerContent;
         }
-        // field(28; "Clamping Method"; Option)
-        // {
-        //     Caption = 'Clamping Method';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(29; "Type of Clamp"; Option)
-        // {
-        //     Caption = 'Type of Clamp';
-        //     DataClassification = CustomerContent;
-        // }
+        field(28; "Attach Method Code"; Code[10])
+        {
+            Caption = 'Attach Method Code';
+            DataClassification = CustomerContent;
+        }
+        field(29; "Type of Clamp"; Text[100])
+        {
+            Caption = 'Type of Clamp';
+            DataClassification = CustomerContent;
+        }
 
         field(30; Helix; Decimal)
         {

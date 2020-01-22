@@ -1,8 +1,8 @@
-table 50010 "ACO Holder"
+table 50011 "ACO Distance Holder"
 {
     Caption = 'Holder';
-    // DrillDownPageId = "ACO Holders";
-    // LookupPageId = "ACO Holders";
+    DrillDownPageId = "ACO Distance Holders";
+    LookupPageId = "ACO Distance Holders";
     DataClassification = CustomerContent;
 
     fields
@@ -19,15 +19,9 @@ table 50010 "ACO Holder"
             DataClassification = CustomerContent;
         }
 
-        field(3; Quantity; Decimal)
+        field(3; Distance; Decimal)
         {
-            Caption = 'Quantity';
-            DataClassification = CustomerContent;
-        }
-
-        field(4; Position; Decimal)
-        {
-            Caption = 'Position';
+            Caption = 'Distance';
             DataClassification = CustomerContent;
         }
     }

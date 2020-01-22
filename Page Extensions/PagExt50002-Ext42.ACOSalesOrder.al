@@ -10,6 +10,14 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 {
                     ApplicationArea = All;
                 }
+                field("ACO Large Line"; "ACO Large Line")
+                {
+                    ApplicationArea = All;
+                }
+                field("ACO Quantity Charges"; "ACO Quantity Charges")
+                {
+                    ApplicationArea = All;
+                }
                 field("ACO Rerun"; "ACO Rerun")
                 {
                     ApplicationArea = All;
@@ -43,10 +51,6 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                     ApplicationArea = All;
                 }
                 field("ACO Customer Comment"; "ACO Customer Comment")
-                {
-                    ApplicationArea = All;
-                }
-                field("ACO Large Line"; "ACO Large Line")
                 {
                     ApplicationArea = All;
                 }

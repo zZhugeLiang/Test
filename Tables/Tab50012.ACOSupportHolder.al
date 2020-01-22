@@ -1,8 +1,8 @@
-table 50010 "ACO Holder"
+table 50012 "ACO Support Holder"
 {
-    Caption = 'Holder';
-    // DrillDownPageId = "ACO Holders";
-    // LookupPageId = "ACO Holders";
+    Caption = 'Support Holder';
+    DrillDownPageId = "ACO Support Holders";
+    LookupPageId = "ACO Support Holders";
     DataClassification = CustomerContent;
 
     fields
@@ -16,18 +16,6 @@ table 50010 "ACO Holder"
         field(2; "Description"; Text[100])
         {
             Caption = 'Description';
-            DataClassification = CustomerContent;
-        }
-
-        field(3; Quantity; Decimal)
-        {
-            Caption = 'Quantity';
-            DataClassification = CustomerContent;
-        }
-
-        field(4; Position; Decimal)
-        {
-            Caption = 'Position';
             DataClassification = CustomerContent;
         }
     }
