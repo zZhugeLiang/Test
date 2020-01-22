@@ -2,6 +2,8 @@ page 50015 "ACO Holder Combinations"
 {
     Caption = 'Holder Combinations';
     PageType = List;
+    CardPageId = "ACO Holder Combination Card";
+    RefreshOnActivate = true;
     SourceTable = "ACO Holder Combination";
     ApplicationArea = All;
     UsageCategory = Lists;

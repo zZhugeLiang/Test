@@ -316,11 +316,12 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        // field(50048; "ACO Holder"; Code[20])
-        // {
-        //     Caption = 'Holder';
-        //     DataClassification = CustomerContent;
-        // }
+        field(50048; "ACO Holder Combination"; Code[20])
+        {
+            Caption = 'Holder Combination';
+            TableRelation = "ACO Holder Combination";
+            DataClassification = CustomerContent;
+        }
 
         field(50049; "ACO Receipt Shelf"; Text[20])
         {

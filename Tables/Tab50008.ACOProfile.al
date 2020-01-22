@@ -169,6 +169,7 @@ table 50008 "ACO Profile"
         field(28; "Attach Method Code"; Code[10])
         {
             Caption = 'Attach Method Code';
+            TableRelation = "ACO Attach Method";
             DataClassification = CustomerContent;
         }
         field(29; "Type of Clamp"; Text[100])

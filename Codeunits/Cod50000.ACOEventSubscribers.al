@@ -177,6 +177,9 @@ codeunit 50000 "ACO Event Subscribers"
                     Rec."ACO Thick St. Time Profile" := ACOProfile."Thick Staining Time";
                     Rec."ACO Euras Profile" := ACOProfile."Euras";
                     Rec."ACO Extra to Enumerate Profile" := ACOProfile."Extra to Enumerate";
+                    Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
+                    Rec."ACO Type of Clamp Profile" := ACOProfile."Type of Clamp";
+                    Rec."ACO Holders Profile" := ACOProfile.Holders;
                 end;
     end;
 

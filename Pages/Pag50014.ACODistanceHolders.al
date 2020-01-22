@@ -1,6 +1,6 @@
 page 50014 "ACO Distance Holders"
 {
-    Caption = 'Support Holders';
+    Caption = 'Distance Holders';
     PageType = List;
     SourceTable = "ACO Distance Holder";
     ApplicationArea = All;

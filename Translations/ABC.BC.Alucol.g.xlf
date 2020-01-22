@@ -653,10 +653,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Combination - Field Holder Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2942100416 - Field 4254182062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Supporting Holder Code</source>
+        <trans-unit id="Table 2942100416 - Field 513314990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Support Holder Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Combination - Field Supporting Holder Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Combination - Field Support Holder Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2942100416 - Field 4100657994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Distance Holder Code</source>
@@ -859,7 +859,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Support Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1602251431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Support Holders</source>
+          <source>Distance Holders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Distance Holders - Property Caption</note>
         </trans-unit>
@@ -1103,6 +1103,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Logged In - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Quantity Charges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1333,6 +1338,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Area - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2942100416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Holder Combination</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Holder Combination - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 127857927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Receipt Shelf</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1342,6 +1352,21 @@
           <source>Shipping Shelf</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Shipping Shelf - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 3035335321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Charges per Bath Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Charges per Bath Profile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Quantity Charges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1709463785 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
+          <source>Quantity Charges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Ext. - Field ACO Quantity Charges - Property Caption</note>
         </trans-unit>
       </group>
     </body>

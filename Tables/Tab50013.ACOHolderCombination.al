@@ -23,13 +23,14 @@ table 50013 "ACO Holder Combination"
         field(3; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';
-            TableRelation = "ACO Category";
+            TableRelation = Customer;
             DataClassification = CustomerContent;
         }
 
         field(4; "Profile Code"; Code[10])
         {
             Caption = 'Profile Code';
+            TableRelation = "ACO Profile";
             DataClassification = CustomerContent;
         }
 
@@ -42,30 +43,35 @@ table 50013 "ACO Holder Combination"
         field(6; "Color Group Code"; Code[20])
         {
             Caption = 'Color Group Code';
+            TableRelation = "ACO Color Group";
             DataClassification = CustomerContent;
         }
 
         field(7; "Holder Code"; Code[20])
         {
             Caption = 'Holder Code';
+            TableRelation = "ACO Holder";
             DataClassification = CustomerContent;
         }
 
-        field(8; "Supporting Holder Code"; Code[20])
+        field(8; "Support Holder Code"; Code[20])
         {
-            Caption = 'Supporting Holder Code';
+            Caption = 'Support Holder Code';
+            TableRelation = "ACO Support Holder";
             DataClassification = CustomerContent;
         }
 
         field(9; "Distance Holder Code"; Code[20])
         {
             Caption = 'Distance Holder Code';
+            TableRelation = "ACO Distance Holder";
             DataClassification = CustomerContent;
         }
 
         field(10; "Attach Method Code"; Code[10])
         {
             Caption = 'Attach Method Code';
+            TableRelation = "ACO Attach Method";
             DataClassification = CustomerContent;
         }
 

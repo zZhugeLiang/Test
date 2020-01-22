@@ -39,7 +39,7 @@ page 50016 "ACO Holder Combination Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Supporting Holder Code"; "Supporting Holder Code")
+                field("Support Holder Code"; "Support Holder Code")
                 {
                     ApplicationArea = All;
                 }

@@ -5,6 +5,7 @@ page 50008 "ACO Profiles"
 
     UsageCategory = Lists;
     CardPageId = "ACO Profile Card";
+    RefreshOnActivate = true;
     SourceTable = "ACO Profile";
     ApplicationArea = All;
 

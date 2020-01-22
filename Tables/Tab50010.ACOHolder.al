@@ -25,7 +25,7 @@ table 50010 "ACO Holder"
             DataClassification = CustomerContent;
         }
 
-        field(4; Position; Decimal)
+        field(4; Position; Integer)
         {
             Caption = 'Position';
             DataClassification = CustomerContent;
