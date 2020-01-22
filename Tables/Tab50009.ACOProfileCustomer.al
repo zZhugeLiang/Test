@@ -1,8 +1,8 @@
 table 50009 "ACO Profile Customer"
 {
     Caption = 'Profile Customer';
-    DrillDownPageId = "ACO Profiles";
-    LookupPageId = "ACO Profiles";
+    DrillDownPageId = "ACO Profile Customers";
+    LookupPageId = "ACO Profile Customers";
     DataClassification = CustomerContent;
 
     fields

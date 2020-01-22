@@ -1,74 +1,72 @@
-tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
+tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 {
     fields
     {
-        field(50000; "ACO Pretreatment"; Code[10])
-        {
-            Caption = ' Pretreatment';
-            TableRelation = "ACO Pretreatment";
-            DataClassification = CustomerContent;
-        }
-
-        field(50001; "ACO Layer Thickness"; Code[10])
+        field(50000; "ACO Layer Thickness"; Code[10])
         {
             Caption = 'Layer Thickness';
             TableRelation = "ACO Layer Thickness";
             DataClassification = CustomerContent;
         }
 
-        field(50002; "ACO Color"; Code[20])
+        field(50001; "ACO Minimum Current Density PT"; Decimal)
         {
-            Caption = 'Color';
-            TableRelation = "ACO Color";
+            Caption = 'Minimum Current Density Pretreatment [A/dm²]';
             DataClassification = CustomerContent;
         }
 
-        field(50003; "ACO Category"; Code[50])
+        field(50002; "ACO Maximum Current Density PT"; Decimal)
         {
-            Caption = 'Category';
-            TableRelation = "ACO Category";
+            Caption = 'Maximum Current Density Pretreatment [A/dm²]';
             DataClassification = CustomerContent;
         }
 
-        field(50004; "ACO Thin Staining Time PT"; Decimal)
+        field(50003; "ACO Thin Staining Time PT"; Decimal)
         {
             Caption = 'Thin Staining Time [min] Pretreatment';
             DataClassification = CustomerContent;
         }
 
-        field(50005; "ACO Thick Staining Time PT"; Decimal)
+        field(50004; "ACO Thick Staining Time PT"; Decimal)
         {
             Caption = 'Thick Staining Time [min] Pretreatment';
             DataClassification = CustomerContent;
         }
 
-        field(50006; "ACO Do Not Calc. Short Length"; Boolean)
+        field(50005; "ACO Do Not Calc. Short Length"; Boolean)
         {
             Caption = 'Do Not Calculate Short Length';
             DataClassification = CustomerContent;
         }
 
-        field(50007; "ACO Aucos"; Boolean)
+        field(50006; "ACO Aucos"; Boolean)
         {
             Caption = 'Aucos';
             DataClassification = CustomerContent;
         }
 
-        field(50008; "ACO Aucos Sealing Time"; Boolean)
+        field(50007; "ACO Aucos Sealing Time"; Boolean)
         {
             Caption = 'Aucos Sealing Time';
             DataClassification = CustomerContent;
         }
 
-        field(50009; "ACO Aucos Flushing Time"; Boolean)
+        field(50008; "ACO Aucos Flushing Time"; Boolean)
         {
             Caption = 'Aucos Flushing Time';
             DataClassification = CustomerContent;
         }
 
-        field(50010; "ACO British Standard"; Boolean)
+        field(50009; "ACO British Standard"; Boolean)
         {
             Caption = 'British Standard';
+            DataClassification = CustomerContent;
+        }
+
+        field(50010; "ACO Color"; Code[20])
+        {
+            Caption = 'Color';
+            TableRelation = "ACO Color";
             DataClassification = CustomerContent;
         }
 
@@ -144,134 +142,209 @@ tableextension 50003 "VZK Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50022; "ACO Area"; Decimal)
+        field(50021; "ACO Area Profile"; Decimal)
         {
             Caption = 'Area Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50023; "ACO Extra Flushing"; Boolean)
+        field(50022; "ACO Extra Flushing"; Boolean)
         {
             Caption = 'Extra Flushing Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50024; "ACO Correction Factor Profile"; Decimal)
+        field(50023; "ACO Correction Factor Profile"; Decimal)
         {
             Caption = 'Correction Factor Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50025; "ACO Height Level Profile"; Integer)
+        field(50024; "ACO Height Level Profile"; Integer)
         {
             Caption = 'Height Level [mm] Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50026; "ACO Comment Bath Card"; Text[100])
+        field(50025; "ACO Comment Bath Card"; Text[100])
         {
             Caption = 'Comment Bath Card';
             DataClassification = CustomerContent;
         }
 
-        field(50027; "ACO Comment Work Note"; Text[100])
+        field(50026; "ACO Comment Work Note"; Text[100])
         {
             Caption = 'Comment Work Note';
             DataClassification = CustomerContent;
         }
 
-        field(50028; "ACO Bent Profile"; Boolean)
+        field(50027; "ACO Bent Profile"; Boolean)
         {
             Caption = 'Bent Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50029; "ACO Minimum Current Density PT"; Decimal)
-        {
-            Caption = 'Minimum Current Density Pretreatment [A/dm²]';
-            DataClassification = CustomerContent;
-        }
-
-        field(50030; "ACO Maximum Current Density PT"; Decimal)
-        {
-            Caption = 'Maximum Current Density Pretreatment [A/dm²]';
-            DataClassification = CustomerContent;
-        }
-
-        field(50031; "ACO Max. Curr. Density Profile"; Decimal)
+        field(50028; "ACO Max. Curr. Density Profile"; Decimal)
         {
             Caption = 'Maximum Current Density Profile [A/dm²]';
             DataClassification = CustomerContent;
         }
 
-        field(50032; "ACO Min. Curr. Density Profile"; Decimal)
+        field(50029; "ACO Min. Curr. Density Profile"; Decimal)
         {
             Caption = 'Minimum Current Density Profile [A/dm²]';
             DataClassification = CustomerContent;
         }
 
-        field(50033; "ACO Thin Staining Time Profile"; Decimal)
+        field(50030; "ACO Thin Staining Time Profile"; Decimal)
         {
             Caption = 'Thin Staining Time [min] Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50034; "ACO Thick St. Time Profile"; Decimal)
+        field(50031; "ACO Thick St. Time Profile"; Decimal)
         {
             Caption = 'Thick Staining Time [min] Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50035; "ACO Euras Profile"; Boolean)
+        field(50032; "ACO Euras Profile"; Boolean)
         {
             Caption = 'Euras Profile';
             DataClassification = CustomerContent;
         }
 
-        field(50036; "ACO Extra to Enumerate Profile"; Integer)
+        field(50033; "ACO Extra to Enumerate Profile"; Integer)
         {
             Caption = 'Extra to Enumerate [mm] Profile';
             DataClassification = CustomerContent;
         }
 
-        // field(50037; "ACO Holders Profile"; Code[20])
+        field(50034; "ACO Number of Units"; Decimal)
+        {
+            Caption = 'Number of Units';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                Item: Record Item;
+                ItemUnitOfMeasure: Record "Item Unit of Measure";
+                NewQuantity: Decimal;
+            begin
+                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemUnitOfMeasure.Get(Rec."No.", Item."Sales Unit of Measure") then begin
+                    NewQuantity := ItemUnitOfMeasure."Qty. per Unit of Measure" * "ACO Number of Units";
+                    Validate(Quantity, NewQuantity);
+                end;
+            end;
+        }
+
+        field(50035; "ACO Holders Profile"; Code[20])
+        {
+            Caption = 'Holders Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50036; "ACO Attach Method Code Profile"; Code[10])
+        {
+            Caption = 'Attach Method Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50037; "ACO Type of Clamp Profile"; Text[100])
+        {
+            Caption = 'Type of Clamp Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50038; "ACO Helix Profile"; Decimal)
+        {
+            Caption = 'Helix Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50039; "ACO Space Profile"; Decimal)
+        {
+            Caption = 'Space Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50040; "ACO Sawing"; Boolean)
+        {
+            Caption = 'Sawing';
+            DataClassification = CustomerContent;
+        }
+
+        field(50041; "ACO Final Length"; Decimal)
+        {
+            Caption = 'Final Length';
+            DataClassification = CustomerContent;
+        }
+
+        field(50042; "ACO Qty. After Production"; Decimal)
+        {
+            Caption = 'Qty. After Production';
+            DataClassification = CustomerContent;
+        }
+
+        // field(50043; "ACO Calculate Line Amount"; Boolean)
         // {
-        //     Caption = 'Holders Profile';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(50038; "ACO Clamping Method Profile"; Option)
-        // {
-        //     Caption = 'Clamping Method Profile';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(50039; "ACO Type of Clamp Profile"; Option)
-        // {
-        //     Caption = 'Type of Clamp Profile';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(50040; "ACO Helix Profile"; Decimal)
-        // {
-        //     Caption = 'Helix Profile';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(50041; "ACO Space Profile"; Decimal)
-        // {
-        //     Caption = 'Space Profile';
+        //     Caption = 'Calculate Line Amount';
         //     DataClassification = CustomerContent;
         // }
 
-        // field(50042; "ACO Sawing"; Boolean)
+        field(50044; "ACO Receipt Bag"; Text[20])
+        {
+            Caption = 'Receipt Shelf';
+            DataClassification = CustomerContent;
+        }
+
+        field(50045; "ACO Shipping Bag"; Text[20])
+        {
+            Caption = 'Shipping Bag';
+            DataClassification = CustomerContent;
+        }
+
+        // field(50046; "ACO Circumference"; Decimal)
         // {
-        //     Caption = 'Sawing';
+        //     Caption = 'Circumference';
         //     DataClassification = CustomerContent;
         // }
 
-        // field(50043; "ACO Final Length"; Boolean)
-        // {
-        //     Caption = 'Final Length';
-        //     DataClassification = CustomerContent;
-        // }
+        field(50047; "ACO Area"; Decimal)
+        {
+            Caption = 'Area';
+            DataClassification = CustomerContent;
+        }
 
+        field(50048; "ACO Holder"; Code[20])
+        {
+            Caption = 'Holder';
+            TableRelation = "ACO Holder";
+            DataClassification = CustomerContent;
+        }
 
+        field(50049; "ACO Receipt Shelf"; Text[20])
+        {
+            Caption = 'Receipt Shelf';
+            DataClassification = CustomerContent;
+        }
+
+        field(50050; "ACO Shipping Shelf"; Text[20])
+        {
+            Caption = 'Shipping Shelf';
+            DataClassification = CustomerContent;
+        }
+
+        field(50051; "ACO Charges per Bath Profile"; Decimal)
+        {
+            Caption = 'Charges per Bath Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50052; "ACO Quantity Charges"; Decimal)
+        {
+            Caption = 'Quantity Charges';
+            DataClassification = CustomerContent;
+        }
     }
 }

@@ -1,36 +1,30 @@
-page 50008 "ACO Profiles"
+page 50012 "ACO Holder Types"
 {
-    Caption = 'Profiles';
+    Caption = 'Holder Types';
     PageType = List;
-
     UsageCategory = Lists;
-    CardPageId = "ACO Profile Card";
-    RefreshOnActivate = true;
-    SourceTable = "ACO Profile";
+    SourceTable = "ACO Holder Type";
     ApplicationArea = All;
 
     layout
     {
         area(Content)
         {
-            repeater(Profiles)
+            repeater(Holders)
             {
                 field("Code"; "Code")
                 {
                     ApplicationArea = All;
                 }
-
                 field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
-
-                field("Circumference"; "Circumference")
+                field(Quantity; Quantity)
                 {
                     ApplicationArea = All;
                 }
-
-                field("Area"; "Area")
+                field(Position; Position)
                 {
                     ApplicationArea = All;
                 }
@@ -40,15 +34,8 @@ page 50008 "ACO Profiles"
 
     actions
     {
-        area(Processing)
+        area(Navigation)
         {
-            action(ProfileCustomers)
-            {
-                Caption = 'Profile Customers';
-                ApplicationArea = All;
-                RunObject = Page "ACO Profile Customers";
-                RunPageLink = "Profile Code" = field("Code");
-            }
         }
     }
 }

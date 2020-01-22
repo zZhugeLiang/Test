@@ -127,7 +127,7 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(21; Picture; Blob)
+        field(21; "Picture File"; Blob)
         {
             Caption = 'Picture';
             DataClassification = CustomerContent;
@@ -138,9 +138,9 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(23; "Clamping Method"; Blob)
+        field(23; "Clamping Method File"; Blob)
         {
-            Caption = 'Clamping Method';
+            Caption = 'Clamping Method File';
             DataClassification = CustomerContent;
         }
 
@@ -149,7 +149,7 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(25; "Packaging Instructions"; Blob)
+        field(25; "Packaging Instructions File"; Blob)
         {
             Caption = 'Packaging Instructions';
             DataClassification = CustomerContent;
@@ -158,6 +158,41 @@ table 50008 "ACO Profile"
         field(26; "Euras"; Boolean)
         {
             Caption = 'Euras';
+            DataClassification = CustomerContent;
+        }
+
+        field(27; "Holders"; Code[20])
+        {
+            Caption = 'Holders';
+            DataClassification = CustomerContent;
+        }
+        field(28; "Attach Method Code"; Code[10])
+        {
+            Caption = 'Attach Method Code';
+            TableRelation = "ACO Attach Method";
+            DataClassification = CustomerContent;
+        }
+        field(29; "Type of Clamp"; Text[100])
+        {
+            Caption = 'Type of Clamp';
+            DataClassification = CustomerContent;
+        }
+
+        field(30; Helix; Decimal)
+        {
+            Caption = 'Helix';
+            DataClassification = CustomerContent;
+        }
+
+        field(31; Space; Decimal)
+        {
+            Caption = 'Space';
+            DataClassification = CustomerContent;
+        }
+
+        field(32; "Blocked State Inactive"; Boolean)
+        {
+            Caption = 'Blocked State Inactive';
             DataClassification = CustomerContent;
         }
     }

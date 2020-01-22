@@ -4,11 +4,11 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     {
         addlast(Control1)
         {
-            field("British Standard"; "ACO British Standard")
+            field("ACO Number of Units"; "ACO Number of Units")
             {
                 ApplicationArea = All;
             }
-            field("ACO Pretreatment"; "ACO Pretreatment")// zelf toegevoegd, staat niet in FO
+            field("British Standard"; "ACO British Standard")
             {
                 ApplicationArea = All;
             }
@@ -17,10 +17,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                 ApplicationArea = All;
             }
             field("ACO Color"; "ACO Color")
-            {
-                ApplicationArea = All;
-            }
-            field("ACO Category"; "ACO Category")// zelf toegevoegd, staat niet in FO
             {
                 ApplicationArea = All;
             }
@@ -44,18 +40,48 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-            // field("ACO Clamping Method"; "ACO Clamping Method")
-            // {
-            //     ApplicationArea = All;
-            // }   
-            // field("ACO Type of Clamp"; "ACO Type of Clamp")
-            // {
-            //     ApplicationArea = All;
-            // }     
+            field("ACO Area Profile"; "ACO Area Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Euras Profile"; "ACO Euras Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Attach Method Code Profile"; "ACO Attach Method Code Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Type of Clamp Profile"; "ACO Type of Clamp Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Charges per Bath Profile"; "ACO Charges per Bath Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Quantity Charges"; "ACO Quantity Charges")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Area"; "ACO Area")
             {
                 ApplicationArea = All;
             }
+            field("ACO Sawing"; "ACO Sawing")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Final Length"; "ACO Final Length")
+            {
+                Editable = "ACO Sawing";
+                ApplicationArea = All;
+            }
+            field("ACO Holder"; "ACO Holder")
+            {
+                ApplicationArea = All;
+            }
+
         }
     }
 }

@@ -37,30 +37,110 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
-        field(50006; "ACO Number of Units"; Decimal)
+        field(50007; "ACO Calculate Line Amount"; Decimal)
         {
-            Caption = 'Number of Units';
+            Caption = 'DEPRECATED?';
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50008; "ACO Rerun"; Text[20])
+        {
+            Caption = 'Rerun';
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50009; "ACO Rerun Reason"; Text[20])
+        {
+            Caption = 'Rerun Reason';
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50010; "ACO Delivery Date"; Date)
+        {
+            Caption = 'Delivery Date';
+            DataClassification = CustomerContent;
+        }
+        field(50011; "ACO Delivery Week"; Integer)
+        {
+            Caption = 'Delivery Week';
+            MinValue = 0;
+            MaxValue = 54;
             DataClassification = CustomerContent;
         }
 
-        field(50007; "ACO Blockade Status Inactive"; Decimal)
+        field(50012; "ACO Delivery Year"; Integer)
         {
-            Caption = 'Blockade Status Inactive';
+            Caption = 'Delivery Year';
+            MinValue = 0;
+            MaxValue = 9999;
             DataClassification = CustomerContent;
         }
 
-
-        field(50008; "ACO Calculate Line Amount"; Decimal)
+        field(50013; "ACO Logged In DateTime"; DateTime)
         {
-            Caption = 'Number of Units';
-            DataClassification = CustomerContent;
+            Caption = 'Logged In DateTime';
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
         }
 
+        field(50014; "ACO Logged In Week"; Integer)
+        {
+            Caption = 'Logged In Week';
+            MinValue = 0;
+            MaxValue = 54;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
+        }
 
-        // field(50009; "ACO Number of Units"; Decimal)
-        // {
-        //     Caption = 'Number of Units';
-        //     DataClassification = CustomerContent;
-        // }
+        field(50015; "ACO Logged In Year"; Integer)
+        {
+            Caption = 'Logged In Year';
+            MinValue = 0;
+            MaxValue = 9999;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50016; "ACO Document Date Week"; Integer)
+        {
+            Caption = 'Document Date Week';
+            MinValue = 0;
+            MaxValue = 54;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50017; "ACO Document Date Year"; Integer)
+        {
+            Caption = 'Document Date Year';
+            MinValue = 0;
+            MaxValue = 9999;
+            Editable = false;
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50018; "ACO Customer Comment"; Text[100])
+        {
+            Caption = 'Customer Comment';
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50019; "ACO Large Line"; Boolean)
+        {
+            Caption = 'Large Line';
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50020; "ACO Logged In"; Boolean)
+        {
+            Caption = 'Logged In';
+            DataClassification = CustomerContent;//zichtbaar
+        }
+
+        field(50021; "ACO Quantity Charges"; Decimal)
+        {
+            Caption = 'Quantity Charges';
+            DataClassification = CustomerContent;
+        }
     }
 }

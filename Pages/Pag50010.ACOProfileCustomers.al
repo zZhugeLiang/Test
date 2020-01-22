@@ -4,6 +4,7 @@ page 50010 "ACO Profile Customers"
     PageType = List;
     UsageCategory = Lists;
     CardPageId = "ACO Profile Customer Card";
+    RefreshOnActivate = true;
     SourceTable = "ACO Profile Customer";
     ApplicationArea = All;
 
