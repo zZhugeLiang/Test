@@ -1,9 +1,9 @@
-page 50012 "ACO Holders"
+page 50012 "ACO Holder Types"
 {
-    Caption = 'Holders';
+    Caption = 'Holder Types';
     PageType = List;
     UsageCategory = Lists;
-    SourceTable = "ACO Holder";
+    SourceTable = "ACO Holder Type";
     ApplicationArea = All;
 
     layout

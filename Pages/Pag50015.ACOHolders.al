@@ -1,10 +1,10 @@
-page 50015 "ACO Holder Combinations"
+page 50015 "ACO Holders"
 {
-    Caption = 'Holder Combinations';
+    Caption = 'Holder';
     PageType = List;
-    CardPageId = "ACO Holder Combination Card";
+    CardPageId = "ACO Holder Card";
     RefreshOnActivate = true;
-    SourceTable = "ACO Holder Combination";
+    SourceTable = "ACO Holder";
     ApplicationArea = All;
     UsageCategory = Lists;
 
