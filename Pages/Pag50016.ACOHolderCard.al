@@ -1,8 +1,8 @@
-page 50016 "ACO Holder Combination Card"
+page 50016 "ACO Holder Card"
 {
-    Caption = 'Holder Combination Card';
+    Caption = 'Holder Card';
     PageType = Card;
-    SourceTable = "ACO Holder Combination";
+    SourceTable = "ACO Holder";
 
     layout
     {

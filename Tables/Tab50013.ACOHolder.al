@@ -1,8 +1,8 @@
-table 50013 "ACO Holder Combination"
+table 50013 "ACO Holder"
 {
-    Caption = 'Holder Combination';
-    DrillDownPageId = "ACO Holder Combinations";
-    LookupPageId = "ACO Holder Combinations";
+    Caption = 'Holder';
+    DrillDownPageId = "ACO Holders";
+    LookupPageId = "ACO Holders";
     DataClassification = CustomerContent;
 
     fields
@@ -50,7 +50,7 @@ table 50013 "ACO Holder Combination"
         field(7; "Holder Code"; Code[20])
         {
             Caption = 'Holder Code';
-            TableRelation = "ACO Holder";
+            TableRelation = "ACO Holder Type";
             DataClassification = CustomerContent;
         }
 
