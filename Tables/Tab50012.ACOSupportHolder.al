@@ -7,7 +7,7 @@ table 50012 "ACO Support Holder"
 
     fields
     {
-        field(1; "Code"; Code[20])
+        field(1; "Code"; Code[30])
         {
             Caption = 'Code';
             DataClassification = CustomerContent;

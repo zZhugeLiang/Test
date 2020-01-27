@@ -316,7 +316,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50048; "ACO Holder"; Code[20])
+        field(50048; "ACO Holder"; Code[30])
         {
             Caption = 'Holder';
             TableRelation = "ACO Holder";

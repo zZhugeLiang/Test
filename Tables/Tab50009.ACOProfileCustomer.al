@@ -123,28 +123,24 @@ table 50009 "ACO Profile Customer"
         field(12; "Euras"; Boolean)
         {
             Caption = 'Euras';
-            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(13; "Extra to Enumerate"; Integer)
         {
             Caption = 'Extra to Enumerate [mm]';
-            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(14; "Thin Staining Time"; Decimal)
         {
             Caption = 'Thin Staining Time [min]';
-            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(15; "Thick Staining Time"; Decimal)
         {
             Caption = 'Thick Staining Time [min]';
-            Editable = false;
             DataClassification = CustomerContent;
         }
     }

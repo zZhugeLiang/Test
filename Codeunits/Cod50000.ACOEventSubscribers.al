@@ -46,6 +46,7 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnAfterValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
         Item: Record Item;
+        SalesHeader: Record "Sales Header";
         ACOProfileCustomer: Record "ACO Profile Customer";
     begin
         if Rec.IsTemporary() then
@@ -54,7 +55,29 @@ codeunit 50000 "ACO Event Subscribers"
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
                 //Rec.Validate("ACO Pretreatment", Rec."ACO Pretreatment");
-                Rec.Validate("ACO Profile Code");
+                if SalesHeader.Get(Rec."Document Type", Rec."Document No.")
+                    and ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
+                    Rec.Validate("ACO Profile Code")
+                else begin
+                    Rec."ACO Profile Description" := '';
+                    Rec."ACO Profile Category" := '';
+                    Rec."ACO Profile Circumference" := 0;
+                    Rec."ACO Not Measurable" := false;
+                    Rec."ACO Area" := 0;
+                    Rec."ACO Extra Flushing" := false;
+                    Rec."ACO Correction Factor Profile" := 0;
+                    Rec."ACO Height Level Profile" := 0;
+                    Rec."ACO Bent Profile" := false;
+                    Rec."ACO Max. Curr. Density Profile" := 0;
+                    Rec."ACO Min. Curr. Density Profile" := 0;
+                    Rec."ACO Thin Staining Time Profile" := 0;
+                    Rec."ACO Thick St. Time Profile" := 0;
+                    Rec."ACO Euras Profile" := false;
+                    Rec."ACO Extra to Enumerate Profile" := 0;
+                    Rec."ACO Attach Method Code Profile" := '';
+                    Rec."ACO Type of Clamp Profile" := '';
+                    Rec."ACO Holders Profile" := '';
+                end;
                 Rec.Validate("ACO Color", Item."ACO Color");
 
                 Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
@@ -190,14 +213,14 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
-    local procedure SalesLine_OnAfterValidate_ACONumberOfUnits(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        ACOProfile: Record "ACO Profile";
-    begin
-        if ACOProfile.Get(Rec."ACO Profile Code") then
-            Rec.Validate(Quantity, Rec."ACO Number of Units" * ACOProfile."Area");
-    end;
+    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
+    // local procedure SalesLine_OnAfterValidate_ACONumberOfUnits(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    // var
+    //     ACOProfile: Record "ACO Profile";
+    // begin
+    //     if ACOProfile.Get(Rec."ACO Profile Code") then
+    //         Rec.Validate(Quantity, Rec."ACO Number of Units" * ACOProfile."Area");
+    // end;
 
     // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Routing No.', false, false)]
     // local procedure SalesLine_OnAfterValidate_RoutingNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")

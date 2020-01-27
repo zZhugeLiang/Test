@@ -7,7 +7,7 @@ table 50010 "ACO Holder Type"
 
     fields
     {
-        field(1; "Code"; Code[20])
+        field(1; "Code"; Code[30])
         {
             Caption = 'Code';
             DataClassification = CustomerContent;
