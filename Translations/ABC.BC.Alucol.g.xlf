@@ -579,7 +579,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Type - Field Position - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2614308890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Distance Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Distance Holder - Property Caption</note>
         </trans-unit>
@@ -864,7 +864,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Distance Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Holders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holders - Property Caption</note>
         </trans-unit>

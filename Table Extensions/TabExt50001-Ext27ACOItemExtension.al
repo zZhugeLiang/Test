@@ -94,7 +94,7 @@ tableextension 50001 "ACO Item Extension" extends Item
         end;
     end;
 
-    local procedure ACOUpdateGlobalDimension(DimensionCode: Code[20]; DimensionValueCode: Code[20])
+    local procedure ACOUpdateGlobalDimension(DimensionValueCode: Code[20]; DimensionCode: Code[20])
     var
         GLSetup: Record "General Ledger Setup";
     begin
