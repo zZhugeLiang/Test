@@ -30,25 +30,11 @@ table 50005 "ACO Color"
             DataClassification = CustomerContent;
         }
 
-        field(5; "Dimension Value Code"; Code[20])
+        field(5; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension Value Code';
-            // TableRelation = Dimension;
+            Caption = 'Dimension Code';
+            TableRelation = Dimension;
             DataClassification = CustomerContent;
-            trigger OnLookup()
-            var
-                GLSetup: Record "General Ledger Setup";
-                DimensionValue: Record "Dimension Value";
-                DimensionValueList: Page "Dimension Value List";
-            begin
-                GLSetup.Get();
-                GLSetup.TestField("Global Dimension 2 Code");
-                DimensionValue.SetRange("Dimension Code", GLSetup."Global Dimension 2 Code");
-                DimensionValueList.LookupMode(true);
-                DimensionValueList.SetTableView(DimensionValue);
-                if DimensionValueList.RunModal() = Action::LookupOK then
-                    "Dimension Value Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Value Code"));
-            end;
         }
 
         field(6; "Color Group"; Code[20])

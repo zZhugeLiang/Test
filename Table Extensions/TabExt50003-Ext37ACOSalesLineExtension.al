@@ -286,12 +286,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        // field(50043; "ACO Calculate Line Amount"; Boolean)
-        // {
-        //     Caption = 'Calculate Line Amount';
-        //     DataClassification = CustomerContent;
-        // }
-
         field(50044; "ACO Receipt Bag"; Text[20])
         {
             Caption = 'Receipt Shelf';
@@ -337,13 +331,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         field(50051; "ACO Charges per Bath Profile"; Decimal)
         {
-            Caption = 'Charges per Bath Profile';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
         field(50052; "ACO Quantity Charges"; Decimal)
         {
-            Caption = 'Quantity Charges';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
     }

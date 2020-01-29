@@ -46,32 +46,11 @@ table 50003 "ACO Pretreatment"
             DataClassification = CustomerContent;
         }
 
-        field(7; "Dimension Value Code"; Code[20])
+        field(7; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension Code'; // Is actually the dimension code
+            Caption = 'Dimension Code';
+            TableRelation = Dimension;
             DataClassification = CustomerContent;
-            trigger OnLookup()
-            var
-                GLSetup: Record "General Ledger Setup";
-                Dimension: Record "Dimension";
-                SelectionFilterManagement: Codeunit SelectionFilterManagement;
-                DimensionList: Page "Dimension List";
-                RecRef: RecordRef;
-            begin
-                RecRef.GetTable(Dimension);
-
-                GLSetup.Get();
-                GLSetup.TestField("Global Dimension 1 Code");
-                Dimension.SetRange("Code", GLSetup."Global Dimension 1 Code");
-                DimensionList.LookupMode(true);
-                DimensionList.SetTableView(Dimension);
-
-                if DimensionList.RunModal() = Action::LookupOK then begin
-                    DimensionList.SetSelectionFilter(Dimension);
-                    RecRef.GetTable(Dimension);
-                    "Dimension Value Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, Dimension.FieldNo("Code")), 1, MaxStrLen("Dimension Value Code"));
-                end;
-            end;
         }
 
         field(8; "Thin Staining Time"; Decimal)

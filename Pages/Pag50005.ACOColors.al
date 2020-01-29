@@ -28,7 +28,7 @@ page 50005 "ACO Colors"
                 {
                     ApplicationArea = All;
                 }
-                field("Dimension Code"; "Dimension Value Code")
+                field("Dimension Code"; "Dimension Code")
                 {
                     ApplicationArea = All;
                 }

@@ -37,12 +37,6 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
-        field(50007; "ACO Calculate Line Amount"; Decimal)
-        {
-            Caption = 'DEPRECATED?';
-            DataClassification = CustomerContent;//zichtbaar
-        }
-
         field(50008; "ACO Rerun"; Text[20])
         {
             Caption = 'Rerun';
@@ -139,7 +133,7 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
 
         field(50021; "ACO Quantity Charges"; Decimal)
         {
-            Caption = 'Quantity Charges';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
     }

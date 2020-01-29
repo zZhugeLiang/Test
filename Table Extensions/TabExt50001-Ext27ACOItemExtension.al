@@ -13,10 +13,10 @@ tableextension 50001 "ACO Item Extension" extends Item
                 ACOPretreatment: Record "ACO Pretreatment";
             begin
                 if ACOPretreatment.Get("ACO Pretreatment") then
-                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Value Code", ACOPretreatment.Code)
+                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment.Code)
                 else
                     if ACOPretreatment.Get(xRec."ACO Pretreatment") then
-                        ACODeleteDefaultDimension(ACOPretreatment."Dimension Value Code", '');
+                        ACODeleteDefaultDimension(ACOPretreatment."Dimension Code", '');
             end;
         }
         field(50001; "ACO Layer Thickness Code"; Code[10])
@@ -30,10 +30,10 @@ tableextension 50001 "ACO Item Extension" extends Item
                 ACOLayerThickness: Record "ACO Layer Thickness";
             begin
                 if ACOLayerThickness.Get("ACO Layer Thickness Code") then
-                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Value Code", ACOLayerThickness.Code)
+                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Code", ACOLayerThickness.Code)
                 else
                     if ACOLayerThickness.Get(xRec."ACO Layer Thickness Code") then
-                        ACODeleteDefaultDimension(ACOLayerThickness."Dimension Value Code", '');
+                        ACODeleteDefaultDimension(ACOLayerThickness."Dimension Code", '');
             end;
         }
 
@@ -48,10 +48,10 @@ tableextension 50001 "ACO Item Extension" extends Item
                 ACOColor: Record "ACO Color";
             begin
                 if ACOColor.Get("ACO Color") then
-                    ACOInsertDefaultDimension(ACOColor."Dimension Value Code", ACOColor.Code)
+                    ACOInsertDefaultDimension(ACOColor."Dimension Code", ACOColor.Code)
                 else
                     if ACOColor.Get(xRec."ACO Color") then
-                        ACODeleteDefaultDimension(ACOColor."Dimension Value Code", '');
+                        ACODeleteDefaultDimension(ACOColor."Dimension Code", '');
             end;
         }
 
