@@ -63,7 +63,7 @@ tableextension 50001 "ACO Item Extension" extends Item
         }
     }
 
-    local procedure ACOInsertDefaultDimension(DimensionValueCode: Code[20]; DimensionCode: Code[20])
+    local procedure ACOInsertDefaultDimension(DimensionCode: Code[20]; DimensionValueCode: Code[20])
     var
         DefaultDimension: Record "Default Dimension";
     begin
