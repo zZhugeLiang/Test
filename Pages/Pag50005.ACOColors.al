@@ -44,14 +44,6 @@ page 50005 "ACO Colors"
                 {
                     ApplicationArea = All;
                 }
-                field("Minimum Gold Time"; "Minimum Gold Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("Maximum Gold Time"; "Maximum Gold Time")
-                {
-                    ApplicationArea = All;
-                }
             }
         }
     }

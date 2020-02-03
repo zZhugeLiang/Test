@@ -48,13 +48,16 @@ codeunit 50000 "ACO Event Subscribers"
         Item: Record Item;
         SalesHeader: Record "Sales Header";
         ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOPretreatment: Record "ACO Pretreatment";
     begin
         if Rec.IsTemporary() then
             exit;
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
-                //Rec.Validate("ACO Pretreatment", Rec."ACO Pretreatment");
+                if ACOPretreatment.Get(Item."ACO Pretreatment") then
+                    Rec."ACO British Standard" := ACOPretreatment."British Standard";
+
                 if SalesHeader.Get(Rec."Document Type", Rec."Document No.")
                     and ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
                     Rec.Validate("ACO Profile Code")
@@ -212,15 +215,6 @@ codeunit 50000 "ACO Event Subscribers"
         if Rec."ACO Shipping Bag" = '' then
             Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
     end;
-
-    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
-    // local procedure SalesLine_OnAfterValidate_ACONumberOfUnits(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    // var
-    //     ACOProfile: Record "ACO Profile";
-    // begin
-    //     if ACOProfile.Get(Rec."ACO Profile Code") then
-    //         Rec.Validate(Quantity, Rec."ACO Number of Units" * ACOProfile."Area");
-    // end;
 
     // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Routing No.', false, false)]
     // local procedure SalesLine_OnAfterValidate_RoutingNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")

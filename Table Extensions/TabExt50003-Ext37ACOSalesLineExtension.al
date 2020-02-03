@@ -103,16 +103,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50016; "ACO Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
-            TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
+            // TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
             DataClassification = CustomerContent;
             trigger OnLookup()
             var
+                SalesHeader: Record "Sales Header";
                 ACOProfileCustomer: Record "ACO Profile Customer";
                 SelectionFilterManagement: Codeunit SelectionFilterManagement;
                 ACOProfileCustomers: Page "ACO Profile Customers";
                 RecRef: RecordRef;
             begin
-                ACOProfileCustomer.SetRange("Customer No.", Rec."Sell-to Customer No.");
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                 ACOProfileCustomers.LookupMode(true);
                 ACOProfileCustomers.SetTableView(ACOProfileCustomer);
 
@@ -345,6 +347,12 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50052; "ACO Quantity Charges"; Decimal)
         {
             Caption = 'DEPRECATED';
+            DataClassification = CustomerContent;
+        }
+
+        field(50053; "ACO Kundentour HUECK"; Text[100])
+        {
+            Caption = 'Kundentour HUECK';
             DataClassification = CustomerContent;
         }
     }

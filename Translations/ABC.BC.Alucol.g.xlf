@@ -134,7 +134,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Thick Staining Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 2431605968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do Not Calculate Short Length</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Do Not Calculate Short Length - Property Caption</note>
         </trans-unit>
@@ -239,12 +239,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Coloring Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 3454061613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Minimum Gold Time [min]</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Minimum Gold Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 486467919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Maximum Gold Time [min]</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Gold Time - Property Caption</note>
         </trans-unit>
@@ -354,7 +354,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Hollow - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
         </trans-unit>
@@ -567,6 +567,11 @@
           <source>Thick Staining Time [min]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Thick Staining Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 441237434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Item No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
@@ -1372,6 +1377,11 @@
           <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 568115138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Kundentour HUECK</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Kundentour HUECK - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1709463785 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Quantity Charges</source>

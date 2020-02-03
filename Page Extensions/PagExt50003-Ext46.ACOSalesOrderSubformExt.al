@@ -73,7 +73,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-
+            field("ACO Kundentour HUECK"; "ACO Kundentour HUECK")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

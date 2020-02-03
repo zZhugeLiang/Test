@@ -52,13 +52,13 @@ table 50005 "ACO Color"
 
         field(8; "Minimum Gold Time"; Decimal)
         {
-            Caption = 'Minimum Gold Time [min]';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
         field(9; "Maximum Gold Time"; Decimal)
         {
-            Caption = 'Maximum Gold Time [min]';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 

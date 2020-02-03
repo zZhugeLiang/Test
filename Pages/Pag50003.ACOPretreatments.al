@@ -56,11 +56,6 @@ page 50003 "ACO Pretreatments"
                 {
                     ApplicationArea = All;
                 }
-
-                field("Do Not Calculate Short Length"; "Do Not Calculate Short Length")
-                {
-                    ApplicationArea = All;
-                }
                 field(Aucos; Aucos)
                 {
                     ApplicationArea = All;

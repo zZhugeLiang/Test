@@ -67,7 +67,7 @@ table 50003 "ACO Pretreatment"
 
         field(10; "Do Not Calculate Short Length"; Boolean)
         {
-            Caption = 'Do Not Calculate Short Length';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
