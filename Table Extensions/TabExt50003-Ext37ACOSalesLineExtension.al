@@ -105,16 +105,23 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Profile Code';
             TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
             DataClassification = CustomerContent;
-            //     trigger OnLookup()
-            //     var
-            //         ACOProfile: Record "ACO Profile";
-            //         ACOProfiles: Page "ACO Profiles";
-            //     begin
-            //         ACOProfiles.LookupMode(true);
-            //         ACOProfiles.SetTableView(DimensionValue);
-            //         if ACOProfiles.RunModal() = Action::LookupOK then
-            //             "ACO Profile Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1,);
-            //     end;
+            trigger OnLookup()
+            var
+                ACOProfileCustomer: Record "ACO Profile Customer";
+                SelectionFilterManagement: Codeunit SelectionFilterManagement;
+                ACOProfileCustomers: Page "ACO Profile Customers";
+                RecRef: RecordRef;
+            begin
+                ACOProfileCustomer.SetRange("Customer No.", Rec."Sell-to Customer No.");
+                ACOProfileCustomers.LookupMode(true);
+                ACOProfileCustomers.SetTableView(ACOProfileCustomer);
+
+                if ACOProfileCustomers.RunModal() = Action::LookupOK then begin
+                    ACOProfileCustomers.SetSelectionFilter(ACOProfileCustomer);
+                    RecRef.GetTable(ACOProfileCustomer);
+                    "ACO Profile Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, ACOProfileCustomer.FieldNo("Profile Code")), 1, MaxStrLen("ACO Profile Code"));
+                end;
+            end;
         }
 
         field(50017; "ACO Profile Description"; Text[100])
@@ -228,11 +235,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 Item: Record Item;
-                ItemUnitOfMeasure: Record "Item Unit of Measure";
+                ItemVariant: Record "Item Variant";
                 NewQuantity: Decimal;
             begin
-                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemUnitOfMeasure.Get(Rec."No.", Item."Sales Unit of Measure") then begin
-                    NewQuantity := ItemUnitOfMeasure."Qty. per Unit of Measure" * "ACO Number of Units";
+                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemVariant.Get(Rec."No.", Rec."Variant Code") then begin
+                    NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
                     Validate(Quantity, NewQuantity);
                 end;
             end;

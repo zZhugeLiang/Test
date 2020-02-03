@@ -36,6 +36,31 @@ table 50004 "ACO Layer Thickness"
             TableRelation = Dimension;
             DataClassification = CustomerContent;
         }
+        field(6; "Dimension Value Code"; Code[20])
+        {
+            Caption = 'Dimension Value Code';
+            DataClassification = CustomerContent;
+            trigger OnLookup()
+            var
+                GLSetup: Record "General Ledger Setup";
+                DimensionValue: Record "Dimension Value";
+                SelectionFilterManagement: Codeunit SelectionFilterManagement;
+                DimensionValueList: Page "Dimension Value List";
+                RecRef: RecordRef;
+            begin
+                GLSetup.Get();
+                GLSetup.TestField("Global Dimension 1 Code");
+                DimensionValue.SetRange("Dimension Code", GLSetup."Global Dimension 1 Code");
+                DimensionValueList.LookupMode(true);
+                DimensionValueList.SetTableView(DimensionValue);
+
+                if DimensionValueList.RunModal() = Action::LookupOK then begin
+                    DimensionValueList.SetSelectionFilter(DimensionValue);
+                    RecRef.GetTable(DimensionValue);
+                    "Dimension Value Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, DimensionValue.FieldNo("Code")), 1, MaxStrLen("Dimension Value Code"));
+                end;
+            end;
+        }
     }
 
     keys

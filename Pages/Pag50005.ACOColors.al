@@ -32,6 +32,10 @@ page 50005 "ACO Colors"
                 {
                     ApplicationArea = All;
                 }
+                field("Dimension Value Code"; "Dimension Value Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("Color Group Code"; "Color Group")
                 {
                     ApplicationArea = All;

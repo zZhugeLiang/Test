@@ -13,10 +13,10 @@ tableextension 50001 "ACO Item Extension" extends Item
                 ACOPretreatment: Record "ACO Pretreatment";
             begin
                 if ACOPretreatment.Get("ACO Pretreatment") then
-                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment.Code)
+                    ACOInsertDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment."Dimension Value Code")
                 else
                     if ACOPretreatment.Get(xRec."ACO Pretreatment") then
-                        ACODeleteDefaultDimension(ACOPretreatment."Dimension Code", '');
+                        ACODeleteDefaultDimension(ACOPretreatment."Dimension Code", ACOPretreatment."Dimension Value Code");
             end;
         }
         field(50001; "ACO Layer Thickness Code"; Code[10])
@@ -30,7 +30,7 @@ tableextension 50001 "ACO Item Extension" extends Item
                 ACOLayerThickness: Record "ACO Layer Thickness";
             begin
                 if ACOLayerThickness.Get("ACO Layer Thickness Code") then
-                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Code", ACOLayerThickness.Code)
+                    ACOInsertDefaultDimension(ACOLayerThickness."Dimension Code", ACOLayerThickness."Dimension Value Code")
                 else
                     if ACOLayerThickness.Get(xRec."ACO Layer Thickness Code") then
                         ACODeleteDefaultDimension(ACOLayerThickness."Dimension Code", '');
@@ -48,7 +48,7 @@ tableextension 50001 "ACO Item Extension" extends Item
                 ACOColor: Record "ACO Color";
             begin
                 if ACOColor.Get("ACO Color") then
-                    ACOInsertDefaultDimension(ACOColor."Dimension Code", ACOColor.Code)
+                    ACOInsertDefaultDimension(ACOColor."Dimension Code", ACOColor."Dimension Value Code")
                 else
                     if ACOColor.Get(xRec."ACO Color") then
                         ACODeleteDefaultDimension(ACOColor."Dimension Code", '');
@@ -94,7 +94,7 @@ tableextension 50001 "ACO Item Extension" extends Item
         end;
     end;
 
-    local procedure ACOUpdateGlobalDimension(DimensionValueCode: Code[20]; DimensionCode: Code[20])
+    local procedure ACOUpdateGlobalDimension(DimensionCode: Code[20]; DimensionValueCode: Code[20])
     var
         GLSetup: Record "General Ledger Setup";
     begin

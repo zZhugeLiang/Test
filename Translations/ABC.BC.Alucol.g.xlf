@@ -158,6 +158,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field British Standard - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 545940338 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Value Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -187,6 +192,11 @@
           <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4213692988 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color</source>
@@ -237,6 +247,11 @@
           <source>Maximum Gold Time [min]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Gold Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4064269812 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 391613001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Group</source>
@@ -1372,6 +1387,11 @@
           <source>Quantity Charges</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1882781105 - Field 3088297705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 397414134">
+          <source>Number of Meters</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Variant - Field ACO Number of Meters - Property Caption</note>
         </trans-unit>
       </group>
     </body>

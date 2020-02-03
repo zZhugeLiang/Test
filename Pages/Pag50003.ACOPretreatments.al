@@ -44,6 +44,10 @@ page 50003 "ACO Pretreatments"
                 {
                     ApplicationArea = All;
                 }
+                field("Dimension Value Code"; "Dimension Value Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("Thin Staining Time"; "Thin Staining Time")
                 {
                     ApplicationArea = All;
