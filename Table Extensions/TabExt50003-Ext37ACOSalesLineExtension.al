@@ -103,18 +103,27 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50016; "ACO Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
-            TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
+            // TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
             DataClassification = CustomerContent;
-            //     trigger OnLookup()
-            //     var
-            //         ACOProfile: Record "ACO Profile";
-            //         ACOProfiles: Page "ACO Profiles";
-            //     begin
-            //         ACOProfiles.LookupMode(true);
-            //         ACOProfiles.SetTableView(DimensionValue);
-            //         if ACOProfiles.RunModal() = Action::LookupOK then
-            //             "ACO Profile Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1,);
-            //     end;
+            trigger OnLookup()
+            var
+                SalesHeader: Record "Sales Header";
+                ACOProfileCustomer: Record "ACO Profile Customer";
+                SelectionFilterManagement: Codeunit SelectionFilterManagement;
+                ACOProfileCustomers: Page "ACO Profile Customers";
+                RecRef: RecordRef;
+            begin
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOProfileCustomers.LookupMode(true);
+                ACOProfileCustomers.SetTableView(ACOProfileCustomer);
+
+                if ACOProfileCustomers.RunModal() = Action::LookupOK then begin
+                    ACOProfileCustomers.SetSelectionFilter(ACOProfileCustomer);
+                    RecRef.GetTable(ACOProfileCustomer);
+                    "ACO Profile Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, ACOProfileCustomer.FieldNo("Profile Code")), 1, MaxStrLen("ACO Profile Code"));
+                end;
+            end;
         }
 
         field(50017; "ACO Profile Description"; Text[100])
@@ -228,11 +237,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 Item: Record Item;
-                ItemUnitOfMeasure: Record "Item Unit of Measure";
+                ItemVariant: Record "Item Variant";
                 NewQuantity: Decimal;
             begin
-                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemUnitOfMeasure.Get(Rec."No.", Item."Sales Unit of Measure") then begin
-                    NewQuantity := ItemUnitOfMeasure."Qty. per Unit of Measure" * "ACO Number of Units";
+                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemVariant.Get(Rec."No.", Rec."Variant Code") then begin
+                    NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
                     Validate(Quantity, NewQuantity);
                 end;
             end;
@@ -286,12 +295,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        // field(50043; "ACO Calculate Line Amount"; Boolean)
-        // {
-        //     Caption = 'Calculate Line Amount';
-        //     DataClassification = CustomerContent;
-        // }
-
         field(50044; "ACO Receipt Bag"; Text[20])
         {
             Caption = 'Receipt Shelf';
@@ -316,7 +319,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50048; "ACO Holder"; Code[20])
+        field(50048; "ACO Holder"; Code[30])
         {
             Caption = 'Holder';
             TableRelation = "ACO Holder";
@@ -337,13 +340,19 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         field(50051; "ACO Charges per Bath Profile"; Decimal)
         {
-            Caption = 'Charges per Bath Profile';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
         field(50052; "ACO Quantity Charges"; Decimal)
         {
-            Caption = 'Quantity Charges';
+            Caption = 'DEPRECATED';
+            DataClassification = CustomerContent;
+        }
+
+        field(50053; "ACO Kundentour HUECK"; Text[100])
+        {
+            Caption = 'Kundentour HUECK';
             DataClassification = CustomerContent;
         }
     }

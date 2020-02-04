@@ -118,10 +118,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 545940338 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 545940338 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Value Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 3173631833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Thin Staining Time [min]</source>
@@ -134,7 +134,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Thick Staining Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 2431605968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do Not Calculate Short Length</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Do Not Calculate Short Length - Property Caption</note>
         </trans-unit>
@@ -157,6 +157,11 @@
           <source>British Standard</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field British Standard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 545940338 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Layer Thickness</source>
@@ -182,6 +187,11 @@
           <source>Maximum Current Density [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Maximum Current Density - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4213692988 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Layer Thickness - Field Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4213692988 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension Value Code</source>
@@ -213,10 +223,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4064269812 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Value Code</source>
+        <trans-unit id="Table 4064269812 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Value Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 4216847974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Group</source>
@@ -229,14 +239,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Coloring Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 3454061613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Minimum Gold Time [min]</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Minimum Gold Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 486467919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Maximum Gold Time [min]</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Maximum Gold Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4064269812 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 391613001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Group</source>
@@ -339,7 +354,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Hollow - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
         </trans-unit>
@@ -553,6 +568,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Thick Staining Time - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 441237434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Item No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -579,7 +599,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Type - Field Position - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2614308890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Distance Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Distance Holder - Property Caption</note>
         </trans-unit>
@@ -864,7 +884,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Distance Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Holders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holders - Property Caption</note>
         </trans-unit>
@@ -1033,11 +1053,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Week Capacity - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3445842965 - Field 975303093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
-          <source>DEPRECATED?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Calculate Line Amount - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 2251616525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Rerun</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1104,7 +1119,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Logged In - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
-          <source>Quantity Charges</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Quantity Charges - Property Caption</note>
         </trans-unit>
@@ -1354,14 +1369,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Shipping Shelf - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3035335321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Charges per Bath Profile</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Charges per Bath Profile - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Quantity Charges</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 568115138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Kundentour HUECK</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Kundentour HUECK - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1709463785 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Quantity Charges</source>
@@ -1377,6 +1397,11 @@
           <source>Quantity Charges</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1882781105 - Field 3088297705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 397414134">
+          <source>Number of Meters</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Variant - Field ACO Number of Meters - Property Caption</note>
         </trans-unit>
       </group>
     </body>

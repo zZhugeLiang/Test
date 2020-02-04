@@ -29,11 +29,6 @@ page 50008 "ACO Profiles"
                 {
                     ApplicationArea = All;
                 }
-
-                field("Area"; "Area")
-                {
-                    ApplicationArea = All;
-                }
             }
         }
     }

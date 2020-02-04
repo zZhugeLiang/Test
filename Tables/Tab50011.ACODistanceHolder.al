@@ -1,13 +1,13 @@
 table 50011 "ACO Distance Holder"
 {
-    Caption = 'Holder';
+    Caption = 'Distance Holder';
     DrillDownPageId = "ACO Distance Holders";
     LookupPageId = "ACO Distance Holders";
     DataClassification = CustomerContent;
 
     fields
     {
-        field(1; "Code"; Code[20])
+        field(1; "Code"; Code[30])
         {
             Caption = 'Code';
             DataClassification = CustomerContent;
