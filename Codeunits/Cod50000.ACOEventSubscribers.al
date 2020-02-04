@@ -41,6 +41,13 @@ codeunit 50000 "ACO Event Subscribers"
         Rec."ACO Document Date Year" := Date2DWY(Rec."Document Date", 3);
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'No.', false, false)]
+    local procedure SalesLine_OnBeforeValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        ACOSingleInstanceMgt.SetSalesLineProfileCode(Rec."ACO Profile Code");
+    end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'No.', false, false)]
     local procedure SalesLine_OnAfterValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
@@ -49,17 +56,20 @@ codeunit 50000 "ACO Event Subscribers"
         SalesHeader: Record "Sales Header";
         ACOProfileCustomer: Record "ACO Profile Customer";
         ACOPretreatment: Record "ACO Pretreatment";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
         if Rec.IsTemporary() then
             exit;
+
+        Rec."ACO Profile Code" := ACOSingleInstanceMgt.GetSalesLineProfileCode();
+        ACOSingleInstanceMgt.SetSalesLineProfileCode('');
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
                 if ACOPretreatment.Get(Item."ACO Pretreatment") then
                     Rec."ACO British Standard" := ACOPretreatment."British Standard";
-
                 if SalesHeader.Get(Rec."Document Type", Rec."Document No.")
-                    and ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
+                and ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
                     Rec.Validate("ACO Profile Code")
                 else begin
                     Rec."ACO Profile Description" := '';

@@ -147,7 +147,6 @@ table 50009 "ACO Profile Customer"
         field(16; "Customer Item No."; Code[50]) // PK
         {
             Caption = 'Customer Item No.';
-            TableRelation = Item;
             DataClassification = CustomerContent;
         }
     }

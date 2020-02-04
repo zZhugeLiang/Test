@@ -1,4 +1,4 @@
-tableextension 50006 "ACO Item Variant" extends "Item Variant"
+tableextension 50008 "ACO Item Variant" extends "Item Variant"
 {
     fields
     {
