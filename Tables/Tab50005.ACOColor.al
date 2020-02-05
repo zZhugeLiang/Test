@@ -68,15 +68,16 @@ table 50005 "ACO Color"
             DataClassification = CustomerContent;
             trigger OnLookup()
             var
-                GLSetup: Record "General Ledger Setup";
+                ACOAppSetup: Record "ACO App Setup";
                 DimensionValue: Record "Dimension Value";
                 SelectionFilterManagement: Codeunit SelectionFilterManagement;
                 DimensionValueList: Page "Dimension Value List";
                 RecRef: RecordRef;
             begin
-                GLSetup.Get();
-                GLSetup.TestField("Global Dimension 1 Code");
-                DimensionValue.SetRange("Dimension Code", GLSetup."Global Dimension 1 Code");
+                ACOAppSetup.Get();
+                ACOAppSetup.TestField("Color Dimension Code");
+                DimensionValue.SetRange("Dimension Code", ACOAppSetup."Color Dimension Code");
+                DimensionValue.SetRange(Blocked, false);
                 DimensionValueList.LookupMode(true);
                 DimensionValueList.SetTableView(DimensionValue);
 
@@ -96,4 +97,13 @@ table 50005 "ACO Color"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        ACOAppSetup: Record "ACO App Setup";
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Color Dimension Code");
+        "Dimension Code" := ACOAppSetup."Color Dimension Code";
+    end;
 }

@@ -23,6 +23,31 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Pretreatment Dimension Code"; "Pretreatment Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Color Dimension Code"; "Color Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Layer Thickness Dimension Code"; "Layer Thickness Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Length Unit of Measure Code"; "Length Unit of Measure Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Area Unit of Measure Code"; "Area Unit of Measure Code")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

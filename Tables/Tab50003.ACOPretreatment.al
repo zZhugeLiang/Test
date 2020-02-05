@@ -101,15 +101,16 @@ table 50003 "ACO Pretreatment"
             DataClassification = CustomerContent;
             trigger OnLookup()
             var
-                GLSetup: Record "General Ledger Setup";
+                ACOAppSetup: Record "ACO App Setup";
                 DimensionValue: Record "Dimension Value";
                 SelectionFilterManagement: Codeunit SelectionFilterManagement;
                 DimensionValueList: Page "Dimension Value List";
                 RecRef: RecordRef;
             begin
-                GLSetup.Get();
-                GLSetup.TestField("Global Dimension 1 Code");
-                DimensionValue.SetRange("Dimension Code", GLSetup."Global Dimension 1 Code");
+                ACOAppSetup.Get();
+                ACOAppSetup.TestField("Pretreatment Dimension Code");
+                DimensionValue.SetRange("Dimension Code", ACOAppSetup."Pretreatment Dimension Code");
+                DimensionValue.SetRange(Blocked, false);
                 DimensionValueList.LookupMode(true);
                 DimensionValueList.SetTableView(DimensionValue);
 
@@ -129,4 +130,13 @@ table 50003 "ACO Pretreatment"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        ACOAppSetup: Record "ACO App Setup";
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Pretreatment Dimension Code");
+        "Dimension Code" := ACOAppSetup."Pretreatment Dimension Code";
+    end;
 }
