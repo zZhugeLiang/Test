@@ -60,7 +60,7 @@ table 50000 "ACO App Setup"
 
         field(9; "Area Unit of Measure Code"; Code[10])
         {
-            Caption = 'Area Unit of Measure Code';
+            Caption = 'Circumference Unit of Measure Code';
             TableRelation = "Unit of Measure";
             DataClassification = CustomerContent;
         }

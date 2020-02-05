@@ -49,7 +49,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Length Unit of Measure Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 261671863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area Unit of Measure Code</source>
+          <source>Circumference Unit of Measure Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Area Unit of Measure Code - Property Caption</note>
         </trans-unit>
