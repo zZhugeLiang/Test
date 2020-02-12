@@ -28,6 +28,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Minimum Remaining Sawing - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3585308602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pretreatment Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Pretreatment Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3983821652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Color Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 4002724476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thickness Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Layer Thickness Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 320209346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Length Unit of Measure Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 261671863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Circumference Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Area Unit of Measure Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>

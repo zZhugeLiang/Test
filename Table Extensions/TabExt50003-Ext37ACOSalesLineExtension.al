@@ -238,10 +238,21 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             var
                 Item: Record Item;
                 ItemVariant: Record "Item Variant";
+                ACOAppSetup: Record "ACO App Setup";
                 NewQuantity: Decimal;
             begin
-                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and ItemVariant.Get(Rec."No.", Rec."Variant Code") then begin
-                    NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
+                if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
+                    ACOAppSetup.Get();
+                    case Rec."Unit of Measure Code" of
+                        ACOAppSetup."Length Unit of Measure Code":
+                            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                                NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
+                        ACOAppSetup."Area Unit of Measure Code":
+                            NewQuantity := Rec."ACO Profile Circumference" * "ACO Number of Units" / 1000;
+                        else
+                            NewQuantity := "ACO Number of Units";
+                    end;
+
                     Validate(Quantity, NewQuantity);
                 end;
             end;

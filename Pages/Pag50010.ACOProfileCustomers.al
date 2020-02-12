@@ -34,6 +34,11 @@ page 50010 "ACO Profile Customers"
                     ApplicationArea = All;
                 }
 
+                field("Customer Item No."; "Customer Item No.")
+                {
+                    ApplicationArea = All;
+                }
+
                 field("Ship-to Code"; "Ship-to Code")
                 {
                     ApplicationArea = All;
