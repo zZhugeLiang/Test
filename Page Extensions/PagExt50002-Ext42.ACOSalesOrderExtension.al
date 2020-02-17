@@ -14,6 +14,10 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 {
                     ApplicationArea = All;
                 }
+                field("ACO Quantity Charges"; "ACO Quantity Charges")
+                {
+                    ApplicationArea = All;
+                }
                 field("ACO Rerun"; "ACO Rerun")
                 {
                     ApplicationArea = All;

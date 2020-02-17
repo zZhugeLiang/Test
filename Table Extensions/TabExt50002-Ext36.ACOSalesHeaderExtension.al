@@ -37,6 +37,11 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
+        // field(50007; "ACO Calculate Line Amount"; Decimal)
+        // {
+        //     Caption = 'DEPRECATED?';
+        //     DataClassification = CustomerContent;//zichtbaar
+        // }
         field(50008; "ACO Rerun"; Text[20])
         {
             Caption = 'Rerun';
@@ -58,7 +63,7 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         {
             Caption = 'Delivery Week';
             MinValue = 0;
-            MaxValue = 54;
+            MaxValue = 53;
             DataClassification = CustomerContent;
         }
 
@@ -81,7 +86,7 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         {
             Caption = 'Logged In Week';
             MinValue = 0;
-            MaxValue = 54;
+            MaxValue = 53;
             Editable = false;
             DataClassification = CustomerContent;//zichtbaar
         }
@@ -99,7 +104,7 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         {
             Caption = 'Document Date Week';
             MinValue = 0;
-            MaxValue = 54;
+            MaxValue = 53;
             Editable = false;
             DataClassification = CustomerContent;//zichtbaar
         }

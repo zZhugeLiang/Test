@@ -56,6 +56,14 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Charges per Bath Profile"; "ACO Charges per Bath Profile")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Quantity Charges"; "ACO Quantity Charges")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Area"; "ACO Area")
             {
                 ApplicationArea = All;

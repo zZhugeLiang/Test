@@ -13,15 +13,15 @@ table 50000 "ACO App Setup"
         field(2; "Default Package Label Nos."; Code[20])
         {
             Caption = 'Default Package Label Nos.';
-            DataClassification = CustomerContent;
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
 
         field(3; "Default Bath Card Nos."; Code[20])
         {
-            Caption = 'Default Bath Card Nos.';
-            DataClassification = CustomerContent;
+            Caption = 'Default Bath Sheet Nos.';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
 
         field(4; "Minimum Remaining Sawing"; Decimal)
@@ -62,6 +62,44 @@ table 50000 "ACO App Setup"
         {
             Caption = 'Circumference Unit of Measure Code';
             TableRelation = "Unit of Measure";
+            DataClassification = CustomerContent;
+        }
+	
+        field(10; "Default Project Color Nos."; Code[20])
+        {
+            Caption = 'Default Project Color Nos.';
+            TableRelation = "No. Series";
+            DataClassification = CustomerContent;
+        }
+
+        field(11; "Max. Current Density Bath 1"; Decimal)
+        {
+            Caption = 'Max. Current Density Bath 1';
+            DataClassification = CustomerContent;
+        }
+
+        field(12; "Max. Current Density Bath 2"; Decimal)
+        {
+            Caption = 'Max. Current Density Bath 2';
+            DataClassification = CustomerContent;
+        }
+
+        field(13; "Max. Current Density Bath 3"; Decimal)
+        {
+            Caption = 'Max. Current Density Bath 3';
+            DataClassification = CustomerContent;
+        }
+
+        field(14; "Max. Current Density Bath L"; Decimal)
+        {
+            Caption = 'Max. Current Density Bath L';
+            DataClassification = CustomerContent;
+        }
+
+        field(15; "Min. Anodise Time"; Decimal)
+        {
+            Caption = 'Min. Anodise Time';
+            InitValue = 16;
             DataClassification = CustomerContent;
         }
     }

@@ -62,6 +62,12 @@ table 50004 "ACO Layer Thickness"
                 end;
             end;
         }
+
+        field(7; "mu Value"; Decimal)
+        {
+            Caption = 'mu Value';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

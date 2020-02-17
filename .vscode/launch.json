@@ -5,11 +5,11 @@
             "type": "al",
             "request": "launch",
             "name": "Your own server",
-            "server": "http://nlbc15CMIS",
+            "server": "http://nlbcAlucol",
             "serverInstance": "BC",
             "authentication": "UserPassword",
             "startupObjectId": 22,
-            "schemaUpdateMode": "Synchronize"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
+            "schemaUpdateMode": "Recreate"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
         }
     ]
 }

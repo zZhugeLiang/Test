@@ -29,7 +29,19 @@ page 50009 "ACO Profile Card"
             {
                 Caption = 'Production Parameters';
 
+                field(Hollow; Hollow)
+                {
+                    ApplicationArea = All;
+                }
+                field(Bent; Bent)
+                {
+                    ApplicationArea = All;
+                }
                 field("Extra Flushing"; "Extra Flushing")
+                {
+                    ApplicationArea = All;
+                }
+                field("Area"; "Area")
                 {
                     ApplicationArea = All;
                 }
