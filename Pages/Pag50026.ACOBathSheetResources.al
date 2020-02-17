@@ -3,7 +3,7 @@ page 50026 "ACO Bath Sheet Resources"
 
     PageType = List;
     SourceTable = "ACO Bath Sheet Resource";
-    Caption = 'ACO Bath Sheet Resources';
+    Caption = 'Bath Sheet Resources';
     ApplicationArea = All;
     UsageCategory = Lists;
 

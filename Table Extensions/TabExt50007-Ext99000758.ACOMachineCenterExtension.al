@@ -4,8 +4,8 @@ tableextension 50007 "ACO Machine Center Extension" extends "Machine Center"
     {
         field(50000; "ACO Operation Type"; Code[10])
         {
-            Caption = 'Operation Type';
-            //TableRelation = ;
+            Caption = 'Operating Type';
+            TableRelation = "ACO Operating Type";
             DataClassification = CustomerContent;
         }
     }

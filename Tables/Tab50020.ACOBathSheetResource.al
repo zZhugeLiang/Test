@@ -22,7 +22,7 @@ table 50020 "ACO Bath Sheet Resource"
         }
         field(3; "Resource Name"; Text[50])
         {
-            Caption = 'Type';
+            Caption = 'Resource Name';
             FieldClass = FlowField;
             CalcFormula = Lookup (Resource.Name where("No." = field("Resource No.")));
         }

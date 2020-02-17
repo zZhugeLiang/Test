@@ -1724,7 +1724,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowTrackingLines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Bath Sheet Resources</source>
+          <source>Bath Sheet Resources</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Resources - Property Caption</note>
         </trans-unit>

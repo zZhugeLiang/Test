@@ -3,8 +3,10 @@ page 50022 "ACO Project Colors"
     Caption = 'Project Colors';
     PageType = List;
     SourceTable = "ACO Project Color Header";
-    ApplicationArea = All;
     UsageCategory = Lists;
+    CardPageId = "ACO Project Color";
+    RefreshOnActivate = true;
+    ApplicationArea = All;
 
     layout
     {

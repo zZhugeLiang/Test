@@ -4,6 +4,7 @@ page 50020 "ACO Bath Sheet"
     PageType = Card;
     SourceTable = "ACO Bath Sheet Header";
     Caption = 'ACO Bath Sheet';
+    InsertAllowed = false;
 
     layout
     {
@@ -220,7 +221,12 @@ page 50020 "ACO Bath Sheet"
                     ApplicationArea = All;
                 }
             }
+
+            part("ACO Bath Sheet Subpage"; "ACO Bath Sheet Subpage")
+            {
+                SubPageLink = "Bath Sheet No." = field("No.");
+                ApplicationArea = All;
+            }
         }
     }
-
 }

@@ -1,5 +1,8 @@
 table 50018 "ACO Project Color Header"
 {
+    Caption = 'Project Color';
+    DrillDownPageId = "ACO Project Colors";
+    LookupPageId = "ACO Project Colors";
     DataClassification = CustomerContent;
 
     fields

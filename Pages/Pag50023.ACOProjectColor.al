@@ -10,7 +10,7 @@ page 50023 "ACO Project Color"
     {
         area(Content)
         {
-            repeater(ProjectColors)
+            Group(General)
             {
                 field("No."; "No.")
                 {
