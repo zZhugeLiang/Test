@@ -30,25 +30,11 @@ table 50005 "ACO Color"
             DataClassification = CustomerContent;
         }
 
-        field(5; "Dimension Value Code"; Code[20])
+        field(5; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension Value Code';
-            // TableRelation = Dimension;
+            Caption = 'Dimension Code';
+            TableRelation = Dimension;
             DataClassification = CustomerContent;
-            trigger OnLookup()
-            var
-                GLSetup: Record "General Ledger Setup";
-                DimensionValue: Record "Dimension Value";
-                DimensionValueList: Page "Dimension Value List";
-            begin
-                GLSetup.Get();
-                GLSetup.TestField("Global Dimension 2 Code");
-                DimensionValue.SetRange("Dimension Code", GLSetup."Global Dimension 2 Code");
-                DimensionValueList.LookupMode(true);
-                DimensionValueList.SetTableView(DimensionValue);
-                if DimensionValueList.RunModal() = Action::LookupOK then
-                    "Dimension Value Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Value Code"));
-            end;
         }
 
         field(6; "Color Group"; Code[20])
@@ -66,14 +52,41 @@ table 50005 "ACO Color"
 
         field(8; "Minimum Gold Time"; Decimal)
         {
-            Caption = 'Minimum Gold Time [min]';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
         field(9; "Maximum Gold Time"; Decimal)
         {
-            Caption = 'Maximum Gold Time [min]';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
+        }
+
+        field(10; "Dimension Value Code"; Code[20])
+        {
+            Caption = 'Dimension Value Code';
+            DataClassification = CustomerContent;
+            trigger OnLookup()
+            var
+                ACOAppSetup: Record "ACO App Setup";
+                DimensionValue: Record "Dimension Value";
+                SelectionFilterManagement: Codeunit SelectionFilterManagement;
+                DimensionValueList: Page "Dimension Value List";
+                RecRef: RecordRef;
+            begin
+                ACOAppSetup.Get();
+                ACOAppSetup.TestField("Color Dimension Code");
+                DimensionValue.SetRange("Dimension Code", ACOAppSetup."Color Dimension Code");
+                DimensionValue.SetRange(Blocked, false);
+                DimensionValueList.LookupMode(true);
+                DimensionValueList.SetTableView(DimensionValue);
+
+                if DimensionValueList.RunModal() = Action::LookupOK then begin
+                    DimensionValueList.SetSelectionFilter(DimensionValue);
+                    RecRef.GetTable(DimensionValue);
+                    "Dimension Value Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, DimensionValue.FieldNo("Code")), 1, MaxStrLen("Dimension Value Code"));
+                end;
+            end;
         }
     }
 
@@ -84,4 +97,13 @@ table 50005 "ACO Color"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        ACOAppSetup: Record "ACO App Setup";
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Color Dimension Code");
+        "Dimension Code" := ACOAppSetup."Color Dimension Code";
+    end;
 }

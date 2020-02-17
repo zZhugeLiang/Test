@@ -7,7 +7,7 @@ table 50013 "ACO Holder"
 
     fields
     {
-        field(1; "Code"; Code[20])
+        field(1; "Code"; Code[30])
         {
             Caption = 'Code';
             DataClassification = CustomerContent;
@@ -47,21 +47,21 @@ table 50013 "ACO Holder"
             DataClassification = CustomerContent;
         }
 
-        field(7; "Holder Code"; Code[20])
+        field(7; "Holder Code"; Code[30])
         {
             Caption = 'Holder Code';
             TableRelation = "ACO Holder Type";
             DataClassification = CustomerContent;
         }
 
-        field(8; "Support Holder Code"; Code[20])
+        field(8; "Support Holder Code"; Code[30])
         {
             Caption = 'Support Holder Code';
             TableRelation = "ACO Support Holder";
             DataClassification = CustomerContent;
         }
 
-        field(9; "Distance Holder Code"; Code[20])
+        field(9; "Distance Holder Code"; Code[30])
         {
             Caption = 'Distance Holder Code';
             TableRelation = "ACO Distance Holder";

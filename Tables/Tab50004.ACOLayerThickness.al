@@ -30,24 +30,36 @@ table 50004 "ACO Layer Thickness"
             DataClassification = CustomerContent;
         }
 
-        field(5; "Dimension Value Code"; Code[20])
+        field(5; "Dimension Code"; Code[20])
+        {
+            Caption = 'Dimension Code';
+            TableRelation = Dimension;
+            DataClassification = CustomerContent;
+        }
+        field(6; "Dimension Value Code"; Code[20])
         {
             Caption = 'Dimension Value Code';
-            TableRelation = Dimension;
             DataClassification = CustomerContent;
             trigger OnLookup()
             var
-                GLSetup: Record "General Ledger Setup";
+                ACOAppSetup: Record "ACO App Setup";
                 DimensionValue: Record "Dimension Value";
+                SelectionFilterManagement: Codeunit SelectionFilterManagement;
                 DimensionValueList: Page "Dimension Value List";
+                RecRef: RecordRef;
             begin
-                GLSetup.Get();
-                GLSetup.TestField("Shortcut Dimension 3 Code");
-                DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
+                ACOAppSetup.Get();
+                ACOAppSetup.TestField("Layer Thickness Dimension Code");
+                DimensionValue.SetRange("Dimension Code", ACOAppSetup."Layer Thickness Dimension Code");
+                DimensionValue.SetRange(Blocked, false);
                 DimensionValueList.LookupMode(true);
                 DimensionValueList.SetTableView(DimensionValue);
-                if DimensionValueList.RunModal() = Action::LookupOK then
-                    "Dimension Value Code" := CopyStr(DimensionValueList.GetSelectionFilter(), 1, MaxStrLen("Dimension Value Code"));
+
+                if DimensionValueList.RunModal() = Action::LookupOK then begin
+                    DimensionValueList.SetSelectionFilter(DimensionValue);
+                    RecRef.GetTable(DimensionValue);
+                    "Dimension Value Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, DimensionValue.FieldNo("Code")), 1, MaxStrLen("Dimension Value Code"));
+                end;
             end;
         }
     }
@@ -59,4 +71,13 @@ table 50004 "ACO Layer Thickness"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        ACOAppSetup: Record "ACO App Setup";
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Layer Thickness Dimension Code");
+        "Dimension Code" := ACOAppSetup."Layer Thickness Dimension Code";
+    end;
 }

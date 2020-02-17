@@ -123,35 +123,37 @@ table 50009 "ACO Profile Customer"
         field(12; "Euras"; Boolean)
         {
             Caption = 'Euras';
-            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(13; "Extra to Enumerate"; Integer)
         {
             Caption = 'Extra to Enumerate [mm]';
-            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(14; "Thin Staining Time"; Decimal)
         {
             Caption = 'Thin Staining Time [min]';
-            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(15; "Thick Staining Time"; Decimal)
         {
             Caption = 'Thick Staining Time [min]';
-            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(16; "Customer Item No."; Code[50]) // PK
+        {
+            Caption = 'Customer Item No.';
             DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.", "Ship-to Code")
+        key(PK; "Profile Code", "Customer No.", "Ship-to Code")//, "Customer Item No.") Add in New Sandbox.
         {
             Clustered = true;
         }

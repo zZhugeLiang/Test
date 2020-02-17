@@ -33,6 +33,10 @@ page 50011 "ACO Profile Customer Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Customer Item No."; "Customer Item No.")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(AddressInformation)
@@ -83,23 +87,4 @@ page 50011 "ACO Profile Customer Card"
             }
         }
     }
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-
-                end;
-            }
-        }
-    }
-
-    var
-        myInt: Integer;
-
 }

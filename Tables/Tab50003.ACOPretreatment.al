@@ -46,32 +46,11 @@ table 50003 "ACO Pretreatment"
             DataClassification = CustomerContent;
         }
 
-        field(7; "Dimension Value Code"; Code[20])
+        field(7; "Dimension Code"; Code[20])
         {
-            Caption = 'Dimension Code'; // Is actually the dimension code
+            Caption = 'Dimension Code';
+            TableRelation = Dimension;
             DataClassification = CustomerContent;
-            trigger OnLookup()
-            var
-                GLSetup: Record "General Ledger Setup";
-                Dimension: Record "Dimension";
-                SelectionFilterManagement: Codeunit SelectionFilterManagement;
-                DimensionList: Page "Dimension List";
-                RecRef: RecordRef;
-            begin
-                RecRef.GetTable(Dimension);
-
-                GLSetup.Get();
-                GLSetup.TestField("Global Dimension 1 Code");
-                Dimension.SetRange("Code", GLSetup."Global Dimension 1 Code");
-                DimensionList.LookupMode(true);
-                DimensionList.SetTableView(Dimension);
-
-                if DimensionList.RunModal() = Action::LookupOK then begin
-                    DimensionList.SetSelectionFilter(Dimension);
-                    RecRef.GetTable(Dimension);
-                    "Dimension Value Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, Dimension.FieldNo("Code")), 1, MaxStrLen("Dimension Value Code"));
-                end;
-            end;
         }
 
         field(8; "Thin Staining Time"; Decimal)
@@ -88,7 +67,7 @@ table 50003 "ACO Pretreatment"
 
         field(10; "Do Not Calculate Short Length"; Boolean)
         {
-            Caption = 'Do Not Calculate Short Length';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
@@ -115,6 +94,33 @@ table 50003 "ACO Pretreatment"
             Caption = 'British Standard';
             DataClassification = CustomerContent;
         }
+
+        field(15; "Dimension Value Code"; Code[20])
+        {
+            Caption = 'Dimension Value Code';
+            DataClassification = CustomerContent;
+            trigger OnLookup()
+            var
+                ACOAppSetup: Record "ACO App Setup";
+                DimensionValue: Record "Dimension Value";
+                SelectionFilterManagement: Codeunit SelectionFilterManagement;
+                DimensionValueList: Page "Dimension Value List";
+                RecRef: RecordRef;
+            begin
+                ACOAppSetup.Get();
+                ACOAppSetup.TestField("Pretreatment Dimension Code");
+                DimensionValue.SetRange("Dimension Code", ACOAppSetup."Pretreatment Dimension Code");
+                DimensionValue.SetRange(Blocked, false);
+                DimensionValueList.LookupMode(true);
+                DimensionValueList.SetTableView(DimensionValue);
+
+                if DimensionValueList.RunModal() = Action::LookupOK then begin
+                    DimensionValueList.SetSelectionFilter(DimensionValue);
+                    RecRef.GetTable(DimensionValue);
+                    "Dimension Value Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, DimensionValue.FieldNo("Code")), 1, MaxStrLen("Dimension Value Code"));
+                end;
+            end;
+        }
     }
 
     keys
@@ -124,4 +130,13 @@ table 50003 "ACO Pretreatment"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        ACOAppSetup: Record "ACO App Setup";
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Pretreatment Dimension Code");
+        "Dimension Code" := ACOAppSetup."Pretreatment Dimension Code";
+    end;
 }

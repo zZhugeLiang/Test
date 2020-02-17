@@ -28,7 +28,11 @@ page 50005 "ACO Colors"
                 {
                     ApplicationArea = All;
                 }
-                field("Dimension Code"; "Dimension Value Code")
+                field("Dimension Code"; "Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("Dimension Value Code"; "Dimension Value Code")
                 {
                     ApplicationArea = All;
                 }
@@ -37,14 +41,6 @@ page 50005 "ACO Colors"
                     ApplicationArea = All;
                 }
                 field("Coloring Time"; "Coloring Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("Minimum Gold Time"; "Minimum Gold Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("Maximum Gold Time"; "Maximum Gold Time")
                 {
                     ApplicationArea = All;
                 }

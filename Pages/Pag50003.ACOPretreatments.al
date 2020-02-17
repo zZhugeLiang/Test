@@ -40,6 +40,10 @@ page 50003 "ACO Pretreatments"
                 {
                     ApplicationArea = All;
                 }
+                field("Dimension Code"; "Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("Dimension Value Code"; "Dimension Value Code")
                 {
                     ApplicationArea = All;
@@ -49,11 +53,6 @@ page 50003 "ACO Pretreatments"
                     ApplicationArea = All;
                 }
                 field("Thick Staining Time"; "Thick Staining Time")
-                {
-                    ApplicationArea = All;
-                }
-
-                field("Do Not Calculate Short Length"; "Do Not Calculate Short Length")
                 {
                     ApplicationArea = All;
                 }

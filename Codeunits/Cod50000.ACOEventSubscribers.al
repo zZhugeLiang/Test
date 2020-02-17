@@ -91,7 +91,6 @@ codeunit 50000 "ACO Event Subscribers"
                     Rec."ACO Type of Clamp Profile" := '';
                     Rec."ACO Holders Profile" := '';
                 end;
-
                 Rec.Validate("ACO Color", Item."ACO Color");
 
                 Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
@@ -225,15 +224,6 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         if Rec."ACO Shipping Bag" = '' then
             Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
-    end;
-
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
-    local procedure SalesLine_OnAfterValidate_ACONumberOfUnits(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        ACOProfile: Record "ACO Profile";
-    begin
-        if ACOProfile.Get(Rec."ACO Profile Code") then
-            Rec.Validate(Quantity, Rec."ACO Number of Units" * ACOProfile."Area");
     end;
 
     // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Routing No.', false, false)]

@@ -46,13 +46,13 @@ table 50008 "ACO Profile"
 
         field(7; Hollow; Boolean)
         {
-            Caption = 'Hollow';
+            Caption = 'Hollow'; // DEPRECATED?
             DataClassification = CustomerContent;
         }
 
         field(8; "Area"; Decimal)
         {
-            Caption = 'Area';
+            Caption = 'DEPRECATED';
             DataClassification = CustomerContent;
         }
 
@@ -94,7 +94,7 @@ table 50008 "ACO Profile"
 
         field(15; Bent; Boolean)
         {
-            Caption = 'Bent';
+            Caption = 'Bent'; // DEPRECATED?
             DataClassification = CustomerContent;
         }
 

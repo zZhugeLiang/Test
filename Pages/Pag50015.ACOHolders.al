@@ -1,6 +1,6 @@
 page 50015 "ACO Holders"
 {
-    Caption = 'Holder';
+    Caption = 'Holders';
     PageType = List;
     CardPageId = "ACO Holder Card";
     RefreshOnActivate = true;

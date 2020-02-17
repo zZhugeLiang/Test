@@ -4,7 +4,11 @@
   "publisher": "ABC E BUSINESS",
   "brief": "",
   "description": "",
+<<<<<<< HEAD
   "version": "0.0.0.34", 
+=======
+  "version": "0.0.0.33", 
+>>>>>>> 9074aa4d10c7b4a6d4e2f1735b50d853f9b8752f
   "privacyStatement": "",
   "EULA": "",
   "help": "",

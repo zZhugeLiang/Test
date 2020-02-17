@@ -29,22 +29,28 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
-                field("Max. Current Density Bath 1"; "Max. Current Density Bath 1")
+
+                field("Pretreatment Dimension Code"; "Pretreatment Dimension Code")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Max. Current Density Bath 2"; "Max. Current Density Bath 2")
+                field("Color Dimension Code"; "Color Dimension Code")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Max. Current Density Bath 3"; "Max. Current Density Bath 3")
+                field("Layer Thickness Dimension Code"; "Layer Thickness Dimension Code")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Min. Anodise Time"; "Min. Anodise Time")
+                field("Length Unit of Measure Code"; "Length Unit of Measure Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Area Unit of Measure Code"; "Area Unit of Measure Code")
                 {
                     ApplicationArea = All;
                 }
