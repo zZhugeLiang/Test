@@ -3,7 +3,8 @@ page 50000 "ACO App Setup"
     Caption = 'App Setup';
     PageType = Card;
     SourceTable = "ACO App Setup";
-    InsertAllowed = true;
+    InsertAllowed = false;
+    DeleteAllowed = false;
     Editable = true;
     UsageCategory = Administration;
     ApplicationArea = All;
@@ -23,12 +24,37 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Default Project Color Nos."; "Default Project Color Nos.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Max. Current Density Bath 1"; "Max. Current Density Bath 1")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Max. Current Density Bath 2"; "Max. Current Density Bath 2")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Max. Current Density Bath 3"; "Max. Current Density Bath 3")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Min. Anodise Time"; "Min. Anodise Time")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
 
     trigger OnOpenPage()
     begin
+        Reset();
         if not Get() then
             Insert();
     end;

@@ -28,6 +28,14 @@ page 50004 "ACO Layer Thicknesses"
                 {
                     ApplicationArea = All;
                 }
+                field("mu Value"; "mu Value")
+                {
+                    ApplicationArea = All;
+                }
+                field("Dimension Code"; "Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("Dimension Value Code"; "Dimension Value Code")
                 {
                     ApplicationArea = All;
