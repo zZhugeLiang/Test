@@ -245,7 +245,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     ACOAppSetup.Get();
                     case Rec."Unit of Measure Code" of
                         ACOAppSetup."Length Unit of Measure Code":
-                            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                            if ItemVariant.Get(Rec."Variant Code", Rec."No.") then
                                 NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
                         ACOAppSetup."Area Unit of Measure Code":
                             NewQuantity := Rec."ACO Profile Circumference" * "ACO Number of Units" / 1000;

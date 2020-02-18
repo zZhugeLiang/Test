@@ -369,6 +369,27 @@ table 50016 "ACO Bath Sheet Header"
             Caption = 'GSX 4 Time';
             DataClassification = CustomerContent;
         }
+
+        field(53; "GSX 1 Time New"; Decimal)
+        {
+            Caption = 'GSX 1 Time New'; // DEPRECATED, Remove after new environment
+            DataClassification = CustomerContent;
+        }
+        field(54; "GSX 2 Time New"; Decimal)
+        {
+            Caption = 'GSX 2 Time New'; // DEPRECATED, Remove after new environment
+            DataClassification = CustomerContent;
+        }
+        field(55; "GSX 3 Time New"; Decimal)
+        {
+            Caption = 'GSX 3 Time New'; // DEPRECATED, Remove after new environment
+            DataClassification = CustomerContent;
+        }
+        field(56; "GSX 4 Time New"; Decimal)
+        {
+            Caption = 'GSX 4 Time New'; // DEPRECATED, Remove after new environment
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

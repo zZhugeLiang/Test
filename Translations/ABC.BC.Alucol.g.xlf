@@ -1198,6 +1198,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Surface - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 619236694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Color</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 619236694 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1324,7 +1329,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Resource - Field Resource No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1082493977 - Field 2902851687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Type</source>
+          <source>Resource Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Resource - Field Resource Name - Property Caption</note>
         </trans-unit>
@@ -2294,7 +2299,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Included - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 423926106">
-          <source>Operation Type</source>
+          <source>Operating Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Machine Center Extension - Field ACO Operation Type - Property Caption</note>
         </trans-unit>

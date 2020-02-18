@@ -153,7 +153,7 @@ table 50009 "ACO Profile Customer"
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.", "Ship-to Code")//, "Customer Item No.") Add in New Sandbox.
+        key(PK; "Profile Code", "Customer No.", "Ship-to Code")//, "Customer Item No.") Add in New Sandbox. DEPRECATED
         {
             Clustered = true;
         }
