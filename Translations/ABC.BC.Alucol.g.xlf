@@ -1098,6 +1098,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field GSX 4 Time - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1438845102 - Field 271413632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 1 Time New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field GSX 1 Time New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1438845102 - Field 1700760193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 2 Time New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field GSX 2 Time New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1438845102 - Field 897742978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 3 Time New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field GSX 3 Time New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1438845102 - Field 2293346051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 4 Time New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field GSX 4 Time New - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 355523985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet No.</source>
           <note from="Developer" annotates="general" priority="2"></note>

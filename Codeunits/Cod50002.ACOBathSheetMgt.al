@@ -307,6 +307,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader."GSX 4 Str." := Str;
         // ACOBathSheetHeader."GSX 4 Time" := 0T;
         ACOBathSheetHeader."GSX 4 Time New" := BathTime;
+
+        ACOBathSheetHeader.Modify();
     end;
 
     local procedure CalculateProcessTimeBath(var CurrDens: Decimal; var Str: Decimal; var BathTime: Decimal; TotalSurface: Decimal; LayerThickness: Decimal; MinAnodiseTime: Decimal)
