@@ -12,6 +12,8 @@ page 50020 "ACO Bath Sheet"
         {
             group(General)
             {
+                Caption = 'General';
+
                 field("No."; "No.")
                 {
                     ApplicationArea = All;
@@ -84,6 +86,11 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
+            }
+
+            group(MeasureGroup)
+            {
+                Caption = 'Measure';
                 field("Measure Y-value"; "Measure Y-value")
                 {
                     ApplicationArea = All;
@@ -116,6 +123,10 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
+            }
+            group(Details)
+            {
+                Caption = 'Details';
                 field("More Than One Thick"; "More Than One Thick")
                 {
                     ApplicationArea = All;
@@ -172,60 +183,80 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
-                field("GSX 1 Str."; "GSX 1 Str.")
+                group(CalculatedValues)
                 {
-                    ApplicationArea = All;
+                    Caption = 'Calculated Values';
+                    field("GSX 1 Str."; "GSX 1 Str.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 2 Str."; "GSX 2 Str.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 3 Str."; "GSX 3 Str.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 4 Str."; "GSX 4 Str.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 1 Dhd."; "GSX 1 Dhd.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 2 Dhd."; "GSX 2 Dhd.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 3 Dhd."; "GSX 3 Dhd.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 4 Dhd."; "GSX 4 Dhd.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    // field("GSX 1 Time"; "GSX 1 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }
+                    // field("GSX 2 Time"; "GSX 2 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }
+                    // field("GSX 3 Time"; "GSX 3 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }
+                    // field("GSX 4 Time"; "GSX 4 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }
+                    field("GSX 1 Time New"; "GSX 1 Time New")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 2 Time New"; "GSX 2 Time New")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 3 Time New"; "GSX 3 Time")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("GSX 4 Time New"; "GSX 4 Time New")
+                    {
+                        ApplicationArea = All;
+                    }
                 }
-                field("GSX 2 Str."; "GSX 2 Str.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 3 Str."; "GSX 3 Str.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 4 Str."; "GSX 4 Str.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 1 Dhd."; "GSX 1 Dhd.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 2 Dhd."; "GSX 2 Dhd.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 3 Dhd."; "GSX 3 Dhd.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 4 Dhd."; "GSX 4 Dhd.")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 1 Time"; "GSX 1 Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 2 Time"; "GSX 2 Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 3 Time"; "GSX 3 Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("GSX 4 Time"; "GSX 4 Time")
-                {
-                    ApplicationArea = All;
-                }
-            }
 
-            part("ACO Bath Sheet Subpage"; "ACO Bath Sheet Subpage")
-            {
-                SubPageLink = "Bath Sheet No." = field("No.");
-                ApplicationArea = All;
+                part("ACO Bath Sheet Subpage"; "ACO Bath Sheet Subpage")
+                {
+                    SubPageLink = "Bath Sheet No." = field("No.");
+                    ApplicationArea = All;
+                }
             }
         }
     }

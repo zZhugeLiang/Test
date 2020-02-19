@@ -14,7 +14,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         CreateBathSheetLines(ACOBathSheetHeader."No.", ProductionOrderLines);
 
         UpdateBathSheetHeader(ACOBathSheetHeader);
-        CalculateProcessTimes(ACOBathSheetHeader, ProductionOrderLines);
+        // CalculateProcessTimes(ACOBathSheetHeader, ProductionOrderLines);
         //CompleteBathSheet(ProductionOrderLines);
         ProductionOrderLines.SetRange("ACO Included", true);
         ProductionOrderLines.ModifyAll("ACO Complete", true);
@@ -103,28 +103,32 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         LayerThickness: Integer;
         MaxLayerThickness: Integer;
         SalesLineMeasure: Boolean;
+        First: Boolean;
     begin
         // ACOBathSheetHeader."No." := BathSheetHeader."No.";
         ProductionOrderLines.SetRange("ACO Included", true);
-        if ProductionOrderLines.FindSet() then begin
-            if ACOProfile.Get(ProductionOrderLines."ACO Profile Code") then begin
-                ACOBathSheetHeader."Bath Sheet Comment" := ACOProfile."Comment Bath Card";
-                //ACOBathSheetHeader."Total Surface Profiles" :=
-                // ACOBathSheetHeader."Surface Addition" := ACOProfile.
-                //SalesLineMeasure := ACOProfile.me
-                // ACOBathSheetHeader."Minimum Current Density" := ACOProfile.
-            end;
-
-            SalesHeader.Get(SalesHeader."Document Type", ProductionOrderLines."ACO Source No.");
-            Customer.Get(SalesHeader."Sell-to Customer No.");
-            ACOBathSheetHeader."Note Bath Sheet" := Customer."ACO Comment Bath Card";
-
-            if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source No.") then
-                ACOBathSheetHeader."Extra to Enumerate" := SalesLine."ACO Extra to Enumerate Profile";
-
+        First := true;
+        if ProductionOrderLines.FindSet() then
             repeat
+                if First then begin
+                    if ACOProfile.Get(ProductionOrderLines."ACO Profile Code") then //begin
+                        ACOBathSheetHeader."Bath Sheet Comment" := ACOProfile."Comment Bath Card";
+                    //ACOBathSheetHeader."Total Surface Profiles" :=
+                    // ACOBathSheetHeader."Surface Addition" := ACOProfile.
+                    //SalesLineMeasure := ACOProfile.me
+                    // ACOBathSheetHeader."Minimum Current Density" := ACOProfile.
+                    //end;
+                    SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLines."ACO Source No.");
+                    Customer.Get(SalesHeader."Sell-to Customer No.");
+                    ACOBathSheetHeader."Note Bath Sheet" := Customer."ACO Comment Bath Card";
+
+                    if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source Line No.") then
+                        ACOBathSheetHeader."Extra to Enumerate" := SalesLine."ACO Extra to Enumerate Profile";
+
+                    First := false;
+                end;
                 CurrentSourceNo := ProductionOrderLines."ACO Source No.";
-                if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", CurrentSourceNo) then begin
+                if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source Line No.") then begin
                     TotalCircumference += SalesLine."ACO Profile Circumference";
 
                     if SalesLine."ACO Thick St. Time Profile" >= MaxThickStainingTime then
@@ -162,7 +166,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 // if SalesLine.
                 PreviousSourceNo := CurrentSourceNo;
             until ProductionOrderLines.Next() = 0;
-        end;
 
         ACOBathSheetHeader."Layer Thickness" := MaxLayerThickness + SalesHeader."ACO Extra to Enumerate";
         ACOBathSheetHeader.Circumference := TotalCircumference;
@@ -247,11 +250,11 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             repeat
                 if ACOProfile.Get(ACOBathSheetLine."Profile Code") and (StrLen(BathSheetComment) < MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment")) then
                     BathSheetComment += ACOProfile."Comment Bath Card";
-
                 ACOBathSheetHeader."Total Surface Profiles" += ACOBathSheetLine.Surface;
             until ACOBathSheetLine.Next() = 0;
 
         ACOBathSheetHeader."Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment"));
+        ACOBathSheetHeader."Total Surface" := ACOBathSheetHeader."Total Surface Profiles" + (ACOBathSheetHeader."Surface Attachrack" / 100) + ACOBathSheetHeader."Surface Addition";
         ACOBathSheetHeader.Modify();
     end;
 
@@ -266,6 +269,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         TotalSurface: Decimal;
         LayerThickness: Decimal;
         MinAnodiseTime: Decimal;
+        First: Boolean;
     begin
         ACOAppSetup.Get();
         ACOAppSetup.TestField("Max. Current Density Bath 1");
@@ -274,20 +278,21 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOAppSetup.TestField("Max. Current Density Bath L");
         ACOAppSetup.TestField("Min. Anodise Time");
 
+        First := true;
         ACOBathSheetLine.SetRange("Bath Sheet No.", ACOBathSheetHeader."No.");
-        if ACOBathSheetLine.FindSet() then begin
-            MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-            MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-
+        if ACOBathSheetLine.FindSet() then
             repeat
+                if First then begin
+                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
+                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
+                    First := false;
+                end;
+
                 if MaxCurrDens <= ACOBathSheetLine."Maximum Current Density" then
                     MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-
                 if MinCurrDens >= ACOBathSheetLine."Minimum Current Density" then
                     MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-
             until ACOBathSheetLine.Next() = 0;
-        end;
 
         Str := ACOAppSetup."Max. Current Density Bath 1";
 
