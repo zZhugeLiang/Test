@@ -1,7 +1,7 @@
 codeunit 50002 "ACO Bath Sheet Mgt."
 {
 
-    procedure CreateBathSheet(ProductionOrderLines: Record "Prod. Order Line"; ResourceFilter: Text)
+    procedure CreateBathSheet(var ProductionOrderLines: Record "Prod. Order Line"; ResourceFilter: Text)
     var
         ACOBathSheetHeader: Record "ACO Bath Sheet Header";
     begin
@@ -47,7 +47,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     end;
 
     // 2. Check Production Lines
-    local procedure CheckProductionLines(ProductionOrderLines: Record "Prod. Order Line"): Boolean;
+    local procedure CheckProductionLines(var ProductionOrderLines: Record "Prod. Order Line"): Boolean;
     var
         Item: Record Item;
         ColorCode: Code[20];
@@ -60,12 +60,13 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         Max2ChargesErr: Label 'A maximum of 2 charges is allowed, per Bath Sheet.';
     begin
         ProductionOrderLines.SetCurrentKey("ACO Charge No.", Status, "Prod. Order No.");
+        ProductionOrderLines.SetRange("ACO Included", true);
         if ProductionOrderLines.FindSet() then
             repeat
                 if ProductionOrderLines."Variant Code" = '' then
                     Error(VariantCodeEmptyErr);
                 if ProductionOrderLines."ACO Quantity to Bath Sheet" = 0 then
-                    Error(QuantityToBathSheetZeroErr);
+                    Error(QuantityToBathSheetZeroErr, ProductionOrderLines."ACO Charge No.");
                 if ProductionOrderLines."ACO Charge No." = '' then
                     Error(ChargeNoEmptyErr, ProductionOrderLines."Prod. Order No." + ' ' + Format(ProductionOrderLines."Line No."));
 
@@ -87,7 +88,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             until ProductionOrderLines.Next() = 0;
     end;
 
-    local procedure CreateBathSheetHeader(var ACOBathSheetHeader: Record "ACO Bath Sheet Header"; ProductionOrderLine: Record "Prod. Order Line")
+    local procedure CreateBathSheetHeader(var ACOBathSheetHeader: Record "ACO Bath Sheet Header"; var ProductionOrderLines: Record "Prod. Order Line")
     var
         ACOProfile: Record "ACO Profile";
         SalesHeader: Record "Sales Header";
@@ -104,8 +105,9 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesLineMeasure: Boolean;
     begin
         // ACOBathSheetHeader."No." := BathSheetHeader."No.";
-        if ProductionOrderLine.FindSet() then begin
-            if ACOProfile.Get(ProductionOrderLine."ACO Profile Code") then begin
+        ProductionOrderLines.SetRange("ACO Included", true);
+        if ProductionOrderLines.FindSet() then begin
+            if ACOProfile.Get(ProductionOrderLines."ACO Profile Code") then begin
                 ACOBathSheetHeader."Bath Sheet Comment" := ACOProfile."Comment Bath Card";
                 //ACOBathSheetHeader."Total Surface Profiles" :=
                 // ACOBathSheetHeader."Surface Addition" := ACOProfile.
@@ -113,16 +115,16 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 // ACOBathSheetHeader."Minimum Current Density" := ACOProfile.
             end;
 
-            SalesHeader.Get(SalesHeader."Document Type", ProductionOrderLine."ACO Source No.");
+            SalesHeader.Get(SalesHeader."Document Type", ProductionOrderLines."ACO Source No.");
             Customer.Get(SalesHeader."Sell-to Customer No.");
             ACOBathSheetHeader."Note Bath Sheet" := Customer."ACO Comment Bath Card";
 
-            if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source No.") then
+            if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source No.") then
                 ACOBathSheetHeader."Extra to Enumerate" := SalesLine."ACO Extra to Enumerate Profile";
 
             repeat
-                CurrentSourceNo := ProductionOrderLine."ACO Source No.";
-                if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", CurrentSourceNo) then begin
+                CurrentSourceNo := ProductionOrderLines."ACO Source No.";
+                if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", CurrentSourceNo) then begin
                     TotalCircumference += SalesLine."ACO Profile Circumference";
 
                     if SalesLine."ACO Thick St. Time Profile" >= MaxThickStainingTime then
@@ -159,7 +161,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 end;
                 // if SalesLine.
                 PreviousSourceNo := CurrentSourceNo;
-            until ProductionOrderLine.Next() = 0;
+            until ProductionOrderLines.Next() = 0;
         end;
 
         ACOBathSheetHeader."Layer Thickness" := MaxLayerThickness + SalesHeader."ACO Extra to Enumerate";

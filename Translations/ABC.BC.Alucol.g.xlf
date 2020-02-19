@@ -414,7 +414,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Hollow - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DEPRECATED</source>
+          <source>Area</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
         </trans-unit>
@@ -1598,6 +1598,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2943489305 - Control 893731199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resource Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Resource_Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Control 851830778 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the number of the related production order.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1698,6 +1703,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Cost Amount - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Action 1617299486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set Included</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1712,11 +1722,6 @@
           <source>Show Included</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowIncluded - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Bath Sheet</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Line</source>

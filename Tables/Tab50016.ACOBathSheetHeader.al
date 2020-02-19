@@ -159,6 +159,7 @@ table 50016 "ACO Bath Sheet Header"
         field(18; "Total Quantity"; Decimal)
         {
             Caption = 'Total Quantity';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = Sum ("ACO Bath Sheet Line".Quantity where("Bath Sheet No." = field("No.")));
         }

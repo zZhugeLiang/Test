@@ -1,10 +1,11 @@
 Page 50025 "ACO Selection Bath Sheet List"
 {
     Caption = 'Selection Bath Sheet List';
-    Editable = false;
     PageType = List;
     SourceTable = "Prod. Order Line";
     SourceTableView = where(Status = const(Released), "ACO Source Type" = const("Sales Header"));
+    UsageCategory = Lists;
+    ApplicationArea = All;
 
     layout
     {
@@ -13,13 +14,12 @@ Page 50025 "ACO Selection Bath Sheet List"
 
             field(Resource_Filter; ResourceFilter)
             {
+                Caption = 'Resource Filter';
                 ApplicationArea = All;
             }
             repeater(Control1)
             {
                 ShowCaption = false;
-                Editable = false;
-
                 field("ACO Included"; "ACO Included")
                 {
                     Editable = true;
@@ -29,17 +29,20 @@ Page 50025 "ACO Selection Bath Sheet List"
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the number of the related production order.';
+                    Editable = false;
                 }
 
                 field("ACO Source No."; "ACO Source No.")
                 {
                     ApplicationArea = All;
+                    Editable = false;
                 }
 
                 field("Item No."; "Item No.")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the number of the item that is to be produced.';
+                    Editable = false;
                 }
 
                 field("ACO Profile Code"; "ACO Profile Code")
@@ -51,29 +54,34 @@ Page 50025 "ACO Selection Bath Sheet List"
                     ApplicationArea = Planning;
                     ToolTip = 'Specifies the variant of the item on the line.';
                     Visible = false;
+                    Editable = false;
                 }
                 field(Description; Description)
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the value of the Description field on the item card. If you enter a variant code, the variant description is copied to this field instead.';
+                    Editable = false;
                 }
                 field("Description 2"; "Description 2")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies an additional description.';
                     Visible = false;
+                    Editable = false;
                 }
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = Dimensions;
                     ToolTip = 'Specifies the code for Shortcut Dimension 1, which is one of two global dimension codes that you set up in the General Ledger Setup window.';
                     Visible = false;
+                    Editable = false;
                 }
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = Dimensions;
                     ToolTip = 'Specifies the code for Shortcut Dimension 2, which is one of two global dimension codes that you set up in the General Ledger Setup window.';
                     Visible = false;
+                    Editable = false;
                 }
                 field("ShortcutDimCode[3]"; ShortcutDimCode[3])
                 {
@@ -84,6 +92,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                                                                   "Dimension Value Type" = const(Standard),
                                                                   Blocked = const(false));
                     Visible = false;
+                    Editable = false;
                 }
                 field("ShortcutDimCode[4]"; ShortcutDimCode[4])
                 {
@@ -94,6 +103,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                                                                   "Dimension Value Type" = const(Standard),
                                                                   Blocked = const(false));
                     Visible = false;
+                    Editable = false;
                 }
                 field("ShortcutDimCode[5]"; ShortcutDimCode[5])
                 {
@@ -104,6 +114,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                                                                   "Dimension Value Type" = const(Standard),
                                                                   Blocked = const(false));
                     Visible = false;
+                    Editable = false;
                 }
                 field("ShortcutDimCode[6]"; ShortcutDimCode[6])
                 {
@@ -114,6 +125,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                                                                   "Dimension Value Type" = const(Standard),
                                                                   Blocked = const(false));
                     Visible = false;
+                    Editable = false;
                 }
                 field("ShortcutDimCode[7]"; ShortcutDimCode[7])
                 {
@@ -124,6 +136,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                                                                   "Dimension Value Type" = const(Standard),
                                                                   Blocked = const(false));
                     Visible = false;
+                    Editable = false;
                 }
                 field("ShortcutDimCode[8]"; ShortcutDimCode[8])
                 {
@@ -134,17 +147,25 @@ Page 50025 "ACO Selection Bath Sheet List"
                                                                   "Dimension Value Type" = const(Standard),
                                                                   Blocked = const(false));
                     Visible = false;
+                    Editable = false;
                 }
                 field("Location Code"; "Location Code")
                 {
                     ApplicationArea = Location;
                     ToolTip = 'Specifies the location code, if the produced items should be stored in a specific location.';
                     Visible = true;
+                    Editable = false;
                 }
                 field(Quantity; Quantity)
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the quantity to be produced if you manually fill in this line.';
+                    Editable = false;
+                }
+                field("ACO Charge No."; "ACO Charge No.")
+                {
+                    Editable = true;
+                    ApplicationArea = Manufacturing;
                 }
                 field("ACO Quantity to Bath Sheet"; "ACO Quantity to Bath Sheet")
                 {
@@ -160,6 +181,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies how much of the quantity on this line has been produced.';
+                    Editable = false;
                 }
                 field("Remaining Quantity"; "Remaining Quantity")
                 {
@@ -171,48 +193,57 @@ Page 50025 "ACO Selection Bath Sheet List"
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the percentage of the item that you expect to be scrapped in the production process.';
                     Visible = false;
+                    Editable = false;
                 }
                 field("Due Date"; "Due Date")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the date when the produced item must be available. The date is copied from the header of the production order.';
+                    Editable = false;
                 }
                 field("Starting Date"; "Starting Date")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the entry''s starting date, which is retrieved from the production order routing.';
+                    Editable = false;
                 }
                 field("Starting Time"; "Starting Time")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the entry''s starting time, which is retrieved from the production order routing.';
                     Visible = false;
+                    Editable = false;
                 }
                 field("Ending Date"; "Ending Date")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the entry''s ending date, which is retrieved from the production order routing.';
+                    Editable = false;
                 }
                 field("Ending Time"; "Ending Time")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the entry''s ending time, which is retrieved from the production order routing.';
                     Visible = false;
+                    Editable = false;
                 }
                 field("Production BOM No."; "Production BOM No.")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the number of the production BOM that is the basis for creating the Prod. Order Component list for this line.';
+                    Editable = false;
                 }
                 field("Unit Cost"; "Unit Cost")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the cost of one unit of the item or resource on the line.';
+                    Editable = false;
                 }
                 field("Cost Amount"; "Cost Amount")
                 {
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the total cost on the line by multiplying the unit cost by the quantity.';
+                    Editable = false;
                 }
             }
         }
@@ -236,6 +267,23 @@ Page 50025 "ACO Selection Bath Sheet List"
 
         area(Processing)
         {
+            action(CreateBathSheet)
+            {
+                ApplicationArea = All;
+                Caption = 'Create Bath Sheet';
+                Image = ShowSelected;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
+                begin
+                    SetRange("ACO Included", true);
+                    ACOBathSheetMgt.CreateBathSheet(Rec, ResourceFilter);
+                    CurrPage.Update(false);
+                end;
+            }
             action(SetIncluded)
             {
                 ApplicationArea = All;
@@ -281,23 +329,6 @@ Page 50025 "ACO Selection Bath Sheet List"
                 trigger OnAction()
                 begin
                     SetRange("ACO Included", true);
-                    CurrPage.Update(false);
-                end;
-            }
-            action(CreateBathSheet)
-            {
-                ApplicationArea = All;
-                Caption = 'Create Bath Sheet';
-                Image = ShowSelected;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                trigger OnAction()
-                var
-                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
-                begin
-                    SetRange("ACO Included", true);
-                    ACOBathSheetMgt.CreateBathSheet(Rec, ResourceFilter);
                     CurrPage.Update(false);
                 end;
             }

@@ -61,6 +61,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         field(50008; "ACO Bath Sheet Qty."; Decimal)
         {
             Caption = 'Bath Sheet Qty.';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = Lookup ("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
         }
@@ -79,8 +80,13 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
         field(50011; "ACO Quantity to Bath Sheet"; Decimal)
         {
-            Caption = 'Quantity to Bath Sheet';
+            Caption = 'Quantity to Bath Sheet'; // DEPRECATED remove this field or ACO Included
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                "ACO Total m2" := "ACO Quantity to Bath Sheet" * "ACO Profile m2 per Qty.";
+            end;
         }
 
         field(50012; "ACO Complete"; Boolean)
@@ -92,7 +98,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
         field(50013; "ACO Included"; Boolean)
         {
-            Caption = 'Included';
+            Caption = 'Included';// DEPRECATED remove this field or ACO Include Bath Sheet
             DataClassification = CustomerContent;
         }
     }

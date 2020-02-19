@@ -70,10 +70,15 @@ page 50000 "ACO App Setup"
                     ApplicationArea = All;
                 }
 
+                field("Max. Current Density Bath L"; "Max. Current Density Bath L")
+                {
+                    ApplicationArea = All;
+                }
+
                 field("Min. Anodise Time"; "Min. Anodise Time")
                 {
                     ApplicationArea = All;
-                }		
+                }
             }
         }
     }

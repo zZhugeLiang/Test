@@ -103,13 +103,12 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50016; "ACO Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
-            // TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
             DataClassification = CustomerContent;
             trigger OnLookup()
             var
                 SalesHeader: Record "Sales Header";
                 ACOProfileCustomer: Record "ACO Profile Customer";
-                SelectionFilterManagement: Codeunit SelectionFilterManagement;
+                ACOProfileCustomer2: Record "ACO Profile Customer";
                 ACOProfileCustomers: Page "ACO Profile Customers";
                 RecRef: RecordRef;
             begin
@@ -121,7 +120,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 if ACOProfileCustomers.RunModal() = Action::LookupOK then begin
                     ACOProfileCustomers.SetSelectionFilter(ACOProfileCustomer);
                     RecRef.GetTable(ACOProfileCustomer);
-                    "ACO Profile Code" := CopyStr(SelectionFilterManagement.GetSelectionFilter(RecRef, ACOProfileCustomer.FieldNo("Profile Code")), 1, MaxStrLen("ACO Profile Code"));
+                    ACOProfileCustomers.GetRecord(ACOProfileCustomer2);
+                    Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
                 end;
             end;
         }
@@ -243,15 +243,16 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             begin
                 if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
                     ACOAppSetup.Get();
-                    case Rec."Unit of Measure Code" of
-                        ACOAppSetup."Length Unit of Measure Code":
-                            if ItemVariant.Get(Rec."Variant Code", Rec."No.") then
-                                NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
-                        ACOAppSetup."Area Unit of Measure Code":
-                            NewQuantity := Rec."ACO Profile Circumference" * "ACO Number of Units" / 1000;
-                        else
-                            NewQuantity := "ACO Number of Units";
-                    end;
+
+                    NewQuantity := "ACO Number of Units";
+
+                    if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then begin
+                        if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                            NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
+                    end else
+                        if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+                            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                                NewQuantity := Rec."ACO Profile Circumference" * "ACO Number of Units" / 1000;
 
                     Validate(Quantity, NewQuantity);
                 end;

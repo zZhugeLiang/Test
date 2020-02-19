@@ -52,7 +52,7 @@ table 50008 "ACO Profile"
 
         field(8; "Area"; Decimal)
         {
-            Caption = 'DEPRECATED';
+            Caption = 'Area'; // DEPRECATED?
             DataClassification = CustomerContent;
         }
 

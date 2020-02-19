@@ -226,15 +226,6 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
-    local procedure SalesLine_OnAfterValidate_ACONumberOfUnits(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        ACOProfile: Record "ACO Profile";
-    begin
-        if ACOProfile.Get(Rec."ACO Profile Code") then
-            Rec.Validate(Quantity, Rec."ACO Number of Units" * ACOProfile."Area");
-    end;
-
     // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Routing No.', false, false)]
     // local procedure SalesLine_OnAfterValidate_RoutingNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     // var
@@ -262,9 +253,17 @@ codeunit 50000 "ACO Event Subscribers"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
     local procedure CreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
+    var
+        ACOProfile: Record "ACO Profile";
     begin
         ProdOrderLine."ACO Source Type" := ProductionOrder."Source Type";
         ProdOrderLine."ACO Source No." := ProductionOrder."Source No.";
         ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
+        ProdOrderLine."ACO Profile Code" := SalesLine."ACO Profile Code";
+        if ACOProfile.Get(SalesLine."ACO Profile Code") then
+            ProdOrderLine."ACO Profile m2 per Qty." := ACOProfile."Area";
+        ProdorderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
+        ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
+        // ProdOrderLine."ACO Total m2" := ProdOrderLine."ACO Quantity to Bath Sheet" * ProdOrderLine."ACO Profile m2 per Qty.";
     end;
 }

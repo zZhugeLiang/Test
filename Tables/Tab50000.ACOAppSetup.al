@@ -64,7 +64,7 @@ table 50000 "ACO App Setup"
             TableRelation = "Unit of Measure";
             DataClassification = CustomerContent;
         }
-	
+
         field(10; "Default Project Color Nos."; Code[20])
         {
             Caption = 'Default Project Color Nos.';
@@ -75,30 +75,35 @@ table 50000 "ACO App Setup"
         field(11; "Max. Current Density Bath 1"; Decimal)
         {
             Caption = 'Max. Current Density Bath 1';
+            DecimalPlaces = 0;
             DataClassification = CustomerContent;
         }
 
         field(12; "Max. Current Density Bath 2"; Decimal)
         {
             Caption = 'Max. Current Density Bath 2';
+            DecimalPlaces = 0;
             DataClassification = CustomerContent;
         }
 
         field(13; "Max. Current Density Bath 3"; Decimal)
         {
             Caption = 'Max. Current Density Bath 3';
+            DecimalPlaces = 0;
             DataClassification = CustomerContent;
         }
 
         field(14; "Max. Current Density Bath L"; Decimal)
         {
             Caption = 'Max. Current Density Bath L';
+            DecimalPlaces = 0;
             DataClassification = CustomerContent;
         }
 
         field(15; "Min. Anodise Time"; Decimal)
         {
             Caption = 'Min. Anodise Time';
+            DecimalPlaces = 0;
             InitValue = 16;
             DataClassification = CustomerContent;
         }
