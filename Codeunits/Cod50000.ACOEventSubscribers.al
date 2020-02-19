@@ -265,6 +265,6 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         ProdOrderLine."ACO Source Type" := ProductionOrder."Source Type";
         ProdOrderLine."ACO Source No." := ProductionOrder."Source No.";
-        ProdOrderLine."Line No." := SalesLine."Line No.";
+        ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
     end;
 }

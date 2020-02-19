@@ -1,28 +1,52 @@
 codeunit 50002 "ACO Bath Sheet Mgt."
 {
 
-    procedure CreateBathSheet(ProductionOrderLines: Record "Prod. Order Line")
+    procedure CreateBathSheet(ProductionOrderLines: Record "Prod. Order Line"; ResourceFilter: Text)
     var
         ACOBathSheetHeader: Record "ACO Bath Sheet Header";
-        LineNo: Integer;
     begin
-        ProductionOrderLines.SetRange("ACO Included", true);
+        GetAppSetupAndCheckFields();
+        CheckResourceFilter(ResourceFilter);
 
         CheckProductionLines(ProductionOrderLines);
-        //SelectResources(ProductionOrderLines);
-        LineNo := 10000;
-        ProductionOrderLines.Reset();
-        ProductionOrderLines.SetRange("ACO Included", true);
-        if ProductionOrderLines.FindSet() then
-            repeat
-                CreateBathSheetLine(ProductionOrderLines, ACOBathSheetHeader, LineNo);
-            until ProductionOrderLines.Next() = 0;
+
         CreateBathSheetHeader(ACOBathSheetHeader, ProductionOrderLines);
+        CreateBathSheetLines(ACOBathSheetHeader."No.", ProductionOrderLines);
+
         UpdateBathSheetHeader(ACOBathSheetHeader);
         CalculateProcessTimes(ACOBathSheetHeader, ProductionOrderLines);
         //CompleteBathSheet(ProductionOrderLines);
+        ProductionOrderLines.SetRange("ACO Included", true);
+        ProductionOrderLines.ModifyAll("ACO Complete", true);
+        // how to make it so that the line is processed?
+        ProductionOrderLines.ModifyAll("ACO Included", false);
+
+        InsertResources(ACOBathSheetHeader."No.", ResourceFilter)
     end;
 
+    // 0. Get Setup and Check Fields
+    local procedure GetAppSetupAndCheckFields()
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Max. Current Density Bath 1");
+        ACOAppSetup.TestField("Max. Current Density Bath 2");
+        ACOAppSetup.TestField("Max. Current Density Bath 3");
+        ACOAppSetup.TestField("Max. Current Density Bath L");
+        ACOAppSetup.TestField("Min. Anodise Time");
+    end;
+
+    // 1. Check Resource Filter
+    local procedure CheckResourceFilter(ResourceFilter: Text)
+    var
+        Resource: Record Resource;
+        NoResourcesFoundErr: Label 'No Resources found with filter %1';
+    begin
+        Resource.SetFilter("No.", ResourceFilter);
+        if Resource.IsEmpty() then
+            Error(NoResourcesFoundErr);
+    end;
+
+    // 2. Check Production Lines
     local procedure CheckProductionLines(ProductionOrderLines: Record "Prod. Order Line"): Boolean;
     var
         Item: Record Item;
@@ -40,18 +64,14 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             repeat
                 if ProductionOrderLines."Variant Code" = '' then
                     Error(VariantCodeEmptyErr);
-
                 if ProductionOrderLines."ACO Quantity to Bath Sheet" = 0 then
                     Error(QuantityToBathSheetZeroErr);
-
                 if ProductionOrderLines."ACO Charge No." = '' then
                     Error(ChargeNoEmptyErr, ProductionOrderLines."Prod. Order No." + ' ' + Format(ProductionOrderLines."Line No."));
 
                 if ChargeNo <> ProductionOrderLines."ACO Charge No." then begin
                     ChargeCount += 1;
                     ColorCode := '';
-                end else begin
-
                 end;
 
                 if ChargeCount > 2 then
@@ -62,27 +82,9 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 if Item.Get(ProductionOrderLines."Item No.") then begin
                     if (ColorCode <> '') and (ColorCode <> Item."ACO Color") then
                         Error(ColorCodeNotIdenticalErr, ProductionOrderLines."ACO Charge No.");
-
                     ColorCode := Item."ACO Color";
                 end;
             until ProductionOrderLines.Next() = 0;
-    end;
-
-    local procedure SelectResources(BathSheetNo: Code[20]; FilterString: Text)
-    var
-        Resource: Record Resource;
-        ACOSheetResource: Record "ACO Bath Sheet Resource";
-        UnknownResourceErr: Label 'Bath Sheet cannot be created, Resource is unknown.';
-    begin
-        Resource.SetFilter("No.", FilterString);
-        if Resource.FindSet() then
-            repeat
-                ACOSheetResource."Bath Sheet No." := BathSheetNo;
-                ACOSheetResource."Resource No." := Resource."No.";
-                ACOSheetResource.Insert();
-            until Resource.Next() = 0
-        else
-            Error(UnknownResourceErr);
     end;
 
     local procedure CreateBathSheetHeader(var ACOBathSheetHeader: Record "ACO Bath Sheet Header"; ProductionOrderLine: Record "Prod. Order Line")
@@ -165,7 +167,21 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.Insert(true);
     end;
 
-    local procedure CreateBathSheetLine(ProductionOrderLine: Record "Prod. Order Line"; ACOBathSheetHeader: Record "ACO Bath Sheet Header"; var LineNo: Integer)
+    local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; ProductionOrderLines: Record "Prod. Order Line")
+    var
+        LineNo: Integer;
+    begin
+        LineNo := 10000;
+        ProductionOrderLines.Reset();
+        ProductionOrderLines.SetRange("ACO Included", true);
+        if ProductionOrderLines.FindSet() then
+            repeat
+                CreateBathSheetLine(ACOBathSheetHeaderNo, ProductionOrderLines, LineNo);
+                LineNo += 10000;
+            until ProductionOrderLines.Next() = 0;
+    end;
+
+    local procedure CreateBathSheetLine(ACOBathSheetHeaderNo: Code[20]; ProductionOrderLine: Record "Prod. Order Line"; var LineNo: Integer)
     var
         SalesLine: Record "Sales Line";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
@@ -175,7 +191,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     begin
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
 
-        ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeader."No.";
+        ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
         ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status;
         ACOBathSheetLine."Production Order No." := ProductionOrderLine."Prod. Order No.";
         ACOBathSheetLine."Production Order Line No." := ProductionOrderLine."Line No.";
@@ -187,7 +203,18 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if SalesLine.Type = SalesLine.Type::Item then // is deze regel nodig?
             ACOBathSheetLine.Treatment := SalesLine."No.";
 
-        // if SalesLine."ACO Min. Curr. Density Profile" >= MinCurrentDensity then
+        DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
+        ACOBathSheetLine."Minimum Current Density" := MinCurrentDensity;
+        ACOBathSheetLine."Maximum Current Density" := MaxCurrentDensity;
+
+        // ACOBathSheetLine.Length := ProductionOrderLine.ACO
+        ACOBathSheetLine.Circumference := SalesLine."ACO Profile Circumference";
+        ACOBathSheetLine.CalculateSurface();
+        ACOBathSheetLine.Insert();
+    end;
+
+    local procedure DetermineCurrentDensities(SalesLine: Record "Sales Line"; var MinCurrentDensity: Decimal; var MaxCurrentDensity: Decimal)
+    begin
         MinCurrentDensity := SalesLine."ACO Min. Curr. Density Profile";
 
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
@@ -197,7 +224,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if SalesLine."ACO Minimum Current Density PT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density PT";
 
-        // if SalesLine."ACO Max. Curr. Density Profile" <= MaxCurrentDensity then
         MaxCurrentDensity := SalesLine."ACO Max. Curr. Density Profile";
         if SalesLine."ACO Min. Current Density Color" <= MaxCurrentDensity then
             MaxCurrentDensity := SalesLine."ACO Min. Current Density Color";
@@ -205,15 +231,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             MaxCurrentDensity := SalesLine."ACO Maximum Current Density LT";
         if SalesLine."ACO Maximum Current Density PT" <= MaxCurrentDensity then
             MaxCurrentDensity := SalesLine."ACO Maximum Current Density PT";
-
-        ACOBathSheetLine."Minimum Current Density" := MinCurrentDensity;
-        ACOBathSheetLine."Maximum Current Density" := MaxCurrentDensity;
-
-        // ACOBathSheetLine.Length := ProductionOrderLine.ACO
-        ACOBathSheetLine.Circumference := SalesLine."ACO Profile Circumference";
-        ACOBathSheetLine.CalculateSurface();
-        ACOBathSheetLine.Insert();
-        LineNo += 10000;
     end;
 
     local procedure UpdateBathSheetHeader(ACOBathSheetHeader: Record "ACO Bath Sheet Header")
@@ -238,7 +255,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
     local procedure CalculateProcessTimes(var ACOBathSheetHeader: Record "ACO Bath Sheet Header"; ProductionOrderLines: Record "Prod. Order Line")
     var
-        ACOAppSetup: Record "ACO App Setup";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         MaxCurrDens: Decimal;
         MinCurrDens: Decimal;
@@ -323,4 +339,21 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
         Str := CurrDens * TotalSurface;
     end;
+
+    local procedure InsertResources(BathSheetNo: Code[20]; ResourceFilter: Text)
+    var
+        Resource: Record Resource;
+        ACOSheetResource: Record "ACO Bath Sheet Resource";
+    begin
+        Resource.SetFilter("No.", ResourceFilter);
+        if Resource.FindSet() then
+            repeat
+                ACOSheetResource."Bath Sheet No." := BathSheetNo;
+                ACOSheetResource."Resource No." := Resource."No.";
+                ACOSheetResource.Insert();
+            until Resource.Next() = 0
+    end;
+
+    var
+        ACOAppSetup: Record "ACO App Setup";
 }

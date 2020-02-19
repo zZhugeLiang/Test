@@ -10,6 +10,11 @@ Page 50025 "ACO Selection Bath Sheet List"
     {
         area(content)
         {
+
+            field(Resource_Filter; ResourceFilter)
+            {
+                ApplicationArea = All;
+            }
             repeater(Control1)
             {
                 ShowCaption = false;
@@ -279,7 +284,23 @@ Page 50025 "ACO Selection Bath Sheet List"
                     CurrPage.Update(false);
                 end;
             }
-
+            action(CreateBathSheet)
+            {
+                ApplicationArea = All;
+                Caption = 'Create Bath Sheet';
+                Image = ShowSelected;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
+                begin
+                    SetRange("ACO Included", true);
+                    ACOBathSheetMgt.CreateBathSheet(Rec, ResourceFilter);
+                    CurrPage.Update(false);
+                end;
+            }
         }
 
         area(navigation)
@@ -376,6 +397,7 @@ Page 50025 "ACO Selection Bath Sheet List"
 
     var
         ShortcutDimCode: array[8] of Code[20];
+        ResourceFilter: Text;
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterShowDocument(var ProdOrderLine: Record "Prod. Order Line"; ProdOrder: Record "Production Order")

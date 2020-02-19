@@ -1363,6 +1363,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Event Subscribers - Method SalesLine_OnAfterValidate_ACOProfileCode - NamedType ProfileInactiveErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3646941407 - Method 3598910552 - NamedType 508016789" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Resources found with filter %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckResourceFilter - NamedType NoResourcesFoundErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3646941407 - Method 1177154116 - NamedType 1437550479" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Code on Charge No. %1 is not identical.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1387,11 +1392,6 @@
           <source>A maximum of 2 charges is allowed, per Bath Sheet.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckProductionLines - NamedType Max2ChargesErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3646941407 - Method 3853568779 - NamedType 4280718521" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bath Sheet cannot be created, Resource is unknown.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method SelectResources - NamedType UnknownResourceErr</note>
         </trans-unit>
         <trans-unit id="Page 1037002210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Price Schemes</source>
@@ -1712,6 +1712,11 @@
           <source>Show Included</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowIncluded - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Line</source>
