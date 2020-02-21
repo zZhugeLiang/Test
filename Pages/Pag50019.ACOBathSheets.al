@@ -2,7 +2,7 @@ page 50019 "ACO Bath Sheets"
 {
     PageType = Document;
     SourceTable = "ACO Bath Sheet Header";
-    Caption = 'ACO Bath Sheets';
+    Caption = 'Bath Sheets';
     InsertAllowed = false;
     UsageCategory = Lists;
     CardPageId = "ACO Bath Sheet";
@@ -255,6 +255,7 @@ page 50019 "ACO Bath Sheets"
                 Caption = 'Bath Sheet Resources';
                 Image = Category;
                 RunObject = Page "ACO Bath Sheet Resources";
+                RunPageLink = "Bath Sheet No." = field("No.");
                 ApplicationArea = All;
             }
         }

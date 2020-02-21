@@ -242,7 +242,7 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
-                    field("GSX 3 Time New"; "GSX 3 Time")
+                    field("GSX 3 Time New"; "GSX 3 Time New")
                     {
                         ApplicationArea = All;
                     }
@@ -251,12 +251,57 @@ page 50020 "ACO Bath Sheet"
                         ApplicationArea = All;
                     }
                 }
+            }
 
-                part("ACO Bath Sheet Subpage"; "ACO Bath Sheet Subpage")
-                {
-                    SubPageLink = "Bath Sheet No." = field("No.");
-                    ApplicationArea = All;
-                }
+            part("ACO Bath Sheet Subpage"; "ACO Bath Sheet Subpage")
+            {
+                SubPageLink = "Bath Sheet No." = field("No.");
+                ApplicationArea = All;
+            }
+        }
+    }
+    actions
+    {
+
+        area(Processing)
+        {
+
+            action("Update Bath Sheet")
+            {
+                Caption = 'Update Bath Sheet';
+                Image = Approval;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
+                begin
+                    ACOBathSheetMgt.CalculateProcessTimes(Rec);
+                end;
+            }
+
+            action("Complete Bath Sheet")
+            {
+                Caption = 'Complete Bath Sheet';
+                Image = Approval;
+                ShortcutKey = F11;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                begin
+                    Validate(Complete, true);
+                end;
+            }
+        }
+        area(Navigation)
+        {
+            action("ACO Bath Sheet Resources")
+            {
+                Caption = 'Bath Sheet Resources';
+                Image = Category;
+                RunObject = Page "ACO Bath Sheet Resources";
+                RunPageLink = "Bath Sheet No." = field("No.");
+                ApplicationArea = All;
             }
         }
     }

@@ -1554,7 +1554,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Operating Types - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2112516322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Bath Sheets</source>
+          <source>Bath Sheets</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Property Caption</note>
         </trans-unit>
@@ -1572,6 +1572,41 @@
           <source>ACO Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Control 3596117297 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control MeasureGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Control 268917044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calculated Values</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control CalculatedValues - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 47148555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Bath Sheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 1566538523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Complete Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Complete Bath Sheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet Resources</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Bath Sheet Resources - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2801324966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ACO Bath Sheet Subpage</source>

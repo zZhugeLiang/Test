@@ -120,14 +120,14 @@ table 50017 "ACO Bath Sheet Line"
         field(17; "Minimum Current Density"; Decimal)
         {
             Caption = 'Minimum Current Density';
-            Editable = false;
+            // Editable = false; // Temporarily disabled for testing
             DataClassification = CustomerContent;
         }
 
         field(18; "Maximum Current Density"; Decimal)
         {
             Caption = 'Maximum Current Density';
-            Editable = false;
+            // Editable = false; // Temporarily disabled for testing
             DataClassification = CustomerContent;
         }
 

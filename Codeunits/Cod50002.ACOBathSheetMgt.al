@@ -258,7 +258,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.Modify();
     end;
 
-    local procedure CalculateProcessTimes(var ACOBathSheetHeader: Record "ACO Bath Sheet Header"; ProductionOrderLines: Record "Prod. Order Line")
+    procedure CalculateProcessTimes(var ACOBathSheetHeader: Record "ACO Bath Sheet Header")
     var
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         MaxCurrDens: Decimal;
@@ -294,6 +294,9 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                     MinCurrDens := ACOBathSheetLine."Minimum Current Density";
             until ACOBathSheetLine.Next() = 0;
 
+        if MinCurrDens > MaxCurrDens then
+            Error('Min cannot be larger than Max.');
+
         Str := ACOAppSetup."Max. Current Density Bath 1";
 
         ACOBathSheetHeader.TestField("Total Surface");
@@ -302,21 +305,24 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         LayerThickness := ACOBathSheetHeader."Layer Thickness";
         MinAnodiseTime := ACOAppSetup."Min. Anodise Time";
 
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime);
+        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
+
         ACOBathSheetHeader."GSX 1 Dhd." := Dhd;
         ACOBathSheetHeader."GSX 1 Str." := Str;
         // ACOBathSheetHeader."GSX 1 Time" := 0T;
         ACOBathSheetHeader."GSX 1 Time New" := BathTime;
 
         Str := ACOAppSetup."Max. Current Density Bath 2";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime);
+        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
+
         ACOBathSheetHeader."GSX 2 Dhd." := Dhd;
         ACOBathSheetHeader."GSX 2 Str." := Str;
         // ACOBathSheetHeader."GSX 2 Time" := 0T;
         ACOBathSheetHeader."GSX 2 Time New" := BathTime;
 
         Str := ACOAppSetup."Max. Current Density Bath 3";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime);
+        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
+
 
         ACOBathSheetHeader."GSX 3 Dhd." := Dhd;
         ACOBathSheetHeader."GSX 3 Str." := Str;
@@ -324,7 +330,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader."GSX 3 Time New" := BathTime;
 
         Str := ACOAppSetup."Max. Current Density Bath L";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime);
+        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
 
         ACOBathSheetHeader."GSX 4 Dhd." := Dhd;
         ACOBathSheetHeader."GSX 4 Str." := Str;
@@ -334,13 +340,28 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.Modify();
     end;
 
-    local procedure CalculateProcessTimeBath(var CurrDens: Decimal; var Str: Decimal; var BathTime: Decimal; TotalSurface: Decimal; LayerThickness: Decimal; MinAnodiseTime: Decimal)
+    local procedure CalculateProcessTimeBath(var CurrDens: Decimal; var Str: Decimal; var BathTime: Decimal; TotalSurface: Decimal; LayerThickness: Decimal;
+                                                MinAnodiseTime: Decimal; MinCurrDens: Decimal; MaxCurrDens: Decimal)
     begin
+        // Calculate Density
         CurrDens := Str / (TotalSurface * 100);
+
+        if CurrDens < MinCurrDens then
+            CurrDens := MinCurrDens;
+
+        if CurrDens > MaxCurrDens then
+            CurrDens := MaxCurrDens;
+
         BathTime := (3 * LayerThickness / CurrDens);
 
         if BathTime < MinAnodiseTime then begin
             CurrDens := 3 * LayerThickness / MinAnodiseTime;
+            if CurrDens < MinCurrDens then
+                CurrDens := MinCurrDens;
+
+            if CurrDens > MaxCurrDens then
+                CurrDens := MaxCurrDens;
+
             BathTime := (3 * LayerThickness / CurrDens);
         end;
 

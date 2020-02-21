@@ -247,23 +247,39 @@ table 50016 "ACO Bath Sheet Header"
         {
             Caption = 'Total Surface Profiles';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CalculateTotalSurface();
+            end;
         }
 
         field(33; "Surface Attachrack"; Decimal)
         {
             Caption = 'Surface Attachrack';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CalculateTotalSurface();
+            end;
         }
 
         field(34; "Surface Addition"; Decimal)
         {
             Caption = 'Surface Addition';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CalculateTotalSurface();
+            end;
         }
 
         field(35; "Total Surface"; Decimal)
         {
             Caption = 'Total Surface';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
@@ -426,5 +442,10 @@ table 50016 "ACO Bath Sheet Header"
     begin
         BathSheetLine.SetRange("Bath Sheet No.", Rec."No.");
         BathSheetLine.DeleteAll();
+    end;
+
+    local procedure CalculateTotalSurface()
+    begin
+        "Total Surface" := "Total Surface Profiles" + ("Surface Attachrack" / 100) + "Surface Addition";
     end;
 }
