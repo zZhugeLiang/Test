@@ -181,42 +181,45 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfile: Record "ACO Profile";
         ACOProfileCustomer: Record "ACO Profile Customer";
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
-        ProfileInactiveErr: Label 'Profile %1 is inactive.';
+        ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
     begin
         if Rec.IsTemporary() then
             exit;
 
-        if Rec.Type = Rec.Type::Item then
-            if Item.Get(Rec."No.") then
-                if ACOProfile.Get(Rec."ACO Profile Code") then begin
-                    if ACOProfile."Blocked State Inactive" then
-                        Error(ProfileInactiveErr, ACOProfile.Code);
+        // if Rec.Type = Rec.Type::Item then
+        //     if Item.Get(Rec."No.") then
+        if ACOProfile.Get(Rec."ACO Profile Code") then begin
+            // if ACOProfile."Blocked State Inactive" = ACOProfile."Blocked State Inactive"::asd  then
+            //    Error(ProfileInactiveErr, ACOProfile.Code);
 
-                    SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-                    // ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-                    // ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                    if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
-                        Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
+            SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+            // ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+            // ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
+                Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code")
+            else
+                if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
+                    Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
 
-                    Rec."ACO Profile Description" := ACOProfile.Description;
-                    Rec."ACO Profile Category" := ACOProfile.Category;
-                    Rec."ACO Profile Circumference" := ACOProfile."Circumference";
-                    Rec."ACO Not Measurable" := ACOProfile."Not Measurable";
-                    Rec."ACO Area" := ACOProfile.Area;
-                    Rec."ACO Extra Flushing" := ACOProfile."Extra Flushing";
-                    Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
-                    Rec."ACO Height Level Profile" := ACOProfile."Height Level";
-                    Rec."ACO Bent Profile" := ACOProfile.Bent;
-                    Rec."ACO Max. Curr. Density Profile" := ACOProfile."Minimum Current Density";
-                    Rec."ACO Min. Curr. Density Profile" := ACOProfile."Maximum Current Density";
-                    Rec."ACO Thin Staining Time Profile" := ACOProfile."Thin Staining Time";
-                    Rec."ACO Thick St. Time Profile" := ACOProfile."Thick Staining Time";
-                    Rec."ACO Euras Profile" := ACOProfile."Euras";
-                    Rec."ACO Extra to Enumerate Profile" := ACOProfile."Extra to Enumerate";
-                    Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
-                    Rec."ACO Type of Clamp Profile" := ACOProfile."Type of Clamp";
-                    Rec."ACO Holders Profile" := ACOProfile.Holders;
-                end;
+            Rec."ACO Profile Description" := ACOProfile.Description;
+            Rec."ACO Profile Category" := ACOProfile.Category;
+            Rec."ACO Profile Circumference" := ACOProfile."Circumference";
+            Rec."ACO Not Measurable" := ACOProfile."Not Measurable";
+            Rec."ACO Area" := ACOProfile.Area;
+            Rec."ACO Extra Flushing" := ACOProfile."Extra Flushing";
+            Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
+            Rec."ACO Height Level Profile" := ACOProfile."Height Level";
+            Rec."ACO Bent Profile" := ACOProfile.Bent;
+            Rec."ACO Max. Curr. Density Profile" := ACOProfile."Minimum Current Density";
+            Rec."ACO Min. Curr. Density Profile" := ACOProfile."Maximum Current Density";
+            Rec."ACO Thin Staining Time Profile" := ACOProfile."Thin Staining Time";
+            Rec."ACO Thick St. Time Profile" := ACOProfile."Thick Staining Time";
+            Rec."ACO Euras Profile" := ACOProfile."Euras";
+            Rec."ACO Extra to Enumerate Profile" := ACOProfile."Extra to Enumerate";
+            Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
+            Rec."ACO Type of Clamp Profile" := ACOProfile."Type of Clamp";
+            Rec."ACO Holders Profile" := ACOProfile.Holders;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Receipt Bag', false, false)]

@@ -1203,6 +1203,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Reject Quantity - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2117661045 - Field 2917796184 - Method 2126772001 - NamedType 4124753927" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reject Quantity cannot be greater than Quantity.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Reject Quantity - Method OnValidate - NamedType RejectQuantityCannotBeGreaterThanQuantityErr</note>
+        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 3138973415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Charge No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1364,7 +1369,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Event Subscribers - Method SalesLine_OnAfterValidate_ACOProfileCode - NamedType CustomerNotLinkedToProfileErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 762883975" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile %1 is inactive.</source>
+          <source>Profile %1 is inactive for Customer %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Event Subscribers - Method SalesLine_OnAfterValidate_ACOProfileCode - NamedType ProfileInactiveErr</note>
         </trans-unit>
@@ -1574,7 +1579,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action ACO Bath Sheet Resources - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Bath Sheet</source>
+          <source>Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Property Caption</note>
         </trans-unit>

@@ -206,7 +206,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."Minimum Current Density" := MinCurrentDensity;
         ACOBathSheetLine."Maximum Current Density" := MaxCurrentDensity;
 
-        // ACOBathSheetLine.Length := ProductionOrderLine.ACO
         ACOBathSheetLine.Circumference := SalesLine."ACO Profile Circumference";
         if ItemVariant.Get(ProductionOrderLine."Item No.", ProductionOrderLine."Variant Code") then
             ACOBathSheetLine.Length := ItemVariant."ACO Number of Meters";
@@ -226,7 +225,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             MinCurrentDensity := SalesLine."ACO Minimum Current Density LT";
         if SalesLine."ACO Minimum Current Density PT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density PT";
-
 
         MaxCurrentDensity := 1000;
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Curr. Density Profile");

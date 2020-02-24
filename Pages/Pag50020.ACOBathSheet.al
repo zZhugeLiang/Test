@@ -3,7 +3,7 @@ page 50020 "ACO Bath Sheet"
 
     PageType = Card;
     SourceTable = "ACO Bath Sheet Header";
-    Caption = 'ACO Bath Sheet';
+    Caption = 'Bath Sheet';
     InsertAllowed = false;
 
     layout
@@ -23,10 +23,6 @@ page 50020 "ACO Bath Sheet"
                     ApplicationArea = All;
                 }
                 field("Note Bath Sheet"; "Note Bath Sheet")
-                {
-                    ApplicationArea = All;
-                }
-                field("Area Surface Rack"; "Area Surface Rack")
                 {
                     ApplicationArea = All;
                 }

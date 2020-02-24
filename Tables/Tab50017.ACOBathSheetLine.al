@@ -110,6 +110,14 @@ table 50017 "ACO Bath Sheet Line"
         {
             Caption = 'Reject Quantity';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                RejectQuantityCannotBeGreaterThanQuantityErr: Label 'Reject Quantity cannot be greater than Quantity.';
+            begin
+                if "Reject Quantity" > Quantity then
+                    Error(RejectQuantityCannotBeGreaterThanQuantityErr);
+            end;
         }
 
         field(16; "Charge No."; Code[10])

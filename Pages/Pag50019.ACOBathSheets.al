@@ -27,11 +27,6 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                field("Area Surface Rack"; "Area Surface Rack")
-                {
-                    ShowMandatory = true;
-                    ApplicationArea = All;
-                }
                 field("Attach Method"; "Attach Method")
                 {
                     ApplicationArea = All;
@@ -147,6 +142,7 @@ page 50019 "ACO Bath Sheets"
                 }
                 field("Surface Attachrack"; "Surface Attachrack")
                 {
+                    ShowMandatory = true;
                     ApplicationArea = All;
                 }
                 field("Surface Addition"; "Surface Addition")

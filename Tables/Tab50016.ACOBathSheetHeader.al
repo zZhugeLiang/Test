@@ -29,7 +29,7 @@ table 50016 "ACO Bath Sheet Header"
 
         field(4; "Area Surface Rack"; Decimal)
         {
-            Caption = 'Area Surface Rack';
+            Caption = 'Area Surface Rack'; // DEPRECATED, replaced by Surface Attachrack
             NotBlank = true;
             DataClassification = CustomerContent;
         }
@@ -459,7 +459,7 @@ table 50016 "ACO Bath Sheet Header"
         BathSheetLine: Record "ACO Bath Sheet Line";
     begin
         BathSheetLine.SetRange("Bath Sheet No.", Rec."No.");
-        BathSheetLine.DeleteAll(true);
+        BathSheetLine.DeleteAll();
     end;
 
     local procedure CalculateTotalSurface()
