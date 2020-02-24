@@ -104,7 +104,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
         field(50014; "ACO Number of Units"; Decimal)
         {
-            Caption = 'Quantity to Bath Sheet';
+            Caption = 'Number of Units';
             Editable = false;
             DataClassification = CustomerContent;
         }

@@ -11,12 +11,6 @@ Page 50025 "ACO Selection Bath Sheet List"
     {
         area(content)
         {
-
-            // field(Resource_Filter; ResourceFilter)
-            // {
-            //     Caption = 'Resource Filter';
-            //     ApplicationArea = All;
-            // }
             repeater(Control1)
             {
                 ShowCaption = false;
@@ -452,7 +446,6 @@ Page 50025 "ACO Selection Bath Sheet List"
 
     var
         ShortcutDimCode: array[8] of Code[20];
-        ResourceFilter: Text;
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterShowDocument(var ProdOrderLine: Record "Prod. Order Line"; ProdOrder: Record "Production Order")

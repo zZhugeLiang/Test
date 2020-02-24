@@ -110,8 +110,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 SalesHeader: Record "Sales Header";
                 ACOProfile: Record "ACO Profile";
                 ACOProfileCustomer: Record "ACO Profile Customer";
+                ProfileInactiveErr: Label 'Profile Code %1 is inactive.';
             begin
                 ACOProfile.Get("ACO Profile Code");
+                if ACOProfile."Blocked State Inactive" then
+                    Error(ProfileInactiveErr, "ACO Profile Code");
                 SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
 
                 ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");

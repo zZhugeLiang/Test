@@ -320,93 +320,109 @@ table 50016 "ACO Bath Sheet Header"
         field(41; "GSX 1 Str."; Decimal)
         {
             Caption = 'GSX 1 Str.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(42; "GSX 2 Str."; Decimal)
         {
             Caption = 'GSX 2 Str.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(43; "GSX 3 Str."; Decimal)
         {
             Caption = 'GSX 3 Str.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(44; "GSX 4 Str."; Decimal)
         {
             Caption = 'GSX 4 Str.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(45; "GSX 1 Dhd."; Decimal)
         {
             Caption = 'GSX 1 Dhd.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(46; "GSX 2 Dhd."; Decimal)
         {
             Caption = 'GSX 2 Dhd.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(47; "GSX 3 Dhd."; Decimal)
         {
             Caption = 'GSX 3 Dhd.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(48; "GSX 4 Dhd."; Decimal)
         {
             Caption = 'GSX 4 Dhd.';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(49; "GSX 1 Time"; Time)
         {
             Caption = 'GSX 1 Time';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(50; "GSX 2 Time"; Time)
         {
             Caption = 'GSX 2 Time';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(51; "GSX 3 Time"; Time)
         {
             Caption = 'GSX 3 Time';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(52; "GSX 4 Time"; Time)
         {
             Caption = 'GSX 4 Time';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
         field(53; "GSX 1 Time New"; Decimal)
         {
             Caption = 'GSX 1 Time New'; // DEPRECATED, Remove after new environment
+            Editable = false;
             DataClassification = CustomerContent;
         }
         field(54; "GSX 2 Time New"; Decimal)
         {
-            Caption = 'GSX 2 Time New'; // DEPRECATED, Remove after new environment
+            Caption = 'GSX 2 Time New'; // DEPRECATED, Remove after new environment\
+            Editable = false;
             DataClassification = CustomerContent;
         }
         field(55; "GSX 3 Time New"; Decimal)
         {
             Caption = 'GSX 3 Time New'; // DEPRECATED, Remove after new environment
+            Editable = false;
             DataClassification = CustomerContent;
         }
         field(56; "GSX 4 Time New"; Decimal)
         {
             Caption = 'GSX 4 Time New'; // DEPRECATED, Remove after new environment
+            Editable = false;
             DataClassification = CustomerContent;
         }
     }
@@ -443,14 +459,13 @@ table 50016 "ACO Bath Sheet Header"
         BathSheetLine: Record "ACO Bath Sheet Line";
     begin
         BathSheetLine.SetRange("Bath Sheet No.", Rec."No.");
-        BathSheetLine.DeleteAll();
+        BathSheetLine.DeleteAll(true);
     end;
 
     local procedure CalculateTotalSurface()
     begin
         "Total Surface" := "Total Surface Profiles" + ("Surface Attachrack" / 100) + "Surface Addition";
     end;
-
 
     procedure UpdateBathSheetHeader()
     var
@@ -461,7 +476,6 @@ table 50016 "ACO Bath Sheet Header"
         BathSheetComment: Text;
         TotalSurfaceProfiles: Decimal;
         SurfaceAddition: Decimal;
-        LayerThickness: Decimal;
         CombinationLT: Decimal;
         MaxCombinationLT: Decimal;
         ExtraToEnumerate: Decimal;
@@ -481,21 +495,20 @@ table 50016 "ACO Bath Sheet Header"
                 end else
                     ExtraToEnumerate := 0;
 
-                if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
-                    CombinationLT := ACOLayerThickness."mu Value" + ExtraToEnumerate;
-                    if MaxCombinationLT <= CombinationLT then begin
-                        MaxCombinationLT := CombinationLT;
-                        "Layer Thickness" := ACOLayerThickness."mu Value";
-                        "Extra to Enumerate" := ACOProfile."Extra to Enumerate";
+                if Item.Get(ACOBathSheetLine.Treatment) then
+                    if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
+                        CombinationLT := ACOLayerThickness."mu Value" + ExtraToEnumerate;
+                        if MaxCombinationLT <= CombinationLT then begin
+                            MaxCombinationLT := CombinationLT;
+                            "Layer Thickness" := ACOLayerThickness."mu Value";
+                            "Extra to Enumerate" := ACOProfile."Extra to Enumerate";
+                        end;
                     end;
-                end;
-            // LayerThickness
             until ACOBathSheetLine.Next() = 0;
 
         "Total Surface Profiles" := TotalSurfaceProfiles;
         "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment"));
         "Surface Addition" := SurfaceAddition;
-        LayerThickness := LayerThickness;
 
         CalculateTotalSurface();
         Modify();

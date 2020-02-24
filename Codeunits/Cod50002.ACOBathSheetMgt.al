@@ -72,7 +72,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
                 if Item.Get(ProductionOrderLines."Item No.") then begin
                     if (ColorCode <> '') and (ColorCode <> Item."ACO Color") then
-                        Error(ColorCodeNotIdenticalErr, ProductionOrderLines."ACO Charge No.");
+                        Error(ColorCodeNotIdenticalErr, ChargeNo);
                     ColorCode := Item."ACO Color";
                 end;
             until ProductionOrderLines.Next() = 0;
@@ -242,7 +242,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             MaxCurrentDensity := CurrentDensity;
     end;
 
-    local procedure InsertResources(BathSheetNo: Code[20]; Resource: Record Resource)
+    local procedure InsertResources(BathSheetNo: Code[20]; var Resource: Record Resource)
     var
         ACOSheetResource: Record "ACO Bath Sheet Resource";
     begin

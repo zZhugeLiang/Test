@@ -1613,6 +1613,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Bath Sheet Resources - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2801324966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ACO Bath Sheet Subpage</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2118,6 +2123,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 940324757 - Method 2126772001 - NamedType 762883975" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Profile Code %1 is inactive.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Code - Method OnValidate - NamedType ProfileInactiveErr</note>
+        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2059852500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Profile Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2369,7 +2379,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Included - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 2951256278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
-          <source>Quantity to Bath Sheet</source>
+          <source>Number of Units</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Number of Units - Property Caption</note>
         </trans-unit>
