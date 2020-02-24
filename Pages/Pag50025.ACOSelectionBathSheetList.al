@@ -12,11 +12,11 @@ Page 50025 "ACO Selection Bath Sheet List"
         area(content)
         {
 
-            field(Resource_Filter; ResourceFilter)
-            {
-                Caption = 'Resource Filter';
-                ApplicationArea = All;
-            }
+            // field(Resource_Filter; ResourceFilter)
+            // {
+            //     Caption = 'Resource Filter';
+            //     ApplicationArea = All;
+            // }
             repeater(Control1)
             {
                 ShowCaption = false;
@@ -167,6 +167,10 @@ Page 50025 "ACO Selection Bath Sheet List"
                     Editable = true;
                     ApplicationArea = Manufacturing;
                 }
+                field("ACO Number of Units"; "ACO Number of Units")
+                {
+                    ApplicationArea = Manufacturing;
+                }
                 field("ACO Quantity to Bath Sheet"; "ACO Quantity to Bath Sheet")
                 {
                     Editable = true;
@@ -278,15 +282,29 @@ Page 50025 "ACO Selection Bath Sheet List"
                 trigger OnAction()
                 var
                     ProdOrderLine: Record "Prod. Order Line";
+                    Resource: Record Resource;
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
+                    ACOSelectionResources: Page "ACO Selection Resources";
                 begin
-                    ProdOrderLine.CopyFilters(Rec);
-                    SetRange("ACO Included", true);
+                    ACOSelectionResources.LookupMode(true);
+                    //ACOSelectionResources.SetTableView(ACOProfileCustomer);
 
-                    ACOBathSheetMgt.CreateBathSheet(Rec, ResourceFilter);
+                    if ACOSelectionResources.RunModal() = Action::LookupOK then begin
+                        ACOSelectionResources.SetSelectionFilter(Resource);
+                        //ACOSelectionResources.GetRecord(Resource);
+                        // if Resource.FindSet() then
+                        //     repeat
+                        //         asd += Resource."No." + '|';
+                        //     until Resource.Next() = 0;
 
-                    CopyFilters(ProdOrderLine);
-                    CurrPage.Update(false);
+                        ProdOrderLine.CopyFilters(Rec);
+                        SetRange("ACO Included", true);
+                        //NoResourcesFoundErr: Label 'No Resources found with filter %1';
+                        ACOBathSheetMgt.CreateBathSheet(Rec, Resource);
+
+                        CopyFilters(ProdOrderLine);
+                        CurrPage.Update(false);
+                    end;
                 end;
             }
             action(SetIncluded)
@@ -301,7 +319,8 @@ Page 50025 "ACO Selection Bath Sheet List"
                 var
                     ProdOrderLine: Record "Prod. Order Line";
                 begin
-                    ProdOrderLine.CopyFilters(Rec);
+                    // ProdOrderLine.CopyFilters(Rec);
+                    CurrPage.SetSelectionFilter(ProdOrderLine);
                     ProdOrderLine.ModifyAll("ACO Included", true);
                     CurrPage.Update(false);
                 end;

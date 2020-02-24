@@ -68,7 +68,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
         field(50009; "ACO Include Bath Sheet"; Boolean)
         {
-            Caption = 'Include Bath Sheet';
+            Caption = 'Include Bath Sheet'; // DEPRECATED remove this field or ACO Included
             DataClassification = CustomerContent;
         }
 
@@ -80,7 +80,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
         field(50011; "ACO Quantity to Bath Sheet"; Decimal)
         {
-            Caption = 'Quantity to Bath Sheet'; // DEPRECATED remove this field or ACO Included
+            Caption = 'Quantity to Bath Sheet';
             DataClassification = CustomerContent;
 
             trigger OnValidate()
@@ -99,6 +99,13 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         field(50013; "ACO Included"; Boolean)
         {
             Caption = 'Included';// DEPRECATED remove this field or ACO Include Bath Sheet
+            DataClassification = CustomerContent;
+        }
+
+        field(50014; "ACO Number of Units"; Decimal)
+        {
+            Caption = 'Quantity to Bath Sheet';
+            Editable = false;
             DataClassification = CustomerContent;
         }
     }

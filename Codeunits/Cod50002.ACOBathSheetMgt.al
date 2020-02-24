@@ -1,12 +1,12 @@
 codeunit 50002 "ACO Bath Sheet Mgt."
 {
 
-    procedure CreateBathSheet(var ProductionOrderLines: Record "Prod. Order Line"; ResourceFilter: Text)
+    procedure CreateBathSheet(var ProductionOrderLines: Record "Prod. Order Line"; var Resource: Record Resource)
     var
         ACOBathSheetHeader: Record "ACO Bath Sheet Header";
     begin
         GetAppSetupAndCheckFields();
-        CheckResourceFilter(ResourceFilter);
+        // CheckResourceFilter(ResourceFilter);
 
         CheckProductionLines(ProductionOrderLines);
 
@@ -22,10 +22,10 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         // how to make it so that the line is processed?
         ProductionOrderLines.ModifyAll("ACO Included", false);
 
-        InsertResources(ACOBathSheetHeader."No.", ResourceFilter)
+        InsertResources(ACOBathSheetHeader."No.", Resource)
     end;
 
-    // 0. Get Setup and Check Fields
+    // 1. Get Setup and Check Fields
     local procedure GetAppSetupAndCheckFields()
     begin
         ACOAppSetup.Get();
@@ -34,17 +34,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOAppSetup.TestField("Max. Current Density Bath 3");
         ACOAppSetup.TestField("Max. Current Density Bath L");
         ACOAppSetup.TestField("Min. Anodise Time");
-    end;
-
-    // 1. Check Resource Filter
-    local procedure CheckResourceFilter(ResourceFilter: Text)
-    var
-        Resource: Record Resource;
-        NoResourcesFoundErr: Label 'No Resources found with filter %1';
-    begin
-        Resource.SetFilter("No.", ResourceFilter);
-        if Resource.IsEmpty() then
-            Error(NoResourcesFoundErr, ResourceFilter);
     end;
 
     // 2. Check Production Lines
@@ -194,8 +183,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ItemVariant: Record "Item Variant";
         MinCurrentDensity: Decimal;
         MaxCurrentDensity: Decimal;
+        NumberofUnitsLtQuantityToBathSheetErr: Label 'Number of Units cannot be less than Quantity to Bath Sheet.';
     begin
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
+
+        if ProductionOrderLine."ACO Number of Units" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
+            Error(NumberofUnitsLtQuantityToBathSheetErr);
 
         ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
         ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status;
@@ -219,12 +212,14 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             ACOBathSheetLine.Length := ItemVariant."ACO Number of Meters";
         ACOBathSheetLine.CalculateSurface();
         ACOBathSheetLine.Insert();
+
+        ProductionOrderLine."ACO Number of Units" := ProductionOrderLine."ACO Number of Units" - ProductionOrderLine."ACO Quantity to Bath Sheet";
+        ProductionOrderLine.Modify();
     end;
 
     local procedure DetermineCurrentDensities(SalesLine: Record "Sales Line"; var MinCurrentDensity: Decimal; var MaxCurrentDensity: Decimal)
     begin
         MinCurrentDensity := SalesLine."ACO Min. Curr. Density Profile";
-
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Min. Current Density Color";
         if SalesLine."ACO Minimum Current Density LT" >= MinCurrentDensity then
@@ -232,21 +227,25 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if SalesLine."ACO Minimum Current Density PT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density PT";
 
-        MaxCurrentDensity := SalesLine."ACO Max. Curr. Density Profile";
-        if SalesLine."ACO Min. Current Density Color" <= MaxCurrentDensity then
-            MaxCurrentDensity := SalesLine."ACO Min. Current Density Color";
-        if SalesLine."ACO Maximum Current Density LT" <= MaxCurrentDensity then
-            MaxCurrentDensity := SalesLine."ACO Maximum Current Density LT";
-        if SalesLine."ACO Maximum Current Density PT" <= MaxCurrentDensity then
-            MaxCurrentDensity := SalesLine."ACO Maximum Current Density PT";
+
+        MaxCurrentDensity := 1000;
+        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Curr. Density Profile");
+        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Current Density Color");
+        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density LT");
+        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density PT");
+        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Cur. Density Category");
     end;
 
-    local procedure InsertResources(BathSheetNo: Code[20]; ResourceFilter: Text)
+    local procedure CheckMaximumCurrentDensity(var MaxCurrentDensity: Decimal; CurrentDensity: Decimal)
+    begin
+        if (CurrentDensity > 0) and (CurrentDensity <= MaxCurrentDensity) then
+            MaxCurrentDensity := CurrentDensity;
+    end;
+
+    local procedure InsertResources(BathSheetNo: Code[20]; Resource: Record Resource)
     var
-        Resource: Record Resource;
         ACOSheetResource: Record "ACO Bath Sheet Resource";
     begin
-        Resource.SetFilter("No.", ResourceFilter);
         if Resource.FindSet() then
             repeat
                 ACOSheetResource."Bath Sheet No." := BathSheetNo;

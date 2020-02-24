@@ -20,9 +20,11 @@ table 50020 "ACO Bath Sheet Resource"
             TableRelation = Resource;
             DataClassification = CustomerContent;
         }
+
         field(3; "Resource Name"; Text[50])
         {
             Caption = 'Resource Name';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = Lookup (Resource.Name where("No." = field("Resource No.")));
         }

@@ -263,8 +263,10 @@ codeunit 50000 "ACO Event Subscribers"
         if ACOProfile.Get(SalesLine."ACO Profile Code") then
             ProdOrderLine."ACO Profile m2 per Qty." := ACOProfile."Area";
         ProdorderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
+
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
-        ProdOrderLine.Validate("ACO Bath Sheet Qty.", SalesLine."ACO Number of Units");
+        ProdOrderLine.Validate("ACO Number of Units", SalesLine."ACO Number of Units");
+        ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
         // ProdOrderLine."ACO Total m2" := ProdOrderLine."ACO Quantity to Bath Sheet" * ProdOrderLine."ACO Profile m2 per Qty.";
     end;
 }

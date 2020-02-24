@@ -20,6 +20,7 @@ table 50019 "ACO Project Color Line"
         field(3; "Name"; Text[100])
         {
             Caption = 'Name';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = Lookup ("ACO Project Color Header".Name where("No." = field("Project Color No.")));
         }
@@ -27,6 +28,7 @@ table 50019 "ACO Project Color Line"
         field(4; "Number of Measurements"; Integer)
         {
             Caption = 'Number of Measurements';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = Lookup ("ACO Project Color Header"."Number of Measurements" where("No." = field("Project Color No.")));
         }

@@ -298,6 +298,7 @@ table 50016 "ACO Bath Sheet Header"
         field(38; "Minimum Current Density"; Decimal)
         {
             Caption = 'Minimum Current Density';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = max ("ACO Bath Sheet Line"."Minimum Current Density" where("Bath Sheet No." = field("No.")));
         }
@@ -305,6 +306,7 @@ table 50016 "ACO Bath Sheet Header"
         field(39; "Maximum Current Density"; Decimal)
         {
             Caption = 'Maximum Current Density';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = min ("ACO Bath Sheet Line"."Maximum Current Density" where("Bath Sheet No." = field("No.")));
         }
@@ -452,11 +454,17 @@ table 50016 "ACO Bath Sheet Header"
 
     procedure UpdateBathSheetHeader()
     var
+        Item: Record Item;
+        ACOLayerThickness: Record "ACO Layer Thickness";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOProfile: Record "ACO Profile";
         BathSheetComment: Text;
         TotalSurfaceProfiles: Decimal;
-        SurfaceAttachrack: Decimal;
+        SurfaceAddition: Decimal;
+        LayerThickness: Decimal;
+        CombinationLT: Decimal;
+        MaxCombinationLT: Decimal;
+        ExtraToEnumerate: Decimal;
     begin
         "Total Surface Profiles" := 0;
 
@@ -467,13 +475,27 @@ table 50016 "ACO Bath Sheet Header"
 
                 if ACOProfile.Get(ACOBathSheetLine."Profile Code") and (StrLen(BathSheetComment) < MaxStrLen("Bath Sheet Comment")) then begin
                     BathSheetComment += ACOProfile."Comment Bath Card";
-                    SurfaceAttachrack += ACOProfile."Correction Factor" * ACOBathSheetLine.Surface;
+
+                    SurfaceAddition += (ACOProfile."Correction Factor" - 1) * ACOBathSheetLine.Surface;
+                    ExtraToEnumerate := ACOProfile."Extra to Enumerate";
+                end else
+                    ExtraToEnumerate := 0;
+
+                if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
+                    CombinationLT := ACOLayerThickness."mu Value" + ExtraToEnumerate;
+                    if MaxCombinationLT <= CombinationLT then begin
+                        MaxCombinationLT := CombinationLT;
+                        "Layer Thickness" := ACOLayerThickness."mu Value";
+                        "Extra to Enumerate" := ACOProfile."Extra to Enumerate";
+                    end;
                 end;
+            // LayerThickness
             until ACOBathSheetLine.Next() = 0;
 
         "Total Surface Profiles" := TotalSurfaceProfiles;
         "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment"));
-        "Surface Attachrack" := SurfaceAttachrack;
+        "Surface Addition" := SurfaceAddition;
+        LayerThickness := LayerThickness;
 
         CalculateTotalSurface();
         Modify();

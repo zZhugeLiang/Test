@@ -45,6 +45,7 @@ table 50017 "ACO Bath Sheet Line"
         field(6; "Profile Description"; Text[100])
         {
             Caption = 'Profile Description';
+            Editable = false;
             FieldClass = FlowField;
             CalcFormula = Lookup ("ACO Profile".Description where("Code" = field("Profile Code")));
         }

@@ -1368,11 +1368,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Event Subscribers - Method SalesLine_OnAfterValidate_ACOProfileCode - NamedType ProfileInactiveErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3646941407 - Method 3598910552 - NamedType 508016789" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No Resources found with filter %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckResourceFilter - NamedType NoResourcesFoundErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3646941407 - Method 1177154116 - NamedType 1437550479" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Code on Charge No. %1 is not identical.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1397,6 +1392,11 @@
           <source>A maximum of 2 charges is allowed, per Bath Sheet.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckProductionLines - NamedType Max2ChargesErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3646941407 - Method 3494150390 - NamedType 948129302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units cannot be less than Quantity to Bath Sheet.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CreateBathSheetLine - NamedType NumberofUnitsLtQuantityToBathSheetErr</note>
         </trans-unit>
         <trans-unit id="Page 1037002210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Price Schemes</source>
@@ -1638,11 +1638,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2943489305 - Control 893731199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Resource Filter</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Resource_Filter - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2943489305 - Control 851830778 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the number of the related production order.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1802,6 +1797,11 @@
           <source>Bath Sheet Resources</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Resources - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 202071904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selection Resources</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Resources - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1507464928 - Control 2335191362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Production</source>
@@ -2367,6 +2367,11 @@
           <source>Included</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Included - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4248448427 - Field 2951256278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Quantity to Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Number of Units - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 423926106">
           <source>Operating Type</source>
