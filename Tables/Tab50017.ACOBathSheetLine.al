@@ -147,6 +147,24 @@ table 50017 "ACO Bath Sheet Line"
         }
     }
 
+    trigger OnInsert()
+    begin
+        CalculateProcessTimesBathSheetHeader();
+    end;
+
+    trigger OnDelete()
+    begin
+        CalculateProcessTimesBathSheetHeader();
+    end;
+
+    local procedure CalculateProcessTimesBathSheetHeader()
+    var
+        ACOBathSheetHeader: Record "ACO Bath Sheet Header";
+    begin
+        ACOBathSheetHeader.Get(Rec."Bath Sheet No.");
+        ACOBathSheetHeader.CalculateProcessTimes();
+    end;
+
     procedure CalculateSurface()
     begin
         Surface := Quantity * Length * Circumference / 1000000;

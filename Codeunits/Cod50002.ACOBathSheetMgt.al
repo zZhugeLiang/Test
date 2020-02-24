@@ -13,11 +13,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         CreateBathSheetHeader(ACOBathSheetHeader, ProductionOrderLines);
         CreateBathSheetLines(ACOBathSheetHeader."No.", ProductionOrderLines);
 
-        UpdateBathSheetHeader(ACOBathSheetHeader);
+        ACOBathSheetHeader.UpdateBathSheetHeader();
         // CalculateProcessTimes(ACOBathSheetHeader, ProductionOrderLines);
         //CompleteBathSheet(ProductionOrderLines);
         ProductionOrderLines.SetRange("ACO Included", true);
         ProductionOrderLines.ModifyAll("ACO Complete", true);
+        ProductionOrderLines.ModifyAll("Quantity", 0);
         // how to make it so that the line is processed?
         ProductionOrderLines.ModifyAll("ACO Included", false);
 
@@ -43,7 +44,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     begin
         Resource.SetFilter("No.", ResourceFilter);
         if Resource.IsEmpty() then
-            Error(NoResourcesFoundErr);
+            Error(NoResourcesFoundErr, ResourceFilter);
     end;
 
     // 2. Check Production Lines
@@ -214,6 +215,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
         // ACOBathSheetLine.Length := ProductionOrderLine.ACO
         ACOBathSheetLine.Circumference := SalesLine."ACO Profile Circumference";
+        if ItemVariant.Get(ProductionOrderLine."Item No.", ProductionOrderLine."Variant Code") then
+            ACOBathSheetLine.Length := ItemVariant."ACO Number of Meters";
         ACOBathSheetLine.CalculateSurface();
         ACOBathSheetLine.Insert();
     end;
@@ -236,136 +239,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             MaxCurrentDensity := SalesLine."ACO Maximum Current Density LT";
         if SalesLine."ACO Maximum Current Density PT" <= MaxCurrentDensity then
             MaxCurrentDensity := SalesLine."ACO Maximum Current Density PT";
-    end;
-
-    local procedure UpdateBathSheetHeader(ACOBathSheetHeader: Record "ACO Bath Sheet Header")
-    var
-        ACOBathSheetLine: Record "ACO Bath Sheet Line";
-        ACOProfile: Record "ACO Profile";
-        BathSheetComment: Text;
-    begin
-        // Wanneer moet deze functie aangeroepen worden?
-        ACOBathSheetLine.SetRange("Bath Sheet No.", ACOBathSheetHeader."No.");
-        if ACOBathSheetLine.FindSet() then
-            repeat
-                if ACOProfile.Get(ACOBathSheetLine."Profile Code") and (StrLen(BathSheetComment) < MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment")) then
-                    BathSheetComment += ACOProfile."Comment Bath Card";
-                ACOBathSheetHeader."Total Surface Profiles" += ACOBathSheetLine.Surface;
-            until ACOBathSheetLine.Next() = 0;
-
-        ACOBathSheetHeader."Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment"));
-        ACOBathSheetHeader."Total Surface" := ACOBathSheetHeader."Total Surface Profiles" + (ACOBathSheetHeader."Surface Attachrack" / 100) + ACOBathSheetHeader."Surface Addition";
-        ACOBathSheetHeader.Modify();
-    end;
-
-    procedure CalculateProcessTimes(var ACOBathSheetHeader: Record "ACO Bath Sheet Header")
-    var
-        ACOBathSheetLine: Record "ACO Bath Sheet Line";
-        MaxCurrDens: Decimal;
-        MinCurrDens: Decimal;
-        Str: Decimal;
-        Dhd: Decimal;
-        BathTime: Decimal;
-        TotalSurface: Decimal;
-        LayerThickness: Decimal;
-        MinAnodiseTime: Decimal;
-        First: Boolean;
-    begin
-        ACOAppSetup.Get();
-        ACOAppSetup.TestField("Max. Current Density Bath 1");
-        ACOAppSetup.TestField("Max. Current Density Bath 2");
-        ACOAppSetup.TestField("Max. Current Density Bath 3");
-        ACOAppSetup.TestField("Max. Current Density Bath L");
-        ACOAppSetup.TestField("Min. Anodise Time");
-
-        First := true;
-        ACOBathSheetLine.SetRange("Bath Sheet No.", ACOBathSheetHeader."No.");
-        if ACOBathSheetLine.FindSet() then
-            repeat
-                if First then begin
-                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-                    First := false;
-                end;
-
-                if MaxCurrDens <= ACOBathSheetLine."Maximum Current Density" then
-                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-                if MinCurrDens >= ACOBathSheetLine."Minimum Current Density" then
-                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-            until ACOBathSheetLine.Next() = 0;
-
-        if MinCurrDens > MaxCurrDens then
-            Error('Min cannot be larger than Max.');
-
-        Str := ACOAppSetup."Max. Current Density Bath 1";
-
-        ACOBathSheetHeader.TestField("Total Surface");
-
-        TotalSurface := ACOBathSheetHeader."Total Surface";
-        LayerThickness := ACOBathSheetHeader."Layer Thickness";
-        MinAnodiseTime := ACOAppSetup."Min. Anodise Time";
-
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-        ACOBathSheetHeader."GSX 1 Dhd." := Dhd;
-        ACOBathSheetHeader."GSX 1 Str." := Str;
-        // ACOBathSheetHeader."GSX 1 Time" := 0T;
-        ACOBathSheetHeader."GSX 1 Time New" := BathTime;
-
-        Str := ACOAppSetup."Max. Current Density Bath 2";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-        ACOBathSheetHeader."GSX 2 Dhd." := Dhd;
-        ACOBathSheetHeader."GSX 2 Str." := Str;
-        // ACOBathSheetHeader."GSX 2 Time" := 0T;
-        ACOBathSheetHeader."GSX 2 Time New" := BathTime;
-
-        Str := ACOAppSetup."Max. Current Density Bath 3";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-
-        ACOBathSheetHeader."GSX 3 Dhd." := Dhd;
-        ACOBathSheetHeader."GSX 3 Str." := Str;
-        // ACOBathSheetHeader."GSX 3 Time" := 0T;
-        ACOBathSheetHeader."GSX 3 Time New" := BathTime;
-
-        Str := ACOAppSetup."Max. Current Density Bath L";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-        ACOBathSheetHeader."GSX 4 Dhd." := Dhd;
-        ACOBathSheetHeader."GSX 4 Str." := Str;
-        // ACOBathSheetHeader."GSX 4 Time" := 0T;
-        ACOBathSheetHeader."GSX 4 Time New" := BathTime;
-
-        ACOBathSheetHeader.Modify();
-    end;
-
-    local procedure CalculateProcessTimeBath(var CurrDens: Decimal; var Str: Decimal; var BathTime: Decimal; TotalSurface: Decimal; LayerThickness: Decimal;
-                                                MinAnodiseTime: Decimal; MinCurrDens: Decimal; MaxCurrDens: Decimal)
-    begin
-        // Calculate Density
-        CurrDens := Str / (TotalSurface * 100);
-
-        if CurrDens < MinCurrDens then
-            CurrDens := MinCurrDens;
-
-        if CurrDens > MaxCurrDens then
-            CurrDens := MaxCurrDens;
-
-        BathTime := (3 * LayerThickness / CurrDens);
-
-        if BathTime < MinAnodiseTime then begin
-            CurrDens := 3 * LayerThickness / MinAnodiseTime;
-            if CurrDens < MinCurrDens then
-                CurrDens := MinCurrDens;
-
-            if CurrDens > MaxCurrDens then
-                CurrDens := MaxCurrDens;
-
-            BathTime := (3 * LayerThickness / CurrDens);
-        end;
-
-        Str := CurrDens * TotalSurface;
     end;
 
     local procedure InsertResources(BathSheetNo: Code[20]; ResourceFilter: Text)

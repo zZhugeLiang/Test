@@ -104,6 +104,21 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Profile Code';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                SalesHeader: Record "Sales Header";
+                ACOProfile: Record "ACO Profile";
+                ACOProfileCustomer: Record "ACO Profile Customer";
+            begin
+                ACOProfile.Get("ACO Profile Code");
+                SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
+
+                ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOProfileCustomer.FindFirst();
+            end;
+
             trigger OnLookup()
             var
                 SalesHeader: Record "Sales Header";

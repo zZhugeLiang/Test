@@ -277,10 +277,15 @@ Page 50025 "ACO Selection Bath Sheet List"
                 PromotedIsBig = true;
                 trigger OnAction()
                 var
+                    ProdOrderLine: Record "Prod. Order Line";
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
+                    ProdOrderLine.CopyFilters(Rec);
                     SetRange("ACO Included", true);
+
                     ACOBathSheetMgt.CreateBathSheet(Rec, ResourceFilter);
+
+                    CopyFilters(ProdOrderLine);
                     CurrPage.Update(false);
                 end;
             }

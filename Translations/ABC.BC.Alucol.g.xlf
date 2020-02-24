@@ -1118,6 +1118,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field GSX 4 Time New - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1438845102 - Method 3272374899 - NamedType 13939723" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Minimum Current Density cannot be larger than Maximum Current Density.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Method CalculateProcessTimes - NamedType MinCannotBeLargerThanMaxDensityErr</note>
+        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 355523985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1593,10 +1598,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control CalculatedValues - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 371732247 - Action 47148555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update Bath Sheet</source>
+        <trans-unit id="Page 371732247 - Action 3566282224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Process Times</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Bath Sheet - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 1566538523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Complete Bath Sheet</source>

@@ -190,19 +190,20 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
-                    field("GSX 2 Str."; "GSX 2 Str.")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("GSX 3 Str."; "GSX 3 Str.")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("GSX 4 Str."; "GSX 4 Str.")
-                    {
-                        ApplicationArea = All;
-                    }
                     field("GSX 1 Dhd."; "GSX 1 Dhd.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    // field("GSX 1 Time"; "GSX 1 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }                    
+                    field("GSX 1 Time New"; "GSX 1 Time New")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("GSX 2 Str."; "GSX 2 Str.")
                     {
                         ApplicationArea = All;
                     }
@@ -210,7 +211,33 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
+                    // field("GSX 2 Time"; "GSX 2 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }   
+                    field("GSX 2 Time New"; "GSX 2 Time New")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("GSX 3 Str."; "GSX 3 Str.")
+                    {
+                        ApplicationArea = All;
+                    }
                     field("GSX 3 Dhd."; "GSX 3 Dhd.")
+                    {
+                        ApplicationArea = All;
+                    }
+                    // field("GSX 3 Time"; "GSX 3 Time")
+                    // {
+                    //     ApplicationArea = All;
+                    // }     
+                    field("GSX 3 Time New"; "GSX 3 Time New")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("GSX 4 Str."; "GSX 4 Str.")
                     {
                         ApplicationArea = All;
                     }
@@ -218,34 +245,10 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
-                    // field("GSX 1 Time"; "GSX 1 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }
-                    // field("GSX 2 Time"; "GSX 2 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }
-                    // field("GSX 3 Time"; "GSX 3 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }
                     // field("GSX 4 Time"; "GSX 4 Time")
                     // {
                     //     ApplicationArea = All;
                     // }
-                    field("GSX 1 Time New"; "GSX 1 Time New")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("GSX 2 Time New"; "GSX 2 Time New")
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("GSX 3 Time New"; "GSX 3 Time New")
-                    {
-                        ApplicationArea = All;
-                    }
                     field("GSX 4 Time New"; "GSX 4 Time New")
                     {
                         ApplicationArea = All;
@@ -262,21 +265,17 @@ page 50020 "ACO Bath Sheet"
     }
     actions
     {
-
         area(Processing)
         {
-
-            action("Update Bath Sheet")
+            action("Update Process Times")
             {
-                Caption = 'Update Bath Sheet';
+                Caption = 'Update Process Times';
                 Image = Approval;
                 ApplicationArea = All;
 
                 trigger OnAction()
-                var
-                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
-                    ACOBathSheetMgt.CalculateProcessTimes(Rec);
+                    CalculateProcessTimes();
                 end;
             }
 
