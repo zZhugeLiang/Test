@@ -199,6 +199,7 @@
                                 <TextRun>
                                   <Value>=Fields!SalesOrderCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -236,6 +237,7 @@
                                 <TextRun>
                                   <Value>=Fields!ColorCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -267,14 +269,16 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox77">
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Klant</Value>
+                                  <Value />
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -285,7 +289,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox73</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -318,6 +322,7 @@
                                 <TextRun>
                                   <Value>=Fields!SOLineCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -355,6 +360,7 @@
                                 <TextRun>
                                   <Value>=Fields!QuantityCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -390,6 +396,7 @@
                                 <TextRun>
                                   <Value>=Fields!LengthCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -425,6 +432,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThickCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -460,6 +468,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThinCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -495,6 +504,7 @@
                                 <TextRun>
                                   <Value>=Fields!TreatmentCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -538,6 +548,7 @@
                                 <TextRun>
                                   <Value>=Fields!ProfileCaption.Value</Value>
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -574,14 +585,16 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox76">
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!TMLineCaption.Value</Value>
+                                  <Value />
                                   <Style>
+                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -592,7 +605,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox75</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -660,9 +673,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Color.Value</Value>
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -770,7 +783,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Quantity.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
@@ -802,7 +815,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Length.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
@@ -898,7 +911,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!Treatment.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
@@ -938,7 +951,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ProfileCode.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
@@ -2023,7 +2036,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Thick.Value</Value>
+                                  <Value>=Fields!ThickStaining.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2220,7 +2233,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Thin.Value</Value>
+                                  <Value>=Fields!ThinStaining.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -7139,14 +7152,35 @@ End Function
         <Field Name="SOLineCaption">
           <DataField>SOLineCaption</DataField>
         </Field>
+        <Field Name="ProfileCaption">
+          <DataField>ProfileCaption</DataField>
+        </Field>
+        <Field Name="ProfileCode">
+          <DataField>ProfileCode</DataField>
+        </Field>
         <Field Name="ColorCaption">
           <DataField>ColorCaption</DataField>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
         </Field>
         <Field Name="QuantityCaption">
           <DataField>QuantityCaption</DataField>
         </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
         <Field Name="LengthCaption">
           <DataField>LengthCaption</DataField>
+        </Field>
+        <Field Name="Length">
+          <DataField>Length</DataField>
+        </Field>
+        <Field Name="LengthFormat">
+          <DataField>LengthFormat</DataField>
         </Field>
         <Field Name="ThickCaption">
           <DataField>ThickCaption</DataField>
@@ -7157,11 +7191,8 @@ End Function
         <Field Name="TreatmentCaption">
           <DataField>TreatmentCaption</DataField>
         </Field>
-        <Field Name="TMLineCaption">
-          <DataField>TMLineCaption</DataField>
-        </Field>
-        <Field Name="ProfileCaption">
-          <DataField>ProfileCaption</DataField>
+        <Field Name="Treatment">
+          <DataField>Treatment</DataField>
         </Field>
         <Field Name="MEASUREText">
           <DataField>MEASUREText</DataField>
@@ -7175,20 +7206,20 @@ End Function
         <Field Name="ThickStainingCaption">
           <DataField>ThickStainingCaption</DataField>
         </Field>
-        <Field Name="Thick">
-          <DataField>Thick</DataField>
+        <Field Name="ThickStaining">
+          <DataField>ThickStaining</DataField>
         </Field>
-        <Field Name="ThickFormat">
-          <DataField>ThickFormat</DataField>
+        <Field Name="ThickStainingFormat">
+          <DataField>ThickStainingFormat</DataField>
         </Field>
         <Field Name="ThinStainingCaption">
           <DataField>ThinStainingCaption</DataField>
         </Field>
-        <Field Name="Thin">
-          <DataField>Thin</DataField>
+        <Field Name="ThinStaining">
+          <DataField>ThinStaining</DataField>
         </Field>
-        <Field Name="ThinFormat">
-          <DataField>ThinFormat</DataField>
+        <Field Name="ThinStainingFormat">
+          <DataField>ThinStainingFormat</DataField>
         </Field>
         <Field Name="TotalProfileSurfaceCaption">
           <DataField>TotalProfileSurfaceCaption</DataField>

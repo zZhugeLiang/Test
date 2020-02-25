@@ -292,8 +292,16 @@ page 50020 "ACO Bath Sheet"
             {
                 Caption = 'Print Bath Sheet';
                 Image = Print;
-                RunObject = Report "ACO Bath Sheet";
                 ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
+                begin
+                    ACOBathSheetHeader := Rec;
+                    ACOBathSheetHeader.SetRecFilter();
+                    Report.Run(Report::"ACO Bath Sheet", true, false, ACOBathSheetHeader);
+                end;
             }
         }
         area(Navigation)

@@ -17,17 +17,41 @@ report 50000 "ACO Bath Sheet"
             {
             }
             column(SalesOrderCaption; SalesOrderCaptionLbl) { }
+            // column(SalesOrderNo; FirstACOBathSheetLine."Sales Order No.")
+            // {
+            // }
             column(SOLineCaption; SOLineCaptionLbl) { }
+            // column(SalesOrderLineNo; FirstACOBathSheetLine."Sales Order Line No.")
+            // {
+            // }     
+            column(ProfileCaption; ProfileCaptionLbl) { }
+            column(ProfileCode; FirstACOBathSheetLine."Profile Code")
+            {
+            }
             column(ColorCaption; ColorCaptionLbl) { }
-
+            column(Color; FirstACOBathSheetLine.Color)
+            {
+            }
             column(QuantityCaption; QuantityCaptionLbl) { }
+            column(Quantity; FirstACOBathSheetLine.Quantity)
+            {
+            }
             column(LengthCaption; LengthCaptionLbl) { }
+            column(Length; FirstACOBathSheetLine.Length)
+            {
+            }
             column(ThickCaption; ThickCaptionLbl) { }
             column(ThinCaption; ThinCaptionLbl) { }
-
+            // column(CustomerNameCaption; CustomerCaptionLbl)
+            // {
+            // }
+            // column(CustomerName; FirstACOBathSheetLine."Customer Name")
+            // {
+            // }
             column(TreatmentCaption; TreatmentCaptionLbl) { }
-            column(TMLineCaption; TMLineCaptionLbl) { }
-            column(ProfileCaption; ProfileCaptionLbl) { }
+            column(Treatment; FirstACOBathSheetLine."Treatment")
+            {
+            }
             column(MEASUREText; MEASUREText)
             {
             }
@@ -38,12 +62,12 @@ report 50000 "ACO Bath Sheet"
             {
             }
             column(ThickStainingCaption; ThickStainingCaptionLbl) { }
-            column(Thick; Thick)
+            column(ThickStaining; Thick)
             {
                 DecimalPlaces = 0 : 2;
             }
             column(ThinStainingCaption; ThinStainingCaptionLbl) { }
-            column(Thin; Thin)
+            column(ThinStaining; Thin)
             {
                 DecimalPlaces = 0 : 2;
             }
@@ -180,6 +204,10 @@ report 50000 "ACO Bath Sheet"
 
                 if Euras then
                     EURASText := EURASCaptionLbl;
+
+                FirstACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
+                if not FirstACOBathSheetLine.FindFirst() then
+                    Clear(FirstACOBathSheetLine);
             end;
         }
     }
@@ -191,6 +219,7 @@ report 50000 "ACO Bath Sheet"
 
     var
         User: Record User;
+        FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;
@@ -198,14 +227,16 @@ report 50000 "ACO Bath Sheet"
         DateCaptionLbl: Label 'Date';
         SalesOrderCaptionLbl: Label 'Sales Order';
         SOLineCaptionLbl: Label 'SOLine';
+        ProfileCaptionLbl: Label 'Profile';
         ColorCaptionLbl: Label 'Color';
         QuantityCaptionLbl: Label 'Quantity';
         LengthCaptionLbl: Label 'Length';
         ThickCaptionLbl: Label 'Thick';
         ThinCaptionLbl: Label 'Thin';
+        CustomerCaptionLbl: Label 'Customer';
         TreatmentCaptionLbl: Label 'Treatment';
         TMLineCaptionLbl: Label 'TMLine';
-        ProfileCaptionLbl: Label 'Profile';
+
         MEASURECaptionLbl: Label 'MEASURE';
         DONOTMEASURECaptionLbl: Label 'DO NOT MEASURE';
         HighEndCaptionLbl: Label 'High End';
