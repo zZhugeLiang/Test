@@ -623,6 +623,6 @@ table 50016 "ACO Bath Sheet Header"
             BathTime := (3 * LayerThickness / CurrDens);
         end;
 
-        Str := CurrDens * TotalSurface;
+        Str := CurrDens * TotalSurface * 100;
     end;
 }
