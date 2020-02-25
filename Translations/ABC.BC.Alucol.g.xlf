@@ -1769,7 +1769,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ContactPointsOnVisibleSideCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 3944613580" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile damaged</source>
+          <source>Profile damaged?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ProfileDamagedCaptionLbl</note>
         </trans-unit>
