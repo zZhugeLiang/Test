@@ -1694,12 +1694,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TMLineCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 235176040" size-unit="char" translate="yes" xml:space="preserve">
-          <source>MEASURE</source>
+          <source>M E A S U R E</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType MEASURECaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 810523438" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DO NOT MEASURE</source>
+          <source>D O  N O T  M E A S U R E</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType DONOTMEASURECaptionLbl</note>
         </trans-unit>
@@ -1709,7 +1709,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType HighEndCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 3627709840" size-unit="char" translate="yes" xml:space="preserve">
-          <source>EURAS</source>
+          <source>E U R A S</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType EURASCaptionLbl</note>
         </trans-unit>

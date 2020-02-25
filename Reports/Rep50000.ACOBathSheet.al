@@ -29,7 +29,7 @@ report 50000 "ACO Bath Sheet"
             {
             }
             column(ColorCaption; ColorCaptionLbl) { }
-            column(Color; FirstACOBathSheetLine.Color)
+            column(Color; ACOColor.Description)
             {
             }
             column(QuantityCaption; QuantityCaptionLbl) { }
@@ -64,101 +64,81 @@ report 50000 "ACO Bath Sheet"
             column(ThickStainingCaption; ThickStainingCaptionLbl) { }
             column(ThickStaining; Thick)
             {
-                DecimalPlaces = 0 : 2;
             }
             column(ThinStainingCaption; ThinStainingCaptionLbl) { }
             column(ThinStaining; Thin)
             {
-                DecimalPlaces = 0 : 2;
             }
             column(TotalProfileSurfaceCaption; TotalProfileSurfaceCaptionLbl) { }
             column(TotalSurfaceProfiles; "Total Surface Profiles")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(SurfaceAttachmentRackCaption; SurfaceAttachmentRackCaptionLbl) { }
             column(SurfaceAttachrack; "Surface Attachrack")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(SurfaceAdditionCaption; SurfaceAdditionCaptionLbl) { }
             column(SurfaceAddition; "Surface Addition")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(TotalSurfaceCaption; TotalSurfaceCaptionLbl) { }
             column(TotalSurface; "Total Surface")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(TotalQuantityCaption; TotalQuantityCaptionLbl) { }
             column(TotalQuantity; "Total Quantity")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(LayerThicknessCaption; LayerThicknessCaptionLbl) { }
             column(LayerThickness; "Layer Thickness")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(piecesCaption; piecesCaptionLbl) { }
 
             column(GSX1Dhd; "GSX 1 Dhd.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX1Str; "GSX 1 Str.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX1TimeNew; "GSX 1 Time New")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX1Time; "GSX 1 Time")
             {
             }
             column(GSX2Dhd; "GSX 2 Dhd.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX2Str; "GSX 2 Str.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX2TimeNew; "GSX 2 Time New")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX2Time; "GSX 2 Time")
             {
             }
             column(GSX3Dhd; "GSX 3 Dhd.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX3Str; "GSX 3 Str.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX3TimeNew; "GSX 3 Time New")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX3Time; "GSX 3 Time")
             {
             }
             column(GSX4Dhd; "GSX 4 Dhd.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX4Str; "GSX 4 Str.")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX4TimeNew; "GSX 4 Time New")
             {
-                DecimalPlaces = 0 : 2;
             }
             column(GSX4Time; "GSX 4 Time")
             {
@@ -208,6 +188,9 @@ report 50000 "ACO Bath Sheet"
                 FirstACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                 if not FirstACOBathSheetLine.FindFirst() then
                     Clear(FirstACOBathSheetLine);
+
+                if not ACOColor.Get(FirstACOBathSheetLine.Color) then
+                    Clear(ACOColor);
             end;
         }
     }
@@ -220,6 +203,7 @@ report 50000 "ACO Bath Sheet"
     var
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
+        ACOColor: Record "ACO Color";
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;
@@ -237,10 +221,10 @@ report 50000 "ACO Bath Sheet"
         TreatmentCaptionLbl: Label 'Treatment';
         TMLineCaptionLbl: Label 'TMLine';
 
-        MEASURECaptionLbl: Label 'MEASURE';
-        DONOTMEASURECaptionLbl: Label 'DO NOT MEASURE';
+        MEASURECaptionLbl: Label 'M E A S U R E';
+        DONOTMEASURECaptionLbl: Label 'D O  N O T  M E A S U R E';
         HighEndCaptionLbl: Label 'High End';
-        EURASCaptionLbl: Label 'EURAS';
+        EURASCaptionLbl: Label 'E U R A S';
         ThickStainingCaptionLbl: Label 'Thick Staining';
         ThinStainingCaptionLbl: Label 'Thin Staining';
         TotalProfileSurfaceCaptionLbl: Label 'Total Profile Surface';
