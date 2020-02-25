@@ -287,6 +287,14 @@ page 50020 "ACO Bath Sheet"
                     Validate(Complete, true);
                 end;
             }
+
+            action("Print Bath Sheet")
+            {
+                Caption = 'Print Bath Sheet';
+                Image = Print;
+                RunObject = Report "ACO Bath Sheet";
+                ApplicationArea = All;
+            }
         }
         area(Navigation)
         {

@@ -230,18 +230,12 @@ page 50019 "ACO Bath Sheets"
 
         area(Processing)
         {
-
-            action("Complete Bath Sheet")
+            action("Print Bath Sheet")
             {
-                Caption = 'Complete Bath Sheet';
-                Image = Approval;
-                ShortcutKey = F11;
+                Caption = 'Print Bath Sheet';
+                Image = Print;
+                RunObject = Report "ACO Bath Sheet";
                 ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-                    Validate(Complete, true);
-                end;
             }
         }
         area(Navigation)

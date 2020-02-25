@@ -1568,10 +1568,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2112516322 - Action 1566538523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Complete Bath Sheet</source>
+        <trans-unit id="Page 2112516322 - Action 707697803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action Complete Bath Sheet - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action Print Bath Sheet - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2112516322 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>
@@ -1613,6 +1613,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Complete Bath Sheet - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 371732247 - Action 707697803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Print Bath Sheet - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 371732247 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1622,6 +1627,176 @@
           <source>Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1002189328" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType BathSheetCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType DateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2074925846" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType SalesOrderCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2464883474" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SOLine</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType SOLineCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1406043331" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ColorCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType QuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 559612500" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType LengthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2771379419" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thick</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ThickCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2482948849" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ThinCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 280778644" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Treatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TreatmentCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1289917125" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TMLine</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TMLineCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3758688209" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ProfileCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 235176040" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MEASURE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType MEASURECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 810523438" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DO NOT MEASURE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType DONOTMEASURECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
+          <source>High End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType HighEndCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3627709840" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EURAS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType EURASCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1329453236" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thick Staining</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ThickStainingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 626628970" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thin Staining</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ThinStainingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1302558788" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Profile Surface</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TotalProfileSurfaceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3913717341" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Surface Attachment Rack</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType SurfaceAttachmentRackCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1417549959" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Surface Addition</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType SurfaceAdditionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 584764245" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Surface</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TotalSurfaceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 4251532111" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TotalQuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1443601883" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thickness</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType LayerThicknessCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1973719367" size-unit="char" translate="yes" xml:space="preserve">
+          <source>pieces</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType piecesCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 106058382" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay attention</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType PayAttentionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3698629784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType NoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 63232545" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact points on visible side</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ContactPointsOnVisibleSideCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3944613580" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile damaged</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ProfileDamagedCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1677279101" size-unit="char" translate="yes" xml:space="preserve">
+          <source>YES</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType YESCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3943248207" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType NOCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3341999762" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paraph</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ParaphCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printing Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType PrintingDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 736763889" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Page 2801324966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ACO Bath Sheet Subpage</source>
