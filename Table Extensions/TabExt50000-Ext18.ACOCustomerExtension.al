@@ -60,22 +60,28 @@ tableextension 50000 "ACO Customer Extension" extends Customer
         field(50009; "ACO Package Label Nos."; Code[20])
         {
             Caption = 'Package Label Nos.';
-            DataClassification = CustomerContent;
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
 
         field(50010; "ACO Package Label Report ID"; Integer)
         {
-            DataClassification = CustomerContent;
             Caption = 'Package Label Report ID';
             TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Report));
+            DataClassification = CustomerContent;
         }
 
         field(50011; "ACO Package Label Layout Code"; Code[20])
         {
-            DataClassification = CustomerContent;
             Caption = 'Package Label Layout Code';
             TableRelation = "Custom Report Layout" where("Report ID" = field("ACO Package Label Report ID"));
+            DataClassification = CustomerContent;
+        }
+
+        field(50012; "Shelf No. Mandatory on Package"; Boolean)
+        {
+            Caption = 'Shelf No. Mandatory on Package';
+            DataClassification = CustomerContent;
         }
     }
 }

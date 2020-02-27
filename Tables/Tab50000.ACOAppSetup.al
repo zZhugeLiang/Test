@@ -107,6 +107,59 @@ table 50000 "ACO App Setup"
             InitValue = 16;
             DataClassification = CustomerContent;
         }
+
+        field(16; "Min. Residue Saw"; Decimal)
+        {
+            Caption = 'Min. Residue Saw [mm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(17; "No. Series Packages"; Code[20])
+        {
+            Caption = 'No. Series Packages';
+            TableRelation = "No. Series";
+            DataClassification = CustomerContent;
+        }
+        field(18; "Aucos Max. No. of Lines"; Integer)
+        {
+            Caption = 'Aucos Max. No. of Lines';
+            DataClassification = CustomerContent;
+        }
+        field(19; "File Directory Aucos File"; Text[250])
+        {
+            Caption = 'File Directory Aucos File';
+            DataClassification = CustomerContent;
+        }
+        field(20; "Archive File Dir. Aucos File"; Text[250])
+        {
+            Caption = 'Archive File Dir. Aucos File';
+            DataClassification = CustomerContent;
+        }
+        field(21; "Aucos Staining Time"; Integer)
+        {
+            Caption = 'Aucos Staining Time';
+            DataClassification = CustomerContent;
+        }
+        field(22; "Aucos Seal Time"; Integer)
+        {
+            Caption = 'Aucos Seal Time';
+            DataClassification = CustomerContent;
+        }
+        field(23; "Aucos Sealconstant"; Integer)
+        {
+            Caption = 'Aucos Sealconstant';
+            DataClassification = CustomerContent;
+        }
+        field(24; "Multiple Staining Times Text"; Text[100])
+        {
+            Caption = 'Multiple Staining Times Text';
+            DataClassification = CustomerContent;
+        }
+        // field(25; "Maximum Bath Length"; Decimal)
+        // {
+        //     Caption = 'Maximum Bath Length';
+        //     DataClassification = CustomerContent;
+        // }
     }
 
     keys

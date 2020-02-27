@@ -83,6 +83,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Min. Anodise Time - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 1753180932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Min. Residue Saw [mm]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Min. Residue Saw - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 2948861983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series Packages</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field No. Series Packages - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 1138303926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Max. No. of Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Aucos Max. No. of Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3875048366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File Directory Aucos File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field File Directory Aucos File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3692330204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive File Dir. Aucos File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Archive File Dir. Aucos File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3266292953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Staining Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Aucos Staining Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 2056616895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Seal Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Aucos Seal Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 2562973642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Sealconstant</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Aucos Sealconstant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 1256312134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Multiple Staining Times Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Multiple Staining Times Text - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -312,6 +357,11 @@
           <source>Dimension Value Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Value Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4064269812 - Field 1554651693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Aucos - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 391613001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Group</source>
@@ -1618,6 +1668,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Print Bath Sheet - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3717496217 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export Aucos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 681936706" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType MaxNumberOfLinesErr</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 315208502" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This Bath Sheet is not intended for the long line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType NotIntendedforLongLineErr</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 1659495813" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not all lines have the same color.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType NotAllLinesSameColorErr</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 339598623" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not all lines have the same pretreatment.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType NotAllLinesSamePretreatmentErr</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 2636546845" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This color cannot be exported to Aucos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType ColorCannotBeExportedToAucosErr</note>
+        </trans-unit>
         <trans-unit id="Page 371732247 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1752,6 +1832,41 @@
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType LayerThicknessCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 3399400147" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType GSX1CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 955539390" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType GSX2CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1445276613" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType GSX3CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1506819396" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GSX LL</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType GSXLLCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1783208331" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Str.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType StrCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 501074504" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dhd</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType DhdCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 1926058683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TimeCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1973719367" size-unit="char" translate="yes" xml:space="preserve">
           <source>pieces</source>
@@ -1993,6 +2108,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Resources - Property Caption</note>
         </trans-unit>
+        <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort ACO Aucos Export - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1507464928 - Control 2335191362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Production</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2047,6 +2167,11 @@
           <source> ,Short Line,Long Line</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Production Line - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 73372350 - Field 197640799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Adjust ablauf for Aucos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Adjust ablauf for Aucos - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3486886417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>OVIS Mail</source>
@@ -2107,6 +2232,11 @@
           <source>Package Label Layout Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Package Label Layout Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2847388252 - Field 3119005385 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Shelf No. Mandatory on Package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field Shelf No. Mandatory on Package - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 607252771 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source> Pretreatment</source>

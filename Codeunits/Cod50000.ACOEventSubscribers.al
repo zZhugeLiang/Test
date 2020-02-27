@@ -253,6 +253,14 @@ codeunit 50000 "ACO Event Subscribers"
     //         exit;
     // end;
 
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
+    local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    begin
+        Rec.CalculateUnitPrice();
+    end;
+    // Calculate Price schema ToDo
+
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
     var

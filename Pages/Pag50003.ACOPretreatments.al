@@ -5,6 +5,7 @@ page 50003 "ACO Pretreatments"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "ACO Pretreatment";
+    RefreshOnActivate = true;
 
     layout
     {
@@ -58,17 +59,30 @@ page 50003 "ACO Pretreatments"
                 }
                 field(Aucos; Aucos)
                 {
+                    Editable = AucosEditable;
                     ApplicationArea = All;
                 }
                 field("Aucos Sealing Time"; "Aucos Sealing Time")
                 {
+                    Editable = AucosEditable;
                     ApplicationArea = All;
                 }
                 field("Aucos Flushing Time"; "Aucos Flushing Time")
                 {
+                    Editable = AucosEditable;
                     ApplicationArea = All;
                 }
             }
         }
     }
+
+    trigger OnOpenPage()
+    var
+        UserSetup: Record "User Setup";
+    begin
+        AucosEditable := UserSetup.Get(UserID()) and UserSetup."ACO Adjust ablauf for Aucos";
+    end;
+
+    var
+        AucosEditable: Boolean;
 }

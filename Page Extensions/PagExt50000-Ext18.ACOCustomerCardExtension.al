@@ -55,6 +55,21 @@ pageextension 50000 "ACO Customer Card Extension" extends "Customer Card"
                 {
                     ApplicationArea = All;
                 }
+
+                field("ACO Package Label Report ID"; "ACO Package Label Report ID")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("ACO Package Label Layout Code"; "ACO Package Label Layout Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Shelf No. Mandatory on Package"; "Shelf No. Mandatory on Package")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

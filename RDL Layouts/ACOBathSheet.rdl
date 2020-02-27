@@ -4637,7 +4637,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GSX 1</Value>
+                                  <Value>=Fields!GSX1Caption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4672,7 +4672,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GSX 2</Value>
+                                  <Value>=Fields!GSX2Caption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4707,7 +4707,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GSX 3</Value>
+                                  <Value>=Fields!GSX3Caption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4742,7 +4742,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GSX LL</Value>
+                                  <Value>=Fields!GSXLLCaption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4941,7 +4941,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Str.</Value>
+                                  <Value>=Fields!StrCaption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -5283,7 +5283,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Dhd</Value>
+                                  <Value>=Fields!DhdCaption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -5623,7 +5623,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tijd</Value>
+                                  <Value>=Fields!TimeCaption.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -6589,7 +6589,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>1.4cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -7361,7 +7361,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>3.02042cm</Height>
+                  <Height>2.32042cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -8511,6 +8511,27 @@ End Function
         </Field>
         <Field Name="LayerThicknessFormat">
           <DataField>LayerThicknessFormat</DataField>
+        </Field>
+        <Field Name="GSX1Caption">
+          <DataField>GSX1Caption</DataField>
+        </Field>
+        <Field Name="GSX2Caption">
+          <DataField>GSX2Caption</DataField>
+        </Field>
+        <Field Name="GSX3Caption">
+          <DataField>GSX3Caption</DataField>
+        </Field>
+        <Field Name="GSXLLCaption">
+          <DataField>GSXLLCaption</DataField>
+        </Field>
+        <Field Name="StrCaption">
+          <DataField>StrCaption</DataField>
+        </Field>
+        <Field Name="DhdCaption">
+          <DataField>DhdCaption</DataField>
+        </Field>
+        <Field Name="TimeCaption">
+          <DataField>TimeCaption</DataField>
         </Field>
         <Field Name="piecesCaption">
           <DataField>piecesCaption</DataField>

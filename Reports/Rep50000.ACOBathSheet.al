@@ -93,6 +93,13 @@ report 50000 "ACO Bath Sheet"
             column(LayerThickness; "Layer Thickness")
             {
             }
+            column(GSX1Caption; GSX1CaptionLbl) { }
+            column(GSX2Caption; GSX2CaptionLbl) { }
+            column(GSX3Caption; GSX3CaptionLbl) { }
+            column(GSXLLCaption; GSXLLCaptionLbl) { }
+            column(StrCaption; StrCaptionLbl) { }
+            column(DhdCaption; DhdCaptionLbl) { }
+            column(TimeCaption; TimeCaptionLbl) { }
             column(piecesCaption; piecesCaptionLbl) { }
 
             column(GSX1Dhd; "GSX 1 Dhd.")
@@ -233,6 +240,13 @@ report 50000 "ACO Bath Sheet"
         TotalSurfaceCaptionLbl: Label 'Total Surface';
         TotalQuantityCaptionLbl: Label 'Total Quantity';
         LayerThicknessCaptionLbl: Label 'Layer Thickness';
+        GSX1CaptionLbl: Label 'GSX 1';
+        GSX2CaptionLbl: Label 'GSX 2';
+        GSX3CaptionLbl: Label 'GSX 3';
+        GSXLLCaptionLbl: Label 'GSX LL';
+        StrCaptionLbl: Label 'Str.';
+        DhdCaptionLbl: Label 'Dhd';
+        TimeCaptionLbl: Label 'Time';
         piecesCaptionLbl: Label 'pieces';
         PayAttentionCaptionLbl: Label 'Pay attention';
         NoteCaptionLbl: Label 'Note';

@@ -79,6 +79,53 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Multiple Staining Times Text"; "Multiple Staining Times Text")
+                {
+                    ApplicationArea = All;
+                }
+            }
+
+            group(Aucos)
+            {
+                field("Min. Residue Saw"; "Min. Residue Saw")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("No. Series Packages"; "No. Series Packages")
+                {
+                    ApplicationArea = All;
+                }
+                field("Aucos Max. No. of Lines"; "Aucos Max. No. of Lines")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("File Directory Aucos File"; "File Directory Aucos File")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Archive File Dir. Aucos File"; "Archive File Dir. Aucos File")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Aucos Staining Time"; "Aucos Staining Time")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Aucos Seal Time"; "Aucos Seal Time")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Aucos Sealconstant"; "Aucos Sealconstant")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

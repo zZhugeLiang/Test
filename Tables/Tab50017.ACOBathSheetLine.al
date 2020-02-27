@@ -88,9 +88,10 @@ table 50017 "ACO Bath Sheet Line"
             DataClassification = CustomerContent;
         }
 
-        field(12; "Rerun Reason"; Text[100])
+        field(12; "Rerun Reason"; Text[100]) // DEPRECATED, change this field to Code[10];
         {
             Caption = 'Rerun Reason';
+            TableRelation = "Reason Code";
             DataClassification = CustomerContent;
         }
 

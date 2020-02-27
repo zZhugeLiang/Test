@@ -88,6 +88,13 @@ table 50005 "ACO Color"
                 end;
             end;
         }
+
+        field(11; "Aucos"; Boolean)
+        {
+            Caption = 'Aucos';
+            DataClassification = CustomerContent;
+        }
+
     }
 
     keys

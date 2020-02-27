@@ -8,6 +8,11 @@ pageextension 50004 "ACO User Setup Extension" extends "User Setup"
             {
                 ApplicationArea = All;
             }
+
+            field("ACO Adjust ablauf for Aucos"; "ACO Adjust ablauf for Aucos")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

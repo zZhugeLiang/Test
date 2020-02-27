@@ -386,4 +386,60 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
     }
+
+    procedure CalculateUnitPrice()
+    var
+        ItemVariant: Record "Item Variant";
+        ACOProfile: Record "ACO Profile";
+        SalesHeader: Record "Sales Header";
+        Customer: Record Customer;
+        ACOPriceScheme: Record "ACO Price Scheme";
+        ACOPriceSchemePrice: Record "ACO Price Scheme Price";
+        NewUnitPrice: Decimal;
+        Factor: Decimal;
+        RangedQty: Decimal;
+    begin
+        NewUnitPrice := "Unit Price";
+
+        SalesHeader.Get("Document Type", "Document No.");
+        Customer.Get(SalesHeader."Sell-to Customer No.");
+        ACOPriceScheme.Get(Customer."ACO Price Scheme Code");
+
+        if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+            RangedQty := "ACO Number of Units" * ItemVariant."ACO Number of Meters";
+
+        ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
+        ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Length);
+        ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
+        if ACOPriceSchemePrice.FindLast() then begin
+            Factor := ACOPriceSchemePrice."Unit Price";
+            NewUnitPrice := NewUnitPrice * Factor;
+        end;
+
+        RangedQty := "ACO Number of Units" * ACOProfile."Weight per meter";
+
+        if ACOProfile.Get("ACO Profile Code") then begin
+            ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
+            ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Weight);
+            ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
+            if ACOPriceSchemePrice.FindLast() then begin
+                Factor := ACOPriceSchemePrice."Unit Price";
+                NewUnitPrice := NewUnitPrice * Factor;
+            end;
+        end;
+
+        //RangedQty := "ACO Number of Units" * ItemVariant."ACO Number of Meters" * "ACO Profile Circumference";
+        RangedQty := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+        if ACOProfile.Get("ACO Profile Code") then begin
+            ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
+            ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);
+            ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
+            if ACOPriceSchemePrice.FindLast() then begin
+                Factor := ACOPriceSchemePrice."Unit Price";
+                NewUnitPrice := NewUnitPrice * Factor;
+            end;
+        end;
+
+        Validate("Unit Price", NewUnitPrice);
+    end;
 }

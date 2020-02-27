@@ -303,6 +303,85 @@ page 50020 "ACO Bath Sheet"
                     Report.Run(Report::"ACO Bath Sheet", true, false, ACOBathSheetHeader);
                 end;
             }
+
+            action("Export Aucos")
+            {
+                Caption = 'Export Aucos';
+                Image = Export;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
+                    ACOBathSheetLine: Record "ACO Bath Sheet Line";
+                    ACOColor: Record "ACO Color";
+                    ACOProfile: Record "ACO Profile";
+                    ACOPretreatment: Record "ACO Pretreatment";
+                    ACOAppSetup: Record "ACO App Setup";
+                    Item: Record Item;
+                    ACOAucosExport: XmlPort "ACO Aucos Export";
+                    LastColorCode: Code[20];
+                    LastPretreatmentCode: Code[20];
+                    SealingTime: Decimal;
+                    ExtraFlushing: Boolean;
+                    XmlFile: File;
+                    MaxNumberOfLinesErr: Label 'The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.';
+                    NotIntendedforLongLineErr: Label 'This Bath Sheet is not intended for the long line.';
+                    NotAllLinesSameColorErr: Label 'Not all lines have the same color.';
+                    NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
+                    ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
+                begin
+                    ACOAppSetup.Get();
+                    ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
+                    if ACOAppSetup."Aucos Max. No. of Lines" > 0 then
+                        if ACOBathSheetLine.Count() > ACOAppSetup."Aucos Max. No. of Lines" then
+                            Error(MaxNumberOfLinesErr);
+
+                    if "Production Line" <> "Production Line"::Long then
+                        Error(NotIntendedforLongLineErr);
+
+                    if ACOBathSheetLine.FindSet() then
+                        repeat
+                            if LastColorCode <> '' then
+                                if LastColorCode <> ACOBathSheetLine.Color then
+                                    Error(NotAllLinesSameColorErr);
+
+                            ACOColor.Get(ACOBathSheetLine.Color);
+                            if not ACOColor.Aucos then
+                                Error(ColorCannotBeExportedToAucosErr);
+
+                            Item.Get(ACOBathSheetLine.Treatment);
+
+                            ACOPretreatment.Get(Item."ACO Pretreatment");
+
+                            if LastPretreatmentCode <> '' then
+                                if LastPretreatmentCode <> Item."ACO Pretreatment" then
+                                    Error(NotAllLinesSamePretreatmentErr);
+
+                            LastColorCode := ACOBathSheetLine.Color;
+                            LastPretreatmentCode := Item."ACO Pretreatment";
+                            ACOProfile.Get(ACOBathSheetLine);
+                            if ACOProfile."Extra Flushing" then
+                                ExtraFlushing := true;
+                        // ACOBathSheetLine
+                        until ACOBathSheetLine.Next() = 0;
+
+                    // if ExtraFlushing then begin
+
+                    // end else begin
+
+                    // end;
+                    // ACOAucosExport.Export()
+
+                    //IF EXISTS(XmlFileName) THEN
+                    //ERASE(XmlFileName);
+
+                    // XmlFile.CREATE(XmlFileName);
+                    // XmlFile.CREATEOUTSTREAM(OutStreamVar);
+                    // XMLPORT.EXPORT(XMLPORT::"Your XmlPort",OutStreamVar); 
+                    // XmlFile.CLOSE;
+                end;
+            }
         }
         area(Navigation)
         {

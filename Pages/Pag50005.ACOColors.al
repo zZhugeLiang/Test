@@ -44,6 +44,10 @@ page 50005 "ACO Colors"
                 {
                     ApplicationArea = All;
                 }
+                field(Aucos; Aucos)
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
