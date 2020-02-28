@@ -91,6 +91,7 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
+                // ToDo: Fields beneath to seperate table
                 field("Measure Mu-01"; "Measure Mu-01")
                 {
                     ApplicationArea = All;

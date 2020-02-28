@@ -16,8 +16,8 @@ table 50002 "ACO Price Scheme Price"
         field(2; "Type"; Option)
         {
             Caption = 'Type';
-            OptionMembers = Length,Weight,Circumference;
-            OptionCaption = 'Length,Weight,Circumference';
+            OptionMembers = Length,Weight,Circumference,"Inner Cathode Charge";
+            OptionCaption = 'Length,Weight,Circumference,Inner Cathode Charge';
             DataClassification = CustomerContent;
         }
         field(3; "Minimum Quantity"; Decimal)
@@ -28,7 +28,7 @@ table 50002 "ACO Price Scheme Price"
 
         field(4; "Unit Price"; Decimal)
         {
-            Caption = 'Unit Price';
+            Caption = 'Factor';
             DataClassification = CustomerContent;
         }
     }

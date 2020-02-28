@@ -32,6 +32,11 @@ Page 50025 "ACO Selection Bath Sheet List"
                     Editable = false;
                 }
 
+                field("ACO Production Line"; "ACO Production Line")
+                {
+                    ApplicationArea = All;
+                }
+
                 field("Item No."; "Item No.")
                 {
                     ApplicationArea = Manufacturing;
@@ -159,6 +164,14 @@ Page 50025 "ACO Selection Bath Sheet List"
                 field("ACO Charge No."; "ACO Charge No.")
                 {
                     Editable = true;
+                    ApplicationArea = Manufacturing;
+                }
+                field("ACO Quantity Charges"; "ACO Quantity Charges")
+                {
+                    ApplicationArea = Manufacturing;
+                }
+                field("ACO Charges per Bath Profile"; "ACO Charges per Bath Profile")
+                {
                     ApplicationArea = Manufacturing;
                 }
                 field("ACO Number of Units"; "ACO Number of Units")

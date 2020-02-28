@@ -21,7 +21,7 @@ table 50001 "ACO Price Scheme"
 
         field(3; "British Standard"; Boolean)
         {
-            Caption = 'British Standard';
+            Caption = 'DEPRECATED'; // Moved field to Price Scheme Price
             DataClassification = CustomerContent;
         }
     }

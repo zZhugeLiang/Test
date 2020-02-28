@@ -136,6 +136,21 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;//zichtbaar
         }
 
+        field(50021; "ACO Logged In Day"; Integer)
+        {
+            Caption = 'Logged In Day';
+            DataClassification = CustomerContent;
+        }
+        field(50022; "ACO Delivery Day"; Integer)
+        {
+            Caption = 'Delivery Day';
+            DataClassification = CustomerContent;
+        }
+        field(50023; "ACO Document Date Day"; Integer)
+        {
+            Caption = 'Document Date Day';
+            DataClassification = CustomerContent;
+        }
         // field(50021; "ACO Quantity Charges"; Decimal)
         // {
         //     Caption = 'DEPRECATED';

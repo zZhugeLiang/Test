@@ -22,10 +22,10 @@ page 50001 "ACO Price Schemes"
                     ApplicationArea = All;
                 }
 
-                field("British Standard"; "British Standard")
-                {
-                    ApplicationArea = All;
-                }
+                // field("British Standard"; "British Standard")
+                // {
+                //     ApplicationArea = All;
+                // }
             }
         }
     }

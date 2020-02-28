@@ -102,5 +102,12 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             Editable = false;
             DataClassification = CustomerContent;
         }
+        field(50014; "ACO Production Line"; Option)
+        {
+            Caption = 'Production Line';
+            OptionMembers = " ",Short,Long;
+            OptionCaption = ' ,Short,Long';
+            DataClassification = CustomerContent;
+        }
     }
 }

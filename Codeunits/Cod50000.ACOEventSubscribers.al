@@ -23,6 +23,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'ACO Delivery Date', false, false)]
     local procedure SalesHeader_OnAfterValidate_ACODeliveryDate(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
     begin
+        Rec."ACO Delivery Day" := Date2DWY(Rec."ACO Delivery Date", 1);
         Rec."ACO Delivery Week" := Date2DWY(Rec."ACO Delivery Date", 2);
         Rec."ACO Delivery Year" := Date2DWY(Rec."ACO Delivery Date", 3);
     end;
@@ -30,6 +31,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'ACO Logged In DateTime', false, false)]
     local procedure SalesHeader_OnAfterValidate_ACOLoggedInDateTime(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
     begin
+        Rec."ACO Logged In Day" := Date2DWY(DT2Date(Rec."ACO Logged In DateTime"), 1);
         Rec."ACO Logged In Week" := Date2DWY(DT2Date(Rec."ACO Logged In DateTime"), 2);
         Rec."ACO Logged In Year" := Date2DWY(DT2Date(Rec."ACO Logged In DateTime"), 3);
     end;
@@ -37,6 +39,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Document Date', false, false)]
     local procedure SalesHeader_OnAfterValidate_DocumentDate(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
     begin
+        Rec."ACO Document Date Day" := Date2DWY(Rec."Document Date", 1);
         Rec."ACO Document Date Week" := Date2DWY(Rec."Document Date", 2);
         Rec."ACO Document Date Year" := Date2DWY(Rec."Document Date", 3);
     end;
@@ -257,7 +260,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
-        // Rec.CalculateUnitPrice();
+        Rec.CalculateUnitPrice();
     end;
     // Calculate Price schema ToDo
 
@@ -276,20 +279,34 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
     local procedure CreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
     var
-        ACOProfile: Record "ACO Profile";
+        SalesHeader: Record "Sales Header";
+        ItemVariant: Record "Item Variant";
     begin
         ProdOrderLine."ACO Source Type" := ProductionOrder."Source Type";
         ProdOrderLine."ACO Source No." := ProductionOrder."Source No.";
         ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
         ProdOrderLine."ACO Profile Code" := SalesLine."ACO Profile Code";
-        if ACOProfile.Get(SalesLine."ACO Profile Code") then
-            ProdOrderLine."ACO Profile m2 per Qty." := SalesLine."ACO Area Profile";
-        // SAMEN KIJKEN MET EELCO MORGEN
-        ProdorderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
+        ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
+
+        SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
+        if SalesHeader."ACO Large Line" then
+            ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Long
+        else
+            ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Short;
 
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
         ProdOrderLine.Validate("ACO Number of Units", SalesLine."ACO Number of Units");
         ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
-        // ProdOrderLine."ACO Total m2" := ProdOrderLine."ACO Quantity to Bath Sheet" * ProdOrderLine."ACO Profile m2 per Qty.";
+
+        // if ACOProfile.Get(SalesLine."ACO Profile Code") then
+
+        if ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+            ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * SalesLine."ACO Number of Units" / 1000;
+
+        if ProdOrderLine."ACO Number of Units" <> 0 then
+            ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";
+
+        /// SalesLine."ACO Area Profile";
+        //ProdOrderLine."ACO Total m2" := ProdOrderLine."ACO Quantity to Bath Sheet" * ProdOrderLine."ACO Profile m2 per Qty.";
     end;
 }
