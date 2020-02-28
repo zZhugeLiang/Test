@@ -136,10 +136,10 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             DataClassification = CustomerContent;//zichtbaar
         }
 
-        field(50021; "ACO Quantity Charges"; Decimal)
-        {
-            Caption = 'DEPRECATED';
-            DataClassification = CustomerContent;
-        }
+        // field(50021; "ACO Quantity Charges"; Decimal)
+        // {
+        //     Caption = 'DEPRECATED';
+        //     DataClassification = CustomerContent;
+        // }
     }
 }

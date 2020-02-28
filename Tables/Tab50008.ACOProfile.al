@@ -44,17 +44,17 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(7; Hollow; Boolean)
-        {
-            Caption = 'Hollow'; // DEPRECATED?
-            DataClassification = CustomerContent;
-        }
+        // field(7; Hollow; Boolean)
+        // {
+        //     Caption = 'Hollow'; // DEPRECATED?
+        //     DataClassification = CustomerContent;
+        // }
 
-        field(8; "Area"; Decimal)
-        {
-            Caption = 'Area'; // DEPRECATED?
-            DataClassification = CustomerContent;
-        }
+        // field(8; "Area"; Decimal)
+        // {
+        //     Caption = 'Area'; // DEPRECATED?
+        //     DataClassification = CustomerContent;
+        // }
 
         field(9; "Extra Flushing"; Boolean)
         {
@@ -92,15 +92,15 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(15; Bent; Boolean)
-        {
-            Caption = 'Bent'; // DEPRECATED?
-            DataClassification = CustomerContent;
-        }
+        // field(15; Bent; Boolean)
+        // {
+        //     Caption = 'Bent'; // DEPRECATED?
+        //     DataClassification = CustomerContent;
+        // }
 
         field(16; "Minimum Current Density"; Decimal)
         {
-            Caption = 'Maximum Current Density [A/dm²]';
+            Caption = 'Minimum Current Density [A/dm²]';
             DataClassification = CustomerContent;
         }
 

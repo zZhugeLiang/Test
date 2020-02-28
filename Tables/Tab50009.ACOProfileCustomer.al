@@ -46,19 +46,25 @@ table 50009 "ACO Profile Customer"
             end;
         }
 
-        field(3; "Profile Description"; Text[100])
+        field(3; "Customer Item No."; Code[50])
+        {
+            Caption = 'Customer Item No.';
+            DataClassification = CustomerContent;
+        }
+
+        field(4; "Profile Description"; Text[100])
         {
             Caption = 'Profile Description';
             DataClassification = CustomerContent;
         }
 
-        field(4; "Customer Name"; Text[100])
+        field(5; "Customer Name"; Text[100])
         {
             Caption = 'Customer Name';
             DataClassification = CustomerContent;
         }
 
-        field(5; "Status"; Option)
+        field(6; "Status"; Option)
         {
             Caption = 'Status';
             OptionMembers = Active,Inactive;
@@ -66,14 +72,14 @@ table 50009 "ACO Profile Customer"
             DataClassification = CustomerContent;
         }
 
-        field(6; "Price Scheme Code"; Code[10])
+        field(7; "Price Scheme Code"; Code[10])
         {
             Caption = 'Price Scheme';
             TableRelation = "ACO Price Scheme";
             DataClassification = CustomerContent;
         }
 
-        field(7; "Ship-to Code"; Code[10])
+        field(8; "Ship-to Code"; Code[10])
         {
             Caption = 'Ship-to Code';
             TableRelation = "Ship-to Address".Code where("Customer No." = Field("Customer No."));
@@ -94,25 +100,25 @@ table 50009 "ACO Profile Customer"
                 end;
             end;
         }
-        field(8; Address; Text[100])
+        field(9; Address; Text[100])
         {
             Caption = 'Address';
             DataClassification = CustomerContent;
         }
 
-        field(9; "Post Code"; Code[20])
+        field(10; "Post Code"; Code[20])
         {
             Caption = 'Ship-to Post Code';
             DataClassification = CustomerContent;
         }
 
-        field(10; "City"; Text[30])
+        field(11; "City"; Text[30])
         {
             Caption = 'City';
             DataClassification = CustomerContent;
         }
 
-        field(11; "Packaging Instructions"; Option)
+        field(12; "Packaging Instructions"; Option)
         {
             Caption = 'Packaging Instructions';
             OptionMembers = jpg,pdf,xlsx;
@@ -120,40 +126,34 @@ table 50009 "ACO Profile Customer"
             DataClassification = CustomerContent;
         }
 
-        field(12; "Euras"; Boolean)
+        field(13; "Euras"; Boolean)
         {
             Caption = 'Euras';
             DataClassification = CustomerContent;
         }
 
-        field(13; "Extra to Enumerate"; Integer)
+        field(14; "Extra to Enumerate"; Integer)
         {
             Caption = 'Extra to Enumerate [mm]';
             DataClassification = CustomerContent;
         }
 
-        field(14; "Thin Staining Time"; Decimal)
+        field(15; "Thin Staining Time"; Decimal)
         {
             Caption = 'Thin Staining Time [min]';
             DataClassification = CustomerContent;
         }
 
-        field(15; "Thick Staining Time"; Decimal)
+        field(16; "Thick Staining Time"; Decimal)
         {
             Caption = 'Thick Staining Time [min]';
-            DataClassification = CustomerContent;
-        }
-
-        field(16; "Customer Item No."; Code[50]) // PK
-        {
-            Caption = 'Customer Item No.';
             DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.", "Ship-to Code")//, "Customer Item No.") Add in New Sandbox. DEPRECATED
+        key(PK; "Profile Code", "Customer No.", "Customer Item No.")
         {
             Clustered = true;
         }

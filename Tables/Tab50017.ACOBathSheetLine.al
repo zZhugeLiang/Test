@@ -88,7 +88,7 @@ table 50017 "ACO Bath Sheet Line"
             DataClassification = CustomerContent;
         }
 
-        field(12; "Rerun Reason"; Text[100]) // DEPRECATED, change this field to Code[10];
+        field(12; "Rerun Reason"; Code[10])
         {
             Caption = 'Rerun Reason';
             TableRelation = "Reason Code";
@@ -140,10 +140,23 @@ table 50017 "ACO Bath Sheet Line"
             // Editable = false; // Temporarily disabled for testing
             DataClassification = CustomerContent;
         }
-
         field(19; "Surface"; Decimal)
         {
             Caption = 'Surface';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(20; "Sales Order No."; Code[20])
+        {
+            Caption = 'Sales Order No.';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(21; "Sales Order Line No."; Integer)
+        {
+            Caption = 'Sales Order Line No.';
             Editable = false;
             DataClassification = CustomerContent;
         }

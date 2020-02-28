@@ -66,9 +66,9 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             CalcFormula = Lookup ("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
         }
 
-        field(50009; "ACO Include Bath Sheet"; Boolean)
+        field(50009; "ACO Included"; Boolean)
         {
-            Caption = 'Include Bath Sheet'; // DEPRECATED remove this field or ACO Included
+            Caption = 'Include Bath Sheet';
             DataClassification = CustomerContent;
         }
 
@@ -96,13 +96,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             DataClassification = CustomerContent;
         }
 
-        field(50013; "ACO Included"; Boolean)
-        {
-            Caption = 'Included';// DEPRECATED remove this field or ACO Include Bath Sheet
-            DataClassification = CustomerContent;
-        }
-
-        field(50014; "ACO Number of Units"; Decimal)
+        field(50013; "ACO Number of Units"; Decimal)
         {
             Caption = 'Number of Units';
             Editable = false;

@@ -49,7 +49,7 @@ report 50000 "ACO Bath Sheet"
             // {
             // }
             column(TreatmentCaption; TreatmentCaptionLbl) { }
-            column(Treatment; FirstACOBathSheetLine."Treatment")
+            column(Treatment; ItemDescription)
             {
             }
             column(MEASUREText; MEASUREText)
@@ -108,9 +108,6 @@ report 50000 "ACO Bath Sheet"
             column(GSX1Str; "GSX 1 Str.")
             {
             }
-            column(GSX1TimeNew; "GSX 1 Time New")
-            {
-            }
             column(GSX1Time; "GSX 1 Time")
             {
             }
@@ -118,9 +115,6 @@ report 50000 "ACO Bath Sheet"
             {
             }
             column(GSX2Str; "GSX 2 Str.")
-            {
-            }
-            column(GSX2TimeNew; "GSX 2 Time New")
             {
             }
             column(GSX2Time; "GSX 2 Time")
@@ -132,22 +126,16 @@ report 50000 "ACO Bath Sheet"
             column(GSX3Str; "GSX 3 Str.")
             {
             }
-            column(GSX3TimeNew; "GSX 3 Time New")
-            {
-            }
             column(GSX3Time; "GSX 3 Time")
             {
             }
-            column(GSX4Dhd; "GSX 4 Dhd.")
+            column(GSX4Dhd; "GSX LL Dhd.")
             {
             }
-            column(GSX4Str; "GSX 4 Str.")
+            column(GSX4Str; "GSX LL Str.")
             {
             }
-            column(GSX4TimeNew; "GSX 4 Time New")
-            {
-            }
-            column(GSX4Time; "GSX 4 Time")
+            column(GSX4Time; "GSX LL Time")
             {
             }
             column(NoteCaption; NoteCaptionLbl) { }
@@ -173,6 +161,7 @@ report 50000 "ACO Bath Sheet"
             var
                 ACOBathSheetLine: Record "ACO Bath Sheet Line";
                 ACOProfile: Record "ACO Profile";
+                Item: Record Item;
             begin
                 MeasureText := DONOTMEASURECaptionLbl;
                 HighEndText := '';
@@ -196,6 +185,11 @@ report 50000 "ACO Bath Sheet"
                 if not FirstACOBathSheetLine.FindFirst() then
                     Clear(FirstACOBathSheetLine);
 
+                if not Item.Get(FirstACOBathSheetLine."Treatment") then
+                    Clear(Item);
+
+                ItemDescription := Item.Description;
+
                 if not ACOColor.Get(FirstACOBathSheetLine.Color) then
                     Clear(ACOColor);
             end;
@@ -211,6 +205,7 @@ report 50000 "ACO Bath Sheet"
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOColor: Record "ACO Color";
+        ItemDescription: Text[50];
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;

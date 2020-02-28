@@ -204,11 +204,11 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Profile Category" := ACOProfile.Category;
             Rec."ACO Profile Circumference" := ACOProfile."Circumference";
             Rec."ACO Not Measurable" := ACOProfile."Not Measurable";
-            Rec."ACO Area" := ACOProfile.Area;
+            /// Rec."ACO Area" := ACOProfile.Area;
             Rec."ACO Extra Flushing" := ACOProfile."Extra Flushing";
             Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
             Rec."ACO Height Level Profile" := ACOProfile."Height Level";
-            Rec."ACO Bent Profile" := ACOProfile.Bent;
+            /// Rec."ACO Bent Profile" := ACOProfile.Bent;
             Rec."ACO Max. Curr. Density Profile" := ACOProfile."Minimum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfile."Maximum Current Density";
             Rec."ACO Thin Staining Time Profile" := ACOProfile."Thin Staining Time";
@@ -283,7 +283,8 @@ codeunit 50000 "ACO Event Subscribers"
         ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
         ProdOrderLine."ACO Profile Code" := SalesLine."ACO Profile Code";
         if ACOProfile.Get(SalesLine."ACO Profile Code") then
-            ProdOrderLine."ACO Profile m2 per Qty." := ACOProfile."Area";
+            ProdOrderLine."ACO Profile m2 per Qty." := SalesLine."ACO Area Profile";
+        // SAMEN KIJKEN MET EELCO MORGEN
         ProdorderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
 
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";

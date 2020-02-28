@@ -27,12 +27,12 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(4; "Area Surface Rack"; Decimal)
-        {
-            Caption = 'Area Surface Rack'; // DEPRECATED, replaced by Surface Attachrack
-            NotBlank = true;
-            DataClassification = CustomerContent;
-        }
+        // field(4; "Area Surface Rack"; Decimal)
+        // {
+        //     Caption = 'Area Surface Rack'; // DEPRECATED, replaced by Surface Attachrack
+        //     NotBlank = true;
+        //     DataClassification = CustomerContent;
+        // }
 
         field(5; "Attach Method"; Code[10])
         {
@@ -338,9 +338,9 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(44; "GSX 4 Str."; Decimal)
+        field(44; "GSX LL Str."; Decimal)
         {
-            Caption = 'GSX 4 Str.';
+            Caption = 'GSX LL Str.';
             Editable = false;
             DataClassification = CustomerContent;
         }
@@ -366,65 +366,65 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(48; "GSX 4 Dhd."; Decimal)
+        field(48; "GSX LL Dhd."; Decimal)
         {
-            Caption = 'GSX 4 Dhd.';
+            Caption = 'GSX LL Dhd.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(49; "GSX 1 Time"; Time)
+        field(49; "GSX 1 Time"; Decimal)
         {
             Caption = 'GSX 1 Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(50; "GSX 2 Time"; Time)
+        field(50; "GSX 2 Time"; Decimal)
         {
             Caption = 'GSX 2 Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(51; "GSX 3 Time"; Time)
+        field(51; "GSX 3 Time"; Decimal)
         {
             Caption = 'GSX 3 Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(52; "GSX 4 Time"; Time)
+        field(52; "GSX LL Time"; Decimal)
         {
-            Caption = 'GSX 4 Time';
+            Caption = 'GSX LL Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(53; "GSX 1 Time New"; Decimal)
-        {
-            Caption = 'GSX 1 Time New'; // DEPRECATED, Remove after new environment
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
-        field(54; "GSX 2 Time New"; Decimal)
-        {
-            Caption = 'GSX 2 Time New'; // DEPRECATED, Remove after new environment\
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
-        field(55; "GSX 3 Time New"; Decimal)
-        {
-            Caption = 'GSX 3 Time New'; // DEPRECATED, Remove after new environment
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
-        field(56; "GSX 4 Time New"; Decimal)
-        {
-            Caption = 'GSX 4 Time New'; // DEPRECATED, Remove after new environment
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
+        // field(53; "GSX 1 Time New"; Decimal)
+        // {
+        //     Caption = 'GSX 1 Time New'; // DEPRECATED, Remove after new environment
+        //     Editable = false;
+        //     DataClassification = CustomerContent;
+        // }
+        // field(54; "GSX 2 Time New"; Decimal)
+        // {
+        //     Caption = 'GSX 2 Time New'; // DEPRECATED, Remove after new environment\
+        //     Editable = false;
+        //     DataClassification = CustomerContent;
+        // }
+        // field(55; "GSX 3 Time New"; Decimal)
+        // {
+        //     Caption = 'GSX 3 Time New'; // DEPRECATED, Remove after new environment
+        //     Editable = false;
+        //     DataClassification = CustomerContent;
+        // }
+        // field(56; "GSX LL Time New"; Decimal)
+        // {
+        //     Caption = 'GSX LL Time New'; // DEPRECATED, Remove after new environment
+        //     Editable = false;
+        //     DataClassification = CustomerContent;
+        // }
     }
 
     keys
@@ -568,7 +568,7 @@ table 50016 "ACO Bath Sheet Header"
         "GSX 1 Dhd." := Dhd;
         "GSX 1 Str." := Str;
         // ACOBathSheetHeader."GSX 1 Time" := 0T;
-        "GSX 1 Time New" := BathTime;
+        "GSX 1 Time" := BathTime;
 
         Str := ACOAppSetup."Max. Current Density Bath 2";
         CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
@@ -576,7 +576,7 @@ table 50016 "ACO Bath Sheet Header"
         "GSX 2 Dhd." := Dhd;
         "GSX 2 Str." := Str;
         // ACOBathSheetHeader."GSX 2 Time" := 0T;
-        "GSX 2 Time New" := BathTime;
+        "GSX 2 Time" := BathTime;
 
         Str := ACOAppSetup."Max. Current Density Bath 3";
         CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
@@ -585,15 +585,15 @@ table 50016 "ACO Bath Sheet Header"
         "GSX 3 Dhd." := Dhd;
         "GSX 3 Str." := Str;
         // ACOBathSheetHeader."GSX 3 Time" := 0T;
-        "GSX 3 Time New" := BathTime;
+        "GSX 3 Time" := BathTime;
 
         Str := ACOAppSetup."Max. Current Density Bath L";
         CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
 
-        "GSX 4 Dhd." := Dhd;
-        "GSX 4 Str." := Str;
-        // ACOBathSheetHeader."GSX 4 Time" := 0T;
-        "GSX 4 Time New" := BathTime;
+        "GSX LL Dhd." := Dhd;
+        "GSX LL Str." := Str;
+        // ACOBathSheetHeader."GSX LL Time" := 0T;
+        "GSX LL Time" := BathTime;
 
         Modify();
     end;

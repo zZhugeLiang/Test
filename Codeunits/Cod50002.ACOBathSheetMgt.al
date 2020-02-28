@@ -194,6 +194,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status;
         ACOBathSheetLine."Production Order No." := ProductionOrderLine."Prod. Order No.";
         ACOBathSheetLine."Production Order Line No." := ProductionOrderLine."Line No.";
+        ACOBathSheetLine."Sales Order No." := ProductionOrderLine."ACO Source No.";
+        ACOBathSheetLine."Sales Order Line No." := ProductionOrderLine."ACO Source Line No.";
         ACOBathSheetLine.Quantity := ProductionOrderLine."ACO Quantity to Bath Sheet";
         ACOBathSheetLine."Profile Code" := ProductionOrderLine."ACO Profile Code";
         ACOBathSheetLine."Charge No." := ProductionOrderLine."ACO Charge No.";

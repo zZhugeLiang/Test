@@ -185,7 +185,7 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                field("GSX 4 Str."; "GSX 4 Str.")
+                field("GSX LL Str."; "GSX LL Str.")
                 {
                     ApplicationArea = All;
                 }
@@ -201,7 +201,7 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                field("GSX 4 Dhd."; "GSX 4 Dhd.")
+                field("GSX LL Dhd."; "GSX LL Dhd.")
                 {
                     ApplicationArea = All;
                 }
@@ -217,7 +217,7 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                field("GSX 4 Time"; "GSX 4 Time")
+                field("GSX LL Time"; "GSX LL Time")
                 {
                     ApplicationArea = All;
                 }

@@ -190,15 +190,10 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
-                    // field("GSX 1 Time"; "GSX 1 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }                    
-                    field("GSX 1 Time New"; "GSX 1 Time New")
+                    field("GSX 1 Time"; "GSX 1 Time")
                     {
                         ApplicationArea = All;
                     }
-
                     field("GSX 2 Str."; "GSX 2 Str.")
                     {
                         ApplicationArea = All;
@@ -207,15 +202,10 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
-                    // field("GSX 2 Time"; "GSX 2 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }   
-                    field("GSX 2 Time New"; "GSX 2 Time New")
+                    field("GSX 2 Time"; "GSX 2 Time")
                     {
                         ApplicationArea = All;
                     }
-
                     field("GSX 3 Str."; "GSX 3 Str.")
                     {
                         ApplicationArea = All;
@@ -224,28 +214,20 @@ page 50020 "ACO Bath Sheet"
                     {
                         ApplicationArea = All;
                     }
-                    // field("GSX 3 Time"; "GSX 3 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }     
-                    field("GSX 3 Time New"; "GSX 3 Time New")
+                    field("GSX 3 Time"; "GSX 3 Time")
                     {
                         ApplicationArea = All;
                     }
 
-                    field("GSX 4 Str."; "GSX 4 Str.")
+                    field("GSX LL Str."; "GSX LL Str.")
                     {
                         ApplicationArea = All;
                     }
-                    field("GSX 4 Dhd."; "GSX 4 Dhd.")
+                    field("GSX LL Dhd."; "GSX LL Dhd.")
                     {
                         ApplicationArea = All;
                     }
-                    // field("GSX 4 Time"; "GSX 4 Time")
-                    // {
-                    //     ApplicationArea = All;
-                    // }
-                    field("GSX 4 Time New"; "GSX 4 Time New")
+                    field("GSX LL Time"; "GSX LL Time")
                     {
                         ApplicationArea = All;
                     }
@@ -331,6 +313,7 @@ page 50020 "ACO Bath Sheet"
                     NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
                     ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
                 begin
+                    ACOAucosExport.Export();
                     ACOAppSetup.Get();
                     ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                     if ACOAppSetup."Aucos Max. No. of Lines" > 0 then
