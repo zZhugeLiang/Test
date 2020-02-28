@@ -149,7 +149,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1920261143 - Field 525159504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>British Standard</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme - Field British Standard - Property Caption</note>
         </trans-unit>
@@ -169,7 +169,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme Price - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 575015556 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Length,Weight,Circumference</source>
+          <source>Length,Weight,Circumference,Inner Cathode Charge</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme Price - Field Type - Property OptionCaption</note>
         </trans-unit>
@@ -179,7 +179,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme Price - Field Minimum Quantity - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 575015556 - Field 2937233469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unit Price</source>
+          <source>Factor</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme Price - Field Unit Price - Property Caption</note>
         </trans-unit>
@@ -2333,6 +2333,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Logged In - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 2188690480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Logged In Day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Logged In Day - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 3323042999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Delivery Day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Delivery Day - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 2217903358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Document Date Day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Document Date Day - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2672,6 +2687,16 @@
           <source>Number of Units</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Number of Units - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4248448427 - Field 2282563268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Production Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Production Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4248448427 - Field 2282563268 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source> ,Short,Long</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Production Line - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 423926106">
           <source>Operating Type</source>

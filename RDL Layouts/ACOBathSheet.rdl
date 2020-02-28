@@ -11,6 +11,310 @@
       <rd:DataSourceID>45a298ec-19b9-45f8-885a-41be181e61c3</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="BathSheetCaption">
+          <DataField>BathSheetCaption</DataField>
+        </Field>
+        <Field Name="BathSheetNo">
+          <DataField>BathSheetNo</DataField>
+        </Field>
+        <Field Name="DateCaption">
+          <DataField>DateCaption</DataField>
+        </Field>
+        <Field Name="Creation_Date">
+          <DataField>Creation_Date</DataField>
+        </Field>
+        <Field Name="ThickCaption">
+          <DataField>ThickCaption</DataField>
+        </Field>
+        <Field Name="ThinCaption">
+          <DataField>ThinCaption</DataField>
+        </Field>
+        <Field Name="TreatmentCaption">
+          <DataField>TreatmentCaption</DataField>
+        </Field>
+        <Field Name="Treatment">
+          <DataField>Treatment</DataField>
+        </Field>
+        <Field Name="MEASUREText">
+          <DataField>MEASUREText</DataField>
+        </Field>
+        <Field Name="HighEndText">
+          <DataField>HighEndText</DataField>
+        </Field>
+        <Field Name="EURASText">
+          <DataField>EURASText</DataField>
+        </Field>
+        <Field Name="ThickStainingCaption">
+          <DataField>ThickStainingCaption</DataField>
+        </Field>
+        <Field Name="ThickStaining">
+          <DataField>ThickStaining</DataField>
+        </Field>
+        <Field Name="ThickStainingFormat">
+          <DataField>ThickStainingFormat</DataField>
+        </Field>
+        <Field Name="ThinStainingCaption">
+          <DataField>ThinStainingCaption</DataField>
+        </Field>
+        <Field Name="ThinStaining">
+          <DataField>ThinStaining</DataField>
+        </Field>
+        <Field Name="ThinStainingFormat">
+          <DataField>ThinStainingFormat</DataField>
+        </Field>
+        <Field Name="TotalProfileSurfaceCaption">
+          <DataField>TotalProfileSurfaceCaption</DataField>
+        </Field>
+        <Field Name="TotalSurfaceProfiles">
+          <DataField>TotalSurfaceProfiles</DataField>
+        </Field>
+        <Field Name="TotalSurfaceProfilesFormat">
+          <DataField>TotalSurfaceProfilesFormat</DataField>
+        </Field>
+        <Field Name="SurfaceAttachmentRackCaption">
+          <DataField>SurfaceAttachmentRackCaption</DataField>
+        </Field>
+        <Field Name="SurfaceAttachrack">
+          <DataField>SurfaceAttachrack</DataField>
+        </Field>
+        <Field Name="SurfaceAttachrackFormat">
+          <DataField>SurfaceAttachrackFormat</DataField>
+        </Field>
+        <Field Name="SurfaceAdditionCaption">
+          <DataField>SurfaceAdditionCaption</DataField>
+        </Field>
+        <Field Name="SurfaceAddition">
+          <DataField>SurfaceAddition</DataField>
+        </Field>
+        <Field Name="SurfaceAdditionFormat">
+          <DataField>SurfaceAdditionFormat</DataField>
+        </Field>
+        <Field Name="TotalSurfaceCaption">
+          <DataField>TotalSurfaceCaption</DataField>
+        </Field>
+        <Field Name="TotalSurface">
+          <DataField>TotalSurface</DataField>
+        </Field>
+        <Field Name="TotalSurfaceFormat">
+          <DataField>TotalSurfaceFormat</DataField>
+        </Field>
+        <Field Name="TotalQuantityCaption">
+          <DataField>TotalQuantityCaption</DataField>
+        </Field>
+        <Field Name="TotalQuantity">
+          <DataField>TotalQuantity</DataField>
+        </Field>
+        <Field Name="TotalQuantityFormat">
+          <DataField>TotalQuantityFormat</DataField>
+        </Field>
+        <Field Name="LayerThicknessCaption">
+          <DataField>LayerThicknessCaption</DataField>
+        </Field>
+        <Field Name="LayerThickness">
+          <DataField>LayerThickness</DataField>
+        </Field>
+        <Field Name="LayerThicknessFormat">
+          <DataField>LayerThicknessFormat</DataField>
+        </Field>
+        <Field Name="GSX1Caption">
+          <DataField>GSX1Caption</DataField>
+        </Field>
+        <Field Name="GSX2Caption">
+          <DataField>GSX2Caption</DataField>
+        </Field>
+        <Field Name="GSX3Caption">
+          <DataField>GSX3Caption</DataField>
+        </Field>
+        <Field Name="GSXLLCaption">
+          <DataField>GSXLLCaption</DataField>
+        </Field>
+        <Field Name="StrCaption">
+          <DataField>StrCaption</DataField>
+        </Field>
+        <Field Name="DhdCaption">
+          <DataField>DhdCaption</DataField>
+        </Field>
+        <Field Name="TimeCaption">
+          <DataField>TimeCaption</DataField>
+        </Field>
+        <Field Name="piecesCaption">
+          <DataField>piecesCaption</DataField>
+        </Field>
+        <Field Name="GSX1Dhd">
+          <DataField>GSX1Dhd</DataField>
+        </Field>
+        <Field Name="GSX1DhdFormat">
+          <DataField>GSX1DhdFormat</DataField>
+        </Field>
+        <Field Name="GSX1Str">
+          <DataField>GSX1Str</DataField>
+        </Field>
+        <Field Name="GSX1StrFormat">
+          <DataField>GSX1StrFormat</DataField>
+        </Field>
+        <Field Name="GSX1Time">
+          <DataField>GSX1Time</DataField>
+        </Field>
+        <Field Name="GSX1TimeFormat">
+          <DataField>GSX1TimeFormat</DataField>
+        </Field>
+        <Field Name="GSX2Dhd">
+          <DataField>GSX2Dhd</DataField>
+        </Field>
+        <Field Name="GSX2DhdFormat">
+          <DataField>GSX2DhdFormat</DataField>
+        </Field>
+        <Field Name="GSX2Str">
+          <DataField>GSX2Str</DataField>
+        </Field>
+        <Field Name="GSX2StrFormat">
+          <DataField>GSX2StrFormat</DataField>
+        </Field>
+        <Field Name="GSX2Time">
+          <DataField>GSX2Time</DataField>
+        </Field>
+        <Field Name="GSX2TimeFormat">
+          <DataField>GSX2TimeFormat</DataField>
+        </Field>
+        <Field Name="GSX3Dhd">
+          <DataField>GSX3Dhd</DataField>
+        </Field>
+        <Field Name="GSX3DhdFormat">
+          <DataField>GSX3DhdFormat</DataField>
+        </Field>
+        <Field Name="GSX3Str">
+          <DataField>GSX3Str</DataField>
+        </Field>
+        <Field Name="GSX3StrFormat">
+          <DataField>GSX3StrFormat</DataField>
+        </Field>
+        <Field Name="GSX3Time">
+          <DataField>GSX3Time</DataField>
+        </Field>
+        <Field Name="GSX3TimeFormat">
+          <DataField>GSX3TimeFormat</DataField>
+        </Field>
+        <Field Name="GSX4Dhd">
+          <DataField>GSX4Dhd</DataField>
+        </Field>
+        <Field Name="GSX4DhdFormat">
+          <DataField>GSX4DhdFormat</DataField>
+        </Field>
+        <Field Name="GSX4Str">
+          <DataField>GSX4Str</DataField>
+        </Field>
+        <Field Name="GSX4StrFormat">
+          <DataField>GSX4StrFormat</DataField>
+        </Field>
+        <Field Name="GSX4Time">
+          <DataField>GSX4Time</DataField>
+        </Field>
+        <Field Name="GSX4TimeFormat">
+          <DataField>GSX4TimeFormat</DataField>
+        </Field>
+        <Field Name="NoteCaption">
+          <DataField>NoteCaption</DataField>
+        </Field>
+        <Field Name="BathSheetComment">
+          <DataField>BathSheetComment</DataField>
+        </Field>
+        <Field Name="ContactPointsOnVisibleSideCaption">
+          <DataField>ContactPointsOnVisibleSideCaption</DataField>
+        </Field>
+        <Field Name="ProfileDamagedCaption">
+          <DataField>ProfileDamagedCaption</DataField>
+        </Field>
+        <Field Name="YESCaption">
+          <DataField>YESCaption</DataField>
+        </Field>
+        <Field Name="NOCaption">
+          <DataField>NOCaption</DataField>
+        </Field>
+        <Field Name="ParaphCaption">
+          <DataField>ParaphCaption</DataField>
+        </Field>
+        <Field Name="PayAttentionCaption">
+          <DataField>PayAttentionCaption</DataField>
+        </Field>
+        <Field Name="PrintingDateCaption">
+          <DataField>PrintingDateCaption</DataField>
+        </Field>
+        <Field Name="PrintingDate">
+          <DataField>PrintingDate</DataField>
+        </Field>
+        <Field Name="CreatedbyCaption">
+          <DataField>CreatedbyCaption</DataField>
+        </Field>
+        <Field Name="CreatedbyUser">
+          <DataField>CreatedbyUser</DataField>
+        </Field>
+        <Field Name="ProductionOrderStatus">
+          <DataField>ProductionOrderStatus</DataField>
+        </Field>
+        <Field Name="ProductionOrderNo">
+          <DataField>ProductionOrderNo</DataField>
+        </Field>
+        <Field Name="ProductionOrderLineNo">
+          <DataField>ProductionOrderLineNo</DataField>
+        </Field>
+        <Field Name="SalesOrderCaption">
+          <DataField>SalesOrderCaption</DataField>
+        </Field>
+        <Field Name="SalesOrderNo">
+          <DataField>SalesOrderNo</DataField>
+        </Field>
+        <Field Name="SOLineCaption">
+          <DataField>SOLineCaption</DataField>
+        </Field>
+        <Field Name="SalesOrderLineNo">
+          <DataField>SalesOrderLineNo</DataField>
+        </Field>
+        <Field Name="CustomerNameCaption">
+          <DataField>CustomerNameCaption</DataField>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+        </Field>
+        <Field Name="ProfileCaption">
+          <DataField>ProfileCaption</DataField>
+        </Field>
+        <Field Name="ProfileCode">
+          <DataField>ProfileCode</DataField>
+        </Field>
+        <Field Name="ColorCaption">
+          <DataField>ColorCaption</DataField>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="LengthCaption">
+          <DataField>LengthCaption</DataField>
+        </Field>
+        <Field Name="Length">
+          <DataField>Length</DataField>
+        </Field>
+        <Field Name="LengthFormat">
+          <DataField>LengthFormat</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -312,7 +616,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!CustomerNameCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
                                     <FontSize>12pt</FontSize>
@@ -768,7 +1072,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SalesOrderNo.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -838,7 +1142,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!CustomerName.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -910,7 +1214,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SalesOrderLineNo.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -8332,6 +8636,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -8371,302 +8681,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="BathSheetCaption">
-          <DataField>BathSheetCaption</DataField>
-        </Field>
-        <Field Name="BathSheetNo">
-          <DataField>BathSheetNo</DataField>
-        </Field>
-        <Field Name="DateCaption">
-          <DataField>DateCaption</DataField>
-        </Field>
-        <Field Name="Creation_Date">
-          <DataField>Creation_Date</DataField>
-        </Field>
-        <Field Name="ThickCaption">
-          <DataField>ThickCaption</DataField>
-        </Field>
-        <Field Name="ThinCaption">
-          <DataField>ThinCaption</DataField>
-        </Field>
-        <Field Name="TreatmentCaption">
-          <DataField>TreatmentCaption</DataField>
-        </Field>
-        <Field Name="Treatment">
-          <DataField>Treatment</DataField>
-        </Field>
-        <Field Name="MEASUREText">
-          <DataField>MEASUREText</DataField>
-        </Field>
-        <Field Name="HighEndText">
-          <DataField>HighEndText</DataField>
-        </Field>
-        <Field Name="EURASText">
-          <DataField>EURASText</DataField>
-        </Field>
-        <Field Name="ThickStainingCaption">
-          <DataField>ThickStainingCaption</DataField>
-        </Field>
-        <Field Name="ThickStaining">
-          <DataField>ThickStaining</DataField>
-        </Field>
-        <Field Name="ThickStainingFormat">
-          <DataField>ThickStainingFormat</DataField>
-        </Field>
-        <Field Name="ThinStainingCaption">
-          <DataField>ThinStainingCaption</DataField>
-        </Field>
-        <Field Name="ThinStaining">
-          <DataField>ThinStaining</DataField>
-        </Field>
-        <Field Name="ThinStainingFormat">
-          <DataField>ThinStainingFormat</DataField>
-        </Field>
-        <Field Name="TotalProfileSurfaceCaption">
-          <DataField>TotalProfileSurfaceCaption</DataField>
-        </Field>
-        <Field Name="TotalSurfaceProfiles">
-          <DataField>TotalSurfaceProfiles</DataField>
-        </Field>
-        <Field Name="TotalSurfaceProfilesFormat">
-          <DataField>TotalSurfaceProfilesFormat</DataField>
-        </Field>
-        <Field Name="SurfaceAttachmentRackCaption">
-          <DataField>SurfaceAttachmentRackCaption</DataField>
-        </Field>
-        <Field Name="SurfaceAttachrack">
-          <DataField>SurfaceAttachrack</DataField>
-        </Field>
-        <Field Name="SurfaceAttachrackFormat">
-          <DataField>SurfaceAttachrackFormat</DataField>
-        </Field>
-        <Field Name="SurfaceAdditionCaption">
-          <DataField>SurfaceAdditionCaption</DataField>
-        </Field>
-        <Field Name="SurfaceAddition">
-          <DataField>SurfaceAddition</DataField>
-        </Field>
-        <Field Name="SurfaceAdditionFormat">
-          <DataField>SurfaceAdditionFormat</DataField>
-        </Field>
-        <Field Name="TotalSurfaceCaption">
-          <DataField>TotalSurfaceCaption</DataField>
-        </Field>
-        <Field Name="TotalSurface">
-          <DataField>TotalSurface</DataField>
-        </Field>
-        <Field Name="TotalSurfaceFormat">
-          <DataField>TotalSurfaceFormat</DataField>
-        </Field>
-        <Field Name="TotalQuantityCaption">
-          <DataField>TotalQuantityCaption</DataField>
-        </Field>
-        <Field Name="TotalQuantity">
-          <DataField>TotalQuantity</DataField>
-        </Field>
-        <Field Name="TotalQuantityFormat">
-          <DataField>TotalQuantityFormat</DataField>
-        </Field>
-        <Field Name="LayerThicknessCaption">
-          <DataField>LayerThicknessCaption</DataField>
-        </Field>
-        <Field Name="LayerThickness">
-          <DataField>LayerThickness</DataField>
-        </Field>
-        <Field Name="LayerThicknessFormat">
-          <DataField>LayerThicknessFormat</DataField>
-        </Field>
-        <Field Name="GSX1Caption">
-          <DataField>GSX1Caption</DataField>
-        </Field>
-        <Field Name="GSX2Caption">
-          <DataField>GSX2Caption</DataField>
-        </Field>
-        <Field Name="GSX3Caption">
-          <DataField>GSX3Caption</DataField>
-        </Field>
-        <Field Name="GSXLLCaption">
-          <DataField>GSXLLCaption</DataField>
-        </Field>
-        <Field Name="StrCaption">
-          <DataField>StrCaption</DataField>
-        </Field>
-        <Field Name="DhdCaption">
-          <DataField>DhdCaption</DataField>
-        </Field>
-        <Field Name="TimeCaption">
-          <DataField>TimeCaption</DataField>
-        </Field>
-        <Field Name="piecesCaption">
-          <DataField>piecesCaption</DataField>
-        </Field>
-        <Field Name="GSX1Dhd">
-          <DataField>GSX1Dhd</DataField>
-        </Field>
-        <Field Name="GSX1DhdFormat">
-          <DataField>GSX1DhdFormat</DataField>
-        </Field>
-        <Field Name="GSX1Str">
-          <DataField>GSX1Str</DataField>
-        </Field>
-        <Field Name="GSX1StrFormat">
-          <DataField>GSX1StrFormat</DataField>
-        </Field>
-        <Field Name="GSX1Time">
-          <DataField>GSX1Time</DataField>
-        </Field>
-        <Field Name="GSX1TimeFormat">
-          <DataField>GSX1TimeFormat</DataField>
-        </Field>
-        <Field Name="GSX2Dhd">
-          <DataField>GSX2Dhd</DataField>
-        </Field>
-        <Field Name="GSX2DhdFormat">
-          <DataField>GSX2DhdFormat</DataField>
-        </Field>
-        <Field Name="GSX2Str">
-          <DataField>GSX2Str</DataField>
-        </Field>
-        <Field Name="GSX2StrFormat">
-          <DataField>GSX2StrFormat</DataField>
-        </Field>
-        <Field Name="GSX2Time">
-          <DataField>GSX2Time</DataField>
-        </Field>
-        <Field Name="GSX2TimeFormat">
-          <DataField>GSX2TimeFormat</DataField>
-        </Field>
-        <Field Name="GSX3Dhd">
-          <DataField>GSX3Dhd</DataField>
-        </Field>
-        <Field Name="GSX3DhdFormat">
-          <DataField>GSX3DhdFormat</DataField>
-        </Field>
-        <Field Name="GSX3Str">
-          <DataField>GSX3Str</DataField>
-        </Field>
-        <Field Name="GSX3StrFormat">
-          <DataField>GSX3StrFormat</DataField>
-        </Field>
-        <Field Name="GSX3Time">
-          <DataField>GSX3Time</DataField>
-        </Field>
-        <Field Name="GSX3TimeFormat">
-          <DataField>GSX3TimeFormat</DataField>
-        </Field>
-        <Field Name="GSX4Dhd">
-          <DataField>GSX4Dhd</DataField>
-        </Field>
-        <Field Name="GSX4DhdFormat">
-          <DataField>GSX4DhdFormat</DataField>
-        </Field>
-        <Field Name="GSX4Str">
-          <DataField>GSX4Str</DataField>
-        </Field>
-        <Field Name="GSX4StrFormat">
-          <DataField>GSX4StrFormat</DataField>
-        </Field>
-        <Field Name="GSX4Time">
-          <DataField>GSX4Time</DataField>
-        </Field>
-        <Field Name="GSX4TimeFormat">
-          <DataField>GSX4TimeFormat</DataField>
-        </Field>
-        <Field Name="NoteCaption">
-          <DataField>NoteCaption</DataField>
-        </Field>
-        <Field Name="BathSheetComment">
-          <DataField>BathSheetComment</DataField>
-        </Field>
-        <Field Name="ContactPointsOnVisibleSideCaption">
-          <DataField>ContactPointsOnVisibleSideCaption</DataField>
-        </Field>
-        <Field Name="ProfileDamagedCaption">
-          <DataField>ProfileDamagedCaption</DataField>
-        </Field>
-        <Field Name="YESCaption">
-          <DataField>YESCaption</DataField>
-        </Field>
-        <Field Name="NOCaption">
-          <DataField>NOCaption</DataField>
-        </Field>
-        <Field Name="ParaphCaption">
-          <DataField>ParaphCaption</DataField>
-        </Field>
-        <Field Name="PayAttentionCaption">
-          <DataField>PayAttentionCaption</DataField>
-        </Field>
-        <Field Name="PrintingDateCaption">
-          <DataField>PrintingDateCaption</DataField>
-        </Field>
-        <Field Name="PrintingDate">
-          <DataField>PrintingDate</DataField>
-        </Field>
-        <Field Name="CreatedbyCaption">
-          <DataField>CreatedbyCaption</DataField>
-        </Field>
-        <Field Name="CreatedbyUser">
-          <DataField>CreatedbyUser</DataField>
-        </Field>
-        <Field Name="ProductionOrderStatus">
-          <DataField>ProductionOrderStatus</DataField>
-        </Field>
-        <Field Name="ProductionOrderNo">
-          <DataField>ProductionOrderNo</DataField>
-        </Field>
-        <Field Name="ProductionOrderLineNo">
-          <DataField>ProductionOrderLineNo</DataField>
-        </Field>
-        <Field Name="SalesOrderCaption">
-          <DataField>SalesOrderCaption</DataField>
-        </Field>
-        <Field Name="SalesOrderNo">
-          <DataField>SalesOrderNo</DataField>
-        </Field>
-        <Field Name="SOLineCaption">
-          <DataField>SOLineCaption</DataField>
-        </Field>
-        <Field Name="SalesOrderLineNo">
-          <DataField>SalesOrderLineNo</DataField>
-        </Field>
-        <Field Name="ProfileCaption">
-          <DataField>ProfileCaption</DataField>
-        </Field>
-        <Field Name="ProfileCode">
-          <DataField>ProfileCode</DataField>
-        </Field>
-        <Field Name="ColorCaption">
-          <DataField>ColorCaption</DataField>
-        </Field>
-        <Field Name="Color">
-          <DataField>Color</DataField>
-        </Field>
-        <Field Name="QuantityCaption">
-          <DataField>QuantityCaption</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="LengthCaption">
-          <DataField>LengthCaption</DataField>
-        </Field>
-        <Field Name="Length">
-          <DataField>Length</DataField>
-        </Field>
-        <Field Name="LengthFormat">
-          <DataField>LengthFormat</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>

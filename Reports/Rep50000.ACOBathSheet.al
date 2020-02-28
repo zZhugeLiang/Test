@@ -19,12 +19,6 @@ report 50000 "ACO Bath Sheet"
 
             column(ThickCaption; ThickCaptionLbl) { }
             column(ThinCaption; ThinCaptionLbl) { }
-            // column(CustomerNameCaption; CustomerCaptionLbl)
-            // {
-            // }
-            // column(CustomerName; FirstACOBathSheetLine."Customer Name")
-            // {
-            // }
             column(TreatmentCaption; TreatmentCaptionLbl) { }
             column(Treatment; ItemDescription)
             {
@@ -154,6 +148,12 @@ report 50000 "ACO Bath Sheet"
                 column(SalesOrderLineNo; ACOBathSheetLine."Sales Order Line No.")
                 {
                 }
+                column(CustomerNameCaption; CustomerCaptionLbl)
+                {
+                }
+                column(CustomerName; CustomerName)
+                {
+                }
                 column(ProfileCaption; ProfileCaptionLbl) { }
                 column(ProfileCode; ACOBathSheetLine."Profile Code")
                 {
@@ -174,6 +174,7 @@ report 50000 "ACO Bath Sheet"
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
+                    Customer: Record Customer;
                 begin
                     if not Item.Get("Treatment") then
                         Clear(Item);
@@ -182,6 +183,11 @@ report 50000 "ACO Bath Sheet"
 
                     if not ACOColor.Get(Color) then
                         Clear(ACOColor);
+
+                    if not Customer.Get(ACOBathSheetLine."Customer No.") then
+                        Clear(Customer);
+
+                    CustomerName := Customer.Name;
                 end;
             }
 
@@ -241,6 +247,7 @@ report 50000 "ACO Bath Sheet"
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOColor: Record "ACO Color";
+        CustomerName: Text[100];
         ItemDescription: Text[100];
         MeasureText: Text;
         HighEndText: Text;
