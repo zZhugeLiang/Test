@@ -370,13 +370,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         field(50051; "ACO Charges per Bath Profile"; Decimal)
         {
-            Caption = 'DEPRECATED';
+            Caption = 'ACO Charges per Bath Profile';
             DataClassification = CustomerContent;
         }
 
         field(50052; "ACO Quantity Charges"; Decimal)
         {
-            Caption = 'DEPRECATED';
+            Caption = 'ACO Quantity Charges';
             DataClassification = CustomerContent;
         }
 

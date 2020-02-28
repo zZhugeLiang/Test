@@ -5654,7 +5654,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GSX1TimeNew.Value</Value>
+                                  <Value>=Fields!GSX1Time.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -5688,7 +5688,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GSX2TimeNew.Value</Value>
+                                  <Value>=Fields!GSX2Time.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -5722,7 +5722,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GSX3TimeNew.Value</Value>
+                                  <Value>=Fields!GSX3Time.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -5756,7 +5756,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GSX4TimeNew.Value</Value>
+                                  <Value>=Fields!GSX4Time.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -8251,6 +8251,9 @@
                   <Group Name="BathSheetNo">
                     <GroupExpressions>
                       <GroupExpression>=Fields!BathSheetNo.Value</GroupExpression>
+                      <GroupExpression>=Fields!ProductionOrderStatus.Value</GroupExpression>
+                      <GroupExpression>=Fields!ProductionOrderNo.Value</GroupExpression>
+                      <GroupExpression>=Fields!ProductionOrderLineNo.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
@@ -8383,42 +8386,6 @@ End Function
         <Field Name="Creation_Date">
           <DataField>Creation_Date</DataField>
         </Field>
-        <Field Name="SalesOrderCaption">
-          <DataField>SalesOrderCaption</DataField>
-        </Field>
-        <Field Name="SOLineCaption">
-          <DataField>SOLineCaption</DataField>
-        </Field>
-        <Field Name="ProfileCaption">
-          <DataField>ProfileCaption</DataField>
-        </Field>
-        <Field Name="ProfileCode">
-          <DataField>ProfileCode</DataField>
-        </Field>
-        <Field Name="ColorCaption">
-          <DataField>ColorCaption</DataField>
-        </Field>
-        <Field Name="Color">
-          <DataField>Color</DataField>
-        </Field>
-        <Field Name="QuantityCaption">
-          <DataField>QuantityCaption</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="LengthCaption">
-          <DataField>LengthCaption</DataField>
-        </Field>
-        <Field Name="Length">
-          <DataField>Length</DataField>
-        </Field>
-        <Field Name="LengthFormat">
-          <DataField>LengthFormat</DataField>
-        </Field>
         <Field Name="ThickCaption">
           <DataField>ThickCaption</DataField>
         </Field>
@@ -8548,14 +8515,11 @@ End Function
         <Field Name="GSX1StrFormat">
           <DataField>GSX1StrFormat</DataField>
         </Field>
-        <Field Name="GSX1TimeNew">
-          <DataField>GSX1TimeNew</DataField>
-        </Field>
-        <Field Name="GSX1TimeNewFormat">
-          <DataField>GSX1TimeNewFormat</DataField>
-        </Field>
         <Field Name="GSX1Time">
           <DataField>GSX1Time</DataField>
+        </Field>
+        <Field Name="GSX1TimeFormat">
+          <DataField>GSX1TimeFormat</DataField>
         </Field>
         <Field Name="GSX2Dhd">
           <DataField>GSX2Dhd</DataField>
@@ -8569,14 +8533,11 @@ End Function
         <Field Name="GSX2StrFormat">
           <DataField>GSX2StrFormat</DataField>
         </Field>
-        <Field Name="GSX2TimeNew">
-          <DataField>GSX2TimeNew</DataField>
-        </Field>
-        <Field Name="GSX2TimeNewFormat">
-          <DataField>GSX2TimeNewFormat</DataField>
-        </Field>
         <Field Name="GSX2Time">
           <DataField>GSX2Time</DataField>
+        </Field>
+        <Field Name="GSX2TimeFormat">
+          <DataField>GSX2TimeFormat</DataField>
         </Field>
         <Field Name="GSX3Dhd">
           <DataField>GSX3Dhd</DataField>
@@ -8590,14 +8551,11 @@ End Function
         <Field Name="GSX3StrFormat">
           <DataField>GSX3StrFormat</DataField>
         </Field>
-        <Field Name="GSX3TimeNew">
-          <DataField>GSX3TimeNew</DataField>
-        </Field>
-        <Field Name="GSX3TimeNewFormat">
-          <DataField>GSX3TimeNewFormat</DataField>
-        </Field>
         <Field Name="GSX3Time">
           <DataField>GSX3Time</DataField>
+        </Field>
+        <Field Name="GSX3TimeFormat">
+          <DataField>GSX3TimeFormat</DataField>
         </Field>
         <Field Name="GSX4Dhd">
           <DataField>GSX4Dhd</DataField>
@@ -8611,14 +8569,11 @@ End Function
         <Field Name="GSX4StrFormat">
           <DataField>GSX4StrFormat</DataField>
         </Field>
-        <Field Name="GSX4TimeNew">
-          <DataField>GSX4TimeNew</DataField>
-        </Field>
-        <Field Name="GSX4TimeNewFormat">
-          <DataField>GSX4TimeNewFormat</DataField>
-        </Field>
         <Field Name="GSX4Time">
           <DataField>GSX4Time</DataField>
+        </Field>
+        <Field Name="GSX4TimeFormat">
+          <DataField>GSX4TimeFormat</DataField>
         </Field>
         <Field Name="NoteCaption">
           <DataField>NoteCaption</DataField>
@@ -8655,6 +8610,57 @@ End Function
         </Field>
         <Field Name="CreatedbyUser">
           <DataField>CreatedbyUser</DataField>
+        </Field>
+        <Field Name="ProductionOrderStatus">
+          <DataField>ProductionOrderStatus</DataField>
+        </Field>
+        <Field Name="ProductionOrderNo">
+          <DataField>ProductionOrderNo</DataField>
+        </Field>
+        <Field Name="ProductionOrderLineNo">
+          <DataField>ProductionOrderLineNo</DataField>
+        </Field>
+        <Field Name="SalesOrderCaption">
+          <DataField>SalesOrderCaption</DataField>
+        </Field>
+        <Field Name="SalesOrderNo">
+          <DataField>SalesOrderNo</DataField>
+        </Field>
+        <Field Name="SOLineCaption">
+          <DataField>SOLineCaption</DataField>
+        </Field>
+        <Field Name="SalesOrderLineNo">
+          <DataField>SalesOrderLineNo</DataField>
+        </Field>
+        <Field Name="ProfileCaption">
+          <DataField>ProfileCaption</DataField>
+        </Field>
+        <Field Name="ProfileCode">
+          <DataField>ProfileCode</DataField>
+        </Field>
+        <Field Name="ColorCaption">
+          <DataField>ColorCaption</DataField>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="LengthCaption">
+          <DataField>LengthCaption</DataField>
+        </Field>
+        <Field Name="Length">
+          <DataField>Length</DataField>
+        </Field>
+        <Field Name="LengthFormat">
+          <DataField>LengthFormat</DataField>
         </Field>
       </Fields>
       <Query>

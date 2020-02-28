@@ -160,6 +160,20 @@ table 50017 "ACO Bath Sheet Line"
             Editable = false;
             DataClassification = CustomerContent;
         }
+
+        field(22; "Customer No."; Code[20])
+        {
+            Caption = 'Customer No.';
+            Editable = false;
+            TableRelation = Customer;
+            DataClassification = CustomerContent;
+        }
+
+        field(23; "Wrapped"; Boolean)
+        {
+            Caption = 'Wrapped';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

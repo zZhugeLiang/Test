@@ -279,10 +279,27 @@ page 50020 "ACO Bath Sheet"
                 trigger OnAction()
                 var
                     ACOBathSheetHeader: Record "ACO Bath Sheet Header";
+                    ReportTime: Time;
                 begin
                     ACOBathSheetHeader := Rec;
                     ACOBathSheetHeader.SetRecFilter();
                     Report.Run(Report::"ACO Bath Sheet", true, false, ACOBathSheetHeader);
+
+                    "Report Date" := CurrentDateTime();
+                    ReportTime := DT2Time("Report Date");
+                    if (ReportTime >= 060000T) and (ReportTime < 140000T) then
+                        "Report Day Part" := '01';
+                    if (ReportTime >= 140000T) and (ReportTime < 220000T) then
+                        "Report Day Part" := '02';
+                    if (ReportTime >= 220000T) or (ReportTime < 060000T) then
+                        "Report Day Part" := '03';
+
+                    "Report Day" := Date2DWY(DT2Date("Report Date"), 1);
+                    "Report Week" := Date2DWY(DT2Date("Report Date"), 2);
+                    "Report Year" := Date2DWY(DT2Date("Report Date"), 3);
+                    Modify();
+
+                    CurrPage.Update(true);
                 end;
             }
 
@@ -313,7 +330,9 @@ page 50020 "ACO Bath Sheet"
                     NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
                     ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
                 begin
+                    ACOAucosExport.Run();
                     ACOAucosExport.Export();
+                    exit;
                     ACOAppSetup.Get();
                     ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                     if ACOAppSetup."Aucos Max. No. of Lines" > 0 then

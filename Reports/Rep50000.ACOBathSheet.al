@@ -16,30 +16,7 @@ report 50000 "ACO Bath Sheet"
             column(Creation_Date; Format("Creation Date", 0, '<Day,2>-<Month,2>-<Year4>'))
             {
             }
-            column(SalesOrderCaption; SalesOrderCaptionLbl) { }
-            // column(SalesOrderNo; FirstACOBathSheetLine."Sales Order No.")
-            // {
-            // }
-            column(SOLineCaption; SOLineCaptionLbl) { }
-            // column(SalesOrderLineNo; FirstACOBathSheetLine."Sales Order Line No.")
-            // {
-            // }     
-            column(ProfileCaption; ProfileCaptionLbl) { }
-            column(ProfileCode; FirstACOBathSheetLine."Profile Code")
-            {
-            }
-            column(ColorCaption; ColorCaptionLbl) { }
-            column(Color; ACOColor.Description)
-            {
-            }
-            column(QuantityCaption; QuantityCaptionLbl) { }
-            column(Quantity; FirstACOBathSheetLine.Quantity)
-            {
-            }
-            column(LengthCaption; LengthCaptionLbl) { }
-            column(Length; FirstACOBathSheetLine.Length)
-            {
-            }
+
             column(ThickCaption; ThickCaptionLbl) { }
             column(ThinCaption; ThinCaptionLbl) { }
             // column(CustomerNameCaption; CustomerCaptionLbl)
@@ -156,6 +133,57 @@ report 50000 "ACO Bath Sheet"
             column(CreatedbyUser; User."User Name")
             {
             }
+            dataitem(ACOBathSheetLine; "ACO Bath Sheet Line")
+            {
+                DataItemLinkReference = ACOBathSheetHeader;
+                DataItemLink = "Bath Sheet No." = field("No.");
+                column(ProductionOrderStatus; ACOBathSheetLine."Production Order Status")
+                {
+                }
+                column(ProductionOrderNo; ACOBathSheetLine."Production Order No.")
+                {
+                }
+                column(ProductionOrderLineNo; ACOBathSheetLine."Production Order Line No.")
+                {
+                }
+                column(SalesOrderCaption; SalesOrderCaptionLbl) { }
+                column(SalesOrderNo; ACOBathSheetLine."Sales Order No.")
+                {
+                }
+                column(SOLineCaption; SOLineCaptionLbl) { }
+                column(SalesOrderLineNo; ACOBathSheetLine."Sales Order Line No.")
+                {
+                }
+                column(ProfileCaption; ProfileCaptionLbl) { }
+                column(ProfileCode; ACOBathSheetLine."Profile Code")
+                {
+                }
+                column(ColorCaption; ColorCaptionLbl) { }
+                column(Color; ACOColor.Description)
+                {
+                }
+                column(QuantityCaption; QuantityCaptionLbl) { }
+                column(Quantity; ACOBathSheetLine.Quantity)
+                {
+                }
+                column(LengthCaption; LengthCaptionLbl) { }
+                column(Length; ACOBathSheetLine.Length)
+                {
+                }
+
+                trigger OnAfterGetRecord()
+                var
+                    Item: Record Item;
+                begin
+                    if not Item.Get("Treatment") then
+                        Clear(Item);
+
+                    ItemDescription := Item.Description;
+
+                    if not ACOColor.Get(Color) then
+                        Clear(ACOColor);
+                end;
+            }
 
             trigger OnAfterGetRecord()
             var
@@ -197,15 +225,23 @@ report 50000 "ACO Bath Sheet"
     }
 
     trigger OnPreReport()
+    var
+        ACOBathSheetInsert: Record "ACO Bath Sheet Header";
+        ACOBathSheetLineInsert: Record "ACO Bath Sheet Line";
     begin
         User.Get(UserSecurityId());
+
+        // for testing
+        // ACOBathSheetInsert.Insert(true);
+        // ACOBathSheetLineInsert."Bath Sheet No." := ACOBathSheetInsert
+        // ACOBathSheetLineInsert.Insert(true);
     end;
 
     var
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOColor: Record "ACO Color";
-        ItemDescription: Text[50];
+        ItemDescription: Text[100];
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;

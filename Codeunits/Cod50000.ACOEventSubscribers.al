@@ -257,7 +257,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
-        Rec.CalculateUnitPrice();
+        // Rec.CalculateUnitPrice();
     end;
     // Calculate Price schema ToDo
 

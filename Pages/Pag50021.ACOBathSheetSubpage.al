@@ -23,6 +23,18 @@ page 50021 "ACO Bath Sheet Subpage"
                 {
                     ApplicationArea = All;
                 }
+                field("Sales Order No."; "Sales Order No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Sales Order Line No."; "Sales Order Line No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Customer No."; "Customer No.")
+                {
+                    ApplicationArea = All;
+                }
                 field("Profile Code"; "Profile Code")
                 {
                     ApplicationArea = All;
@@ -80,6 +92,10 @@ page 50021 "ACO Bath Sheet Subpage"
                     ApplicationArea = All;
                 }
                 field(Surface; Surface)
+                {
+                    ApplicationArea = All;
+                }
+                field(Wrapped; Wrapped)
                 {
                     ApplicationArea = All;
                 }

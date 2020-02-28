@@ -79,14 +79,25 @@ table 50016 "ACO Bath Sheet Header"
             MaxValue = 9999;
             DataClassification = CustomerContent;
         }
+        field(10; "Report Date"; DateTime)
+        {
+            Caption = 'Report Date';
+            DataClassification = CustomerContent;
+        }
 
-        field(10; "Report Day Part"; Code[2])
+        field(11; "Report Day"; Integer)
+        {
+            Caption = 'Report Day';
+            DataClassification = CustomerContent;
+        }
+
+        field(12; "Report Day Part"; Code[2])
         {
             Caption = 'Report Day Part';
             DataClassification = CustomerContent;
         }
 
-        field(11; "Report Week"; Integer)
+        field(13; "Report Week"; Integer)
         {
             Caption = 'Report Week';
             BlankZero = true;
@@ -95,7 +106,7 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(12; "Report Year"; Integer)
+        field(14; "Report Year"; Integer)
         {
             Caption = 'Report Year';
             BlankZero = true;
@@ -104,7 +115,7 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(13; "Production Date"; DateTime)
+        field(15; "Production Date"; DateTime)
         {
             Caption = 'Production Date';
             DataClassification = CustomerContent;
@@ -116,7 +127,7 @@ table 50016 "ACO Bath Sheet Header"
             end;
         }
 
-        field(14; "Production Week"; Integer)
+        field(16; "Production Week"; Integer)
         {
             Caption = 'Production Week';
             Editable = false;
@@ -126,7 +137,7 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(15; "Production Year"; Integer)
+        field(17; "Production Year"; Integer)
         {
             Caption = 'Production Year';
             Editable = false;
@@ -136,7 +147,7 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(16; "Complete"; Boolean)
+        field(18; "Complete"; Boolean)
         {
             Caption = 'Complete';
             Editable = false;
@@ -150,13 +161,13 @@ table 50016 "ACO Bath Sheet Header"
             end;
         }
 
-        field(17; "Bath Sheet Comment"; Text[250])
+        field(19; "Bath Sheet Comment"; Text[250])
         {
             Caption = 'Bath Sheet Comment';
             DataClassification = CustomerContent;
         }
 
-        field(18; "Total Quantity"; Decimal)
+        field(20; "Total Quantity"; Decimal)
         {
             Caption = 'Total Quantity';
             Editable = false;
@@ -164,86 +175,86 @@ table 50016 "ACO Bath Sheet Header"
             CalcFormula = Sum ("ACO Bath Sheet Line".Quantity where("Bath Sheet No." = field("No.")));
         }
 
-        field(19; "Measure Y-value"; Decimal)
+        field(21; "Measure Y-value"; Decimal)
         {
             Caption = 'Measure Y-value';
             DataClassification = CustomerContent;
         }
 
-        field(20; "Measure Mu-01"; Decimal)
+        field(22; "Measure Mu-01"; Decimal)
         {
             Caption = 'Measure Mu-01';
             DataClassification = CustomerContent;
         }
 
-        field(21; "Measure Mu-02"; Decimal)
+        field(23; "Measure Mu-02"; Decimal)
         {
             Caption = 'Measure Mu-02';
             DataClassification = CustomerContent;
         }
 
-        field(22; "Measure Mu-03"; Decimal)
+        field(24; "Measure Mu-03"; Decimal)
         {
             Caption = 'Measure Mu-03';
             DataClassification = CustomerContent;
         }
 
-        field(23; "Measure Mu-04"; Decimal)
+        field(25; "Measure Mu-04"; Decimal)
         {
             Caption = 'Measure Mu-04';
             DataClassification = CustomerContent;
         }
 
-        field(24; "Measure Mu-05"; Decimal)
+        field(26; "Measure Mu-05"; Decimal)
         {
             Caption = 'Measure Mu-05';
             DataClassification = CustomerContent;
         }
 
-        field(25; "Measure Mu-06"; Decimal)
+        field(27; "Measure Mu-06"; Decimal)
         {
             Caption = 'Measure Mu-06';
             DataClassification = CustomerContent;
         }
 
-        field(26; "Measure"; Boolean)
+        field(28; "Measure"; Boolean)
         {
             Caption = 'Measure';
             DataClassification = CustomerContent;
         }
 
-        field(27; "More Than One Thick"; Boolean)
+        field(29; "More Than One Thick"; Boolean)
         {
             Caption = 'More Than One Thick';
             DataClassification = CustomerContent;
         }
 
-        field(28; "Thick"; Decimal) // Integer of Decimal?
+        field(30; "Thick"; Decimal) // Integer of Decimal?
         {
             Caption = 'Thick';
             DataClassification = CustomerContent;
         }
 
-        field(29; "More Than One Thin"; Boolean)
+        field(31; "More Than One Thin"; Boolean)
         {
             Caption = 'More Than One Thin';
             DataClassification = CustomerContent;
         }
 
-        field(30; "Thin"; Decimal) // Integer of Decimal?
+        field(32; "Thin"; Decimal) // Integer of Decimal?
         {
             Caption = 'Thin';
             DataClassification = CustomerContent;
         }
 
-        field(31; "Euras"; Boolean)
+        field(33; "Euras"; Boolean)
         {
             Caption = 'Euras';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(32; "Total Surface Profiles"; Decimal)
+        field(34; "Total Surface Profiles"; Decimal)
         {
             Caption = 'Total Surface Profiles';
             DataClassification = CustomerContent;
@@ -254,7 +265,7 @@ table 50016 "ACO Bath Sheet Header"
             end;
         }
 
-        field(33; "Surface Attachrack"; Decimal)
+        field(35; "Surface Attachrack"; Decimal)
         {
             Caption = 'Surface Attachrack';
             DataClassification = CustomerContent;
@@ -265,7 +276,7 @@ table 50016 "ACO Bath Sheet Header"
             end;
         }
 
-        field(34; "Surface Addition"; Decimal)
+        field(36; "Surface Addition"; Decimal)
         {
             Caption = 'Surface Addition';
             DataClassification = CustomerContent;
@@ -276,26 +287,26 @@ table 50016 "ACO Bath Sheet Header"
             end;
         }
 
-        field(35; "Total Surface"; Decimal)
+        field(37; "Total Surface"; Decimal)
         {
             Caption = 'Total Surface';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(36; "Layer Thickness"; Decimal)
+        field(38; "Layer Thickness"; Decimal)
         {
             Caption = 'Layer Thickness';
             DataClassification = CustomerContent;
         }
 
-        field(37; "Extra to Enumerate"; Decimal)
+        field(39; "Extra to Enumerate"; Decimal)
         {
             Caption = 'Extra to Enumerate';
             DataClassification = CustomerContent;
         }
 
-        field(38; "Minimum Current Density"; Decimal)
+        field(40; "Minimum Current Density"; Decimal)
         {
             Caption = 'Minimum Current Density';
             Editable = false;
@@ -303,7 +314,7 @@ table 50016 "ACO Bath Sheet Header"
             CalcFormula = max ("ACO Bath Sheet Line"."Minimum Current Density" where("Bath Sheet No." = field("No.")));
         }
 
-        field(39; "Maximum Current Density"; Decimal)
+        field(41; "Maximum Current Density"; Decimal)
         {
             Caption = 'Maximum Current Density';
             Editable = false;
@@ -311,95 +322,109 @@ table 50016 "ACO Bath Sheet Header"
             CalcFormula = min ("ACO Bath Sheet Line"."Maximum Current Density" where("Bath Sheet No." = field("No.")));
         }
 
-        field(40; "No. Series"; Code[20])
+        field(42; "No. Series"; Code[20])
         {
             Caption = 'No. Series';
             DataClassification = CustomerContent;
         }
 
-        field(41; "GSX 1 Str."; Decimal)
+        field(43; "GSX 1 Str."; Decimal)
         {
             Caption = 'GSX 1 Str.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(42; "GSX 2 Str."; Decimal)
+        field(44; "GSX 2 Str."; Decimal)
         {
             Caption = 'GSX 2 Str.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(43; "GSX 3 Str."; Decimal)
+        field(45; "GSX 3 Str."; Decimal)
         {
             Caption = 'GSX 3 Str.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(44; "GSX LL Str."; Decimal)
+        field(46; "GSX LL Str."; Decimal)
         {
             Caption = 'GSX LL Str.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(45; "GSX 1 Dhd."; Decimal)
+        field(47; "GSX 1 Dhd."; Decimal)
         {
             Caption = 'GSX 1 Dhd.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(46; "GSX 2 Dhd."; Decimal)
+        field(48; "GSX 2 Dhd."; Decimal)
         {
             Caption = 'GSX 2 Dhd.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(47; "GSX 3 Dhd."; Decimal)
+        field(49; "GSX 3 Dhd."; Decimal)
         {
             Caption = 'GSX 3 Dhd.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(48; "GSX LL Dhd."; Decimal)
+        field(50; "GSX LL Dhd."; Decimal)
         {
             Caption = 'GSX LL Dhd.';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(49; "GSX 1 Time"; Decimal)
+        field(51; "GSX 1 Time"; Decimal)
         {
             Caption = 'GSX 1 Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(50; "GSX 2 Time"; Decimal)
+        field(52; "GSX 2 Time"; Decimal)
         {
             Caption = 'GSX 2 Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(51; "GSX 3 Time"; Decimal)
+        field(53; "GSX 3 Time"; Decimal)
         {
             Caption = 'GSX 3 Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(52; "GSX LL Time"; Decimal)
+        field(54; "GSX LL Time"; Decimal)
         {
             Caption = 'GSX LL Time';
             Editable = false;
             DataClassification = CustomerContent;
         }
+
+        field(55; Status; Option)
+        {
+            Caption = 'Status';
+            OptionMembers = New,"In Production",Finished;
+            OptionCaption = 'New,"In Production",Finished';
+            DataClassification = CustomerContent;
+        }
+
+        // field(56; "Measure Value Mu"; Decimal)
+        // {
+        //     Caption = 'Measure Value Mu';
+        //     DataClassification = CustomerContent;
+        // }
 
         // field(53; "GSX 1 Time New"; Decimal)
         // {
