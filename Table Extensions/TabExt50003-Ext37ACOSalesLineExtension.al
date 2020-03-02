@@ -387,7 +387,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         }
     }
 
-    procedure CalculateUnitPrice()
+    procedure ACOCalculateUnitPrice()
     var
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";

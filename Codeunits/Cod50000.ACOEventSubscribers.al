@@ -197,7 +197,11 @@ codeunit 50000 "ACO Event Subscribers"
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
             // ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
             // ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
+            ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+            ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+            ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+            if not ACOProfileCustomer.FindFirst() then
+                // if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code") then
                 Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code")
             else
                 if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
@@ -260,7 +264,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
-        Rec.CalculateUnitPrice();
+        Rec.ACOCalculateUnitPrice();
     end;
     // Calculate Price schema ToDo
 
@@ -295,8 +299,10 @@ codeunit 50000 "ACO Event Subscribers"
             ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Short;
 
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
-        ProdOrderLine.Validate("ACO Number of Units", SalesLine."ACO Number of Units");
+        ProdOrderLine."ACO Number of Units" := SalesLine."ACO Number of Units";
         ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
+        ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
+        ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
 
         // if ACOProfile.Get(SalesLine."ACO Profile Code") then
 

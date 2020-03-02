@@ -178,6 +178,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
     local procedure CreateBathSheetLine(ACOBathSheetHeaderNo: Code[20]; ProductionOrderLine: Record "Prod. Order Line"; var LineNo: Integer)
     var
+        SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ItemVariant: Record "Item Variant";
@@ -185,6 +186,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         MaxCurrentDensity: Decimal;
         NumberofUnitsLtQuantityToBathSheetErr: Label 'Number of Units cannot be less than Quantity to Bath Sheet.';
     begin
+        SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
 
         if ProductionOrderLine."ACO Number of Units" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
@@ -196,6 +198,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."Production Order Line No." := ProductionOrderLine."Line No.";
         ACOBathSheetLine."Sales Order No." := ProductionOrderLine."ACO Source No.";
         ACOBathSheetLine."Sales Order Line No." := ProductionOrderLine."ACO Source Line No.";
+
+        ACOBathSheetLine."Customer No." := SalesHeader."Sell-to Customer No.";
         ACOBathSheetLine.Quantity := ProductionOrderLine."ACO Quantity to Bath Sheet";
         ACOBathSheetLine."Profile Code" := ProductionOrderLine."ACO Profile Code";
         ACOBathSheetLine."Charge No." := ProductionOrderLine."ACO Charge No.";
