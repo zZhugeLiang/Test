@@ -6,6 +6,11 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         {
             Caption = 'Charges per Bath Profile';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+            end;
         }
 
         field(50001; "ACO Quantity Charges"; Decimal)
@@ -101,6 +106,11 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             Caption = 'Number of Units';
             Editable = false;
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+            end;
         }
         field(50014; "ACO Production Line"; Option)
         {

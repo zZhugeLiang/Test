@@ -319,9 +319,13 @@ page 50020 "ACO Bath Sheet"
                     ACOPretreatment: Record "ACO Pretreatment";
                     ACOAppSetup: Record "ACO App Setup";
                     Item: Record Item;
+                    TempBlob: Record TempBlob;
                     ACOAucosExport: XmlPort "ACO Aucos Export";
+                    FileOutStream: OutStream;
+                    FileInStream: InStream;
                     LastColorCode: Code[20];
                     LastPretreatmentCode: Code[20];
+                    FileName: Text;
                     SealingTime: Decimal;
                     ExtraFlushing: Boolean;
                     XmlFile: File;
@@ -331,8 +335,17 @@ page 50020 "ACO Bath Sheet"
                     NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
                     ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
                 begin
+                    ACOAucosExport.SetTableView(Rec);
                     ACOAucosExport.Run();
                     ACOAucosExport.Export();
+
+                    TempBlob.Blob.CREATEOUTSTREAM(FileOutStream);
+
+                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+
+                    TempBlob.Blob.CREATEINSTREAM(FileInStream);
+                    FileName := 'BathSheet.csv';
+                    DownloadFromStream(FileInStream, '', '', '', FileName);
                     exit;
                     ACOAppSetup.Get();
                     ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
@@ -383,6 +396,38 @@ page 50020 "ACO Bath Sheet"
                     // XmlFile.CREATEOUTSTREAM(OutStreamVar);
                     // XMLPORT.EXPORT(XMLPORT::"Your XmlPort",OutStreamVar); 
                     // XmlFile.CLOSE;
+                end;
+            }
+
+            action("Export Aucos2")
+            {
+                Caption = 'Export Aucos test';
+                Image = Export;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    Item: Record Item;
+                    //asd: Blo
+                    TempBlob: Record TempBlob; //BLOB Storamge Module?
+                    ACOAucosExport: XmlPort "ACO Aucos Export";
+                    FileOutStream: OutStream;
+                    FileInStream: InStream;
+
+                    FileName: Text;
+
+                begin
+                    // ACOAucosExport.SetTableView(Rec);
+                    // ACOAucosExport.Run();
+                    // ACOAucosExport.Export();
+
+                    TempBlob.Blob.CREATEOUTSTREAM(FileOutStream);
+
+                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+
+                    TempBlob.Blob.CREATEINSTREAM(FileInStream);
+                    FileName := 'BathSheet_' + "No." + '.csv';
+                    DownloadFromStream(FileInStream, '', '', '', FileName);
                 end;
             }
         }

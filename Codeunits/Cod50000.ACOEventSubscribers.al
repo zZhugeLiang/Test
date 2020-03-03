@@ -93,6 +93,7 @@ codeunit 50000 "ACO Event Subscribers"
                     Rec."ACO Attach Method Code Profile" := '';
                     Rec."ACO Type of Clamp Profile" := '';
                     Rec."ACO Holders Profile" := '';
+                    Rec."ACO Charges per Bath Profile" := 0;
                 end;
                 Rec.Validate("ACO Color", Item."ACO Color");
 
@@ -220,11 +221,12 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Min. Curr. Density Profile" := ACOProfile."Maximum Current Density";
             Rec."ACO Thin Staining Time Profile" := ACOProfile."Thin Staining Time";
             Rec."ACO Thick St. Time Profile" := ACOProfile."Thick Staining Time";
-            Rec."ACO Euras Profile" := ACOProfile."Euras";
+            Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;//ACOProfile."Euras";
             Rec."ACO Extra to Enumerate Profile" := ACOProfile."Extra to Enumerate";
             Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
             Rec."ACO Type of Clamp Profile" := ACOProfile."Type of Clamp";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
+            Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
         end;
     end;
 
@@ -290,7 +292,6 @@ codeunit 50000 "ACO Event Subscribers"
         ProdOrderLine."ACO Source No." := ProductionOrder."Source No.";
         ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
         ProdOrderLine."ACO Profile Code" := SalesLine."ACO Profile Code";
-        ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
 
         SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
         if SalesHeader."ACO Large Line" then
@@ -298,7 +299,6 @@ codeunit 50000 "ACO Event Subscribers"
         else
             ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Short;
 
-        ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
         ProdOrderLine."ACO Number of Units" := SalesLine."ACO Number of Units";
         ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";

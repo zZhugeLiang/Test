@@ -553,6 +553,7 @@ table 50016 "ACO Bath Sheet Header"
         MinAnodiseTime: Decimal;
         First: Boolean;
         MinCannotBeLargerThanMaxDensityErr: Label 'Minimum Current Density cannot be larger than Maximum Current Density.';
+        NoBathsCalculatedErr: Label 'None of the baths could be calculated.';
     begin
         ACOAppSetup.Get();
         ACOAppSetup.TestField("Max. Current Density Bath 1");
@@ -588,43 +589,53 @@ table 50016 "ACO Bath Sheet Header"
         LayerThickness := "Layer Thickness";
         MinAnodiseTime := ACOAppSetup."Min. Anodise Time";
 
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-        "GSX 1 Dhd." := Dhd;
-        "GSX 1 Str." := Str;
-        // ACOBathSheetHeader."GSX 1 Time" := 0T;
-        "GSX 1 Time" := BathTime;
-
-        Str := ACOAppSetup."Max. Current Density Bath 2";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-        "GSX 2 Dhd." := Dhd;
-        "GSX 2 Str." := Str;
-        // ACOBathSheetHeader."GSX 2 Time" := 0T;
-        "GSX 2 Time" := BathTime;
-
-        Str := ACOAppSetup."Max. Current Density Bath 3";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
-
-
-        "GSX 3 Dhd." := Dhd;
-        "GSX 3 Str." := Str;
-        // ACOBathSheetHeader."GSX 3 Time" := 0T;
-        "GSX 3 Time" := BathTime;
-
         Str := ACOAppSetup."Max. Current Density Bath L";
-        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime, MinCurrDens, MaxCurrDens);
+        CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime,
+                                    MinCurrDens, MaxCurrDens, ACOAppSetup."Max. Current Density Bath L");
 
         "GSX LL Dhd." := Dhd;
         "GSX LL Str." := Str;
-        // ACOBathSheetHeader."GSX LL Time" := 0T;
         "GSX LL Time" := BathTime;
+
+        if "Production Line" = "Production Line"::Long then begin
+            if ("GSX LL Dhd." + "GSX LL Str." + "GSX LL Time") = 0 then
+                Error(NoBathsCalculatedErr);
+        end else begin
+            CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime,
+                                        MinCurrDens, MaxCurrDens, ACOAppSetup."Max. Current Density Bath 1");
+
+            if ACOAppSetup."Max. Current Density Bath 1" >= Str then begin
+                "GSX 1 Dhd." := Dhd;
+                "GSX 1 Str." := Str;
+                "GSX 1 Time" := BathTime;
+            end;
+
+            Str := ACOAppSetup."Max. Current Density Bath 2";
+            CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime,
+                                        MinCurrDens, MaxCurrDens, ACOAppSetup."Max. Current Density Bath 2");
+
+            "GSX 2 Dhd." := Dhd;
+            "GSX 2 Str." := Str;
+            "GSX 2 Time" := BathTime;
+
+            Str := ACOAppSetup."Max. Current Density Bath 3";
+            CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime,
+                                        MinCurrDens, MaxCurrDens, ACOAppSetup."Max. Current Density Bath 3");
+
+            "GSX 3 Dhd." := Dhd;
+            "GSX 3 Str." := Str;
+            "GSX 3 Time" := BathTime;
+
+            if ("GSX LL Dhd." + "GSX LL Str." + "GSX LL Time" + "GSX 1 Dhd." + "GSX 1 Str." + "GSX 1 Time"
+                + "GSX 2 Dhd." + "GSX 2 Str." + "GSX 2 Time" + "GSX 3 Dhd." + "GSX 3 Str." + "GSX 3 Time") = 0 then
+                Error(NoBathsCalculatedErr);
+        end;
 
         Modify();
     end;
 
     local procedure CalculateProcessTimeBath(var CurrDens: Decimal; var Str: Decimal; var BathTime: Decimal; TotalSurface: Decimal; LayerThickness: Decimal;
-                                                MinAnodiseTime: Decimal; MinCurrDens: Decimal; MaxCurrDens: Decimal)
+                                                MinAnodiseTime: Decimal; MinCurrDens: Decimal; MaxCurrDens: Decimal; MaxCurrentDensityBath: Decimal)
     begin
         // Calculate Density
         CurrDens := Str / (TotalSurface * 100);
@@ -649,5 +660,11 @@ table 50016 "ACO Bath Sheet Header"
         end;
 
         Str := CurrDens * TotalSurface * 100;
+
+        if Str > MaxCurrentDensityBath then begin
+            CurrDens := 0;
+            BathTime := 0;
+            Str := 0;
+        end;
     end;
 }

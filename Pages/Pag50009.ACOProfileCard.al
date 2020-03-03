@@ -78,6 +78,10 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Charges per Bath Profile"; "Charges per Bath Profile")
+                {
+                    ApplicationArea = All;
+                }
 
             }
             group(Documents)

@@ -44,6 +44,12 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
+        field(7; "Charges per Bath Profile"; Decimal)
+        {
+            Caption = 'Charges per Bath Profile';
+            DataClassification = CustomerContent;
+        }
+
         // field(7; Hollow; Boolean)
         // {
         //     Caption = 'Hollow'; // DEPRECATED?

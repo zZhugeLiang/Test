@@ -443,6 +443,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Not Measurable - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2336647438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Charges per Bath Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Charges per Bath Profile - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 1064475362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra Flushing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1137,6 +1142,11 @@
           <source>Minimum Current Density cannot be larger than Maximum Current Density.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Method CalculateProcessTimes - NamedType MinCannotBeLargerThanMaxDensityErr</note>
+        </trans-unit>
+        <trans-unit id="Table 1438845102 - Method 3272374899 - NamedType 4267060228" size-unit="char" translate="yes" xml:space="preserve">
+          <source>None of the baths could be calculated.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Method CalculateProcessTimes - NamedType NoBathsCalculatedErr</note>
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 355523985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet No.</source>
@@ -2599,12 +2609,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Shipping Shelf - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3035335321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>ACO Charges per Bath Profile</source>
+          <source>Charges per Bath Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Charges per Bath Profile - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>ACO Quantity Charges</source>
+          <source>Quantity Charges</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Quantity Charges - Property Caption</note>
         </trans-unit>

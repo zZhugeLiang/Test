@@ -44,13 +44,13 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         // }
         field(50008; "ACO Rerun"; Text[20])
         {
-            Caption = 'Rerun';
+            Caption = 'Rerun'; // DEPRECATED
             DataClassification = CustomerContent;//zichtbaar
         }
 
         field(50009; "ACO Rerun Reason"; Text[20])
         {
-            Caption = 'Rerun Reason';
+            Caption = 'Rerun Reason'; // DEPRECATED
             DataClassification = CustomerContent;//zichtbaar
         }
 

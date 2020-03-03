@@ -115,11 +115,14 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOProfile.Get("ACO Profile Code");
                 if ACOProfile."Blocked State Inactive" then
                     Error(ProfileInactiveErr, "ACO Profile Code");
+
                 SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
 
-                ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
-                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                ACOProfileCustomer.FindFirst();
+                if "ACO Profile Code" <> '' then begin
+                    ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
+                    ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                    ACOProfileCustomer.FindFirst();
+                end;
             end;
 
             trigger OnLookup()
@@ -273,6 +276,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                                 NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
 
                     Validate(Quantity, NewQuantity);
+
+                    "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
                 end;
             end;
         }
@@ -370,13 +375,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         field(50051; "ACO Charges per Bath Profile"; Decimal)
         {
-            Caption = 'ACO Charges per Bath Profile';
+            Caption = 'Charges per Bath Profile';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+            end;
         }
 
         field(50052; "ACO Quantity Charges"; Decimal)
         {
-            Caption = 'ACO Quantity Charges';
+            Caption = 'Quantity Charges';
             DataClassification = CustomerContent;
         }
 

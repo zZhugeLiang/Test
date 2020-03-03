@@ -2,11 +2,13 @@ xmlport 50000 "ACO Aucos Export"
 {
     Caption = 'Aucos Export';
     Direction = Export;
-    TextEncoding = UTF8;
+
     Format = VariableText;
     FieldDelimiter = '"';
     FieldSeparator = ';';
-    TableSeparator = 'NewLine';
+    RecordSeparator = '<NewLine>';
+    TableSeparator = ';';
+    TextEncoding = UTF8;
 
     schema
     {
@@ -71,7 +73,7 @@ xmlport 50000 "ACO Aucos Export"
                             ACOBathSheetLineAll.SetRange("Bath Sheet No.", ACOBathSheetLine."Bath Sheet No.");
                             if ACOBathSheetLineAll.FindSet() then
                                 repeat
-                                //   if Item.Get(ACOBathSheetLineAll.Treatment) and Item. then
+                                // if Item.Get(ACOBathSheetLineAll.Treatment) and Item. then
 
                                 until ACOBathSheetLineAll.Next() = 0;
                             if AucosFlush then
@@ -80,7 +82,6 @@ xmlport 50000 "ACO Aucos Export"
                             //     ablageNo := Item."ACO Pretreatment";
                         end;
                     }
-
 
                     textelement(itemPretreatment)
                     {
