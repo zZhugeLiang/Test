@@ -60,6 +60,7 @@ page 50009 "ACO Profile Card"
                 }
                 field("Circumference"; "Circumference")
                 {
+                    ShowMandatory = true;
                     ApplicationArea = All;
                 }
                 field("Correction Factor"; "Correction Factor")

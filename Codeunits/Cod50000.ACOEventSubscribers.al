@@ -189,12 +189,14 @@ codeunit 50000 "ACO Event Subscribers"
         if Rec.IsTemporary() then
             exit;
 
+        if Rec."ACO Profile Code" = '' then
+            exit;
         // if Rec.Type = Rec.Type::Item then
         //     if Item.Get(Rec."No.") then
         if ACOProfile.Get(Rec."ACO Profile Code") then begin
             // if ACOProfile."Blocked State Inactive" = ACOProfile."Blocked State Inactive"::asd  then
             //    Error(ProfileInactiveErr, ACOProfile.Code);
-
+            ACOProfile.TestField(Circumference);
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
             // ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
             // ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");

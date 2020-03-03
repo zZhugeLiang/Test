@@ -16,22 +16,7 @@ xmlport 50000 "ACO Aucos Export"
         {
             tableelement(ACOBathSheetHeader; "ACO Bath Sheet Header")
             {
-                fieldelement(no; ACOBathSheetHeader."No.")
-                {
-                }
-                fieldelement(layerThickness; ACOBathSheetHeader."Layer Thickness")
-                {
-                }
-                textelement(bathSheetComment)
-                {
-                    trigger OnBeforePassVariable()
-                    begin
-                        BathSheetComment := CopyStr(ACOBathSheetHeader."Bath Sheet Comment", 1, 40);
-                    end;
-                }
-                fieldelement(totalSurface; ACOBathSheetHeader."Total Surface")
-                {
-                }
+
                 tableelement(ACOBathSheetLine; "ACO Bath Sheet Line")
                 {
                     LinkFields = "Bath Sheet No." = field("No.");
@@ -39,6 +24,22 @@ xmlport 50000 "ACO Aucos Export"
                     MinOccurs = Zero;
                     XmlName = 'bathSheetLine';
 
+                    fieldelement(no; ACOBathSheetHeader."No.")
+                    {
+                    }
+                    fieldelement(layerThickness; ACOBathSheetHeader."Layer Thickness")
+                    {
+                    }
+                    textelement(bathSheetComment)
+                    {
+                        trigger OnBeforePassVariable()
+                        begin
+                            BathSheetComment := CopyStr(ACOBathSheetHeader."Bath Sheet Comment", 1, 40);
+                        end;
+                    }
+                    fieldelement(totalSurface; ACOBathSheetHeader."Total Surface")
+                    {
+                    }
                     textelement(commentProfile)
                     {
                         trigger OnBeforePassVariable()

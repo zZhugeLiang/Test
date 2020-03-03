@@ -46,7 +46,15 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
+                field("Report Date"; "Report Date")
+                {
+                    ApplicationArea = All;
+                }
                 field("Report Day Part"; "Report Day Part")
+                {
+                    ApplicationArea = All;
+                }
+                field("Report Day"; "Report Day")
                 {
                     ApplicationArea = All;
                 }
@@ -312,41 +320,37 @@ page 50020 "ACO Bath Sheet"
 
                 trigger OnAction()
                 var
-                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
                     ACOBathSheetLine: Record "ACO Bath Sheet Line";
                     ACOColor: Record "ACO Color";
                     ACOProfile: Record "ACO Profile";
                     ACOPretreatment: Record "ACO Pretreatment";
                     ACOAppSetup: Record "ACO App Setup";
                     Item: Record Item;
-                    TempBlob: Record TempBlob;
-                    ACOAucosExport: XmlPort "ACO Aucos Export";
+                    TempBlob: Codeunit "Temp Blob";
                     FileOutStream: OutStream;
                     FileInStream: InStream;
                     LastColorCode: Code[20];
                     LastPretreatmentCode: Code[20];
                     FileName: Text;
-                    SealingTime: Decimal;
                     ExtraFlushing: Boolean;
-                    XmlFile: File;
                     MaxNumberOfLinesErr: Label 'The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.';
                     NotIntendedforLongLineErr: Label 'This Bath Sheet is not intended for the long line.';
                     NotAllLinesSameColorErr: Label 'Not all lines have the same color.';
                     NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
                     ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
                 begin
-                    ACOAucosExport.SetTableView(Rec);
-                    ACOAucosExport.Run();
-                    ACOAucosExport.Export();
+                    // ACOAucosExport.SetTableView(Rec);
+                    // ACOAucosExport.Run();
+                    // ACOAucosExport.Export();
 
-                    TempBlob.Blob.CREATEOUTSTREAM(FileOutStream);
+                    // TempBlob.Blob.CREATEOUTSTREAM(FileOutStream);
 
-                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+                    // Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
 
-                    TempBlob.Blob.CREATEINSTREAM(FileInStream);
-                    FileName := 'BathSheet.csv';
-                    DownloadFromStream(FileInStream, '', '', '', FileName);
-                    exit;
+                    // TempBlob.Blob.CREATEINSTREAM(FileInStream);
+                    // FileName := 'BathSheet.csv';
+                    // DownloadFromStream(FileInStream, '', '', '', FileName);
+                    // exit;
                     ACOAppSetup.Get();
                     ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                     if ACOAppSetup."Aucos Max. No. of Lines" > 0 then
@@ -382,6 +386,12 @@ page 50020 "ACO Bath Sheet"
                         // ACOBathSheetLine
                         until ACOBathSheetLine.Next() = 0;
 
+                    TempBlob.CreateOutStream(FileOutStream);
+                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+                    TempBlob.CreateInStream(FileInStream);
+
+                    FileName := "No." + '_export.csv';
+                    DownloadFromStream(FileInStream, '', '', '', FileName);
                     // if ExtraFlushing then begin
 
                     // end else begin
@@ -407,26 +417,16 @@ page 50020 "ACO Bath Sheet"
 
                 trigger OnAction()
                 var
-                    Item: Record Item;
-                    //asd: Blo
-                    TempBlob: Record TempBlob; //BLOB Storamge Module?
-                    ACOAucosExport: XmlPort "ACO Aucos Export";
+                    TempBlob: Codeunit "Temp Blob";
                     FileOutStream: OutStream;
                     FileInStream: InStream;
-
                     FileName: Text;
-
                 begin
-                    // ACOAucosExport.SetTableView(Rec);
-                    // ACOAucosExport.Run();
-                    // ACOAucosExport.Export();
-
-                    TempBlob.Blob.CREATEOUTSTREAM(FileOutStream);
-
+                    TempBlob.CreateOutStream(FileOutStream);
                     Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+                    TempBlob.CreateInStream(FileInStream);
 
-                    TempBlob.Blob.CREATEINSTREAM(FileInStream);
-                    FileName := 'BathSheet_' + "No." + '.csv';
+                    FileName := "No." + '_export.csv';
                     DownloadFromStream(FileInStream, '', '', '', FileName);
                 end;
             }

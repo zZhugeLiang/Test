@@ -36,7 +36,12 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             Editable = false;
             DataClassification = CustomerContent;
         }
-
+        field(50006; "ACO Quantity Charges"; Decimal)
+        {
+            Caption = 'Quantity Charges';
+            FieldClass = FlowField;
+            CalcFormula = Sum ("Sales Line"."ACO Quantity Charges" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
+        }
         // field(50007; "ACO Calculate Line Amount"; Decimal)
         // {
         //     Caption = 'DEPRECATED?';
@@ -151,10 +156,6 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             Caption = 'Document Date Day';
             DataClassification = CustomerContent;
         }
-        // field(50021; "ACO Quantity Charges"; Decimal)
-        // {
-        //     Caption = 'DEPRECATED';
-        //     DataClassification = CustomerContent;
-        // }
+
     }
 }

@@ -14,10 +14,10 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 {
                     ApplicationArea = All;
                 }
-                // field("ACO Quantity Charges"; "ACO Quantity Charges")
-                // {
-                //     ApplicationArea = All;
-                // }
+                field("ACO Quantity Charges"; "ACO Quantity Charges")
+                {
+                    ApplicationArea = All;
+                }
                 // field("ACO Rerun"; "ACO Rerun")
                 // {
                 //     ApplicationArea = All;
@@ -42,6 +42,10 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                         Validate("ACO Logged In DateTime", CurrentDateTime());
                     end;
                 }
+                field("ACO Logged In Day"; "ACO Logged In Day")
+                {
+                    ApplicationArea = All;
+                }
                 field("ACO Logged In Week"; "ACO Logged In Week")
                 {
                     ApplicationArea = All;
@@ -59,11 +63,14 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 
         addafter("Document Date")
         {
+            field("ACO Document Date Day"; "ACO Document Date Day")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Document Date Week"; "ACO Document Date Week")
             {
                 ApplicationArea = All;
             }
-
             field("ACO Document Date Year"; "ACO Document Date Year")
             {
                 ApplicationArea = All;

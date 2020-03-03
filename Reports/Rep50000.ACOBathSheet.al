@@ -230,19 +230,6 @@ report 50000 "ACO Bath Sheet"
         }
     }
 
-    trigger OnPreReport()
-    var
-        ACOBathSheetInsert: Record "ACO Bath Sheet Header";
-        ACOBathSheetLineInsert: Record "ACO Bath Sheet Line";
-    begin
-        User.Get(UserSecurityId());
-
-        // for testing
-        // ACOBathSheetInsert.Insert(true);
-        // ACOBathSheetLineInsert."Bath Sheet No." := ACOBathSheetInsert
-        // ACOBathSheetLineInsert.Insert(true);
-    end;
-
     var
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";

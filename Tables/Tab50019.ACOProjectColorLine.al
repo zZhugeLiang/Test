@@ -50,8 +50,8 @@ table 50019 "ACO Project Color Line"
         field(7; "Target Type"; Option)
         {
             Caption = 'Target Type';
-            OptionMembers = L,A,B;
-            OptionCaption = 'L,A,B';
+            OptionMembers = " ",L,a,b;
+            OptionCaption = ' ,L,a,b';
             DataClassification = CustomerContent;
         }
 

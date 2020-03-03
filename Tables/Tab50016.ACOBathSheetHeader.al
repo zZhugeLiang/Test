@@ -502,7 +502,6 @@ table 50016 "ACO Bath Sheet Header"
         TotalSurfaceProfiles: Decimal;
         SurfaceAddition: Decimal;
         CombinationLT: Decimal;
-        MaxCombinationLT: Decimal;
         ExtraToEnumerate: Decimal;
     begin
         "Total Surface Profiles" := 0;
@@ -523,11 +522,8 @@ table 50016 "ACO Bath Sheet Header"
                 if Item.Get(ACOBathSheetLine.Treatment) then
                     if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
                         CombinationLT := ACOLayerThickness."mu Value" + ExtraToEnumerate;
-                        if MaxCombinationLT <= CombinationLT then begin
-                            MaxCombinationLT := CombinationLT;
-                            "Layer Thickness" := ACOLayerThickness."mu Value";
-                            "Extra to Enumerate" := ACOProfile."Extra to Enumerate";
-                        end;
+                        if "Layer Thickness" < CombinationLT then
+                            "Layer Thickness" := CombinationLT;
                     end;
             until ACOBathSheetLine.Next() = 0;
 

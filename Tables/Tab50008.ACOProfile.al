@@ -29,6 +29,7 @@ table 50008 "ACO Profile"
         field(4; "Circumference"; Decimal)
         {
             Caption = 'Circumference [mm]';
+            NotBlank = true;
             DataClassification = CustomerContent;
         }
 

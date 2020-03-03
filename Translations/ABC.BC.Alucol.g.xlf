@@ -1364,7 +1364,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 2539230715 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>L,A,B</source>
+          <source> ,L,a,b</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Type - Property OptionCaption</note>
         </trans-unit>
@@ -1692,6 +1692,11 @@
           <source>This color cannot be exported to Aucos.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType ColorCannotBeExportedToAucosErr</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 2434374119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export Aucos test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>
@@ -2278,6 +2283,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Week Capacity - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Quantity Charges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 2251616525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Rerun</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2627,6 +2637,11 @@
           <source>Quantity Charges</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Ext. - Field ACO Quantity Charges - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1709463785 - Field 3299164317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
+          <source>Quantity Charges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Ext. - Field ACO Quantity Charges New - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 3035335321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
           <source>Charges per Bath Profile</source>

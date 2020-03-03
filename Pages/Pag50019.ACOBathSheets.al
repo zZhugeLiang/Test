@@ -157,10 +157,10 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                field("Extra to Enumerate"; "Extra to Enumerate")
-                {
-                    ApplicationArea = All;
-                }
+                // field("Extra to Enumerate"; "Extra to Enumerate")
+                // {
+                //     ApplicationArea = All;
+                // }
                 field("Minimum Current Density"; "Minimum Current Density")
                 {
                     ApplicationArea = All;
