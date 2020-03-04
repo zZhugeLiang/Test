@@ -88,4 +88,19 @@ page 50011 "ACO Profile Customer Card"
             }
         }
     }
+
+    actions
+    {
+        area(Navigation)
+        {
+            action("ACO Holders")
+            {
+                Caption = 'Holders';
+                Image = Category;
+                RunObject = Page "ACO Holders";
+                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                ApplicationArea = All;
+            }
+        }
+    }
 }

@@ -51,6 +51,7 @@ page 50010 "ACO Profile Customers"
             }
         }
     }
+
     actions
     {
         area(Navigation)

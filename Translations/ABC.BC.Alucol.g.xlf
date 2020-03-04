@@ -733,11 +733,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2347744687 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Description - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2347744687 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -752,6 +747,11 @@
           <source>Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2347744687 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 274193969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Group Code</source>
@@ -1418,6 +1418,96 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Resource - Field Resource Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2340332017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 274193969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Group Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Color Group Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 3209093551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 513314990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Support Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Support Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 4100657994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distance Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Distance Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 1075152387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attach Method Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Attach Method Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 3326183214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of Clamp</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Type of Clamp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 4132733409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Method - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 2397838112 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Space</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Space - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 3323279148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Helix</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Helix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 1569413820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Helix Start [in cm]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Helix Start - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2340332017 - Field 2503184985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Helix End [in cm]</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Helix End - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1582,6 +1672,11 @@
           <source>Production Parameters</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control ProductionParameters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2469371202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Types</source>

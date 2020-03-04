@@ -4,7 +4,7 @@ page 50015 "ACO Holders"
     PageType = List;
     CardPageId = "ACO Holder Card";
     RefreshOnActivate = true;
-    SourceTable = "ACO Holder";
+    SourceTable = "ACO Holder 2";
     ApplicationArea = All;
     UsageCategory = Lists;
 

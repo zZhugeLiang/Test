@@ -1,4 +1,4 @@
-table 50013 "ACO Holder" // DEPRECATED Replace with ACO Holder 2
+table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Holder
 {
     Caption = 'Holder';
     DrillDownPageId = "ACO Holders";
@@ -90,21 +90,25 @@ table 50013 "ACO Holder" // DEPRECATED Replace with ACO Holder 2
             Caption = 'Method';
             DataClassification = CustomerContent;
         }
+
         field(14; Space; Decimal)
         {
             Caption = 'Space';
             DataClassification = CustomerContent;
         }
+
         field(15; Helix; Decimal)
         {
             Caption = 'Helix';
             DataClassification = CustomerContent;
         }
+
         field(16; "Helix Start"; Decimal)
         {
             Caption = 'Helix Start [in cm]';
             DataClassification = CustomerContent;
         }
+
         field(17; "Helix End"; Decimal)
         {
             Caption = 'Helix End [in cm]';
@@ -114,7 +118,7 @@ table 50013 "ACO Holder" // DEPRECATED Replace with ACO Holder 2
 
     keys
     {
-        key(PK; "Code")
+        key(PK; "Code", "Customer No.", "Profile Code", Length)
         {
             Clustered = true;
         }

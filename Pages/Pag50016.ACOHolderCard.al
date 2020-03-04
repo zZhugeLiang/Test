@@ -2,7 +2,7 @@ page 50016 "ACO Holder Card"
 {
     Caption = 'Holder Card';
     PageType = Card;
-    SourceTable = "ACO Holder";
+    SourceTable = "ACO Holder 2";
 
     layout
     {
