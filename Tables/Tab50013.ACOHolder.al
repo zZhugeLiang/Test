@@ -19,7 +19,6 @@ table 50013 "ACO Holder"
             DataClassification = CustomerContent;
         }
 
-
         field(3; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';
@@ -116,7 +115,7 @@ table 50013 "ACO Holder"
 
     keys
     {
-        key(PK; "Code")
+        key(PK; "Code", "Customer No.", "Profile Code", Length)
         {
             Clustered = true;
         }

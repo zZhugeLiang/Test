@@ -83,16 +83,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOProfile: Record "ACO Profile";
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
-        ACOLayerThickness: Record "ACO Layer Thickness";
         Customer: Record Customer;
         PreviousSourceNo: Code[20];
         CurrentSourceNo: Code[20];
         TotalCircumference: Decimal;
         MaxThickStainingTime: Decimal;
         MinThinStainingTime: Decimal;
-        LayerThickness: Integer;
-        MaxLayerThickness: Integer;
-        SalesLineMeasure: Boolean;
         First: Boolean;
     begin
         ProductionOrderLines.SetRange("ACO Included", true);
@@ -105,9 +101,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                     SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLines."ACO Source No.");
                     Customer.Get(SalesHeader."Sell-to Customer No.");
                     ACOBathSheetHeader."Note Bath Sheet" := Customer."ACO Comment Bath Card";
-
-                    // if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source Line No.") then
-                    //     ACOBathSheetHeader."Extra to Enumerate" := SalesLine."ACO Extra to Enumerate Profile";
 
                     First := false;
                 end;
@@ -130,14 +123,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                     if not ACOBathSheetHeader.Euras then
                         if SalesLine."ACO Euras Profile" then
                             ACOBathSheetHeader.Euras := true;
-
-                    // if ACOLayerThickness.Get(SalesLine."ACO Layer Thickness") then
-                    //     LayerThickness := ACOLayerThickness."mu Value"
-                    // else
-                    //     LayerThickness := 0;
-
-                    // if MaxLayerThickness <= LayerThickness then
-                    //     MaxLayerThickness := LayerThickness;
                 end;
 
                 if PreviousSourceNo <> CurrentSourceNo then begin
@@ -150,7 +135,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 PreviousSourceNo := CurrentSourceNo;
             until ProductionOrderLines.Next() = 0;
 
-        // ACOBathSheetHeader."Layer Thickness" := MaxLayerThickness + SalesHeader."ACO Extra to Enumerate";
         ACOBathSheetHeader.Circumference := TotalCircumference;
         ACOBathSheetHeader.Insert(true);
     end;

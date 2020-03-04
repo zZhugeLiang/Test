@@ -84,6 +84,11 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Layer Thickness Tolerance"; "Layer Thickness Tolerance")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(Aucos)

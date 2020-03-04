@@ -380,7 +380,7 @@ page 50020 "ACO Bath Sheet"
 
                             LastColorCode := ACOBathSheetLine.Color;
                             LastPretreatmentCode := Item."ACO Pretreatment";
-                            ACOProfile.Get(ACOBathSheetLine);
+                            ACOProfile.Get(ACOBathSheetLine."Profile Code");
                             if ACOProfile."Extra Flushing" then
                                 ExtraFlushing := true;
                         // ACOBathSheetLine

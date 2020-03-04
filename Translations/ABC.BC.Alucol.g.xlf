@@ -128,6 +128,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Multiple Staining Times Text - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 685212800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thickness Tolerance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Layer Thickness Tolerance - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1138,6 +1143,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 1438845102 - Method 962359362 - NamedType 2709085470" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thickness difference is larger than the tolerated difference.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Method UpdateBathSheetHeader - NamedType LayerThicknessToleranceExceededErr</note>
+        </trans-unit>
         <trans-unit id="Table 1438845102 - Method 3272374899 - NamedType 13939723" size-unit="char" translate="yes" xml:space="preserve">
           <source>Minimum Current Density cannot be larger than Maximum Current Density.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1547,6 +1557,11 @@
           <source>Profile Customers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3197234571 - Action 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customers - Action ACO Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1029845018 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer Card</source>

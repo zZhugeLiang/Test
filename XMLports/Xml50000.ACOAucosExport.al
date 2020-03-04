@@ -214,8 +214,4 @@ xmlport 50000 "ACO Aucos Export"
             }
         }
     }
-
-
-    var
-        ACOPasdrofile: Record "ACO Profile";
 }

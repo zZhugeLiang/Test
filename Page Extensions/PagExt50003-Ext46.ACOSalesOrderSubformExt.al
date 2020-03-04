@@ -73,6 +73,22 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Receipt Bag"; "ACO Receipt Bag")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Receipt Shelf"; "ACO Receipt Shelf")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Shipping Bag"; "ACO Shipping Bag")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Shipping Shelf"; "ACO Shipping Shelf")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Kundentour HUECK"; "ACO Kundentour HUECK")
             {
                 ApplicationArea = All;

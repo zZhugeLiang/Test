@@ -155,6 +155,11 @@ table 50000 "ACO App Setup"
             Caption = 'Multiple Staining Times Text';
             DataClassification = CustomerContent;
         }
+        field(25; "Layer Thickness Tolerance"; Decimal)
+        {
+            Caption = 'Layer Thickness Tolerance';
+            DataClassification = CustomerContent;
+        }
         // field(25; "Maximum Bath Length"; Decimal)
         // {
         //     Caption = 'Maximum Bath Length';

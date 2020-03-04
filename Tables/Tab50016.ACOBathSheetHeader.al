@@ -419,37 +419,6 @@ table 50016 "ACO Bath Sheet Header"
             OptionCaption = 'New,"In Production",Finished';
             DataClassification = CustomerContent;
         }
-
-        // field(56; "Measure Value Mu"; Decimal)
-        // {
-        //     Caption = 'Measure Value Mu';
-        //     DataClassification = CustomerContent;
-        // }
-
-        // field(53; "GSX 1 Time New"; Decimal)
-        // {
-        //     Caption = 'GSX 1 Time New'; // DEPRECATED, Remove after new environment
-        //     Editable = false;
-        //     DataClassification = CustomerContent;
-        // }
-        // field(54; "GSX 2 Time New"; Decimal)
-        // {
-        //     Caption = 'GSX 2 Time New'; // DEPRECATED, Remove after new environment\
-        //     Editable = false;
-        //     DataClassification = CustomerContent;
-        // }
-        // field(55; "GSX 3 Time New"; Decimal)
-        // {
-        //     Caption = 'GSX 3 Time New'; // DEPRECATED, Remove after new environment
-        //     Editable = false;
-        //     DataClassification = CustomerContent;
-        // }
-        // field(56; "GSX LL Time New"; Decimal)
-        // {
-        //     Caption = 'GSX LL Time New'; // DEPRECATED, Remove after new environment
-        //     Editable = false;
-        //     DataClassification = CustomerContent;
-        // }
     }
 
     keys
@@ -495,6 +464,7 @@ table 50016 "ACO Bath Sheet Header"
     procedure UpdateBathSheetHeader()
     var
         Item: Record Item;
+        ACOAppSetup: Record "ACO App Setup";
         ACOLayerThickness: Record "ACO Layer Thickness";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOProfile: Record "ACO Profile";
@@ -502,9 +472,16 @@ table 50016 "ACO Bath Sheet Header"
         TotalSurfaceProfiles: Decimal;
         SurfaceAddition: Decimal;
         CombinationLT: Decimal;
+        LargestCombinationLT: Decimal;
+        SmallestCombinationLT: Decimal;
         ExtraToEnumerate: Decimal;
+        First: Boolean;
+        LayerThicknessToleranceExceededErr: Label 'Layer Thickness difference is larger than the tolerated difference.';
     begin
         "Total Surface Profiles" := 0;
+        First := true;
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Layer Thickness Tolerance");
 
         ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
         if ACOBathSheetLine.FindSet() then
@@ -522,17 +499,36 @@ table 50016 "ACO Bath Sheet Header"
                 if Item.Get(ACOBathSheetLine.Treatment) then
                     if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
                         CombinationLT := ACOLayerThickness."mu Value" + ExtraToEnumerate;
-                        if "Layer Thickness" < CombinationLT then
-                            "Layer Thickness" := CombinationLT;
+
+                        if First then begin
+                            LargestCombinationLT := CombinationLT;
+                            SmallestCombinationLT := CombinationLT;
+                            First := false;
+                        end;
+
+                        if CombinationLT > LargestCombinationLT then
+                            LargestCombinationLT := CombinationLT;
+
+                        if CombinationLT < SmallestCombinationLT then
+                            SmallestCombinationLT := CombinationLT;
                     end;
             until ACOBathSheetLine.Next() = 0;
 
+        if (LargestCombinationLT - SmallestCombinationLT > ACOAppSetup."Layer Thickness Tolerance") then
+            Error(LayerThicknessToleranceExceededErr);
+
+        "Layer Thickness" := LargestCombinationLT;
         "Total Surface Profiles" := TotalSurfaceProfiles;
         "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment"));
         "Surface Addition" := SurfaceAddition;
 
         CalculateTotalSurface();
         Modify();
+    end;
+
+    local procedure DetermineLa()
+    begin
+
     end;
 
     procedure CalculateProcessTimes()

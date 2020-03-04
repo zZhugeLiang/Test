@@ -51,4 +51,18 @@ page 50010 "ACO Profile Customers"
             }
         }
     }
+    actions
+    {
+        area(Navigation)
+        {
+            action("ACO Holders")
+            {
+                Caption = 'Holders';
+                Image = Category;
+                RunObject = Page "ACO Holders";
+                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                ApplicationArea = All;
+            }
+        }
+    }
 }
