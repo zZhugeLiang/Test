@@ -1508,6 +1508,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Helix End - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 561029783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Mu</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 561029783 - Field 355523985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Field Bath Sheet No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 561029783 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 561029783 - Field 1131619133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Field Value - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1733,6 +1753,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action ACO Bath Sheet Resources - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2112516322 - Action 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Mu List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action ACO Measure Mu List - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1742,11 +1767,6 @@
           <source>General</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control General - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Control 3596117297 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Measure</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control MeasureGroup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
@@ -1812,6 +1832,11 @@
           <source>Bath Sheet Resources</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Bath Sheet Resources - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Mu List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measure Mu List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet</source>
@@ -2217,6 +2242,11 @@
           <source>Selection Resources</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Resources - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ACO Measure Mu List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measure Mu List - Property Caption</note>
         </trans-unit>
         <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Export</source>
@@ -2699,7 +2729,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Qty. After Production - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 779385951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Receipt Shelf</source>
+          <source>Receipt Bag</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Receipt Bag - Property Caption</note>
         </trans-unit>

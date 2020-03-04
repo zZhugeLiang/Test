@@ -127,12 +127,12 @@ table 50000 "ACO App Setup"
         }
         field(19; "File Directory Aucos File"; Text[250])
         {
-            Caption = 'File Directory Aucos File';
+            Caption = 'File Directory Aucos File'; // DEPRECATED, not possible in cloud BC
             DataClassification = CustomerContent;
         }
         field(20; "Archive File Dir. Aucos File"; Text[250])
         {
-            Caption = 'Archive File Dir. Aucos File';
+            Caption = 'Archive File Dir. Aucos File'; // DEPRECATED, not possible in cloud BC
             DataClassification = CustomerContent;
         }
         field(21; "Aucos Staining Time"; Integer)

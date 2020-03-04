@@ -88,30 +88,6 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                field("Measure Mu-01"; "Measure Mu-01")
-                {
-                    ApplicationArea = All;
-                }
-                field("Measure Mu-02"; "Measure Mu-02")
-                {
-                    ApplicationArea = All;
-                }
-                field("Measure Mu-03"; "Measure Mu-03")
-                {
-                    ApplicationArea = All;
-                }
-                field("Measure Mu-04"; "Measure Mu-04")
-                {
-                    ApplicationArea = All;
-                }
-                field("Measure Mu-05"; "Measure Mu-05")
-                {
-                    ApplicationArea = All;
-                }
-                field("Measure Mu-06"; "Measure Mu-06")
-                {
-                    ApplicationArea = All;
-                }
                 field(Measure; Measure)
                 {
                     ApplicationArea = All;
@@ -157,10 +133,6 @@ page 50019 "ACO Bath Sheets"
                 {
                     ApplicationArea = All;
                 }
-                // field("Extra to Enumerate"; "Extra to Enumerate")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Minimum Current Density"; "Minimum Current Density")
                 {
                     ApplicationArea = All;
@@ -252,6 +224,15 @@ page 50019 "ACO Bath Sheets"
                 Caption = 'Bath Sheet Resources';
                 Image = Category;
                 RunObject = Page "ACO Bath Sheet Resources";
+                RunPageLink = "Bath Sheet No." = field("No.");
+                ApplicationArea = All;
+            }
+
+            action("ACO Measure Mu List")
+            {
+                Caption = 'Measure Mu List';
+                Image = Category;
+                RunObject = Page "ACO Measure Mu List";
                 RunPageLink = "Bath Sheet No." = field("No.");
                 ApplicationArea = All;
             }

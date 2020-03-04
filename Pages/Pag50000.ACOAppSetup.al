@@ -107,16 +107,6 @@ page 50000 "ACO App Setup"
                     ApplicationArea = All;
                 }
 
-                field("File Directory Aucos File"; "File Directory Aucos File")
-                {
-                    ApplicationArea = All;
-                }
-
-                field("Archive File Dir. Aucos File"; "Archive File Dir. Aucos File")
-                {
-                    ApplicationArea = All;
-                }
-
                 field("Aucos Staining Time"; "Aucos Staining Time")
                 {
                     ApplicationArea = All;

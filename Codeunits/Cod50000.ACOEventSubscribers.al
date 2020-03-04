@@ -270,7 +270,30 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         Rec.ACOCalculateUnitPrice();
     end;
-    // Calculate Price schema ToDo
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Variant Code', false, false)]
+    local procedure SalesLine_OnAfterValidate_VariantCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        SalesHeader: Record "Sales Header";
+        ItemVariant: Record "Item Variant";
+        ACOHolder2: Record "ACO Holder 2"; // DEPRECATED, 
+    begin
+        if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+            Clear(ItemVariant);
+
+        SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
+
+        ACOHolder2.SetRange("Profile Code", Rec."ACO Profile Code");
+        ACOHolder2.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+        if ItemVariant."ACO Number of Meters" <> 0 then
+            ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
+
+        if ACOHolder2.Count() = 1 then begin
+            ACOHolder2.FindFirst();
+            Rec."ACO Holder" := ACOHolder2.Code;
+        end;
+    end;
+
 
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)

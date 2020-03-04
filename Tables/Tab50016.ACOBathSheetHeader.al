@@ -183,37 +183,37 @@ table 50016 "ACO Bath Sheet Header"
 
         field(22; "Measure Mu-01"; Decimal)
         {
-            Caption = 'Measure Mu-01';
+            Caption = 'Measure Mu-01'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 
         field(23; "Measure Mu-02"; Decimal)
         {
-            Caption = 'Measure Mu-02';
+            Caption = 'Measure Mu-02'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 
         field(24; "Measure Mu-03"; Decimal)
         {
-            Caption = 'Measure Mu-03';
+            Caption = 'Measure Mu-03'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 
         field(25; "Measure Mu-04"; Decimal)
         {
-            Caption = 'Measure Mu-04';
+            Caption = 'Measure Mu-04'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 
         field(26; "Measure Mu-05"; Decimal)
         {
-            Caption = 'Measure Mu-05';
+            Caption = 'Measure Mu-05'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 
         field(27; "Measure Mu-06"; Decimal)
         {
-            Caption = 'Measure Mu-06';
+            Caption = 'Measure Mu-06'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 

@@ -110,6 +110,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 SalesHeader: Record "Sales Header";
                 ACOProfile: Record "ACO Profile";
                 ACOProfileCustomer: Record "ACO Profile Customer";
+                ACOHolder2: Record "ACO Holder 2"; // DEPRECATED, Rename to ACO Holder
+                ItemVariant: Record "Item Variant";
                 ProfileInactiveErr: Label 'Profile Code %1 is inactive.';
             begin
                 ACOProfile.Get("ACO Profile Code");
@@ -122,6 +124,19 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                     ACOProfileCustomer.FindFirst();
+                end;
+
+                if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                    Clear(ItemVariant);
+
+                ACOHolder2.SetRange("Profile Code", "ACO Profile Code");
+                ACOHolder2.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                if ItemVariant."ACO Number of Meters" <> 0 then
+                    ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
+
+                if ACOHolder2.Count() = 1 then begin
+                    ACOHolder2.FindFirst();
+                    Rec."ACO Holder" := ACOHolder2.Code;
                 end;
             end;
 
@@ -332,7 +347,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         field(50044; "ACO Receipt Bag"; Text[20])
         {
-            Caption = 'Receipt Shelf';
+            Caption = 'Receipt Bag';
             DataClassification = CustomerContent;
         }
 
@@ -359,6 +374,31 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Holder';
             TableRelation = "ACO Holder 2";
             DataClassification = CustomerContent;
+
+            trigger OnLookup()
+            var
+                SalesHeader: Record "Sales Header";
+                ItemVariant: Record "Item Variant";
+                // ACOProfileCustomer: Record "ACO Profile Customer";
+                ACOHolder2: Record "ACO Holder 2";//DEPRECATED, Replace with ACO Holder
+                ACOHolders: Page "ACO Holders";
+            begin
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                ACOHolder2.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOHolder2.SetRange("Profile Code", Rec."ACO Profile Code");
+                if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                    ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
+
+                ACOHolders.LookupMode(true);
+                ACOHolders.SetTableView(ACOHolder2);
+
+                if ACOHolders.RunModal() = Action::LookupOK then begin
+                    ACOHolders.SetSelectionFilter(ACOHolder2);
+                    ACOHolders.GetRecord(ACOHolder2);
+                    "ACO Holder" := ACOHolder2.Code;
+                    // Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
+                end;
+            end;
         }
 
         field(50049; "ACO Receipt Shelf"; Text[20])
