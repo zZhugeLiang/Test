@@ -251,8 +251,6 @@ report 50000 "ACO Bath Sheet"
         ThinCaptionLbl: Label 'Thin';
         CustomerCaptionLbl: Label 'Customer';
         TreatmentCaptionLbl: Label 'Treatment';
-        TMLineCaptionLbl: Label 'TMLine';
-
         MEASURECaptionLbl: Label 'M E A S U R E';
         DONOTMEASURECaptionLbl: Label 'D O  N O T  M E A S U R E';
         HighEndCaptionLbl: Label 'High End';

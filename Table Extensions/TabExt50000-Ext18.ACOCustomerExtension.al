@@ -78,9 +78,22 @@ tableextension 50000 "ACO Customer Extension" extends Customer
             DataClassification = CustomerContent;
         }
 
-        field(50012; "Shelf No. Mandatory on Package"; Boolean)
+        field(50012; "ACO Shelf No. Mand. on Package"; Boolean)
         {
             Caption = 'Shelf No. Mandatory on Package';
+            DataClassification = CustomerContent;
+        }
+
+        field(50013; "ACO No. Series Packages"; Code[20])
+        {
+            Caption = 'No. Series Packages';
+            TableRelation = "No. Series";
+            DataClassification = CustomerContent;
+        }
+
+        field(50014; "ACO Rack No. Mand. on Package"; Boolean)
+        {
+            Caption = 'Rack No. Mandatory on Package';
             DataClassification = CustomerContent;
         }
     }

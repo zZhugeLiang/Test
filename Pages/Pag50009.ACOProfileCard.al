@@ -96,10 +96,12 @@ page 50009 "ACO Profile Card"
                     var
                         InStr: InStream;
                         OutStr: OutStream;
+                        tmpFileName: Text;
                     begin
                         "Picture File".CreateOutStream(OutStr);
-                        UploadIntoStream('Upload document', '', '', "Picture Filename", InStr);
+                        UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
+                        "Picture Filename" := CopyStr(tmpFileName,0,250);
                         Modify();
                     end;
                 }
@@ -111,10 +113,12 @@ page 50009 "ACO Profile Card"
                     var
                         InStr: InStream;
                         OutStr: OutStream;
+                        tmpFileName: Text;
                     begin
                         "Clamping Method File".CreateOutStream(OutStr);
-                        UploadIntoStream('Upload document', '', '', "Clamping Method Filename", InStr);
+                        UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
+                        "Clamping Method Filename" := CopyStr(tmpFileName,0,250);
                         Modify();
                     end;
                 }
@@ -126,10 +130,12 @@ page 50009 "ACO Profile Card"
                     var
                         InStr: InStream;
                         OutStr: OutStream;
+                        tmpFileName: Text;
                     begin
                         "Packaging Instructions File".CreateOutStream(OutStr);
-                        UploadIntoStream('Upload document', '', '', "Packaging Instr. Filename", InStr);
+                        UploadIntoStream('Upload document', '', '', tmpFileName , InStr);
                         CopyStream(OutStr, InStr);
+                        "Packaging Instr. Filename" := CopyStr(tmpFileName,0,250);
                         Modify();
                     end;
                 }
@@ -169,9 +175,11 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
+                    tmpFileName: text;
                 begin
                     "Picture File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Picture Filename")
+                    DownloadFromStream(InStr, '', '', '', tmpFileName);
+                    "Picture Filename" := CopyStr(tmpFileName,0,250);
                 end;
             }
             action(DownloadClampingMethod)
@@ -182,9 +190,11 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
+                    tmpFileName: Text;
                 begin
                     "Clamping Method File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Clamping Method Filename")
+                    DownloadFromStream(InStr, '', '', '', tmpFileName);
+                    "Clamping Method Filename" := CopyStr(tmpFileName,0,250);
                 end;
             }
             action(DownloadPackagingInstructions)
@@ -195,9 +205,11 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
+                    tmpFileName: Text;
                 begin
                     "Packaging Instructions File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename")
+                    DownloadFromStream(InStr, '', '', '', tmpFileName);
+                    "Packaging Instr. Filename" := CopyStr(tmpFileName,0,250);
                 end;
             }
         }
