@@ -1518,10 +1518,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Field Bath Sheet No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 561029783 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
+        <trans-unit id="Table 561029783 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Field Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measure Mu - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 561029783 - Field 1131619133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Value</source>
