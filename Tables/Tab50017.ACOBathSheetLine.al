@@ -174,14 +174,14 @@ table 50017 "ACO Bath Sheet Line"
             Caption = 'Wrapped';
             DataClassification = CustomerContent;
         }
-	
-	field(24; "Packed"; Boolean)
+
+        field(24; "Packed"; Boolean)
         {
             Caption = 'Packed';
             Editable = true;
             DataClassification = CustomerContent;
         }
-	
+
         field(25; "Completed"; Boolean)
         {
             Caption = 'Completed';
@@ -189,13 +189,13 @@ table 50017 "ACO Bath Sheet Line"
             FieldClass = FlowField;
             CalcFormula = Lookup ("ACO Bath Sheet Header".Complete where("No." = field("Bath Sheet No.")));
         }
-	
-        field(26;"Qty in Package";Decimal)
+
+        field(26; "Qty in Package"; Decimal)
         {
             Caption = 'Qty. in Package';
             Editable = true;
             DataClassification = CustomerContent;
-        }	
+        }
     }
 
     keys

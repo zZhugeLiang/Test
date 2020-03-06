@@ -1,10 +1,9 @@
 page 50030 "ACO Package Card"
 {
-    
     PageType = Card;
     SourceTable = "ACO Package Header";
     Caption = 'ACO Package Card';
-    
+
     layout
     {
         area(content)
@@ -51,17 +50,15 @@ page 50030 "ACO Package Card"
                 {
                     ApplicationArea = All;
                 }
-
             }
 
-            Part("Package Lines";"ACO Package Card SubPage")
+            Part("Package Lines"; "ACO Package Card SubPage")
             {
                 Editable = false;
-                SubPageLink = "Package No." = FIELD("No.");
+                SubPageLink = "Package No." = field("No.");
                 UpdatePropagation = Both;
                 ApplicationArea = All;
             }
         }
     }
-    
 }

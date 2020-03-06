@@ -1,8 +1,6 @@
 table 50024 "ACO Package Line"
 {
     DataClassification = CustomerContent;
-    DrillDownPageId = "ACO Bath Sheet Resources";
-    LookupPageId = "ACO Bath Sheet Resources";
 
     fields
     {
