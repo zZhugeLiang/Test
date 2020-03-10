@@ -1,6 +1,6 @@
 page 50019 "ACO Bath Sheets"
 {
-    PageType = Document;
+    PageType = List;
     SourceTable = "ACO Bath Sheet Header";
     Caption = 'Bath Sheets';
     InsertAllowed = false;

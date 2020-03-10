@@ -154,10 +154,19 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                ACOAppSetup: Record "ACO App Setup";
+                ACOMeasureMu: Record "ACO Measure Mu";
             begin
                 Testfield("Surface Attachrack");
                 TestField("Attach Method");
-                Testfield("Measure Mu-01");
+
+                ACOAppSetup.Get();
+
+                if ACOAppSetup."Bath Sheet Measure Mu No." <> '' then begin
+                    ACOMeasureMu.Get("No.", ACOAppSetup."Bath Sheet Measure Mu No.");
+                    ACOMeasureMu.TestField(Value);
+                end;
             end;
         }
 

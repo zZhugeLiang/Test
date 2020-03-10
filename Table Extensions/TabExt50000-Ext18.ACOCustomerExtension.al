@@ -78,7 +78,7 @@ tableextension 50000 "ACO Customer Extension" extends Customer
             DataClassification = CustomerContent;
         }
 
-        field(50012; "ACO Shelf No. Mand. on Package"; Boolean)
+        field(50012; "Shelf No. Mandatory on Package"; Boolean) // DEPRECATED, rename to ACO Shelf No. Mand. on Package
         {
             Caption = 'Shelf No. Mandatory on Package';
             DataClassification = CustomerContent;

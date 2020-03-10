@@ -2,7 +2,7 @@ page 50030 "ACO Package Card"
 {
     PageType = Card;
     SourceTable = "ACO Package Header";
-    Caption = 'ACO Package Card';
+    Caption = 'Package Card';
 
     layout
     {

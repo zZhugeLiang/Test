@@ -133,6 +133,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Layer Thickness Tolerance - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3741738785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet Measure Mu No. to Check</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Bath Sheet Measure Mu No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2063,11 +2068,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TreatmentCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 371732247 - NamedType 1289917125" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TMLine</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TMLineCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 235176040" size-unit="char" translate="yes" xml:space="preserve">
           <source>M E A S U R E</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2613,10 +2613,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO No. Series Packages - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2847388252 - Field 2873313556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>Rack no. Mandatory on Package</source>
+        <trans-unit id="TableExtension 2847388252 - Field 1138253110 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Rack No. Mandatory on Package</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Rack no. Mandatory on Pckg - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Rack No. Mand. on Package - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 607252771 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source> Pretreatment</source>

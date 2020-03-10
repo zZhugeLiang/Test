@@ -1,9 +1,9 @@
 page 50029 "ACO Packages"
 {
-    
+
     PageType = List;
     SourceTable = "ACO Package Header";
-    Caption = 'ACO Packages';
+    Caption = 'Packages';
     ApplicationArea = All;
     UsageCategory = Lists;
     Editable = false;
@@ -58,5 +58,5 @@ page 50029 "ACO Packages"
             }
         }
     }
-    
+
 }

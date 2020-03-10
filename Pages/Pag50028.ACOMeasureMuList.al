@@ -2,7 +2,7 @@ page 50028 "ACO Measure Mu List"
 {
     PageType = List;
     SourceTable = "ACO Measure Mu";
-    Caption = 'ACO Measure Mu List';
+    Caption = 'Measure Mu List';
     ApplicationArea = All;
     UsageCategory = Lists;
 

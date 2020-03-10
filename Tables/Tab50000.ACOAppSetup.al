@@ -160,6 +160,12 @@ table 50000 "ACO App Setup"
             Caption = 'Layer Thickness Tolerance';
             DataClassification = CustomerContent;
         }
+
+        field(26; "Bath Sheet Measure Mu No."; Code[10])
+        {
+            Caption = 'Bath Sheet Measure Mu No. to Check';
+            DataClassification = CustomerContent;
+        }
         // field(25; "Maximum Bath Length"; Decimal)
         // {
         //     Caption = 'Maximum Bath Length';

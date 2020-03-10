@@ -2,7 +2,7 @@ page 50021 "ACO Bath Sheet Subpage"
 {
     PageType = ListPart;
     SourceTable = "ACO Bath Sheet Line";
-    Caption = 'ACO Bath Sheet Subpage';
+    Caption = 'Bath Sheet Subpage';
     InsertAllowed = false;
 
     layout

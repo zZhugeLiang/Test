@@ -1,9 +1,10 @@
 page 50020 "ACO Bath Sheet"
 {
-    PageType = Card;
+    PageType = Document;
     SourceTable = "ACO Bath Sheet Header";
     Caption = 'Bath Sheet';
     InsertAllowed = false;
+    UsageCategory = Lists;
 
     layout
     {
@@ -290,6 +291,7 @@ page 50020 "ACO Bath Sheet"
 
                 trigger OnAction()
                 var
+                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
                     ACOBathSheetLine: Record "ACO Bath Sheet Line";
                     ACOColor: Record "ACO Color";
                     ACOProfile: Record "ACO Profile";
@@ -309,18 +311,6 @@ page 50020 "ACO Bath Sheet"
                     NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
                     ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
                 begin
-                    // ACOAucosExport.SetTableView(Rec);
-                    // ACOAucosExport.Run();
-                    // ACOAucosExport.Export();
-
-                    // TempBlob.Blob.CREATEOUTSTREAM(FileOutStream);
-
-                    // Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
-
-                    // TempBlob.Blob.CREATEINSTREAM(FileInStream);
-                    // FileName := 'BathSheet.csv';
-                    // DownloadFromStream(FileInStream, '', '', '', FileName);
-                    // exit;
                     ACOAppSetup.Get();
                     ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                     if ACOAppSetup."Aucos Max. No. of Lines" > 0 then
@@ -357,25 +347,13 @@ page 50020 "ACO Bath Sheet"
                         until ACOBathSheetLine.Next() = 0;
 
                     TempBlob.CreateOutStream(FileOutStream);
-                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+                    ACOBathSheetHeader := Rec;
+                    ACOBathSheetHeader.SetRecFilter();
+                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
                     TempBlob.CreateInStream(FileInStream);
 
                     FileName := "No." + '_export.csv';
                     DownloadFromStream(FileInStream, '', '', '', FileName);
-                    // if ExtraFlushing then begin
-
-                    // end else begin
-
-                    // end;
-                    // ACOAucosExport.Export()
-
-                    //IF EXISTS(XmlFileName) THEN
-                    //ERASE(XmlFileName);
-
-                    // XmlFile.CREATE(XmlFileName);
-                    // XmlFile.CREATEOUTSTREAM(OutStreamVar);
-                    // XMLPORT.EXPORT(XMLPORT::"Your XmlPort",OutStreamVar); 
-                    // XmlFile.CLOSE;
                 end;
             }
 
@@ -387,13 +365,17 @@ page 50020 "ACO Bath Sheet"
 
                 trigger OnAction()
                 var
+                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
                     TempBlob: Codeunit "Temp Blob";
                     FileOutStream: OutStream;
                     FileInStream: InStream;
                     FileName: Text;
                 begin
                     TempBlob.CreateOutStream(FileOutStream);
-                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream);
+
+                    ACOBathSheetHeader := Rec;
+                    ACOBathSheetHeader.SetRecFilter();
+                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
                     TempBlob.CreateInStream(FileInStream);
 
                     FileName := "No." + '_export.csv';

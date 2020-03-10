@@ -89,6 +89,11 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Bath Sheet Measure Mu No."; "Bath Sheet Measure Mu No.")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(Aucos)
