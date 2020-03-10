@@ -2214,7 +2214,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Page 2801324966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Bath Sheet Subpage</source>
+          <source>Bath Sheet Subpage</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Subpage - Property Caption</note>
         </trans-unit>
@@ -2404,17 +2404,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Resources - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Measure Mu List</source>
+          <source>Measure Mu List</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measure Mu List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2572220696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Packages</source>
+          <source>Packages</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packages - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 321586477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ACO Package Card</source>
+          <source>Package Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card - Property Caption</note>
         </trans-unit>

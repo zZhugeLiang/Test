@@ -639,6 +639,9 @@ table 50016 "ACO Bath Sheet Header"
                                                 MinAnodiseTime: Decimal; MinCurrDens: Decimal; MaxCurrDens: Decimal; MaxCurrentDensityBath: Decimal)
     begin
         // Calculate Density
+        if TotalSurface = 0 then
+            exit;
+
         CurrDens := Str / (TotalSurface * 100);
 
         if CurrDens < MinCurrDens then
@@ -646,6 +649,9 @@ table 50016 "ACO Bath Sheet Header"
 
         if CurrDens > MaxCurrDens then
             CurrDens := MaxCurrDens;
+
+        if CurrDens = 0 then
+            exit;
 
         BathTime := (3 * LayerThickness / CurrDens);
 
