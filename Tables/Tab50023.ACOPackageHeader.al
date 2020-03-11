@@ -1,5 +1,8 @@
 table 50023 "ACO Package Header"
 {
+    Caption = 'Package Header';
+    DrillDownPageId = "ACO Packages";
+    LookupPageId = "ACO Packages";
     DataClassification = CustomerContent;
 
     fields

@@ -1,5 +1,6 @@
 table 50019 "ACO Project Color Line"
 {
+    Caption = 'Project Color Line';
     DataClassification = CustomerContent;
 
     fields

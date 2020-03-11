@@ -1,8 +1,8 @@
 page 50023 "ACO Project Color"
 {
-    Caption = 'Project Color';
     PageType = Document;
     SourceTable = "ACO Project Color Header";
+    Caption = 'Project Color';
     ApplicationArea = All;
     UsageCategory = Lists;
 

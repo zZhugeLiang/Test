@@ -30,6 +30,11 @@ page 50000 "ACO App Setup"
                     ApplicationArea = All;
                 }
 
+                field("Default Measured Color Nos."; "Default Measured Color Nos.")
+                {
+                    ApplicationArea = All;
+                }
+
                 field("Pretreatment Dimension Code"; "Pretreatment Dimension Code")
                 {
                     ApplicationArea = All;

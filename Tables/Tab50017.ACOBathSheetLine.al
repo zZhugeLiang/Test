@@ -1,5 +1,6 @@
 table 50017 "ACO Bath Sheet Line"
 {
+    Caption = 'Bath Sheet Line';
     DataClassification = CustomerContent;
 
     fields

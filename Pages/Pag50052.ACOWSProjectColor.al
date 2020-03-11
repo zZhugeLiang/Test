@@ -1,17 +1,19 @@
-page 50024 "ACO Project Color Subpage"
+page 50052 "ACO WS Project Color"
 {
-    Caption = 'Project Color Subpage';
-    PageType = ListPart;
-    SourceTable = "ACO Project Color Line";
-    AutoSplitKey = true;
+    PageType = Document;
+    SourceTable = "ACO Project Color Header";
+    Caption = 'Project Color';
+    InsertAllowed = false;
+    ModifyAllowed = false;
+    DeleteAllowed = false;
 
     layout
     {
         area(Content)
         {
-            repeater(ProjectColors)
+            Group(General)
             {
-                field("Line No."; "Line No.")
+                field("No."; "No.")
                 {
                     ApplicationArea = All;
                 }
@@ -27,30 +29,28 @@ page 50024 "ACO Project Color Subpage"
                 {
                     ApplicationArea = All;
                 }
-                field("Location"; "Location")
+                field("Note"; "Note")
                 {
                     ApplicationArea = All;
                 }
-                field("Target Type"; "Target Type")
+                field("Note Operator"; "Note Operator")
                 {
                     ApplicationArea = All;
                 }
-                field("Target Value"; "Target Value")
+                field("Conductivity Factor"; "Conductivity Factor")
                 {
                     ApplicationArea = All;
                 }
-                field("Target Minimum"; "Target Minimum")
+                field("Inactive"; "Inactive")
                 {
                     ApplicationArea = All;
                 }
-                field("Target Maximum"; "Target Maximum")
-                {
-                    ApplicationArea = All;
-                }
-                field("Operator Visible"; "Operator Visible")
-                {
-                    ApplicationArea = All;
-                }
+            }
+
+            part("ACO Project Color Subpage"; "ACO Project Color Subpage")
+            {
+                SubPageLink = "Project Color No." = field("No.");
+                ApplicationArea = All;
             }
         }
     }

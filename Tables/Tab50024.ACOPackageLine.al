@@ -1,5 +1,6 @@
 table 50024 "ACO Package Line"
 {
+    Caption = 'Package Header';
     DataClassification = CustomerContent;
 
     fields
