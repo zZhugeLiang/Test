@@ -61,7 +61,6 @@ table 50018 "ACO Project Color Header"
             Caption = 'No. Series';
             DataClassification = CustomerContent;
         }
-
     }
 
     keys

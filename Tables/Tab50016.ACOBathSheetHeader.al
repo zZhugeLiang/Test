@@ -467,7 +467,7 @@ table 50016 "ACO Bath Sheet Header"
 
     local procedure CalculateTotalSurface()
     begin
-        "Total Surface" := "Total Surface Profiles" + ("Surface Attachrack" / 100) + "Surface Addition";
+        "Total Surface" := "Total Surface Profiles" + "Surface Attachrack" + "Surface Addition";
     end;
 
     procedure UpdateBathSheetHeader()

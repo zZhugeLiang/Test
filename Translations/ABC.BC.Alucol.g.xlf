@@ -138,6 +138,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Bath Sheet Measure Mu No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 35361578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Project Color Nos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Measured Color Nos. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1384,7 +1389,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Color,Seal</source>
+          <source> ,Color,Seal,Tin Bath,Anodize,Gold Bath</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property OptionCaption</note>
         </trans-unit>
@@ -1692,6 +1697,86 @@
           <source>Quantity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ACO Measured Color</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Color,Seal,Tin Bath,Anodize,Gold Bath</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Location - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 3730438861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Batch No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 355523985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Bath Sheet No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 1278445735 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCIL</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field SCIL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 3660323180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCIA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field SCIA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 3052501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCIB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field SCIB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 1536392483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCEL</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field SCEL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 429908272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCEA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field SCEA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 1067604889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCEB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field SCEB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 3572756595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created DateTime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Created DateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 1917596716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Accord</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Accord - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 1814464443 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 330752632 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field No. Series - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
@@ -2002,6 +2087,11 @@
           <source>Measure Mu List</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measure Mu List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measured Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measured Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet</source>
@@ -2437,6 +2527,11 @@
           <source>Customer is not the same for all selected bathsheet lines.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblCustomerErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ACO Measured Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measured Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4164356835 - Control 3961767479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Resource</source>

@@ -166,6 +166,13 @@ table 50000 "ACO App Setup"
             Caption = 'Bath Sheet Measure Mu No. to Check';
             DataClassification = CustomerContent;
         }
+
+        field(27; "Default Measured Color Nos."; Code[20])
+        {
+            Caption = 'Default Project Color Nos.';
+            TableRelation = "No. Series";
+            DataClassification = CustomerContent;
+        }
         // field(25; "Maximum Bath Length"; Decimal)
         // {
         //     Caption = 'Maximum Bath Length';

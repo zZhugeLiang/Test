@@ -8,6 +8,7 @@ pageextension 50008 "ACO Item Variants Extension" extends "Item Variants"
             {
                 ApplicationArea = All;
             }
+
         }
     }
 }

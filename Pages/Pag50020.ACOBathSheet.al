@@ -388,7 +388,7 @@ page 50020 "ACO Bath Sheet"
             action("ACO Bath Sheet Resources")
             {
                 Caption = 'Bath Sheet Resources';
-                Image = Category;
+                Image = Resource;
                 RunObject = Page "ACO Bath Sheet Resources";
                 RunPageLink = "Bath Sheet No." = field("No.");
                 ApplicationArea = All;
@@ -397,8 +397,17 @@ page 50020 "ACO Bath Sheet"
             action("ACO Measure Mu List")
             {
                 Caption = 'Measure Mu List';
-                Image = Category;
+                Image = EditList;
                 RunObject = Page "ACO Measure Mu List";
+                RunPageLink = "Bath Sheet No." = field("No.");
+                ApplicationArea = All;
+            }
+
+            action("ACO Measured Colors")
+            {
+                Caption = 'Measured Colors';
+                Image = Category;
+                RunObject = Page "ACO Measured Colors";
                 RunPageLink = "Bath Sheet No." = field("No.");
                 ApplicationArea = All;
             }

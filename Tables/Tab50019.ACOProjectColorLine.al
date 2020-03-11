@@ -42,8 +42,8 @@ table 50019 "ACO Project Color Line"
         field(6; "Location"; Option)
         {
             Caption = 'Location';
-            OptionMembers = " ",Color,Seal;
-            OptionCaption = ' ,Color,Seal';
+            OptionMembers = " ",Color,Seal,"Tin Bath",Anodize,"Gold Bath";
+            OptionCaption = ' ,Color,Seal,Tin Bath,Anodize,Gold Bath';
             DataClassification = CustomerContent;
         }
 
