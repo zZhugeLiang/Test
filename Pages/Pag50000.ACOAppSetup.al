@@ -118,10 +118,6 @@ page 50000 "ACO App Setup"
                     ApplicationArea = All;
                 }
 
-                field("No. Series Packages"; "No. Series Packages")
-                {
-                    ApplicationArea = All;
-                }
                 field("Aucos Max. No. of Lines"; "Aucos Max. No. of Lines")
                 {
                     ApplicationArea = All;

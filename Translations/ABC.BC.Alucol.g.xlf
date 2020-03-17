@@ -2778,6 +2778,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblCustomerErr</note>
         </trans-unit>
+        <trans-unit id="Page 2436688764 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The number series was not set in both the Customer and App Settings.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblNoNumberSeriesErr</note>
+        </trans-unit>
         <trans-unit id="Page 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
           <note from="Developer" annotates="general" priority="2"></note>

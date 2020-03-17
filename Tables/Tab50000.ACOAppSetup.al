@@ -114,11 +114,13 @@ table 50000 "ACO App Setup"
             DataClassification = CustomerContent;
         }
 
-        field(17; "No. Series Packages"; Code[20])
+        field(17; "No. Series Packages"; Code[20])     // DEPRICATED
         {
-            Caption = 'No. Series Packages';
+            Caption = 'No. Series Packages';  
             TableRelation = "No. Series";
             DataClassification = CustomerContent;
+            ObsoleteReason = 'Multiple fields for the same goal.';
+            ObsoleteState = Pending;
         }
         field(18; "Aucos Max. No. of Lines"; Integer)
         {
