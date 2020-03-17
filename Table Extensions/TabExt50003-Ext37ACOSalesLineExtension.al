@@ -427,7 +427,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50054; "ACO Packaging"; Code[20])
         {
             Caption = 'Packaging';
-            TableRelation = "ACO Packaging";
+            TableRelation = "ACO Packaging".Code;
             DataClassification = CustomerContent;
 
             trigger OnLookup()
