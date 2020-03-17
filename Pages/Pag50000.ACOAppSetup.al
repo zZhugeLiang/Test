@@ -99,6 +99,16 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Rack Packaging Code"; "Rack Packaging Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Package Packaging Code"; "Package Packaging Code")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(Aucos)

@@ -110,8 +110,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 SalesHeader: Record "Sales Header";
                 ACOProfile: Record "ACO Profile";
                 ACOProfileCustomer: Record "ACO Profile Customer";
-                ACOHolder2: Record "ACO Holder 2"; // DEPRECATED, Rename to ACO Holder
-                ItemVariant: Record "Item Variant";
+                ACOManagement: Codeunit "ACO Management";
                 ProfileInactiveErr: Label 'Profile Code %1 is inactive.';
             begin
                 ACOProfile.Get("ACO Profile Code");
@@ -126,18 +125,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     ACOProfileCustomer.FindFirst();
                 end;
 
-                if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    Clear(ItemVariant);
-
-                ACOHolder2.SetRange("Profile Code", "ACO Profile Code");
-                ACOHolder2.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                if ItemVariant."ACO Number of Meters" <> 0 then
-                    ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
-
-                if ACOHolder2.Count() = 1 then begin
-                    ACOHolder2.FindFirst();
-                    Rec."ACO Holder" := ACOHolder2.Code;
-                end;
+                ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
             end;
 
             trigger OnLookup()
@@ -435,6 +423,37 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Kundentour HUECK';
             DataClassification = CustomerContent;
         }
+
+        field(50054; "ACO Packaging"; Code[20])
+        {
+            Caption = 'Packaging';
+            TableRelation = "ACO Packaging";
+            DataClassification = CustomerContent;
+
+            trigger OnLookup()
+            var
+                SalesHeader: Record "Sales Header";
+                ItemVariant: Record "Item Variant";
+                ACOPackaging: Record "ACO Packaging";
+                ACOPackagingList: Page "ACO Packaging List";
+            begin
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                ACOPackaging.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOPackaging.SetRange("Profile Code", Rec."ACO Profile Code");
+                if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                    ACOPackaging.SetRange(Length, ItemVariant."ACO Number of Meters");
+
+                ACOPackagingList.LookupMode(true);
+                ACOPackagingList.SetTableView(ACOPackaging);
+
+                if ACOPackagingList.RunModal() = Action::LookupOK then begin
+                    ACOPackagingList.SetSelectionFilter(ACOPackaging);
+                    ACOPackagingList.GetRecord(ACOPackaging);
+                    "ACO Packaging" := ACOPackaging.Code;
+                end;
+            end;
+        }
+
     }
 
     procedure ACOCalculateUnitPrice()

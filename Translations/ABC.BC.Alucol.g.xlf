@@ -143,6 +143,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Measured Color Nos. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 565146195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rack Packaging Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Rack Packaging Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 669089404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Packaging Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Package Packaging Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1798,6 +1808,221 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field No. Series - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 888430590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 69064294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Type Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Packaging Type Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 613790498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Width</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Width - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 2500313017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Type Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Package Type Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 793634555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Inside Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 403563375 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Packaging Unit of Measure Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 157206626 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Inside Unit of Measure Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 109320044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Layer Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 3817831017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity per Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Quantity per Layer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 3271315323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Quantity per Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Quantity per Layer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 165805856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Number of Layers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Number of Layers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 2729579924 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Maximum Width</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Maximum Width - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 2905220811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Maximum Height</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Maximum Height - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 2969163710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Remark - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active,Inactive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 64086670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 64086670 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 64086670 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 64086670 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 64086670 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Rack,Pack</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1075902841 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1075902841 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Type - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1075902841 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Type - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1845881227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1845881227 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1845881227 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1845881227 - Field 2207293949 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rack</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside - Field Rack - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1845881227 - Field 3820220526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside - Field Package - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2708688503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Unit of Measure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2708688503 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Unit of Measure - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2708688503 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Unit of Measure - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2161481834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside Unit of Measure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2161481834 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside Unit of Measure - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2161481834 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Inside Unit of Measure - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 20896260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Build-up Layer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 20896260 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Build-up Layer - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 20896260 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Build-up Layer - Field Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1967,6 +2192,11 @@
           <source>Holders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 1420859964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Packaging List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2469371202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Types</source>
@@ -2552,6 +2782,41 @@
           <source>Measured Colors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measured Colors - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1420859964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packaging List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3308925275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packaging Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1279684272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2683207574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Insides</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Insides - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1439247426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Units of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packaging Units of Measure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1219096983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside Units of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Inside Units of Measure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2949633637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Layers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Build-up Layers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
@@ -3157,6 +3422,11 @@
           <source>Kundentour HUECK</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Kundentour HUECK - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 888430590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Packaging</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Packaging - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1709463785 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Quantity Charges</source>

@@ -165,7 +165,6 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                 trigger OnAction();
                 var
-
                     AppSetup: Record "ACO App Setup";
                     Customer: Record "Customer";
                     PackageHeader: Record "ACO Package Header";
@@ -183,7 +182,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                     if BathLineTempRecord.FindSet() then
                         repeat
                             SalesOrder.Reset();
-                            SalesOrder.Get(BathLineTempRecord."Sales Order No.");
+                            SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.");
                             IF (BathLineTempRecord."Qty in Package" > 0) and (tempCustomerNo <> '') and (SalesOrder."Sell-to Customer No." <> tempCustomerNo) then
                                 Error(lblCustomerErr);
                             tempCustomerNo := SalesOrder."Sell-to Customer No.";
@@ -232,7 +231,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 PackageLine."Profile Description" := BathLineTempRecord."Profile Description";
                                 PackageLine.Length := BathLineTempRecord.Length;
                                 PackageLine.Treatment := BathLineTempRecord.Treatment;
-                                if SalesOrder.Get("Sales Order No.") then begin
+                                if SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.") then begin
                                     PackageLine."Your Reference" := SalesOrder."Your Reference";
                                     PackageLine."External Document No." := SalesOrder."External Document No.";
                                 end;
@@ -245,6 +244,7 @@ page 50032 "ACO Bathsheet Lines To Process"
             }
         }
     }
+
     var
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';

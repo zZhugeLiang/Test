@@ -173,6 +173,20 @@ table 50000 "ACO App Setup"
             TableRelation = "No. Series";
             DataClassification = CustomerContent;
         }
+
+        field(28; "Rack Packaging Code"; Code[20])
+        {
+            Caption = 'Rack Packaging Code';
+            TableRelation = "ACO Packaging".Code;
+            DataClassification = CustomerContent;
+        }
+
+        field(29; "Package Packaging Code"; Code[20])
+        {
+            Caption = 'Package Packaging Code';
+            TableRelation = "ACO Packaging".Code;
+            DataClassification = CustomerContent;
+        }
         // field(25; "Maximum Bath Length"; Decimal)
         // {
         //     Caption = 'Maximum Bath Length';

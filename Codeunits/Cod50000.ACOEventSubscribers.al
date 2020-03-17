@@ -276,22 +276,14 @@ codeunit 50000 "ACO Event Subscribers"
     var
         SalesHeader: Record "Sales Header";
         ItemVariant: Record "Item Variant";
-        ACOHolder2: Record "ACO Holder 2"; // DEPRECATED, 
+        ACOManagement: Codeunit "ACO Management";
     begin
         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
             Clear(ItemVariant);
 
         SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
 
-        ACOHolder2.SetRange("Profile Code", Rec."ACO Profile Code");
-        ACOHolder2.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-        if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
-
-        if ACOHolder2.Count() = 1 then begin
-            ACOHolder2.FindFirst();
-            Rec."ACO Holder" := ACOHolder2.Code;
-        end;
+        ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;
 
 
