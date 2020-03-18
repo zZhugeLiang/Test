@@ -1,4 +1,4 @@
-// table 50033 "ACO Imported Sales Order Line"
+// table 50036 "ACO Imported Sales Order Line"
 // {
 //     Caption = 'Imported Sales Order Line';
 //     DataClassification = CustomerContent;

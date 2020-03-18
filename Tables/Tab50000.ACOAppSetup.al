@@ -116,7 +116,7 @@ table 50000 "ACO App Setup"
 
         field(17; "No. Series Packages"; Code[20])
         {
-            Caption = 'No. Series Packages';
+            Caption = 'No. Series Packages'; // DEPRECATED
             TableRelation = "No. Series";
             DataClassification = CustomerContent;
         }

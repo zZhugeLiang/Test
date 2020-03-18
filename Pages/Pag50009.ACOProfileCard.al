@@ -101,7 +101,7 @@ page 50009 "ACO Profile Card"
                         "Picture File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Picture Filename" := CopyStr(tmpFileName,0,250);
+                        "Picture Filename" := CopyStr(tmpFileName, 0, 250);
                         Modify();
                     end;
                 }
@@ -118,7 +118,7 @@ page 50009 "ACO Profile Card"
                         "Clamping Method File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Clamping Method Filename" := CopyStr(tmpFileName,0,250);
+                        "Clamping Method Filename" := CopyStr(tmpFileName, 0, 250);
                         Modify();
                     end;
                 }
@@ -133,9 +133,9 @@ page 50009 "ACO Profile Card"
                         tmpFileName: Text;
                     begin
                         "Packaging Instructions File".CreateOutStream(OutStr);
-                        UploadIntoStream('Upload document', '', '', tmpFileName , InStr);
+                        UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Packaging Instr. Filename" := CopyStr(tmpFileName,0,250);
+                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 0, 250);
                         Modify();
                     end;
                 }
@@ -179,7 +179,7 @@ page 50009 "ACO Profile Card"
                 begin
                     "Picture File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Picture Filename" := CopyStr(tmpFileName,0,250);
+                    "Picture Filename" := CopyStr(tmpFileName, 0, 250);
                 end;
             }
             action(DownloadClampingMethod)
@@ -194,7 +194,7 @@ page 50009 "ACO Profile Card"
                 begin
                     "Clamping Method File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Clamping Method Filename" := CopyStr(tmpFileName,0,250);
+                    "Clamping Method Filename" := CopyStr(tmpFileName, 0, 250);
                 end;
             }
             action(DownloadPackagingInstructions)
@@ -209,7 +209,7 @@ page 50009 "ACO Profile Card"
                 begin
                     "Packaging Instructions File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Packaging Instr. Filename" := CopyStr(tmpFileName,0,250);
+                    "Packaging Instr. Filename" := CopyStr(tmpFileName, 0, 250);
                 end;
             }
         }

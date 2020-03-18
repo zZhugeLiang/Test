@@ -47,21 +47,21 @@ table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Holder
 
         field(7; "Holder Code"; Code[30])
         {
-            Caption = 'Holder Code';
+            Caption = 'DEPRECATED'; // DEPRECATED
             TableRelation = "ACO Holder Type";
             DataClassification = CustomerContent;
         }
 
         field(8; "Support Holder Code"; Code[30])
         {
-            Caption = 'Support Holder Code';
+            Caption = 'DEPRECATED'; // DEPRECATED
             TableRelation = "ACO Support Holder";
             DataClassification = CustomerContent;
         }
 
         field(9; "Distance Holder Code"; Code[30])
         {
-            Caption = 'Distance Holder Code';
+            Caption = 'DEPRECATED'; // DEPRECATED
             TableRelation = "ACO Distance Holder";
             DataClassification = CustomerContent;
         }

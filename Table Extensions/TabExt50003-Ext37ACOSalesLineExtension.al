@@ -113,13 +113,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOManagement: Codeunit "ACO Management";
                 ProfileInactiveErr: Label 'Profile Code %1 is inactive.';
             begin
-                ACOProfile.Get("ACO Profile Code");
-                if ACOProfile."Blocked State Inactive" then
-                    Error(ProfileInactiveErr, "ACO Profile Code");
-
-                SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
-
                 if "ACO Profile Code" <> '' then begin
+                    ACOProfile.Get("ACO Profile Code");
+                    if ACOProfile."Blocked State Inactive" then
+                        Error(ProfileInactiveErr, "ACO Profile Code");
+
+                    SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
+
                     ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                     ACOProfileCustomer.FindFirst();
@@ -383,9 +383,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 if ACOHolders.RunModal() = Action::LookupOK then begin
                     ACOHolders.SetSelectionFilter(ACOHolder2);
                     ACOHolders.GetRecord(ACOHolder2);
-                    "ACO Holder" := ACOHolder2.Code;
+                    Validate("ACO Holder", ACOHolder2.Code);
                     // Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
                 end;
+            end;
+
+            trigger OnValidate()
+            var
+                SalesHeader: Record "Sales Header";
+                ACOManagement: Codeunit "ACO Management";
+            begin
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                ACOManagement.CheckStatusLinkedHolders(Rec."ACO Holder", SalesHeader."Sell-to Customer No.", Rec."ACO Profile Code", true);
             end;
         }
 

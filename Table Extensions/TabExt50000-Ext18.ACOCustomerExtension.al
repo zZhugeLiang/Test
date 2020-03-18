@@ -86,7 +86,7 @@ tableextension 50000 "ACO Customer Extension" extends Customer
 
         field(50013; "ACO No. Series Packages"; Code[20])
         {
-            Caption = 'No. Series Packages';
+            Caption = 'No. Series Packages'; // DEPRECATED
             TableRelation = "No. Series";
             DataClassification = CustomerContent;
         }

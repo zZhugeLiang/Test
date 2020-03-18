@@ -35,18 +35,6 @@ page 50016 "ACO Holder Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Holder Code"; "Holder Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Support Holder Code"; "Support Holder Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Distance Holder Code"; "Distance Holder Code")
-                {
-                    ApplicationArea = All;
-                }
                 field("Attach Method Code"; "Attach Method Code")
                 {
                     ApplicationArea = All;
@@ -88,5 +76,34 @@ page 50016 "ACO Holder Card"
             // }
         }
     }
-
+    actions
+    {
+        area(Navigation)
+        {
+            action("ACO Linked Holders Types")
+            {
+                Caption = 'Linked Holders Types';
+                Image = Bin;
+                RunObject = Page "ACO Linked Holder Types";
+                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code"), Length = field(Length);
+                ApplicationArea = All;
+            }
+            action("ACO Linked Support Holders")
+            {
+                Caption = 'Linked Support Holders';
+                Image = CreateMovement;
+                RunObject = Page "ACO Linked Support Holders";
+                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code"), Length = field(Length);
+                ApplicationArea = All;
+            }
+            action("ACO Linked Distance Holders")
+            {
+                Caption = 'Linked Distance Holders';
+                Image = CreateBins;
+                RunObject = Page "ACO Linked Distance Holders";
+                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code"), Length = field(Length);
+                ApplicationArea = All;
+            }
+        }
+    }
 }

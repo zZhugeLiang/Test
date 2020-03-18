@@ -779,17 +779,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Color Group Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 3209093551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder Code</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Holder Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 513314990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Support Holder Code</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Support Holder Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 4100657994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Distance Holder Code</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Distance Holder Code - Property Caption</note>
         </trans-unit>
@@ -1499,17 +1499,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Color Group Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340332017 - Field 3209093551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder Code</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Holder Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340332017 - Field 513314990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Support Holder Code</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Support Holder Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340332017 - Field 4100657994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Distance Holder Code</source>
+          <source>DEPRECATED</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Field Distance Holder Code - Property Caption</note>
         </trans-unit>
@@ -2023,6 +2023,156 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Build-up Layer - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4085294584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holder Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 3209093551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 1604606815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Type Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Holder Type Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Position - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active,Inactive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 3209093551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 4100657994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distance Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Distance Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 473605269 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Distance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active,Inactive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Support Holder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 3209093551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 513314990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Support Holder Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Support Holder Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active,Inactive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Status - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2062,6 +2212,16 @@
           <source>Number of Units cannot be less than Quantity to Bath Sheet.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CreateBathSheetLine - NamedType NumberofUnitsLtQuantityToBathSheetErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 1905556532 - NamedType 2102726506" size-unit="char" translate="yes" xml:space="preserve">
+          <source>An inactive holder cannot be selected.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CheckStatusLinkedHolders - NamedType InactiveHolderErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 1905556532 - NamedType 2119496702" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A Holder has been found, but it is inactive, the value of Holder has not changed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CheckStatusLinkedHolders - NamedType InactiveHolderMsg</note>
         </trans-unit>
         <trans-unit id="Page 1037002210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Price Schemes</source>
@@ -2227,6 +2387,21 @@
           <source>General</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2169947147 - Action 404499832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Holders Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2169947147 - Action 904919892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Support Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Support Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2169947147 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2147013590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Methods</source>
@@ -2817,6 +2992,21 @@
           <source>Build-up Layers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Build-up Layers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4122716569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holder Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 904919892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Support Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Support Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Distance Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
