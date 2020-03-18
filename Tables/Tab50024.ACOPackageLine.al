@@ -74,8 +74,8 @@ table 50024 "ACO Package Line"
         }
         field(14; "Treatment Description"; Text[100])
         {
-            TableRelation = Item where("No." = field("Treatment"));
             FieldClass = FlowField;
+            CalcFormula = Lookup (Item.Description where("No." = field(Treatment)));
         }
         field(15; "Your Reference"; Text[35])
         {

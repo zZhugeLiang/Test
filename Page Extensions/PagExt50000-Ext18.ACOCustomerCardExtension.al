@@ -42,7 +42,7 @@ pageextension 50000 "ACO Customer Card Extension" extends "Customer Card"
                     ApplicationArea = All;
                 }
 
-                field("ACO No. Series Packages"; "ACO No. Series Packages")
+                field("ACO Package Label Nos."; "ACO Package Label Nos.")
                 {
                     ApplicationArea = All;
                 }
@@ -56,10 +56,7 @@ pageextension 50000 "ACO Customer Card Extension" extends "Customer Card"
             group("ACO Other")
             {
                 Caption = 'Other';
-                field("ACO Package Label Nos."; "ACO Package Label Nos.")
-                {
-                    ApplicationArea = All;
-                }
+
 
                 field("ACO Comment Sales Order"; "ACO Comment Sales Order")
                 {

@@ -177,6 +177,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                     temptext: Text;
                     LineNumber: Integer;
                 begin
+                    AppSetup.Reset();
                     AppSetup.Get();
                     BathLineTempRecord.Reset();
                     if BathLineTempRecord.FindSet() then
@@ -197,10 +198,14 @@ page 50032 "ACO Bathsheet Lines To Process"
                         If (Customer."ACO Package Label Nos." <> '') then begin
                             PackageHeader."No. Series" := Customer."ACO Package Label Nos.";
                             PackageHeader."No." := NumberSeriesManagement.GetNextNo(Customer."ACO Package Label Nos.", Today(), true)
-                        end else begin
-                            PackageHeader."No. Series" := AppSetup."No. Series Packages";
-                            PackageHeader."No." := NumberSeriesManagement.GetNextNo(AppSetup."No. Series Packages", Today(), true);
-                        end;
+                        end else 
+                            if (AppSetup."Default Package Label Nos." <> '' ) then begin
+                                PackageHeader."No. Series" := AppSetup."Default Package Label Nos.";
+                                PackageHeader."No." := NumberSeriesManagement.GetNextNo(AppSetup."Default Package Label Nos.", Today(), true);
+                            end else
+                                Error(lblNoNumberseriesErr);
+
+
 
                         PackageHeader."Resource No." := GenPackage.getResource();
                         PackageHeader."Customer No." := Customer."No.";
@@ -238,6 +243,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 PackageLine.Insert();
                             until BathLineTempRecord.Next() = 0;
                         PrintPackageLabel.SetTableView(PackageHeader);
+                        PrintPackageLabel.UseRequestPage := false;
                         PrintPackageLabel.Run();
                     end;
                 end;
@@ -248,4 +254,5 @@ page 50032 "ACO Bathsheet Lines To Process"
     var
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
+        lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
 }

@@ -11,6 +11,79 @@
       <rd:DataSourceID>377babc8-6409-4e2b-94e4-bcd65dc03f7a</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+        </Field>
+        <Field Name="ResourceNo">
+          <DataField>ResourceNo</DataField>
+        </Field>
+        <Field Name="AmountLbl">
+          <DataField>AmountLbl</DataField>
+        </Field>
+        <Field Name="ItemLbl">
+          <DataField>ItemLbl</DataField>
+        </Field>
+        <Field Name="LengthLbl">
+          <DataField>LengthLbl</DataField>
+        </Field>
+        <Field Name="ReferenceLbl">
+          <DataField>ReferenceLbl</DataField>
+        </Field>
+        <Field Name="TreatmentLbl">
+          <DataField>TreatmentLbl</DataField>
+        </Field>
+        <Field Name="Profile_no_">
+          <DataField>Profile_no_</DataField>
+        </Field>
+        <Field Name="Profile_description">
+          <DataField>Profile_description</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="Length">
+          <DataField>Length</DataField>
+        </Field>
+        <Field Name="LengthFormat">
+          <DataField>LengthFormat</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Your_Reference">
+          <DataField>Your_Reference</DataField>
+        </Field>
+        <Field Name="Treatment_Description">
+          <DataField>Treatment_Description</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyCountry_Region_Code">
+          <DataField>CompanyCountry_Region_Code</DataField>
+        </Field>
+        <Field Name="CompanyPost_Code">
+          <DataField>CompanyPost_Code</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -130,7 +203,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -758,7 +830,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!External_Document_No_.Value + ' - ' + Fields!Your_Reference.Value</Value>
+                                  <Value>=Fields!External_Document_No_.Value + " - " + Fields!Your_Reference.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                   </Style>
@@ -1317,7 +1389,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CompanyAddress.Value + ' - ' + Fields!CompanyCountry_Region_Code.Value + ' - ' + Fields!CompanyPost_Code.Value + ' ' + Fields!CompanyCity.Value</Value>
+                                  <Value>=Fields!CompanyAddress.Value + " - " + Fields!CompanyCountry_Region_Code.Value + " - " + Fields!CompanyPost_Code.Value + " " + Fields!CompanyCity.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -1457,8 +1529,8 @@
       </Body>
       <Width>152.4mm</Width>
       <Page>
-        <PageHeight>152.4mm</PageHeight>
-        <PageWidth>101.6mm</PageWidth>
+        <PageHeight>101.6mm</PageHeight>
+        <PageWidth>152.4mm</PageWidth>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1479,6 +1551,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -1518,77 +1596,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="No">
-          <DataField>No</DataField>
-        </Field>
-        <Field Name="CustomerName">
-          <DataField>CustomerName</DataField>
-        </Field>
-        <Field Name="ResourceNo">
-          <DataField>ResourceNo</DataField>
-        </Field>
-        <Field Name="AmountLbl">
-          <DataField>AmountLbl</DataField>
-        </Field>
-        <Field Name="ItemLbl">
-          <DataField>ItemLbl</DataField>
-        </Field>
-        <Field Name="LengthLbl">
-          <DataField>LengthLbl</DataField>
-        </Field>
-        <Field Name="ReferenceLbl">
-          <DataField>ReferenceLbl</DataField>
-        </Field>
-        <Field Name="TreatmentLbl">
-          <DataField>TreatmentLbl</DataField>
-        </Field>
-        <Field Name="Profile_no_">
-          <DataField>Profile_no_</DataField>
-        </Field>
-        <Field Name="Profile_description">
-          <DataField>Profile_description</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="Length">
-          <DataField>Length</DataField>
-        </Field>
-        <Field Name="LengthFormat">
-          <DataField>LengthFormat</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Your_Reference">
-          <DataField>Your_Reference</DataField>
-        </Field>
-        <Field Name="Treatment_Description">
-          <DataField>Treatment_Description</DataField>
-        </Field>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="CompanyCity">
-          <DataField>CompanyCity</DataField>
-        </Field>
-        <Field Name="CompanyCountry_Region_Code">
-          <DataField>CompanyCountry_Region_Code</DataField>
-        </Field>
-        <Field Name="CompanyPost_Code">
-          <DataField>CompanyPost_Code</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
