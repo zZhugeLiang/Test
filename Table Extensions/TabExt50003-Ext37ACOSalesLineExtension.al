@@ -450,7 +450,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOPackaging.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                 ACOPackaging.SetRange("Profile Code", Rec."ACO Profile Code");
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    ACOPackaging.SetRange(Length, ItemVariant."ACO Number of Meters");
+                    ACOPackaging.SetRange("Length 2", ItemVariant."ACO Number of Meters");
 
                 ACOPackagingList.LookupMode(true);
                 ACOPackagingList.SetTableView(ACOPackaging);

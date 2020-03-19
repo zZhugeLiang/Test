@@ -26,7 +26,7 @@ table 50026 "ACO Packaging"
         }
         field(4; Length; Integer)
         {
-            Caption = 'Length';
+            Caption = 'Length Old'; // DEPRECATED, should be Decimal, created Length 2 to replace this.
             DataClassification = CustomerContent;
         }
         field(5; "Packaging Type Code"; Code[20])
@@ -155,11 +155,16 @@ table 50026 "ACO Packaging"
             OptionCaption = 'Active,Inactive';
             DataClassification = CustomerContent;
         }
+        field(20; "Length 2"; Decimal)
+        {
+            Caption = 'Length';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.", "Code", "Length")
+        key(PK; "Profile Code", "Customer No.", "Code", "Length 2")
         {
             Clustered = true;
         }

@@ -1,6 +1,6 @@
 table 50013 "ACO Holder" // DEPRECATED Replace with ACO Holder 2
 {
-    Caption = 'Holder';
+    Caption = 'Holder Old';
     DrillDownPageId = "ACO Holders";
     LookupPageId = "ACO Holders";
     DataClassification = CustomerContent;

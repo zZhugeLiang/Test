@@ -17,7 +17,7 @@ page 50034 "ACO Packaging List"
                 {
                     ApplicationArea = All;
                 }
-                field(Length; Length)
+                field("Length 2"; "Length 2")
                 {
                     ApplicationArea = All;
                 }

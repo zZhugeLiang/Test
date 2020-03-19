@@ -26,7 +26,7 @@ codeunit 50003 "ACO Management"
         ACOPackaging.SetRange("Profile Code", Salesline."ACO Profile Code");
         ACOPackaging.SetRange("Customer No.", CustomerNo);
         if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOPackaging.SetRange(Length, ItemVariant."ACO Number of Meters");
+            ACOPackaging.SetRange("Length 2", ItemVariant."ACO Number of Meters");
 
         if ACOPackaging.Count() = 1 then begin
             ACOPackaging.FindFirst();

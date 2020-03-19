@@ -744,7 +744,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Support Holder - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Holder Old</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Property Caption</note>
         </trans-unit>
@@ -1829,7 +1829,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Length</source>
+          <source>Length Old</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Length - Property Caption</note>
         </trans-unit>
@@ -1912,6 +1912,11 @@
           <source>Active,Inactive</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 888430590 - Field 4095346458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Length 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 64086670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Type</source>
@@ -2172,6 +2177,91 @@
           <source>Active,Inactive</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imported Sales Order Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Order No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 1225278069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Sell-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 1474036805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Sell-to Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 2965034906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Bill-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 2027341874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Customer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Bill-to Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 135600996 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Requested Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Requested Delivery Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 1527563463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field External Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 3450651614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variant Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Variant Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 2474965737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Number of Units - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 1786097247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Quote No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Checked,Error,Processed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Message</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Error Message - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
@@ -3013,6 +3103,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Distance Holders - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2295214127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Sales Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Import Sales Orders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2295214127 - Action 2333931147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set Status to New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Import Sales Orders - Action Set Status to New - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3082,6 +3182,11 @@
           <source>Treatment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType TreatmentLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 690520591" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer does not exist as Customer in the database or as EDI Customer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CustomerDoesNotExistLbl</note>
         </trans-unit>
         <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Export</source>
