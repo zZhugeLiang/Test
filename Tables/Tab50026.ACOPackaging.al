@@ -164,7 +164,7 @@ table 50026 "ACO Packaging"
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.", "Code", "Length 2")
+        key(PK; "Profile Code", "Customer No.", "Code", Length)
         {
             Clustered = true;
         }
