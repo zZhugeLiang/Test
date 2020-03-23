@@ -1,6 +1,6 @@
-table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Holder
+table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Linked Holder
 {
-    Caption = 'Holder';
+    Caption = 'Linked Holder';
     DrillDownPageId = "ACO Holders";
     LookupPageId = "ACO Holders";
     DataClassification = CustomerContent;
@@ -10,8 +10,30 @@ table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Holder
         field(1; "Code"; Code[30])
         {
             Caption = 'Code';
+            TableRelation = "ACO Holder";
+            ValidateTableRelation = false;
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                ACOHolder: Record "ACO Holder";
+            begin
+                if ACOHolder.Get("Code") then begin
+                    "Length" := ACOHolder."Length";
+                    "Description" := ACOHolder."Description";
+                    "Color Group Code" := ACOHolder."Color Group Code";
+                    "Attach Method Code" := ACOHolder."Attach Method Code";
+                    "Type of Clamp" := ACOHolder."Type of Clamp";
+                    Comment := ACOHolder.Comment;
+                    Method := ACOHolder.Method;
+                    Space := ACOHolder.Space;
+                    Helix := ACOHolder.Helix;
+                    "Helix Start" := ACOHolder."Helix Start";
+                    "Helix End" := ACOHolder."Helix End";
+                end
+            end;
         }
+
         field(2; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';

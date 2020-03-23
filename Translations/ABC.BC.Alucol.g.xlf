@@ -744,7 +744,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Support Holder - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder Old</source>
+          <source>Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Property Caption</note>
         </trans-unit>
@@ -1464,7 +1464,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Resource - Field Resource Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340332017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Linked Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Property Caption</note>
         </trans-unit>
@@ -1939,7 +1939,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 64086670 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Rack,Pack</source>
+          <source>N/A,Rack,Pack</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Type - Property OptionCaption</note>
         </trans-unit>
@@ -2437,6 +2437,11 @@
           <source>Production Parameters</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control ProductionParameters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Linked Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1029845018 - Action 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holders</source>
@@ -3112,6 +3117,36 @@
           <source>Set Status to New</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Import Sales Orders - Action Set Status to New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holder Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 404499832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Holders Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 904919892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Support Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Support Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>

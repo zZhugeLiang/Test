@@ -1,6 +1,6 @@
-table 50013 "ACO Holder" // DEPRECATED Replace with ACO Holder 2
+table 50013 "ACO Holder"
 {
-    Caption = 'Holder Old';
+    Caption = 'Holder';
     DrillDownPageId = "ACO Holders";
     LookupPageId = "ACO Holders";
     DataClassification = CustomerContent;
@@ -19,7 +19,7 @@ table 50013 "ACO Holder" // DEPRECATED Replace with ACO Holder 2
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[10])
+        field(3; "Profile Code"; Code[10]) // DEPRECATED, should be COde30
         {
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";

@@ -1,8 +1,8 @@
-page 50016 "ACO Holder Card"
+page 50046 "ACO Linked Holder Card"
 {
-    Caption = 'Holder Card';
+    Caption = 'Linked Holder Card';
     PageType = Card;
-    SourceTable = "ACO Holder";
+    SourceTable = "ACO Holder 2";
 
     layout
     {
@@ -16,6 +16,14 @@ page 50016 "ACO Holder Card"
                     ApplicationArea = All;
                 }
                 field(Description; Description)
+                {
+                    ApplicationArea = All;
+                }
+                field("Customer No."; "Customer No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Profile Code"; "Profile Code")
                 {
                     ApplicationArea = All;
                 }

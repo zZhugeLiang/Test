@@ -1,10 +1,10 @@
-page 50015 "ACO Holders"
+page 50045 "ACO Linked Holders"
 {
-    Caption = 'Holders';
+    Caption = 'Linked Holders';
     PageType = List;
-    CardPageId = "ACO Holder Card";
+    CardPageId = "ACO Linked Holder Card";
     RefreshOnActivate = true;
-    SourceTable = "ACO Holder";
+    SourceTable = "ACO Holder 2";
     ApplicationArea = All;
     UsageCategory = Lists;
 
@@ -19,6 +19,14 @@ page 50015 "ACO Holders"
                     ApplicationArea = All;
                 }
                 field(Description; Description)
+                {
+                    ApplicationArea = All;
+                }
+                field("Customer No."; "Customer No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Profile Code"; "Profile Code")
                 {
                     ApplicationArea = All;
                 }
