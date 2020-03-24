@@ -227,6 +227,6 @@ table 50017 "ACO Bath Sheet Line"
 
     procedure CalculateSurface()
     begin
-        Surface := Quantity * Length * Circumference / 1000000;
+        Surface := Quantity * Length * Circumference / 1000;
     end;
 }

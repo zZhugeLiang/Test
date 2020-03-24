@@ -67,6 +67,11 @@ table 50036 "ACO Imported Sales Order Line"
             Caption = 'Number of Units';
             DataClassification = CustomerContent;
         }
+        field(22; "Ship-to Code"; Text[100])
+        {
+            Caption = 'Ship-to Code';
+            DataClassification = CustomerContent;
+        }
         field(30; "Quote No."; Text[100])
         {
             Caption = 'Quote No.';
