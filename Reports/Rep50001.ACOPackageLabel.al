@@ -78,8 +78,6 @@ report 50001 "ACO Package Label"
                     {
                         ApplicationArea = All;
                         Caption = 'Rack Number';
-                        // Enabled = Customer."ACO Rack no. Mandatory on Pckg";
-                        // Visible = Customer."ACO Rack no. Mandatory on Pckg";
                     }
                 }
             }
