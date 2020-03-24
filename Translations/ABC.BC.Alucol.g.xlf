@@ -744,7 +744,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Support Holder - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder Old</source>
+          <source>Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Property Caption</note>
         </trans-unit>
@@ -1464,7 +1464,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Resource - Field Resource Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2340332017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder</source>
+          <source>Linked Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder 2 - Property Caption</note>
         </trans-unit>
@@ -1939,7 +1939,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 64086670 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Rack,Pack</source>
+          <source>N/A,Rack,Pack</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging Type - Field Type - Property OptionCaption</note>
         </trans-unit>
@@ -2243,6 +2243,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Number of Units - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3921199275 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Imported Sales Order Line - Field Ship-to Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3921199275 - Field 1786097247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quote No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2437,6 +2442,11 @@
           <source>Production Parameters</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control ProductionParameters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Linked Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1029845018 - Action 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holders</source>
@@ -3113,6 +3123,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Import Sales Orders - Action Set Status to New - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holder Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 404499832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holders Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Holders Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 904919892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Support Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Support Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3184,9 +3224,44 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType TreatmentLbl</note>
         </trans-unit>
         <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 690520591" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer does not exist as Customer in the database or as EDI Customer.</source>
+          <source>Customer %1 does not exist as Customer in the database or as EDI Customer.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CustomerDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 1442883392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item %1 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 851382453" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Variant with Item No. %1 and Variant Code %2 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemVariantDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 731385328" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invalid value %1 for field Number of Units.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType InvalidValueForNumberofUnitsLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 2255546338" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units is not larger than 0.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType NumberOfUnitsNotLargerThanZeroLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3001609905" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code %1 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCodeDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 194039618" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code %1 does not exist as a Profile Customer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCustomerDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3530122017" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Category of the Profile is not identical to the Category of the Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CategoryProfileNotIdenticalToCategoryItemLbl</note>
         </trans-unit>
         <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Export</source>

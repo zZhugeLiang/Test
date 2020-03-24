@@ -84,6 +84,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         Customer: Record Customer;
+        ACOProfileCustomer: Record "ACO Profile Customer";
         PreviousSourceNo: Code[20];
         CurrentSourceNo: Code[20];
         TotalCircumference: Decimal;
@@ -114,11 +115,25 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                     if SalesLine."ACO Thick Staining Time PT" >= MaxThickStainingTime then
                         MaxThickStainingTime := SalesLine."ACO Thick Staining Time PT";
 
+
+                    if Customer."ACO Thick Staining Time" >= MaxThickStainingTime then
+                        MaxThickStainingTime := Customer."ACO Thick Staining Time";
+
                     if SalesLine."ACO Thin Staining Time Profile" <= MinThinStainingTime then
                         MinThinStainingTime := SalesLine."ACO Thick St. Time Profile";
 
                     if SalesLine."ACO Thin Staining Time PT" <= MinThinStainingTime then
                         MinThinStainingTime := SalesLine."ACO Thick Staining Time PT";
+
+                    if Customer."ACO Thin Staining Time" >= MinThinStainingTime then
+                        MinThinStainingTime := Customer."ACO Thin Staining Time";
+
+                    if ACOProfileCustomer.Get(SalesLine."ACO Profile Code", Customer."No.", SalesLine."No.") then begin
+                        if ACOProfileCustomer."Thin Staining Time" >= MinThinStainingTime then
+                            MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+                        if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
+                            MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+                    end;
 
                     if not ACOBathSheetHeader.Euras then
                         if SalesLine."ACO Euras Profile" then

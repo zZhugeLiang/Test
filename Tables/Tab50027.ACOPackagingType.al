@@ -20,8 +20,8 @@ table 50027 "ACO Packaging Type"
         field(3; Type; Option)
         {
             Caption = 'Type';
-            OptionMembers = " ",Rack,Pack;
-            OptionCaption = ' ,Rack,Pack';
+            OptionMembers = "N/A",Rack,Pack;
+            OptionCaption = 'N/A,Rack,Pack';
             DataClassification = CustomerContent;
         }
     }

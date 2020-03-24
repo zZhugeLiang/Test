@@ -49,7 +49,7 @@ table 50026 "ACO Packaging"
         field(8; "Inside Code"; Code[20])
         {
             Caption = 'Inside';
-            TableRelation = "ACO Inside";
+            // TableRelation = "ACO Inside";
             DataClassification = CustomerContent;
 
             trigger OnLookup()

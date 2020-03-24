@@ -93,12 +93,21 @@ page 50011 "ACO Profile Customer Card"
     {
         area(Navigation)
         {
+            action("ACO Linked Holders")
+            {
+                Caption = 'Linked Holders';
+                Image = Category;
+                RunObject = Page "ACO Linked Holders";
+                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                ApplicationArea = All;
+            }
+
             action("ACO Holders")
             {
                 Caption = 'Holders';
                 Image = Category;
                 RunObject = Page "ACO Holders";
-                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                // RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
                 ApplicationArea = All;
             }
 

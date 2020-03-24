@@ -230,6 +230,11 @@ report 50000 "ACO Bath Sheet"
         }
     }
 
+    trigger OnPreReport()
+    begin
+        User.Get(UserSecurityId());
+    end;
+
     var
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
