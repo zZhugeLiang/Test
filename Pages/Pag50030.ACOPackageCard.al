@@ -61,4 +61,29 @@ page 50030 "ACO Package Card"
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action("Print Label")
+            {
+                ApplicationArea = All;
+                Caption = 'Print Label';
+                Image = ShowInventoryPeriods;
+
+                trigger OnAction();
+                var
+                    PackageHeader: Record "ACO Package Header";
+                    PrintPackageLabel: Report "ACO Package Label";
+                begin
+                    PackageHeader := Rec;
+                    PackageHeader.SetRecFilter();
+                    PrintPackageLabel.SetTableView(PackageHeader);
+                    PrintPackageLabel.UseRequestPage := false;
+                    PrintPackageLabel.Run();
+                end;
+            }
+        }
+    }
 }

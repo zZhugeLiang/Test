@@ -6,6 +6,12 @@ report 50001 "ACO Package Label"
     {
         dataitem(ACOPackageHeader; "ACO Package Header")
         {
+            column(CompanyName; CompanyInfo.Name) { }
+            column(CompanyAddress; CompanyInfo.Address) { }
+            column(CompanyCity; CompanyInfo.City) { }
+            column(CompanyCountry_Region_Code; CompanyInfo."Country/Region Code") { }
+            column(CompanyPost_Code; CompanyInfo."Post Code") { }
+
             column(No; "No.")
             {
             }
@@ -13,6 +19,9 @@ report 50001 "ACO Package Label"
             {
             }
             column(ResourceNo; "Resource No.")
+            {
+            }
+            column(Name_Resource; Resource.Name)
             {
             }
             column(AmountLbl; AmountLbl)
@@ -32,7 +41,8 @@ report 50001 "ACO Package Label"
             }
             dataitem(ACOPackageLine; "ACO Package Line")
             {
-                DataItemLink = "Package No." = FIELD("No.");
+                DataItemLinkReference = ACOPackageHeader;
+                DataItemLink = "Package No." = field("No.");
 
                 column(Profile_no_; "Profile no.") { }
                 column(Profile_description; "Profile description") { }
@@ -42,14 +52,12 @@ report 50001 "ACO Package Label"
                 column(Your_Reference; "Your Reference") { }
                 column(Treatment_Description; "Treatment Description") { }
             }
-        }
-        dataitem("Company Information"; "Company Information")
-        {
-            column(CompanyName; Name) { }
-            column(CompanyAddress; Address) { }
-            column(CompanyCity; City) { }
-            column(CompanyCountry_Region_Code; "Country/Region Code") { }
-            column(CompanyPost_Code; "Post Code") { }
+
+            trigger OnAfterGetRecord()
+            begin
+                if not Resource.Get("Resource No.") then
+                    Clear(Resource);
+            end;
         }
     }
 
@@ -91,13 +99,14 @@ report 50001 "ACO Package Label"
     }
     trigger OnInitReport()
     begin
+        CompanyInfo.Get();
     end;
 
 
     var
-
+        CompanyInfo: Record "Company Information";
         "Generating Resource": record Resource;
-
+        Resource: Record Resource;
         ItemLbl: Label 'Item';
         AmountLbl: Label 'Amount';
         LengthLbl: Label 'Length';

@@ -5,6 +5,7 @@ page 50032 "ACO Bathsheet Lines To Process"
     UsageCategory = Lists;
     ApplicationArea = All;
     SourceTable = "ACO Bath Sheet Line";
+    //SourceTableTemporary = true;
     SourceTableView = sorting("Bath Sheet No.", "Production Order No.", "Production Order Status", "Production Order Line No.") where(Packed = Filter(FALSE), Completed = Filter(TRUE));
     layout
     {
@@ -198,14 +199,12 @@ page 50032 "ACO Bathsheet Lines To Process"
                         If (Customer."ACO Package Label Nos." <> '') then begin
                             PackageHeader."No. Series" := Customer."ACO Package Label Nos.";
                             PackageHeader."No." := NumberSeriesManagement.GetNextNo(Customer."ACO Package Label Nos.", Today(), true)
-                        end else 
-                            if (AppSetup."Default Package Label Nos." <> '' ) then begin
+                        end else
+                            if (AppSetup."Default Package Label Nos." <> '') then begin
                                 PackageHeader."No. Series" := AppSetup."Default Package Label Nos.";
                                 PackageHeader."No." := NumberSeriesManagement.GetNextNo(AppSetup."Default Package Label Nos.", Today(), true);
                             end else
                                 Error(lblNoNumberseriesErr);
-
-
 
                         PackageHeader."Resource No." := GenPackage.getResource();
                         PackageHeader."Customer No." := Customer."No.";
@@ -242,6 +241,8 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 end;
                                 PackageLine.Insert();
                             until BathLineTempRecord.Next() = 0;
+
+                        PackageHeader.SetRecFilter();
                         PrintPackageLabel.SetTableView(PackageHeader);
                         PrintPackageLabel.UseRequestPage := false;
                         PrintPackageLabel.Run();

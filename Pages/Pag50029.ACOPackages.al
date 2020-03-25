@@ -4,6 +4,7 @@ page 50029 "ACO Packages"
     PageType = List;
     SourceTable = "ACO Package Header";
     Caption = 'Packages';
+    CardPageId = "ACO Package Card";
     ApplicationArea = All;
     UsageCategory = Lists;
     Editable = false;
