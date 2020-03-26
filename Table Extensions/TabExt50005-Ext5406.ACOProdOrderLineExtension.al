@@ -68,7 +68,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             Caption = 'Bath Sheet Qty.';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Lookup ("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
+            CalcFormula = Sum ("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
         }
 
         field(50009; "ACO Included"; Boolean)

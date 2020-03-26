@@ -161,7 +161,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         LineNo := 10000;
         ProductionOrderLines.Reset();
         ProductionOrderLines.SetRange("ACO Included", true);
-        if ProductionOrderLines.FindSet() then
+        if ProductionOrderLines.FindSet(true) then
             repeat
                 CreateBathSheetLine(ACOBathSheetHeaderNo, ProductionOrderLines, LineNo);
                 LineNo += 10000;

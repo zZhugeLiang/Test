@@ -1,4 +1,4 @@
-page 50034 "ACO Packaging List"
+page 50034 "ACO Linked Packaging List"
 {
 
     PageType = List;
@@ -77,7 +77,6 @@ page 50034 "ACO Packaging List"
                 {
                     ApplicationArea = All;
                 }
-
                 field(Remark; Remark)
                 {
                     ApplicationArea = All;

@@ -111,12 +111,20 @@ page 50011 "ACO Profile Customer Card"
                 ApplicationArea = All;
             }
 
+            action("ACO Linked Packaging List")
+            {
+                Caption = 'Packaging List';
+                Image = CoupledItem;
+                RunObject = Page "ACO Linked Packaging List";
+                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                ApplicationArea = All;
+            }
+
             action("ACO Packaging List")
             {
                 Caption = 'Packaging List';
                 Image = CopyItem;
                 RunObject = Page "ACO Packaging List";
-                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
                 ApplicationArea = All;
             }
         }
