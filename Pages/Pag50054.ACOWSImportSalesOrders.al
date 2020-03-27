@@ -2,9 +2,7 @@ page 50054 "ACO WS Import Sales Orders"
 {
     PageType = List;
     SourceTable = "ACO Imported Sales Order Line";
-    Caption = 'Import Sales Orders';
-    ApplicationArea = All;
-    UsageCategory = Lists;
+    Caption = 'WS Import Sales Orders';
 
     layout
     {

@@ -3308,6 +3308,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets with Color - Control CalculatedValues - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2853634043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Sales Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Import Sales Orders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 4164356835 - Control 3961767479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Resource</source>
           <note from="Developer" annotates="general" priority="2"></note>
