@@ -428,6 +428,13 @@ table 50016 "ACO Bath Sheet Header"
             OptionCaption = 'New,"In Production",Finished';
             DataClassification = CustomerContent;
         }
+
+        field(56; "Color Measurement"; Boolean)
+        {
+            Caption = 'Color Measurement';
+            DataClassification = CustomerContent;
+        }
+
     }
 
     keys

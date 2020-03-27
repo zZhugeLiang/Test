@@ -155,6 +155,10 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
+                field("Color Measurement"; "Color Measurement")
+                {
+                    ApplicationArea = All;
+                }
                 field("No. Series"; "No. Series")
                 {
                     ApplicationArea = All;

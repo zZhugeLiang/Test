@@ -97,6 +97,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Project Color Code"; "ACO Project Color Code")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

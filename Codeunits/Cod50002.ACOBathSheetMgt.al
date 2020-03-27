@@ -135,9 +135,11 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                             MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
                     end;
 
-                    if not ACOBathSheetHeader.Euras then
-                        if SalesLine."ACO Euras Profile" then
-                            ACOBathSheetHeader.Euras := true;
+                    if SalesLine."ACO Euras Profile" then
+                        ACOBathSheetHeader.Euras := true;
+
+                    if SalesLine."ACO Project Color Code" <> '' then
+                        ACOBathSheetHeader."Color Measurement" := true;
                 end;
 
                 if PreviousSourceNo <> CurrentSourceNo then begin

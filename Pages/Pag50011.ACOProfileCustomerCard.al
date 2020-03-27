@@ -113,7 +113,7 @@ page 50011 "ACO Profile Customer Card"
 
             action("ACO Linked Packaging List")
             {
-                Caption = 'Packaging List';
+                Caption = 'Linked Packaging List';
                 Image = CoupledItem;
                 RunObject = Page "ACO Linked Packaging List";
                 RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");

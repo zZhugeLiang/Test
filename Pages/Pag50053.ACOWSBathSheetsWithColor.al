@@ -1,8 +1,8 @@
-page 50051 "ACO WS Bath Sheet"
+page 50053 "ACO WS Bath Sheets with Color"
 {
     PageType = Document;
     SourceTable = "ACO Bath Sheet Header";
-    Caption = 'Bath Sheet';
+    Caption = 'Bath Sheets with Color';
     InsertAllowed = false;
     ModifyAllowed = false;
     DeleteAllowed = false;
@@ -222,4 +222,16 @@ page 50051 "ACO WS Bath Sheet"
             }
         }
     }
+
+    trigger OnOpenPage()
+    var
+        DTFilter: DateTime;
+    begin
+        DTFilter := CurrentDateTime();
+        //CurrentDate := DT2Date();
+        SetRange("Production Date", CreateDateTime(DT2Date(DTFilter) - 30, DT2Time(DTFilter)), DTFilter);
+        SetRange(Status, Status::New, Status::"In Production");
+        SetRange("Color Measurement", true);
+        //SetRange;
+    end;
 }

@@ -463,6 +463,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             end;
         }
 
+        field(50055; "ACO Project Color Code"; Code[20])
+        {
+            Caption = 'Project Color Code';
+            TableRelation = "ACO Project Color Header";
+            DataClassification = CustomerContent;
+        }
+
     }
 
     procedure ACOCalculateUnitPrice()
