@@ -41,7 +41,7 @@ table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Linked Holder
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[10])
+        field(3; "Profile Code"; Code[10]) // DEPRECATED, should be COde30
         {
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";

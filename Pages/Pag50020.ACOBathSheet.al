@@ -237,6 +237,8 @@ page 50020 "ACO Bath Sheet"
 
                 trigger OnAction()
                 begin
+                    TestField("Surface Attachrack");
+                    TestField("Attach Method");
                     CalculateProcessTimes();
                 end;
             }
