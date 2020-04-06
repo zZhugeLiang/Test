@@ -109,6 +109,11 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Maximum Sawing Length"; "Maximum Sawing Length")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(Aucos)

@@ -69,6 +69,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                 Editable = "ACO Sawing";
                 ApplicationArea = All;
             }
+            field("ACO Qty. After Production"; "ACO Qty. After Production")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Holder"; "ACO Holder")
             {
                 ApplicationArea = All;

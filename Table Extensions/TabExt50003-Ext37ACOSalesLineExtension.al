@@ -319,12 +319,28 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Sawing';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                AppSetup: Record "ACO App Setup";
+                FinalLengtGtMaxSawingLengthErr: Label 'Final Length can not be greater than the Maximum Sawing Length.';
+            begin
+                AppSetup.Get();
+                AppSetup.TestField("Maximum Sawing Length");
+                if "ACO Final Length" > AppSetup."Maximum Sawing Length" then
+                    Error(FinalLengtGtMaxSawingLengthErr);
+            end;
         }
 
         field(50041; "ACO Final Length"; Decimal)
         {
             Caption = 'Final Length';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                "ACO Number of Units" := "ACO Number of Units" / "ACO Final Length";
+            end;
         }
 
         field(50042; "ACO Qty. After Production"; Decimal)

@@ -149,6 +149,12 @@ table 50009 "ACO Profile Customer"
             Caption = 'Thick Staining Time [min]';
             DataClassification = CustomerContent;
         }
+
+        field(17; "Sawing Discount"; Decimal)
+        {
+            Caption = 'Sawing Discount';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

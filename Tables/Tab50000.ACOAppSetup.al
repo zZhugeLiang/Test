@@ -189,6 +189,12 @@ table 50000 "ACO App Setup"
             TableRelation = "ACO Packaging".Code;
             DataClassification = CustomerContent;
         }
+
+        field(30; "Maximum Sawing Length"; Decimal)
+        {
+            Caption = 'Maximum Sawing Length';
+            DataClassification = CustomerContent;
+        }
         // field(25; "Maximum Bath Length"; Decimal)
         // {
         //     Caption = 'Maximum Bath Length';
