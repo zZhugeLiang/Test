@@ -339,7 +339,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             trigger OnValidate()
             begin
-                "ACO Number of Units" := "ACO Number of Units" / "ACO Final Length";
+                if "ACO Final Length" <> 0 then
+                    "ACO Number of Units" := "ACO Number of Units" / "ACO Final Length";
             end;
         }
 
@@ -373,34 +374,32 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50048; "ACO Holder"; Code[30])
+        field(50048; "ACO Linked Holder"; Code[30])
         {
-            Caption = 'Holder';
-            TableRelation = "ACO Holder 2";
+            Caption = 'Linked Holder';
+            TableRelation = "ACO Linked Holder";
             DataClassification = CustomerContent;
 
             trigger OnLookup()
             var
                 SalesHeader: Record "Sales Header";
                 ItemVariant: Record "Item Variant";
-                // ACOProfileCustomer: Record "ACO Profile Customer";
-                ACOHolder2: Record "ACO Holder 2";//DEPRECATED, Replace with ACO Holder
-                ACOHolders: Page "ACO Holders";
+                ACOLinkedHolder: Record "ACO Linked Holder";
+                ACOLinkedHolders: Page "ACO Holders";
             begin
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-                ACOHolder2.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                ACOHolder2.SetRange("Profile Code", Rec."ACO Profile Code");
+                ACOLinkedHolder.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOLinkedHolder.SetRange("Profile Code", Rec."ACO Profile Code");
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
+                    ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters");
 
-                ACOHolders.LookupMode(true);
-                ACOHolders.SetTableView(ACOHolder2);
+                ACOLinkedHolders.LookupMode(true);
+                ACOLinkedHolders.SetTableView(ACOLinkedHolder);
 
-                if ACOHolders.RunModal() = Action::LookupOK then begin
-                    ACOHolders.SetSelectionFilter(ACOHolder2);
-                    ACOHolders.GetRecord(ACOHolder2);
-                    Validate("ACO Holder", ACOHolder2.Code);
-                    // Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
+                if ACOLinkedHolders.RunModal() = Action::LookupOK then begin
+                    ACOLinkedHolders.SetSelectionFilter(ACOLinkedHolder);
+                    ACOLinkedHolders.GetRecord(ACOLinkedHolder);
+                    Validate("ACO Linked Holder", ACOLinkedHolder.Code);
                 end;
             end;
 
@@ -410,7 +409,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOManagement: Codeunit "ACO Management";
             begin
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-                ACOManagement.CheckStatusLinkedHolders(Rec."ACO Holder", SalesHeader."Sell-to Customer No.", Rec."ACO Profile Code", true);
+                ACOManagement.CheckStatusLinkedHolders(Rec."ACO Linked Holder", SalesHeader."Sell-to Customer No.", Rec."ACO Profile Code", true);
             end;
         }
 
@@ -459,22 +458,22 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             var
                 SalesHeader: Record "Sales Header";
                 ItemVariant: Record "Item Variant";
-                ACOPackaging: Record "ACO Packaging";
-                ACOPackagingList: Page "ACO Packaging List";
+                ACOLinkedPackaging: Record "ACO Linked Packaging";
+                ACOLinkedPackagingList: Page "ACO Linked Packaging List";
             begin
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-                ACOPackaging.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                ACOPackaging.SetRange("Profile Code", Rec."ACO Profile Code");
+                ACOLinkedPackaging.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOLinkedPackaging.SetRange("Profile Code", Rec."ACO Profile Code");
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    ACOPackaging.SetRange("Length 2", ItemVariant."ACO Number of Meters");
+                    ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters");
 
-                ACOPackagingList.LookupMode(true);
-                ACOPackagingList.SetTableView(ACOPackaging);
+                ACOLinkedPackagingList.LookupMode(true);
+                ACOLinkedPackagingList.SetTableView(ACOLinkedPackaging);
 
-                if ACOPackagingList.RunModal() = Action::LookupOK then begin
-                    ACOPackagingList.SetSelectionFilter(ACOPackaging);
-                    ACOPackagingList.GetRecord(ACOPackaging);
-                    "ACO Packaging" := ACOPackaging.Code;
+                if ACOLinkedPackagingList.RunModal() = Action::LookupOK then begin
+                    ACOLinkedPackagingList.SetSelectionFilter(ACOLinkedPackaging);
+                    ACOLinkedPackagingList.GetRecord(ACOLinkedPackaging);
+                    "ACO Packaging" := ACOLinkedPackaging.Code;
                 end;
             end;
         }
@@ -485,7 +484,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             TableRelation = "ACO Project Color Header";
             DataClassification = CustomerContent;
         }
-
     }
 
     procedure ACOCalculateUnitPrice()

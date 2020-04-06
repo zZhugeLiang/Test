@@ -12,19 +12,6 @@ table 50013 "ACO Holder"
             Caption = 'Code';
             DataClassification = CustomerContent;
         }
-        field(2; "Customer No."; Code[20])
-        {
-            Caption = 'Customer No.';
-            TableRelation = Customer;
-            DataClassification = CustomerContent;
-        }
-
-        field(3; "Profile Code"; Code[10]) // DEPRECATED, should be COde30
-        {
-            Caption = 'Profile Code';
-            TableRelation = "ACO Profile";
-            DataClassification = CustomerContent;
-        }
 
         field(4; "Length"; Decimal)
         {
@@ -42,27 +29,6 @@ table 50013 "ACO Holder"
         {
             Caption = 'Color Group Code';
             TableRelation = "ACO Color Group";
-            DataClassification = CustomerContent;
-        }
-
-        field(7; "Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; //DEPRECATED
-            TableRelation = "ACO Holder Type";
-            DataClassification = CustomerContent;
-        }
-
-        field(8; "Support Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; //DEPRECATED
-            TableRelation = "ACO Support Holder";
-            DataClassification = CustomerContent;
-        }
-
-        field(9; "Distance Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; //DEPRECATED
-            TableRelation = "ACO Distance Holder";
             DataClassification = CustomerContent;
         }
 
@@ -95,7 +61,7 @@ table 50013 "ACO Holder"
             Caption = 'Space';
             DataClassification = CustomerContent;
         }
-        field(15; Helix; Decimal)
+        field(15; Helix; Text[20])
         {
             Caption = 'Helix';
             DataClassification = CustomerContent;

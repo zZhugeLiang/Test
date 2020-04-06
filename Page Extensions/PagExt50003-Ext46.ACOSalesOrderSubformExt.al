@@ -73,7 +73,7 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-            field("ACO Holder"; "ACO Holder")
+            field("ACO Linked Holder"; "ACO Linked Holder")
             {
                 ApplicationArea = All;
             }

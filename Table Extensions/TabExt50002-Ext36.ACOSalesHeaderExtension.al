@@ -42,22 +42,6 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
             FieldClass = FlowField;
             CalcFormula = Sum ("Sales Line"."ACO Quantity Charges" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
         }
-        // field(50007; "ACO Calculate Line Amount"; Decimal)
-        // {
-        //     Caption = 'DEPRECATED?';
-        //     DataClassification = CustomerContent;//zichtbaar
-        // }
-        field(50008; "ACO Rerun"; Text[20])
-        {
-            Caption = 'Rerun'; // DEPRECATED
-            DataClassification = CustomerContent;//zichtbaar
-        }
-
-        field(50009; "ACO Rerun Reason"; Text[20])
-        {
-            Caption = 'Rerun Reason'; // DEPRECATED
-            DataClassification = CustomerContent;//zichtbaar
-        }
 
         field(50010; "ACO Delivery Date"; Date)
         {

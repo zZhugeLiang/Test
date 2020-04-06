@@ -114,49 +114,36 @@ table 50000 "ACO App Setup"
             DataClassification = CustomerContent;
         }
 
-        field(17; "No. Series Packages"; Code[20])     // DEPRICATED
-        {
-            Caption = 'No. Series Packages'; // DEPRECATED
-            TableRelation = "No. Series";
-            DataClassification = CustomerContent;
-            ObsoleteReason = 'Multiple fields for the same goal.';
-            ObsoleteState = Pending;
-        }
         field(18; "Aucos Max. No. of Lines"; Integer)
         {
             Caption = 'Aucos Max. No. of Lines';
             DataClassification = CustomerContent;
         }
-        field(19; "File Directory Aucos File"; Text[250])
-        {
-            Caption = 'File Directory Aucos File'; // DEPRECATED, not possible in cloud BC
-            DataClassification = CustomerContent;
-        }
-        field(20; "Archive File Dir. Aucos File"; Text[250])
-        {
-            Caption = 'Archive File Dir. Aucos File'; // DEPRECATED, not possible in cloud BC
-            DataClassification = CustomerContent;
-        }
+
         field(21; "Aucos Staining Time"; Integer)
         {
             Caption = 'Aucos Staining Time';
             DataClassification = CustomerContent;
         }
+	
         field(22; "Aucos Seal Time"; Integer)
         {
             Caption = 'Aucos Seal Time';
             DataClassification = CustomerContent;
         }
+	
         field(23; "Aucos Sealconstant"; Integer)
         {
             Caption = 'Aucos Sealconstant';
             DataClassification = CustomerContent;
         }
+	
         field(24; "Multiple Staining Times Text"; Text[100])
         {
             Caption = 'Multiple Staining Times Text';
             DataClassification = CustomerContent;
         }
+	
         field(25; "Layer Thickness Tolerance"; Decimal)
         {
             Caption = 'Layer Thickness Tolerance';

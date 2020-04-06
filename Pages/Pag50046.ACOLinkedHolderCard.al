@@ -2,7 +2,7 @@ page 50046 "ACO Linked Holder Card"
 {
     Caption = 'Linked Holder Card';
     PageType = Card;
-    SourceTable = "ACO Holder 2";
+    SourceTable = "ACO Linked Holder";
 
     layout
     {
@@ -68,12 +68,6 @@ page 50046 "ACO Linked Holder Card"
                     ApplicationArea = All;
                 }
             }
-
-            // group(ProductionParameters)
-            // {
-            //     Caption = 'Production Parameters';
-
-            // }
         }
     }
     actions

@@ -18,12 +18,6 @@ table 50001 "ACO Price Scheme"
             Caption = 'Description';
             DataClassification = CustomerContent;
         }
-
-        field(3; "British Standard"; Boolean)
-        {
-            Caption = 'DEPRECATED'; // Moved field to Price Scheme Price
-            DataClassification = CustomerContent;
-        }
     }
 
     keys

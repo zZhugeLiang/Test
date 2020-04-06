@@ -1,4 +1,4 @@
-table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Linked Holder
+table 50021 "ACO Linked Holder"
 {
     Caption = 'Linked Holder';
     DrillDownPageId = "ACO Holders";
@@ -41,7 +41,7 @@ table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Linked Holder
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[10]) // DEPRECATED, should be COde30
+        field(3; "Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";
@@ -67,26 +67,6 @@ table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Linked Holder
             DataClassification = CustomerContent;
         }
 
-        field(7; "Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; // DEPRECATED
-            TableRelation = "ACO Holder Type";
-            DataClassification = CustomerContent;
-        }
-
-        field(8; "Support Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; // DEPRECATED
-            TableRelation = "ACO Support Holder";
-            DataClassification = CustomerContent;
-        }
-
-        field(9; "Distance Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; // DEPRECATED
-            TableRelation = "ACO Distance Holder";
-            DataClassification = CustomerContent;
-        }
 
         field(10; "Attach Method Code"; Code[10])
         {
@@ -119,7 +99,7 @@ table 50021 "ACO Holder 2" // DEPRECATED Rename as ACO Linked Holder
             DataClassification = CustomerContent;
         }
 
-        field(15; Helix; Decimal)
+        field(15; Helix; Text[20])
         {
             Caption = 'Helix';
             DataClassification = CustomerContent;

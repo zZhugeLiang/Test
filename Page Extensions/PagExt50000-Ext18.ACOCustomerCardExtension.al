@@ -73,7 +73,7 @@ pageextension 50000 "ACO Customer Card Extension" extends "Customer Card"
                     ApplicationArea = All;
                 }
 
-                field("ACO Shelf No. Mand. on Package"; "Shelf No. Mandatory on Package")
+                field("ACO Shelf No. Mand. on Package"; "ACO Shelf No. Mand. on Package")
                 {
                     ApplicationArea = All;
                 }

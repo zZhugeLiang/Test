@@ -18,14 +18,6 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 {
                     ApplicationArea = All;
                 }
-                // field("ACO Rerun"; "ACO Rerun")
-                // {
-                //     ApplicationArea = All;
-                // }
-                // field("ACO Rerun Reason"; "ACO Rerun Reason")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("ACO Logged In"; "ACO Logged In")
                 {
                     Editable = not "ACO Logged In";
