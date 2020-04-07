@@ -85,6 +85,14 @@ page 50011 "ACO Profile Customer Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Minimum Current Density"; "Minimum Current Density")
+                {
+                    ApplicationArea = All;
+                }
+                field("Maximum Current Density"; "Maximum Current Density")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

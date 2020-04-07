@@ -73,7 +73,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
         field(50009; "ACO Included"; Boolean)
         {
-            Caption = 'Include Bath Sheet';
+            Caption = 'Include Bath Sheet'; // DEPRECATED, field not used anymore
             DataClassification = CustomerContent;
         }
 

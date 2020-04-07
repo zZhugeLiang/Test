@@ -264,6 +264,23 @@ codeunit 50000 "ACO Event Subscribers"
         Rec.ACOCalculateUnitPrice();
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Unit Price', false, false)]
+    local procedure SalesLine_OnAfterValidate_UnitPrice(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        Item: Record Item;
+        SalesHeader: Record "Sales Header";
+        ACOProfileCustomer: Record "ACO Profile Customer";
+    begin
+        if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and Item."ACO Sawing" then begin
+            SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+            ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+            ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+            ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+            if ACOProfileCustomer.FindFirst() then
+                Rec."Unit Price" := Rec."Unit Price" - (Rec."Unit Price" * ACOProfileCustomer."Sawing Discount" / 100);
+        end;
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Variant Code', false, false)]
     local procedure SalesLine_OnAfterValidate_VariantCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var

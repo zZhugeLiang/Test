@@ -61,6 +61,12 @@ tableextension 50001 "ACO Item Extension" extends Item
             TableRelation = "ACO Category";
             DataClassification = CustomerContent;
         }
+
+        field(50004; "ACO Sawing"; Boolean)
+        {
+            Caption = 'Sawing';
+            DataClassification = CustomerContent;
+        }
     }
 
     local procedure ACOInsertDefaultDimension(DimensionCode: Code[20]; DimensionValueCode: Code[20])

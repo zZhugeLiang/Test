@@ -338,9 +338,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                AppSetup: Record "ACO App Setup";
             begin
+                AppSetup.Get();
+                AppSetup.TestField("Min. Residue Saw");
                 if "ACO Final Length" <> 0 then
-                    "ACO Number of Units" := "ACO Number of Units" / "ACO Final Length";
+                    "ACO Number of Units" := Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") / "ACO Final Length", 1, '<');
             end;
         }
 

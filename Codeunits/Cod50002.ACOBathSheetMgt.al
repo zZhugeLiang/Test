@@ -16,11 +16,11 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.UpdateBathSheetHeader();
         // CalculateProcessTimes(ACOBathSheetHeader, ProductionOrderLines);
         //CompleteBathSheet(ProductionOrderLines);
-        ProductionOrderLines.SetRange("ACO Included", true);
+        // ProductionOrderLines.SetRange("ACO Included", true);
         ProductionOrderLines.ModifyAll("ACO Complete", true);
         ProductionOrderLines.ModifyAll("Quantity", 0);
         // how to make it so that the line is processed?
-        ProductionOrderLines.ModifyAll("ACO Included", false);
+        // ProductionOrderLines.ModifyAll("ACO Included", false);
 
         InsertResources(ACOBathSheetHeader."No.", Resource)
     end;
@@ -50,7 +50,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         Max2ChargesErr: Label 'A maximum of 2 charges is allowed, per Bath Sheet.';
     begin
         ProductionOrderLines.SetCurrentKey("ACO Charge No.", Status, "Prod. Order No.");
-        ProductionOrderLines.SetRange("ACO Included", true);
+        // ProductionOrderLines.SetRange("ACO Included", true);
         if ProductionOrderLines.FindSet() then
             repeat
                 if ProductionOrderLines."Variant Code" = '' then
@@ -92,7 +92,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         MinThinStainingTime: Decimal;
         First: Boolean;
     begin
-        ProductionOrderLines.SetRange("ACO Included", true);
+        // ProductionOrderLines.SetRange("ACO Included", true);
         First := true;
         if ProductionOrderLines.FindSet() then
             repeat

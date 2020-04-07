@@ -2983,20 +2983,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 1617299486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set Included</source>
+        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action SetIncluded - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 2282426043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Clear Included</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ClearIncluded - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 2986681349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Show Included</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowIncluded - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Line</source>
@@ -3477,6 +3467,11 @@
           <source>Category Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Category Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 607252771 - Field 4185750204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Sawing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Sawing - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Euras Customer</source>
