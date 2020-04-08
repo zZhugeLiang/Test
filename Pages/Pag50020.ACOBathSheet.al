@@ -78,6 +78,10 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
+                field(Status; Status)
+                {
+                    ApplicationArea = All;
+                }
                 field(Complete; Complete)
                 {
                     ApplicationArea = All;
