@@ -14,7 +14,7 @@ codeunit 50003 "ACO Management"
         ACOLinkedHolder.SetRange("Profile Code", Salesline."ACO Profile Code");
         ACOLinkedHolder.SetRange("Customer No.", CustomerNo);
         if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters");
+            ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
         if ACOLinkedHolder.Count() = 1 then begin
             ACOLinkedHolder.FindFirst();
@@ -26,7 +26,7 @@ codeunit 50003 "ACO Management"
         ACOLinkedPackaging.SetRange("Profile Code", Salesline."ACO Profile Code");
         ACOLinkedPackaging.SetRange("Customer No.", CustomerNo);
         if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters");
+            ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters" * 1000);
 
         if ACOLinkedPackaging.Count() = 1 then begin
             ACOLinkedPackaging.FindFirst();
