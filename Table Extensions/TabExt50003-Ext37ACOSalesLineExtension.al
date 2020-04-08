@@ -389,7 +389,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 SalesHeader: Record "Sales Header";
                 ItemVariant: Record "Item Variant";
                 ACOLinkedHolder: Record "ACO Linked Holder";
-                ACOLinkedHolders: Page "ACO Holders";
+                ACOLinkedHolders: Page "ACO Linked Holders";
             begin
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
                 ACOLinkedHolder.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");

@@ -304,7 +304,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                         ACOSelectionResources.SetSelectionFilter(Resource);
                         ProdOrderLineFilters.CopyFilters(Rec);
                         // SetRange("ACO Included", true);
-                        ACOBathSheetMgt.CreateBathSheet(Rec, Resource);
+                        ACOBathSheetMgt.CreateBathSheet(ProdOrderLine, Resource);
 
                         CopyFilters(ProdOrderLineFilters);
                         CurrPage.Update(false);

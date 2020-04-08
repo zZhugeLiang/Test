@@ -143,6 +143,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Maximum Sawing Length - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3156103170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing Machine Center No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Sawing Routing No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>

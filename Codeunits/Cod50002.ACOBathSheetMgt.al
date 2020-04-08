@@ -54,7 +54,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if ProductionOrderLines.FindSet() then
             repeat
                 if ProductionOrderLines."Variant Code" = '' then
-                    Error(VariantCodeEmptyErr);
+                    Error(VariantCodeEmptyErr, ProductionOrderLines."ACO Charge No.");
                 if ProductionOrderLines."ACO Quantity to Bath Sheet" = 0 then
                     Error(QuantityToBathSheetZeroErr, ProductionOrderLines."ACO Charge No.");
                 if ProductionOrderLines."ACO Charge No." = '' then
@@ -156,13 +156,13 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.Insert(true);
     end;
 
-    local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; ProductionOrderLines: Record "Prod. Order Line")
+    local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; var ProductionOrderLines: Record "Prod. Order Line")
     var
         LineNo: Integer;
     begin
         LineNo := 10000;
-        ProductionOrderLines.Reset();
-        ProductionOrderLines.SetRange("ACO Included", true);
+        // ProductionOrderLines.Reset();
+        // ProductionOrderLines.SetRange("ACO Included", true);
         if ProductionOrderLines.FindSet(true) then
             repeat
                 CreateBathSheetLine(ACOBathSheetHeaderNo, ProductionOrderLines, LineNo);

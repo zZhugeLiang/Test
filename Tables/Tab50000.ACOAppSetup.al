@@ -125,25 +125,25 @@ table 50000 "ACO App Setup"
             Caption = 'Aucos Staining Time';
             DataClassification = CustomerContent;
         }
-	
+
         field(22; "Aucos Seal Time"; Integer)
         {
             Caption = 'Aucos Seal Time';
             DataClassification = CustomerContent;
         }
-	
+
         field(23; "Aucos Sealconstant"; Integer)
         {
             Caption = 'Aucos Sealconstant';
             DataClassification = CustomerContent;
         }
-	
+
         field(24; "Multiple Staining Times Text"; Text[100])
         {
             Caption = 'Multiple Staining Times Text';
             DataClassification = CustomerContent;
         }
-	
+
         field(25; "Layer Thickness Tolerance"; Decimal)
         {
             Caption = 'Layer Thickness Tolerance';
@@ -180,6 +180,13 @@ table 50000 "ACO App Setup"
         field(30; "Maximum Sawing Length"; Decimal)
         {
             Caption = 'Maximum Sawing Length';
+            DataClassification = CustomerContent;
+        }
+
+        field(31; "Sawing Routing No."; Code[20])
+        {
+            Caption = 'Sawing Machine Center No.';
+            TableRelation = "Machine Center";
             DataClassification = CustomerContent;
         }
         // field(25; "Maximum Bath Length"; Decimal)

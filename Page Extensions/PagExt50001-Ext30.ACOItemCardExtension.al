@@ -28,7 +28,7 @@ pageextension 50001 "ACO Item Card Extension" extends "Item Card"
 
                 field("ACO Sawing"; "ACO Sawing")
                 {
-
+                    ApplicationArea = All;
                 }
             }
         }

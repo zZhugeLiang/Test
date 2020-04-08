@@ -114,6 +114,11 @@ page 50000 "ACO App Setup"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Sawing Routing No."; "Sawing Routing No.")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(Aucos)
