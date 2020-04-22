@@ -44,6 +44,15 @@ codeunit 50000 "ACO Event Subscribers"
         Rec."ACO Document Date Year" := Date2DWY(Rec."Document Date", 3);
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Shipping Agent Code', false, false)]
+    local procedure SalesHeader_OnAfterValidate_ShippingAgentCode(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
+    var
+        ShippingAgent: Record "Shipping Agent";
+    begin
+        if ShippingAgent.Get(Rec."Shipping Agent Code") then
+            Rec."ACO Own Shipping Agent" := ShippingAgent."ACO Own";
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'No.', false, false)]
     local procedure SalesLine_OnBeforeValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
@@ -70,7 +79,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOSingleInstanceMgt.SetSalesLineProfileCode('');
 
         ACOAppSetup.Get();
-        ACOAppSetup.TestField("Sawing Routing No.");
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
@@ -108,11 +116,13 @@ codeunit 50000 "ACO Event Subscribers"
 
                 Rec.Validate("ACO Color", Item."ACO Color");
 
-                RoutingLine.SetRange("Routing No.");
-                if RoutingLine.FindSet() then
-                    repeat
-                        Rec."ACO Sawing" := RoutingLine."No." = ACOAPPSetup."Sawing Routing No.";
-                    until (RoutingLine.Next() = 0) or Rec."ACO Sawing";
+                if ACOAppSetup."Sawing Routing No." <> '' then begin
+                    RoutingLine.SetRange("Routing No.", Item."Routing No.");
+                    if RoutingLine.FindSet() then
+                        repeat
+                            Rec."ACO Sawing" := RoutingLine."No." = ACOAPPSetup."Sawing Routing No.";
+                        until (RoutingLine.Next() = 0) or Rec."ACO Sawing";
+                end;
 
                 //Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness");
                 //if

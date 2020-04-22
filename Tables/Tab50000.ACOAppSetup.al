@@ -189,6 +189,33 @@ table 50000 "ACO App Setup"
             TableRelation = "Machine Center";
             DataClassification = CustomerContent;
         }
+
+        field(32; "Foil Routing No."; Code[20])
+        {
+            Caption = 'Foil Routing No.';
+            TableRelation = "Machine Center";
+            DataClassification = CustomerContent;
+        }
+
+        field(33; "Net/Gross Weight Factor"; Decimal)
+        {
+            Caption = 'Net/Gross Weight Factor';
+            DataClassification = CustomerContent;
+        }
+
+        field(34; "VEC Routing No."; Code[20])
+        {
+            Caption = 'VEC Routing No.';
+            TableRelation = "Machine Center";
+            DataClassification = CustomerContent;
+        }
+
+        field(35; "Wrap Routing No."; Code[20])
+        {
+            Caption = 'Wrap Routing No.';
+            TableRelation = "Machine Center";
+            DataClassification = CustomerContent;
+        }
         // field(25; "Maximum Bath Length"; Decimal)
         // {
         //     Caption = 'Maximum Bath Length';

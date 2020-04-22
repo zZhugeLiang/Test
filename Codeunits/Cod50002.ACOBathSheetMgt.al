@@ -84,7 +84,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         Customer: Record Customer;
-        ACOProfileCustomer: Record "ACO Profile Customer";
         PreviousSourceNo: Code[20];
         CurrentSourceNo: Code[20];
         TotalCircumference: Decimal;
@@ -108,32 +107,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 CurrentSourceNo := ProductionOrderLines."ACO Source No.";
                 if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source Line No.") then begin
                     TotalCircumference += SalesLine."ACO Profile Circumference";
-
-                    if SalesLine."ACO Thick St. Time Profile" >= MaxThickStainingTime then
-                        MaxThickStainingTime := SalesLine."ACO Thick St. Time Profile";
-
-                    if SalesLine."ACO Thick Staining Time PT" >= MaxThickStainingTime then
-                        MaxThickStainingTime := SalesLine."ACO Thick Staining Time PT";
-
-
-                    if Customer."ACO Thick Staining Time" >= MaxThickStainingTime then
-                        MaxThickStainingTime := Customer."ACO Thick Staining Time";
-
-                    if SalesLine."ACO Thin Staining Time Profile" <= MinThinStainingTime then
-                        MinThinStainingTime := SalesLine."ACO Thick St. Time Profile";
-
-                    if SalesLine."ACO Thin Staining Time PT" <= MinThinStainingTime then
-                        MinThinStainingTime := SalesLine."ACO Thick Staining Time PT";
-
-                    if Customer."ACO Thin Staining Time" >= MinThinStainingTime then
-                        MinThinStainingTime := Customer."ACO Thin Staining Time";
-
-                    if ACOProfileCustomer.Get(SalesLine."ACO Profile Code", Customer."No.", SalesLine."No.") then begin
-                        if ACOProfileCustomer."Thin Staining Time" >= MinThinStainingTime then
-                            MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-                        if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
-                            MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
-                    end;
+                    DetermineStainingTimes(SalesLine, MinThinStainingTime, MaxThickStainingTime, Customer);
 
                     if SalesLine."ACO Euras Profile" then
                         ACOBathSheetHeader.Euras := true;
@@ -154,6 +128,37 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
         ACOBathSheetHeader.Circumference := TotalCircumference;
         ACOBathSheetHeader.Insert(true);
+    end;
+
+    procedure DetermineStainingTimes(SalesLine: Record "Sales Line"; var MinThinStainingTime: Decimal; var MaxThickStainingTime: Decimal; Customer: Record Customer)
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+    begin
+        if SalesLine."ACO Thick St. Time Profile" >= MaxThickStainingTime then
+            MaxThickStainingTime := SalesLine."ACO Thick St. Time Profile";
+
+        if SalesLine."ACO Thick Staining Time PT" >= MaxThickStainingTime then
+            MaxThickStainingTime := SalesLine."ACO Thick Staining Time PT";
+
+
+        if Customer."ACO Thick Staining Time" >= MaxThickStainingTime then
+            MaxThickStainingTime := Customer."ACO Thick Staining Time";
+
+        if SalesLine."ACO Thin Staining Time Profile" <= MinThinStainingTime then
+            MinThinStainingTime := SalesLine."ACO Thick St. Time Profile";
+
+        if SalesLine."ACO Thin Staining Time PT" <= MinThinStainingTime then
+            MinThinStainingTime := SalesLine."ACO Thick Staining Time PT";
+
+        if Customer."ACO Thin Staining Time" >= MinThinStainingTime then
+            MinThinStainingTime := Customer."ACO Thin Staining Time";
+
+        if ACOProfileCustomer.Get(SalesLine."ACO Profile Code", Customer."No.", SalesLine."No.") then begin
+            if ACOProfileCustomer."Thin Staining Time" >= MinThinStainingTime then
+                MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+            if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
+                MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+        end;
     end;
 
     local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; var ProductionOrderLines: Record "Prod. Order Line")
@@ -216,7 +221,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ProductionOrderLine.Modify();
     end;
 
-    local procedure DetermineCurrentDensities(SalesLine: Record "Sales Line"; var MinCurrentDensity: Decimal; var MaxCurrentDensity: Decimal)
+    procedure DetermineCurrentDensities(SalesLine: Record "Sales Line"; var MinCurrentDensity: Decimal; var MaxCurrentDensity: Decimal)
     begin
         MinCurrentDensity := SalesLine."ACO Min. Curr. Density Profile";
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
