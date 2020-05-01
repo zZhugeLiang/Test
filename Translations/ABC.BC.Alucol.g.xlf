@@ -3913,6 +3913,66 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType KundentourCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 142753960" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HolderDataCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3791581256" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HolderCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1662539034" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mold</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MoldCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2763383773" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType NameCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2919953239" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType PositionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1850514430" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fill in the clamped totals here (OK + Rejected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType FillClampedTotalsHereCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 4132251781" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity OK</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType QuantityOKCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1936615392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity rejected with reason(s)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType QuantityRejectedWithReasonsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 4221438143" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Totals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType TotalsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 127265693" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType NumberOfUnitsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1261740140" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area incl. Hollow</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaIncHollowCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3073791222" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area excl. Hollow</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaExcHollowCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
           <source>Printing Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3942,11 +4002,6 @@
           <source>Delivery Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType DeliveryDateCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 626628970" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thin Staining</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ThinStainingCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantity</source>

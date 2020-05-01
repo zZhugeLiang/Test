@@ -1895,11 +1895,23 @@
                               <TablixHeader>
                                 <Size>5cm</Size>
                                 <CellContents>
-                                  <Image Name="Picture_Profile">
-                                    <Source>Database</Source>
-                                    <Value>=Convert.ToBase64String(Fields!PictureFile_ACOProfile.Value)</Value>
-                                    <MIMEType>image/bmp</MIMEType>
-                                    <Sizing>FitProportional</Sizing>
+                                  <Rectangle Name="Rectangle2">
+                                    <ReportItems>
+                                      <Image Name="Picture_Profile">
+                                        <Source>Database</Source>
+                                        <Value>=Convert.ToBase64String(Fields!PictureFile_ACOProfile.Value)</Value>
+                                        <MIMEType>image/bmp</MIMEType>
+                                        <Sizing>FitProportional</Sizing>
+                                        <Height>5cm</Height>
+                                        <Width>5cm</Width>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
+                                        </Style>
+                                      </Image>
+                                    </ReportItems>
+                                    <KeepTogether>true</KeepTogether>
                                     <Visibility>
                                       <Hidden>=iif(IsNothing(Fields!PictureFile_ACOProfile.Value) = TRUE,TRUE,FALSE)</Hidden>
                                     </Visibility>
@@ -1908,7 +1920,7 @@
                                         <Style>None</Style>
                                       </Border>
                                     </Style>
-                                  </Image>
+                                  </Rectangle>
                                 </CellContents>
                               </TablixHeader>
                               <TablixMembers>
@@ -3112,7 +3124,7 @@
                   </TablixMembers>
                 </TablixRowHierarchy>
                 <DataSetName>DataSet_Result</DataSetName>
-                <Height>8.87937cm</Height>
+                <Height>8.87938cm</Height>
                 <Width>27.7cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
@@ -3603,6 +3615,7 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
+              <Top>0cm</Top>
               <Left>22.41776cm</Left>
               <Height>11pt</Height>
               <Width>5.27947cm</Width>
@@ -3628,6 +3641,7 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
+              <Top>0cm</Top>
               <Height>11pt</Height>
               <Width>11.94697cm</Width>
               <ZIndex>1</ZIndex>

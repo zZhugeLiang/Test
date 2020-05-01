@@ -47,6 +47,18 @@ report 50005 "ACO Attach Notice"
             column(ACO_Delivery_Date; "ACO Delivery Date")
             {
             }
+            // Totals <<
+            column(FillClampedTotalsHereCaption; FillClampedTotalsHereCaptionLbl) { }
+            column(QuantityOKCaption; QuantityOKCaptionLbl) { }
+            column(QuantityRejectedWithReasonsCaption; QuantityRejectedWithReasonsCaptionLbl) { }
+            column(TotalsCaption; TotalsCaptionLbl) { }
+            column(NumberOfUnitsCaption; NumberOfUnitsCaptionLbl) { }
+            column(AreaIncHollowCaption; AreaIncHollowCaptionLbl) { }
+            column(TotalNumberOfBaths; TotalNumberOfBaths) { }
+            column(AreaIncHollow; AreaIncHollow) { }
+            column(AreaExcHollowCaption; AreaExcHollowCaptionLbl) { }
+            column(AreaExcHollow; AreaExcHollow) { }
+            // Totals >>            
             // Footer <<
             column(PrintingDateCaption; PrintingDateCaptionLbl) { }
             column(PrintingDate; CurrentDateTime())
@@ -154,10 +166,40 @@ report 50005 "ACO Attach Notice"
                 column(ACO_Measure_Report; "ACO Measure Report") { }
                 column(KundentourCaption; KundentourCaptionLbl) { }
                 column(ACO_Kundentour_HUECK; "ACO Kundentour HUECK") { }
-
-
                 // Done >>
-
+                // Holders <<
+                column(HolderDataCaption; HolderDataCaptionLbl) { }
+                column(HelixStart_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Helix Start")) { }
+                column(HelixStart_ACOLinkedHolder; ACOLinkedHolder."Helix Start") { }
+                column(HelixEnd_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Helix End")) { }
+                column(HelixEnd_ACOLinkedHolder; ACOLinkedHolder."Helix End") { }
+                column(Helix_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Helix")) { }
+                column(Helix_ACOLinkedHolder; ACOLinkedHolder."Helix") { }
+                column(Space_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption(Space)) { }
+                column(Space_ACOLinkedHolder; ACOLinkedHolder.Space) { }
+                column(AttachMethodCode_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Attach Method Code")) { }
+                column(Description_ACOAttachmethod; ACOAttachMethod.Description) { }
+                column(Comment_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption(Comment)) { }
+                column(Comment_ACOLinkedHolder; ACOLinkedHolder.Comment) { }
+                column(ACOLinkedHolderCaption; ACOLinkedHolderType.TableCaption()) { }
+                column(MoldCaption; MoldCaptionLbl) { }
+                column(Code_ACOLinkedHolderType; ACOLinkedHolderType."Holder Type Code") { }
+                column(NameCaption; NameCaptionLbl) { }
+                column(Description_ACOlinkedHolderType; ACOLinkedHolderType.Description) { }
+                column(Quantity_ACOLinkedHolderType; ACOLinkedHolderType.Quantity) { }
+                column(PositionCaption; PositionCaptionLbl) { }
+                column(Position_ACOLinkedHolderType; Format(ACOLinkedHolderType.Position)) { }
+                column(ACOLinkedSupportHolderCaption; ACOLinkedSupportHolder.TableCaption()) { }
+                column(Code_ACOLinkedSupportHolder; ACOLinkedSupportHolder."Support Holder Code") { }
+                column(Description_ACOLinkedSupportHolder; ACOLinkedSupportHolder.Description) { }
+                column(Distance_ACOLinkedSupportHolderCaption; ACOLinkedSupportHolder.FieldCaption(Distance)) { }
+                column(Distance_ACOLinkedSupportHolder; ACOLinkedSupportHolder.Distance) { }
+                column(ACOLinkedDistanceHolderCaption; ACOLinkedDistanceHolder.TableCaption()) { }
+                column(HolderCaption; HolderCaptionLbl) { }
+                column(Description_ACOLinkedDistanceHolder; ACOLinkedDistanceHolder."Description") { }
+                column(Position_ACOLinkedDistanceHolderCaption; ACOLinkedDistanceHolder.FieldCaption(Position)) { }
+                column(Position_ACOLinkedDistanceHolder; ACOLinkedDistanceHolder.Position) { }
+                // Holders >>
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
@@ -171,10 +213,7 @@ report 50005 "ACO Attach Notice"
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 
-                    // ACOLinkedHolder.Setr(ACOProfileCustomer.)
-                    // ACOLinkedHolderType
-                    // ACOLinkedDistanceHolder
-                    // ACOLinkedSupportHolder
+                    GetHolders();
 
                     if ACOProfile.Get("ACO Profile Code") then
                         ACOProfile.CalcFields("Picture File")
@@ -223,6 +262,11 @@ report 50005 "ACO Attach Notice"
             begin
                 MaxLength := 0;
                 NumberOfMiliMeters := 0;
+                TotalNumberOfUnits := 0;
+                TotalNumberOfBaths := 0;
+                TotalArea := 0;
+                AreaExcHollow := 0;
+                AreaIncHollow := 0;
 
                 Customer.Get("Sell-to Customer No.");
                 SalesLine.SetRange("Document Type", "Document Type");
@@ -232,14 +276,17 @@ report 50005 "ACO Attach Notice"
                         BagDescriptionsText += SalesLine."ACO Receipt Bag" + '/';
                         TotalNumberOfUnits += SalesLine."ACO Number of Units";
                         TotalArea += SalesLine."ACO Area";
+                        AreaExcHollow += SalesLine."ACO Area";
+                        AreaIncHollow += SalesLine."ACO Area" * SalesLine."ACO Correction Factor Profile";
+
                         if ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then begin
                             NumberOfMiliMeters := ItemVariant."ACO Number of Meters" * 1000;
                             if NumberOfMiliMeters > MaxLength then
                                 MaxLength := NumberOfMiliMeters;
-
-                            // ACOBathSheetMgt.DetermineStainingTimes(SalesLine, ThinStainingTime, ThickStainingTime, Customer);
-                            // ACOBathSheetMgt.DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
                         end;
+                        TotalNumberOfUnits += "Sales Line"."ACO Number of Units";
+                        if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
+                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile"
                     until SalesLine.Next() = 0;
 
                 if StrLen(BagDescriptionsText) > 1 then
@@ -252,6 +299,7 @@ report 50005 "ACO Attach Notice"
     begin
         User.Get(UserSecurityId());
         ACOAppSetup.Get();
+        CurrReport.Language(1043);
     end;
 
     var
@@ -267,11 +315,8 @@ report 50005 "ACO Attach Notice"
         ACOLinkedHolderType: Record "ACO Linked Holder Type";//New
         ACOLinkedDistanceHolder: Record "ACO Linked Distance Holder";//New
         ACOLinkedSupportHolder: Record "ACO Linked Support Holder";//New
-        CustomerName: Text[100];
-        ItemDescription: Text[100];
-        MeasureText: Text;
+        ACOAttachMethod: Record "ACO Attach Method";
         BagDescriptionsText: Text;
-        TotalNumberOfUnits: Decimal;
         TotalArea: Decimal; //New
         MaxLength: Decimal; //New
         MaxCurrentDensity: Decimal; //New
@@ -282,6 +327,10 @@ report 50005 "ACO Attach Notice"
         NetWeight: Decimal;//New
         GrossWeight: Decimal;//New
         NumberOfBaths: Decimal;//New
+        TotalNumberOfBaths: Decimal;//New
+        TotalNumberOfUnits: Decimal; // New
+        AreaIncHollow: Decimal; // New
+        AreaExcHollow: Decimal; // New
         IsFoil: Boolean;//New
         IsVEC: Boolean;//New
         IsWrap: Boolean;//New
@@ -337,6 +386,20 @@ report 50005 "ACO Attach Notice"
         HighEndCaptionLbl: Label 'High End';
         MeasureReportCaptionLbl: Label 'Measure Report';
         KundentourCaptionLbl: Label 'Kundentour';
+        HolderDataCaptionLbl: Label 'Holder Data';
+        HolderCaptionLbl: Label 'Holder';
+        MoldCaptionLbl: Label 'Mold';
+        NameCaptionLbl: Label 'Name';
+        PositionCaptionLbl: Label 'Position';
+        // Totals
+        FillClampedTotalsHereCaptionLbl: Label 'Fill in the clamped totals here (OK + Rejected)';
+        QuantityOKCaptionLbl: Label 'Quantity OK';
+        QuantityRejectedWithReasonsCaptionLbl: Label 'Quantity rejected with reason(s)';
+        TotalsCaptionLbl: Label 'Totals';
+        NumberOfUnitsCaptionLbl: Label 'Number of Units';
+        AreaIncHollowCaptionLbl: Label 'Area incl. Hollow';
+        AreaExcHollowCaptionLbl: Label 'Area excl. Hollow';
+        // Footer
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
         ///
@@ -344,11 +407,51 @@ report 50005 "ACO Attach Notice"
         SupplierCaptionLbl: Label 'Supplier';
         TotalNumberOfUnitsCaptionLbl: Label 'Total Number of Units';
         DeliveryDateCaptionLbl: Label 'Delivery Date';
-
-        ThinStainingCaptionLbl: Label 'Thin Staining';
-
         QuantityCaptionLbl: Label 'Quantity';
         LengthCaptionLbl: Label 'Length';
         LocationCaptionLbl: Label 'Location';
 
+    local procedure GetHolders()
+    begin
+        ACOLinkedHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
+        ACOLinkedHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+        if ItemVariant."ACO Number of Meters" <> 0 then
+            ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
+        if ACOLinkedHolder.FindFirst() then begin
+            if ACOLinkedHolder."Attach Method Code" <> '' then
+                ACOAttachMethod.Get(ACOLinkedHolder."Attach Method Code");
+
+            ACOLinkedHolderType.SetRange("Holder Code", ACOLinkedHolder.Code);
+            ACOLinkedHolderType.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
+            ACOLinkedHolderType.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+            if ItemVariant."ACO Number of Meters" <> 0 then
+                ACOLinkedHolderType.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
+            if not ACOLinkedHolderType.FindFirst() then
+                Clear(ACOLinkedHolderType);
+
+            ACOLinkedDistanceHolder.SetRange("Holder Code", ACOLinkedHolder.Code);
+            ACOLinkedDistanceHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
+            ACOLinkedDistanceHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+            if ItemVariant."ACO Number of Meters" <> 0 then
+                ACOLinkedDistanceHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
+            if not ACOLinkedDistanceHolder.FindFirst() then
+                Clear(ACOLinkedDistanceHolder);
+
+            ACOLinkedSupportHolder.SetRange("Holder Code", ACOLinkedHolder.Code);
+            ACOLinkedSupportHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
+            ACOLinkedSupportHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+            if ItemVariant."ACO Number of Meters" <> 0 then
+                ACOLinkedSupportHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
+            if not ACOLinkedSupportHolder.FindFirst() then
+                Clear(ACOLinkedSupportHolder);
+        end else begin
+            Clear(ACOLinkedHolder);
+            Clear(ACOLinkedHolderType);
+            Clear(ACOLinkedDistanceHolder);
+            Clear(ACOLinkedSupportHolder);
+        end;
+
+
+
+    end;
 }
