@@ -31,7 +31,7 @@ page 50016 "ACO Holder Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Type of Clamp"; "Type of Clamp")
+                field("Type of Clamp Code"; "Type of Clamp Code")
                 {
                     ApplicationArea = All;
                 }

@@ -69,6 +69,11 @@ table 50034 "ACO Linked Distance Holder"
             OptionCaption = 'Active,Inactive';
             DataClassification = CustomerContent;
         }
+        field(9; Position; Decimal)
+        {
+            Caption = 'Position';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

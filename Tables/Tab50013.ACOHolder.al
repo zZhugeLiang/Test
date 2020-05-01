@@ -41,7 +41,9 @@ table 50013 "ACO Holder"
 
         field(11; "Type of Clamp"; Text[100])
         {
-            Caption = 'Type of Clamp';
+            Caption = 'Type of Clamp'; // DEPPRECATED
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by field Type of Clamp Code';
             DataClassification = CustomerContent;
         }
 
@@ -74,6 +76,13 @@ table 50013 "ACO Holder"
         field(17; "Helix End"; Decimal)
         {
             Caption = 'Helix End [in cm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(18; "Type of Clamp Code"; Code[10])
+        {
+            Caption = 'Type of Clamp Code';
+            TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
     }

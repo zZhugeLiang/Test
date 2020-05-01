@@ -61,6 +61,11 @@ table 50035 "ACO Linked Support Holder"
             OptionCaption = 'Active,Inactive';
             DataClassification = CustomerContent;
         }
+        field(8; Distance; Decimal)
+        {
+            Caption = 'Distance';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

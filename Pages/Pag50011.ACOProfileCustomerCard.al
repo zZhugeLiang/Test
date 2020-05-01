@@ -73,6 +73,10 @@ page 50011 "ACO Profile Customer Card"
                 {
                     ApplicationArea = All;
                 }
+                field("High End"; "High End")
+                {
+                    ApplicationArea = All;
+                }
                 field("Extra to Enumerate"; "Extra to Enumerate")
                 {
                     ApplicationArea = All;

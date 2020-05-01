@@ -28,6 +28,10 @@ page 50012 "ACO Holder Types"
                 {
                     ApplicationArea = All;
                 }
+                field(Location; Location)
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

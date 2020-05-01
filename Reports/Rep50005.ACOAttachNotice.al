@@ -87,6 +87,10 @@ report 50005 "ACO Attach Notice"
                 column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter") { }
                 column(ExtraToEnumerateCaption; ExtraToEnumerateCaptionLbl) { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
+                column(FoilCaption; FoilCaptionLbl) { }
+                column(IsFoil; IsFoil) { }
+                column(EurasCaption; EurasCaptionLbl) { }
+                column(Euras_ACOProfileCustomer; ACOProfileCustomer.Euras) { }
                 column(NetWeightCaption; NetWeightCaptionLbl) { }
                 column(NetWeight; NetWeight) { }
                 column(GrossWeightCaption; GrossWeightCaptionLbl) { }
@@ -104,19 +108,20 @@ report 50005 "ACO Attach Notice"
                 column(CategoryCaption; CategoryCaptionLbl) { }
                 column(Description_ACOCategory; ACOCategory.Description) { }
                 column(ItemNoteForWorkOrderCaption; ItemNoteForWorkOrderCaptionLbl) { }
+                column(CommentWorkNote_ACOProfile; ACOProfile."Comment Work Note") { }
+                column(ItemNoteForBathSheetCaption; ItemNoteForBathSheetCaptionLbl) { }
                 column(CommentBathCard_ACOProfile; ACOProfile."Comment Bath Card") { }
-                column(FoilCaption; FoilCaptionLbl) { }
-                column(IsFoil; IsFoil)
-                {
-                }
-                column(WrapCaption; WrapCaptionLbl) { }
-                column(IsWrap; IsWrap)
-                {
-                }
-                column(VECCaption; VECCaptionLbl) { }
-                column(IsVEC; IsVEC)
-                {
-                }
+                column(HollowFactorCaption; HollowFactorCaptionLbl) { }
+                column(CorrectionFactor_ACOProfile; ACOProfile."Correction Factor") { }
+                column(HeightLevelCaption; HeightLevelCaptionLbl) { }
+                column(ACO_Height_Level_Profile; "ACO Height Level Profile") { }
+
+                column(ExtraFlushingCaption; ExtraFlushingCaptionLbl) { }
+                column(ACO_Extra_Flushing; "ACO Extra Flushing") { }
+
+                column(MuNotMeasurableCaption; MuNotMeasurableCaptionLbl) { }
+                column(ACO_Not_Measurable; "ACO Not Measurable") { }
+
                 column(LocationCaption; LocationCaptionLbl) { }
                 column(ACO_Receipt_Bag; "ACO Receipt Bag")
                 {
@@ -137,8 +142,20 @@ report 50005 "ACO Attach Notice"
                 column(ThickStainingTime; ThickStainingTime) { }
                 column(ThinStainingTimeCaption; ThinStainingTimeCaptionLbl) { }
                 column(ThinStainingTime; ThinStainingTime) { }
-                column(EurasCaption; EurasCaptionLbl) { }
-                column(Euras_ACOProfileCustomer; ACOProfileCustomer.Euras) { }
+                column(VECCaption; VECCaptionLbl) { }
+                column(IsVEC; IsVEC) { }
+                column(BSCaptionLbl; BSCaptionLbl) { }
+                column(ACO_British_Standard; "ACO British Standard") { }
+                column(WrapCaption; WrapCaptionLbl) { }
+                column(IsWrap; IsWrap) { }
+                column(HighEndCaption; HighEndCaptionLbl) { }
+                column(ACO_High_End; "ACO High End") { }
+                column(MeasureReportCaption; MeasureReportCaptionLbl) { }
+                column(ACO_Measure_Report; "ACO Measure Report") { }
+                column(KundentourCaption; KundentourCaptionLbl) { }
+                column(ACO_Kundentour_HUECK; "ACO Kundentour HUECK") { }
+
+
                 // Done >>
 
                 trigger OnAfterGetRecord()
@@ -154,7 +171,14 @@ report 50005 "ACO Attach Notice"
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 
-                    if not ACOProfile.Get("ACO Profile Code") then
+                    // ACOLinkedHolder.Setr(ACOProfileCustomer.)
+                    // ACOLinkedHolderType
+                    // ACOLinkedDistanceHolder
+                    // ACOLinkedSupportHolder
+
+                    if ACOProfile.Get("ACO Profile Code") then
+                        ACOProfile.CalcFields("Picture File")
+                    else
                         Clear(ACOProfile);
 
                     if not ACOCategory.Get(ACOProfile.Category) then
@@ -239,6 +263,10 @@ report 50005 "ACO Attach Notice"
         ACOColorProjectHeader: Record "ACO Project Color Header";//New
         ACOCategory: Record "ACO Category";//New
         ACOAppSetup: Record "ACO App Setup";//New
+        ACOLinkedHolder: Record "ACO Linked Holder";//New
+        ACOLinkedHolderType: Record "ACO Linked Holder Type";//New
+        ACOLinkedDistanceHolder: Record "ACO Linked Distance Holder";//New
+        ACOLinkedSupportHolder: Record "ACO Linked Support Holder";//New
         CustomerName: Text[100];
         ItemDescription: Text[100];
         MeasureText: Text;
@@ -298,9 +326,17 @@ report 50005 "ACO Attach Notice"
         // Captions Header Done >>
 
         ItemNoteForWorkOrderCaptionLbl: Label 'Item Note for Work Order';
+        ItemNoteForBathSheetCaptionLbl: Label 'Item Note for Bath Sheet';
+        HollowFactorCaptionLbl: Label 'Hollow Factor';
+        HeightLevelCaptionLbl: Label 'Height Level';
+        ExtraFlushingCaptionLbl: Label 'Extra Flushing';
+        MuNotMeasurableCaptionLbl: Label 'Mu Not Measurable';
+        BSCaptionLbl: Label 'BS';
         WrapCaptionLbl: Label 'Wrap';
         VECCaptionLbl: Label 'VEC';
-
+        HighEndCaptionLbl: Label 'High End';
+        MeasureReportCaptionLbl: Label 'Measure Report';
+        KundentourCaptionLbl: Label 'Kundentour';
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
         ///

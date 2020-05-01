@@ -114,7 +114,9 @@ report 50004 "ACO Expedition Work Order"
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 
-                    if not ACOProfile.Get("ACO Profile Code") then
+                    if ACOProfile.Get("ACO Profile Code") then
+                        ACOProfile.CalcFields("Picture File")
+                    else
                         Clear(ACOProfile);
                 end;
             }

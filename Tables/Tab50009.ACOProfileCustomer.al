@@ -180,6 +180,11 @@ table 50009 "ACO Profile Customer"
             Caption = 'Maximum Current Density [A/dm²]';
             DataClassification = CustomerContent;
         }
+        field(20; "High End"; Boolean)
+        {
+            Caption = 'High End';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

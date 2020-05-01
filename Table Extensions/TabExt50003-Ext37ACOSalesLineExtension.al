@@ -299,7 +299,9 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         field(50037; "ACO Type of Clamp Profile"; Text[100])
         {
-            Caption = 'Type of Clamp Profile';
+            Caption = 'Type of Clamp Profile'; // DEPRECATED
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by field Type of Clamp Code';
             DataClassification = CustomerContent;
         }
 
@@ -486,6 +488,24 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Project Color Code';
             TableRelation = "ACO Project Color Header";
+            DataClassification = CustomerContent;
+        }
+
+        field(50056; "ACO High End"; Boolean)
+        {
+            Caption = 'High End';
+            DataClassification = CustomerContent;
+        }
+
+        field(50057; "ACO Measure Report"; Boolean)
+        {
+            Caption = 'Measure Report';
+            DataClassification = CustomerContent;
+        }
+        field(50058; "ACO Type of Clamp Code"; Code[10])
+        {
+            Caption = 'Type of Clamp Code Profile';
+            TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
     }

@@ -728,7 +728,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Attach Method Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3326183214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3974017570 - Field 3326183214 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Type of Clamp</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Type of Clamp - Property Caption</note>
@@ -747,6 +747,16 @@
           <source>Blocked State Inactive</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Blocked State Inactive - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>High End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field High End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2495577545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of Clamp Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Type of Clamp Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer</source>
@@ -858,6 +868,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Maximum Current Density - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>High End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field High End - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -882,6 +897,16 @@
           <source>Position</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Type - Field Position - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3119164599 - Field 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Type - Field Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3119164599 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside,Outside</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder Type - Field Location - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 2614308890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Distance Holder</source>
@@ -948,7 +973,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Attach Method Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2347744687 - Field 3326183214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2347744687 - Field 3326183214 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Type of Clamp</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Type of Clamp - Property Caption</note>
@@ -982,6 +1007,11 @@
           <source>Helix End [in cm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Helix End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2347744687 - Field 2495577545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of Clamp Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Type of Clamp Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1054381131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Method</source>
@@ -1628,7 +1658,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Attach Method Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3220518104 - Field 3326183214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3220518104 - Field 3326183214 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Type of Clamp</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Type of Clamp - Property Caption</note>
@@ -1662,6 +1692,11 @@
           <source>Helix End [in cm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Helix End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3220518104 - Field 2495577545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of Clamp Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Type of Clamp Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 561029783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measure Mu</source>
@@ -2238,6 +2273,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Position - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1823548541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Support Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2282,6 +2322,11 @@
           <source>Active,Inactive</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 473605269 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Distance - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3921199275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Imported Sales Order Line</source>
@@ -2457,6 +2502,31 @@
           <source>Remark</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Remark - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 205766193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ACO Type of Clamp</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Type of Clamp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 205766193 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Type of Clamp - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 205766193 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Type of Clamp - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 205766193 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Type of Clamp - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 205766193 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active,Inactive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Type of Clamp - Field Status - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
@@ -3353,6 +3423,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packaging List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1145435879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of Clamp List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Type of Clamp List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1145435879 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Type of Clamp List - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1145435879 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Desription</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Type of Clamp List - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1145435879 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Type of Clamp List - Control Status - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3768,6 +3858,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemNoteForWorkOrderCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2790046486" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Note for Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemNoteForBathSheetCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 985419202" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hollow Factor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HollowFactorCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3741191151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Height Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HeightLevelCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra Flushing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ExtraFlushingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 240991354" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mu Not Measurable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MuNotMeasurableCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2584541967" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType BSCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1096431244" size-unit="char" translate="yes" xml:space="preserve">
           <source>Wrap</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3777,6 +3897,21 @@
           <source>VEC</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType VECCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
+          <source>High End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HighEndCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2535608774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MeasureReportCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2354263449" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Kundentour</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType KundentourCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
           <source>Printing Date</source>
@@ -4383,7 +4518,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Attach Method Code Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 3169855776 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+        <trans-unit id="TableExtension 632998638 - Field 3169855776 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Type of Clamp Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Type of Clamp Profile - Property Caption</note>
@@ -4472,6 +4607,21 @@
           <source>Project Color Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Project Color Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1311655072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>High End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO High End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1606446469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Measure Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Measure Report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 4044582590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Type of Clamp Code Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Type of Clamp Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1709463785 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Quantity Charges</source>

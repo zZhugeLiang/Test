@@ -108,7 +108,7 @@ codeunit 50000 "ACO Event Subscribers"
                         Rec."ACO Euras Profile" := false;
                         Rec."ACO Extra to Enumerate Profile" := 0;
                         Rec."ACO Attach Method Code Profile" := '';
-                        Rec."ACO Type of Clamp Profile" := '';
+                        Rec."ACO Type of Clamp Code" := '';
                         Rec."ACO Holders Profile" := '';
                         Rec."ACO Charges per Bath Profile" := 0;
                     end;
@@ -241,7 +241,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Thick St. Time Profile" := ACOProfile."Thick Staining Time";
             Rec."ACO Extra to Enumerate Profile" := ACOProfile."Extra to Enumerate";
             Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
-            Rec."ACO Type of Clamp Profile" := ACOProfile."Type of Clamp";
+            Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
 

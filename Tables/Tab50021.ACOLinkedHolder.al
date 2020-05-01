@@ -23,7 +23,7 @@ table 50021 "ACO Linked Holder"
                     "Description" := ACOHolder."Description";
                     "Color Group Code" := ACOHolder."Color Group Code";
                     "Attach Method Code" := ACOHolder."Attach Method Code";
-                    "Type of Clamp" := ACOHolder."Type of Clamp";
+                    "Type of Clamp Code" := ACOHolder."Type of Clamp Code";
                     Comment := ACOHolder.Comment;
                     Method := ACOHolder.Method;
                     Space := ACOHolder.Space;
@@ -77,7 +77,9 @@ table 50021 "ACO Linked Holder"
 
         field(11; "Type of Clamp"; Text[100])
         {
-            Caption = 'Type of Clamp';
+            Caption = 'Type of Clamp'; // DEPRECATED
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by field Type of Clamp Code';
             DataClassification = CustomerContent;
         }
 
@@ -114,6 +116,13 @@ table 50021 "ACO Linked Holder"
         field(17; "Helix End"; Decimal)
         {
             Caption = 'Helix End [in cm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(18; "Type of Clamp Code"; Code[10])
+        {
+            Caption = 'Type of Clamp Code';
+            TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
     }

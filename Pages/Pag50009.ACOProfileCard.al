@@ -49,7 +49,10 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
-
+                field("High End"; "High End")
+                {
+                    ApplicationArea = All;
+                }
                 field("Weight per meter"; "Weight per meter")
                 {
                     ApplicationArea = All;
@@ -101,7 +104,7 @@ page 50009 "ACO Profile Card"
                         "Picture File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Picture Filename" := CopyStr(tmpFileName, 0, 250);
+                        "Picture Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
                     end;
                 }
@@ -118,7 +121,7 @@ page 50009 "ACO Profile Card"
                         "Clamping Method File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Clamping Method Filename" := CopyStr(tmpFileName, 0, 250);
+                        "Clamping Method Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
                     end;
                 }
@@ -135,7 +138,7 @@ page 50009 "ACO Profile Card"
                         "Packaging Instructions File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 0, 250);
+                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
                     end;
                 }

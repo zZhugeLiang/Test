@@ -215,6 +215,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if ItemVariant.Get(ProductionOrderLine."Item No.", ProductionOrderLine."Variant Code") then
             ACOBathSheetLine.Length := ItemVariant."ACO Number of Meters";
         ACOBathSheetLine.CalculateSurface();
+        ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
 
         ProductionOrderLine."ACO Number of Units" := ProductionOrderLine."ACO Number of Units" - ProductionOrderLine."ACO Quantity to Bath Sheet";

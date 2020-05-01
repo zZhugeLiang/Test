@@ -163,7 +163,9 @@ table 50008 "ACO Profile"
         }
         field(29; "Type of Clamp"; Text[100])
         {
-            Caption = 'Type of Clamp';
+            Caption = 'Type of Clamp'; // DEPRECATED
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by field Type of Clamp Code';
             DataClassification = CustomerContent;
         }
 
@@ -182,6 +184,19 @@ table 50008 "ACO Profile"
         field(32; "Blocked State Inactive"; Boolean)
         {
             Caption = 'Blocked State Inactive';
+            DataClassification = CustomerContent;
+        }
+
+        field(33; "High End"; Boolean)
+        {
+            Caption = 'High End';
+            DataClassification = CustomerContent;
+        }
+
+        field(34; "Type of Clamp Code"; Code[10])
+        {
+            Caption = 'Type of Clamp Code';
+            TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
     }
