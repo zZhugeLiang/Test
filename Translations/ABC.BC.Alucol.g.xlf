@@ -2663,15 +2663,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPicture - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 3389481820 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Picture</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPicture - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3325455334 - Action 1169933228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Download Clamping Method</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadClampingMethod - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 1169933228 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Clamping Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadClampingMethod - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3325455334 - Action 2656612740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Download Packaging Instructions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPackagingInstructions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3325455334 - Action 2656612740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPackagingInstructions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3197234571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customers</source>
@@ -3804,7 +3819,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType DefWghtCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 2383089427" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extra to Enumerate</source>
+          <source>Extra to Enumerate (mm)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ExtraToEnumerateCaptionLbl</note>
         </trans-unit>

@@ -31,6 +31,7 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'ACO Logged In DateTime', false, false)]
     local procedure SalesHeader_OnAfterValidate_ACOLoggedInDateTime(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
     begin
+        Rec.Validate("ACO Delivery Date", DT2Date(Rec."ACO Logged In DateTime"));
         Rec."ACO Logged In Day" := Date2DWY(DT2Date(Rec."ACO Logged In DateTime"), 1);
         Rec."ACO Logged In Week" := Date2DWY(DT2Date(Rec."ACO Logged In DateTime"), 2);
         Rec."ACO Logged In Year" := Date2DWY(DT2Date(Rec."ACO Logged In DateTime"), 3);
@@ -82,53 +83,54 @@ codeunit 50000 "ACO Event Subscribers"
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
-                if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
+                if ACOPretreatment.Get(Item."ACO Pretreatment") then
                     Rec."ACO British Standard" := ACOPretreatment."British Standard";
-                    SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
-                    ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-                    ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                    ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
-                    if not ACOProfileCustomer.IsEmpty() then
-                        Rec.Validate("ACO Profile Code")
-                    else begin
-                        Rec."ACO Profile Description" := '';
-                        Rec."ACO Profile Category" := '';
-                        Rec."ACO Profile Circumference" := 0;
-                        Rec."ACO Not Measurable" := false;
-                        Rec."ACO Area" := 0;
-                        Rec."ACO Extra Flushing" := false;
-                        Rec."ACO Correction Factor Profile" := 0;
-                        Rec."ACO Height Level Profile" := 0;
-                        Rec."ACO Bent Profile" := false;
-                        Rec."ACO Max. Curr. Density Profile" := 0;
-                        Rec."ACO Min. Curr. Density Profile" := 0;
-                        Rec."ACO Thin Staining Time Profile" := 0;
-                        Rec."ACO Thick St. Time Profile" := 0;
-                        Rec."ACO Euras Profile" := false;
-                        Rec."ACO Extra to Enumerate Profile" := 0;
-                        Rec."ACO Attach Method Code Profile" := '';
-                        Rec."ACO Type of Clamp Code" := '';
-                        Rec."ACO Holders Profile" := '';
-                        Rec."ACO Charges per Bath Profile" := 0;
-                    end;
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+
+                ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+                if not ACOProfileCustomer.IsEmpty() then
+                    Rec.Validate("ACO Profile Code")
+                else begin
+                    Rec."ACO Profile Description" := '';
+                    Rec."ACO Profile Category" := '';
+                    Rec."ACO Profile Circumference" := 0;
+                    Rec."ACO Not Measurable" := false;
+                    Rec."ACO Area" := 0;
+                    Rec."ACO Extra Flushing" := false;
+                    Rec."ACO Correction Factor Profile" := 0;
+                    Rec."ACO Height Level Profile" := 0;
+                    Rec."ACO Bent Profile" := false;
+                    Rec."ACO Max. Curr. Density Profile" := 0;
+                    Rec."ACO Min. Curr. Density Profile" := 0;
+                    Rec."ACO Thin Staining Time Profile" := 0;
+                    Rec."ACO Thick St. Time Profile" := 0;
+                    Rec."ACO Euras Profile" := false;
+                    Rec."ACO Extra to Enumerate Profile" := 0;
+                    Rec."ACO Attach Method Code Profile" := '';
+                    Rec."ACO Type of Clamp Code" := '';
+                    Rec."ACO Holders Profile" := '';
+                    Rec."ACO Charges per Bath Profile" := 0;
                 end;
-
-                Rec.Validate("ACO Color", Item."ACO Color");
-
-                if ACOAppSetup."Sawing Routing No." <> '' then begin
-                    RoutingLine.SetRange("Routing No.", Item."Routing No.");
-                    if RoutingLine.FindSet() then
-                        repeat
-                            Rec."ACO Sawing" := RoutingLine."No." = ACOAPPSetup."Sawing Routing No.";
-                        until (RoutingLine.Next() = 0) or Rec."ACO Sawing";
-                end;
-
-                //Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness");
-                //if
-                //Rec.Validate("ACO Category", Rec."ACO Category");
-                //Rec."ACO Profile Code";
             end;
+
+        Rec.Validate("ACO Color", Item."ACO Color");
+
+        if ACOAppSetup."Sawing Routing No." <> '' then begin
+            RoutingLine.SetRange("Routing No.", Item."Routing No.");
+            if RoutingLine.FindSet() then
+                repeat
+                    Rec."ACO Sawing" := RoutingLine."No." = ACOAPPSetup."Sawing Routing No.";
+                until (RoutingLine.Next() = 0) or Rec."ACO Sawing";
+        end;
+
+        //Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness");
+        //if
+        //Rec.Validate("ACO Category", Rec."ACO Category");
+        //Rec."ACO Profile Code";
+
     end;
 
     // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Pretreatment', false, false)]

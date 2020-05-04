@@ -90,7 +90,7 @@ report 50005 "ACO Attach Notice"
                 column(QuantityCaption; QuantityCaptionLbl) { }
                 column(ACO_Number_of_Units; "ACO Number of Units") { }
                 column(LengthCaption; LengthCaptionLbl) { }
-                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters", 1)) { }
+                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters", 1) * 1000) { }
                 column(CircumferenceCaption; CircumferenceCaptionLbl) { }
                 column(Circumference; Circumference) { }
                 column(DefWghtCaption; DefWghtCaptionLbl) { }
@@ -232,7 +232,10 @@ report 50005 "ACO Attach Notice"
                     RoutingLine: Record "Routing Line";
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
-                    if not ACOProfileCustomer.Get("ACO Profile Code", "Sell-to Customer No.") then
+                    ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
+                    ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
+                    ACOProfileCustomer.SetRange("Ship-to Code", "Sales Header"."Ship-to Code");
+                    if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
                     if not ItemVariant.Get("No.", "Variant Code") then
@@ -403,7 +406,7 @@ report 50005 "ACO Attach Notice"
         ItemDescrCustomerCaptionLbl: Label 'Item Descr. Customer';
         CircumferenceCaptionLbl: Label 'Circumference';
         DefWghtCaptionLbl: Label 'Def. Wght.';
-        ExtraToEnumerateCaptionLbl: Label 'Extra to Enumerate';
+        ExtraToEnumerateCaptionLbl: Label 'Extra to Enumerate (mm)';
         FoilCaptionLbl: Label 'Foil';
         EurasCaptionLbl: Label 'Euras';
         GrossWeightCaptionLbl: Label 'Gross Weight';

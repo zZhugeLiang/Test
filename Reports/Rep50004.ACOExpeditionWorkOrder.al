@@ -92,7 +92,7 @@ report 50004 "ACO Expedition Work Order"
                 }
 
                 column(LengthCaption; LengthCaptionLbl) { }
-                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters", 1))
+                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters", 1) * 1000)
                 {
                 }
 
@@ -104,11 +104,12 @@ report 50004 "ACO Expedition Work Order"
                 {
                 }
                 trigger OnAfterGetRecord()
-                var
-                    Item: Record Item;
-                    Customer: Record Customer;
+
                 begin
-                    if not ACOProfileCustomer.Get("ACO Profile Code", "Sell-to Customer No.") then
+                    ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
+                    ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
+                    ACOProfileCustomer.SetRange("Ship-to Code", "Sales Header"."Ship-to Code");
+                    if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
                     if not ItemVariant.Get("No.", "Variant Code") then
