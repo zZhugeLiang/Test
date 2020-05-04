@@ -32,8 +32,6 @@ report 50005 "ACO Attach Notice"
             column(ShippingAgentCaption; ShippingAgentCaptionLbl) { }
             column(ACO_Own_Shipping_Agent; "ACO Own Shipping Agent") { }
             // Header Data >>
-
-
             column(SupplierCaption; SupplierCaptionLbl) { }
             column(ACO_Supplier; "ACO Supplier")
             {
@@ -100,9 +98,9 @@ report 50005 "ACO Attach Notice"
                 column(ExtraToEnumerateCaption; ExtraToEnumerateCaptionLbl) { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(FoilCaption; FoilCaptionLbl) { }
-                column(IsFoil; IsFoil) { }
+                column(IsFoil; Format(IsFoil)) { }
                 column(EurasCaption; EurasCaptionLbl) { }
-                column(Euras_ACOProfileCustomer; ACOProfileCustomer.Euras) { }
+                column(Euras_ACOProfileCustomer; Format(ACOProfileCustomer.Euras)) { }
                 column(NetWeightCaption; NetWeightCaptionLbl) { }
                 column(NetWeight; NetWeight) { }
                 column(GrossWeightCaption; GrossWeightCaptionLbl) { }
@@ -112,7 +110,7 @@ report 50005 "ACO Attach Notice"
                 column(NumberOfBathsCaption; NumberOfBathsCaptionLbl) { }
                 column(NumberOfBaths; NumberOfBaths) { }
                 column(SawingCaption; SawingCaptionLbl) { }
-                column(ACO_Sawing; "ACO Sawing") { }
+                column(ACO_Sawing; Format("ACO Sawing")) { }
                 // Done
 
                 column(BagDescriptionCaption; BagDescriptionCaptionLbl) { }
@@ -126,13 +124,13 @@ report 50005 "ACO Attach Notice"
                 column(HollowFactorCaption; HollowFactorCaptionLbl) { }
                 column(CorrectionFactor_ACOProfile; ACOProfile."Correction Factor") { }
                 column(HeightLevelCaption; HeightLevelCaptionLbl) { }
-                column(ACO_Height_Level_Profile; "ACO Height Level Profile") { }
+                column(ACO_Height_Level_Profile; Format("ACO Height Level Profile")) { }
 
                 column(ExtraFlushingCaption; ExtraFlushingCaptionLbl) { }
-                column(ACO_Extra_Flushing; "ACO Extra Flushing") { }
+                column(ACO_Extra_Flushing; Format("ACO Extra Flushing")) { }
 
                 column(MuNotMeasurableCaption; MuNotMeasurableCaptionLbl) { }
-                column(ACO_Not_Measurable; "ACO Not Measurable") { }
+                column(ACO_Not_Measurable; Format("ACO Not Measurable")) { }
 
                 column(LocationCaption; LocationCaptionLbl) { }
                 column(ACO_Receipt_Bag; "ACO Receipt Bag")
@@ -155,15 +153,15 @@ report 50005 "ACO Attach Notice"
                 column(ThinStainingTimeCaption; ThinStainingTimeCaptionLbl) { }
                 column(ThinStainingTime; ThinStainingTime) { }
                 column(VECCaption; VECCaptionLbl) { }
-                column(IsVEC; IsVEC) { }
+                column(IsVEC; Format(IsVEC)) { }
                 column(BSCaptionLbl; BSCaptionLbl) { }
-                column(ACO_British_Standard; "ACO British Standard") { }
+                column(ACO_British_Standard; Format("ACO British Standard")) { }
                 column(WrapCaption; WrapCaptionLbl) { }
-                column(IsWrap; IsWrap) { }
+                column(IsWrap; Format(IsWrap)) { }
                 column(HighEndCaption; HighEndCaptionLbl) { }
-                column(ACO_High_End; "ACO High End") { }
+                column(ACO_High_End; Format("ACO High End")) { }
                 column(MeasureReportCaption; MeasureReportCaptionLbl) { }
-                column(ACO_Measure_Report; "ACO Measure Report") { }
+                column(ACO_Measure_Report; Format("ACO Measure Report")) { }
                 column(KundentourCaption; KundentourCaptionLbl) { }
                 column(ACO_Kundentour_HUECK; "ACO Kundentour HUECK") { }
                 // Done >>
@@ -183,22 +181,49 @@ report 50005 "ACO Attach Notice"
                 column(Comment_ACOLinkedHolder; ACOLinkedHolder.Comment) { }
                 column(ACOLinkedHolderCaption; ACOLinkedHolderType.TableCaption()) { }
                 column(MoldCaption; MoldCaptionLbl) { }
-                column(Code_ACOLinkedHolderType; ACOLinkedHolderType."Holder Type Code") { }
+                column(Code_ACOLinkedHolderType1; ACOLinkedHolderType1."Holder Type Code") { }
+                column(Code_ACOLinkedHolderType2; ACOLinkedHolderType2."Holder Type Code") { }
+                column(Code_ACOLinkedHolderType3; ACOLinkedHolderType3."Holder Type Code") { }
+                column(Code_ACOLinkedHolderType4; ACOLinkedHolderType4."Holder Type Code") { }
                 column(NameCaption; NameCaptionLbl) { }
-                column(Description_ACOlinkedHolderType; ACOLinkedHolderType.Description) { }
-                column(Quantity_ACOLinkedHolderType; ACOLinkedHolderType.Quantity) { }
+                column(Description_ACOLinkedHolderType1; ACOLinkedHolderType1.Description) { }
+                column(Description_ACOLinkedHolderType2; ACOLinkedHolderType2.Description) { }
+                column(Description_ACOLinkedHolderType3; ACOLinkedHolderType3.Description) { }
+                column(Description_ACOLinkedHolderType4; ACOLinkedHolderType4.Description) { }
+                column(Quantity_ACOLinkedHolderType1; ACOLinkedHolderType1.Quantity) { }
+                column(Quantity_ACOLinkedHolderType2; ACOLinkedHolderType2.Quantity) { }
+                column(Quantity_ACOLinkedHolderType3; ACOLinkedHolderType3.Quantity) { }
+                column(Quantity_ACOLinkedHolderType4; ACOLinkedHolderType4.Quantity) { }
                 column(PositionCaption; PositionCaptionLbl) { }
-                column(Position_ACOLinkedHolderType; Format(ACOLinkedHolderType.Position)) { }
+                column(Position_ACOLinkedHolderType1; Format(ACOLinkedHolderType1.Position)) { }
+                column(Position_ACOLinkedHolderType2; Format(ACOLinkedHolderType2.Position)) { }
+                column(Position_ACOLinkedHolderType3; Format(ACOLinkedHolderType3.Position)) { }
+                column(Position_ACOLinkedHolderType4; Format(ACOLinkedHolderType4.Position)) { }
                 column(ACOLinkedSupportHolderCaption; ACOLinkedSupportHolder.TableCaption()) { }
-                column(Code_ACOLinkedSupportHolder; ACOLinkedSupportHolder."Support Holder Code") { }
-                column(Description_ACOLinkedSupportHolder; ACOLinkedSupportHolder.Description) { }
+                column(Code_ACOLinkedSupportHolder1; ACOLinkedSupportHolder1."Support Holder Code") { }
+                column(Code_ACOLinkedSupportHolder2; ACOLinkedSupportHolder2."Support Holder Code") { }
+                column(Code_ACOLinkedSupportHolder3; ACOLinkedSupportHolder3."Support Holder Code") { }
+                column(Code_ACOLinkedSupportHolder4; ACOLinkedSupportHolder4."Support Holder Code") { }
+                column(Description_ACOLinkedSupportHolder1; ACOLinkedSupportHolder1.Description) { }
+                column(Description_ACOLinkedSupportHolder2; ACOLinkedSupportHolder2.Description) { }
+                column(Description_ACOLinkedSupportHolder3; ACOLinkedSupportHolder3.Description) { }
+                column(Description_ACOLinkedSupportHolder4; ACOLinkedSupportHolder4.Description) { }
                 column(Distance_ACOLinkedSupportHolderCaption; ACOLinkedSupportHolder.FieldCaption(Distance)) { }
-                column(Distance_ACOLinkedSupportHolder; ACOLinkedSupportHolder.Distance) { }
+                column(Distance_ACOLinkedSupportHolder1; ACOLinkedSupportHolder1.Distance) { }
+                column(Distance_ACOLinkedSupportHolder2; ACOLinkedSupportHolder2.Distance) { }
+                column(Distance_ACOLinkedSupportHolder3; ACOLinkedSupportHolder3.Distance) { }
+                column(Distance_ACOLinkedSupportHolder4; ACOLinkedSupportHolder4.Distance) { }
                 column(ACOLinkedDistanceHolderCaption; ACOLinkedDistanceHolder.TableCaption()) { }
                 column(HolderCaption; HolderCaptionLbl) { }
-                column(Description_ACOLinkedDistanceHolder; ACOLinkedDistanceHolder."Description") { }
+                column(Description_ACOLinkedDistanceHolder1; ACOLinkedDistanceHolder1."Description") { }
+                column(Description_ACOLinkedDistanceHolder2; ACOLinkedDistanceHolder2."Description") { }
+                column(Description_ACOLinkedDistanceHolder3; ACOLinkedDistanceHolder3."Description") { }
+                column(Description_ACOLinkedDistanceHolder4; ACOLinkedDistanceHolder4."Description") { }
                 column(Position_ACOLinkedDistanceHolderCaption; ACOLinkedDistanceHolder.FieldCaption(Position)) { }
-                column(Position_ACOLinkedDistanceHolder; ACOLinkedDistanceHolder.Position) { }
+                column(Position_ACOLinkedDistanceHolder1; ACOLinkedDistanceHolder1.Position) { }
+                column(Position_ACOLinkedDistanceHolder2; ACOLinkedDistanceHolder2.Position) { }
+                column(Position_ACOLinkedDistanceHolder3; ACOLinkedDistanceHolder3.Position) { }
+                column(Position_ACOLinkedDistanceHolder4; ACOLinkedDistanceHolder4.Position) { }
                 // Holders >>
                 trigger OnAfterGetRecord()
                 var
@@ -306,15 +331,31 @@ report 50005 "ACO Attach Notice"
         User: Record User;
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
-        ACOColor: Record "ACO Color";
         ACOProfile: Record "ACO Profile";
         ACOColorProjectHeader: Record "ACO Project Color Header";//New
         ACOCategory: Record "ACO Category";//New
         ACOAppSetup: Record "ACO App Setup";//New
         ACOLinkedHolder: Record "ACO Linked Holder";//New
         ACOLinkedHolderType: Record "ACO Linked Holder Type";//New
+        ACOLinkedHolderType1: Record "ACO Linked Holder Type";//New
+        ACOLinkedHolderType2: Record "ACO Linked Holder Type";//New
+
+        ACOLinkedHolderType3: Record "ACO Linked Holder Type";//New
+        ACOLinkedHolderType4: Record "ACO Linked Holder Type";//New
         ACOLinkedDistanceHolder: Record "ACO Linked Distance Holder";//New
+        ACOLinkedDistanceHolder1: Record "ACO Linked Distance Holder";//New
+        ACOLinkedDistanceHolder2: Record "ACO Linked Distance Holder";//New
+        ACOLinkedDistanceHolder3: Record "ACO Linked Distance Holder";//New
+        ACOLinkedDistanceHolder4: Record "ACO Linked Distance Holder";//New
         ACOLinkedSupportHolder: Record "ACO Linked Support Holder";//New
+        ACOLinkedSupportHolder1: Record "ACO Linked Support Holder";//New
+
+        ACOLinkedSupportHolder2: Record "ACO Linked Support Holder";//New
+
+        ACOLinkedSupportHolder3: Record "ACO Linked Support Holder";//New
+
+        ACOLinkedSupportHolder4: Record "ACO Linked Support Holder";//New
+
         ACOAttachMethod: Record "ACO Attach Method";
         BagDescriptionsText: Text;
         TotalArea: Decimal; //New
@@ -412,7 +453,11 @@ report 50005 "ACO Attach Notice"
         LocationCaptionLbl: Label 'Location';
 
     local procedure GetHolders()
+    var
+        Counter: Integer;
     begin
+        ClearHolderVariables();
+
         ACOLinkedHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
         ACOLinkedHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
         if ItemVariant."ACO Number of Meters" <> 0 then
@@ -426,32 +471,85 @@ report 50005 "ACO Attach Notice"
             ACOLinkedHolderType.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
             if ItemVariant."ACO Number of Meters" <> 0 then
                 ACOLinkedHolderType.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
-            if not ACOLinkedHolderType.FindFirst() then
-                Clear(ACOLinkedHolderType);
 
+            if ACOLinkedHolderType.FindSet() then
+                repeat
+                    Counter += 1;
+                    case Counter of
+                        1:
+                            ACOLinkedHolderType1 := ACOLinkedHolderType;
+                        2:
+                            ACOLinkedHolderType2 := ACOLinkedHolderType;
+                        3:
+                            ACOLinkedHolderType3 := ACOLinkedHolderType;
+                        4:
+                            ACOLinkedHolderType4 := ACOLinkedHolderType;
+                    end;
+                until ACOLinkedHolderType.Next() = 0;
+
+            Counter := 0;
             ACOLinkedDistanceHolder.SetRange("Holder Code", ACOLinkedHolder.Code);
             ACOLinkedDistanceHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
             ACOLinkedDistanceHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
             if ItemVariant."ACO Number of Meters" <> 0 then
                 ACOLinkedDistanceHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
-            if not ACOLinkedDistanceHolder.FindFirst() then
-                Clear(ACOLinkedDistanceHolder);
 
+            if ACOLinkedDistanceHolder.FindSet() then
+                repeat
+                    Counter += 1;
+                    case Counter of
+                        1:
+                            ACOLinkedDistanceHolder1 := ACOLinkedDistanceHolder;
+                        2:
+                            ACOLinkedDistanceHolder2 := ACOLinkedDistanceHolder;
+                        3:
+                            ACOLinkedDistanceHolder3 := ACOLinkedDistanceHolder;
+                        4:
+                            ACOLinkedDistanceHolder4 := ACOLinkedDistanceHolder;
+                    end;
+                until ACOLinkedDistanceHolder.Next() = 0;
+
+            Counter := 0;
             ACOLinkedSupportHolder.SetRange("Holder Code", ACOLinkedHolder.Code);
             ACOLinkedSupportHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
             ACOLinkedSupportHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
             if ItemVariant."ACO Number of Meters" <> 0 then
                 ACOLinkedSupportHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
-            if not ACOLinkedSupportHolder.FindFirst() then
-                Clear(ACOLinkedSupportHolder);
-        end else begin
-            Clear(ACOLinkedHolder);
-            Clear(ACOLinkedHolderType);
-            Clear(ACOLinkedDistanceHolder);
-            Clear(ACOLinkedSupportHolder);
+
+            if ACOLinkedSupportHolder.FindSet() then
+                repeat
+                    Counter += 1;
+                    case Counter of
+                        1:
+                            ACOLinkedSupportHolder1 := ACOLinkedSupportHolder;
+                        2:
+                            ACOLinkedSupportHolder2 := ACOLinkedSupportHolder;
+                        3:
+                            ACOLinkedSupportHolder3 := ACOLinkedSupportHolder;
+                        4:
+                            ACOLinkedSupportHolder4 := ACOLinkedSupportHolder;
+                    end;
+                until ACOLinkedSupportHolder.Next() = 0;
         end;
+    end;
 
-
-
+    local procedure ClearHolderVariables()
+    begin
+        Clear(ACOLinkedHolder);
+        Clear(ACOLinkedHolderType);
+        Clear(ACOLinkedHolderType1);
+        Clear(ACOLinkedHolderType2);
+        Clear(ACOLinkedHolderType3);
+        Clear(ACOLinkedHolderType4);
+        Clear(ACOLinkedDistanceHolder);
+        Clear(ACOLinkedDistanceHolder1);
+        Clear(ACOLinkedDistanceHolder2);
+        Clear(ACOLinkedDistanceHolder3);
+        Clear(ACOLinkedDistanceHolder4);
+        Clear(ACOLinkedSupportHolder);
+        Clear(ACOLinkedSupportHolder1);
+        Clear(ACOLinkedSupportHolder2);
+        Clear(ACOLinkedSupportHolder3);
+        Clear(ACOLinkedSupportHolder4);
     end;
 }
