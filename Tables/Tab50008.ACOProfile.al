@@ -199,6 +199,12 @@ table 50008 "ACO Profile"
             TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
+
+        field(35; "Area"; Decimal)
+        {
+            Caption = 'Area';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

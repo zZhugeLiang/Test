@@ -134,6 +134,25 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                     CurrPage.Update(true);
                 end;
             }
+
+            action("ACO Sawing Notice")
+            {
+                Caption = 'Sawing Notice';
+                Image = Print;
+                ApplicationArea = All;
+                ToolTip = 'Sawing Notice';
+
+                trigger OnAction()
+                var
+                    SalesHeader: Record "Sales Header";
+                begin
+                    SalesHeader := Rec;
+                    SalesHeader.SetRecFilter();
+                    Report.Run(Report::"ACO Sawing Notice", true, false, SalesHeader);
+
+                    CurrPage.Update(true);
+                end;
+            }
         }
     }
 }

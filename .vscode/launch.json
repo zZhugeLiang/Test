@@ -11,7 +11,7 @@
             //"sandboxName": "Sandbox2test_27022020",
             "authentication": "UserPassword",
             "startupObjectId": 42,
-            "schemaUpdateMode": "Synchronize"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
+            "schemaUpdateMode": "ForceSync"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
         }
     ]
 }
