@@ -73,6 +73,10 @@ page 50011 "ACO Profile Customer Card"
                 {
                     ApplicationArea = All;
                 }
+                field("High End"; "High End")
+                {
+                    ApplicationArea = All;
+                }
                 field("Extra to Enumerate"; "Extra to Enumerate")
                 {
                     ApplicationArea = All;
@@ -82,6 +86,14 @@ page 50011 "ACO Profile Customer Card"
                     ApplicationArea = All;
                 }
                 field("Thin Staining Time"; "Thin Staining Time")
+                {
+                    ApplicationArea = All;
+                }
+                field("Minimum Current Density"; "Minimum Current Density")
+                {
+                    ApplicationArea = All;
+                }
+                field("Maximum Current Density"; "Maximum Current Density")
                 {
                     ApplicationArea = All;
                 }
@@ -107,7 +119,6 @@ page 50011 "ACO Profile Customer Card"
                 Caption = 'Holders';
                 Image = Category;
                 RunObject = Page "ACO Holders";
-                // RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
                 ApplicationArea = All;
             }
 

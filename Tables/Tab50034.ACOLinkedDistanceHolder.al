@@ -19,7 +19,7 @@ table 50034 "ACO Linked Distance Holder"
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[10]) // DEPRECATED changed to Code30
+        field(3; "Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";
@@ -67,6 +67,11 @@ table 50034 "ACO Linked Distance Holder"
             Caption = 'Status';
             OptionMembers = Active,Inactive;
             OptionCaption = 'Active,Inactive';
+            DataClassification = CustomerContent;
+        }
+        field(9; Position; Decimal)
+        {
+            Caption = 'Position';
             DataClassification = CustomerContent;
         }
     }

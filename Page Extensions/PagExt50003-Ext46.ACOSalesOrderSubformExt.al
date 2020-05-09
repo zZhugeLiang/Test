@@ -48,11 +48,19 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO High End"; "ACO High End")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Measure Report"; "ACO Measure Report")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Attach Method Code Profile"; "ACO Attach Method Code Profile")
             {
                 ApplicationArea = All;
             }
-            field("ACO Type of Clamp Profile"; "ACO Type of Clamp Profile")
+            field("ACO Type of Clamp Code"; "ACO Type of Clamp Code")
             {
                 ApplicationArea = All;
             }
@@ -73,7 +81,7 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-            field("ACO Holder"; "ACO Holder")
+            field("ACO Linked Holder"; "ACO Linked Holder")
             {
                 ApplicationArea = All;
             }

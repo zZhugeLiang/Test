@@ -65,12 +65,6 @@ table 50003 "ACO Pretreatment"
             DataClassification = CustomerContent;
         }
 
-        // field(10; "Do Not Calculate Short Length"; Boolean)
-        // {
-        //     Caption = 'DEPRECATED';
-        //     DataClassification = CustomerContent;
-        // }
-
         field(11; "Aucos"; Boolean)
         {
             Caption = 'Aucos';

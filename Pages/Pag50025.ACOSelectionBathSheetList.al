@@ -14,11 +14,11 @@ Page 50025 "ACO Selection Bath Sheet List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("ACO Included"; "ACO Included")
-                {
-                    Editable = true;
-                    ApplicationArea = All;
-                }
+                // field("ACO Included"; "ACO Included")
+                // {
+                //     Editable = true;
+                //     ApplicationArea = All;
+                // }
                 field("Prod. Order No."; "Prod. Order No.")
                 {
                     ApplicationArea = Manufacturing;
@@ -286,9 +286,11 @@ Page 50025 "ACO Selection Bath Sheet List"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
+                ToolTip = 'Create Bath Sheet';
                 trigger OnAction()
                 var
                     ProdOrderLine: Record "Prod. Order Line";
+                    ProdOrderLineFilters: Record "Prod. Order Line";
                     Resource: Record Resource;
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                     ACOSelectionResources: Page "ACO Selection Resources";
@@ -297,72 +299,70 @@ Page 50025 "ACO Selection Bath Sheet List"
                     //ACOSelectionResources.SetTableView(ACOProfileCustomer);
 
                     if ACOSelectionResources.RunModal() = Action::LookupOK then begin
+                        ProdOrderLine := Rec;
+                        CurrPage.SetSelectionFilter(ProdOrderLine);
                         ACOSelectionResources.SetSelectionFilter(Resource);
-                        //ACOSelectionResources.GetRecord(Resource);
-                        // if Resource.FindSet() then
-                        //     repeat
-                        //         asd += Resource."No." + '|';
-                        //     until Resource.Next() = 0;
+                        ProdOrderLineFilters.CopyFilters(Rec);
+                        // SetRange("ACO Included", true);
+                        ACOBathSheetMgt.CreateBathSheet(ProdOrderLine, Resource);
 
-                        ProdOrderLine.CopyFilters(Rec);
-                        SetRange("ACO Included", true);
-                        //NoResourcesFoundErr: Label 'No Resources found with filter %1';
-                        ACOBathSheetMgt.CreateBathSheet(Rec, Resource);
-
-                        CopyFilters(ProdOrderLine);
+                        CopyFilters(ProdOrderLineFilters);
                         CurrPage.Update(false);
                     end;
                 end;
             }
-            action(SetIncluded)
-            {
-                ApplicationArea = All;
-                Caption = 'Set Included';
-                Image = Completed;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                trigger OnAction()
-                var
-                    ProdOrderLine: Record "Prod. Order Line";
-                begin
-                    // ProdOrderLine.CopyFilters(Rec);
-                    CurrPage.SetSelectionFilter(ProdOrderLine);
-                    ProdOrderLine.ModifyAll("ACO Included", true);
-                    CurrPage.Update(false);
-                end;
-            }
-            action(ClearIncluded)
-            {
-                ApplicationArea = All;
-                Caption = 'Clear Included';
-                Image = ResetStatus;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                trigger OnAction()
-                var
-                    ProdOrderLine: Record "Prod. Order Line";
-                begin
-                    ProdOrderLine.CopyFilters(Rec);
-                    ProdOrderLine.ModifyAll("ACO Included", false);
-                    CurrPage.Update(false);
-                end;
-            }
-            action(ShowIncluded)
-            {
-                ApplicationArea = All;
-                Caption = 'Show Included';
-                Image = ShowSelected;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                trigger OnAction()
-                begin
-                    SetRange("ACO Included", true);
-                    CurrPage.Update(false);
-                end;
-            }
+            // action(SetIncluded)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Set Included';
+            //     Image = Completed;
+            //     Promoted = true;
+            //     PromotedCategory = Process;
+            //     PromotedIsBig = true;
+            //     ToolTip = 'Set Included';
+            //     trigger OnAction()
+            //     var
+            //         ProdOrderLine: Record "Prod. Order Line";
+            //     begin
+            //         // ProdOrderLine.CopyFilters(Rec);
+            //         CurrPage.SetSelectionFilter(ProdOrderLine);
+            //         ProdOrderLine.ModifyAll("ACO Included", true);
+            //         CurrPage.Update(false);
+            //     end;
+            // }
+            // action(ClearIncluded)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Clear Included';
+            //     Image = ResetStatus;
+            //     Promoted = true;
+            //     PromotedCategory = Process;
+            //     PromotedIsBig = true;
+            //     ToolTip = 'Clear Included';
+            //     trigger OnAction()
+            //     var
+            //         ProdOrderLine: Record "Prod. Order Line";
+            //     begin
+            //         ProdOrderLine.CopyFilters(Rec);
+            //         ProdOrderLine.ModifyAll("ACO Included", false);
+            //         CurrPage.Update(false);
+            //     end;
+            // }
+            // action(ShowIncluded)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Show Included';
+            //     Image = ShowSelected;
+            //     Promoted = true;
+            //     PromotedCategory = Process;
+            //     PromotedIsBig = true;
+            //     ToolTip = 'Show Included';
+            //     trigger OnAction()
+            //     begin
+            //         SetRange("ACO Included", true);
+            //         CurrPage.Update(false);
+            //     end;
+            // }
         }
 
         area(navigation)
@@ -440,12 +440,12 @@ Page 50025 "ACO Selection Bath Sheet List"
         SetFilter("ACO Profile Code", '<>%1', '');
     end;
 
-    trigger OnClosePage()
-    var
-    begin
-        Reset();
-        ModifyAll("ACO Included", false);
-    end;
+    // trigger OnClosePage()
+    // var
+    // begin
+    //     Reset();
+    //     ModifyAll("ACO Included", false);
+    // end;
 
     trigger OnAfterGetRecord()
     begin

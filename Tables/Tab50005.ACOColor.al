@@ -50,18 +50,6 @@ table 50005 "ACO Color"
             DataClassification = CustomerContent;
         }
 
-        // field(8; "Minimum Gold Time"; Decimal)
-        // {
-        //     Caption = 'DEPRECATED';
-        //     DataClassification = CustomerContent;
-        // }
-
-        // field(9; "Maximum Gold Time"; Decimal)
-        // {
-        //     Caption = 'DEPRECATED';
-        //     DataClassification = CustomerContent;
-        // }
-
         field(10; "Dimension Value Code"; Code[20])
         {
             Caption = 'Dimension Value Code';

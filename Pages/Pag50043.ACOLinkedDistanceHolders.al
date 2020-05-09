@@ -29,6 +29,11 @@ page 50043 "ACO Linked Distance Holders"
                 {
                     ApplicationArea = All;
                 }
+
+                field(Position; Position)
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

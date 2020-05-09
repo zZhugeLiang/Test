@@ -92,7 +92,9 @@ report 50003 "ACO Process Import Sales Lines"
             exit(false);
         end;
 
-        if not ACOProfileCustomer.Get(ACOImportedSalesOrderLine."Profile Code", Customer."No.") then begin
+        ACOProfileCustomer.SetRange("Profile Code", ACOImportedSalesOrderLine."Profile Code");
+        ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
+        if ACOProfileCustomer.IsEmpty() then begin
             ChangeErrorMessage(ACOImportedSalesOrderLine, StrSubstNo(ProfileCustomerDoesNotExistLbl, ACOImportedSalesOrderLine."Profile Code"));
             exit(false);
         end;

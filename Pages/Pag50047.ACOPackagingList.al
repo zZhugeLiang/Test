@@ -2,7 +2,7 @@ page 50047 "ACO Packaging List"
 {
 
     PageType = List;
-    SourceTable = "ACO Packaging 2";
+    SourceTable = "ACO Packaging";
     Caption = 'Packaging List';
     ApplicationArea = All;
     UsageCategory = Lists;

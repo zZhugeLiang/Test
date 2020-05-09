@@ -30,6 +30,13 @@ table 50010 "ACO Holder Type"
             Caption = 'Position';
             DataClassification = CustomerContent;
         }
+        field(5; Location; Option)
+        {
+            Caption = 'Location';
+            OptionMembers = Inside,Outside;
+            OptionCaption = 'Inside,Outside';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

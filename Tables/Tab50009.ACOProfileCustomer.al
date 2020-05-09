@@ -12,6 +12,19 @@ table 50009 "ACO Profile Customer"
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                ACOProfile: Record "ACO Profile";
+            begin
+                if ACOProfile.Get("Profile Code") then begin
+                    "Maximum Current Density" := ACOProfile."Maximum Current Density";
+                    "Minimum Current Density" := ACOProfile."Minimum Current Density";
+                end else begin
+                    "Maximum Current Density" := 0;
+                    "Minimum Current Density" := 0;
+                end;
+            end;
         }
 
         field(2; "Customer No."; Code[20])
@@ -153,6 +166,23 @@ table 50009 "ACO Profile Customer"
         field(17; "Sawing Discount"; Decimal)
         {
             Caption = 'Sawing Discount';
+            DataClassification = CustomerContent;
+        }
+
+        field(18; "Minimum Current Density"; Decimal)
+        {
+            Caption = 'Minimum Current Density [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(19; "Maximum Current Density"; Decimal)
+        {
+            Caption = 'Maximum Current Density [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+        field(20; "High End"; Boolean)
+        {
+            Caption = 'High End';
             DataClassification = CustomerContent;
         }
     }

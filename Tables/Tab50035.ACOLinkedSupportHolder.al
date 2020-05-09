@@ -19,7 +19,7 @@ table 50035 "ACO Linked Support Holder"
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[10])// DEPRECATED changed to Code30
+        field(3; "Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";
@@ -59,6 +59,11 @@ table 50035 "ACO Linked Support Holder"
             Caption = 'Status';
             OptionMembers = Active,Inactive;
             OptionCaption = 'Active,Inactive';
+            DataClassification = CustomerContent;
+        }
+        field(8; Distance; Decimal)
+        {
+            Caption = 'Distance';
             DataClassification = CustomerContent;
         }
     }

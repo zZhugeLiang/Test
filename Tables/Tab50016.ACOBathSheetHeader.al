@@ -27,12 +27,6 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        // field(4; "Area Surface Rack"; Decimal)
-        // {
-        //     Caption = 'Area Surface Rack'; // DEPRECATED, replaced by Surface Attachrack
-        //     NotBlank = true;
-        //     DataClassification = CustomerContent;
-        // }
 
         field(5; "Attach Method"; Code[10])
         {
@@ -187,42 +181,6 @@ table 50016 "ACO Bath Sheet Header"
         field(21; "Measure Y-value"; Decimal)
         {
             Caption = 'Measure Y-value';
-            DataClassification = CustomerContent;
-        }
-
-        field(22; "Measure Mu-01"; Decimal)
-        {
-            Caption = 'Measure Mu-01'; // DEPRECATED, Replaced by new table
-            DataClassification = CustomerContent;
-        }
-
-        field(23; "Measure Mu-02"; Decimal)
-        {
-            Caption = 'Measure Mu-02'; // DEPRECATED, Replaced by new table
-            DataClassification = CustomerContent;
-        }
-
-        field(24; "Measure Mu-03"; Decimal)
-        {
-            Caption = 'Measure Mu-03'; // DEPRECATED, Replaced by new table
-            DataClassification = CustomerContent;
-        }
-
-        field(25; "Measure Mu-04"; Decimal)
-        {
-            Caption = 'Measure Mu-04'; // DEPRECATED, Replaced by new table
-            DataClassification = CustomerContent;
-        }
-
-        field(26; "Measure Mu-05"; Decimal)
-        {
-            Caption = 'Measure Mu-05'; // DEPRECATED, Replaced by new table
-            DataClassification = CustomerContent;
-        }
-
-        field(27; "Measure Mu-06"; Decimal)
-        {
-            Caption = 'Measure Mu-06'; // DEPRECATED, Replaced by new table
             DataClassification = CustomerContent;
         }
 

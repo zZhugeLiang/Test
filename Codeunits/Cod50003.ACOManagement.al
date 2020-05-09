@@ -4,33 +4,33 @@ codeunit 50003 "ACO Management"
     procedure CheckHolderAndPackaging(var Salesline: Record "Sales Line"; CustomerNo: Code[20])
     var
         SalesHeader: Record "Sales Header";
-        ACOHolder2: Record "ACO Holder 2"; // DEPRECATED, Rename to ACO Holder
-        ACOPackaging: Record "ACO Packaging";
+        ACOLinkedHolder: Record "ACO Linked Holder";
+        ACOLinkedPackaging: Record "ACO Linked Packaging";
         ItemVariant: Record "Item Variant";
     begin
         if not ItemVariant.Get(Salesline."No.", Salesline."Variant Code") then
             Clear(ItemVariant);
 
-        ACOHolder2.SetRange("Profile Code", Salesline."ACO Profile Code");
-        ACOHolder2.SetRange("Customer No.", CustomerNo);
+        ACOLinkedHolder.SetRange("Profile Code", Salesline."ACO Profile Code");
+        ACOLinkedHolder.SetRange("Customer No.", CustomerNo);
         if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOHolder2.SetRange(Length, ItemVariant."ACO Number of Meters");
+            ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
-        if ACOHolder2.Count() = 1 then begin
-            ACOHolder2.FindFirst();
+        if ACOLinkedHolder.Count() = 1 then begin
+            ACOLinkedHolder.FindFirst();
             SalesHeader.Get(Salesline."Document Type", SalesLine."Document No.");
-            if CheckStatusLinkedHolders(ACOHolder2.Code, SalesHeader."Sell-to Customer No.", Salesline."ACO Profile Code", false) then
-                Salesline."ACO Holder" := ACOHolder2.Code;
+            if CheckStatusLinkedHolders(ACOLinkedHolder.Code, SalesHeader."Sell-to Customer No.", Salesline."ACO Profile Code", false) then
+                Salesline."ACO Linked Holder" := ACOLinkedHolder.Code;
         end;
 
-        ACOPackaging.SetRange("Profile Code", Salesline."ACO Profile Code");
-        ACOPackaging.SetRange("Customer No.", CustomerNo);
+        ACOLinkedPackaging.SetRange("Profile Code", Salesline."ACO Profile Code");
+        ACOLinkedPackaging.SetRange("Customer No.", CustomerNo);
         if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOPackaging.SetRange("Length 2", ItemVariant."ACO Number of Meters");
+            ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters" * 1000);
 
-        if ACOPackaging.Count() = 1 then begin
-            ACOPackaging.FindFirst();
-            Salesline."ACO Packaging" := ACOPackaging.Code;
+        if ACOLinkedPackaging.Count() = 1 then begin
+            ACOLinkedPackaging.FindFirst();
+            Salesline."ACO Packaging" := ACOLinkedPackaging.Code;
         end;
     end;
 

@@ -1,37 +1,35 @@
-page 50042 "ACO Linked Support Holders"
+page 50048 "ACO Type of Clamp List"
 {
-    Caption = 'Linked Support Holders';
+
     PageType = List;
-    SourceTable = "ACO Linked Support Holder";
+    SourceTable = "ACO Type of Clamp";
+    Caption = 'Type of Clamp List';
     ApplicationArea = All;
     UsageCategory = Lists;
 
     layout
     {
-        area(Content)
+        area(content)
         {
-            repeater(SupportHolders)
+            repeater(General)
             {
-                field("Support Holder Code"; "Support Holder Code")
+                field(Code; Code)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Code';
                 }
-
                 field(Description; Description)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Desription';
                 }
-
                 field(Status; Status)
                 {
                     ApplicationArea = All;
-                }
-
-                field(Distance; Distance)
-                {
-                    ApplicationArea = All;
+                    ToolTip = 'Status';
                 }
             }
         }
     }
+
 }

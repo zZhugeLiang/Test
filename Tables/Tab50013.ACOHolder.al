@@ -12,19 +12,6 @@ table 50013 "ACO Holder"
             Caption = 'Code';
             DataClassification = CustomerContent;
         }
-        field(2; "Customer No."; Code[20])
-        {
-            Caption = 'Customer No.';
-            TableRelation = Customer;
-            DataClassification = CustomerContent;
-        }
-
-        field(3; "Profile Code"; Code[10]) // DEPRECATED, should be COde30
-        {
-            Caption = 'Profile Code';
-            TableRelation = "ACO Profile";
-            DataClassification = CustomerContent;
-        }
 
         field(4; "Length"; Decimal)
         {
@@ -45,27 +32,6 @@ table 50013 "ACO Holder"
             DataClassification = CustomerContent;
         }
 
-        field(7; "Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; //DEPRECATED
-            TableRelation = "ACO Holder Type";
-            DataClassification = CustomerContent;
-        }
-
-        field(8; "Support Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; //DEPRECATED
-            TableRelation = "ACO Support Holder";
-            DataClassification = CustomerContent;
-        }
-
-        field(9; "Distance Holder Code"; Code[30])
-        {
-            Caption = 'DEPRECATED'; //DEPRECATED
-            TableRelation = "ACO Distance Holder";
-            DataClassification = CustomerContent;
-        }
-
         field(10; "Attach Method Code"; Code[10])
         {
             Caption = 'Attach Method Code';
@@ -75,7 +41,9 @@ table 50013 "ACO Holder"
 
         field(11; "Type of Clamp"; Text[100])
         {
-            Caption = 'Type of Clamp';
+            Caption = 'Type of Clamp'; // DEPPRECATED
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by field Type of Clamp Code';
             DataClassification = CustomerContent;
         }
 
@@ -95,7 +63,7 @@ table 50013 "ACO Holder"
             Caption = 'Space';
             DataClassification = CustomerContent;
         }
-        field(15; Helix; Decimal)
+        field(15; Helix; Text[20])
         {
             Caption = 'Helix';
             DataClassification = CustomerContent;
@@ -108,6 +76,13 @@ table 50013 "ACO Holder"
         field(17; "Helix End"; Decimal)
         {
             Caption = 'Helix End [in cm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(18; "Type of Clamp Code"; Code[10])
+        {
+            Caption = 'Type of Clamp Code';
+            TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
     }

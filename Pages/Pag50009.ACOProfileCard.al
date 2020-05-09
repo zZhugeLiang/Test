@@ -49,7 +49,10 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
-
+                field("High End"; "High End")
+                {
+                    ApplicationArea = All;
+                }
                 field("Weight per meter"; "Weight per meter")
                 {
                     ApplicationArea = All;
@@ -101,7 +104,7 @@ page 50009 "ACO Profile Card"
                         "Picture File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Picture Filename" := CopyStr(tmpFileName, 0, 250);
+                        "Picture Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
                     end;
                 }
@@ -118,7 +121,7 @@ page 50009 "ACO Profile Card"
                         "Clamping Method File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Clamping Method Filename" := CopyStr(tmpFileName, 0, 250);
+                        "Clamping Method Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
                     end;
                 }
@@ -135,7 +138,7 @@ page 50009 "ACO Profile Card"
                         "Packaging Instructions File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
                         CopyStream(OutStr, InStr);
-                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 0, 250);
+                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
                     end;
                 }
@@ -172,14 +175,16 @@ page 50009 "ACO Profile Card"
                 Caption = 'Download Picture';
                 ApplicationArea = All;
                 Image = Document;
+                ToolTip = 'Download Picture';
                 trigger OnAction()
                 var
                     InStr: InStream;
                     tmpFileName: text;
                 begin
+                    CalcFields("Picture File");
                     "Picture File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Picture Filename" := CopyStr(tmpFileName, 0, 250);
+                    "Picture Filename" := CopyStr(tmpFileName, 1, 250);
                 end;
             }
             action(DownloadClampingMethod)
@@ -187,6 +192,7 @@ page 50009 "ACO Profile Card"
                 Caption = 'Download Clamping Method';
                 ApplicationArea = All;
                 Image = Document;
+                ToolTip = 'Download Clamping Method';
                 trigger OnAction()
                 var
                     InStr: InStream;
@@ -194,7 +200,7 @@ page 50009 "ACO Profile Card"
                 begin
                     "Clamping Method File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Clamping Method Filename" := CopyStr(tmpFileName, 0, 250);
+                    "Clamping Method Filename" := CopyStr(tmpFileName, 1, 250);
                 end;
             }
             action(DownloadPackagingInstructions)
@@ -202,6 +208,7 @@ page 50009 "ACO Profile Card"
                 Caption = 'Download Packaging Instructions';
                 ApplicationArea = All;
                 Image = Document;
+                ToolTip = 'Download Packaging Instructions';
                 trigger OnAction()
                 var
                     InStr: InStream;
@@ -209,7 +216,7 @@ page 50009 "ACO Profile Card"
                 begin
                     "Packaging Instructions File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Packaging Instr. Filename" := CopyStr(tmpFileName, 0, 250);
+                    "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
                 end;
             }
         }

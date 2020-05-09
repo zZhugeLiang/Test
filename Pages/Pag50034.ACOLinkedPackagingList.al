@@ -2,7 +2,7 @@ page 50034 "ACO Linked Packaging List"
 {
 
     PageType = List;
-    SourceTable = "ACO Packaging";
+    SourceTable = "ACO Linked Packaging";
     Caption = 'Packaging List';
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -18,10 +18,6 @@ page 50034 "ACO Linked Packaging List"
                     ApplicationArea = All;
                 }
                 field("Length"; "Length")
-                {
-                    ApplicationArea = All;
-                }
-                field("Length 2"; "Length 2")
                 {
                     ApplicationArea = All;
                 }
