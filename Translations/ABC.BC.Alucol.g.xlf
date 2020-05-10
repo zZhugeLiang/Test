@@ -758,6 +758,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Type of Clamp Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1025398750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3513,191 +3518,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Import Sales Orders - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 4164356835 - Control 3961767479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Resource</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Resource No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - Control 116357982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Package Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Package Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - Control 1130631300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rack Number</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control RackNumber - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - NamedType 2359003977" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType ItemLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - NamedType 1245862610" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType AmountLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - NamedType 4280004770" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Length</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType LengthLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - NamedType 1162595851" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reference</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType ReferenceLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 4164356835 - NamedType 2197576290" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Treatment</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType TreatmentLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 690520591" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer %1 does not exist as Customer in the database or as EDI Customer.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CustomerDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 1442883392" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item %1 does not exist.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 851382453" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item Variant with Item No. %1 and Variant Code %2 does not exist.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemVariantDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 731385328" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invalid value %1 for field Number of Units.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType InvalidValueForNumberofUnitsLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 2255546338" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Number of Units is not larger than 0.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType NumberOfUnitsNotLargerThanZeroLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3001609905" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile Code %1 does not exist.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCodeDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 194039618" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile Code %1 does not exist as a Profile Customer.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCustomerDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3530122017" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Category of the Profile is not identical to the Category of the Item</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CategoryProfileNotIdenticalToCategoryItemLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Expedition Work Order</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 2486251868" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType CustomerCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 142445042" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Your Reference</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType YourReferenceCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 3698629784" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Note</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType NoteCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales Order No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType SalesOrderNoCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 4165187414" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Expedition Work Order</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ExpeditionWorkOrderCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 179898230" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Work Order No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType WorkOrderNoCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 2021507951" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Overview Vendors and Bins</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType OverviewVendorsAndBinsCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 495581372" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Supplier</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType SupplierCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bag Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType BagDescriptionCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 1729414803" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total Number of Units</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType TotalNumberOfUnitsCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Delivery Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType DeliveryDateCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 4176336247" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DeliveryID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType DeliveryIDCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 626628970" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thin Staining</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ThinStainingCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 17671468" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item No. Alucol</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ItemNoAlucolCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 94112056" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item No. Customer</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ItemNoCustomerCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType QuantityCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 559612500" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Length</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType LengthCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 3035507035" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Location</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType LocationCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Printing Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType PrintingDateCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2397299197 - NamedType 736763889" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Created by</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType CreatedbyCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 2678580552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4033,6 +3853,256 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType LocationCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 2397299197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expedition Work Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 2486251868" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType CustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 142445042" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType YourReferenceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 3698629784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType NoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType SalesOrderNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 4165187414" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expedition Work Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ExpeditionWorkOrderCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 179898230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Order No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType WorkOrderNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 2021507951" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overview Vendors and Bins</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType OverviewVendorsAndBinsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 495581372" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType SupplierCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bag Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType BagDescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 1729414803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Number of Units</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType TotalNumberOfUnitsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType DeliveryDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 4176336247" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DeliveryID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType DeliveryIDCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 626628970" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thin Staining</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ThinStainingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 17671468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No. Alucol</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ItemNoAlucolCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 94112056" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No. Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ItemNoCustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType QuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 559612500" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType LengthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 3035507035" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType LocationCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printing Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType PrintingDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2397299197 - NamedType 736763889" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType CreatedbyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - Control 3961767479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resource</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Resource No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - Control 116357982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Package Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - Control 1130631300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rack Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control RackNumber - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - NamedType 2359003977" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType ItemLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - NamedType 1245862610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType AmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - NamedType 4280004770" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType LengthLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - NamedType 1162595851" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType ReferenceLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4164356835 - NamedType 2197576290" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Treatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - NamedType TreatmentLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 690520591" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer %1 does not exist as Customer in the database or as EDI Customer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CustomerDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 1442883392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item %1 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 851382453" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Variant with Item No. %1 and Variant Code %2 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemVariantDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 731385328" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invalid value %1 for field Number of Units.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType InvalidValueForNumberofUnitsLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 2255546338" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units is not larger than 0.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType NumberOfUnitsNotLargerThanZeroLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3001609905" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code %1 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCodeDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 194039618" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code %1 does not exist as a Profile Customer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCustomerDoesNotExistLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3530122017" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Category of the Profile is not identical to the Category of the Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CategoryProfileNotIdenticalToCategoryItemLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 3796364083" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType SawingNoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType SalesOrderNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 4148697023" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType SalesOrderLineNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 2486251868" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType CustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 4251532111" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType TotalQuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 3035617683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType ItemCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 559612500" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType LengthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType DateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType DeliveryDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 94112056" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No. Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType ItemNoCustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printing Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType PrintingDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 736763889" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType CreatedbyCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Export</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4172,6 +4242,16 @@
           <source>Attach Notice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Attach Notice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 1270528838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Sawing Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Sawing Notice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 1270528838 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Sawing Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Sawing Notice - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 73372350 - Field 2282563268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Production Line</source>
@@ -4392,11 +4472,6 @@
           <source>Own Shipping Agent</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Own Shipping Agent - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 239546769 - Field 1013706845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
-          <source>Own</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Shipping Agent Extension - Field ACO Own - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 4213692988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Layer Thickness</source>
@@ -4692,6 +4767,31 @@
           <source>Type of Clamp Code Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Type of Clamp Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 3293107737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Head Cut</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Head Cut - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2418564229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Return Remaining</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Return Remaining - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 3707949613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lower Accuracy</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Lower Accuracy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 516050006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Upper Accuracy</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Upper Accuracy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 239546769 - Field 1013706845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
+          <source>Own</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Shipping Agent Extension - Field ACO Own - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1709463785 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Quantity Charges</source>

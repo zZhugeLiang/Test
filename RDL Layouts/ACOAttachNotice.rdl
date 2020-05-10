@@ -3280,7 +3280,9 @@
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
-                                                <Style />
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
                                               </Paragraph>
                                             </Paragraphs>
                                             <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -13787,7 +13789,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Left>12cm</Left>
               <Height>11pt</Height>
               <Width>7cm</Width>
@@ -13813,7 +13814,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Height>11pt</Height>
               <Width>12cm</Width>
               <ZIndex>1</ZIndex>

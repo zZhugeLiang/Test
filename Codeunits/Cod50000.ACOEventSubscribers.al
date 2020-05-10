@@ -122,7 +122,7 @@ codeunit 50000 "ACO Event Subscribers"
             RoutingLine.SetRange("Routing No.", Item."Routing No.");
             if RoutingLine.FindSet() then
                 repeat
-                    Rec."ACO Sawing" := RoutingLine."No." = ACOAPPSetup."Sawing Routing No.";
+                    Rec.Validate("ACO Sawing", RoutingLine."No." = ACOAPPSetup."Sawing Routing No.");
                 until (RoutingLine.Next() = 0) or Rec."ACO Sawing";
         end;
 
@@ -246,6 +246,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
+            Rec."ACO Area" := ACOProfile."Area";
 
             Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";

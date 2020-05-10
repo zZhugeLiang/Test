@@ -16,8 +16,7 @@ codeunit 50003 "ACO Management"
         if ItemVariant."ACO Number of Meters" <> 0 then
             ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
-        if ACOLinkedHolder.Count() = 1 then begin
-            ACOLinkedHolder.FindFirst();
+        if ACOLinkedHolder.FindFirst() then begin
             SalesHeader.Get(Salesline."Document Type", SalesLine."Document No.");
             if CheckStatusLinkedHolders(ACOLinkedHolder.Code, SalesHeader."Sell-to Customer No.", Salesline."ACO Profile Code", false) then
                 Salesline."ACO Linked Holder" := ACOLinkedHolder.Code;

@@ -41,10 +41,10 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
-                // field("Area"; "Area")
-                // {
-                //     ApplicationArea = All;
-                // }
+                field("Area"; "Area")
+                {
+                    ApplicationArea = All;
+                }
                 field("Not Measurable"; "Not Measurable")
                 {
                     ApplicationArea = All;
@@ -179,12 +179,9 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
-                    tmpFileName: text;
                 begin
-                    CalcFields("Picture File");
                     "Picture File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Picture Filename" := CopyStr(tmpFileName, 1, 250);
+                    DownloadFromStream(InStr, '', '', '', "Picture Filename");
                 end;
             }
             action(DownloadClampingMethod)
@@ -196,11 +193,9 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
-                    tmpFileName: Text;
                 begin
                     "Clamping Method File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Clamping Method Filename" := CopyStr(tmpFileName, 1, 250);
+                    DownloadFromStream(InStr, '', '', '', "Clamping Method Filename");
                 end;
             }
             action(DownloadPackagingInstructions)
@@ -212,11 +207,9 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
-                    tmpFileName: Text;
                 begin
                     "Packaging Instructions File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', tmpFileName);
-                    "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
+                    DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename");
                 end;
             }
         }

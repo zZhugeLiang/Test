@@ -331,6 +331,9 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 AppSetup.TestField("Maximum Sawing Length");
                 if "ACO Final Length" > AppSetup."Maximum Sawing Length" then
                     Error(FinalLengtGtMaxSawingLengthErr);
+
+                "ACO Lower Accuracy" := 1;
+                "ACO Upper Accuracy" := 1;
             end;
         }
 
@@ -397,7 +400,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOLinkedHolder.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                 ACOLinkedHolder.SetRange("Profile Code", Rec."ACO Profile Code");
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters");
+                    ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
                 ACOLinkedHolders.LookupMode(true);
                 ACOLinkedHolders.SetTableView(ACOLinkedHolder);
@@ -502,10 +505,35 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Measure Report';
             DataClassification = CustomerContent;
         }
+
         field(50058; "ACO Type of Clamp Code"; Code[10])
         {
             Caption = 'Type of Clamp Code Profile';
             TableRelation = "ACO Type of Clamp";
+            DataClassification = CustomerContent;
+        }
+
+        field(50059; "ACO Head Cut"; Boolean)
+        {
+            Caption = 'Head Cut';
+            DataClassification = CustomerContent;
+        }
+
+        field(50060; "ACO Return Remaining"; Boolean)
+        {
+            Caption = 'Return Remaining';
+            DataClassification = CustomerContent;
+        }
+
+        field(50061; "ACO Lower Accuracy"; Decimal)
+        {
+            Caption = 'Lower Accuracy';
+            DataClassification = CustomerContent;
+        }
+
+        field(50062; "ACO Upper Accuracy"; Decimal)
+        {
+            Caption = 'Upper Accuracy';
             DataClassification = CustomerContent;
         }
     }

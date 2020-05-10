@@ -327,7 +327,7 @@ report 50005 "ACO Attach Notice"
     begin
         User.Get(UserSecurityId());
         ACOAppSetup.Get();
-        CurrReport.Language(1043);
+        // CurrReport.Language(1043);
     end;
 
     var

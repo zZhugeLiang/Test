@@ -113,6 +113,22 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Head Cut"; "ACO Head Cut")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Return Remaining"; "ACO Return Remaining")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Lower Accuracy"; "ACO Lower Accuracy")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Upper Accuracy"; "ACO Upper Accuracy")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }
