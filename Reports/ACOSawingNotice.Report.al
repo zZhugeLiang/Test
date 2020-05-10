@@ -6,94 +6,60 @@ report 50006 "ACO Sawing Notice"
 
     dataset
     {
-        dataitem("Sales Header"; "Sales Header")
+
+        dataitem("Sales Line"; "Sales Line")
         {
             column(SawingNoteCaption; SawingNoteCaptionlbl) { }
             column(Picture_CompanyInfo; CompanyInfo.Picture) { }
 
             column(SalesOrderNoCaption; SalesOrderNoCaptionLbl) { }
-            column(No_; "No.")
-            {
-            }
+            column(No_; SalesHeader."No.") { }
             column(CustomerNameCaption; CustomerCaptionLbl) { }
-            column(Sell_to_Customer_Name; "Sell-to Customer Name")
-            {
-            }
+            column(Sell_to_Customer_Name; SalesHeader."Sell-to Customer Name") { }
             column(PrintingDateCaption; PrintingDateCaptionLbl) { }
-            column(PrintingDate; CurrentDateTime())
-            {
-            }
+            column(PrintingDate; CurrentDateTime()) { }
             column(CreatedbyCaption; CreatedbyCaptioNLbl) { }
-            column(CreatedbyUser; User."User Name")
-            {
-            }
-
-            dataitem("Sales Line"; "Sales Line")
-            {
-                DataItemLinkReference = "Sales Header";
-                DataItemLink = "Document No." = field("No.");
-
-                column(SalesOrderLineNoCaption; SalesOrderLineNoCaptionLbl) { }
-                column(Line_No_; "Line No.") { }
-                column(ItemCaption; ItemCaptionLbl) { }
-                // Dit veld is nog leeg in de header even kijken hoe te doen, misschien maar 1 dataitem salesline en headergegevens ophalen
-                column(ACO_Profile_Code; "ACO Profile Code") { }
-                column(TotalQuantityCaption; TotalQuantityCaptionLbl) { }
-                column(ACO_Number_of_Units; "ACO Number of Units") { }
-                column(LengthCaption; LengthCaptionLbl) { }
-                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters" * 1000, 1)) { }
-                column(DateCaption; DateCaptionLbl) { }
-                column(WorkDate; WorkDate()) { }
-                column(DeliveryDateCaption; DeliveryDateCaptionLbl) { }
-                column(Shipment_Date; "Shipment Date") { }
-                column(ACO_Return_RemainingCaption; FieldCaption("ACO Return Remaining")) { }
-                column(ACO_Return_Remaining; Format("ACO Return Remaining")) { }
-                column(ACO_Head_CutCaption; FieldCaption("ACO Head Cut")) { }
-                column(ACO_Head_Cut; Format("ACO Head Cut")) { }
-                column(ACO_Lower_AccuracyCaption; FieldCaption("ACO Lower Accuracy")) { }
-                column(ACO_Lower_Accuracy; "ACO Lower Accuracy") { }
-                column(ACO_Upper_AccuracyCaption; FieldCaption("ACO Upper Accuracy")) { }
-                column(ACO_Upper_Accuracy; "ACO Upper Accuracy") { }
-
-
-                column(ACO_Receipt_Bag; "ACO Receipt Bag")
-                {
-                }
-
-                column(ItemNoCustomerCaption; ItemNoCustomerCaptionLbl) { }
-                column(CustomerItemNo; ACOProfileCustomer."Customer Item No.")
-                {
-                }
-
-
-
-                trigger OnAfterGetRecord()
-
-                begin
-                    ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
-                    ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
-                    ACOProfileCustomer.SetRange("Ship-to Code", "Sales Header"."Ship-to Code");
-                    if not ACOProfileCustomer.FindFirst() then
-                        Clear(ACOProfileCustomer);
-
-                    if not ItemVariant.Get("No.", "Variant Code") then
-                        Clear(ItemVariant);
-
-                    if ACOProfile.Get("ACO Profile Code") then
-                        ACOProfile.CalcFields("Picture File")
-                    else
-                        Clear(ACOProfile);
-                end;
-            }
-
+            column(CreatedbyUser; User."User Name") { }
+            column(SalesOrderLineNoCaption; SalesOrderLineNoCaptionLbl) { }
+            column(Line_No_; "Line No.") { }
+            column(ItemCaption; ItemCaptionLbl) { }
+            column(ACO_Profile_Code; "ACO Profile Code") { }
+            column(TotalQuantityCaption; TotalQuantityCaptionLbl) { }
+            column(ACO_Number_of_Units; "ACO Number of Units") { }
+            column(LengthCaption; LengthCaptionLbl) { }
+            column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters" * 1000, 1)) { }
+            column(DateCaption; DateCaptionLbl) { }
+            column(WorkDate; WorkDate()) { }
+            column(DeliveryDateCaption; DeliveryDateCaptionLbl) { }
+            column(Shipment_Date; "Shipment Date") { }
+            column(ACO_Return_RemainingCaption; FieldCaption("ACO Return Remaining")) { }
+            column(ACO_Return_Remaining; Format("ACO Return Remaining")) { }
+            column(ACO_Head_CutCaption; FieldCaption("ACO Head Cut")) { }
+            column(ACO_Head_Cut; Format("ACO Head Cut")) { }
+            column(ACO_Lower_AccuracyCaption; FieldCaption("ACO Lower Accuracy")) { }
+            column(ACO_Lower_Accuracy; "ACO Lower Accuracy") { }
+            column(ACO_Upper_AccuracyCaption; FieldCaption("ACO Upper Accuracy")) { }
+            column(ACO_Upper_Accuracy; "ACO Upper Accuracy") { }
             trigger OnAfterGetRecord()
             var
                 SalesLine: Record "Sales Line";
-                ACOProfile: Record "ACO Profile";
-                Item: Record Item;
             begin
+                SalesHeader.Get("Document Type", "Document No.");
+                ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+                if not ACOProfileCustomer.FindFirst() then
+                    Clear(ACOProfileCustomer);
+
+                if not ItemVariant.Get("No.", "Variant Code") then
+                    Clear(ItemVariant);
+
+                if not ACOProfile.Get("ACO Profile Code") then
+                    Clear(ACOProfile);
+
+                SalesLine.Reset();
                 SalesLine.SetRange("Document Type", "Document Type");
-                SalesLine.SetRange("Document No.", "No.");
+                SalesLine.SetRange("Document No.", "Document No.");
                 if SalesLine.FindSet() then
                     repeat
                         BagDescriptionsText += SalesLine."ACO Receipt Bag" + '/';
@@ -102,7 +68,11 @@ report 50006 "ACO Sawing Notice"
 
                 if StrLen(BagDescriptionsText) > 1 then
                     BagDescriptionsText := CopyStr(BagDescriptionsText, 1, StrLen(BagDescriptionsText) - 1);
+            end;
 
+            trigger OnPreDataItem()
+            begin
+                SetRange(Type, Type::Item);
             end;
         }
     }
@@ -120,6 +90,7 @@ report 50006 "ACO Sawing Notice"
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";
+        SalesHeader: Record "Sales Header";
         BagDescriptionsText: Text;
         TotalNumberOfUnits: Decimal;
         SawingNoteCaptionLbl: Label 'Sawing Notice';

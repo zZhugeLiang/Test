@@ -145,10 +145,13 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 trigger OnAction()
                 var
                     SalesHeader: Record "Sales Header";
+                    SalesLine: Record "Sales Line";
                 begin
-                    SalesHeader := Rec;
-                    SalesHeader.SetRecFilter();
-                    Report.Run(Report::"ACO Sawing Notice", true, false, SalesHeader);
+                    // SalesHeader := Rec;
+                    // SalesHeader.SetRecFilter();
+                    SalesLine.SetRange("Document Type", "Document Type");
+                    SalesLine.SetRange("Document No.", "No.");
+                    Report.Run(Report::"ACO Sawing Notice", true, false, SalesLine);
 
                     CurrPage.Update(true);
                 end;
