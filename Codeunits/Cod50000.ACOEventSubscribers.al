@@ -320,7 +320,7 @@ codeunit 50000 "ACO Event Subscribers"
         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
             Clear(ItemVariant);
 
-        SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
+        SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;

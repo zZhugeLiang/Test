@@ -7,6 +7,7 @@ pageextension 50008 "ACO Item Variants Extension" extends "Item Variants"
             field("ACO Number of Meters"; "ACO Number of Meters")
             {
                 ApplicationArea = All;
+                ToolTip = 'Number of Meters';
             }
 
         }

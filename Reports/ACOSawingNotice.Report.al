@@ -73,6 +73,7 @@ report 50006 "ACO Sawing Notice"
             trigger OnPreDataItem()
             begin
                 SetRange(Type, Type::Item);
+                SetRange("ACO Sawing", true);
             end;
         }
     }

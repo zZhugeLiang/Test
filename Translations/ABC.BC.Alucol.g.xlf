@@ -4268,6 +4268,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Adjust ablauf for Aucos - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 542470447 - Control 3088297705 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1395186723">
+          <source>Number of Meters</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Variants Extension - Control ACO Number of Meters - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3486886417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>OVIS Mail</source>
           <note from="Developer" annotates="general" priority="2"></note>

@@ -20,7 +20,8 @@ codeunit 50003 "ACO Management"
             SalesHeader.Get(Salesline."Document Type", SalesLine."Document No.");
             if CheckStatusLinkedHolders(ACOLinkedHolder.Code, SalesHeader."Sell-to Customer No.", Salesline."ACO Profile Code", false) then
                 Salesline."ACO Linked Holder" := ACOLinkedHolder.Code;
-        end;
+        end else
+            Salesline."ACO Linked Holder" := '';
 
         ACOLinkedPackaging.SetRange("Profile Code", Salesline."ACO Profile Code");
         ACOLinkedPackaging.SetRange("Customer No.", CustomerNo);
@@ -30,7 +31,8 @@ codeunit 50003 "ACO Management"
         if ACOLinkedPackaging.Count() = 1 then begin
             ACOLinkedPackaging.FindFirst();
             Salesline."ACO Packaging" := ACOLinkedPackaging.Code;
-        end;
+        end else
+            Salesline."ACO Packaging" := '';
     end;
 
     procedure CheckStatusLinkedHolders(HolderCode: Code[30]; CustomerNo: Code[20]; ProfileCode: Code[30]; ShowError: Boolean): Boolean

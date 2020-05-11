@@ -118,7 +118,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     if ACOProfile."Blocked State Inactive" then
                         Error(ProfileInactiveErr, "ACO Profile Code");
 
-                    SalesHeader.Get(Rec."Document Type"::Order, Rec."Document No.");
+                    SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
                     ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
@@ -349,7 +349,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 AppSetup.Get();
                 AppSetup.TestField("Min. Residue Saw");
                 if "ACO Final Length" <> 0 then
-                    "ACO Number of Units" := Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") / "ACO Final Length", 1, '<');
+                    "ACO Number of Units" := Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<');
             end;
         }
 
