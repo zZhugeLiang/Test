@@ -4103,6 +4103,401 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unattach Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3243025410" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unattach Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType UnattachNoticeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType SalesOrderNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2486251868" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType CustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 26039351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Logged In Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType LoggedInDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1885956779" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Area</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TotalAreaCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3825552320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max. Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MaxLengthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 4176336247" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DeliveryID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType DeliveryIDCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1915237209" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ShippingAgentCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3949578611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ColorNoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 4148697023" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType SalesOrderLineNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 280778644" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Treatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TreatmentCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 142445042" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType YourReferenceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 7978351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer of Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType CustomerOfCustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 4104523779" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max. Current Density</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MaxCurrentDensityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3393450169" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Min. Current Density</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MinCurrentDensityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3629837807" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thick Staining Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ThickStainingTimeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1839422733" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thin Staining Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ThinStainingTimeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 17671468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No. Alucol</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ItemNoAlucolCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2273501665" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Description Alucol</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ItemDescriptionAlucolCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 94112056" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No. Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ItemNoCustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1891548666" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Descr. Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ItemDescrCustomerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1974721189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Circumference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType CircumferenceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1443713985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Def. Wght.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType DefWghtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2383089427" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra to Enumerate (mm)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ExtraToEnumerateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 4202384108" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Foil</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType FoilCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Euras</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType EurasCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3373067010" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gross Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType GrossWeightCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2766159901" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NetWeightCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2654092471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Charge per Bath</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ChargesPerBathCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3151425222" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Baths</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfBathsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3232872579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType SawingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bag Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType BagDescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 389339736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType CategoryCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1761295175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Note for Work Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ItemNoteForWorkOrderCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2790046486" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Note for Bath Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ItemNoteForBathSheetCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 985419202" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hollow Factor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HollowFactorCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3741191151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Height Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HeightLevelCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra Flushing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ExtraFlushingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 240991354" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mu Not Measurable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MuNotMeasurableCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2584541967" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType BSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1096431244" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Wrap</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType WrapCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3799438968" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VEC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType VECCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
+          <source>High End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HighEndCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2535608774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MeasureReportCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2354263449" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Kundentour</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType KundentourCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 758547372" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType PackagingInstructionsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 238813293" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType PackagingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2077875658" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType PackageTypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 105702718" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Width</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType WidthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 449695264" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 637786100" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType InsideCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3723069432" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profiles</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ProfilesCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1421459925" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType UOMCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1250789545" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType InsideUOMCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3041380928" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType BuildupLayerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2828139210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Structure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType PackagingStructureCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1891290413" size-unit="char" translate="yes" xml:space="preserve">
+          <source># per Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityPerLayerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3323605874" size-unit="char" translate="yes" xml:space="preserve">
+          <source># Layers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfLayersCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3682501610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max Width</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MaxWidthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3110081249" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max Height</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MaxHeightCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2855844002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType RemarkCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 2763383773" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NameCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1850514430" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fill in the clamped totals here (OK + Rejected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType FillClampedTotalsHereCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 4132251781" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity OK</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityOKCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1936615392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity rejected with reason(s)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityRejectedWithReasonsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 4221438143" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Totals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TotalsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 127265693" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfUnitsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1261740140" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area incl. Hollow</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType AreaIncHollowCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3073791222" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area excl. Hollow</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType AreaExcHollowCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printing Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType PrintingDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 736763889" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType CreatedbyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3698629784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 495581372" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType SupplierCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 1729414803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Number of Units</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TotalNumberOfUnitsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType DeliveryDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 559612500" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType LengthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3035507035" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType LocationCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Export</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4242,6 +4637,16 @@
           <source>Attach Notice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Attach Notice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Unattach Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Unattach Notice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 287955129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Unattach Notice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Unattach Notice - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 1270528838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Sawing Notice</source>
