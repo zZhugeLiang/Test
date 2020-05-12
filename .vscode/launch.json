@@ -5,13 +5,13 @@
             "type": "al",
             "request": "launch",
             "name": "Your own server",
-            "server": "http://nlbcAlucol7",
-            "serverInstance": "BC",
-            //"tenant": "305f396e-f113-4f68-9f01-ae83ae55dd8e",
-            //"sandboxName": "Sandbox2test_27022020",
-            "authentication": "UserPassword",
+            //"server": "http://nlbcAlucol7",
+            //"serverInstance": "BC",
+            "tenant": "305f396e-f113-4f68-9f01-ae83ae55dd8e",
+            "sandboxName": "Sandbox",
+            //"authentication": "Windows",
             "startupObjectId": 42,
-            "schemaUpdateMode": "Recreate"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
+            "schemaUpdateMode": "Synchronize"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
         }
     ]
 }

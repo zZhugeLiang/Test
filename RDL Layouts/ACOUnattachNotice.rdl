@@ -9129,7 +9129,7 @@
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=Fields!PackagingUOMCode_ACOLinkedPackaging.Value</Value>
+                                                                    <Value>=Fields!PackagingStructureCaption.Value</Value>
                                                                     <Style>
                                                                       <FontFamily>Calibri</FontFamily>
                                                                       <FontWeight>Bold</FontWeight>

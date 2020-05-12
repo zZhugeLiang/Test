@@ -8,7 +8,7 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-            field("British Standard"; "ACO British Standard")
+            field("ACO British Standard"; "ACO British Standard")
             {
                 ApplicationArea = All;
             }
