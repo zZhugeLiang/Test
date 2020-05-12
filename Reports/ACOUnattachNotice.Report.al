@@ -193,7 +193,7 @@ report 50007 "ACO Unattach Notice"
                 column(BuildupMaximumWidth_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Width")) { }
                 column(MaxHeightCaption; MaxHeightCaptionLbl) { }
                 column(BuildupMaximumHeight_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Height")) { }
-                column(RemarkCaptionLb; RemarkCaptionLbl) { }
+                column(RemarkCaption; RemarkCaptionLbl) { }
                 column(Remark_ACOLinkedPackaging; ACOLinkedPackaging.Remark) { }
                 // Packaging >>
                 trigger OnAfterGetRecord()

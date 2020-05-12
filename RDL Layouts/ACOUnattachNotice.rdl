@@ -9129,7 +9129,7 @@
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>==Fields!PackagingUOMCode_ACOLinkedPackaging.Value</Value>
+                                                                    <Value>=Fields!PackagingUOMCode_ACOLinkedPackaging.Value</Value>
                                                                     <Style>
                                                                       <FontFamily>Calibri</FontFamily>
                                                                       <FontWeight>Bold</FontWeight>
@@ -10263,7 +10263,7 @@
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=Fields!BuildupLayerCode_ACOLinkedPackaging.ValueFields!PackagingStructureCaption.Value</Value>
+                                                                    <Value>=Fields!BuildupLayerCode_ACOLinkedPackaging.Value</Value>
                                                                     <Style>
                                                                       <FontFamily>Calibri</FontFamily>
                                                                       <FontWeight>Bold</FontWeight>
@@ -10471,7 +10471,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!RemarkCaptionLb.Value</Value>
+                                            <Value>=Fields!RemarkCaption.Value</Value>
                                             <Style>
                                               <FontFamily>Calibri</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -12120,7 +12120,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Left>12cm</Left>
               <Height>11pt</Height>
               <Width>7cm</Width>
@@ -12146,7 +12145,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Height>11pt</Height>
               <Width>12cm</Width>
               <ZIndex>1</ZIndex>
@@ -12772,8 +12770,8 @@ End Function
         <Field Name="BuildupMaximumHeight_ACOLinkedPackaging">
           <DataField>BuildupMaximumHeight_ACOLinkedPackaging</DataField>
         </Field>
-        <Field Name="RemarkCaptionLb">
-          <DataField>RemarkCaptionLb</DataField>
+        <Field Name="RemarkCaption">
+          <DataField>RemarkCaption</DataField>
         </Field>
         <Field Name="Remark_ACOLinkedPackaging">
           <DataField>Remark_ACOLinkedPackaging</DataField>
