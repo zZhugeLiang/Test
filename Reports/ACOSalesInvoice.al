@@ -569,7 +569,7 @@ report 50010 "ACO Sales - Invoice"
                         }
                         ///// Fields on Subform Page
                         ///// Captions <<
-                        column(FilteredTypeField_SalesInvLineCaption; "Sales Invoice Line".FormatType)) { }
+                        // column(FilteredTypeField_SalesInvLineCaption; "Sales Invoice Line".FormatType)) { }
                         // column(No_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("No.")) { }
                         column(CrossReferenceNo_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("Cross-Reference No.")) { }
                         column(ICPartnerCode_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("IC Partner Code")) { }
@@ -600,7 +600,7 @@ report 50010 "ACO Sales - Invoice"
                         column(ShortcutDimCode5_SalesInvLineCaption; ShortcutDimCode5Dimension.Name) { }
                         column(ShortcutDimCode6_SalesInvLineCaption; ShortcutDimCode6Dimension.Name) { }
                         column(ShortcutDimCode7_SalesInvLineCaption; ShortcutDimCode7Dimension.Name) { }
-                        column(ShortcutDimCode8_SalesInvLineCaption; ShortcutDimCode8Dimension.Name) { }                        
+                        column(ShortcutDimCode8_SalesInvLineCaption; ShortcutDimCode8Dimension.Name) { }
                         ///// Captions >>
                         ///// Values <<
                         // column(Type_SalesInvLine; "Sales Invoice Line".Type) { }

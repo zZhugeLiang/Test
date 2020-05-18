@@ -249,8 +249,8 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Area" := ACOProfile."Area";
 
             Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
-            Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
-            Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
+            Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
+            Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
         end;
     end;
 
