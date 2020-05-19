@@ -1,7 +1,7 @@
 report 50011 "ACO Sales - Credit Memo"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './SalesCreditMemo.rdlc';
+    // RDLCLayout = './SalesCreditMemo.rdlc';
     Caption = 'Sales - Credit Memo';
     Permissions = TableData "Sales Shipment Buffer" = rimd;
 
@@ -204,6 +204,114 @@ report 50011 "ACO Sales - Credit Memo"
                     column(PriceInclVAT_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Prices Including VAT"))
                     {
                     }
+                    ///// Added Fields from Page <<
+                    ///// Captions <<
+                    column(No_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("No.")) { }
+                    column(SelltoCustomerName_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Customer Name")) { }
+                    column(SelltoAddress_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Address")) { }
+                    column(SelltoAddress2_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Address 2")) { }
+                    column(SelltoCity_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to City")) { }
+                    column(SelltoCounty_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to County")) { }
+                    column(SelltoPostCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Post Code")) { }
+                    column(SelltoCountryRegionCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Country/Region Code")) { }
+                    column(SelltoContactNo_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Contact No.")) { }
+                    column(SelltoContact_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Sell-to Contact")) { }
+                    column(PostingDate_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Posting Date")) { }
+                    column(YourReference_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Your Reference")) { }
+                    column(DocumentDate_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Document Date")) { }
+                    column(DocumentExchangeStatus_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Document Exchange Status")) { }
+                    column(PreAssignedNo_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Pre-Assigned No.")) { }
+                    column(ExternalDocumentNo_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("External Document No.")) { }
+                    column(SalespersonCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Salesperson Code")) { }
+                    column(ResponsibilityCenter_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Responsibility Center")) { }
+                    column(Cancelled_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption(Cancelled)) { }
+                    column(Corrective_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption(Corrective)) { }
+                    column(NoPrinted_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("No. Printed")) { }
+                    column(WorkDescription_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Work Description")) { }
+                    column(CurrencyCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Currency Code")) { }
+                    column(ShortcutDimension1Code_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Shortcut Dimension 1 Code")) { }
+                    column(ShortcutDimension2Code_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Shortcut Dimension 2 Code")) { }
+                    column(LocationCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Location Code")) { }
+                    column(AppliestoDocType_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Applies-to Doc. Type")) { }
+                    column(AppliestoDocNo_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Applies-to Doc. No.")) { }
+                    column(PaymentMethodCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Payment Method Code")) { }
+                    column(TransactionMode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Transaction Mode")) { }
+                    column(BankAccount_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bank Account")) { }
+                    column(EU3PartyTrade_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("EU 3-Party Trade")) { }
+                    column(TaxLiable_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Tax Liable")) { }
+                    column(TaxAreaCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Tax Area Code")) { }
+                    column(ShiptoName_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to Name")) { }
+                    column(ShiptoAddress_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to Address")) { }
+                    column(ShiptoAddress2_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to Address 2")) { }
+                    column(ShiptoCity_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to City")) { }
+                    column(ShiptoCounty_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to County")) { }
+                    column(ShiptoPostCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to Post Code")) { }
+                    column(ShiptoCountryRegionCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to Country/Region Code")) { }
+                    column(ShiptoContact_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Ship-to Contact")) { }
+                    column(BilltoName_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Name")) { }
+                    column(BilltoAddress_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Address")) { }
+                    column(BilltoAddress2_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Address 2")) { }
+                    column(BilltoCity_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to City")) { }
+                    column(BilltoCounty_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to County")) { }
+                    column(BilltoPostCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Post Code")) { }
+                    column(BilltoCountryRegionCode_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Country/Region Code")) { }
+                    column(BilltoContactNo_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Contact No.")) { }
+                    column(BilltoContactSalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FieldCaption("Bill-to Contact")) { }
+                    ///// Captions >>
+                    ///// Values <<
+                    // column(No_SalesCrMemoHeader; "Sales Cr.Memo Header"."No.") { }
+                    column(SelltoCustomerName_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Customer Name") { }
+                    column(SelltoAddress_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Address") { }
+                    column(SelltoAddress2_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Address 2") { }
+                    column(SelltoCity_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to City") { }
+                    column(SelltoCounty_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to County") { }
+                    column(SelltoPostCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Post Code") { }
+                    column(SelltoCountryRegionCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Country/Region Code") { }
+                    column(SelltoContactNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Contact No.") { }
+                    column(SelltoContact_SalesCrMemoHeader; "Sales Cr.Memo Header"."Sell-to Contact") { }
+                    column(PostingDate_SalesCrMemoHeader; "Sales Cr.Memo Header"."Posting Date") { }
+                    column(YourReference_SalesCrMemoHeader; "Sales Cr.Memo Header"."Your Reference") { }
+                    column(DocumentDate_SalesCrMemoHeader; "Sales Cr.Memo Header"."Document Date") { }
+                    column(DocumentExchangeStatus_SalesCrMemoHeader; "Sales Cr.Memo Header"."Document Exchange Status") { }
+                    column(PreAssignedNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Pre-Assigned No.") { }
+                    column(ExternalDocumentNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."External Document No.") { }
+                    column(SalespersonCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Salesperson Code") { }
+                    column(ResponsibilityCenter_SalesCrMemoHeader; "Sales Cr.Memo Header"."Responsibility Center") { }
+                    column(Cancelled_SalesCrMemoHeader; "Sales Cr.Memo Header".Cancelled) { }
+                    column(Corrective_SalesCrMemoHeader; "Sales Cr.Memo Header".Corrective) { }
+                    column(NoPrinted_SalesCrMemoHeader; "Sales Cr.Memo Header"."No. Printed") { }
+                    column(WorkDescription_SalesCrMemoHeader; "Sales Cr.Memo Header".GetWorkDescription()) { }
+                    column(CurrencyCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Currency Code") { }
+                    column(ShortcutDimension1Code_SalesCrMemoHeader; "Sales Cr.Memo Header"."Shortcut Dimension 1 Code") { }
+                    column(ShortcutDimension2Code_SalesCrMemoHeader; "Sales Cr.Memo Header"."Shortcut Dimension 2 Code") { }
+                    column(LocationCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Location Code") { }
+                    column(AppliestoDocType_SalesCrMemoHeader; "Sales Cr.Memo Header"."Applies-to Doc. Type") { }
+                    column(AppliestoDocNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Applies-to Doc. No.") { }
+                    column(PaymentMethodCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Payment Method Code") { }
+                    column(TransactionMode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Transaction Mode") { }
+                    column(BankAccount_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bank Account") { }
+                    column(EU3PartyTrade_SalesCrMemoHeader; "Sales Cr.Memo Header"."EU 3-Party Trade") { }
+                    column(TaxLiable_SalesCrMemoHeader; "Sales Cr.Memo Header"."Tax Liable") { }
+                    column(TaxAreaCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Tax Area Code") { }
+                    column(ShiptoName_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to Name") { }
+                    column(ShiptoAddress_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to Address") { }
+                    column(ShiptoAddress2_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to Address 2") { }
+                    column(ShiptoCity_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to City") { }
+                    column(ShiptoCounty_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to County") { }
+                    column(ShiptoPostCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to Post Code") { }
+                    column(ShiptoCountryRegionCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to Country/Region Code") { }
+                    column(ShiptoContact_SalesCrMemoHeader; "Sales Cr.Memo Header"."Ship-to Contact") { }
+                    column(BilltoName_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Name") { }
+                    column(BilltoAddress_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Address") { }
+                    column(BilltoAddress2_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Address 2") { }
+                    column(BilltoCity_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to City") { }
+                    column(BilltoCounty_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to County") { }
+                    column(BilltoPostCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Post Code") { }
+                    column(BilltoCountryRegionCode_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Country/Region Code") { }
+                    column(BilltoContactNo_SalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Contact No.") { }
+                    column(BilltoContactSalesCrMemoHeader; "Sales Cr.Memo Header"."Bill-to Contact") { }
+                    ///// Values >>
+                    ///// Added Fields from Page >>
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Cr.Memo Header";
@@ -374,6 +482,75 @@ report 50011 "ACO Sales - Credit Memo"
                         column(VATIdentif_SalesCrMemoLineCaption; FieldCaption("VAT Identifier"))
                         {
                         }
+                        ///// Fields on Subform Page
+                        ///// Captions <<
+                        column(Type_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption(Type)) { }
+                        // column(No_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("No.")) { }
+                        column(CrossReferenceNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Cross-Reference No.")) { }
+                        column(ICPartnerCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("IC Partner Code")) { }
+                        column(VariantCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Variant Code")) { }
+                        column(Description_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption(Description)) { }
+                        column(ReturnReasonCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Return Reason Code")) { }
+                        column(Quantity_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption(Quantity)) { }
+                        column(UnitofMeasureCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Unit of Measure Code")) { }
+                        column(UnitofMeasure_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Unit of Measure")) { }
+                        column(UnitCostLCY_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Unit Cost (LCY)")) { }
+                        column(UnitPrice_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Unit Price")) { }
+                        column(TaxLiable_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Tax Liable")) { }
+                        column(TaxAreaCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Tax Area Code")) { }
+                        column(TaxGroupCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Tax Group Code")) { }
+                        column(LineAmount_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Line Amount")) { }
+                        column(LineDiscountPercentage_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Line Discount %")) { }
+                        column(LineDiscountAmount_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Line Discount Amount")) { }
+                        column(AllowInvoiceDisc_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Allow Invoice Disc.")) { }
+                        column(JobNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Job No.")) { }
+                        column(JobTaskNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Job Task No.")) { }
+                        column(ApplfromItemEntry_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Appl.-from Item Entry")) { }
+                        column(AppltoItemEntry_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Appl.-to Item Entry")) { }
+                        column(DeferralCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Deferral Code")) { }
+                        column(ShortcutDimension1Code_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Shortcut Dimension 1 Code")) { }
+                        column(ShortcutDimension2Code_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Shortcut Dimension 2 Code")) { }
+                        column(ShortcutDimCode3_SalesCrMemoLineCaption; ShortcutDimCode3Dimension.Name) { }
+                        column(ShortcutDimCode4_SalesCrMemoLineCaption; ShortcutDimCode4Dimension.Name) { }
+                        column(ShortcutDimCode5_SalesCrMemoLineCaption; ShortcutDimCode5Dimension.Name) { }
+                        column(ShortcutDimCode6_SalesCrMemoLineCaption; ShortcutDimCode6Dimension.Name) { }
+                        column(ShortcutDimCode7_SalesCrMemoLineCaption; ShortcutDimCode7Dimension.Name) { }
+                        column(ShortcutDimCode8_SalesCrMemoLineCaption; ShortcutDimCode8Dimension.Name) { }
+                        ///// Captions >>
+                        ///// Values <<
+                        // column(Type_SalesCrMemoLine; "Sales Cr.Memo Line".Type) { }
+                        column(FilteredTypeField_SalesCrMemoLine; "Sales Cr.Memo Line".FormatType) { }
+                        // column(No_SalesCrMemoLine; "Sales Cr.Memo Line"."No.") { }
+                        column(CrossReferenceNo_SalesCrMemoLine; "Sales Cr.Memo Line"."Cross-Reference No.") { }
+                        column(ICPartnerCode_SalesCrMemoLine; "Sales Cr.Memo Line"."IC Partner Code") { }
+                        column(VariantCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Variant Code") { }
+                        column(Description_SalesCrMemoLine; "Sales Cr.Memo Line".Description) { }
+                        column(ReturnReasonCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Return Reason Code") { }
+                        column(Quantity_SalesCrMemoLine; "Sales Cr.Memo Line".Quantity) { }
+                        column(UnitofMeasureCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Unit of Measure Code") { }
+                        column(UnitofMeasure_SalesCrMemoLine; "Sales Cr.Memo Line"."Unit of Measure") { }
+                        column(UnitCostLCY_SalesCrMemoLine; "Sales Cr.Memo Line"."Unit Cost (LCY)") { }
+                        // column(UnitPrice_SalesCrMemoLine; "Sales Cr.Memo Line"."Unit Price") { }
+                        column(TaxLiable_SalesCrMemoLine; "Sales Cr.Memo Line"."Tax Liable") { }
+                        column(TaxAreaCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Tax Area Code") { }
+                        column(TaxGroupCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Tax Group Code") { }
+                        column(LineAmount_SalesCrMemoLine; "Sales Cr.Memo Line"."Line Amount") { }
+                        column(LineDiscountPercentage_SalesCrMemoLine; "Sales Cr.Memo Line"."Line Discount %") { }
+                        column(LineDiscountAmount_SalesCrMemoLine; "Sales Cr.Memo Line"."Line Discount Amount") { }
+                        column(AllowInvoiceDisc_SalesCrMemoLine; "Sales Cr.Memo Line"."Allow Invoice Disc.") { }
+                        column(JobNo_SalesCrMemoLine; "Sales Cr.Memo Line"."Job No.") { }
+                        column(JobTaskNo_SalesCrMemoLine; "Sales Cr.Memo Line"."Job Task No.") { }
+                        column(ApplfromItemEntry_SalesCrMemoLine; "Sales Cr.Memo Line"."Appl.-from Item Entry") { }
+                        column(AppltoItemEntry_SalesCrMemoLine; "Sales Cr.Memo Line"."Appl.-to Item Entry") { }
+                        column(DeferralCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Deferral Code") { }
+                        column(ShortcutDimension1Code_SalesCrMemoLine; "Sales Cr.Memo Line"."Shortcut Dimension 1 Code") { }
+                        column(ShortcutDimension2Code_SalesCrMemoLine; "Sales Cr.Memo Line"."Shortcut Dimension 2 Code") { }
+                        column(ShortcutDimCode3_SalesCrMemoLine; ShortcutDimCode[3]) { }
+                        column(ShortcutDimCode4_SalesCrMemoLine; ShortcutDimCode[4]) { }
+                        column(ShortcutDimCode5_SalesCrMemoLine; ShortcutDimCode[5]) { }
+                        column(ShortcutDimCode6_SalesCrMemoLine; ShortcutDimCode[6]) { }
+                        column(ShortcutDimCode7_SalesCrMemoLine; ShortcutDimCode[7]) { }
+                        column(ShortcutDimCode8_SalesCrMemoLine; ShortcutDimCode[8]) { }
                         dataitem(DimensionLoop2; "Integer")
                         {
                             DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
@@ -771,6 +948,12 @@ report 50011 "ACO Sales - Credit Memo"
     trigger OnInitReport()
     begin
         GLSetup.Get();
+        if not ShortcutDimCode3Dimension.Get(GLSetup."Shortcut Dimension 3 Code") then Clear(ShortcutDimCode3Dimension);
+        if not ShortcutDimCode4Dimension.Get(GLSetup."Shortcut Dimension 4 Code") then Clear(ShortcutDimCode4Dimension);
+        if not ShortcutDimCode5Dimension.Get(GLSetup."Shortcut Dimension 5 Code") then Clear(ShortcutDimCode5Dimension);
+        if not ShortcutDimCode6Dimension.Get(GLSetup."Shortcut Dimension 6 Code") then Clear(ShortcutDimCode6Dimension);
+        if not ShortcutDimCode7Dimension.Get(GLSetup."Shortcut Dimension 7 Code") then Clear(ShortcutDimCode7Dimension);
+        if not ShortcutDimCode8Dimension.Get(GLSetup."Shortcut Dimension 8 Code") then Clear(ShortcutDimCode8Dimension);
         CompanyInfo.Get();
         SalesSetup.Get();
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
@@ -823,6 +1006,12 @@ report 50011 "ACO Sales - Credit Memo"
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
+        ShortcutDimCode3Dimension: Record Dimension;
+        ShortcutDimCode4Dimension: Record Dimension;
+        ShortcutDimCode5Dimension: Record Dimension;
+        ShortcutDimCode6Dimension: Record Dimension;
+        ShortcutDimCode7Dimension: Record Dimension;
+        ShortcutDimCode8Dimension: Record Dimension;
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -841,6 +1030,7 @@ report 50011 "ACO Sales - Credit Memo"
         ShowShippingAddr: Boolean;
         DimText: Text[120];
         OldDimText: Text[75];
+        ShortcutDimCode: array[8] of Code[20];
         ShowInternalInfo: Boolean;
         Continue: Boolean;
         LogInteraction: Boolean;

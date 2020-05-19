@@ -1,7 +1,7 @@
 report 50012 "ACO Sales - Shipment"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './SalesShipment.rdlc';
+    // RDLCLayout = './SalesShipment.rdlc';
     Caption = 'Sales - Shipment';
     PreviewMode = PrintLayout;
 
@@ -174,6 +174,117 @@ report 50012 "ACO Sales - Shipment"
                     column(ExternalDocumentNo_SalesShptHeader; "Sales Shipment Header"."External Document No.")
                     {
                     }
+                    ///// Added Fields from Page <<
+                    ///// Captions <<
+                    column(No_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("No.")) { }
+                    column(SelltoCustomerName_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Customer Name")) { }
+                    column(SelltoAddress_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Address")) { }
+                    column(SelltoAddress2_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Address 2")) { }
+                    column(SelltoCity_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to City")) { }
+                    column(SelltoCounty_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to County")) { }
+                    column(SelltoPostCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Post Code")) { }
+                    column(SelltoCountryRegionCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Country/Region Code")) { }
+                    column(SelltoContactNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Contact No.")) { }
+                    column(SelltoContact_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Sell-to Contact")) { }
+                    column(NoPrinted_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("No. Printed")) { }
+                    column(PostingDate_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Posting Date")) { }
+                    column(DocumentDate_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Document Date")) { }
+                    column(RequestedDeliveryDate_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Requested Delivery Date")) { }
+                    column(PromisedDeliveryDate_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Promised Delivery Date")) { }
+                    column(QuoteNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Quote No.")) { }
+                    column(OrderNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Order No.")) { }
+                    column(ExternalDocumentNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("External Document No.")) { }
+                    column(SalespersonCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Salesperson Code")) { }
+                    column(ResponsibilityCenter_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Responsibility Center")) { }
+                    column(WorkDescription_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Work Description")) { }
+                    column(ShiptoCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Code")) { }
+                    column(ShiptoName_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Name")) { }
+                    column(ShiptoAddress_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Address")) { }
+                    column(ShiptoAddress2_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Address 2")) { }
+                    column(ShiptoCity_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to City")) { }
+
+                    column(ShiptoCounty_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to County")) { }
+                    column(ShiptoPostCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Post Code")) { }
+                    column(ShiptoCountryRegionCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Country/Region Code")) { }
+                    column(ShiptoContact_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Ship-to Contact")) { }
+                    column(LocationCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Location Code")) { }
+                    column(OutboundWhseHandlingTime_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Outbound Whse. Handling Time")) { }
+                    column(ShippingTime_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shipping Time")) { }
+
+                    column(ShipmentMethodCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shipment Method Code")) { }
+                    column(ShippingAgentCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shipping Agent Code")) { }
+                    column(ShippingAgentServiceCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shipping Agent Service Code")) { }
+                    column(PackageTrackingNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Package Tracking No.")) { }
+                    column(ShipmentDate_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shipment Date")) { }
+                    column(BilltoCustomerNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Customer No.")) { }
+                    column(BilltoName_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Name")) { }
+                    column(BilltoAddress_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Address")) { }
+                    column(BilltoAddress2_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Address 2")) { }
+                    column(BilltoCity_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to City")) { }
+                    column(BilltoCounty_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to County")) { }
+                    column(BilltoPostCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Post Code")) { }
+                    column(BilltoCountryRegionCode_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Country/Region Code")) { }
+                    column(BilltoContactNo_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Contact No.")) { }
+                    column(BilltoContact_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Bill-to Contact")) { }
+                    column(ShortcutDimension1Code_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shortcut Dimension 1 Code")) { }
+                    column(ShortcutDimension2Code_SalesShptHeaderCaption; "Sales Shipment Header".FieldCaption("Shortcut Dimension 2 Code")) { }
+
+                    ///// Captions >>
+                    ///// Values <<
+                    // column(No_SalesShptHeader; "Sales Shipment Header"."No.") { }
+                    column(SelltoCustomerName_SalesShptHeader; "Sales Shipment Header"."Sell-to Customer Name") { }
+                    column(SelltoAddress_SalesShptHeader; "Sales Shipment Header"."Sell-to Address") { }
+                    column(SelltoAddress2_SalesShptHeader; "Sales Shipment Header"."Sell-to Address 2") { }
+                    column(SelltoCity_SalesShptHeader; "Sales Shipment Header"."Sell-to City") { }
+                    column(SelltoCounty_SalesShptHeader; "Sales Shipment Header"."Sell-to County") { }
+                    column(SelltoPostCode_SalesShptHeader; "Sales Shipment Header"."Sell-to Post Code") { }
+                    column(SelltoCountryRegionCode_SalesShptHeader; "Sales Shipment Header"."Sell-to Country/Region Code") { }
+                    column(SelltoContactNo_SalesShptHeader; "Sales Shipment Header"."Sell-to Contact No.") { }
+                    column(SelltoContact_SalesShptHeader; "Sales Shipment Header"."Sell-to Contact") { }
+                    column(NoPrinted_SalesShptHeader; "Sales Shipment Header"."No. Printed") { }
+                    column(PostingDate_SalesShptHeader; "Sales Shipment Header"."Posting Date") { }
+                    column(DocumentDate_SalesShptHeader; "Sales Shipment Header"."Document Date") { }
+                    column(RequestedDeliveryDate_SalesShptHeader; "Sales Shipment Header"."Requested Delivery Date") { }
+                    column(PromisedDeliveryDate_SalesShptHeader; "Sales Shipment Header"."Promised Delivery Date") { }
+                    column(QuoteNo_SalesShptHeader; "Sales Shipment Header"."Quote No.") { }
+                    // column(OrderNo_SalesShptHeader; "Sales Shipment Header"."Order No.") { }
+                    // column(ExternalDocumentNo_SalesShptHeader; "Sales Shipment Header"."External Document No.") { }
+                    column(SalespersonCode_SalesShptHeader; "Sales Shipment Header"."Salesperson Code") { }
+                    column(ResponsibilityCenter_SalesShptHeader; "Sales Shipment Header"."Responsibility Center") { }
+                    column(WorkDescription_SalesShptHeader; "Sales Shipment Header".GetWorkDescription()) { }
+                    column(ShiptoCode_SalesShptHeader; "Sales Shipment Header"."Ship-to Code") { }
+                    column(ShiptoName_SalesShptHeader; "Sales Shipment Header"."Ship-to Name") { }
+                    column(ShiptoAddress_SalesShptHeader; "Sales Shipment Header"."Ship-to Address") { }
+                    column(ShiptoAddress2_SalesShptHeader; "Sales Shipment Header"."Ship-to Address 2") { }
+                    column(ShiptoCity_SalesShptHeader; "Sales Shipment Header"."Ship-to City") { }
+
+                    column(ShiptoCounty_SalesShptHeader; "Sales Shipment Header"."Ship-to County") { }
+                    column(ShiptoPostCode_SalesShptHeader; "Sales Shipment Header"."Ship-to Post Code") { }
+                    column(ShiptoCountryRegionCode_SalesShptHeader; "Sales Shipment Header"."Ship-to Country/Region Code") { }
+                    column(ShiptoContact_SalesShptHeader; "Sales Shipment Header"."Ship-to Contact") { }
+                    column(LocationCode_SalesShptHeader; "Sales Shipment Header"."Location Code") { }
+                    column(OutboundWhseHandlingTime_SalesShptHeader; "Sales Shipment Header"."Outbound Whse. Handling Time") { }
+                    column(ShippingTime_SalesShptHeader; "Sales Shipment Header"."Shipping Time") { }
+
+                    column(ShipmentMethodCode_SalesShptHeader; "Sales Shipment Header"."Shipment Method Code") { }
+                    column(ShippingAgentCode_SalesShptHeader; "Sales Shipment Header"."Shipping Agent Code") { }
+                    column(ShippingAgentServiceCode_SalesShptHeader; "Sales Shipment Header"."Shipping Agent Service Code") { }
+                    column(PackageTrackingNo_SalesShptHeader; "Sales Shipment Header"."Package Tracking No.") { }
+                    column(ShipmentDate_SalesShptHeader; "Sales Shipment Header"."Shipment Date") { }
+                    column(BilltoCustomerNo_SalesShptHeader; "Sales Shipment Header"."Bill-to Customer No.") { }
+                    column(BilltoName_SalesShptHeader; "Sales Shipment Header"."Bill-to Name") { }
+                    column(BilltoAddress_SalesShptHeader; "Sales Shipment Header"."Bill-to Address") { }
+                    column(BilltoAddress2_SalesShptHeader; "Sales Shipment Header"."Bill-to Address 2") { }
+                    column(BilltoCity_SalesShptHeader; "Sales Shipment Header"."Bill-to City") { }
+                    column(BilltoCounty_SalesShptHeader; "Sales Shipment Header"."Bill-to County") { }
+                    column(BilltoPostCode_SalesShptHeader; "Sales Shipment Header"."Bill-to Post Code") { }
+                    column(BilltoCountryRegionCode_SalesShptHeader; "Sales Shipment Header"."Bill-to Country/Region Code") { }
+                    column(BilltoContactNo_SalesShptHeader; "Sales Shipment Header"."Bill-to Contact No.") { }
+                    column(BilltoContact_SalesShptHeader; "Sales Shipment Header"."Bill-to Contact") { }
+                    column(ShortcutDimension1Code_SalesShptHeader; "Sales Shipment Header"."Shortcut Dimension 1 Code") { }
+                    column(ShortcutDimension2Code_SalesShptHeader; "Sales Shipment Header"."Shortcut Dimension 2 Code") { }
+                    ///// Values >>
+                    ///// Added Fields from Page >>
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Shipment Header";
@@ -269,6 +380,79 @@ report 50012 "ACO Sales - Shipment"
                         column(No_SalesShptLineCaption; FieldCaption("No."))
                         {
                         }
+                        ///// Fields on Subform Page <<
+                        ///// Captions <<
+                        column(Type_SalesShptLineCaption; "Sales Shipment Line".FieldCaption(Type)) { }
+                        // column(FilteredTypeField; FormatType)) { }
+                        // column(No_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("No.")) { }
+                        column(CrossReferenceNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Cross-Reference No.")) { }
+                        column(VariantCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Variant Code")) { }
+                        // column(Description_SalesShptLineCaption; "Sales Shipment Line".FieldCaption(Description)) { }
+                        column(ReturnReasonCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Return Reason Code")) { }
+                        column(LocationCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Location Code")) { }
+                        column(BinCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Bin Code")) { }
+                        column(Quantity_SalesShptLineCaption; "Sales Shipment Line".FieldCaption(Quantity)) { }
+                        column(UnitofMeasureCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Unit of Measure Code")) { }
+                        column(UnitofMeasure_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Unit of Measure")) { }
+                        column(QuantityInvoiced_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Quantity Invoiced")) { }
+                        column(QtyShippedNotInvoiced_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Qty. Shipped Not Invoiced")) { }
+                        column(RequestedDeliveryDate_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Requested Delivery Date")) { }
+                        column(PromisedDeliveryDate_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Promised Delivery Date")) { }
+                        column(PlannedDeliveryDate_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Planned Delivery Date")) { }
+                        column(PlannedShipmentDate_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Planned Shipment Date")) { }
+                        column(ShipmentDate_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Shipment Date")) { }
+                        column(ShippingTime_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Shipping Time")) { }
+                        column(JobNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Job No.")) { }
+                        column(JobTaskNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Job Task No.")) { }
+                        column(OutboundWhseHandlingTime_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Outbound Whse. Handling Time")) { }
+                        column(AppltoItemEntry_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Appl.-to Item Entry")) { }
+                        column(Correction_SalesShptLineCaption; "Sales Shipment Line".FieldCaption(Correction)) { }
+                        column(ShortcutDimension1Code_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Shortcut Dimension 1 Code")) { }
+                        column(ShortcutDimension2Code_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Shortcut Dimension 2 Code")) { }
+                        column(ShortcutDimCode3_SalesShptLineCaption; ShortcutDimCode3Dimension.Name) { }
+                        column(ShortcutDimCode4_SalesShptLineCaption; ShortcutDimCode4Dimension.Name) { }
+                        column(ShortcutDimCode5_SalesShptLineCaption; ShortcutDimCode5Dimension.Name) { }
+                        column(ShortcutDimCode6_SalesShptLineCaption; ShortcutDimCode6Dimension.Name) { }
+                        column(ShortcutDimCode7_SalesShptLineCaption; ShortcutDimCode7Dimension.Name) { }
+                        column(ShortcutDimCode8_SalesShptLineCaption; ShortcutDimCode8Dimension.Name) { }
+                        ///// Captions >>>>>
+                        ///// Values <<<<<
+                        // column(Type_SalesShptLine; "Sales Shipment Line".Type) { }
+                        column(FilteredTypeField; FormatType) { }
+                        // column(No_SalesShptLine; "Sales Shipment Line"."No.") { }
+                        column(CrossReferenceNo_SalesShptLine; "Sales Shipment Line"."Cross-Reference No.") { }
+                        column(VariantCode_SalesShptLine; "Sales Shipment Line"."Variant Code") { }
+                        // column(Description_SalesShptLine; "Sales Shipment Line".Description) { }
+                        column(ReturnReasonCode_SalesShptLine; "Sales Shipment Line"."Return Reason Code") { }
+                        column(LocationCode_SalesShptLine; "Sales Shipment Line"."Location Code") { }
+                        column(BinCode_SalesShptLine; "Sales Shipment Line"."Bin Code") { }
+                        column(Quantity_SalesShptLine; "Sales Shipment Line".Quantity) { }
+                        column(UnitofMeasureCode_SalesShptLine; "Sales Shipment Line"."Unit of Measure Code") { }
+                        column(UnitofMeasure_SalesShptLine; "Sales Shipment Line"."Unit of Measure") { }
+                        column(QuantityInvoiced_SalesShptLine; "Sales Shipment Line"."Quantity Invoiced") { }
+                        column(QtyShippedNotInvoiced_SalesShptLine; "Sales Shipment Line"."Qty. Shipped Not Invoiced") { }
+                        column(RequestedDeliveryDate_SalesShptLine; "Sales Shipment Line"."Requested Delivery Date") { }
+                        column(PromisedDeliveryDate_SalesShptLine; "Sales Shipment Line"."Promised Delivery Date") { }
+                        column(PlannedDeliveryDate_SalesShptLine; "Sales Shipment Line"."Planned Delivery Date") { }
+                        column(PlannedShipmentDate_SalesShptLine; "Sales Shipment Line"."Planned Shipment Date") { }
+                        column(ShipmentDate_SalesShptLine; "Sales Shipment Line"."Shipment Date") { }
+                        column(ShippingTime_SalesShptLine; "Sales Shipment Line"."Shipping Time") { }
+                        column(JobNo_SalesShptLine; "Sales Shipment Line"."Job No.") { }
+                        column(JobTaskNo_SalesShptLine; "Sales Shipment Line"."Job Task No.") { }
+                        column(OutboundWhseHandlingTime_SalesShptLine; "Sales Shipment Line"."Outbound Whse. Handling Time") { }
+                        column(AppltoItemEntry_SalesShptLine; "Sales Shipment Line"."Appl.-to Item Entry") { }
+                        column(Correction_SalesShptLine; "Sales Shipment Line".Correction) { }
+                        column(ShortcutDimension1Code_SalesShptLine; "Sales Shipment Line"."Shortcut Dimension 1 Code") { }
+                        column(ShortcutDimension2Code_SalesShptLine; "Sales Shipment Line"."Shortcut Dimension 2 Code") { }
+
+                        column(ShortcutDimCode3_SalesShptLine; ShortcutDimCode[3]) { }
+                        column(ShortcutDimCode4_SalesShptLine; ShortcutDimCode[4]) { }
+                        column(ShortcutDimCode5_SalesShptLine; ShortcutDimCode[5]) { }
+                        column(ShortcutDimCode6_SalesShptLine; ShortcutDimCode[6]) { }
+                        column(ShortcutDimCode7_SalesShptLine; ShortcutDimCode[7]) { }
+                        column(ShortcutDimCode8_SalesShptLine; ShortcutDimCode[8]) { }
+                        ///// Values >>
+                        ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")
                         {
                             DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
@@ -648,6 +832,13 @@ report 50012 "ACO Sales - Shipment"
 
     trigger OnInitReport()
     begin
+        GLSetup.Get();
+        if not ShortcutDimCode3Dimension.Get(GLSetup."Shortcut Dimension 3 Code") then Clear(ShortcutDimCode3Dimension);
+        if not ShortcutDimCode4Dimension.Get(GLSetup."Shortcut Dimension 4 Code") then Clear(ShortcutDimCode4Dimension);
+        if not ShortcutDimCode5Dimension.Get(GLSetup."Shortcut Dimension 5 Code") then Clear(ShortcutDimCode5Dimension);
+        if not ShortcutDimCode6Dimension.Get(GLSetup."Shortcut Dimension 6 Code") then Clear(ShortcutDimCode6Dimension);
+        if not ShortcutDimCode7Dimension.Get(GLSetup."Shortcut Dimension 7 Code") then Clear(ShortcutDimCode7Dimension);
+        if not ShortcutDimCode8Dimension.Get(GLSetup."Shortcut Dimension 8 Code") then Clear(ShortcutDimCode8Dimension);
         CompanyInfo.Get();
         SalesSetup.Get();
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
@@ -688,12 +879,20 @@ report 50012 "ACO Sales - Shipment"
         PostedAsmHeader: Record "Posted Assembly Header";
         PostedAsmLine: Record "Posted Assembly Line";
         RespCenter: Record "Responsibility Center";
+        GLSetup: Record "General Ledger Setup";
+        ShortcutDimCode3Dimension: Record Dimension;
+        ShortcutDimCode4Dimension: Record Dimension;
+        ShortcutDimCode5Dimension: Record Dimension;
+        ShortcutDimCode6Dimension: Record Dimension;
+        ShortcutDimCode7Dimension: Record Dimension;
+        ShortcutDimCode8Dimension: Record Dimension;
         ItemTrackingAppendix: Report "Item Tracking Appendix";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
         ItemTrackingDocMgt: Codeunit "Item Tracking Doc. Management";
+
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -710,6 +909,7 @@ report 50012 "ACO Sales - Shipment"
         ShowCustAddr: Boolean;
         DimText: Text[120];
         OldDimText: Text[75];
+        ShortcutDimCode: array[8] of Code[20];
         ShowInternalInfo: Boolean;
         Continue: Boolean;
         LogInteraction: Boolean;
@@ -719,6 +919,7 @@ report 50012 "ACO Sales - Shipment"
         ShowGroup: Boolean;
         TotalQty: Decimal;
         [InDataSet]
+
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
         AsmHeaderExists: Boolean;

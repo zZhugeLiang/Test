@@ -332,7 +332,7 @@ report 50008 "ACO Sales - Quote"
                     column(AssignedUserID_SalesHeader; "Sales Header"."Assigned User ID") { }
                     column(JobQueueStatus_SalesHeader; "Sales Header"."Job Queue Status") { }
                     column(Status_SalesHeader; "Sales Header".Status) { }
-                    column(WorkDescription_SalesHeader; "Sales Header"."Work Description") { }
+                    column(WorkDescription_SalesHeader; "Sales Header".GetWorkDescription()) { }
                     column(CurrencyCode_SalesHeader; "Sales Header"."Currency Code") { }
                     column(PricesIncludingVAT_SalesHeader; "Sales Header"."Prices Including VAT") { }
                     column(VATBus_PostingGroup_SalesHeader; "Sales Header"."VAT Bus. Posting Group") { }

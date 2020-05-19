@@ -222,7 +222,7 @@ report 50010 "ACO Sales - Invoice"
                     {
                     }
                     ///// Added Fields from Page <<
-                    ///// Caption <<
+                    ///// Captions <<
                     // column(No_SalesInvHdr; "Sales Invoice Header".FieldCaption("No.")) { }
                     column(SelltoCustomerName_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Sell-to Customer Name")) { }
                     column(SelltoAddress_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Sell-to Address")) { }
@@ -316,10 +316,10 @@ report 50010 "ACO Sales - Invoice"
                     column(SalespersonCode_SalesInvHdr; "Sales Invoice Header"."Salesperson Code") { }
                     column(ResponsibilityCenter_SalesInvHdr; "Sales Invoice Header"."Responsibility Center") { }
                     column(NoPrinted_SalesInvHdr; "Sales Invoice Header"."No. Printed") { }
-                    column(Cancelled; "Sales Invoice Header".Cancelled) { }
-                    column(Corrective; "Sales Invoice Header".Corrective) { }
-                    column(Closed; "Sales Invoice Header".Closed) { }
-                    column(GetWorkDescription; "Sales Invoice Header".GetWorkDescription) { }
+                    column(Cancelled_SalesInvHdr; "Sales Invoice Header".Cancelled) { }
+                    column(Corrective_SalesInvHdr; "Sales Invoice Header".Corrective) { }
+                    column(Closed_SalesInvHdr; "Sales Invoice Header".Closed) { }
+                    column(WorkDescription_SalesInvHdr; "Sales Invoice Header".GetWorkDescription()) { }
                     column(CurrencyCode_SalesInvHdr; "Sales Invoice Header"."Currency Code") { }
                     column(ShipmentDate_SalesInvHdr; "Sales Invoice Header"."Shipment Date") { }
                     column(PaymentTermsCode_SalesInvHdr; "Sales Invoice Header"."Payment Terms Code") { }
