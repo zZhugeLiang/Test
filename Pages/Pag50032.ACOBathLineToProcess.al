@@ -126,14 +126,26 @@ page 50032 "ACO Bathsheet Lines To Process"
                     ApplicationArea = All;
                 }
 
+
+                field("Quantity Processed"; "Quantity Processed")
+                {
+                    ApplicationArea = All;
+                }
+
                 field("Qty in Package"; "Qty in Package")
                 {
                     Editable = true;
                     ApplicationArea = All;
                     trigger OnValidate()
+                    var
+                        QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
                     begin
+                        CalcFields("Quantity Processed");
+                        if ("Qty in Package" > (Quantity - "Quantity Processed")) then
+                            Error(QtyTooLargeErr);
+
                         BathLineTempRecord.SetRecFilter();
-                        if BathLineTempRecord.Get() then begin
+                        if BathLineTempRecord.Get(Rec."Bath Sheet No.", Rec."Production Order No.", Rec."Production Order Status", Rec."Production Order Line No.") then begin
                             BathLineTempRecord := Rec;
                             BathLineTempRecord.Modify();
                         end else begin
@@ -162,6 +174,7 @@ page 50032 "ACO Bathsheet Lines To Process"
             {
                 ApplicationArea = All;
                 Caption = 'Generate Package Label';
+                ToolTip = 'Generate Package Label';
                 Image = ShowInventoryPeriods;
 
                 trigger OnAction();
@@ -235,6 +248,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 PackageLine."Profile Description" := BathLineTempRecord."Profile Description";
                                 PackageLine.Length := BathLineTempRecord.Length;
                                 PackageLine.Treatment := BathLineTempRecord.Treatment;
+                                PackageLine.Quantity := BathLineTempRecord."Qty in Package";
                                 if SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.") then begin
                                     PackageLine."Your Reference" := SalesOrder."Your Reference";
                                     PackageLine."External Document No." := SalesOrder."External Document No.";

@@ -157,9 +157,12 @@ table 50016 "ACO Bath Sheet Header"
 
                 ACOAppSetup.Get();
 
-                if ACOAppSetup."Bath Sheet Measure Mu No." <> '' then begin
-                    ACOMeasureMu.Get("No.", ACOAppSetup."Bath Sheet Measure Mu No.");
-                    ACOMeasureMu.TestField(Value);
+                if Measure then begin
+                    if ACOAppSetup."Bath Sheet Measure Mu No." <> '' then begin
+                        ACOMeasureMu.Get("No.", ACOAppSetup."Bath Sheet Measure Mu No.");
+                        ACOMeasureMu.TestField(Value);
+                    end;
+                    Testfield("Measure Y-value");
                 end;
             end;
         }

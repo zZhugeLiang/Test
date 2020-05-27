@@ -359,13 +359,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50044; "ACO Receipt Bag"; Text[20])
+        field(50044; "ACO Receipt Bag"; Text[100])
         {
             Caption = 'Receipt Bag';
             DataClassification = CustomerContent;
         }
 
-        field(50045; "ACO Shipping Bag"; Text[20])
+        field(50045; "ACO Shipping Bag"; Text[100])
         {
             Caption = 'Shipping Bag';
             DataClassification = CustomerContent;
@@ -543,7 +543,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";
         SalesHeader: Record "Sales Header";
-        Customer: Record Customer;
+        ACOProfileCustomer: Record "ACO Profile Customer";
         ACOPriceScheme: Record "ACO Price Scheme";
         ACOPriceSchemePrice: Record "ACO Price Scheme Price";
         Item: Record Item;
@@ -555,8 +555,14 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         NewUnitPrice := "Unit Price";
 
         SalesHeader.Get("Document Type", "Document No.");
-        Customer.Get(SalesHeader."Sell-to Customer No.");
-        if not ACOPriceScheme.Get(Customer."ACO Price Scheme Code") then
+
+        ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+        ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+        ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+        if not ACOProfileCustomer.FindFirst() then
+            exit;
+
+        if not ACOPriceScheme.Get(ACOProfileCustomer."Price Scheme Code") then
             exit;
 
         if not Item.Get("No.") then

@@ -46,6 +46,7 @@ table 50009 "ACO Profile Customer"
                     "Extra to Enumerate" := Customer."ACO Extra to Enumerate";
                     "Thick Staining Time" := Customer."ACO Thick Staining Time";
                     "Thin Staining Time" := Customer."ACO Thin Staining Time";
+                    "Price Scheme Code" := Customer."ACO Price Scheme Code";
                 end else begin
                     "Customer Name" := '';
                     Address := '';
@@ -55,6 +56,7 @@ table 50009 "ACO Profile Customer"
                     "Extra to Enumerate" := 0;
                     "Thick Staining Time" := 0;
                     "Thin Staining Time" := 0;
+                    "Price Scheme Code" := '';
                 end;
             end;
         }

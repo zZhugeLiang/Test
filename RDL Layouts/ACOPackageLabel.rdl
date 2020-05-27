@@ -736,7 +736,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!External_Document_No_.Value + " - " + Fields!Your_Reference.Value</Value>
+                                      <Value>=Fields!Your_Reference.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                       </Style>

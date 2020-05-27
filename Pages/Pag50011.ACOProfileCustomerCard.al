@@ -38,6 +38,11 @@ page 50011 "ACO Profile Customer Card"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Price Scheme Code"; "Price Scheme Code")
+                {
+                    ApplicationArea = All;
+                }
             }
 
             group(AddressInformation)

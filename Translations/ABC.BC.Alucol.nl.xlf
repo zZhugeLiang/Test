@@ -664,7 +664,7 @@
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 2336647438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Charges per Bath Profile</source>
-          <target state="translated">Aantal balken per bad Product</target>
+          <target state="translated">Aantal producten per charge</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Charges per Bath Profile - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 1064475362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1219,7 +1219,7 @@
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 3371955369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>More Than One Thick</source>
-          <target state="translated">Meer dan een laagdikte</target>
+          <target state="translated">Meer dan een dikke beitstijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field More Than One Thick - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 1966605375 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1229,7 +1229,7 @@
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 1051079267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>More Than One Thin</source>
-          <target state="translated">Meer dan een laagdikte</target>
+          <target state="translated">Meer dan een dunne beitstijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field More Than One Thin - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 337124525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1444,12 +1444,12 @@
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 540387266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rerun</source>
-          <target state="translated">Rerun</target>
+          <target state="translated">Overdraai</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Rerun - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 950946126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rerun Reason</source>
-          <target state="translated">Rerun reden</target>
+          <target state="translated">Overdraai reden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Rerun Reason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 2827249175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1526,7 +1526,7 @@
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 19571707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Qty. in Package</source>
-          <target state="translated">Aantal in collie</target>
+          <target state="translated">Aantal naar colli</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Qty in Package - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 619236694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1774,7 +1774,7 @@
         </trans-unit>
         <trans-unit id="Table 1441553428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Header</source>
-          <target state="translated">Collie kopregel</target>
+          <target state="translated">Colli kopregel</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1441553428 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1835,12 +1835,12 @@
         </trans-unit>
         <trans-unit id="Table 4136019483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Header</source>
-          <target state="translated">Collie kopregel</target>
+          <target state="translated">Colli kopregel</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Field 4240543679 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package No.</source>
-          <target state="translated">Collie Nr.</target>
+          <target state="translated">Colli Nr.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Package No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2046,7 +2046,7 @@
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 2500313017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Type Code</source>
-          <target state="translated">Collie type code</target>
+          <target state="translated">Colli type code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Packaging - Field Package Type Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 793634555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2141,7 +2141,7 @@
         </trans-unit>
         <trans-unit id="Table 1075902841 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Type</source>
-          <target state="translated">Collie type</target>
+          <target state="translated">Colli type</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1075902841 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2504,7 +2504,7 @@
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 2500313017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Type Code</source>
-          <target state="translated">Collie type code</target>
+          <target state="translated">Colli type code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Package Type Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 793634555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3375,12 +3375,12 @@
         </trans-unit>
         <trans-unit id="Page 2572220696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packages</source>
-          <target state="translated">Collies</target>
+          <target state="translated">Colli's</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packages - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 321586477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Card</source>
-          <target state="translated">Verpakkingskaart</target>
+          <target state="translated">Colli kaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 321586477 - Action 3234235265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3395,7 +3395,7 @@
         </trans-unit>
         <trans-unit id="Page 2436688764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bathsheet Lines To Process</source>
-          <target state="translated">Badkaartregels te verwerken</target>
+          <target state="translated">Nog uit te leveren badkaartregels</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2436688764 - Action 2309546521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3431,7 +3431,7 @@
         </trans-unit>
         <trans-unit id="Page 1279684272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Types</source>
-          <target state="translated">Collie types</target>
+          <target state="translated">Colli types</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Types - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2683207574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3592,12 +3592,12 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
-          <target state="translated">Afspan bon</target>
+          <target state="translated">Opspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3164563799" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
-          <target state="translated">Afspan bon</target>
+          <target state="translated">Opspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AttachNoticeCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
@@ -4035,6 +4035,11 @@
           <target state="translated">Aangemaakt door</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 2599179096 - Control 3078357494 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack</source>
+          <target state="translated">Box,Bundel,Doos,Kar,Kist,Koker,Lege rekken,Pak,Pallet,Rek</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Generate Package - Control PackageType - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Report 2991860160 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order Confirmation</source>
           <target state="translated">Orderbevestiging</target>
@@ -4310,7 +4315,7 @@
         </trans-unit>
         <trans-unit id="Report 4164356835 - Control 116357982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Type</source>
-          <target state="translated">Collie type</target>
+          <target state="translated">Colli type</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Package Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4164356835 - Control 1130631300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -5320,12 +5325,12 @@
         </trans-unit>
         <trans-unit id="Report 1270528838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing Notice</source>
-          <target state="translated">Zaag opmerking</target>
+          <target state="translated">Zaagbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1270528838 - NamedType 3796364083" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing Notice</source>
-          <target state="translated">Zaag opmerking</target>
+          <target state="translated">Zaagbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType SawingNoteCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1270528838 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
@@ -5631,7 +5636,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 2077875658" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Type</source>
-          <target state="translated">Collie type</target>
+          <target state="translated">Colli type</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType PackageTypeCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 105702718" size-unit="char" translate="yes" xml:space="preserve">
@@ -5922,12 +5927,12 @@
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 2678580552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
-          <target state="translated">Afspan bon</target>
+          <target state="translated">Opspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Attach Notice - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 2678580552 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
-          <target state="translated">Afspan bon</target>
+          <target state="translated">Opspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Attach Notice - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -5942,22 +5947,22 @@
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 1270528838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing Notice</source>
-          <target state="translated">Zaagopmerking</target>
+          <target state="translated">Zaagbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Sawing Notice - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 1270528838 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing Notice</source>
-          <target state="translated">Zaag opmerking</target>
+          <target state="translated">Zaagbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Sawing Notice - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 73372350 - Field 2282563268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Production Line</source>
-          <target state="translated">Productieregel</target>
+          <target state="translated">Productie lijn</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Production Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 73372350 - Field 2282563268 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Short Line,Long Line</source>
-          <target state="translated">korte lijn,lange lijn</target>
+          <target state="translated"> ,korte lijn,lange lijn</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Production Line - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 73372350 - Field 197640799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6019,12 +6024,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 635231215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Label Nos.</source>
-          <target state="translated">Collie label nr.-reeks</target>
+          <target state="translated">Colli label nr.-reeks</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Package Label Nos. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 4025012582 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Label Report ID</source>
-          <target state="translated">Collie etiket rapport ID</target>
+          <target state="translated">Colli etiket rapport ID</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Package Label Report ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 1941588178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6585,12 +6590,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 2282563268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Production Line</source>
-          <target state="translated">Productieregel</target>
+          <target state="translated">Productie lijn</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Production Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 2282563268 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Short,Long</source>
-          <target state="translated">,Kort,Lang</target>
+          <target state="translated"> ,Kort,Lang</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Production Line - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

@@ -197,6 +197,15 @@ table 50017 "ACO Bath Sheet Line"
             Editable = true;
             DataClassification = CustomerContent;
         }
+
+        field(27; "Quantity Processed"; Decimal)
+        {
+            Caption = 'Quantity Processed';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = Sum ("ACO Package Line"."Quantity" where("Bathsheet No." = field("Bath Sheet No."), "Production Order No." = field("Production Order No."),
+                                                                    "Production Order Status" = field("Production Order Status"), "Production Order Line No." = field("Production Order Line No.")));
+        }
     }
 
     keys
@@ -227,6 +236,6 @@ table 50017 "ACO Bath Sheet Line"
 
     procedure CalculateSurface()
     begin
-        Surface := Quantity * Length * Circumference / 1000;
+        Surface := Quantity * Length * Circumference / 10;
     end;
 }
