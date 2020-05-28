@@ -1529,6 +1529,11 @@
           <target state="translated">Aantal naar colli</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Qty in Package - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2117661045 - Field 515273587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Processed</source>
+          <target state="translated">Aantal verwerkt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Quantity Processed - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 619236694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color</source>
           <target state="translated">Projectkleur</target>

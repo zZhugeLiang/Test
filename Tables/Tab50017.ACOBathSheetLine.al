@@ -198,7 +198,7 @@ table 50017 "ACO Bath Sheet Line"
             DataClassification = CustomerContent;
         }
 
-        field(27; "Quantity Processed"; Decimal)
+        field(27; "Quantity Processed"; Integer)
         {
             Caption = 'Quantity Processed';
             Editable = false;
