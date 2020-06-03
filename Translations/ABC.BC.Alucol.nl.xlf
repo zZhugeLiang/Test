@@ -23,8 +23,7 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 107962960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Bath Sheet Nos.</source>
-          <target state="translated">Standaard Nr.-reeks Badkaart
-</target>
+          <target state="translated">Standaard Nr.-reeks Badkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Bath Card Nos. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 4107297673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -59,8 +58,7 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 2131016905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Project Color Nos.</source>
-          <target state="translated">Standaard nr.-reeks Projectkleuren
-</target>
+          <target state="translated">Standaard nr.-reeks Projectkleuren</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Project Color Nos. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 640498295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -85,8 +83,7 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1619105478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Min. Anodise Time</source>
-          <target state="translated">Minimale Anodiseertijd
-</target>
+          <target state="translated">Minimale Anodiseertijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Min. Anodise Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1753180932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -101,8 +98,7 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 3266292953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Staining Time</source>
-          <target state="translated">Aucos Beitstijd
-</target>
+          <target state="translated">Aucos Beitstijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Aucos Staining Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 2056616895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -112,14 +108,12 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 2562973642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Sealconstant</source>
-          <target state="translated">Aucos Sealconstante
-</target>
+          <target state="translated">Aucos Sealconstante</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Aucos Sealconstant - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1256312134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Multiple Staining Times Text</source>
-          <target state="translated">Meer beitstijden tekst
-</target>
+          <target state="translated">Meer beitstijden tekst</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Multiple Staining Times Text - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 685212800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -134,14 +128,12 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 35361578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Project Color Nos.</source>
-          <target state="translated">Standaard Nr.-reeks Projectkleuren
-</target>
+          <target state="translated">Standaard Nr.-reeks Projectkleuren</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Measured Color Nos. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 565146195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rack Packaging Code</source>
-          <target state="translated">Rek eindverpakkingscode
-</target>
+          <target state="translated">Rek eindverpakkingscode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Rack Packaging Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 669089404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -156,27 +148,22 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 3156103170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing Machine Center No.</source>
-          <target state="translated">Bewerkingsplaats zagen
-</target>
+          <target state="translated">Bewerkingsplaats zagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Sawing Routing No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 3588803993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Foil Routing No.</source>
-          <target state="translated">Bewerkingsplaats folie verwijderen
-
-</target>
+          <target state="translated">Bewerkingsplaats folie verwijderen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Foil Routing No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1724122585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Net/Gross Weight Factor</source>
-          <target state="translated">Factor Bruto/Netto gewicht
-</target>
+          <target state="translated">Factor Bruto/Netto gewicht</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Net/Gross Weight Factor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 2784732813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VEC Routing No.</source>
-          <target state="translated">Bewerkingsplaats VEC
-</target>
+          <target state="translated">Bewerkingsplaats VEC</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field VEC Routing No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1620752441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -186,8 +173,7 @@
         </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
-          <target state="translated">Alucol Instellingen
-</target>
+          <target state="translated">Alucol Instellingen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 502119421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -232,8 +218,7 @@
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 261671863 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Area Unit of Measure Code</source>
-          <target state="translated">Oppervlakte Eenheidscode
-</target>
+          <target state="translated">Oppervlakte Eenheidscode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Area Unit of Measure Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 640498295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -263,9 +248,7 @@
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1256312134 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Multiple Staining Times Text</source>
-          <target state="translated">Meer beitstijden tekst
-
-</target>
+          <target state="translated">Meer beitstijden tekst</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Multiple Staining Times Text - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 685212800 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -275,8 +258,7 @@
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 3741738785 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>"Bath Sheet Measure Mu No.</source>
-          <target state="translated">Badkaart nr.-reeks Mu meten
-</target>
+          <target state="translated">Badkaart nr.-reeks Mu meten</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Bath Sheet Measure Mu No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 565146195 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -311,15 +293,12 @@
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1620752441 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Wrap Routing No.</source>
-          <target state="translated">Bewerkingsplaats Wikkelen
-</target>
+          <target state="translated">Bewerkingsplaats Wikkelen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Wrap Routing No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1724122585 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Net/Gross Weight Factor</source>
-          <target state="translated">Factor Bruto/Netto gewicht
-
-</target>
+          <target state="translated">Factor Bruto/Netto gewicht</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Net/Gross Weight Factor - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1753180932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -334,14 +313,12 @@
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 3266292953 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Staining Time</source>
-          <target state="translated">Aucos Beitstijd
-</target>
+          <target state="translated">Aucos Beitstijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Aucos Staining Time - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 2056616895 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Seal Time</source>
-          <target state="translated">Aucos sealtijd
-</target>
+          <target state="translated">Aucos sealtijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Aucos Seal Time - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 2562973642 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -356,8 +333,7 @@
         </trans-unit>
         <trans-unit id="Table 1920261143 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="translated">Code
-</target>
+          <target state="translated">Code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1920261143 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -402,8 +378,7 @@
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="translated">Code
-</target>
+          <target state="translated">Code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -448,20 +423,17 @@
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 1554651693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos</source>
-          <target state="translated">Aucos
-</target>
+          <target state="translated">Aucos</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Aucos - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 1712305079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Sealing Time</source>
-          <target state="translated">Aucos Sealtijd
-</target>
+          <target state="translated">Aucos Sealtijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Aucos Sealing Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 3871961270 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Flushing Time</source>
-          <target state="translated">Aucos spoeltijd
-</target>
+          <target state="translated">Aucos spoeltijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pretreatment - Field Aucos Flushing Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 545940338 - Field 525159504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -556,8 +528,7 @@
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension Value Code</source>
-          <target state="translated">Dimensiewaardecode
-</target>
+          <target state="translated">Dimensiewaardecode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color - Field Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4064269812 - Field 1554651693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -602,8 +573,7 @@
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 4273034007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Add Short Length Charge</source>
-          <target state="translated">Toevoegen kosten korte lengte
-</target>
+          <target state="translated">Toevoegen kosten korte lengte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add Short Length Charge - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 1866954775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -613,8 +583,7 @@
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 2829935071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Add High Weight Charge</source>
-          <target state="translated">Toevoegen kosten groot gewicht
-</target>
+          <target state="translated">Toevoegen kosten groot gewicht</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add High Weight Charge - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 3496677638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -734,8 +703,7 @@
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 290219686 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Clamping Method File</source>
-          <target state="translated">Opspanmethode bestandspad
-</target>
+          <target state="translated">Opspanmethode bestandspad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Clamping Method File - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 1902966350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1005,8 +973,7 @@
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 274193969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Color Group Code</source>
-          <target state="translated">Kleurgroep code
-</target>
+          <target state="translated">Kleurgroep code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Color Group Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 1075152387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1056,8 +1023,7 @@
         </trans-unit>
         <trans-unit id="Table 1054381131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Method</source>
-          <target state="translated">Ophangmethode
-</target>
+          <target state="translated">Ophangmethode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Attach Method - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1054381131 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1092,8 +1058,7 @@
         </trans-unit>
         <trans-unit id="Table 398549380 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Anodize,Add color,Thick stain,Thin stain</source>
-          <target state="translated">Andodiseren, Kleuren, Dikke beits, Dunne beits
-</target>
+          <target state="translated">Andodiseren, Kleuren, Dikke beits, Dunne beits</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Operating Type - Field Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 398549380 - Field 987295884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1128,8 +1093,7 @@
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 3248209280 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Method</source>
-          <target state="translated">Ophangmethode
-</target>
+          <target state="translated">Ophangmethode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Attach Method - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 926410393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1244,8 +1208,7 @@
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 4047005105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Surface Profiles</source>
-          <target state="translated">Totale oppervlakte producten
-</target>
+          <target state="translated">Totale oppervlakte producten</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Total Surface Profiles - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 2839749687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1255,8 +1218,7 @@
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 1172907475 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Surface Addition</source>
-          <target state="translated">Oppervlakte toevoeging
-</target>
+          <target state="translated">Oppervlakte toevoeging</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Surface Addition - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 3057103713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1271,8 +1233,7 @@
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 2094665391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate</source>
-          <target state="translated">Extra uittellen
-</target>
+          <target state="translated">Extra uittellen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Extra to Enumerate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 505065745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1382,8 +1343,7 @@
         </trans-unit>
         <trans-unit id="Table 2117661045 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Line</source>
-          <target state="translated">Badkaart regel
-</target>
+          <target state="translated">Badkaart regel</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 355523985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1474,8 +1434,7 @@
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 3138973415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Charge No.</source>
-          <target state="translated">Balknummer
-</target>
+          <target state="translated">Balknummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Charge No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 505065745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1623,7 +1582,7 @@
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Color,Seal,Tin Bath,Anodize,Gold Bath</source>
-          <target state="translated">,Kleur,Seal,Tinbad,Anodieren,Goudbad</target>
+          <target state="translated">,Na kleuren,Na sealen,Na tinbad,Na goudbad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 2539230715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1738,8 +1697,7 @@
         </trans-unit>
         <trans-unit id="Table 3220518104 - Field 3323279148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Helix</source>
-          <target state="translated">Schuinte
-</target>
+          <target state="translated">Schuinte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Helix - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3220518104 - Field 1569413820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1804,8 +1762,7 @@
         </trans-unit>
         <trans-unit id="Table 1441553428 - Field 817061969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address1</source>
-          <target state="translated">Adres 1
-</target>
+          <target state="translated">Adres 1</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Address1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1441553428 - Field 179365352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1950,7 +1907,7 @@
         </trans-unit>
         <trans-unit id="Table 330752632 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Color,Seal,Tin Bath,Anodize,Gold Bath</source>
-          <target state="translated">,Kleur,Seal,Tinbad,Anodieren,Goudbad</target>
+          <target state="translated">,Na kleuren,Na sealen,Na tinbad,Na goudbad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Measured Color - Field Location - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 330752632 - Field 3730438861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2045,8 +2002,7 @@
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 613790498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="translated">Breedte
-</target>
+          <target state="translated">Breedte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Packaging - Field Width - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 2500313017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2356,8 +2312,7 @@
         </trans-unit>
         <trans-unit id="Table 1823548541 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Code</source>
-          <target state="translated">Product code
-</target>
+          <target state="translated">Product code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Profile Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1823548541 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2367,8 +2322,7 @@
         </trans-unit>
         <trans-unit id="Table 1823548541 - Field 513314990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Support Holder Code</source>
-          <target state="translated">Ondersteuningshouder code
-</target>
+          <target state="translated">Ondersteuningshouder code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Support Holder Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1823548541 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2488,8 +2442,7 @@
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
-          <target state="translated">Code
-</target>
+          <target state="translated">Code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2639,8 +2592,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 3570798162 - Method 1905556532 - NamedType 2119496702" size-unit="char" translate="yes" xml:space="preserve">
           <source>A Holder has been found, but it is inactive, the value of Holder has not changed.</source>
-          <target state="translated">Er is een houder gevonden, echter deze heeft de status inactief. De waarde van de houder is niet aangepast
-</target>
+          <target state="translated">Er is een houder gevonden, echter deze heeft de status inactief. De waarde van de houder is niet aangepast</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CheckStatusLinkedHolders - NamedType InactiveHolderMsg</note>
         </trans-unit>
         <trans-unit id="Page 1037002210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2695,8 +2647,7 @@
         </trans-unit>
         <trans-unit id="Page 3325455334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Card</source>
-          <target state="translated">Productkaart
-</target>
+          <target state="translated">Productkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3325455334 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2781,8 +2732,7 @@
         </trans-unit>
         <trans-unit id="Page 1029845018 - Control 2952380478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address</source>
-          <target state="translated">Adres
-</target>
+          <target state="translated">Adres</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control AddressInformation - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1029845018 - Control 1805007635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2817,8 +2767,7 @@
         </trans-unit>
         <trans-unit id="Page 381181507 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Support Holders</source>
-          <target state="translated">Ondersteuningshouders
-</target>
+          <target state="translated">Ondersteuningshouders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Support Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1602251431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2878,8 +2827,7 @@
         </trans-unit>
         <trans-unit id="Page 2112516322 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>
-          <target state="translated">Badkaart medewerkers
-</target>
+          <target state="translated">Badkaart medewerkers</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action ACO Bath Sheet Resources - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2112516322 - Action 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2929,8 +2877,7 @@
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 681936706" size-unit="char" translate="yes" xml:space="preserve">
           <source>The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.</source>
-          <target state="translated">Het aantal regels van de Badkaart is groter dan het maximum aantal regels welke toegestaan zijn.
-</target>
+          <target state="translated">Het aantal regels van de Badkaart is groter dan het maximum aantal regels welke toegestaan zijn.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType MaxNumberOfLinesErr</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 315208502" size-unit="char" translate="yes" xml:space="preserve">
@@ -3070,14 +3017,12 @@
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1302558788" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Profile Surface</source>
-          <target state="translated">Totaal Product oppervlakte
-</target>
+          <target state="translated">Totaal Product oppervlakte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TotalProfileSurfaceCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 3913717341" size-unit="char" translate="yes" xml:space="preserve">
           <source>Surface Attachment Rack</source>
-          <target state="translated">Oppervlakte Ophangrek
-</target>
+          <target state="translated">Oppervlakte Ophangrek</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType SurfaceAttachmentRackCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1417549959" size-unit="char" translate="yes" xml:space="preserve">
@@ -3132,8 +3077,7 @@
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1926058683" size-unit="char" translate="yes" xml:space="preserve">
           <source>Time</source>
-          <target state="translated">Tijd
-</target>
+          <target state="translated">Tijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType TimeCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1973719367" size-unit="char" translate="yes" xml:space="preserve">
@@ -3248,9 +3192,7 @@
         </trans-unit>
         <trans-unit id="Page 2943489305 - Control 2161572060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the location code, if the produced items should be stored in a specific location.</source>
-          <target state="translated">Geeft de locatiecode aan. Wanneer de geproducteerde artikelen opgelsagne moeten worden op een locatie.
-
-</target>
+          <target state="translated">Geeft de locatiecode aan. Wanneer de geproducteerde artikelen opgelsagne moeten worden op een locatie.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Location Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -3305,15 +3247,12 @@
         </trans-unit>
         <trans-unit id="Page 2943489305 - Control 381961415 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the cost of one unit of the item or resource on the line.</source>
-          <target state="translated">Geeft de kostprijs aan van een stuk van het artikel of resource op de regel.
-
-</target>
+          <target state="translated">Geeft de kostprijs aan van een stuk van het artikel of resource op de regel.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Unit Cost - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Control 1189669097 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the total cost on the line by multiplying the unit cost by the quantity.</source>
-          <target state="translated">Geeft de totale kosten weer van de regel. Door de kostprijs te vermenigvuldigen met het aantal.
-</target>
+          <target state="translated">Geeft de totale kosten weer van de regel. Door de kostprijs te vermenigvuldigen met het aantal.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Cost Amount - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3323,8 +3262,7 @@
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2280159880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Bath Sheet</source>
-          <target state="translated">Aanmaken Badkaart
-</target>
+          <target state="translated">Aanmaken Badkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3359,8 +3297,7 @@
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2412936707 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
-          <target state="translated">Bekijk of wijzig serienumemrs en lotnummers dat toegekend is ana het aritkel op het document.
-</target>
+          <target state="translated">Bekijk of wijzig serienumemrs en lotnummers dat toegekend is ana het aritkel op het document.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowTrackingLines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3403,10 +3340,20 @@
           <target state="translated">Nog uit te leveren badkaartregels</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2436688764 - Control 19571707 - Method 2126772001 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
+          <target state="translated">Aantal naar colli kan niet groter zijn dan aantal min aantal verwerkt.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control Qty in Package - Method OnValidate - NamedType QtyTooLargeErr</note>
+        </trans-unit>
         <trans-unit id="Page 2436688764 - Action 2309546521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Package Label</source>
           <target state="translated">Aanmaken colli etiket</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 2309546521 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Package Label</source>
+          <target state="translated">Aanmaken colli etiket</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2436688764 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
@@ -3415,8 +3362,7 @@
         </trans-unit>
         <trans-unit id="Page 2436688764 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
           <source>The number series was not set in both the Customer and App Settings.</source>
-          <target state="translated">De Nr.-reeks is niet ingesteld in zowel de klantenkaart als de Alucol instellingen.
-</target>
+          <target state="translated">De Nr.-reeks is niet ingesteld in zowel de klantenkaart als de Alucol instellingen.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblNoNumberSeriesErr</note>
         </trans-unit>
         <trans-unit id="Page 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3591,8 +3537,7 @@
         </trans-unit>
         <trans-unit id="Page 2853634043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>WS Import Sales Orders</source>
-          <target state="translated">WS Import Sales Orders
-</target>
+          <target state="translated">WS Import Sales Orders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Import Sales Orders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3622,8 +3567,7 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1885956779" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Area</source>
-          <target state="translated">Totale oppervlakte
-</target>
+          <target state="translated">Totale oppervlakte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType TotalAreaCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3825552320" size-unit="char" translate="yes" xml:space="preserve">
@@ -3758,8 +3702,7 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bag Description</source>
-          <target state="translated">Bakomschrijving
-</target>
+          <target state="translated">Bakomschrijving</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType BagDescriptionCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 389339736" size-unit="char" translate="yes" xml:space="preserve">
@@ -3784,8 +3727,7 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3741191151" size-unit="char" translate="yes" xml:space="preserve">
           <source>Height Level</source>
-          <target state="translated">Peilhoogte
-</target>
+          <target state="translated">Peilhoogte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HeightLevelCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
@@ -3825,7 +3767,7 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 2354263449" size-unit="char" translate="yes" xml:space="preserve">
           <source>Kundentour</source>
-          <target state="translated">Kundentour</target>
+          <target state="translated">Transport informatie</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType KundentourCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 142753960" size-unit="char" translate="yes" xml:space="preserve">
@@ -3910,8 +3852,7 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1729414803" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Number of Units</source>
-          <target state="translated">Totaal aantal eenheden
-</target>
+          <target state="translated">Totaal aantal eenheden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType TotalNumberOfUnitsCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
@@ -3986,8 +3927,7 @@
         </trans-unit>
         <trans-unit id="Report 2397299197 - NamedType 1729414803" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Number of Units</source>
-          <target state="translated">Totaal aantal eenheden
-</target>
+          <target state="translated">Totaal aantal eenheden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType TotalNumberOfUnitsCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2397299197 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
@@ -4041,7 +3981,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2599179096 - Control 3078357494 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack</source>
+          <source>Box,Bundle,Carton,Cart,Chest,Tube,Empty racks,Pack,Pallet,Rack</source>
           <target state="translated">Box,Bundel,Doos,Kar,Kist,Koker,Lege rekken,Pak,Pallet,Rek</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Generate Package - Control PackageType - Property OptionCaption</note>
         </trans-unit>
@@ -4113,7 +4053,6 @@
         <trans-unit id="Report 2991860160 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order Confirmation %1</source>
           <target state="translated">Orderbevestiging %1</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Order Confirmation - NamedType Text004</note>
         </trans-unit>
         <trans-unit id="Report 2991860160 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
@@ -4158,9 +4097,7 @@
         </trans-unit>
         <trans-unit id="Report 2991860160 - NamedType 54637232" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
-          <target state="translated">Rekeningnummer
-
-</target>
+          <target state="translated">Rekeningnummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Order Confirmation - NamedType AccountNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2991860160 - NamedType 4217840372" size-unit="char" translate="yes" xml:space="preserve">
@@ -4365,8 +4302,7 @@
         </trans-unit>
         <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 851382453" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Variant with Item No. %1 and Variant Code %2 does not exist.</source>
-          <target state="translated">Artikel variant met Artikelnr. %1 en Variantcode %2 bestaat niet.
-</target>
+          <target state="translated">Artikel variant met Artikelnr. %1 en Variantcode %2 bestaat niet.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemVariantDoesNotExistLbl</note>
         </trans-unit>
         <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 731385328" size-unit="char" translate="yes" xml:space="preserve">
@@ -4381,8 +4317,7 @@
         </trans-unit>
         <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3001609905" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Code %1 does not exist.</source>
-          <target state="translated">Product code %1 bestaat niet
-</target>
+          <target state="translated">Product code %1 bestaat niet</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCodeDoesNotExistLbl</note>
         </trans-unit>
         <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 194039618" size-unit="char" translate="yes" xml:space="preserve">
@@ -4442,8 +4377,7 @@
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>(Applies to %1 %2)</source>
-          <target state="translated">(Als van toepassing op %1 %2)
-</target>
+          <target state="translated">(Als van toepassing op %1 %2)</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
@@ -4499,9 +4433,7 @@
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
-          <target state="translated">Rekeningnummer
-
-</target>
+          <target state="translated">Rekeningnummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo - NamedType CompanyInfoBankAccNoCptnLbl</note>
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 1457731004" size-unit="char" translate="yes" xml:space="preserve">
@@ -4536,14 +4468,12 @@
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 4190945604" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit Price</source>
-          <target state="translated">Eenheidsprijs
-</target>
+          <target state="translated">Eenheidsprijs</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo - NamedType UnitPriceCptnLbl</note>
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 976774305" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
-          <target state="translated">Bedrag
-</target>
+          <target state="translated">Bedrag</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo - NamedType AmountCptnLbl</note>
         </trans-unit>
         <trans-unit id="Report 2184016913 - NamedType 4256140942" size-unit="char" translate="yes" xml:space="preserve">
@@ -4749,9 +4679,7 @@
         </trans-unit>
         <trans-unit id="Report 452218179 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
-          <target state="translated">Rekeningnummer
-
-</target>
+          <target state="translated">Rekeningnummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Invoice - NamedType CompanyInfoBankAccNoCptnLbl</note>
         </trans-unit>
         <trans-unit id="Report 452218179 - NamedType 2845404719" size-unit="char" translate="yes" xml:space="preserve">
@@ -5213,7 +5141,6 @@
         <trans-unit id="Report 1103715980 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Shipment %1</source>
           <target state="translated">Verkoop verzending %1</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Shipment - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="Report 1103715980 - NamedType 3469170451" size-unit="char" translate="yes" xml:space="preserve">
@@ -5243,9 +5170,7 @@
         </trans-unit>
         <trans-unit id="Report 1103715980 - NamedType 4233096702" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
-          <target state="translated">Rekeningnummer
-
-</target>
+          <target state="translated">Rekeningnummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Shipment - NamedType BankAccNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1103715980 - NamedType 2259602087" size-unit="char" translate="yes" xml:space="preserve">
@@ -5395,8 +5320,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unattach Notice</source>
-          <target state="translated">Afspan bon
-</target>
+          <target state="translated">Afspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3243025410" size-unit="char" translate="yes" xml:space="preserve">
@@ -5421,9 +5345,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1885956779" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Area</source>
-          <target state="translated">Totale oppervlakte
-
-</target>
+          <target state="translated">Totale oppervlakte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TotalAreaCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3825552320" size-unit="char" translate="yes" xml:space="preserve">
@@ -5558,8 +5480,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bag Description</source>
-          <target state="translated">Bakomschrijving
-</target>
+          <target state="translated">Bakomschrijving</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType BagDescriptionCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 389339736" size-unit="char" translate="yes" xml:space="preserve">
@@ -5584,8 +5505,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3741191151" size-unit="char" translate="yes" xml:space="preserve">
           <source>Height Level</source>
-          <target state="translated">Peilhoogte
-</target>
+          <target state="translated">Peilhoogte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HeightLevelCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
@@ -5615,8 +5535,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
           <source>High End</source>
-          <target state="translated">High End
-</target>
+          <target state="translated">High End</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HighEndCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 2535608774" size-unit="char" translate="yes" xml:space="preserve">
@@ -5626,7 +5545,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 2354263449" size-unit="char" translate="yes" xml:space="preserve">
           <source>Kundentour</source>
-          <target state="translated">Kundentour</target>
+          <target state="translated">Transport informatie</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType KundentourCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 758547372" size-unit="char" translate="yes" xml:space="preserve">
@@ -5646,8 +5565,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 105702718" size-unit="char" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="translated">Breedte
-</target>
+          <target state="translated">Breedte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType WidthCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 449695264" size-unit="char" translate="yes" xml:space="preserve">
@@ -5667,8 +5585,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1421459925" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit of Measure</source>
-          <target state="translated">Eenheidscode
-</target>
+          <target state="translated">Eenheidscode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType UOMCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1250789545" size-unit="char" translate="yes" xml:space="preserve">
@@ -5688,8 +5605,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1891290413" size-unit="char" translate="yes" xml:space="preserve">
           <source># per Layer</source>
-          <target state="translated"># per laag
-</target>
+          <target state="translated"># per laag</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityPerLayerCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3323605874" size-unit="char" translate="yes" xml:space="preserve">
@@ -5774,8 +5690,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1729414803" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Number of Units</source>
-          <target state="translated">Totaal aantal eenheden
-</target>
+          <target state="translated">Totaal aantal eenheden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType TotalNumberOfUnitsCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 834318480" size-unit="char" translate="yes" xml:space="preserve">
@@ -5850,8 +5765,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 3652365079 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Week Capacity</source>
-          <target state="translated">Week capaciteit
-</target>
+          <target state="translated">Week capaciteit</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ACO Week Capacity - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 2091340610 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -5906,8 +5820,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 2304549843 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Date Year</source>
-          <target state="translated">Documentdatum jaar
-</target>
+          <target state="translated">Documentdatum jaar</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ACO Document Date Year - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 2272960067 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -5972,8 +5885,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 73372350 - Field 197640799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Adjust ablauf for Aucos</source>
-          <target state="translated">Aanpassen Ablauf voor Aucos
-</target>
+          <target state="translated">Aanpassen Ablauf voor Aucos</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Adjust ablauf for Aucos - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 542470447 - Control 3088297705 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -6018,8 +5930,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 1870249447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comment Bath Card</source>
-          <target state="translated">Opmerking badkaart
-</target>
+          <target state="translated">Opmerking badkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Comment Bath Card - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 1264918580 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6054,8 +5965,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 607252771 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source> Pretreatment</source>
-          <target state="translated">Voorbehandeling
-</target>
+          <target state="translated">Voorbehandeling</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Pretreatment - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 607252771 - Field 1537599719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6225,14 +6135,12 @@
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3656815692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Sealing Time</source>
-          <target state="translated">Aucos Sealtijd
-</target>
+          <target state="translated">Aucos Sealtijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Aucos Sealing Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3317355465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Flushing Time</source>
-          <target state="translated">Aucos spoeltijd
-</target>
+          <target state="translated">Aucos spoeltijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Aucos Flushing Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2171841683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6287,8 +6195,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2312112154 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Category</source>
-          <target state="translated">Product categorie
-</target>
+          <target state="translated">Product categorie</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Category - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2463751251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6303,8 +6210,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 1361531451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Area Profile</source>
-          <target state="translated">Opervlakte Product
-</target>
+          <target state="translated">Opervlakte Product</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Area Profile - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 1755502757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6419,7 +6325,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 779385951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Receipt Bag</source>
-          <target state="translated">Ontvangstbak</target>
+          <target state="translated">Ontvangst bakomschrijving</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Receipt Bag - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3137948029 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6459,7 +6365,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 568115138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Kundentour HUECK</source>
-          <target state="translated">Kundentour HUECK</target>
+          <target state="translated">Transport informatie</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Kundentour HUECK - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 888430590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6574,8 +6480,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 1184091372 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Charge No.</source>
-          <target state="translated">Balknummer
-</target>
+          <target state="translated">Balknummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Charge No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 3759221999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
