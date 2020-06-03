@@ -179,6 +179,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Area Profile';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                "ACO Area" := "ACO Area Profile" * "ACO Number of Units";
+            end;
         }
 
         field(50022; "ACO Extra Flushing"; Boolean)
@@ -279,7 +284,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                                 NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
 
                     Validate(Quantity, NewQuantity);
-
+                    Validate("ACO Area Profile");
                     "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
                 end;
             end;

@@ -86,6 +86,8 @@ codeunit 50000 "ACO Event Subscribers"
                 if ACOPretreatment.Get(Item."ACO Pretreatment") then
                     Rec."ACO British Standard" := ACOPretreatment."British Standard";
 
+                Rec."ACO Layer Thickness" := Item."ACO Layer Thickness Code";
+
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
                 ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
@@ -99,6 +101,7 @@ codeunit 50000 "ACO Event Subscribers"
                     Rec."ACO Profile Circumference" := 0;
                     Rec."ACO Not Measurable" := false;
                     Rec."ACO Area" := 0;
+                    Rec."ACO Area Profile" := 0;
                     Rec."ACO Extra Flushing" := false;
                     Rec."ACO Correction Factor Profile" := 0;
                     Rec."ACO Height Level Profile" := 0;
@@ -211,6 +214,7 @@ codeunit 50000 "ACO Event Subscribers"
         SalesHeader: Record "Sales Header";
         ACOProfile: Record "ACO Profile";
         ACOProfileCustomer: Record "ACO Profile Customer";
+        ItemVariant: Record "Item Variant";
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
         ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
     begin
@@ -246,7 +250,8 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
-            Rec."ACO Area" := ACOProfile."Area";
+            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000);
 
             Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
@@ -315,10 +320,16 @@ codeunit 50000 "ACO Event Subscribers"
     var
         SalesHeader: Record "Sales Header";
         ItemVariant: Record "Item Variant";
+        ACOProfile: Record "ACO Profile";
         ACOManagement: Codeunit "ACO Management";
     begin
         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
             Clear(ItemVariant);
+
+        if ACOProfile.Get(Rec."ACO Profile Code") then
+            Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000)
+        else
+            Rec.Validate("ACO Area Profile", 0);
 
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
