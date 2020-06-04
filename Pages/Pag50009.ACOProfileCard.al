@@ -23,6 +23,11 @@ page 50009 "ACO Profile Card"
                     ApplicationArea = All;
                 }
 
+                field("Last DateTime Modified"; "Last DateTime Modified")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
             }
 
             group(ProductionParameters)

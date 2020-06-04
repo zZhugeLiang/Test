@@ -763,6 +763,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3342707286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last DateTime Modified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Last DateTime Modified - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1025398750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -877,6 +882,11 @@
           <source>High End</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field High End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 3342707286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last DateTime Modified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Last DateTime Modified - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
@@ -5883,6 +5893,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Variants Extension - Control ACO Number of Meters - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 542470447 - Control 3103370177 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1395186723">
+          <source>Last DateTime Modified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Variants Extension - Control ACO Last DateTime Modified - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3486886417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>OVIS Mail</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6507,6 +6522,11 @@
           <source>Number of Meters</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Variant - Field ACO Number of Meters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1882781105 - Field 3103370177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 397414134">
+          <source>Last DateTime Modified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Variant - Field ACO Last DateTime Modified - Property Caption</note>
         </trans-unit>
       </group>
     </body>

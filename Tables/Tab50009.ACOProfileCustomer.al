@@ -182,9 +182,17 @@ table 50009 "ACO Profile Customer"
             Caption = 'Maximum Current Density [A/dm²]';
             DataClassification = CustomerContent;
         }
+
         field(20; "High End"; Boolean)
         {
             Caption = 'High End';
+            DataClassification = CustomerContent;
+        }
+
+        field(21; "Last DateTime Modified"; DateTime)
+        {
+            Caption = 'Last DateTime Modified';
+            Editable = false;
             DataClassification = CustomerContent;
         }
     }
@@ -196,4 +204,19 @@ table 50009 "ACO Profile Customer"
             Clustered = true;
         }
     }
+
+    trigger OnInsert();
+    begin
+        "Last DateTime Modified" := CurrentDateTime();
+    end;
+
+    trigger OnRename();
+    begin
+        "Last DateTime Modified" := CurrentDateTime();
+    end;
+
+    trigger OnModify();
+    begin
+        "Last DateTime Modified" := CurrentDateTime();
+    end;
 }

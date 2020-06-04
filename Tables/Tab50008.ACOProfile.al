@@ -205,6 +205,13 @@ table 50008 "ACO Profile"
             Caption = 'Area';
             DataClassification = CustomerContent;
         }
+
+        field(36; "Last DateTime Modified"; DateTime)
+        {
+            Caption = 'Last DateTime Modified';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
@@ -214,4 +221,19 @@ table 50008 "ACO Profile"
             Clustered = true;
         }
     }
+
+    trigger OnInsert();
+    begin
+        "Last DateTime Modified" := CurrentDateTime();
+    end;
+
+    trigger OnRename();
+    begin
+        "Last DateTime Modified" := CurrentDateTime();
+    end;
+
+    trigger OnModify();
+    begin
+        "Last DateTime Modified" := CurrentDateTime();
+    end;
 }

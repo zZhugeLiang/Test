@@ -43,6 +43,12 @@ page 50011 "ACO Profile Customer Card"
                 {
                     ApplicationArea = All;
                 }
+
+                field("Last DateTime Modified"; "Last DateTime Modified")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
             }
 
             group(AddressInformation)
