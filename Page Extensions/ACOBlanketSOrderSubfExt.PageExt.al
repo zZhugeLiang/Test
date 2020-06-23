@@ -1,4 +1,4 @@
-pageextension 50010 "ACO Sales Quote Subform Ext." extends "Sales Quote Subform"
+pageextension 50012 "ACO Blanket S. Order Subf. Ext" extends "Blanket Sales Order Subform"
 {
     layout
     {

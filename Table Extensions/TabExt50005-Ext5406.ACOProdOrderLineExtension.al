@@ -9,7 +9,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
             trigger OnValidate()
             begin
-                "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+                "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
             end;
         }
 
@@ -109,7 +109,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
 
             trigger OnValidate()
             begin
-                "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+                "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
             end;
         }
         field(50014; "ACO Production Line"; Option)

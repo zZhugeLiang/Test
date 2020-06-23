@@ -27,7 +27,7 @@ report 50006 "ACO Sawing Notice"
             column(TotalQuantityCaption; TotalQuantityCaptionLbl) { }
             column(ACO_Number_of_Units; "ACO Number of Units") { }
             column(LengthCaption; LengthCaptionLbl) { }
-            column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters" * 1000, 1)) { }
+            column(NumberOfMeters; NumberOfMeters) { }
             column(DateCaption; DateCaptionLbl) { }
             column(WorkDate; WorkDate()) { }
             column(DeliveryDateCaption; DeliveryDateCaptionLbl) { }
@@ -68,6 +68,11 @@ report 50006 "ACO Sawing Notice"
 
                 if StrLen(BagDescriptionsText) > 1 then
                     BagDescriptionsText := CopyStr(BagDescriptionsText, 1, StrLen(BagDescriptionsText) - 1);
+
+                if "ACO Sawing" and ("ACO Final Length" <> 0) then
+                    NumberOfMeters := "ACO Final Length"
+                else
+                    NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
             end;
 
             trigger OnPreDataItem()
@@ -94,6 +99,7 @@ report 50006 "ACO Sawing Notice"
         SalesHeader: Record "Sales Header";
         BagDescriptionsText: Text;
         TotalNumberOfUnits: Decimal;
+        NumberOfMeters: Decimal;
         SawingNoteCaptionLbl: Label 'Sawing Notice';
         SalesOrderNoCaptionLbl: Label 'Sales Order No.';
         SalesOrderLineNoCaptionLbl: Label 'Sales Order Line No.';

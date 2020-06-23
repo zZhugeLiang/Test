@@ -275,17 +275,25 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
                     NewQuantity := "ACO Number of Units";
 
-                    if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then begin
-                        if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                    if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                        Clear(ItemVariant);
+
+                    if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
+                        if Rec."ACO Sawing" and (Rec."ACO Final Length" <> 0) then
+                            NewQuantity := (Rec."ACO Final Length" / 1000) * "ACO Number of Units"
+                        else
                             NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
-                    end else
-                        if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                                NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+
+                    if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+                        if Rec."ACO Sawing" and (Rec."ACO Final Length" <> 0) then
+                            NewQuantity := Rec."ACO Profile Circumference" * (Rec."ACO Final Length" / 1000) * "ACO Number of Units" / 1000
+                        else
+                            NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
 
                     Validate(Quantity, NewQuantity);
                     Validate("ACO Area Profile");
-                    "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+                    "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
+                    "ACO Qty. After Production" := NewQuantity;
                 end;
             end;
         }
@@ -350,11 +358,34 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 AppSetup: Record "ACO App Setup";
+                ProdOrderLine: Record "Prod. Order Line";
+                ItemVariant: Record "Item Variant";
+                BathSheetLine: Record "ACO Bath Sheet Line";
+                BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
             begin
                 AppSetup.Get();
                 AppSetup.TestField("Min. Residue Saw");
-                if "ACO Final Length" <> 0 then
-                    "ACO Number of Units" := Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<');
+                if "ACO Final Length" <> 0 then begin
+                    Validate("ACO Number of Units", Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<'));
+                    ProdOrderLine.SetRange("ACO Source No.", "Document No.");
+                    ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
+                    if ProdOrderLine.FindFirst() then begin
+                        if "ACO Sawing" and ("ACO Final Length" <> 0) then
+                            ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ("ACO Final Length" / 1000) * "ACO Number of Units" / 1000
+                        else
+                            if ItemVariant.Get("No.", "Variant Code") then
+                                ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+
+                        ProdOrderLine.Modify();
+
+                        BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
+                        BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
+                        BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
+                        BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
+                        if BathSheetLine.FindFirst() then
+                            Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
+                    end;
+                end;
             end;
         }
 
@@ -446,7 +477,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             trigger OnValidate()
             begin
-                "ACO Quantity Charges" := "ACO Number of Units" * "ACO Charges per Bath Profile";
+                "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
             end;
         }
 

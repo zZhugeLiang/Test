@@ -92,7 +92,7 @@ report 50004 "ACO Expedition Work Order"
                 }
 
                 column(LengthCaption; LengthCaptionLbl) { }
-                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters", 1) * 1000)
+                column(NumberOfMeters; NumberOfMeters)
                 {
                 }
 
@@ -119,6 +119,11 @@ report 50004 "ACO Expedition Work Order"
                         ACOProfile.CalcFields("Picture File")
                     else
                         Clear(ACOProfile);
+
+                    if "ACO Sawing" and ("ACO Final Length" <> 0) then
+                        NumberOfMeters := "ACO Final Length"
+                    else
+                        NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
                 end;
             }
 
@@ -159,6 +164,7 @@ report 50004 "ACO Expedition Work Order"
         MeasureText: Text;
         BagDescriptionsText: Text;
         TotalNumberOfUnits: Decimal;
+        NumberOfMeters: Decimal;
         CustomerCaptionLbl: Label 'Customer';
         YourReferenceCaptionLbl: Label 'Your Reference';
         NoteCaptionLbl: Label 'Note';

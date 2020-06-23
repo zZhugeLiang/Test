@@ -249,12 +249,8 @@ table 50016 "ACO Bath Sheet Header"
         field(36; "Surface Addition"; Decimal)
         {
             Caption = 'Surface Addition';
+            Editable = false;
             DataClassification = CustomerContent;
-
-            trigger OnValidate()
-            begin
-                CalculateTotalSurface();
-            end;
         }
 
         field(37; "Total Surface"; Decimal)
@@ -610,7 +606,8 @@ table 50016 "ACO Bath Sheet Header"
         if TotalSurface = 0 then
             exit;
 
-        CurrDens := Str / (TotalSurface * 100);
+        // CurrDens := Str / (TotalSurface * 100);
+        CurrDens := Str / TotalSurface;
 
         if CurrDens < MinCurrDens then
             CurrDens := MinCurrDens;
@@ -634,7 +631,8 @@ table 50016 "ACO Bath Sheet Header"
             BathTime := (3 * LayerThickness / CurrDens);
         end;
 
-        Str := CurrDens * TotalSurface * 100;
+        // Str := CurrDens * TotalSurface * 100;
+        Str := CurrDens * TotalSurface;
 
         if Str > MaxCurrentDensityBath then begin
             CurrDens := 0;

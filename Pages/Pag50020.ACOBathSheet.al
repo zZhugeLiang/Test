@@ -100,6 +100,7 @@ page 50020 "ACO Bath Sheet"
                 }
                 field(Measure; Measure)
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
             }

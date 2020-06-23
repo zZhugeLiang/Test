@@ -90,7 +90,7 @@ report 50007 "ACO Unattach Notice"
                 column(QuantityCaption; QuantityCaptionLbl) { }
                 column(ACO_Number_of_Units; "ACO Number of Units") { }
                 column(LengthCaption; LengthCaptionLbl) { }
-                column(NumberOfMeters; Round(ItemVariant."ACO Number of Meters", 1) * 1000) { }
+                column(NumberOfMeters; NumberOfMeters) { }
                 column(CircumferenceCaption; CircumferenceCaptionLbl) { }
                 column(Circumference; Circumference) { }
                 column(DefWghtCaption; DefWghtCaptionLbl) { }
@@ -224,6 +224,11 @@ report 50007 "ACO Unattach Notice"
 
                     IsFoil := false;
 
+                    if "ACO Sawing" and ("ACO Final Length" <> 0) then
+                        NumberOfMeters := "ACO Final Length"
+                    else
+                        NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
+
                     Circumference := "ACO Profile Circumference" * "ACO Number of Units";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
@@ -325,6 +330,7 @@ report 50007 "ACO Unattach Notice"
         TotalNumberOfUnits: Decimal; // New
         AreaIncHollow: Decimal; // New
         AreaExcHollow: Decimal; // New
+        NumberOfMeters: Decimal;
         IsFoil: Boolean;
         IsVEC: Boolean;
         IsWrap: Boolean;

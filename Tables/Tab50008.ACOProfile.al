@@ -36,6 +36,7 @@ table 50008 "ACO Profile"
         field(5; "Weight per meter"; Decimal)
         {
             Caption = 'Weight per meter [kg]';
+            DecimalPlaces = 3;
             DataClassification = CustomerContent;
         }
 

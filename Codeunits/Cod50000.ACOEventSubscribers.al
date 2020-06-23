@@ -323,19 +323,21 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfile: Record "ACO Profile";
         ACOManagement: Codeunit "ACO Management";
     begin
-        if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-            Clear(ItemVariant);
+        if Rec."ACO Sawing" and (Rec."ACO Final Length" <> 0) then
+            Rec.Validate("ACO Area Profile", ACOProfile.Circumference * Rec."ACO Final Length" / 1000000)
+        else begin
+            if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                Clear(ItemVariant);
 
-        if ACOProfile.Get(Rec."ACO Profile Code") then
-            Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000)
-        else
-            Rec.Validate("ACO Area Profile", 0);
-
+            if ACOProfile.Get(Rec."ACO Profile Code") then
+                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000)
+            else
+                Rec.Validate("ACO Area Profile", 0);
+        end;
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;
-
 
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
@@ -373,8 +375,11 @@ codeunit 50000 "ACO Event Subscribers"
 
         // if ACOProfile.Get(SalesLine."ACO Profile Code") then
 
-        if ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
-            ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * SalesLine."ACO Number of Units" / 1000;
+        if SalesLine."ACO Sawing" and (SalesLine."ACO Final Length" <> 0) then
+            ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * (SalesLine."ACO Final Length" / 1000) * SalesLine."ACO Number of Units" / 1000
+        else
+            if ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+                ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * SalesLine."ACO Number of Units" / 1000;
 
         if ProdOrderLine."ACO Number of Units" <> 0 then
             ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";
