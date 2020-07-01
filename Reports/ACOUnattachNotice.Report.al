@@ -227,7 +227,7 @@ report 50007 "ACO Unattach Notice"
                     if "ACO Sawing" and ("ACO Final Length" <> 0) then
                         NumberOfMeters := "ACO Final Length"
                     else
-                        NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
+                        NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
 
                     Circumference := "ACO Profile Circumference" * "ACO Number of Units";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";

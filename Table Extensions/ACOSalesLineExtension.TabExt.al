@@ -647,6 +647,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         if ACOCategory."Calculate Minimum Circumf." then begin
             //RangedQty := "ACO Number of Units" * ItemVariant."ACO Number of Meters" * "ACO Profile Circumference";
             RangedQty := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+
             if ACOProfile.Get("ACO Profile Code") then begin
                 ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
                 ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);

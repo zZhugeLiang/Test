@@ -76,9 +76,22 @@ page 50011 "ACO Profile Customer Card"
             {
                 Caption = 'Production Parameters';
 
-                field("Packaging Instructions"; "Packaging Instructions")
+                field("Packaging Instr. Filename"; "Packaging Instr. Filename")
                 {
                     ApplicationArea = All;
+                    AssistEdit = true;
+                    trigger OnAssistEdit()
+                    var
+                        InStr: InStream;
+                        OutStr: OutStream;
+                        tmpFileName: Text;
+                    begin
+                        "Packaging Instructions File".CreateOutStream(OutStr);
+                        UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
+                        CopyStream(OutStr, InStr);
+                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
+                        Modify();
+                    end;
                 }
                 field(Euras; Euras)
                 {
@@ -114,6 +127,25 @@ page 50011 "ACO Profile Customer Card"
 
     actions
     {
+        area(Processing)
+        {
+
+            action(DownloadPackagingInstructions)
+            {
+                Caption = 'Download Packaging Instructions';
+                ApplicationArea = All;
+                Image = Document;
+                ToolTip = 'Download Packaging Instructions';
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                begin
+                    "Packaging Instructions File".CreateInStream(InStr);
+                    DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename");
+                end;
+            }
+        }
+
         area(Navigation)
         {
             action("ACO Linked Holders")

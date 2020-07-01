@@ -135,6 +135,8 @@ table 50009 "ACO Profile Customer"
 
         field(12; "Packaging Instructions"; Option)
         {
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by Packagin Instructions File';
             Caption = 'Packaging Instructions';
             OptionMembers = jpg,pdf,xlsx;
             OptionCaption = 'jpg,pdf,xlsx';
@@ -193,6 +195,17 @@ table 50009 "ACO Profile Customer"
         {
             Caption = 'Last DateTime Modified';
             Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(24; "Packaging Instr. Filename"; Text[250])
+        {
+            DataClassification = CustomerContent;
+        }
+
+        field(25; "Packaging Instructions File"; Blob)
+        {
+            Caption = 'Packaging Instructions';
             DataClassification = CustomerContent;
         }
     }

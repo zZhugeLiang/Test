@@ -833,12 +833,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field City - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 4047111072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 1025398750 - Field 4047111072 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Packaging Instructions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 4047111072 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 1025398750 - Field 4047111072 - Property 62802879" size-unit="char" translate="no" xml:space="preserve">
           <source>jpg,pdf,xlsx</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions - Property OptionCaption</note>
@@ -887,6 +887,16 @@
           <source>Last DateTime Modified</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Last DateTime Modified - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1902966350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Instr. Filename</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instr. Filename - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 3264695742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions File - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
@@ -2742,6 +2752,16 @@
           <source>Production Parameters</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control ProductionParameters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 2656612740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action DownloadPackagingInstructions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 2656612740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action DownloadPackagingInstructions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1029845018 - Action 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Holders</source>

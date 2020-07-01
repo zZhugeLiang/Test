@@ -229,7 +229,6 @@ codeunit 50000 "ACO Event Subscribers"
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
             ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
             ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-            ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
             if not ACOProfileCustomer.FindFirst() then
                 Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code")
             else
