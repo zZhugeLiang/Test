@@ -366,6 +366,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 AppSetup.Get();
                 AppSetup.TestField("Min. Residue Saw");
                 if "ACO Final Length" <> 0 then begin
+                    // itemvariant (beginlengte) - appsetupresiduesaw / final length * aantal eenheden
                     Validate("ACO Number of Units", Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<'));
                     ProdOrderLine.SetRange("ACO Source No.", "Document No.");
                     ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
