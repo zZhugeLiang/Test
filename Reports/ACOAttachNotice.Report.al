@@ -230,7 +230,6 @@ report 50005 "ACO Attach Notice"
                     Item: Record Item;
                     Customer: Record Customer;
                     RoutingLine: Record "Routing Line";
-                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
                     ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
@@ -278,9 +277,6 @@ report 50005 "ACO Attach Notice"
                                     IsVEC := RoutingLine."No." = ACOAPPSetup."VEC Routing No.";
                             until (RoutingLine.Next() = 0);
                     end;
-
-                    ACOBathSheetMgt.DetermineStainingTimes("Sales Line", ThinStainingTime, ThickStainingTime, Customer);
-                    ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
                 end;
             }
 
@@ -291,6 +287,7 @@ report 50005 "ACO Attach Notice"
                 //Item: Record Item;
                 ItemVariant: Record "Item Variant";
                 Customer: Record Customer;
+                ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 NumberOfMiliMeters: Decimal;
             begin
                 MaxLength := 0;
@@ -319,7 +316,10 @@ report 50005 "ACO Attach Notice"
                         end;
                         TotalNumberOfUnits += "Sales Line"."ACO Number of Units";
                         if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
-                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile"
+                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile";
+
+                        ACOBathSheetMgt.DetermineStainingTimes("Sales Line", ThinStainingTime, ThickStainingTime, Customer);
+                        ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
                     until SalesLine.Next() = 0;
 
                 if StrLen(BagDescriptionsText) > 1 then

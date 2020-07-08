@@ -224,8 +224,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."Maximum Current Density" := MaxCurrentDensity;
 
         ACOBathSheetLine.Circumference := SalesLine."ACO Profile Circumference";
-        if ItemVariant.Get(ProductionOrderLine."Item No.", ProductionOrderLine."Variant Code") then
-            ACOBathSheetLine.Length := ItemVariant."ACO Number of Meters" * 1000;
+        if SalesLine."ACO Sawing" and (SalesLine."ACO Final Length" <> 0) then
+            ACOBathSheetLine.Length := SalesLine."ACO Final Length"
+        else
+            if ItemVariant.Get(ProductionOrderLine."Item No.", ProductionOrderLine."Variant Code") then
+                ACOBathSheetLine.Length := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
+
         ACOBathSheetLine.CalculateSurface();
         ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
