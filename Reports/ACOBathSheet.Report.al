@@ -170,7 +170,10 @@ report 50000 "ACO Bath Sheet"
                 column(Length; ACOBathSheetLine.Length)
                 {
                 }
-
+                column(ChargeNoCaption; FieldCaption("Charge No.")) { }
+                column(ChargeNo; "Charge No.")
+                {
+                }
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;

@@ -690,7 +690,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ChargeNoCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
                                     <FontSize>12pt</FontSize>
@@ -1012,7 +1012,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ThickStaining.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -1044,7 +1044,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ThinStaining.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -1189,7 +1189,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ChargeNo.Value</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -8129,6 +8129,12 @@ End Function
         </Field>
         <Field Name="LengthFormat">
           <DataField>LengthFormat</DataField>
+        </Field>
+        <Field Name="ChargeNoCaption">
+          <DataField>ChargeNoCaption</DataField>
+        </Field>
+        <Field Name="ChargeNo">
+          <DataField>ChargeNo</DataField>
         </Field>
       </Fields>
       <Query>

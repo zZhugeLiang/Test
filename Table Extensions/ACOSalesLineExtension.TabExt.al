@@ -292,7 +292,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
                     Validate(Quantity, NewQuantity);
                     Validate("ACO Area Profile");
-                    "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
+                    if "ACO Charges per Bath Profile" <> 0 then
+                        "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
                     "ACO Qty. After Production" := NewQuantity;
                 end;
             end;
@@ -516,7 +517,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOLinkedPackaging.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                 ACOLinkedPackaging.SetRange("Profile Code", Rec."ACO Profile Code");
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters");
+                    ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters" * 1000);
 
                 ACOLinkedPackagingList.LookupMode(true);
                 ACOLinkedPackagingList.SetTableView(ACOLinkedPackaging);
@@ -615,7 +616,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         if ACOCategory."Add Short Length Charge" then begin
             if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                RangedQty := "ACO Number of Units" * ItemVariant."ACO Number of Meters";
+                RangedQty := ItemVariant."ACO Number of Meters" * 1000;
 
             ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
             ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Length);

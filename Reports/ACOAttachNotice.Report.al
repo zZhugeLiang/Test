@@ -257,7 +257,7 @@ report 50005 "ACO Attach Notice"
                     else
                         NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
 
-                    Circumference := "ACO Profile Circumference" * "ACO Number of Units";
+                    Circumference := "ACO Profile Circumference";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
                     if ACOProfile."Charges per Bath Profile" <> 0 then
@@ -297,6 +297,10 @@ report 50005 "ACO Attach Notice"
                 TotalArea := 0;
                 AreaExcHollow := 0;
                 AreaIncHollow := 0;
+                ThinStainingTime := 0;
+                ThickStainingTime := 0;
+                MinCurrentDensity := 0;
+                MaxCurrentDensity := 0;
 
                 Customer.Get("Sell-to Customer No.");
                 SalesLine.SetRange("Document Type", "Document Type");
@@ -318,8 +322,8 @@ report 50005 "ACO Attach Notice"
                         if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
                             TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile";
 
-                        ACOBathSheetMgt.DetermineStainingTimes("Sales Line", ThinStainingTime, ThickStainingTime, Customer);
-                        ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
+                        ACOBathSheetMgt.DetermineStainingTimes(SalesLine, ThinStainingTime, ThickStainingTime, Customer);
+                        ACOBathSheetMgt.DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
                     until SalesLine.Next() = 0;
 
                 if StrLen(BagDescriptionsText) > 1 then
