@@ -4412,8 +4412,9 @@
                                       </Border>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
-                                      <PaddingTop>2pt</PaddingTop>AddFoil
-                                      <PaddingBottom>2pt</PaddingBottom></Style>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
                                   </Textbox>
                                 </CellContents>
                               </TablixHeader>
@@ -7644,7 +7645,7 @@
                                                           <FontWeight>Bold</FontWeight>
                                                           <Color>#333333</Color>
                                                         </Style>
-                                                      </TextRun>AddFoil
+                                                      </TextRun>
                                                     </TextRuns>
                                                     <Style>
                                                       <TextAlign>Left</TextAlign>
@@ -11979,8 +11980,33 @@
                                 <Size>18.9cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox5">
-                     AddFoil         <CanGrow>true</CanGrow>
-                     AddFoil         <KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value /><Style><FontFamily>Calibri</FontFamily><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns><Style><TextAlign>Left</TextAlign></Style></Paragraph></Paragraphs><rd:DefaultName>Textbox5</rd:DefaultName><Style><Border /><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox>
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value />
+                                            <Style>
+                                              <FontFamily>Calibri</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Left</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                                    <Style>
+                                      <Border />
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
                                 </CellContents>
                               </TablixHeader>
                             </TablixMember>
@@ -12482,8 +12508,8 @@ End Function
         <Field Name="FoilCaption">
           <DataField>FoilCaption</DataField>
         </Field>
-        <Field Name="AddFoil">
-          <DataField>AddFoil</DataField>
+        <Field Name="IsFoil">
+          <DataField>IsFoil</DataField>
         </Field>
         <Field Name="RemoveFoilCaption">
           <DataField>RemoveFoilCaption</DataField>

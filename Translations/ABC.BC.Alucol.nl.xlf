@@ -3706,9 +3706,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ExtraToEnumerateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 4202384108" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Foil</source>
-          <target>Folie verwijideren</target>
+          <source>Add Foil</source>
+          <target>Folie toevoegen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType FoilCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 680137218" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove Foil</source>
+          <target>Folie verwijderen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType RemoveFoilCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
           <source>Euras</source>

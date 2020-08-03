@@ -98,7 +98,7 @@ report 50007 "ACO Unattach Notice"
                 column(ExtraToEnumerateCaption; ExtraToEnumerateCaptionLbl) { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(FoilCaption; FoilCaptionLbl) { }
-                column(AddFoil; Format(AddFoil)) { }
+                column(IsFoil; Format(IsFoil)) { }
                 column(RemoveFoilCaption; RemoveFoilCaptionLbl) { }
                 column(RemoveFoil; Format(RemoveFoil)) { }
                 column(EurasCaption; EurasCaptionLbl) { }
@@ -223,7 +223,7 @@ report 50007 "ACO Unattach Notice"
                     if not ACOCategory.Get(ACOProfile.Category) then
                         Clear(ACOCategory);
 
-                    AddFoil := false;
+                    IsFoil := false;
                     RemoveFoil := false;
 
                     if "ACO Sawing" and ("ACO Final Length" <> 0) then
@@ -243,9 +243,9 @@ report 50007 "ACO Unattach Notice"
                         RoutingLine.SetRange("Routing No.", Item."Routing No.");
                         if RoutingLine.FindSet() then
                             repeat
-                                if (ACOAppSetup."Foil Routing No." <> '') and not AddFoil then
-                                    AddFoil := RoutingLine."No." = ACOAPPSetup."Foil Routing No.";
-                                if (ACOAppSetup."Foil Routing No." <> '') and not AddFoil then
+                                if (ACOAppSetup."Foil Routing No." <> '') and not IsFoil then
+                                    IsFoil := RoutingLine."No." = ACOAPPSetup."Foil Routing No.";
+                                if (ACOAppSetup."Foil Routing No." <> '') and not IsFoil then
                                     RemoveFoil := RoutingLine."No." = ACOAPPSetup."Remove Foil Routing No.";
                                 if (ACOAppSetup."Wrap Routing No." <> '') and not IsWrap then
                                     IsWrap := RoutingLine."No." = ACOAPPSetup."Wrap Routing No.";
@@ -339,7 +339,7 @@ report 50007 "ACO Unattach Notice"
         AreaIncHollow: Decimal; // New
         AreaExcHollow: Decimal; // New
         NumberOfMeters: Decimal;
-        AddFoil: Boolean;
+        IsFoil: Boolean;
         RemoveFoil: Boolean;
         IsVEC: Boolean;
         IsWrap: Boolean;

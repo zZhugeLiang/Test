@@ -8287,7 +8287,7 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!AddFoil.Value</Value>
+                                                        <Value>=Fields!IsFoil.Value</Value>
                                                         <Style>
                                                           <FontFamily>Calibri</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
@@ -14177,8 +14177,8 @@ End Function
         <Field Name="FoilCaption">
           <DataField>FoilCaption</DataField>
         </Field>
-        <Field Name="AddFoil">
-          <DataField>AddFoil</DataField>
+        <Field Name="IsFoil">
+          <DataField>IsFoil</DataField>
         </Field>
         <Field Name="RemoveFoilCaption">
           <DataField>RemoveFoilCaption</DataField>
