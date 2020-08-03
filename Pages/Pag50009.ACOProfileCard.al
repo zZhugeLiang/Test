@@ -79,14 +79,6 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Minimum Current Density"; "Minimum Current Density")
-                {
-                    ApplicationArea = All;
-                }
-                field("Maximum Current Density"; "Maximum Current Density")
-                {
-                    ApplicationArea = All;
-                }
                 field("Charges per Bath Profile"; "Charges per Bath Profile")
                 {
                     ApplicationArea = All;

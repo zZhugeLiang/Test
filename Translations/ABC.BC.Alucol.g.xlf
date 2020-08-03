@@ -149,7 +149,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Sawing Routing No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 3588803993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Foil Routing No.</source>
+          <source>Add Foil Routing No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Foil Routing No. - Property Caption</note>
         </trans-unit>
@@ -167,6 +167,11 @@
           <source>Wrap Routing No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Wrap Routing No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 2095644491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove Foil Routing No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Remove Foil Routing No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
@@ -279,9 +284,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Sawing Routing No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 3588803993 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Foil Routing No.</source>
+          <source>Add Foil Routing No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Foil Routing No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 2095644491 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove Foil Routing No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Remove Foil Routing No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 2784732813 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>VEC Routing No.</source>
@@ -3689,9 +3699,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ExtraToEnumerateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 4202384108" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Foil</source>
+          <source>Add Foil</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType FoilCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 680137218" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove Foil</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType RemoveFoilCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
           <source>Euras</source>
@@ -5584,9 +5599,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType ExtraToEnumerateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 4202384108" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Foil</source>
+          <source>Add Foil</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType FoilCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 680137218" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove Foil</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType RemoveFoilCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
           <source>Euras</source>

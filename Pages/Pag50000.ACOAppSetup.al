@@ -144,7 +144,13 @@ page 50000 "ACO App Setup"
                 field("Foil Routing No."; "Foil Routing No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Foil Routing No.';
+                    ToolTip = 'Add Foil Routing No.';
+                }
+
+                field("Remove Foil Routing No."; "Remove Foil Routing No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Remove Foil Routing No.';
                 }
 
                 field("VEC Routing No."; "VEC Routing No.")

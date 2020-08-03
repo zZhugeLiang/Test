@@ -98,7 +98,9 @@ report 50005 "ACO Attach Notice"
                 column(ExtraToEnumerateCaption; ExtraToEnumerateCaptionLbl) { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(FoilCaption; FoilCaptionLbl) { }
-                column(IsFoil; Format(IsFoil)) { }
+                column(AddFoil; Format(AddFoil)) { }
+                column(RemoveFoilCaption; RemoveFoilCaptionLbl) { }
+                column(RemoveFoil; Format(RemoveFoil)) { }
                 column(EurasCaption; EurasCaptionLbl) { }
                 column(Euras_ACOProfileCustomer; Format(ACOProfileCustomer.Euras)) { }
                 column(NetWeightCaption; NetWeightCaptionLbl) { }
@@ -250,7 +252,8 @@ report 50005 "ACO Attach Notice"
                     if not ACOCategory.Get(ACOProfile.Category) then
                         Clear(ACOCategory);
 
-                    IsFoil := false;
+                    AddFoil := false;
+                    RemoveFoil := false;
 
                     if "ACO Sawing" and ("ACO Final Length" <> 0) then
                         NumberOfMeters := "ACO Final Length"
@@ -269,8 +272,10 @@ report 50005 "ACO Attach Notice"
                         RoutingLine.SetRange("Routing No.", Item."Routing No.");
                         if RoutingLine.FindSet() then
                             repeat
-                                if (ACOAppSetup."Foil Routing No." <> '') and not IsFoil then
-                                    IsFoil := RoutingLine."No." = ACOAPPSetup."Foil Routing No.";
+                                if (ACOAppSetup."Foil Routing No." <> '') and not AddFoil then
+                                    AddFoil := RoutingLine."No." = ACOAPPSetup."Foil Routing No.";
+                                if (ACOAppSetup."Foil Routing No." <> '') and not AddFoil then
+                                    RemoveFoil := RoutingLine."No." = ACOAPPSetup."Remove Foil Routing No.";
                                 if (ACOAppSetup."Wrap Routing No." <> '') and not IsWrap then
                                     IsWrap := RoutingLine."No." = ACOAPPSetup."Wrap Routing No.";
                                 if (ACOAppSetup."VEC Routing No." <> '') and not IsVEC then
@@ -385,7 +390,8 @@ report 50005 "ACO Attach Notice"
         AreaIncHollow: Decimal; // New
         AreaExcHollow: Decimal; // New
         NumberOfMeters: Decimal; // New
-        IsFoil: Boolean;//New
+        AddFoil: Boolean;//New
+        RemoveFoil: Boolean;
         IsVEC: Boolean;//New
         IsWrap: Boolean;//New
 
@@ -417,7 +423,8 @@ report 50005 "ACO Attach Notice"
         CircumferenceCaptionLbl: Label 'Circumference';
         DefWghtCaptionLbl: Label 'Def. Wght.';
         ExtraToEnumerateCaptionLbl: Label 'Extra to Enumerate (mm)';
-        FoilCaptionLbl: Label 'Foil';
+        FoilCaptionLbl: Label 'Add Foil';
+        RemoveFoilCaptionLbl: Label 'Remove Foil';
         EurasCaptionLbl: Label 'Euras';
         GrossWeightCaptionLbl: Label 'Gross Weight';
         NetWeightCaptionLbl: Label 'Net Weight';

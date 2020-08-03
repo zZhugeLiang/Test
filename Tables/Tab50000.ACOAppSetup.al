@@ -192,7 +192,7 @@ table 50000 "ACO App Setup"
 
         field(32; "Foil Routing No."; Code[20])
         {
-            Caption = 'Foil Routing No.';
+            Caption = 'Add Foil Routing No.';
             TableRelation = "Machine Center";
             DataClassification = CustomerContent;
         }
@@ -221,6 +221,13 @@ table 50000 "ACO App Setup"
         //     Caption = 'Maximum Bath Length';
         //     DataClassification = CustomerContent;
         // }
+
+        field(36; "Remove Foil Routing No."; Code[20])
+        {
+            Caption = 'Remove Foil Routing No.';
+            TableRelation = "Machine Center";
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
