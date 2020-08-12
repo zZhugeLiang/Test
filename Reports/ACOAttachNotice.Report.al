@@ -239,6 +239,9 @@ report 50005 "ACO Attach Notice"
                     if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
+                    if not Item.Get("No.") then
+                        Clear(Item);
+
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 

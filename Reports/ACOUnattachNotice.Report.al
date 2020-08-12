@@ -210,6 +210,9 @@ report 50007 "ACO Unattach Notice"
                     if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
+                    if not Item.Get("No.") then
+                        Clear(Item);
+
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 
