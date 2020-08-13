@@ -4943,7 +4943,9 @@
                                                             </Style>
                                                           </TextRun>
                                                         </TextRuns>
-                                                        <Style />
+                                                        <Style>
+                                                          <TextAlign>Right</TextAlign>
+                                                        </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
                                                     <rd:DefaultName>Textbox20</rd:DefaultName>
