@@ -248,7 +248,7 @@ report 50007 "ACO Unattach Notice"
                             repeat
                                 if (ACOAppSetup."Foil Routing No." <> '') and not IsFoil then
                                     IsFoil := RoutingLine."No." = ACOAPPSetup."Foil Routing No.";
-                                if (ACOAppSetup."Foil Routing No." <> '') and not IsFoil then
+                                if (ACOAppSetup."Remove Foil Routing No." <> '') and not RemoveFoil then
                                     RemoveFoil := RoutingLine."No." = ACOAPPSetup."Remove Foil Routing No.";
                                 if (ACOAppSetup."Wrap Routing No." <> '') and not IsWrap then
                                     IsWrap := RoutingLine."No." = ACOAPPSetup."Wrap Routing No.";
