@@ -620,21 +620,20 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
             ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Length);
-            ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
-            if ACOPriceSchemePrice.FindLast() then begin
+            ACOPriceSchemePrice.SetFilter("Minimum Quantity", '>=%1', RangedQty);
+            if ACOPriceSchemePrice.FindFirst() then begin
                 Factor := ACOPriceSchemePrice."Unit Price";
                 NewUnitPrice := NewUnitPrice * Factor;
             end;
         end;
 
         if ACOCategory."Add High Weight Charge" then begin
-            RangedQty := "ACO Number of Units" * ACOProfile."Weight per meter";
-
             if ACOProfile.Get("ACO Profile Code") then begin
+                RangedQty := ACOProfile."Weight per meter";
                 ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
                 ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Weight);
-                ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
-                if ACOPriceSchemePrice.FindLast() then begin
+                ACOPriceSchemePrice.SetFilter("Minimum Quantity", '>=%1', RangedQty);
+                if ACOPriceSchemePrice.FindFirst() then begin
                     Factor := ACOPriceSchemePrice."Unit Price";
                     NewUnitPrice := NewUnitPrice * Factor;
                 end;
@@ -644,8 +643,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         if ACOCategory."Add Inner Cathode Charge" then begin
             ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
             ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::"Inner Cathode Charge");
-            ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
-            if ACOPriceSchemePrice.FindLast() then begin
+            ACOPriceSchemePrice.SetFilter("Minimum Quantity", '>=%1', RangedQty);
+            if ACOPriceSchemePrice.FindFirst() then begin
                 Factor := ACOPriceSchemePrice."Unit Price";
                 NewUnitPrice := NewUnitPrice * Factor;
             end;
@@ -658,8 +657,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             if ACOProfile.Get("ACO Profile Code") then begin
                 ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
                 ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);
-                ACOPriceSchemePrice.SetFilter("Minimum Quantity", '<%1', RangedQty);
-                if ACOPriceSchemePrice.FindLast() then begin
+                ACOPriceSchemePrice.SetFilter("Minimum Quantity", '>=%1', RangedQty);
+                if ACOPriceSchemePrice.FindFirst() then begin
                     Factor := ACOPriceSchemePrice."Unit Price";
                     NewUnitPrice := NewUnitPrice * Factor;
                 end;
