@@ -108,6 +108,7 @@ report 50007 "ACO Unattach Notice"
                 column(GrossWeightCaption; GrossWeightCaptionLbl) { }
                 column(GrossWeight; GrossWeight) { }
                 column(ChargesPerBathCaption; ChargesPerBathCaptionLbl) { }
+                column(QuantityPerBathCaption; QuantityPerBathCaptionLbl) { }
                 column(ACO_Charges_per_Bath_Profile; "ACO Charges per Bath Profile") { }
                 column(NumberOfBathsCaption; NumberOfBathsCaptionLbl) { }
                 column(NumberOfBaths; NumberOfBaths) { }
@@ -385,6 +386,7 @@ report 50007 "ACO Unattach Notice"
         NetWeightCaptionLbl: Label 'Net Weight';
         ChargesPerBathCaptionLbl: Label 'Charge per Bath';
         NumberOfBathsCaptionLbl: Label 'Number of Baths';
+        QuantityPerBathCaptionLbl: Label 'Quantity per Bath';
         SawingCaptionLbl: Label 'Sawing';
         BagDescriptionCaptionLbl: Label 'Bag Description';
         CategoryCaptionLbl: Label 'Category';

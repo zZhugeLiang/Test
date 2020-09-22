@@ -66,12 +66,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                     ApplicationArea = All;
                 }
 
-                field("Quantity"; "Quantity")
-                {
-                    Editable = false;
-                    ApplicationArea = All;
-                }
-
                 field("Rerun"; "Rerun")
                 {
                     Editable = false;
@@ -126,6 +120,17 @@ page 50032 "ACO Bathsheet Lines To Process"
                     ApplicationArea = All;
                 }
 
+                field("Quantity"; "Quantity")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+
+                field("Remaining Quantity"; "Remaining Quantity")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
 
                 field("Quantity Processed"; "Quantity Processed")
                 {
@@ -136,25 +141,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                 {
                     Editable = true;
                     ApplicationArea = All;
-                    trigger OnValidate()
-                    var
-                        QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
-                    begin
-                        CalcFields("Quantity Processed");
-                        if ("Qty in Package" > (Quantity - "Quantity Processed")) then
-                            Error(QtyTooLargeErr);
-
-                        BathLineTempRecord.SetRecFilter();
-                        if BathLineTempRecord.Get(Rec."Bath Sheet No.", Rec."Production Order No.", Rec."Production Order Status", Rec."Production Order Line No.") then begin
-                            BathLineTempRecord := Rec;
-                            BathLineTempRecord.Modify();
-                        end else begin
-                            BathLineTempRecord.Init();
-                            BathLineTempRecord := Rec;
-                            BathLineTempRecord.Insert();
-                        end;
-
-                    end;
                 }
             }
 
@@ -184,13 +170,36 @@ page 50032 "ACO Bathsheet Lines To Process"
                     PackageHeader: Record "ACO Package Header";
                     PackageLine: Record "ACO Package Line";
                     SalesOrder: Record "Sales Header";
+                    ACOBathSheetLine: Record "ACO Bath Sheet Line";
+                    ACOBathSheetLinesToProcess: Record "ACO Bath Sheet Line";
                     GenPackage: Report "ACO Generate Package";
                     PrintPackageLabel: Report "ACO Package Label";
                     NumberSeriesManagement: Codeunit NoSeriesManagement;
                     tempCustomerNo: Code[20];
                     temptext: Text;
                     LineNumber: Integer;
+                    QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
                 begin
+                    BathLineTempRecord.DeleteAll();
+                    CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
+                    with ACOBathSheetLinesToProcess do
+                        if FindSet() then
+                            repeat
+                                CalcFields("Quantity Processed");
+                                if ("Qty in Package" > (Quantity - "Quantity Processed")) then
+                                    Error(QtyTooLargeErr);
+
+                                BathLineTempRecord.SetRecFilter();
+                                if BathLineTempRecord.Get(Rec."Bath Sheet No.", Rec."Production Order No.", Rec."Production Order Status", Rec."Production Order Line No.") then begin
+                                    BathLineTempRecord := Rec;
+                                    BathLineTempRecord.Modify();
+                                end else begin
+                                    BathLineTempRecord.Init();
+                                    BathLineTempRecord := Rec;
+                                    BathLineTempRecord.Insert();
+                                end;
+                            until Next() = 0;
+
                     AppSetup.Reset();
                     AppSetup.Get();
                     BathLineTempRecord.Reset();
@@ -202,7 +211,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 Error(lblCustomerErr);
                             tempCustomerNo := SalesOrder."Sell-to Customer No.";
                         until BathLineTempRecord.Next() = 0;
-
 
                     if Customer.Get(tempCustomerNo) then begin
                         GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
@@ -260,6 +268,18 @@ page 50032 "ACO Bathsheet Lines To Process"
                         PrintPackageLabel.SetTableView(PackageHeader);
                         PrintPackageLabel.UseRequestPage := false;
                         PrintPackageLabel.Run();
+
+                        Commit();
+
+                        if BathLineTempRecord.FindSet() then
+                            repeat
+                                if ACOBathSheetLine.Get(BathLineTempRecord."Bath Sheet No.", BathLineTempRecord."Production Order No.", BathLineTempRecord."Production Order Status", BathLineTempRecord."Production Order Line No.") then begin
+                                    ACOBathSheetLine.CalcFields("Quantity Processed");
+                                    ACOBathSheetLine."Remaining Quantity" := ACOBathSheetLine.Quantity - ACOBathSheetLine."Quantity Processed";
+                                    ACOBathSheetLine."Qty in Package" := ACOBathSheetLine."Remaining Quantity";
+                                    ACOBathSheetLine.Modify();
+                                end;
+                            until BathLineTempRecord.Next() = 0;
                     end;
                 end;
             }

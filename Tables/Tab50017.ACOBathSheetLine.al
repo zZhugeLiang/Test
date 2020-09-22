@@ -206,6 +206,13 @@ table 50017 "ACO Bath Sheet Line"
             CalcFormula = Sum ("ACO Package Line"."Quantity" where("Bathsheet No." = field("Bath Sheet No."), "Production Order No." = field("Production Order No."),
                                                                     "Production Order Status" = field("Production Order Status"), "Production Order Line No." = field("Production Order Line No.")));
         }
+
+        field(50016; "Remaining Quantity"; Decimal)
+        {
+            Caption = 'Remaining Quantity';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

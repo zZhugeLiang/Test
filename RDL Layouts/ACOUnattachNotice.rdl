@@ -4906,7 +4906,7 @@
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=Fields!ChargesPerBathCaption.Value</Value>
+                                                                    <Value>=Fields!QuantityPerBathCaption.Value</Value>
                                                                     <Style>
                                                                       <FontFamily>Calibri</FontFamily>
                                                                       <FontWeight>Bold</FontWeight>
@@ -12437,7 +12437,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Left>12cm</Left>
               <Height>11pt</Height>
               <Width>7cm</Width>
@@ -12463,7 +12462,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Height>11pt</Height>
               <Width>12cm</Width>
               <ZIndex>1</ZIndex>
@@ -12857,6 +12855,9 @@ End Function
         </Field>
         <Field Name="ChargesPerBathCaption">
           <DataField>ChargesPerBathCaption</DataField>
+        </Field>
+        <Field Name="QuantityPerBathCaption">
+          <DataField>QuantityPerBathCaption</DataField>
         </Field>
         <Field Name="ACO_Charges_per_Bath_Profile">
           <DataField>ACO_Charges_per_Bath_Profile</DataField>

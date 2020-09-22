@@ -1523,6 +1523,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Quantity Processed - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2117661045 - Field 2367056265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Remaining Quantity - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 619236694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2609,7 +2614,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckProductionLines - NamedType Max2ChargesErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3646941407 - Method 3494150390 - NamedType 948129302" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Number of Units cannot be less than Quantity to Bath Sheet.</source>
+          <source>Remaining Quantity cannot be less than Quantity to Bath Sheet.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CreateBathSheetLine - NamedType NumberofUnitsLtQuantityToBathSheetErr</note>
         </trans-unit>
@@ -3168,6 +3173,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 4170976910" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Color Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ProjectColorDescriptionCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Page 2801324966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Subpage</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3232,11 +3242,6 @@
           <source>Specifies the location code, if the produced items should be stored in a specific location.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Location Code - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2943489305 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the quantity to be produced if you manually fill in this line.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Quantity - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Control 1073155259 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies how much of the quantity on this line has been produced.</source>
@@ -3378,11 +3383,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2436688764 - Control 19571707 - Method 2126772001 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control Qty in Package - Method OnValidate - NamedType QtyTooLargeErr</note>
-        </trans-unit>
         <trans-unit id="Page 2436688764 - Action 2309546521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Package Label</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3392,6 +3392,11 @@
           <source>Generate Package Label</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType QtyTooLargeErr</note>
         </trans-unit>
         <trans-unit id="Page 2436688764 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
@@ -3732,6 +3737,11 @@
           <source>Charge per Bath</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ChargesPerBathCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3758693577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity per Bath</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType QuantityPerBathCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3151425222" size-unit="char" translate="yes" xml:space="preserve">
           <source>Number of Baths</source>
@@ -5638,6 +5648,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfBathsCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3758693577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity per Bath</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityPerBathCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3232872579" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6633,7 +6648,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Total m2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4248448427 - Field 371589468 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+        <trans-unit id="TableExtension 4248448427 - Field 371589468 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve" al-object-target="Table 4218928473">
           <source>Source Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Source Type - Property Caption</note>
@@ -6687,6 +6702,16 @@
           <source> ,Short,Long</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Production Line - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4248448427 - Field 2425015869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Source Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Source Type Enum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4248448427 - Field 3511837166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Remaining Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Remaining Quantity - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 423926106">
           <source>Operating Type</source>

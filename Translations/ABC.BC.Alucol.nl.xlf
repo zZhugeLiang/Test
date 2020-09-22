@@ -598,7 +598,7 @@
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 3496677638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Add Height Level Charge</source>
-          <target>Toevoegen kosten korte lengte</target>
+          <target>Toevoegen kosten peilhoogte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Category - Field Add Height Level Charge - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3033071631 - Field 71536763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1528,6 +1528,11 @@
           <target>Aantal verwerkt</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Quantity Processed - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2117661045 - Field 2367056265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Quantity</source>
+          <target>Resterend aantal</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Remaining Quantity - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 619236694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color</source>
           <target>Projectkleur</target>
@@ -1550,8 +1555,7 @@
         </trans-unit>
         <trans-unit id="Table 619236694 - Field 3925446560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Time</source>
-          <target>Target tijd
-</target>
+          <target>Target tijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Target Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 619236694 - Field 2898143332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1606,8 +1610,7 @@
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 3925446560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Time</source>
-          <target>Target tijd
-</target>
+          <target>Target tijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2616,8 +2619,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckProductionLines - NamedType Max2ChargesErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3646941407 - Method 3494150390 - NamedType 948129302" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Number of Units cannot be less than Quantity to Bath Sheet.</source>
-          <target>Aantal eenheden kan niet minder zijn dan aantal naar Badkaart</target>
+          <source>Remaining Quantity cannot be less than Quantity to Bath Sheet.</source>
+          <target>Resterend aantal kan niet minder zijn dan aantal naar Badkaart.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CreateBathSheetLine - NamedType NumberofUnitsLtQuantityToBathSheetErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3570798162 - Method 1905556532 - NamedType 2102726506" size-unit="char" translate="yes" xml:space="preserve">
@@ -3175,6 +3178,11 @@
           <target>Aangemaakt door</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType CreatedbyCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 4170976910" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Color Description</source>
+           <target>Projectkleur omschrijving</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType ProjectColorDescriptionCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Page 2801324966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Subpage</source>
           <target>Badkaart subpagina</target>
@@ -3399,6 +3407,11 @@
           <source>Generate Package Label</source>
           <target>Aanmaken colli etiket</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
+          <target>Aantal naar colli kan niet groter zijn dan aantal min aantal verwerkt.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control Qty in Package - Method OnValidate - NamedType QtyTooLargeErr</note>
         </trans-unit>
         <trans-unit id="Page 2436688764 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
@@ -3739,6 +3752,11 @@
           <source>Charge per Bath</source>
           <target>Aantal balken per bad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ChargesPerBathCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3758693577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity per Bath</source>
+          <target>Aantal per bad</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType QuantityPerBathCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3151425222" size-unit="char" translate="yes" xml:space="preserve">
           <source>Number of Baths</source>
@@ -5648,6 +5666,11 @@
           <target>Aantal Baden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfBathsCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 287955129 - NamedType 3758693577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity per Bath</source>
+          <target>Aantal per bad</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType QuantityPerBathCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3232872579" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing</source>
           <target>Zagen</target>
@@ -6625,7 +6648,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 19297737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantity Charges</source>
-          <target>Aantal Balken</target>
+          <target>Aantal Baden</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Quantity Charges - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 940324757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6698,7 +6721,17 @@
           <target> ,Kort,Lang</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Production Line - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4248448427 - Field 2425015869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Source Type</source>
+          <target>Brontype</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Source Type Enum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4248448427 - Field 3511837166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Remaining Quantity</source>
+          <target>Resterend aantal</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Remaining Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2749245062 - Field 897995796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 423926106">
           <source>Operating Type</source>
           <target>Bewerkingstype</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Machine Center Extension - Field ACO Operation Type - Property Caption</note>

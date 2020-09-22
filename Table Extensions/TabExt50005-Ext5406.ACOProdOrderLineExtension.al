@@ -44,6 +44,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         field(50005; "ACO Source Type"; Option)
         {
             Caption = 'Source Type';
+            ObsoleteState = Removed;
             OptionMembers = Item,Family,"Sales Header";
             Editable = false;
             DataClassification = CustomerContent;
@@ -112,11 +113,25 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
                 "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
             end;
         }
+
         field(50014; "ACO Production Line"; Option)
         {
             Caption = 'Production Line';
             OptionMembers = " ",Short,Long;
             OptionCaption = ' ,Short,Long';
+            DataClassification = CustomerContent;
+        }
+
+        field(50015; "ACO Source Type Enum"; Enum "Prod. Order Source Type")
+        {
+            Caption = 'Source Type';
+            DataClassification = CustomerContent;
+        }
+
+        field(50016; "ACO Remaining Quantity"; Decimal)
+        {
+            Caption = 'Remaining Quantity';
+            Editable = false;
             DataClassification = CustomerContent;
         }
     }

@@ -127,6 +127,10 @@ report 50000 "ACO Bath Sheet"
             column(CreatedbyUser; User."User Name")
             {
             }
+            column(BathSheetLineComments; BathSheetLineComments)
+            {
+            }
+            column(ProjectColorDescriptionCaption; ProjectColorDescriptionCaptionLbl) { }
             dataitem(ACOBathSheetLine; "ACO Bath Sheet Line")
             {
                 DataItemLinkReference = ACOBathSheetHeader;
@@ -174,10 +178,16 @@ report 50000 "ACO Bath Sheet"
                 column(ChargeNo; "Charge No.")
                 {
                 }
+
+                column(Name_ACOProjectColorHeader; ACOProjectColorHeader.Name)
+                {
+                }
+
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
                     Customer: Record Customer;
+                    SalesLine: Record "Sales Line";
                 begin
                     if not Item.Get("Treatment") then
                         Clear(Item);
@@ -186,6 +196,13 @@ report 50000 "ACO Bath Sheet"
 
                     if not ACOColor.Get(Color) then
                         Clear(ACOColor);
+
+                    Clear(SalesLine);
+                    Clear(ACOProjectColorHeader);
+
+                    if SalesLine.Get(SalesLine."Document Type"::Order, ACOBathSheetLine."Sales Order No.", ACOBathSheetLine."Sales Order Line No.") then
+                        if not ACOProjectColorHeader.Get(SalesLine."ACO Project Color Code") then
+                            Clear(ACOProjectColorHeader);
 
                     if not Customer.Get(ACOBathSheetLine."Customer No.") then
                         Clear(Customer);
@@ -199,10 +216,15 @@ report 50000 "ACO Bath Sheet"
                 ACOBathSheetLine: Record "ACO Bath Sheet Line";
                 ACOProfile: Record "ACO Profile";
                 Item: Record Item;
+                CRLF: Text[2];
             begin
                 MeasureText := DONOTMEASURECaptionLbl;
                 HighEndText := '';
                 EURASText := '';
+                BathSheetLineComments := '';
+
+                CRLF[1] := 13;
+                CRLF[2] := 10;
 
                 ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                 if ACOBathSheetLine.FindSet() then
@@ -210,9 +232,16 @@ report 50000 "ACO Bath Sheet"
                         if ACOBathSheetLine."High End" then
                             HighEndText := HighEndCaptionLbl;
 
-                        if MeasureText = DONOTMEASURECaptionLbl then
-                            if ACOProfile.Get(ACOBathSheetLine."Profile Code") and not ACOProfile."Not Measurable" then
-                                MeasureText := MEASURECaptionLbl;
+                        if ACOProfile.Get(ACOBathSheetLine."Profile Code") then begin
+                            if BathSheetLineComments <> '' then
+                                BathSheetLineComments += CRLF;
+
+                            BathSheetLineComments += ACOProfile."Comment Bath Card";
+
+                            if MeasureText = DONOTMEASURECaptionLbl then
+                                if not ACOProfile."Not Measurable" then
+                                    MeasureText := MEASURECaptionLbl;
+                        end;
                     until (ACOBathSheetLine.Next() = 0) or ((HighEndText = HighEndCaptionLbl) and (MeasureText = MEASURECaptionLbl));
 
                 if Euras then
@@ -242,11 +271,13 @@ report 50000 "ACO Bath Sheet"
         User: Record User;
         FirstACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOColor: Record "ACO Color";
+        ACOProjectColorHeader: Record "ACO Project Color Header";
         CustomerName: Text[100];
         ItemDescription: Text[100];
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;
+        BathSheetLineComments: Text;
         BathSheetCaptionLbl: Label 'Bath Sheet';
         DateCaptionLbl: Label 'Date';
         SalesOrderCaptionLbl: Label 'Sales Order';
@@ -288,4 +319,6 @@ report 50000 "ACO Bath Sheet"
         ParaphCaptionLbl: Label 'Paraph';
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
+        ProjectColorDescriptionCaptionLbl: Label 'Project Color Description';
+
 }

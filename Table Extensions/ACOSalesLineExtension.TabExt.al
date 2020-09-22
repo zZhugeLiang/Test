@@ -591,6 +591,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         ACOPriceSchemePrice: Record "ACO Price Scheme Price";
         Item: Record Item;
         ACOCategory: Record "ACO Category";
+        ACOAppSetup: Record "ACO App Setup";
         NewUnitPrice: Decimal;
         BaseUnitPrice: Decimal;
         Factor: Decimal;
@@ -598,6 +599,10 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
     begin
         BaseUnitPrice := "Unit Price";
         NewUnitPrice := BaseUnitPrice;
+        ACOAppSetup.Get();
+
+        if Rec."Unit of Measure Code" <> ACOAppSetup."Area Unit of Measure Code" then
+            exit;
 
         SalesHeader.Get("Document Type", "Document No.");
 
@@ -651,20 +656,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             end;
         end;
 
-        if ACOCategory."Calculate Minimum Circumf." then begin
-            //RangedQty := "ACO Number of Units" * ItemVariant."ACO Number of Meters" * "ACO Profile Circumference";
-            RangedQty := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
-
+        if ACOCategory."Calculate Minimum Circumf." then
             if ACOProfile.Get("ACO Profile Code") then begin
-                ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
                 ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);
-                ACOPriceSchemePrice.SetFilter("Minimum Quantity", '>=%1', RangedQty);
-                if ACOPriceSchemePrice.FindFirst() then begin
-                    Factor := ACOPriceSchemePrice."Unit Price";
-                    NewUnitPrice += ((BaseUnitPrice * Factor) - BaseUnitPrice);
-                end;
+                if ACOPriceSchemePrice.FindFirst() then
+                    if ACOProfile."Circumference" < ACOPriceSchemePrice."Minimum Quantity" then begin
+                        Factor := (ACOPriceSchemePrice."Minimum Quantity" + (2 * ACOProfile."Height Level")) / ACOProfile."Circumference";
+                        NewUnitPrice := NewUnitPrice * Factor;
+                    end;
             end;
-        end;
 
         Validate("Unit Price", NewUnitPrice);
     end;

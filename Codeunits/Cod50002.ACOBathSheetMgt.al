@@ -195,12 +195,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ItemVariant: Record "Item Variant";
         MinCurrentDensity: Decimal;
         MaxCurrentDensity: Decimal;
-        NumberofUnitsLtQuantityToBathSheetErr: Label 'Number of Units cannot be less than Quantity to Bath Sheet.';
+        NumberofUnitsLtQuantityToBathSheetErr: Label 'Remaining Quantity cannot be less than Quantity to Bath Sheet.';
     begin
         SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
 
-        if ProductionOrderLine."ACO Number of Units" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
+        if ProductionOrderLine."ACO Remaining Quantity" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
             Error(NumberofUnitsLtQuantityToBathSheetErr);
 
         ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
@@ -234,7 +234,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
 
-        ProductionOrderLine."ACO Number of Units" := ProductionOrderLine."ACO Number of Units" - ProductionOrderLine."ACO Quantity to Bath Sheet";
+        ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
+        ProductionOrderLine."ACO Quantity to Bath Sheet" := ProductionOrderLine."ACO Remaining Quantity";
         ProductionOrderLine.Modify();
     end;
 

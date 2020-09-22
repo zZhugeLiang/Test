@@ -13,10 +13,10 @@ pageextension 50007 "ACO Rel. Prod. Order Lines Ext" extends "Released Prod. Ord
                 ApplicationArea = All;
             }
         }
-	
+
         addlast(Control1)
         {
-            field("ACO Source Type"; "ACO Source Type")
+            field("ACO Source Type Enum"; "ACO Source Type Enum")
             {
                 ApplicationArea = All;
             }
@@ -40,7 +40,7 @@ pageextension 50007 "ACO Rel. Prod. Order Lines Ext" extends "Released Prod. Ord
             {
                 ApplicationArea = All;
             }
-	    
+
             field("ACO Total m2"; "ACO Total m2")
             {
                 ApplicationArea = All;
@@ -65,6 +65,6 @@ pageextension 50007 "ACO Rel. Prod. Order Lines Ext" extends "Released Prod. Ord
             {
                 ApplicationArea = All;
             }
-        }	
+        }
     }
 }

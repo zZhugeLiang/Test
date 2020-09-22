@@ -329,7 +329,7 @@ codeunit 50000 "ACO Event Subscribers"
         SalesHeader: Record "Sales Header";
         ItemVariant: Record "Item Variant";
     begin
-        ProdOrderLine."ACO Source Type" := ProductionOrder."Source Type";
+        ProdOrderLine."ACO Source Type Enum" := ProductionOrder."Source Type";
         ProdOrderLine."ACO Source No." := ProductionOrder."Source No.";
         ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
         ProdOrderLine."ACO Profile Code" := SalesLine."ACO Profile Code";
@@ -341,6 +341,7 @@ codeunit 50000 "ACO Event Subscribers"
             ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Short;
 
         ProdOrderLine."ACO Number of Units" := SalesLine."ACO Number of Units";
+        ProdOrderLine."ACO Remaining Quantity" := SalesLine."ACO Number of Units";
         ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
         ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";

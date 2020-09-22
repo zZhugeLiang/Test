@@ -3,7 +3,7 @@ Page 50025 "ACO Selection Bath Sheet List"
     Caption = 'Selection Bath Sheet List';
     PageType = List;
     SourceTable = "Prod. Order Line";
-    SourceTableView = where(Status = const(Released), "ACO Source Type" = const("Sales Header"));
+    SourceTableView = where(Status = const(Released));//, "ACO Source Type Enum" = const("Sales Header"));
     UsageCategory = Lists;
     ApplicationArea = All;
 
@@ -155,12 +155,6 @@ Page 50025 "ACO Selection Bath Sheet List"
                     Visible = true;
                     Editable = false;
                 }
-                field(Quantity; Quantity)
-                {
-                    ApplicationArea = Manufacturing;
-                    ToolTip = 'Specifies the quantity to be produced if you manually fill in this line.';
-                    Editable = false;
-                }
                 field("ACO Charge No."; "ACO Charge No.")
                 {
                     Editable = true;
@@ -178,6 +172,10 @@ Page 50025 "ACO Selection Bath Sheet List"
                 {
                     ApplicationArea = Manufacturing;
                 }
+                field("ACO Remaining Quantity"; "ACO Remaining Quantity")
+                {
+                    ApplicationArea = Manufacturing;
+                }
                 field("ACO Quantity to Bath Sheet"; "ACO Quantity to Bath Sheet")
                 {
                     Editable = true;
@@ -185,7 +183,6 @@ Page 50025 "ACO Selection Bath Sheet List"
                 }
                 field("ACO Bath Sheet Qty."; "ACO Bath Sheet Qty.")
                 {
-                    Editable = true;
                     ApplicationArea = Manufacturing;
                 }
                 field("Finished Quantity"; "Finished Quantity")
