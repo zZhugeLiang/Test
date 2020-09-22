@@ -911,6 +911,11 @@
           <target>Eindverpakking instructies</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions File - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1973653763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer of Customer</source>
+          <target>Klant van klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer of Customer - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
           <target>Houder type</target>
@@ -3337,7 +3342,7 @@
         </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2412936707 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
-          <target>Bekijk of wijzig serienumemrs en lotnummers dat toegekend is ana het aritkel op het document.</target>
+          <target>Bekijk of wijzig serienummers en lotnummers dat toegekend is aan het artikel op het document.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowTrackingLines - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3652,12 +3657,12 @@
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 4104523779" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density</source>
-          <target>Max. Stroomdichtheid</target>
+          <target>Maximale SDH</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MaxCurrentDensityCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3393450169" size-unit="char" translate="yes" xml:space="preserve">
           <source>Min. Current Density</source>
-          <target>Minimale Stroomdichtheid</target>
+          <target>Minimale SDH</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MinCurrentDensityCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3629837807" size-unit="char" translate="yes" xml:space="preserve">
@@ -3997,7 +4002,7 @@
         </trans-unit>
         <trans-unit id="Report 2397299197 - NamedType 94112056" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item No. Customer</source>
-          <target>Aritkel Nr. klant</target>
+          <target>Artikel Nr. klant</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ItemNoCustomerCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2397299197 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
@@ -5555,12 +5560,12 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 4104523779" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density</source>
-          <target>Max. Stroomdichtheid</target>
+          <target>Maximale SDH</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MaxCurrentDensityCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3393450169" size-unit="char" translate="yes" xml:space="preserve">
           <source>Min. Current Density</source>
-          <target>Minimale Stroomdichtheid</target>
+          <target>Minimale SDH</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType MinCurrentDensityCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3629837807" size-unit="char" translate="yes" xml:space="preserve">

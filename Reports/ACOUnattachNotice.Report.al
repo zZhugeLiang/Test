@@ -144,7 +144,9 @@ report 50007 "ACO Unattach Notice"
                 column(PictureFile_ACOProfile; ACOProfile."Picture File")
                 {
                 }
-
+                column(CustomerofCustomer_ACOProfileCustomer; ACOProfileCustomer."Customer of Customer")
+                {
+                }
                 // Done <<
                 column(MaxCurrentDensityCaption; MaxCurrentDensityCaptionLbl) { }
                 column(MaxCurrentDensity; MaxCurrentDensity) { }
@@ -206,7 +208,6 @@ report 50007 "ACO Unattach Notice"
                 begin
                     ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
-                    ACOProfileCustomer.SetRange("Ship-to Code", "Sales Header"."Ship-to Code");
                     if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
@@ -215,6 +216,9 @@ report 50007 "ACO Unattach Notice"
 
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
+
+                    ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+                    ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
 
                     GetHolders();
 
@@ -300,7 +304,6 @@ report 50007 "ACO Unattach Notice"
                         if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
                             TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile";
 
-                        ACOBathSheetMgt.DetermineStainingTimes(SalesLine, ThinStainingTime, ThickStainingTime, Customer);
                         ACOBathSheetMgt.DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
                     until SalesLine.Next() = 0;
 

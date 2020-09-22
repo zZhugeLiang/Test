@@ -908,6 +908,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions File - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1973653763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer of Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer of Customer - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3119164599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Type</source>
           <note from="Developer" annotates="general" priority="2"></note>

@@ -208,6 +208,11 @@ table 50009 "ACO Profile Customer"
             Caption = 'Packaging Instructions';
             DataClassification = CustomerContent;
         }
+        field(26; "Customer of Customer"; Text[50])
+        {
+            Caption = 'Customer of Customer';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

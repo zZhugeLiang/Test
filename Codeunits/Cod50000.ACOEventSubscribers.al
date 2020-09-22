@@ -89,34 +89,6 @@ codeunit 50000 "ACO Event Subscribers"
                 Rec."ACO Layer Thickness" := Item."ACO Layer Thickness Code";
 
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-
-                ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
-                if not ACOProfileCustomer.IsEmpty() then
-                    Rec.Validate("ACO Profile Code")
-                else begin
-                    Rec."ACO Profile Description" := '';
-                    Rec."ACO Profile Category" := '';
-                    Rec."ACO Profile Circumference" := 0;
-                    Rec."ACO Not Measurable" := false;
-                    Rec."ACO Area" := 0;
-                    Rec."ACO Area Profile" := 0;
-                    Rec."ACO Extra Flushing" := false;
-                    Rec."ACO Correction Factor Profile" := 0;
-                    Rec."ACO Height Level Profile" := 0;
-                    Rec."ACO Bent Profile" := false;
-                    Rec."ACO Max. Curr. Density Profile" := 0;
-                    Rec."ACO Min. Curr. Density Profile" := 0;
-                    Rec."ACO Thin Staining Time Profile" := 0;
-                    Rec."ACO Thick St. Time Profile" := 0;
-                    Rec."ACO Euras Profile" := false;
-                    Rec."ACO Extra to Enumerate Profile" := 0;
-                    Rec."ACO Attach Method Code Profile" := '';
-                    Rec."ACO Type of Clamp Code" := '';
-                    Rec."ACO Holders Profile" := '';
-                    Rec."ACO Charges per Bath Profile" := 0;
-                end;
             end;
 
         Rec.Validate("ACO Color", Item."ACO Color");
@@ -129,11 +101,10 @@ codeunit 50000 "ACO Event Subscribers"
                 until (RoutingLine.Next() = 0) or Rec."ACO Sawing";
         end;
 
-        //Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness");
-        //if
-        //Rec.Validate("ACO Category", Rec."ACO Category");
-        //Rec."ACO Profile Code";
-
+        ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+        ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+        if not ACOProfileCustomer.IsEmpty() then
+            Rec.Validate("ACO Profile Code");
     end;
 
     // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Pretreatment', false, false)]
@@ -242,9 +213,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Extra Flushing" := ACOProfile."Extra Flushing";
             Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
             Rec."ACO Height Level Profile" := ACOProfile."Height Level";
-            Rec."ACO Thin Staining Time Profile" := ACOProfile."Thin Staining Time";
-            Rec."ACO Thick St. Time Profile" := ACOProfile."Thick Staining Time";
-            Rec."ACO Extra to Enumerate Profile" := ACOProfile."Extra to Enumerate";
+
             Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
@@ -252,9 +221,13 @@ codeunit 50000 "ACO Event Subscribers"
             if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
                 Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000);
 
-            Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
+
+            Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
+            Rec."ACO Thin Staining Time Profile" := ACOProfileCustomer."Thin Staining Time";
+            Rec."ACO Thick St. Time Profile" := ACOProfileCustomer."Thick Staining Time";
+            Rec."ACO Extra to Enumerate Profile" := ACOProfileCustomer."Extra to Enumerate";
         end;
     end;
 

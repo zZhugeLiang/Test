@@ -103,12 +103,24 @@ report 50004 "ACO Expedition Work Order"
                 column(PictureFile_ACOProfile; ACOProfile."Picture File")
                 {
                 }
+
+                column(ProfileDescription_ACOProfileCustomerCaption; ACOProfileCustomer.FieldCaption("Profile Description"))
+                {
+                }
+                column(ProfileDescription_ACOProfileCustomer; ACOProfileCustomer."Profile Description")
+                {
+                }
+                column(CustomerofCustomer_ACOProfileCustomerCaption; ACOProfileCustomer.FieldCaption("Customer of Customer"))
+                {
+                }
+                column(CustomerofCustomer_ACOProfileCustomer; ACOProfileCustomer."Customer of Customer")
+                {
+                }
                 trigger OnAfterGetRecord()
 
                 begin
                     ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
-                    ACOProfileCustomer.SetRange("Ship-to Code", "Sales Header"."Ship-to Code");
                     if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
