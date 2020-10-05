@@ -656,12 +656,22 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             end;
         end;
 
-        if ACOCategory."Calculate Minimum Circumf." then
+        if ACOCategory."Calculate Minimum Circumf." or ACOCategory."Add Height Level Charge" then
             if ACOProfile.Get("ACO Profile Code") then begin
                 ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);
                 if ACOPriceSchemePrice.FindFirst() then
                     if ACOProfile."Circumference" < ACOPriceSchemePrice."Minimum Quantity" then begin
-                        Factor := (ACOPriceSchemePrice."Minimum Quantity" + (2 * ACOProfile."Height Level")) / ACOProfile."Circumference";
+                        if ACOCategory."Calculate Minimum Circumf." and ACOCategory."Add Height Level Charge" then
+                            Factor := (ACOPriceSchemePrice."Minimum Quantity" + (2 * ACOProfile."Height Level")) / ACOProfile."Circumference"
+                        else
+                            if ACOCategory."Add Height Level Charge" then
+                                Factor := (2 * ACOProfile."Height Level" + ACOProfile."Circumference") / ACOProfile."Circumference"
+                            else
+                                if ACOCategory."Calculate Minimum Circumf." then
+                                    Factor := ACOPriceSchemePrice."Minimum Quantity" / ACOProfile."Circumference";
+
+                        Factor := ACOPriceSchemePrice."Minimum Quantity" / ACOProfile."Circumference";
+
                         NewUnitPrice := NewUnitPrice * Factor;
                     end;
             end;
