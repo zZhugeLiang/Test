@@ -738,11 +738,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Attach Method Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3326183214 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
-          <source>Type of Clamp</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Type of Clamp - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3323279148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Helix</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -842,16 +837,6 @@
           <source>City</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field City - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 4047111072 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
-          <source>Packaging Instructions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 4047111072 - Property 62802879" size-unit="char" translate="no" xml:space="preserve">
-          <source>jpg,pdf,xlsx</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Euras</source>
@@ -1012,11 +997,6 @@
           <source>Attach Method Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Attach Method Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2347744687 - Field 3326183214 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
-          <source>Type of Clamp</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Holder - Field Type of Clamp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2347744687 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comment</source>
@@ -1707,11 +1687,6 @@
           <source>Attach Method Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Attach Method Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3220518104 - Field 3326183214 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
-          <source>Type of Clamp</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Type of Clamp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3220518104 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comment</source>
@@ -6078,6 +6053,76 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Variants Extension - Control ACO Last DateTime Modified - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 3652365079 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Week Capacity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Week Capacity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2091340610 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Large Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Large Line - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 19297737 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Quantity Charges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Quantity Charges - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 330489604 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 330489604 - Method 2126772001 - NamedType 3325451997" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Are you sure you want to login this Sales Order?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In - Method OnValidate - NamedType LoggedInQst</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2188690480 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In Day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In Day - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2670289920 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In Week</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In Week - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2538708505 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In Year</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 3143674206 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Customer Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Customer Comment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2217903358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Document Date Day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Document Date Day - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 462289598 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Document Date Week</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Document Date Week - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2304549843 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Document Date Year</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Document Date Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2272960067 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Supplier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 3005939252 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Own Shipping Agent</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Own Shipping Agent - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3486886417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>OVIS Mail</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6473,11 +6518,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Attach Method Code Profile - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 3169855776 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Type of Clamp Profile</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Type of Clamp Profile - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3422606834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Helix Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6647,11 +6687,6 @@
           <source>Total m2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Total m2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 4248448427 - Field 371589468 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve" al-object-target="Table 4218928473">
-          <source>Source Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Source Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4248448427 - Field 2822430833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
           <source>Source No.</source>

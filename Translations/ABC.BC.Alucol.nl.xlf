@@ -6096,6 +6096,76 @@
           <target>Laatste wijziging</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Variants Extension - Control ACO Last DateTime Modified - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 3652365079 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Week Capacity</source>
+          <target>Week capaciteit</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Week Capacity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2091340610 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Large Line</source>
+          <target>Lange lijn</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Large Line - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 19297737 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Quantity Charges</source>
+          <target>Aantal Balken</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Quantity Charges - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 330489604 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In</source>
+          <target>Binnengemeld</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 330489604 - Method 2126772001 - NamedType 3325451997" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Are you sure you want to login this Sales Order?</source>
+          <target>Weet je zeker dat deze verkooporder wilt binnenmelden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In - Method OnValidate - NamedType LoggedInQst</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2188690480 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In Day</source>
+          <target>Binnengemeld dag</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In Day - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2670289920 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In Week</source>
+          <target>Binnengemeld week</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In Week - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2538708505 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Logged In Year</source>
+          <target>Binnengemeld jaar</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Logged In Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 3143674206 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Customer Comment</source>
+          <target>Klantopmerking</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Customer Comment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2217903358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Document Date Day</source>
+          <target>Documentdatum dag</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Document Date Day - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 462289598 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Document Date Week</source>
+          <target>Documentdatum week</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Document Date Week - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2304549843 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Document Date Year</source>
+          <target>Documentdatum jaar</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Document Date Year - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 2272960067 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Supplier</source>
+          <target>Leverancier</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Supplier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 469521954 - Control 3005939252 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Own Shipping Agent</source>
+          <target>Eigen Expediteur</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Quote Extension - Control ACO Own Shipping Agent - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3486886417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OVIS Mail</source>
           <target>OVIS Mail</target>
