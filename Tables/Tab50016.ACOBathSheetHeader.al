@@ -178,7 +178,7 @@ table 50016 "ACO Bath Sheet Header"
             Caption = 'Total Quantity';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Sum ("ACO Bath Sheet Line".Quantity where("Bath Sheet No." = field("No.")));
+            CalcFormula = Sum("ACO Bath Sheet Line".Quantity where("Bath Sheet No." = field("No.")));
         }
 
         field(21; "Measure Y-value"; Decimal)
@@ -241,7 +241,15 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                ACOAppSetup: Record "ACO App Setup";
+                SurfaceAttachrackMaximumErr: Label 'Surface Attachrack can not be larger than Maximum Surface Attachrack.';
             begin
+                ACOAppSetup.Get();
+                if ACOAppSetup."Maximum Surface Attachrack" <> 0 then
+                    if "Surface Attachrack" > ACOAppSetup."Maximum Surface Attachrack" then
+                        Error(SurfaceAttachrackMaximumErr);
+
                 CalculateTotalSurface();
             end;
         }
@@ -277,7 +285,7 @@ table 50016 "ACO Bath Sheet Header"
             Caption = 'Minimum Current Density';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = max ("ACO Bath Sheet Line"."Minimum Current Density" where("Bath Sheet No." = field("No.")));
+            CalcFormula = max("ACO Bath Sheet Line"."Minimum Current Density" where("Bath Sheet No." = field("No.")));
         }
 
         field(41; "Maximum Current Density"; Decimal)
@@ -285,7 +293,7 @@ table 50016 "ACO Bath Sheet Header"
             Caption = 'Maximum Current Density';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = min ("ACO Bath Sheet Line"."Maximum Current Density" where("Bath Sheet No." = field("No.")));
+            CalcFormula = min("ACO Bath Sheet Line"."Maximum Current Density" where("Bath Sheet No." = field("No.")));
         }
 
         field(42; "No. Series"; Code[20])

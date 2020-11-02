@@ -234,14 +234,12 @@ report 50005 "ACO Attach Notice"
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
-                    Customer: Record Customer;
                     RoutingLine: Record "Routing Line";
                 begin
                     ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
                     if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
-
 
                     if not Item.Get("No.") then
                         Clear(Item);
@@ -261,6 +259,9 @@ report 50005 "ACO Attach Notice"
 
                     if not ACOCategory.Get(ACOProfile.Category) then
                         Clear(ACOCategory);
+
+                    if not ACOColorProjectHeader.Get("ACO Project Color Code") then
+                        Clear(ACOColorProjectHeader);
 
                     IsFoil := false;
                     RemoveFoil := false;
@@ -298,8 +299,6 @@ report 50005 "ACO Attach Notice"
             trigger OnAfterGetRecord()
             var
                 SalesLine: Record "Sales Line";
-                //ACOProfile: Record "ACO Profile";
-                //Item: Record Item;
                 ItemVariant: Record "Item Variant";
                 Customer: Record Customer;
                 ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";

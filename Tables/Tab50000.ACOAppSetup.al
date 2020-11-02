@@ -228,6 +228,13 @@ table 50000 "ACO App Setup"
             TableRelation = "Machine Center";
             DataClassification = CustomerContent;
         }
+
+        field(37; "Maximum Surface Attachrack"; Decimal)
+        {
+            Caption = 'Maximum Surface Attachrack';
+            DataClassification = CustomerContent;
+        }
+
     }
 
     keys

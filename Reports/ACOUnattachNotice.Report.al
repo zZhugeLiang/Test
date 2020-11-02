@@ -231,6 +231,9 @@ report 50007 "ACO Unattach Notice"
                     if not ACOCategory.Get(ACOProfile.Category) then
                         Clear(ACOCategory);
 
+                    if not ACOColorProjectHeader.Get("ACO Project Color Code") then
+                        Clear(ACOColorProjectHeader);
+
                     IsFoil := false;
                     RemoveFoil := false;
 

@@ -179,26 +179,31 @@ page 50032 "ACO Bathsheet Lines To Process"
                     temptext: Text;
                     LineNumber: Integer;
                     QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
+                    LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';
                 begin
                     BathLineTempRecord.DeleteAll();
                     CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
-                    with ACOBathSheetLinesToProcess do
-                        if FindSet() then
-                            repeat
-                                CalcFields("Quantity Processed");
-                                if ("Qty in Package" > (Quantity - "Quantity Processed")) then
-                                    Error(QtyTooLargeErr);
 
-                                BathLineTempRecord.SetRecFilter();
-                                if BathLineTempRecord.Get(Rec."Bath Sheet No.", Rec."Production Order No.", Rec."Production Order Status", Rec."Production Order Line No.") then begin
-                                    BathLineTempRecord := Rec;
-                                    BathLineTempRecord.Modify();
-                                end else begin
-                                    BathLineTempRecord.Init();
-                                    BathLineTempRecord := Rec;
-                                    BathLineTempRecord.Insert();
-                                end;
-                            until Next() = 0;
+                    if ACOBathSheetLinesToProcess.FindSet() then
+                        repeat
+                            CalcFields("Quantity Processed");
+                            if ("Qty in Package" > (Quantity - "Quantity Processed")) then
+                                Error(QtyTooLargeErr);
+
+                            if ACOBathSheetLinesToProcess."Remaining Quantity" = 0 then
+                                Error(LabelsAlreadyPrintedErr);
+
+                            BathLineTempRecord.SetRecFilter();
+
+                            if BathLineTempRecord.Get(ACOBathSheetLinesToProcess."Bath Sheet No.", ACOBathSheetLinesToProcess."Production Order No.", ACOBathSheetLinesToProcess."Production Order Status", ACOBathSheetLinesToProcess."Production Order Line No.") then begin
+                                BathLineTempRecord := ACOBathSheetLinesToProcess;
+                                BathLineTempRecord.Modify();
+                            end else begin
+                                BathLineTempRecord.Init();
+                                BathLineTempRecord := ACOBathSheetLinesToProcess;
+                                BathLineTempRecord.Insert();
+                            end;
+                        until ACOBathSheetLinesToProcess.Next() = 0;
 
                     AppSetup.Reset();
                     AppSetup.Get();
@@ -264,12 +269,14 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 PackageLine.Insert();
                             until BathLineTempRecord.Next() = 0;
 
+                        Commit();
+
                         PackageHeader.SetRecFilter();
                         PrintPackageLabel.SetTableView(PackageHeader);
                         PrintPackageLabel.UseRequestPage := false;
                         PrintPackageLabel.Run();
 
-                        Commit();
+                        // Commit();
 
                         if BathLineTempRecord.FindSet() then
                             repeat

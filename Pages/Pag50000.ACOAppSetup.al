@@ -99,6 +99,12 @@ page 50000 "ACO App Setup"
                     ToolTip = 'Min. Anodise Time';
                 }
 
+                field("Maximum Surface Attachrack"; "Maximum Surface Attachrack")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Maximum Surface Attachrack';
+                }
+
                 field("Multiple Staining Times Text"; "Multiple Staining Times Text")
                 {
                     ApplicationArea = All;

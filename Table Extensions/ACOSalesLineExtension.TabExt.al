@@ -579,6 +579,17 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Upper Accuracy';
             DataClassification = CustomerContent;
         }
+
+        field(50063; "ACO Customer Item No."; Code[20])
+        {
+            Caption = 'Customer Item No.';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                // "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
+            end;
+        }
     }
 
     procedure ACOCalculateUnitPrice()
