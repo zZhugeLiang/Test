@@ -233,10 +233,9 @@ report 50000 "ACO Bath Sheet"
                             HighEndText := HighEndCaptionLbl;
 
                         if ACOProfile.Get(ACOBathSheetLine."Profile Code") then begin
-                            if BathSheetLineComments <> '' then
-                                BathSheetLineComments += CRLF;
-
-                            BathSheetLineComments += ACOProfile."Comment Bath Card";
+                            // if BathSheetLineComments <> '' then
+                            //     BathSheetLineComments += CRLF;
+                            // BathSheetLineComments += ACOProfile."Comment Bath Card";
 
                             if MeasureText = DONOTMEASURECaptionLbl then
                                 if not ACOProfile."Not Measurable" then

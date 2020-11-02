@@ -176,6 +176,11 @@
           <target>Bewerkingsplaats folie verwijderen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Remove Foil Routing No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 3725408295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maximum Surface Attachrack</source>
+          <target>Maximale oppervlakte ophangrek</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Maximum Surface Attachrack - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <target>Alucol Instellingen</target>
@@ -250,6 +255,11 @@
           <source>Min. Anodise Time</source>
           <target>Minimale Anodiseertijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Min. Anodise Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 3725408295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maximum Surface Attachrack</source>
+          <target>Maximale oppervlakte ophangrek</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Maximum Surface Attachrack - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1256312134 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Multiple Staining Times Text</source>
@@ -1250,6 +1260,11 @@
           <source>Surface Attachrack</source>
           <target>Oppervlakte ophangrek</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Surface Attachrack - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1438845102 - Field 2839749687 - Method 2126772001 - NamedType 2308797028" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Surface Attachrack can not be larger than Maximum Surface Attachrack.</source>
+          <target>Oppervlakte ophangrek kan niet groter zijn dan Maximale oppervlakte ophangrek.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Surface Attachrack - Method OnValidate - NamedType SurfaceAttachrackMaximumErr</note>
         </trans-unit>
         <trans-unit id="Table 1438845102 - Field 1172907475 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Surface Addition</source>
@@ -3412,6 +3427,11 @@
           <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
           <target>Aantal naar colli kan niet groter zijn dan aantal min aantal verwerkt.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control Qty in Package - Method OnValidate - NamedType QtyTooLargeErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 3035616146" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Labels have already been printed. Please print them from the Packages list.</source>
+          <target>Etiketten zijn reeds afgedrukt. Gebruik het scherm Colli's voor het opnieuw afdrukken van de etiketten.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType LabelsAlreadyPrintedErr</note>
         </trans-unit>
         <trans-unit id="Page 2436688764 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
@@ -6690,6 +6710,11 @@
           <source>Upper Accuracy</source>
           <target>Nauwkeurigheid boven</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Upper Accuracy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1376709893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Customer Item No.</source>
+          <target>Artikelnummer klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2203568108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Qty. After Production</source>
