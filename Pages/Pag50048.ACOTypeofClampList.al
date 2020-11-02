@@ -7,6 +7,7 @@ page 50048 "ACO Type of Clamp List"
     ApplicationArea = All;
     UsageCategory = Lists;
 
+
     layout
     {
         area(content)

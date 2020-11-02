@@ -6558,16 +6558,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Sawing - Method OnValidate - NamedType FinalLengtGtMaxSawingLengthErr</note>
         </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 3729091183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Final Length</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Final Length - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 3729091183 - Method 2126772001 - NamedType 3418512161" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Final Length - Method OnValidate - NamedType BathSheetLineExistsMsg</note>
-        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2203568108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Qty. After Production</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6667,6 +6657,16 @@
           <source>Customer Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1612287963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Start Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Start Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1612287963 - Method 2126772001 - NamedType 3418512161" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Start Length - Method OnValidate - NamedType BathSheetLineExistsMsg</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2203568108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Qty. After Production</source>

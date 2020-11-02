@@ -219,7 +219,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
             if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000);
+                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters");
 
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
@@ -247,7 +247,7 @@ codeunit 50000 "ACO Event Subscribers"
     //         Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
     // end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Final Length', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Start Length', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOFinalLength(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec."ACO Qty. After Production" := Rec.Quantity;
@@ -295,17 +295,14 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfile: Record "ACO Profile";
         ACOManagement: Codeunit "ACO Management";
     begin
-        if Rec."ACO Sawing" and (Rec."ACO Final Length" <> 0) then
-            Rec.Validate("ACO Area Profile", ACOProfile.Circumference * Rec."ACO Final Length" / 1000000)
-        else begin
-            if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                Clear(ItemVariant);
+        if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+            Clear(ItemVariant);
 
-            if ACOProfile.Get(Rec."ACO Profile Code") then
-                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000)
-            else
-                Rec.Validate("ACO Area Profile", 0);
-        end;
+        if ACOProfile.Get(Rec."ACO Profile Code") then
+            Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000)
+        else
+            Rec.Validate("ACO Area Profile", 0);
+
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
@@ -348,11 +345,11 @@ codeunit 50000 "ACO Event Subscribers"
 
         // if ACOProfile.Get(SalesLine."ACO Profile Code") then
 
-        if SalesLine."ACO Sawing" and (SalesLine."ACO Final Length" <> 0) then
-            ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * (SalesLine."ACO Final Length" / 1000) * SalesLine."ACO Number of Units" / 1000
-        else
-            if ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
-                ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * SalesLine."ACO Number of Units" / 1000;
+        if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+            Clear(ItemVariant);
+
+        if SalesLine."ACO Sawing" then
+            ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * SalesLine."ACO Number of Units" / 1000;
 
         if ProdOrderLine."ACO Number of Units" <> 0 then
             ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";

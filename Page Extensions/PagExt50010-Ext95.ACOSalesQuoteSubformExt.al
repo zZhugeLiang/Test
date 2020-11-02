@@ -72,7 +72,7 @@ pageextension 50010 "ACO Sales Quote Subform Ext." extends "Sales Quote Subform"
             {
                 ApplicationArea = All;
             }
-            field("ACO Final Length"; "ACO Final Length")
+            field("ACO Start Length"; "ACO Start Length")
             {
                 Editable = "ACO Sawing";
                 ApplicationArea = All;

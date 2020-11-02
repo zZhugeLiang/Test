@@ -266,10 +266,7 @@ report 50005 "ACO Attach Notice"
                     IsFoil := false;
                     RemoveFoil := false;
 
-                    if "ACO Sawing" and ("ACO Final Length" <> 0) then
-                        NumberOfMeters := "ACO Final Length"
-                    else
-                        NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
+                    NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
 
                     Circumference := "ACO Profile Circumference";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";

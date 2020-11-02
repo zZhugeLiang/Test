@@ -279,16 +279,10 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                         Clear(ItemVariant);
 
                     if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                        if Rec."ACO Sawing" and (Rec."ACO Final Length" <> 0) then
-                            NewQuantity := (Rec."ACO Final Length" / 1000) * "ACO Number of Units"
-                        else
-                            NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
+                        NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
 
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                        if Rec."ACO Sawing" and (Rec."ACO Final Length" <> 0) then
-                            NewQuantity := Rec."ACO Profile Circumference" * (Rec."ACO Final Length" / 1000) * "ACO Number of Units" / 1000
-                        else
-                            NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+                        NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
 
                     Validate(Quantity, NewQuantity);
                     Validate("ACO Area Profile");
@@ -339,12 +333,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 AppSetup: Record "ACO App Setup";
+                ItemVariant: Record "Item Variant";
                 FinalLengtGtMaxSawingLengthErr: Label 'Final Length can not be greater than the Maximum Sawing Length.';
             begin
                 AppSetup.Get();
                 AppSetup.TestField("Maximum Sawing Length");
-                if "ACO Final Length" > AppSetup."Maximum Sawing Length" then
-                    Error(FinalLengtGtMaxSawingLengthErr);
+
+                if ItemVariant.Get("No.", "Variant Code") then
+                    if ItemVariant."ACO Number of Meters" > AppSetup."Maximum Sawing Length" then
+                        Error(FinalLengtGtMaxSawingLengthErr);
 
                 "ACO Lower Accuracy" := 1;
                 "ACO Upper Accuracy" := 1;
@@ -354,46 +351,48 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50041; "ACO Final Length"; Decimal)
         {
             Caption = 'Final Length';
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Replaced by field ACO Starting Length';
             DataClassification = CustomerContent;
 
-            trigger OnValidate()
-            var
-                AppSetup: Record "ACO App Setup";
-                ProdOrderLine: Record "Prod. Order Line";
-                ItemVariant: Record "Item Variant";
-                BathSheetLine: Record "ACO Bath Sheet Line";
-                BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
-            begin
-                AppSetup.Get();
-                AppSetup.TestField("Min. Residue Saw");
-                if ("ACO Final Length" * "ACO Number of Units") <> 0 then begin
-                    // itemvariant (beginlengte) - appsetupresiduesaw / final length * aantal eenheden
-                    // Validate("ACO Number of Units", Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<'));
-                    if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                        Clear(ItemVariant);
-                    Validate("ACO Number of Units", Round((ItemVariant."ACO Number of Meters" * 1000 - AppSetup."Min. Residue Saw") / "ACO Final Length" * "ACO Number of Units", 1, '<'));
-                    //100-59*1000 Checken of dit klopt bij EWI
+            // trigger OnValidate()
+            // var
+            //     AppSetup: Record "ACO App Setup";
+            //     ProdOrderLine: Record "Prod. Order Line";
+            //     ItemVariant: Record "Item Variant";
+            //     BathSheetLine: Record "ACO Bath Sheet Line";
+            //     BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
+            // begin
+            //     AppSetup.Get();
+            //     AppSetup.TestField("Min. Residue Saw");
+            //     if ("ACO Final Length" * "ACO Number of Units") <> 0 then begin
+            //         // itemvariant (beginlengte) - appsetupresiduesaw / final length * aantal eenheden
+            //         // Validate("ACO Number of Units", Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<'));
+            //         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+            //             Clear(ItemVariant);
+            //         Validate("ACO Number of Units", Round((ItemVariant."ACO Number of Meters" * 1000 - AppSetup."Min. Residue Saw") / "ACO Final Length" * "ACO Number of Units", 1, '<'));
+            //         //100-59*1000 Checken of dit klopt bij EWI
 
-                    ProdOrderLine.SetRange("ACO Source No.", "Document No.");
-                    ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
-                    if ProdOrderLine.FindFirst() then begin
-                        if "ACO Sawing" and ("ACO Final Length" <> 0) then
-                            ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ("ACO Final Length" / 1000) * "ACO Number of Units" / 1000
-                        else
-                            if ItemVariant.Get("No.", "Variant Code") then
-                                ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+            //         ProdOrderLine.SetRange("ACO Source No.", "Document No.");
+            //         ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
+            //         if ProdOrderLine.FindFirst() then begin
+            //             if "ACO Sawing" and ("ACO Final Length" <> 0) then
+            //                 ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ("ACO Final Length" / 1000) * "ACO Number of Units" / 1000
+            //             else
+            //                 if ItemVariant.Get("No.", "Variant Code") then
+            //                     ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
 
-                        ProdOrderLine.Modify();
+            //             ProdOrderLine.Modify();
 
-                        BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
-                        BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
-                        BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
-                        BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
-                        if BathSheetLine.FindFirst() then
-                            Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
-                    end;
-                end;
-            end;
+            //             BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
+            //             BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
+            //             BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
+            //             BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
+            //             if BathSheetLine.FindFirst() then
+            //                 Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
+            //         end;
+            //     end;
+            // end;
         }
 
         field(50042; "ACO Qty. After Production"; Decimal)
@@ -588,6 +587,45 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             begin
                 // "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
+            end;
+        }
+
+
+        field(50064; "ACO Start Length"; Decimal)
+        {
+            Caption = 'Start Length';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                AppSetup: Record "ACO App Setup";
+                ProdOrderLine: Record "Prod. Order Line";
+                ItemVariant: Record "Item Variant";
+                BathSheetLine: Record "ACO Bath Sheet Line";
+                BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
+            begin
+                AppSetup.Get();
+                AppSetup.TestField("Min. Residue Saw");
+                if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                    Clear(ItemVariant);
+
+                if (ItemVariant."ACO Number of Meters" * "ACO Number of Units") <> 0 then begin
+                    Validate("ACO Number of Units", Round(("ACO Start Length" - AppSetup."Min. Residue Saw") / ItemVariant."ACO Number of Meters" * 1000 * "ACO Number of Units", 1, '<'));
+
+                    ProdOrderLine.SetRange("ACO Source No.", "Document No.");
+                    ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
+                    if ProdOrderLine.FindFirst() then begin
+                        ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+                        ProdOrderLine.Modify();
+
+                        BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
+                        BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
+                        BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
+                        BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
+                        if BathSheetLine.FindFirst() then
+                            Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
+                    end;
+                end;
             end;
         }
     }

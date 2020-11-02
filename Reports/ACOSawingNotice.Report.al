@@ -69,10 +69,7 @@ report 50006 "ACO Sawing Notice"
                 if StrLen(BagDescriptionsText) > 1 then
                     BagDescriptionsText := CopyStr(BagDescriptionsText, 1, StrLen(BagDescriptionsText) - 1);
 
-                if "ACO Sawing" and ("ACO Final Length" <> 0) then
-                    NumberOfMeters := "ACO Final Length"
-                else
-                    NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
+                NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
             end;
 
             trigger OnPreDataItem()
@@ -112,4 +109,22 @@ report 50006 "ACO Sawing Notice"
         ItemNoCustomerCaptionLbl: Label 'Item No. Customer';
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
+        //
+        PackagingInstructionsCaptionLbl: Label 'Packaging Instructions';
+        PackagingCaptionLbl: Label 'Packaging';
+        PackageTypeCaptionLbl: Label 'Package Type';
+        WidthCaptionLbl: Label 'Width';
+        TypeCaptionLbl: Label 'Type';
+        InsideCaptionLbl: Label 'Inside';
+        ProfilesCaptionLbl: Label 'Profiles';
+        UOMCaptionLbl: Label 'Unit of Measure';
+        InsideUOMCaptionLbl: Label 'Inside Unit of Measure';
+        BuildupLayerCaptionLbl: Label 'Build-up Layer';
+        PackagingStructureCaptionLbl: Label 'Packaging Structure';
+        QuantityPerLayerCaptionLbl: Label '# per Layer';
+        NumberOfLayersCaptionLbl: Label '# Layers';
+        MaxWidthCaptionLbl: Label 'Max Width';
+        MaxHeightCaptionLbl: Label 'Max Height';
+        RemarkCaptionLbl: Label 'Remark';
+        NameCaptionLbl: Label 'Name';
 }

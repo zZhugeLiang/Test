@@ -743,7 +743,7 @@ report 50009 "ACO Order Confirmation"
                         column(ACOTypeofClampCode_SalesLineCaption; SalesLine.FieldCaption("ACO Type of Clamp Code")) { }
                         column(ACOArea_SalesLineCaption; SalesLine.FieldCaption("ACO Area")) { }
                         column(ACOSawing_SalesLineCaption; SalesLine.FieldCaption("ACO Sawing")) { }
-                        column(ACOFinalLength_SalesLineCaption; SalesLine.FieldCaption("ACO Final Length")) { }
+                        column(ACOStartLength_SalesLineCaption; SalesLine.FieldCaption("ACO Start Length")) { }
                         column(ACOQtyAfterProduction_SalesLineCaption; SalesLine.FieldCaption("ACO Qty. After Production")) { }
                         column(ACOLinkedHolder_SalesLineCaption; SalesLine.FieldCaption("ACO Linked Holder")) { }
                         column(ACOReceiptBag_SalesLineCaption; SalesLine.FieldCaption("ACO Receipt Bag")) { }
@@ -857,7 +857,7 @@ report 50009 "ACO Order Confirmation"
                         column(ACOTypeofClampCode_SalesLine; SalesLine."ACO Type of Clamp Code") { }
                         column(ACOArea_SalesLine; SalesLine."ACO Area") { }
                         column(ACOSawing_SalesLine; SalesLine."ACO Sawing") { }
-                        column(ACOFinalLength_SalesLine; SalesLine."ACO Final Length") { }
+                        column(ACOStartLength_SalesLine; SalesLine."ACO Start Length") { }
                         column(ACOQtyAfterProduction_SalesLine; SalesLine."ACO Qty. After Production") { }
                         column(ACOLinkedHolder_SalesLine; SalesLine."ACO Linked Holder") { }
                         column(ACOReceiptBag_SalesLine; SalesLine."ACO Receipt Bag") { }
