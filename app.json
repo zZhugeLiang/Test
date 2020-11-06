@@ -27,5 +27,6 @@
   "screenshots": [],
   "platform": "15.0.0.0",
   "runtime": "4.0",
-  "features": ["TranslationFile"]
+  "features": ["TranslationFile"],
+  "suppressWarnings": ["AA0218"]
 }

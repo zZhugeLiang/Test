@@ -333,15 +333,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 AppSetup: Record "ACO App Setup";
-                ItemVariant: Record "Item Variant";
-                FinalLengtGtMaxSawingLengthErr: Label 'Final Length can not be greater than the Maximum Sawing Length.';
+                FinalLengtGtMaxSawingLengthErr: Label 'Start Length can not be greater than the Maximum Sawing Length.';
             begin
                 AppSetup.Get();
                 AppSetup.TestField("Maximum Sawing Length");
 
-                if ItemVariant.Get("No.", "Variant Code") then
-                    if ItemVariant."ACO Number of Meters" > AppSetup."Maximum Sawing Length" then
-                        Error(FinalLengtGtMaxSawingLengthErr);
+                if "ACO Start Length" > AppSetup."Maximum Sawing Length" then
+                    Error(FinalLengtGtMaxSawingLengthErr);
 
                 "ACO Lower Accuracy" := 1;
                 "ACO Upper Accuracy" := 1;
