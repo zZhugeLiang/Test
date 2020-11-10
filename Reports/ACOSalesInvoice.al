@@ -361,6 +361,9 @@ report 50010 "ACO Sales - Invoice"
                     column(TransportMethod_SalesInvHdr; "Sales Invoice Header"."Transport Method") { }
                     column(ExitPoint_SalesInvHdr; "Sales Invoice Header"."Exit Point") { }
                     column(Area_SalesInvHdr; "Sales Invoice Header".Area) { }
+                    column(ACOProfileDescription_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Profile Description")) { }
+                    column(ACOCustomerItemNo_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Customer Item No.")) { }
+                    column(ACOProfileCustDescription_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Profile Cust. Description")) { }
                     ///// >>
                     dataitem(DimensionLoop1; "Integer")
                     {
@@ -636,6 +639,9 @@ report 50010 "ACO Sales - Invoice"
                         column(ShortcutDimCode6_SalesInvLine; ShortcutDimCode[6]) { }
                         column(ShortcutDimCode7_SalesInvLine; ShortcutDimCode[7]) { }
                         column(ShortcutDimCode8_SalesInvLine; ShortcutDimCode[8]) { }
+                        column(ACOProfileDescription_SalesInvoiceLine; "Sales Invoice Line"."ACO Profile Description") { }
+                        column(ACOCustomerItemNo_SalesInvoiceLine; "Sales Invoice Line"."ACO Customer Item No.") { }
+                        column(ACOProfileCustDescription_SalesInvoiceLine; "Sales Invoice Line"."ACO Profile Cust. Description") { }
                         ///// Values >>
                         dataitem("Sales Shipment Buffer"; "Integer")
                         {

@@ -415,6 +415,9 @@ report 50012 "ACO Sales - Shipment"
                         column(ShortcutDimCode6_SalesShptLineCaption; ShortcutDimCode6Dimension.Name) { }
                         column(ShortcutDimCode7_SalesShptLineCaption; ShortcutDimCode7Dimension.Name) { }
                         column(ShortcutDimCode8_SalesShptLineCaption; ShortcutDimCode8Dimension.Name) { }
+                        column(ACOProfileDescription_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Profile Description")) { }
+                        column(ACOCustomerItemNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Customer Item No.")) { }
+                        column(ACOProfileCustDescription_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Profile Cust. Description")) { }
                         ///// Captions >>>>>
                         ///// Values <<<<<
                         // column(Type_SalesShptLine; "Sales Shipment Line".Type) { }
@@ -444,13 +447,15 @@ report 50012 "ACO Sales - Shipment"
                         column(Correction_SalesShptLine; "Sales Shipment Line".Correction) { }
                         column(ShortcutDimension1Code_SalesShptLine; "Sales Shipment Line"."Shortcut Dimension 1 Code") { }
                         column(ShortcutDimension2Code_SalesShptLine; "Sales Shipment Line"."Shortcut Dimension 2 Code") { }
-
                         column(ShortcutDimCode3_SalesShptLine; ShortcutDimCode[3]) { }
                         column(ShortcutDimCode4_SalesShptLine; ShortcutDimCode[4]) { }
                         column(ShortcutDimCode5_SalesShptLine; ShortcutDimCode[5]) { }
                         column(ShortcutDimCode6_SalesShptLine; ShortcutDimCode[6]) { }
                         column(ShortcutDimCode7_SalesShptLine; ShortcutDimCode[7]) { }
                         column(ShortcutDimCode8_SalesShptLine; ShortcutDimCode[8]) { }
+                        column(ACOProfileDescription_SalesShptLine; "Sales Shipment Line"."ACO Profile Description") { }
+                        column(ACOCustomerItemNo_SalesShptLine; "Sales Shipment Line"."ACO Customer Item No.") { }
+                        column(ACOProfileCustDescription_SalesShptLine; "Sales Shipment Line"."ACO Profile Cust. Description") { }
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")

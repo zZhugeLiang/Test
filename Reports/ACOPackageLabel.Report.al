@@ -46,6 +46,8 @@ report 50001 "ACO Package Label"
 
                 column(Profile_no_; "Profile no.") { }
                 column(Profile_description; "Profile description") { }
+                column(CustomerItemNo_ACOProfileCustomer; ACOProfileCustomer."Customer Item No.") { }
+                column(ProfileDescription_ACOProfileCustomer; ACOProfileCustomer."Profile Description") { }
                 column(Quantity; Quantity) { }
                 column(Length; Length) { }
                 column(External_Document_No_; "External Document No.") { }
@@ -57,6 +59,12 @@ report 50001 "ACO Package Label"
             begin
                 if not Resource.Get("Resource No.") then
                     Clear(Resource);
+
+                ACOProfileCustomer.Reset();
+                ACOProfileCustomer.SetRange("Profile Code", ACOPackageLine."Profile no.");
+                ACOProfileCustomer.SetRange("Customer No.", ACOPackageHeader."Customer No.");
+                if not ACOProfileCustomer.FindFirst() then
+                    Clear(ACOProfileCustomer);
             end;
         }
     }
@@ -106,6 +114,7 @@ report 50001 "ACO Package Label"
     var
         CompanyInfo: Record "Company Information";
         "Generating Resource": record Resource;
+        ACOProfileCustomer: Record "ACO Profile Customer";
         Resource: Record Resource;
         ItemLbl: Label 'Item';
         AmountLbl: Label 'Amount';

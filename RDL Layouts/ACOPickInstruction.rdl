@@ -7057,6 +7057,15 @@
       </DefaultValue>
       <Prompt>ACO_Profile_DescriptionCaption</Prompt>
     </ReportParameter>
+    <ReportParameter Name="ACO_Customer_Item_No_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ACO_Customer_Item_No_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ACO_Customer_Item_No_Caption</Prompt>
+    </ReportParameter>
     <ReportParameter Name="ACONumberofMeters_ItemVariantCaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -7151,7 +7160,7 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>54</NumberOfRows>
+      <NumberOfRows>55</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -7376,51 +7385,56 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>44</RowIndex>
-          <ParameterName>ACONumberofMeters_ItemVariantCaption</ParameterName>
+          <ParameterName>ACO_Customer_Item_No_Caption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>45</RowIndex>
-          <ParameterName>PictureFile_ACOProfileCaption</ParameterName>
+          <ParameterName>ACONumberofMeters_ItemVariantCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>46</RowIndex>
-          <ParameterName>No_AssemblyLineCaption</ParameterName>
+          <ParameterName>PictureFile_ACOProfileCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>47</RowIndex>
-          <ParameterName>Description_AssemblyLineCaption</ParameterName>
+          <ParameterName>No_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>48</RowIndex>
-          <ParameterName>VariantCode_AssemblyLineCaption</ParameterName>
+          <ParameterName>Description_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>49</RowIndex>
-          <ParameterName>Quantity_AssemblyLineCaption</ParameterName>
+          <ParameterName>VariantCode_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>50</RowIndex>
-          <ParameterName>QuantityPer_AssemblyLineCaption</ParameterName>
+          <ParameterName>Quantity_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>51</RowIndex>
-          <ParameterName>LocationCode_AssemblyLineCaption</ParameterName>
+          <ParameterName>QuantityPer_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>52</RowIndex>
-          <ParameterName>BinCode_AssemblyLineCaption</ParameterName>
+          <ParameterName>LocationCode_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>53</RowIndex>
+          <ParameterName>BinCode_AssemblyLineCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>54</RowIndex>
           <ParameterName>QuantityToConsume_AssemblyLineCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -7653,6 +7667,9 @@ End Function
         </Field>
         <Field Name="ACO_Profile_Description">
           <DataField>ACO_Profile_Description</DataField>
+        </Field>
+        <Field Name="ACO_Customer_Item_No_">
+          <DataField>ACO_Customer_Item_No_</DataField>
         </Field>
         <Field Name="ACONumberofMeters_ItemVariant">
           <DataField>ACONumberofMeters_ItemVariant</DataField>

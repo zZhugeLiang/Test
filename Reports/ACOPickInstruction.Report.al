@@ -174,6 +174,10 @@ report 50013 "ACO Pick Instruction"
                     {
                         IncludeCaption = true;
                     }
+                    column(ACO_Customer_Item_No_; "ACO Customer Item No.")
+                    {
+                        IncludeCaption = true;
+                    }
                     column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters")
                     {
                         IncludeCaption = true;

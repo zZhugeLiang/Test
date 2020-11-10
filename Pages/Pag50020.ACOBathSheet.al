@@ -270,25 +270,10 @@ page 50020 "ACO Bath Sheet"
                 trigger OnAction()
                 var
                     ACOBathSheetHeader: Record "ACO Bath Sheet Header";
-                    ReportTime: Time;
                 begin
                     ACOBathSheetHeader := Rec;
                     ACOBathSheetHeader.SetRecFilter();
                     Report.Run(Report::"ACO Bath Sheet", true, false, ACOBathSheetHeader);
-
-                    "Report Date" := CurrentDateTime();
-                    ReportTime := DT2Time("Report Date");
-                    if (ReportTime >= 060000T) and (ReportTime < 140000T) then
-                        "Report Day Part" := '01';
-                    if (ReportTime >= 140000T) and (ReportTime < 220000T) then
-                        "Report Day Part" := '02';
-                    if (ReportTime >= 220000T) or (ReportTime < 060000T) then
-                        "Report Day Part" := '03';
-
-                    "Report Day" := Date2DWY(DT2Date("Report Date"), 1);
-                    "Report Week" := Date2DWY(DT2Date("Report Date"), 2);
-                    "Report Year" := Date2DWY(DT2Date("Report Date"), 3);
-                    Modify();
 
                     CurrPage.Update(true);
                 end;

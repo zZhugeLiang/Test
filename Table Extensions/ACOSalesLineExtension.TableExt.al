@@ -577,17 +577,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50063; "ACO Customer Item No."; Code[20])
+        field(50063; "ACO Customer Item No."; Code[50])
         {
             Caption = 'Customer Item No.';
             DataClassification = CustomerContent;
-
-            trigger OnValidate()
-            begin
-                // "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
-            end;
         }
-
 
         field(50064; "ACO Start Length"; Decimal)
         {
@@ -626,6 +620,12 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 end;
             end;
         }
+
+        field(50065; "ACO Profile Cust. Description"; Text[100])
+        {
+            Caption = 'Profile Customer Description';
+            DataClassification = CustomerContent;
+        }
     }
 
     procedure ACOCalculateUnitPrice()
@@ -655,7 +655,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
         ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-        ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
         if not ACOProfileCustomer.FindFirst() then
             exit;
 

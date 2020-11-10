@@ -757,6 +757,7 @@ report 50009 "ACO Order Confirmation"
                         column(ACOReturnRemaining_SalesLineCaption; SalesLine.FieldCaption("ACO Return Remaining")) { }
                         column(ACOLowerAccuracy_SalesLineCaption; SalesLine.FieldCaption("ACO Lower Accuracy")) { }
                         column(ACOUpperAccuracy_SalesLineCaption; SalesLine.FieldCaption("ACO Upper Accuracy")) { }
+                        column(ACOCustomerItemNo_SalesLineCaption; SalesLine.FieldCaption("ACO Customer Item No.")) { }
                         ///// Caption >>
                         ///// Values <<
                         // column(Type_SalesLine; SalesLine.Type) { }
@@ -871,6 +872,8 @@ report 50009 "ACO Order Confirmation"
                         column(ACOReturnRemaining_SalesLine; SalesLine."ACO Return Remaining") { }
                         column(ACOLowerAccuracy_SalesLine; SalesLine."ACO Lower Accuracy") { }
                         column(ACOUpperAccuracy_SalesLine; SalesLine."ACO Upper Accuracy") { }
+                        column(ACOCustomerItemNo_SalesLine; SalesLine."ACO Customer Item No.") { }
+
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")

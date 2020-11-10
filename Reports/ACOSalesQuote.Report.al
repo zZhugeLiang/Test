@@ -693,6 +693,7 @@ report 50008 "ACO Sales - Quote"
                         column(ACOReturnRemaining_SalesLineCaption; SalesLine.FieldCaption("ACO Return Remaining")) { }
                         column(ACOLowerAccuracy_SalesLineCaption; SalesLine.FieldCaption("ACO Lower Accuracy")) { }
                         column(ACOUpperAccuracy_SalesLineCaption; SalesLine.FieldCaption("ACO Upper Accuracy")) { }
+                        column(ACOCustomerItemNo_SalesineCaption; "Sales Line".FieldCaption("ACO Customer Item No.")) { }
                         ///// Captions >>
                         ///// Values <<
                         // column(Type_SalesLine; SalesLine.Type) { }
@@ -807,6 +808,7 @@ report 50008 "ACO Sales - Quote"
                         column(ACOReturnRemaining_SalesLine; SalesLine."ACO Return Remaining") { }
                         column(ACOLowerAccuracy_SalesLine; SalesLine."ACO Lower Accuracy") { }
                         column(ACOUpperAccuracy_SalesLine; SalesLine."ACO Upper Accuracy") { }
+                        column(ACOCustomerItemNo_SalesLine; "Sales Line"."ACO Customer Item No.") { }
                         ///// Values >>
                         ///// Added Fields from Page >>
                         dataitem(DimensionLoop2; "Integer")

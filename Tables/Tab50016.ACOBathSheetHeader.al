@@ -48,9 +48,24 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                ReportTime: Time;
             begin
                 Rec."Creation Week" := Date2DWY(DT2Date("Creation Date"), 2);
                 Rec."Creation Year" := Date2DWY(DT2Date("Creation Date"), 3);
+
+                "Report Date" := "Creation Date" - (3600000 * 6);
+                ReportTime := DT2Time("Report Date");
+                if (ReportTime >= 000000T) and (ReportTime < 080000T) then
+                    Rec."Report Day Part" := '01';
+                if (ReportTime >= 080000T) and (ReportTime < 160000T) then
+                    Rec."Report Day Part" := '02';
+                if (ReportTime >= 160000T) or (ReportTime <= 235959T) then
+                    Rec."Report Day Part" := '03';
+
+                Rec."Report Day" := Date2DWY(DT2Date("Report Date"), 1);
+                Rec."Report Week" := Date2DWY(DT2Date("Report Date"), 2);
+                Rec."Report Year" := Date2DWY(DT2Date("Report Date"), 3);
             end;
         }
 

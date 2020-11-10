@@ -82,9 +82,9 @@ report 50007 "ACO Unattach Notice"
                 column(Description_ACOProfile; ACOProfile."Description") { }
                 column(ACO_Profile_Description; "ACO Profile Description") { }
                 column(ItemNoCustomerCaption; ItemNoCustomerCaptionLbl) { }
-                column(CustomerItemNo; ACOProfileCustomer."Customer Item No.") { }
+                column(CustomerItemNo; "ACO Customer Item No.") { }
                 column(ItemDescrCustomerCaption; ItemDescrCustomerCaptionLbl) { }
-                column(ProfileDescription_ProfileCustomer; ACOProfileCustomer."Profile Description") { }
+                column(ProfileDescription_ProfileCustomer; "ACO Profile Description") { }
                 column(ColorNoteCaption; ColorNoteCaptionLbl) { }
                 column(Name_ACOColorProjectHeader; ACOColorProjectHeader.Name) { }
                 column(QuantityCaption; QuantityCaptionLbl) { }

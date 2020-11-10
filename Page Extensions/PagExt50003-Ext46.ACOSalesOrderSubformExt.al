@@ -32,6 +32,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Customer Item No."; "ACO Customer Item No.")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Not Measurable"; "ACO Not Measurable")
             {
                 ApplicationArea = All;

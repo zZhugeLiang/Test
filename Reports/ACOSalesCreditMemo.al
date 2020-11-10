@@ -516,6 +516,9 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ShortcutDimCode6_SalesCrMemoLineCaption; ShortcutDimCode6Dimension.Name) { }
                         column(ShortcutDimCode7_SalesCrMemoLineCaption; ShortcutDimCode7Dimension.Name) { }
                         column(ShortcutDimCode8_SalesCrMemoLineCaption; ShortcutDimCode8Dimension.Name) { }
+                        column(ACOProfileDescription_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Profile Description")) { }
+                        column(ACOCustomerItemNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Customer Item No.")) { }
+                        column(ACOProfileCustDescription_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Profile Cust. Description")) { }
                         ///// Captions >>
                         ///// Values <<
                         // column(Type_SalesCrMemoLine; "Sales Cr.Memo Line".Type) { }
@@ -551,6 +554,9 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ShortcutDimCode6_SalesCrMemoLine; ShortcutDimCode[6]) { }
                         column(ShortcutDimCode7_SalesCrMemoLine; ShortcutDimCode[7]) { }
                         column(ShortcutDimCode8_SalesCrMemoLine; ShortcutDimCode[8]) { }
+                        column(ACOProfileDescription_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Description") { }
+                        column(ACOCustomerItemNo_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Customer Item No.") { }
+                        column(ACOProfileCustDescription_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Cust. Description") { }
                         dataitem(DimensionLoop2; "Integer")
                         {
                             DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
