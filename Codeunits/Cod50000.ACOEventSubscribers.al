@@ -283,7 +283,7 @@ codeunit 50000 "ACO Event Subscribers"
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
             ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
             ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-            ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+            // ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
             if ACOProfileCustomer.FindFirst() then
                 Rec."Unit Price" := Rec."Unit Price" - (Rec."Unit Price" * ACOProfileCustomer."Sawing Discount" / 100);
         end;
