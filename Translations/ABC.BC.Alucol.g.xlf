@@ -6673,11 +6673,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Sawing - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 4185750204 - Method 2126772001 - NamedType 3209916501" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Start Length can not be greater than the Maximum Sawing Length.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Sawing - Method OnValidate - NamedType FinalLengtGtMaxSawingLengthErr</note>
-        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2203568108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Qty. After Production</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6787,6 +6782,11 @@
           <source>A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Start Length - Method OnValidate - NamedType BathSheetLineExistsMsg</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1612287963 - Method 2126772001 - NamedType 3209916501" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Start Length can not be greater than the Maximum Sawing Length.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Start Length - Method OnValidate - NamedType FinalLengtGtMaxSawingLengthErr</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3169120169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Profile Customer Description</source>

@@ -331,16 +331,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
-            var
-                AppSetup: Record "ACO App Setup";
-                FinalLengtGtMaxSawingLengthErr: Label 'Start Length can not be greater than the Maximum Sawing Length.';
             begin
-                AppSetup.Get();
-                AppSetup.TestField("Maximum Sawing Length");
-
-                if "ACO Start Length" > AppSetup."Maximum Sawing Length" then
-                    Error(FinalLengtGtMaxSawingLengthErr);
-
                 "ACO Lower Accuracy" := 1;
                 "ACO Upper Accuracy" := 1;
             end;
@@ -595,9 +586,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ItemVariant: Record "Item Variant";
                 BathSheetLine: Record "ACO Bath Sheet Line";
                 BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
+                FinalLengtGtMaxSawingLengthErr: Label 'Start Length can not be greater than the Maximum Sawing Length.';
             begin
                 AppSetup.Get();
                 AppSetup.TestField("Min. Residue Saw");
+                AppSetup.TestField("Maximum Sawing Length");
+
+                if "ACO Start Length" > AppSetup."Maximum Sawing Length" then
+                    Error(FinalLengtGtMaxSawingLengthErr);
+
                 if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
                     Clear(ItemVariant);
 

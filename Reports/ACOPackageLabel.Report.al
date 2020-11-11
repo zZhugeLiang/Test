@@ -6,6 +6,7 @@ report 50001 "ACO Package Label"
     {
         dataitem(ACOPackageHeader; "ACO Package Header")
         {
+
             column(CompanyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyInfo.Address) { }
             column(CompanyCity; CompanyInfo.City) { }
