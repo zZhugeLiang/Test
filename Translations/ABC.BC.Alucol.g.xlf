@@ -5468,11 +5468,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType DeliveryDateCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1270528838 - NamedType 94112056" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item No. Customer</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType ItemNoCustomerCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 1270528838 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
           <source>Printing Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5482,6 +5477,26 @@
           <source>Created by</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType CreatedbyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 1891224618" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity (after sawing)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType QuantityAfterSawingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 141387771" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length (after sawing)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType LengthAfterSawingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 1299549021" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType LengthProfileCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 2907204722" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rem.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType RemCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1270528838 - NamedType 758547372" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Instructions</source>
@@ -5493,15 +5508,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType PackagingCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1270528838 - NamedType 2077875658" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Package Type</source>
+        <trans-unit id="Report 1270528838 - NamedType 311913736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Kind</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType PackageTypeCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1270528838 - NamedType 105702718" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Width</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType WidthCaptionLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType KindCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1270528838 - NamedType 449695264" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type</source>
@@ -5517,6 +5527,11 @@
           <source>Profiles</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType ProfilesCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType QuantityCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1270528838 - NamedType 1421459925" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit of Measure</source>
@@ -5557,16 +5572,6 @@
           <source>Max Height</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType MaxHeightCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1270528838 - NamedType 2855844002" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Remark</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType RemarkCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1270528838 - NamedType 2763383773" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType NameCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unattach Notice</source>
