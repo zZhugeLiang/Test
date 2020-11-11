@@ -164,7 +164,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
         ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
         ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
-        ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
+        // ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
         if ACOProfileCustomer.FindFirst() then begin
             if ACOProfileCustomer."Thin Staining Time" <= MinThinStainingTime then
                 MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
