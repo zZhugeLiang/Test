@@ -40,6 +40,10 @@ report 50001 "ACO Package Label"
             column(TreatmentLbl; TreatmentLbl)
             {
             }
+            column(Customer_Item_No_Caption; ACOPackageLine.FieldCaption("Customer Item No.")) { }
+            column(Profile_Cust__DescriptionCaption; ACOPackageLine.FieldCaption("Profile Cust. Description")) { }
+            column(Number_of_UnitsCaption; ACOPackageLine.FieldCaption("Number of Units")) { }
+            column(NumberOfMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
             dataitem(ACOPackageLine; "ACO Package Line")
             {
                 DataItemLinkReference = ACOPackageHeader;
@@ -53,20 +57,26 @@ report 50001 "ACO Package Label"
                 column(Length; Length) { }
                 column(External_Document_No_; "External Document No.") { }
                 column(Your_Reference; "Your Reference") { }
-                column(Treatment_Description; "Treatment Description") { }
+                column(Customer_Item_No_; "Customer Item No.") { }
+                column(Profile_Cust__Description; "Profile Cust. Description") { }
+                column(Number_of_Units; "Number of Units") { }
+                column(NumberOfMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
+
+                trigger OnAfterGetRecord()
+                begin
+                    if not Resource.Get(ACOPackageHeader."Resource No.") then
+                        Clear(Resource);
+
+                    ACOProfileCustomer.Reset();
+                    ACOProfileCustomer.SetRange("Profile Code", ACOPackageLine."Profile no.");
+                    ACOProfileCustomer.SetRange("Customer No.", ACOPackageHeader."Customer No.");
+                    if not ACOProfileCustomer.FindFirst() then
+                        Clear(ACOProfileCustomer);
+
+                    if not ItemVariant.Get("Item No.", "Variant Code") then
+                        Clear(ItemVariant);
+                end;
             }
-
-            trigger OnAfterGetRecord()
-            begin
-                if not Resource.Get("Resource No.") then
-                    Clear(Resource);
-
-                ACOProfileCustomer.Reset();
-                ACOProfileCustomer.SetRange("Profile Code", ACOPackageLine."Profile no.");
-                ACOProfileCustomer.SetRange("Customer No.", ACOPackageHeader."Customer No.");
-                if not ACOProfileCustomer.FindFirst() then
-                    Clear(ACOProfileCustomer);
-            end;
         }
     }
 
@@ -84,17 +94,20 @@ report 50001 "ACO Package Label"
                     {
                         ApplicationArea = All;
                         Caption = 'Resource';
+                        ToolTip = '';
 
                     }
                     field("Package Type"; "filter Package Type")
                     {
                         ApplicationArea = All;
                         Caption = 'Package Type';
+                        ToolTip = '';
                     }
                     field("RackNumber"; "Rack Number")
                     {
                         ApplicationArea = All;
                         Caption = 'Rack Number';
+                        ToolTip = '';
                     }
                 }
             }
@@ -117,6 +130,7 @@ report 50001 "ACO Package Label"
         "Generating Resource": record Resource;
         ACOProfileCustomer: Record "ACO Profile Customer";
         Resource: Record Resource;
+        ItemVariant: Record "Item Variant";
         ItemLbl: Label 'Item';
         AmountLbl: Label 'Amount';
         LengthLbl: Label 'Length';

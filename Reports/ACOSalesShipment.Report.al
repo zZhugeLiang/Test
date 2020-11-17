@@ -415,9 +415,12 @@ report 50012 "ACO Sales - Shipment"
                         column(ShortcutDimCode6_SalesShptLineCaption; ShortcutDimCode6Dimension.Name) { }
                         column(ShortcutDimCode7_SalesShptLineCaption; ShortcutDimCode7Dimension.Name) { }
                         column(ShortcutDimCode8_SalesShptLineCaption; ShortcutDimCode8Dimension.Name) { }
+                        column(ACOProfileCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Profile Code")) { }
                         column(ACOProfileDescription_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Profile Description")) { }
                         column(ACOCustomerItemNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Customer Item No.")) { }
                         column(ACOProfileCustDescription_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Profile Cust. Description")) { }
+                        column(ACONumberofUnits_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Number of Units")) { }
+                        column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
                         ///// Captions >>>>>
                         ///// Values <<<<<
                         // column(Type_SalesShptLine; "Sales Shipment Line".Type) { }
@@ -453,9 +456,11 @@ report 50012 "ACO Sales - Shipment"
                         column(ShortcutDimCode6_SalesShptLine; ShortcutDimCode[6]) { }
                         column(ShortcutDimCode7_SalesShptLine; ShortcutDimCode[7]) { }
                         column(ShortcutDimCode8_SalesShptLine; ShortcutDimCode[8]) { }
+                        column(ACOProfileCode_SalesShptLine; "Sales Shipment Line"."ACO Profile Code") { }
                         column(ACOProfileDescription_SalesShptLine; "Sales Shipment Line"."ACO Profile Description") { }
                         column(ACOCustomerItemNo_SalesShptLine; "Sales Shipment Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesShptLine; "Sales Shipment Line"."ACO Profile Cust. Description") { }
+                        column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")
@@ -556,6 +561,9 @@ report 50012 "ACO Sales - Shipment"
                             DimSetEntry2.SetRange("Dimension Set ID", "Dimension Set ID");
                             if DisplayAssemblyInformation then
                                 AsmHeaderExists := AsmToShipmentExists(PostedAsmHeader);
+
+                            if not ItemVariant.Get("No.", "Variant Code") then
+                                Clear(ItemVariant);
                         end;
 
                         trigger OnPostDataItem()
@@ -891,13 +899,13 @@ report 50012 "ACO Sales - Shipment"
         ShortcutDimCode6Dimension: Record Dimension;
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
+        ItemVariant: Record "Item Variant";
         ItemTrackingAppendix: Report "Item Tracking Appendix";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
         ItemTrackingDocMgt: Codeunit "Item Tracking Doc. Management";
-
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];

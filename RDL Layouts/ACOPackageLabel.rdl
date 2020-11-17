@@ -1164,6 +1164,18 @@ End Function
         <Field Name="TreatmentLbl">
           <DataField>TreatmentLbl</DataField>
         </Field>
+        <Field Name="Customer_Item_No_Caption">
+          <DataField>Customer_Item_No_Caption</DataField>
+        </Field>
+        <Field Name="Profile_Cust__DescriptionCaption">
+          <DataField>Profile_Cust__DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Number_of_UnitsCaption">
+          <DataField>Number_of_UnitsCaption</DataField>
+        </Field>
+        <Field Name="NumberOfMeters_ItemVariantCaption">
+          <DataField>NumberOfMeters_ItemVariantCaption</DataField>
+        </Field>
         <Field Name="Profile_no_">
           <DataField>Profile_no_</DataField>
         </Field>
@@ -1191,8 +1203,23 @@ End Function
         <Field Name="Your_Reference">
           <DataField>Your_Reference</DataField>
         </Field>
-        <Field Name="Treatment_Description">
-          <DataField>Treatment_Description</DataField>
+        <Field Name="Customer_Item_No_">
+          <DataField>Customer_Item_No_</DataField>
+        </Field>
+        <Field Name="Profile_Cust__Description">
+          <DataField>Profile_Cust__Description</DataField>
+        </Field>
+        <Field Name="Number_of_Units">
+          <DataField>Number_of_Units</DataField>
+        </Field>
+        <Field Name="Number_of_UnitsFormat">
+          <DataField>Number_of_UnitsFormat</DataField>
+        </Field>
+        <Field Name="NumberOfMeters_ItemVariant">
+          <DataField>NumberOfMeters_ItemVariant</DataField>
+        </Field>
+        <Field Name="NumberOfMeters_ItemVariantFormat">
+          <DataField>NumberOfMeters_ItemVariantFormat</DataField>
         </Field>
       </Fields>
       <Query>

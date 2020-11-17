@@ -11,25 +11,29 @@ report 50002 "ACO Generate Package"
                 {
                     field(Resource; _Resource)
                     {
+                        Caption = 'Resource';
                         ApplicationArea = Suite;
                         TableRelation = Resource."No.";
+                        ToolTip = ' ';
                     }
                     field(PackageType; _Packagetype)
                     {
                         OptionCaption = 'Box,Bundle,Carton,Cart,Chest,Tube,Empty racks,Pack,Pallet,Rack';
                         ApplicationArea = Suite;
+                        ToolTip = ' ';
                     }
                     field("Rack No."; "_RackNo.")
                     {
+                        Caption = 'Rack No.';
                         ApplicationArea = Suite;
                         Visible = _RackNoVisible;
+                        ToolTip = ' ';
                     }
                 }
             }
         }
-
-
     }
+
     procedure setRackNoVisible(Visible: Boolean)
     begin
         _RackNoVisible := Visible;

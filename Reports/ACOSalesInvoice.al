@@ -361,9 +361,12 @@ report 50010 "ACO Sales - Invoice"
                     column(TransportMethod_SalesInvHdr; "Sales Invoice Header"."Transport Method") { }
                     column(ExitPoint_SalesInvHdr; "Sales Invoice Header"."Exit Point") { }
                     column(Area_SalesInvHdr; "Sales Invoice Header".Area) { }
+                    column(ACOProfileCode_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Profile Code")) { }
                     column(ACOProfileDescription_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Profile Description")) { }
                     column(ACOCustomerItemNo_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Customer Item No.")) { }
                     column(ACOProfileCustDescription_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Profile Cust. Description")) { }
+                    column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
+                    column(ACONumberofUnits_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("ACO Number of Units")) { }
                     ///// >>
                     dataitem(DimensionLoop1; "Integer")
                     {
@@ -639,9 +642,11 @@ report 50010 "ACO Sales - Invoice"
                         column(ShortcutDimCode6_SalesInvLine; ShortcutDimCode[6]) { }
                         column(ShortcutDimCode7_SalesInvLine; ShortcutDimCode[7]) { }
                         column(ShortcutDimCode8_SalesInvLine; ShortcutDimCode[8]) { }
+                        column(ACOProfileCode_SalesInvoiceLine; "Sales Invoice Line"."ACO Profile Code") { }
                         column(ACOProfileDescription_SalesInvoiceLine; "Sales Invoice Line"."ACO Profile Description") { }
                         column(ACOCustomerItemNo_SalesInvoiceLine; "Sales Invoice Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesInvoiceLine; "Sales Invoice Line"."ACO Profile Cust. Description") { }
+                        column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                         ///// Values >>
                         dataitem("Sales Shipment Buffer"; "Integer")
                         {
@@ -795,6 +800,9 @@ report 50010 "ACO Sales - Invoice"
                             TotalAmountVAT += "Amount Including VAT" - Amount;
                             TotalAmountInclVAT += "Amount Including VAT";
                             TotalPaymentDiscOnVAT += -("Line Amount" - "Inv. Discount Amount" - "Amount Including VAT");
+
+                            if not ItemVariant.Get("Sales Invoice Line"."No.", "Sales Invoice Line"."Variant Code") then
+                                Clear(ItemVariant);
                         end;
 
                         trigger OnPreDataItem()
@@ -1250,6 +1258,7 @@ report 50010 "ACO Sales - Invoice"
         ShortcutDimCode6Dimension: Record Dimension;
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
+        ItemVariant: Record "Item Variant";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
