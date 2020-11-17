@@ -60,7 +60,7 @@ table 50016 "ACO Bath Sheet Header"
                     Rec."Report Day Part" := '01';
                 if (ReportTime >= 080000T) and (ReportTime < 160000T) then
                     Rec."Report Day Part" := '02';
-                if (ReportTime >= 160000T) or (ReportTime <= 235959T) then
+                if (ReportTime >= 160000T) and (ReportTime <= 235959T) then
                     Rec."Report Day Part" := '03';
 
                 Rec."Report Day" := Date2DWY(DT2Date("Report Date"), 1);

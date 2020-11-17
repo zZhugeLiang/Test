@@ -1,6 +1,6 @@
 table 50024 "ACO Package Line"
 {
-    Caption = 'Package Header';
+    Caption = 'Package Line';
     DataClassification = CustomerContent;
 
     fields
@@ -9,7 +9,6 @@ table 50024 "ACO Package Line"
         {
             DataClassification = CustomerContent;
             TableRelation = "ACO Package Header";
-
         }
         field(2; "Line No."; Integer)
         {
@@ -33,7 +32,6 @@ table 50024 "ACO Package Line"
             Editable = false;
             DataClassification = CustomerContent;
         }
-
         field(7; "Production Order Status"; Option)
         {
             Caption = 'Production Order Status';
@@ -42,14 +40,12 @@ table 50024 "ACO Package Line"
             Editable = false;
             DataClassification = CustomerContent;
         }
-
         field(8; "Production Order Line No."; Integer)
         {
             Caption = 'Production Order Line No.';
             Editable = false;
             DataClassification = CustomerContent;
         }
-
         field(9; "Bathsheet line No."; Integer)
         {
             DataClassification = CustomerContent;
@@ -75,7 +71,7 @@ table 50024 "ACO Package Line"
         field(14; "Treatment Description"; Text[100])
         {
             FieldClass = FlowField;
-            CalcFormula = Lookup (Item.Description where("No." = field(Treatment)));
+            CalcFormula = Lookup(Item.Description where("No." = field(Treatment)));
         }
         field(15; "Your Reference"; Text[35])
         {
@@ -86,6 +82,26 @@ table 50024 "ACO Package Line"
             DataClassification = CustomerContent;
         }
         field(17; "Quantity"; Integer)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(18; "Item No."; Code[20])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(5402; "Variant Code"; Code[10])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(50034; "Number of Units"; Decimal)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(50063; "Customer Item No."; Code[50])
+        {
+            DataClassification = CustomerContent;
+        }
+        field(50065; "Profile Cust. Description"; Text[100])
         {
             DataClassification = CustomerContent;
         }
