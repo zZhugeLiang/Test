@@ -127,7 +127,7 @@ report 50000 "ACO Bath Sheet"
             column(CreatedbyUser; User."User Name")
             {
             }
-            column(BathSheetLineComments; BathSheetLineComments)
+            column(AllComments; AllComments)
             {
             }
             column(ProjectColorDescriptionCaption; ProjectColorDescriptionCaptionLbl) { }
@@ -215,33 +215,60 @@ report 50000 "ACO Bath Sheet"
             var
                 ACOBathSheetLine: Record "ACO Bath Sheet Line";
                 ACOProfile: Record "ACO Profile";
+                Customer: Record Customer;
+                TempACOProfile: Record "ACO Profile" temporary;
+                TempCustomer: Record Customer temporary;
                 Item: Record Item;
                 CRLF: Text[2];
             begin
                 MeasureText := DONOTMEASURECaptionLbl;
                 HighEndText := '';
                 EURASText := '';
-                BathSheetLineComments := '';
+                AllComments := '';
 
                 CRLF[1] := 13;
                 CRLF[2] := 10;
 
+                AllComments += ACOBathSheetHeader."Bath Sheet Comment";
+
                 ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                 if ACOBathSheetLine.FindSet() then
                     repeat
+                        if not TempCustomer.Get(ACOBathSheetLine."Customer No.") then
+                            if Customer.Get(ACOBathSheetLine."Customer No.") and (Customer."ACO Comment Bath Card" <> '') then begin
+                                TempCustomer."No." := Customer."No.";
+                                TempCustomer."ACO Comment Bath Card" := Customer."ACO Comment Bath Card";
+                                TempCustomer.Insert();
+                            end;
+
                         if ACOBathSheetLine."High End" then
                             HighEndText := HighEndCaptionLbl;
 
                         if ACOProfile.Get(ACOBathSheetLine."Profile Code") then begin
-                            // if BathSheetLineComments <> '' then
-                            //     BathSheetLineComments += CRLF;
-                            // BathSheetLineComments += ACOProfile."Comment Bath Card";
+                            if not TempACOProfile.Get(ACOBathSheetLine."Profile Code") and (ACOProfile."Comment Bath Card" <> '') then begin
+                                TempACOProfile."Code" := ACOProfile."Code";
+                                TempACOProfile."Comment Bath Card" := ACOProfile."Comment Bath Card";
+                                TempACOProfile.Insert();
+                            end;
 
                             if MeasureText = DONOTMEASURECaptionLbl then
                                 if not ACOProfile."Not Measurable" then
                                     MeasureText := MEASURECaptionLbl;
                         end;
                     until (ACOBathSheetLine.Next() = 0) or ((HighEndText = HighEndCaptionLbl) and (MeasureText = MEASURECaptionLbl));
+
+                if TempCustomer.FindSet() then
+                    repeat
+                        AllComments += ',' + TempCustomer."ACO Comment Bath Card";
+                    until TempCustomer.Next() = 0;
+
+                if TempACOProfile.FindSet() then
+                    repeat
+                        AllComments += ',' + TempACOProfile."Comment Bath Card";
+                    until TempACOProfile.Next() = 0;
+
+                if (AllComments[1] = ',') and (StrLen(AllComments) > 1) then
+                    AllComments := CopyStr(AllComments, 2, StrLen(AllComments) - 1);
 
                 if Euras then
                     EURASText := EURASCaptionLbl;
@@ -277,6 +304,7 @@ report 50000 "ACO Bath Sheet"
         HighEndText: Text;
         EURASText: Text;
         BathSheetLineComments: Text;
+        AllComments: Text;
         BathSheetCaptionLbl: Label 'Bath Sheet';
         DateCaptionLbl: Label 'Date';
         SalesOrderCaptionLbl: Label 'Sales Order';
