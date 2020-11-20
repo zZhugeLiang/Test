@@ -45,6 +45,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         {
             Caption = 'Source Type';
             ObsoleteState = Removed;
+            ObsoleteReason = '';
             OptionMembers = Item,Family,"Sales Header";
             Editable = false;
             DataClassification = CustomerContent;
@@ -69,7 +70,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             Caption = 'Bath Sheet Qty.';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Sum ("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
+            CalcFormula = Sum("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
         }
 
         field(50009; "ACO Included"; Boolean)
@@ -134,5 +135,26 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             Editable = false;
             DataClassification = CustomerContent;
         }
+
+        field(50017; "ACO Rerun"; Boolean)
+        {
+            Caption = 'Rerun';
+            DataClassification = CustomerContent;
+        }
+
+        field(50018; "ACO Rerun Reason"; Code[10])
+        {
+            Caption = 'Rerun Reason';
+            TableRelation = "Reason Code";
+            DataClassification = CustomerContent;
+        }
     }
+
+    trigger OnModify()
+    var
+        RerunReasonMustHaveAValueErr: Label 'Rerun Reason must have a value if Rerun is checked.';
+    begin
+        if Rec."ACO Rerun" and (Rec."ACO Rerun Reason" = '') then
+            Error(RerunReasonMustHaveAValueErr);
+    end;
 }

@@ -65,6 +65,16 @@ pageextension 50007 "ACO Rel. Prod. Order Lines Ext" extends "Released Prod. Ord
             {
                 ApplicationArea = All;
             }
+
+            field("ACO Rerun"; "ACO Rerun")
+            {
+                ApplicationArea = All;
+            }
+
+            field("ACO Rerun Reason"; "ACO Rerun Reason")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

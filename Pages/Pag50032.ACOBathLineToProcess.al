@@ -6,7 +6,7 @@ page 50032 "ACO Bathsheet Lines To Process"
     ApplicationArea = All;
     SourceTable = "ACO Bath Sheet Line";
     //SourceTableTemporary = true;
-    SourceTableView = sorting("Bath Sheet No.", "Production Order No.", "Production Order Status", "Production Order Line No.") where(Packed = Filter(FALSE), Completed = Filter(TRUE));
+    SourceTableView = sorting("Bath Sheet No.", "Production Order No.", "Production Order Status", "Production Order Line No.") where(Packed = Filter(FALSE), Completed = Filter(TRUE), Rerun = const(false));
     layout
     {
         area(Content)

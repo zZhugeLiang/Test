@@ -200,8 +200,9 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
 
-        if ProductionOrderLine."ACO Remaining Quantity" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
-            Error(NumberofUnitsLtQuantityToBathSheetErr);
+        if not ProductionOrderLine."ACO Rerun" then
+            if ProductionOrderLine."ACO Remaining Quantity" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
+                Error(NumberofUnitsLtQuantityToBathSheetErr);
 
         ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
         ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status;
@@ -212,8 +213,11 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
         ACOBathSheetLine."Customer No." := SalesHeader."Sell-to Customer No.";
         ACOBathSheetLine.Quantity := ProductionOrderLine."ACO Quantity to Bath Sheet";
+        ACOBathSheetLine."Remaining Quantity" := ACOBathSheetLine.Quantity;
         ACOBathSheetLine."Profile Code" := ProductionOrderLine."ACO Profile Code";
         ACOBathSheetLine."Charge No." := ProductionOrderLine."ACO Charge No.";
+        ACOBathSheetLine.Rerun := ProductionOrderLine."ACO Rerun";
+        ACOBathSheetLine."Rerun Reason" := ProductionOrderLine."ACO Rerun Reason";
         ACOBathSheetLine.Color := SalesLine."ACO Color";
 
         if SalesLine.Type = SalesLine.Type::Item then // is deze regel nodig?
@@ -231,8 +235,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
 
-        ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
+        if not ProductionOrderLine."ACO Rerun" then
+            ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
+
         ProductionOrderLine."ACO Quantity to Bath Sheet" := ProductionOrderLine."ACO Remaining Quantity";
+        ProductionOrderLine."ACO Rerun" := false;
+        ProductionOrderLine."ACO Rerun Reason" := '';
         ProductionOrderLine.Modify();
     end;
 

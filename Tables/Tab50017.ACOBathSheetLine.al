@@ -48,7 +48,7 @@ table 50017 "ACO Bath Sheet Line"
             Caption = 'Profile Description';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Lookup ("ACO Profile".Description where("Code" = field("Profile Code")));
+            CalcFormula = Lookup("ACO Profile".Description where("Code" = field("Profile Code")));
         }
 
         field(7; "Length"; Decimal)
@@ -86,6 +86,7 @@ table 50017 "ACO Bath Sheet Line"
         field(11; "Rerun"; Boolean)
         {
             Caption = 'Rerun';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
@@ -93,6 +94,7 @@ table 50017 "ACO Bath Sheet Line"
         {
             Caption = 'Rerun Reason';
             TableRelation = "Reason Code";
+            Editable = false;
             DataClassification = CustomerContent;
         }
 
@@ -188,7 +190,7 @@ table 50017 "ACO Bath Sheet Line"
             Caption = 'Completed';
             Editable = False;
             FieldClass = FlowField;
-            CalcFormula = Lookup ("ACO Bath Sheet Header".Complete where("No." = field("Bath Sheet No.")));
+            CalcFormula = Lookup("ACO Bath Sheet Header".Complete where("No." = field("Bath Sheet No.")));
         }
 
         field(26; "Qty in Package"; Decimal)
@@ -203,7 +205,7 @@ table 50017 "ACO Bath Sheet Line"
             Caption = 'Quantity Processed';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Sum ("ACO Package Line"."Quantity" where("Bathsheet No." = field("Bath Sheet No."), "Production Order No." = field("Production Order No."),
+            CalcFormula = Sum("ACO Package Line"."Quantity" where("Bathsheet No." = field("Bath Sheet No."), "Production Order No." = field("Production Order No."),
                                                                     "Production Order Status" = field("Production Order Status"), "Production Order Line No." = field("Production Order Line No.")));
         }
 

@@ -522,11 +522,6 @@ table 50016 "ACO Bath Sheet Header"
         Modify();
     end;
 
-    local procedure DetermineLa()
-    begin
-
-    end;
-
     procedure CalculateProcessTimes()
     var
         ACOAppSetup: Record "ACO App Setup";
