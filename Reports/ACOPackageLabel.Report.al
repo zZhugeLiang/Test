@@ -16,6 +16,9 @@ report 50001 "ACO Package Label"
             column(No; "No.")
             {
             }
+            column(Customer_No_; "Customer No.")
+            {
+            }
             column(CustomerName; "Customer Name")
             {
             }
@@ -57,6 +60,7 @@ report 50001 "ACO Package Label"
                 column(Length; Length) { }
                 column(External_Document_No_; "External Document No.") { }
                 column(Your_Reference; "Your Reference") { }
+                column(Treatment_Description; "Treatment Description") { }
                 column(Customer_Item_No_; "Customer Item No.") { }
                 column(Profile_Cust__Description; "Profile Cust. Description") { }
                 column(Number_of_Units; "Number of Units") { }
