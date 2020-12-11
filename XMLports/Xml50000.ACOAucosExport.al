@@ -5,9 +5,9 @@ xmlport 50000 "ACO Aucos Export"
 
     Format = VariableText;
     FieldDelimiter = '"';
-    FieldSeparator = ';';
+    FieldSeparator = ',';
     RecordSeparator = '<NewLine>';
-    TableSeparator = ';';
+    TableSeparator = ',';
     TextEncoding = UTF8;
 
     schema
@@ -196,6 +196,7 @@ xmlport 50000 "ACO Aucos Export"
             }
         }
     }
+
     requestpage
     {
         layout
@@ -214,4 +215,11 @@ xmlport 50000 "ACO Aucos Export"
             }
         }
     }
+
+
+    trigger OnPostXmlPort()
+    begin
+        currXMLport.Filename := 'AucosExport' + '.csv';
+    end;
+
 }

@@ -1,7 +1,7 @@
 report 50013 "ACO Pick Instruction"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = 'RDL Layouts\ACOPickInstruction.rdl';
+    // RDLCLayout = 'RDL Layouts\ACOPickInstruction.rdl';
     Caption = 'Pick Instruction';
 
     dataset
@@ -27,7 +27,7 @@ report 50013 "ACO Pick Instruction"
             dataitem("Sales Header"; "Sales Header")
             {
                 DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
-                RequestFilterFields = "No.";
+                RequestFilterFields = "No.", "Sell-to Customer No.";
                 column(No_SalesHeader; "No.")
                 {
                     IncludeCaption = true;
@@ -38,6 +38,18 @@ report 50013 "ACO Pick Instruction"
                     IncludeCaption = true;
                 }
                 column(CustomerName_SalesHeader; "Sell-to Customer Name")
+                {
+                    IncludeCaption = true;
+                }
+                column(Sell_to_Address; "Sell-to Address")
+                {
+                    IncludeCaption = true;
+                }
+                column(Sell_to_Post_Code; "Sell-to Post Code")
+                {
+                    IncludeCaption = true;
+                }
+                column(Sell_to_City; "Sell-to City")
                 {
                     IncludeCaption = true;
                 }
@@ -81,6 +93,10 @@ report 50013 "ACO Pick Instruction"
                 {
                     IncludeCaption = true;
                 }
+                column(ACO_Customer_Comment; "ACO Customer Comment")
+                {
+                    IncludeCaption = true;
+                }
                 column(WorkDescription_SalesHeaderCaption; "Sales Header".FieldCaption("Work Description")) { }
                 column(WorkDescription_SalesHeader; "Sales Header".GetWorkDescription()) { }
                 column(TotalNetWeight; TotalNetWeight)
@@ -89,182 +105,148 @@ report 50013 "ACO Pick Instruction"
                 column(TotalGrossWeight; TotalGrossWeight)
                 {
                 }
-                column(PackageNo; ACOPackageLine."Package No.")
-                {
-                }
                 column(PackageTypeText; PackageTypeText)
                 {
                 }
-                //
-                dataitem("Sales Line"; "Sales Line")
+                column(UserID; UserID()) { }
+                dataitem("ACO Package Line"; "ACO Package Line")
                 {
-                    DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
-                    DataItemTableView = SORTING("Document Type", "Document No.", "Line No.") WHERE(Type = CONST(Item));
-                    column(LineNo_SalesLine; "Line No.")
-                    {
-                    }
-                    column(ItemNo_SalesLine; "No.")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(Description_SalesLine; Description)
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(VariantCode_SalesLine; "Variant Code")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(LocationCode_SalesLine; "Location Code")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(BinCode_SalesLine; "Bin Code")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(ShipmentDate_SalesLine; Format("Shipment Date"))
-                    {
-                    }
-                    column(Quantity_SalesLine; Quantity)
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(UnitOfMeasure_SalesLine; "Unit of Measure")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(QuantityToShip_SalesLine; "Qty. to Ship")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(QuantityShipped_SalesLine; "Quantity Shipped")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(QtyToAsm; QtyToAsm)
-                    {
-                    }
+                    DataItemLink = "Sales Order No." = field("No.");
+                    // DataItemTableView = SORTING("Document Type", "Document No.", "Line No.") WHERE(Type = CONST(Item));
+                    column(Package_No_; "Package No.") { }
+
+                    // column(LineNo_SalesLine; "Line No.")
+                    // {
+                    // }
+                    column(Sales_Line_No; "Sales Line No") { }
+
                     //
-                    column(Line_No_; "Line No.")
-                    {
-                        IncludeCaption = true;
-                    }
-                    // column(Net_Weight; "Net Weight")
+                    // dataitem("Sales Line"; "Sales Line")
                     // {
-                    //     IncludeCaption = true;
-                    // }
-                    // column(Gross_Weight; "Gross Weight")
-                    // {
-                    //     IncludeCaption = true;
-                    // }
-                    column(NetWeight; NetWeight)
-                    {
+                    //     DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
+                    //     DataItemTableView = SORTING("Document Type", "Document No.", "Line No.") WHERE(Type = CONST(Item));
+                    //     column(LineNo_SalesLine; "Line No.")
+                    //     {
+                    //     }
+                    //     column(ItemNo_SalesLine; "No.")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(Description_SalesLine; Description)
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(VariantCode_SalesLine; "Variant Code")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(LocationCode_SalesLine; "Location Code")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(BinCode_SalesLine; "Bin Code")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(ShipmentDate_SalesLine; Format("Shipment Date"))
+                    //     {
+                    //     }
+                    //     column(Quantity_SalesLine; Quantity)
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(UnitOfMeasure_SalesLine; "Unit of Measure")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(QuantityToShip_SalesLine; "Qty. to Ship")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(QuantityShipped_SalesLine; "Quantity Shipped")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(QtyToAsm; QtyToAsm)
+                    //     {
+                    //     }
+                    //     //
+                    //     column(Line_No_; "Line No.")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     // column(Net_Weight; "Net Weight")
+                    //     // {
+                    //     //     IncludeCaption = true;
+                    //     // }
+                    //     // column(Gross_Weight; "Gross Weight")
+                    //     // {
+                    //     //     IncludeCaption = true;
+                    //     // }
+                    //     column(NetWeight; NetWeight)
+                    //     {
 
-                    }
-                    column(GrossWeight; GrossWeight)
-                    {
+                    //     }
+                    //     column(GrossWeight; GrossWeight)
+                    //     {
 
-                    }
-                    column(ACO_Profile_Code; "ACO Profile Code")
+                    //     }
+                    column(ACO_Profile_Code; SalesLine."ACO Profile Code")
                     {
                         IncludeCaption = true;
                     }
-                    column(ACO_Profile_Description; "ACO Profile Description")
+                    column(ACO_Profile_Description; SalesLine."ACO Profile Description")
                     {
                         IncludeCaption = true;
                     }
-                    column(ACO_Customer_Item_No_; "ACO Customer Item No.")
+                    column(Quantity; Quantity)
                     {
-                        IncludeCaption = true;
+                        // IncludeCaption = true;
                     }
-                    column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters")
+                    column(Length; Length)
                     {
-                        IncludeCaption = true;
-                    }
-                    column(LengthInMilliMeters; ItemVariant."ACO Number of Meters" * 1000)
-                    {
+                        // IncludeCaption = true;
                     }
                     column(PictureFile_ACOProfile; ACOProfile."Picture File")
                     {
-                        IncludeCaption = true;
+                        // IncludeCaption = true;
                     }
-                    //
-                    dataitem("Assembly Line"; "Assembly Line")
-                    {
-                        DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
-                        column(No_AssemblyLine; "No.")
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(Description_AssemblyLine; Description)
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(VariantCode_AssemblyLine; "Variant Code")
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(Quantity_AssemblyLine; Quantity)
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(QuantityPer_AssemblyLine; "Quantity per")
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(UnitOfMeasure_AssemblyLine; GetUOM("Unit of Measure Code"))
-                        {
-                        }
-                        column(LocationCode_AssemblyLine; "Location Code")
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(BinCode_AssemblyLine; "Bin Code")
-                        {
-                            IncludeCaption = true;
-                        }
-                        column(QuantityToConsume_AssemblyLine; "Quantity to Consume")
-                        {
-                            IncludeCaption = true;
-                        }
+                    column(NumberOfPallets; NumberOfPallets) { }
+                    column(NumberOfPacks; NumberOfPacks) { }
+                    column(NumberOfBundles; NumberOfBundles) { }
+                    //     column(ACO_Customer_Item_No_; "ACO Customer Item No.")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters")
+                    //     {
+                    //         IncludeCaption = true;
+                    //     }
+                    //     column(LengthInMilliMeters; ItemVariant."ACO Number of Meters" * 1000)
+                    //     {
+                    //     }
 
-                        trigger OnPreDataItem()
-                        begin
-                            if not AsmExists then
-                                CurrReport.Break();
-                            SetRange("Document Type", AsmHeader."Document Type");
-                            SetRange("Document No.", AsmHeader."No.");
-                        end;
-                    }
+                    //     //
 
                     trigger OnAfterGetRecord()
-                    var
-                        AssembleToOrderLink: Record "Assemble-to-Order Link";
                     begin
-                        AssembleToOrderLink.Reset();
-                        AssembleToOrderLink.SetCurrentKey(Type, "Document Type", "Document No.", "Document Line No.");
-                        AssembleToOrderLink.SetRange(Type, AssembleToOrderLink.Type::Sale);
-                        AssembleToOrderLink.SetRange("Document Type", "Document Type");
-                        AssembleToOrderLink.SetRange("Document No.", "Document No.");
-                        AssembleToOrderLink.SetRange("Document Line No.", "Line No.");
-                        AsmExists := AssembleToOrderLink.FindFirst;
-                        QtyToAsm := 0;
-                        if AsmExists then
-                            if AsmHeader.Get(AssembleToOrderLink."Assembly Document Type", AssembleToOrderLink."Assembly Document No.") then
-                                QtyToAsm := AsmHeader."Quantity to Assemble"
-                            else
-                                AsmExists := false;
+                        Clear(SalesLine);
+                        Clear(ItemVariant);
 
-                        if not ItemVariant.Get("No.", "Variant Code") then
-                            Clear(ItemVariant);
+                        if SalesLine.Get(SalesLine."Document Type"::Order, "ACO Package Line"."Sales Order No.", "ACO Package Line"."Sales Line No") then begin
+                            if not ItemVariant.Get(SalesLine."No.", "Variant Code") then
+                                Clear(ItemVariant);
+                            if ACOProfile.Get(SalesLine."ACO Profile Code") then begin
+                                ACOProfile.CalcFields("Picture File");
+                                NetWeight := ACOProfile."Weight per meter" * SalesLine."ACO Number of Units";
+                                GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
+                            end else
+                                Clear(ACOProfile);
 
-                        if ACOProfile.Get("ACO Profile Code") then begin
-                            ACOProfile.CalcFields("Picture File");
-                            NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";
-                            GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
-                        end else
-                            Clear(ACOProfile);
+                        end;
+
+
+
                     end;
                 }
 
@@ -315,25 +297,41 @@ report 50013 "ACO Pick Instruction"
     labels
     {
         OrderPickingListCaption = 'Pick Instruction';
+        PickingNoteForCustomerCaption = 'Picking note for customer';// NLD Picklijst van klant
+        ColliNoCustomerNoCaption = 'Colli No. + Customer No.';// NLD = Collinr. Alucol + klant
+        SalesOrderPlusLineCaption = 'Sales Order + Line';// NLD = Verkooporder + regel
+        YourReferencePlusSalesCommentCaption = 'Your Reference + Sales Comment';// NLD = Referentie + WB notitie
+        PackRackCaption = 'Pack/Rack';//NLD = Pak/Rek
+        SalesOrderCaption = 'Sales Order';//NLD=Verkooporder
+        ItemPlusDescriptionCaption = 'Item + Description'; // NLD=Artikel + omschrijving
+        QuantityCaption = 'Quantity';
+        LengthCaption = 'Length';
+        PictureCaption = 'Picture';//NLD = Afbeelding
+        OverviewPackageCaption = 'Overview Package';//NLD= Overzicht verpakking
+        PalletCaption = 'Pallet';
+        PackCaption = 'Pack';//NLD=Pak;
+        BundleCaption = 'Bundle';// NLD= Bundel
+
         PageCaption = 'Page';
-        ItemNoCaption = 'Item No.';
-        OrderNoCaption = 'Order No.';
-        CustomerNoCaption = 'Customer No.';
-        CustomerNameCaption = 'Customer Name';
-        QtyToAssembleCaption = 'Quantity to Assemble';
-        QtyAssembledCaption = 'Quantity Assembled';
-        ShipmentDateCaption = 'Shipment Date';
-        QtyPickedCaption = 'Quantity Picked';
-        UOMCaption = 'Unit of Measure';
-        QtyConsumedCaption = 'Quantity Consumed';
-        CopyCaption = 'Copy';
+        // ItemNoCaption = 'Item No.';
+        // OrderNoCaption = 'Order No.';
+        // CustomerNoCaption = 'Customer No.';
+        // CustomerNameCaption = 'Customer Name';
+        // QtyToAssembleCaption = 'Quantity to Assemble';
+        // QtyAssembledCaption = 'Quantity Assembled';
+        // ShipmentDateCaption = 'Shipment Date';
+        // QtyPickedCaption = 'Quantity Picked';
+        // UOMCaption = 'Unit of Measure';
+        // QtyConsumedCaption = 'Quantity Consumed';
+        // CopyCaption = 'Copy';
         PrintedByCaption = 'Printed by';
         OfCaption = 'of';
         PageOfCaption = 'Page %1 of %2';
-        LengthCaption = 'Length';
         TotalWeightCaption = 'Total Weight';
         TotalNetWeightCaption = 'Total Net Weight';
         TotalGrossWeightCaption = 'Total Gross Weight';
+        DriverCaption = 'Driver';
+        ForkliftDriverCaption = 'Forklift Driver';
     }
 
     trigger OnPreReport()
@@ -343,44 +341,45 @@ report 50013 "ACO Pick Instruction"
     end;
 
     var
-        AsmHeader: Record "Assembly Header";
+        // AsmHeader: Record "Assembly Header";
         ShipToCountryRegion: Record "Country/Region";
         User: Record User;
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
         ACOPackageLine: Record "ACO Package Line";
+        SalesLine: Record "Sales Line";
         NoOfCopies: Integer;
         //Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack
-        NumberOfBoxes: Integer;
+        // NumberOfBoxes: Integer;
         NumberOfBundles: Integer;
-        NumberOfCartons: Integer;
-        NumberOfCarts: Integer;
-        NumberOfChests: Integer;
-        NumberOfTubes: Integer;
-        NumberOfEmptyRacks: Integer;
+        // NumberOfCartons: Integer;
+        // NumberOfCarts: Integer;
+        // NumberOfChests: Integer;
+        // NumberOfTubes: Integer;
+        // NumberOfEmptyRacks: Integer;
         NumberOfPacks: Integer;
         NumberOfPallets: Integer;
-        NumberOfRacks: Integer;
+        // NumberOfRacks: Integer;
 
         DateTxt: Text;
         CompNameText: Text;
         PackageTypeText: Text;
-        QtyToAsm: Decimal;
+        // QtyToAsm: Decimal;
         TotalNetWeight: Decimal;
         TotalGrossWeight: Decimal;
         NetWeight: Decimal;
         GrossWeight: Decimal;
-        AsmExists: Boolean;
+    // AsmExists: Boolean;
 
-    local procedure GetUOM(UOMCode: Code[10]): Text
-    var
-        UnitOfMeasure: Record "Unit of Measure";
-    begin
-        if UnitOfMeasure.Get(UOMCode) then
-            exit(UnitOfMeasure.Description);
-        exit(UOMCode);
-    end;
+    // local procedure GetUOM(UOMCode: Code[10]): Text
+    // var
+    //     UnitOfMeasure: Record "Unit of Measure";
+    // begin
+    //     if UnitOfMeasure.Get(UOMCode) then
+    //         exit(UnitOfMeasure.Description);
+    //     exit(UOMCode);
+    // end;
 
     procedure InitializeRequest(NewNoOfCopies: Integer)
     begin
@@ -398,26 +397,26 @@ report 50013 "ACO Pick Instruction"
             ACOPackageHeader.Get(ACOPackageLine."Package No.");
             PackageTypeText := Format(ACOPackageHeader."Packing Type");
             case ACOPackageHeader."Packing Type" of
-                Packagetype::Box:
-                    NumberOfBoxes += 1;
+                // Packagetype::Box:
+                //     NumberOfBoxes += 1;
                 Packagetype::Bundle:
                     NumberOfBundles += 1;
-                Packagetype::Carton:
-                    NumberOfCartons += 1;
-                Packagetype::Cart:
-                    NumberOfCarts += 1;
-                Packagetype::Chest:
-                    NumberOfChests += 1;
-                Packagetype::Tube:
-                    NumberOfTubes += 1;
-                Packagetype::"Empty Racks":
-                    NumberOfEmptyRacks += 1;
+                // Packagetype::Carton:
+                //     NumberOfCartons += 1;
+                // Packagetype::Cart:
+                //     NumberOfCarts += 1;
+                // Packagetype::Chest:
+                //     NumberOfChests += 1;
+                // Packagetype::Tube:
+                //     NumberOfTubes += 1;
+                // Packagetype::"Empty Racks":
+                //     NumberOfEmptyRacks += 1;
                 Packagetype::Pack:
                     NumberOfPacks += 1;
                 Packagetype::Pallet:
                     NumberOfPallets += 1;
-                Packagetype::Rack:
-                    NumberOfRacks += 1;
+            // Packagetype::Rack:
+            //     NumberOfRacks += 1;
             end
         end else
             Clear(ACOPackageLine);
@@ -426,10 +425,9 @@ report 50013 "ACO Pick Instruction"
     local procedure GetWeights(SalesHeader: Record "Sales Header")
     var
         CurrentNetWeight: Decimal;
-        SalesLine: Record "Sales Line";
+        // SalesLine: Record "Sales Line";
         CurrentGrossWeight: Decimal;
     begin
-
         TotalNetWeight := 0;
         TotalGrossWeight := 0;
         SalesLine.SetRange("Document Type", SalesHeader."Document Type");

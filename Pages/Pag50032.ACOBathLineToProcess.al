@@ -266,7 +266,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 if SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.") then begin
                                     PackageLine."Your Reference" := SalesOrder."Your Reference";
                                     PackageLine."External Document No." := SalesOrder."External Document No.";
-                                    if SalesLine.Get(SalesLine."Document Type"::Order, BathLineTempRecord."Sales Order No.", BathLineTempRecord, "Sales Order Line No.") then begin
+                                    if SalesLine.Get(SalesLine."Document Type"::Order, BathLineTempRecord."Sales Order No.", BathLineTempRecord."Sales Order Line No.") then begin
                                         PackageLine."Variant Code" := SalesLine."Variant Code";
                                         PackageLine."Number of Units" := SalesLine."ACO Number of Units";
                                         PackageLine."Customer Item No." := SalesLine."ACO Customer Item No.";

@@ -4532,65 +4532,80 @@
           <target>Pickinstructie</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel OrderPickingListCaption</note>
         </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1628563900" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picking note for customer</source>
+	  <target>Picklijst van klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PickingNoteForCustomerCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 3443039713" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colli No. + Customer No.</source>
+	  <target>Collinr. Alucol + klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ColliNoCustomerNoCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 3415716336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order + Line</source>
+          <target>Verkooporder + Verkooporderregel</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel SalesOrderPlusLineCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 942581119" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference + Sales Comment</source>
+          <target>Referentie + WB notitie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel YourReferencePlusSalesCommentCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1680161648" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack/Rack</source>
+          <target>Pak/Rek</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PackRackCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 3728671708" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order</source>
+          <target>Verkooporder</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel SalesOrderCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1042063553" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item + Description</source>
+          <target>Artikel + omschrijving</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ItemPlusDescriptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 54430663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target>Aantal</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel QuantityCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1210406510" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <target>Lengte</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel LengthCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 604259918" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picture</source>
+          <target>Afbeelding</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PictureCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1464042409" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overview Package</source>
+          <target>Overzicht verpakking</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel OverviewPackageCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 2956119802" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pallet</source>
+          <target>Pallet</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PalletCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1747541873" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack</source>
+          <target>Pak</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PackCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1771083126" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bundle</source>
+          <target>Bundel</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel BundleCaption</note>
+        </trans-unit>
         <trans-unit id="Report 2030144248 - ReportLabel 501693335" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page</source>
           <target>Pagina</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PageCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 3352664566" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item No.</source>
-          <target>Artikelnr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ItemNoCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 397892315" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Order No.</source>
-          <target>Ordernr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel OrderNoCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1049058725" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer No.</source>
-          <target>Klantnr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel CustomerNoCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1498469207" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Name</source>
-          <target>Klantnaam</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel CustomerNameCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1559975813" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity to Assemble</source>
-          <target>Aantal te assembleren</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel QtyToAssembleCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1211936208" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity Assembled</source>
-          <target>Aantal geassembleerd</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel QtyAssembledCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1955847566" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Date</source>
-          <target>Verzenddatum</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ShipmentDateCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 3964645542" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity Picked</source>
-          <target>Aantal gepickt</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel QtyPickedCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1109914131" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unit of Measure</source>
-          <target>Eenheid</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel UOMCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 4223383654" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity Consumed</source>
-          <target>Aantal verbruikt</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel QtyConsumedCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 3705442061" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copy</source>
-          <target>Kopie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel CopyCaption</note>
         </trans-unit>
         <trans-unit id="Report 2030144248 - ReportLabel 289772055" size-unit="char" translate="yes" xml:space="preserve">
           <source>Printed by</source>
@@ -4607,11 +4622,6 @@
           <target>Pagina %1 van %2</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel PageOfCaption</note>
         </trans-unit>
-        <trans-unit id="Report 2030144248 - ReportLabel 1210406510" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Length</source>
-          <target>Lengte</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel LengthCaption</note>
-        </trans-unit>
         <trans-unit id="Report 2030144248 - ReportLabel 383460440" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Weight</source>
           <target>Totaal gewicht</target>
@@ -4626,6 +4636,16 @@
           <source>Total Gross Weight</source>
           <target>Totaal brutogewicht</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel TotalGrossWeightCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 1311424508" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Driver</source>
+          <target>Chauffeur</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel DriverCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2030144248 - ReportLabel 2005013753" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forklift Driver</source>
+          <target>Heftruck chauffeur</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ForkliftDriverCaption</note>
         </trans-unit>
         <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 690520591" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 does not exist as Customer in the database or as EDI Customer.</source>
