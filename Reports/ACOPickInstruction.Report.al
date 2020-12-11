@@ -28,10 +28,6 @@ report 50013 "ACO Pick Instruction"
             {
                 DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
                 RequestFilterFields = "No.", "Sell-to Customer No.";
-                column(No_SalesHeader; "No.")
-                {
-                    IncludeCaption = true;
-                }
 
                 column(CustomerNo_SalesHeader; "Sell-to Customer No.")
                 {
@@ -86,10 +82,6 @@ report 50013 "ACO Pick Instruction"
                 {
                 }
                 column(External_Document_No_; "External Document No.")
-                {
-                    IncludeCaption = true;
-                }
-                column(Your_Reference; "Your Reference")
                 {
                     IncludeCaption = true;
                 }
@@ -210,6 +202,14 @@ report 50013 "ACO Pick Instruction"
                     column(PictureFile_ACOProfile; ACOProfile."Picture File")
                     {
                         // IncludeCaption = true;
+                    }
+                    column(No_SalesHeader; "Sales Header"."No.")
+                    {
+                        IncludeCaption = true;
+                    }
+                    column(Your_Reference; "Your Reference")
+                    {
+                        IncludeCaption = true;
                     }
                     column(NumberOfPallets; NumberOfPallets) { }
                     column(NumberOfPacks; NumberOfPacks) { }
@@ -391,33 +391,39 @@ report 50013 "ACO Pick Instruction"
         ACOPackageHeader: Record "ACO Package Header";
         Packagetype: Option Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack;
     begin
+        NumberOfBundles := 0;
+        NumberOfPacks := 0;
+        NumberOfPallets := 0;
+
         ACOPackageLine.SetCurrentKey("Sales Order No.");
         ACOPackageLine.SetRange("Sales Order No.", SalesHeader."No.");
-        if ACOPackageLine.FindFirst() then begin
+        if ACOPackageLine.FindSet() then begin
             ACOPackageHeader.Get(ACOPackageLine."Package No.");
             PackageTypeText := Format(ACOPackageHeader."Packing Type");
-            case ACOPackageHeader."Packing Type" of
-                // Packagetype::Box:
-                //     NumberOfBoxes += 1;
-                Packagetype::Bundle:
-                    NumberOfBundles += 1;
-                // Packagetype::Carton:
-                //     NumberOfCartons += 1;
-                // Packagetype::Cart:
-                //     NumberOfCarts += 1;
-                // Packagetype::Chest:
-                //     NumberOfChests += 1;
-                // Packagetype::Tube:
-                //     NumberOfTubes += 1;
-                // Packagetype::"Empty Racks":
-                //     NumberOfEmptyRacks += 1;
-                Packagetype::Pack:
-                    NumberOfPacks += 1;
-                Packagetype::Pallet:
-                    NumberOfPallets += 1;
-            // Packagetype::Rack:
-            //     NumberOfRacks += 1;
-            end
+            repeat
+                case ACOPackageHeader."Packing Type" of
+                    // Packagetype::Box:
+                    //     NumberOfBoxes += 1;
+                    Packagetype::Bundle:
+                        NumberOfBundles += 1;
+                    // Packagetype::Carton:
+                    //     NumberOfCartons += 1;
+                    // Packagetype::Cart:
+                    //     NumberOfCarts += 1;
+                    // Packagetype::Chest:
+                    //     NumberOfChests += 1;
+                    // Packagetype::Tube:
+                    //     NumberOfTubes += 1;
+                    // Packagetype::"Empty Racks":
+                    //     NumberOfEmptyRacks += 1;
+                    Packagetype::Pack:
+                        NumberOfPacks += 1;
+                    Packagetype::Pallet:
+                        NumberOfPallets += 1;
+                // Packagetype::Rack:
+                //     NumberOfRacks += 1;
+                end;
+            until ACOPackageLine.Next() = 0;
         end else
             Clear(ACOPackageLine);
     end;

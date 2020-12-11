@@ -652,10 +652,10 @@ table 50016 "ACO Bath Sheet Header"
         // Str := CurrDens * TotalSurface * 100;
         Str := CurrDens * TotalSurface;
 
-        if Str > MaxCurrentDensityBath then begin
-            CurrDens := 0;
-            BathTime := 0;
-            Str := 0;
-        end;
+        // if Str > MaxCurrentDensityBath then begin
+        //     CurrDens := 0;
+        //     BathTime := 0;
+        //     Str := 0;
+        // end;
     end;
 }
