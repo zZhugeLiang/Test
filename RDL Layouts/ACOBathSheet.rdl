@@ -7638,20 +7638,8 @@ End Function
         <Field Name="ThickStainingCaption">
           <DataField>ThickStainingCaption</DataField>
         </Field>
-        <Field Name="ThickStaining">
-          <DataField>ThickStaining</DataField>
-        </Field>
-        <Field Name="ThickStainingFormat">
-          <DataField>ThickStainingFormat</DataField>
-        </Field>
         <Field Name="ThinStainingCaption">
           <DataField>ThinStainingCaption</DataField>
-        </Field>
-        <Field Name="ThinStaining">
-          <DataField>ThinStaining</DataField>
-        </Field>
-        <Field Name="ThinStainingFormat">
-          <DataField>ThinStainingFormat</DataField>
         </Field>
         <Field Name="TotalProfileSurfaceCaption">
           <DataField>TotalProfileSurfaceCaption</DataField>
@@ -7910,6 +7898,18 @@ End Function
         </Field>
         <Field Name="Name_ACOProjectColorHeader">
           <DataField>Name_ACOProjectColorHeader</DataField>
+        </Field>
+        <Field Name="ThickStaining">
+          <DataField>ThickStaining</DataField>
+        </Field>
+        <Field Name="ThickStainingFormat">
+          <DataField>ThickStainingFormat</DataField>
+        </Field>
+        <Field Name="ThinStaining">
+          <DataField>ThinStaining</DataField>
+        </Field>
+        <Field Name="ThinStainingFormat">
+          <DataField>ThinStainingFormat</DataField>
         </Field>
       </Fields>
       <Query>

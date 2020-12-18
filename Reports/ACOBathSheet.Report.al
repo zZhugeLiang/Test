@@ -33,13 +33,8 @@ report 50000 "ACO Bath Sheet"
             {
             }
             column(ThickStainingCaption; ThickStainingCaptionLbl) { }
-            column(ThickStaining; Thick)
-            {
-            }
             column(ThinStainingCaption; ThinStainingCaptionLbl) { }
-            column(ThinStaining; Thin)
-            {
-            }
+
             column(TotalProfileSurfaceCaption; TotalProfileSurfaceCaptionLbl) { }
             column(TotalSurfaceProfiles; "Total Surface Profiles")
             {
@@ -182,13 +177,21 @@ report 50000 "ACO Bath Sheet"
                 column(Name_ACOProjectColorHeader; ACOProjectColorHeader.Name)
                 {
                 }
-
+                column(ThickStaining; MaxThickStainingTime)
+                {
+                }
+                column(ThinStaining; MinThinStainingTime)
+                {
+                }
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
                     Customer: Record Customer;
                     SalesLine: Record "Sales Line";
+                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
+                    MaxThickStainingTime := 0;
+                    MinThinStainingTime := 0;
                     if not Item.Get("Treatment") then
                         Clear(Item);
 
@@ -208,6 +211,8 @@ report 50000 "ACO Bath Sheet"
                         Clear(Customer);
 
                     CustomerName := Customer.Name;
+
+                    ACOBathSheetMgt.DetermineStainingTimes(SalesLine, MinThinStainingTime, MaxThickStainingTime, Customer);
                 end;
             }
 
@@ -305,6 +310,8 @@ report 50000 "ACO Bath Sheet"
         EURASText: Text;
         BathSheetLineComments: Text;
         AllComments: Text;
+        MaxThickStainingTime: Decimal;
+        MinThinStainingTime: Decimal;
         BathSheetCaptionLbl: Label 'Bath Sheet';
         DateCaptionLbl: Label 'Date';
         SalesOrderCaptionLbl: Label 'Sales Order';

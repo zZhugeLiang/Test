@@ -119,7 +119,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                     TotalCircumference += SalesLine."ACO Profile Circumference";
                     DetermineStainingTimes(SalesLine, MinThinStainingTime, MaxThickStainingTime, Customer);
 
-                    if ((PreviousMinThinStainingTime <> MinThinStainingTime) and (PreviousMinThinStainingTime <> -1)) or ((PreviousMaxThickStainingTime <> MaxThickStainingTime) and (PreviousMaxThickStainingTime <> -1)) then begin
+                    if ((PreviousMinThinStainingTime <> MinThinStainingTime) and (PreviousMinThinStainingTime <> 99999)) or ((PreviousMaxThickStainingTime <> MaxThickStainingTime) and (PreviousMaxThickStainingTime <> -1)) then begin
                         ACOAppSetup.Get();
                         ACOBathSheetHeader."Bath Sheet Comment" := ACOAppSetup."Multiple Staining Times Text";
                     end;
@@ -151,7 +151,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.Thin := MinThinStainingTime;
         ACOBathSheetHeader.Measure := Measure;
         ACOBathSheetHeader.Circumference := TotalCircumference;
-        //ACOBathSheetHeader.Comment := Multiple Staining Times Text(Appsetup); bij afwijkende waarde, 0/10 0/10 niet 0/10 0/5 wel, dus bij dezelfde waarden voor vershcillende verkoopregels niet
         ACOBathSheetHeader.Insert(true);
     end;
 
