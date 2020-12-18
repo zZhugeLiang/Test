@@ -1048,7 +1048,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ThickStaining.Value</Value>
+                                  <Value>=Fields!ThickStainingTimeLine.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -1078,7 +1078,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ThinStaining.Value</Value>
+                                  <Value>=Fields!ThinStainingTimeLine.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -7641,6 +7641,18 @@ End Function
         <Field Name="ThinStainingCaption">
           <DataField>ThinStainingCaption</DataField>
         </Field>
+        <Field Name="ThickStaining">
+          <DataField>ThickStaining</DataField>
+        </Field>
+        <Field Name="ThickStainingFormat">
+          <DataField>ThickStainingFormat</DataField>
+        </Field>
+        <Field Name="ThinStaining">
+          <DataField>ThinStaining</DataField>
+        </Field>
+        <Field Name="ThinStainingFormat">
+          <DataField>ThinStainingFormat</DataField>
+        </Field>
         <Field Name="TotalProfileSurfaceCaption">
           <DataField>TotalProfileSurfaceCaption</DataField>
         </Field>
@@ -7899,17 +7911,17 @@ End Function
         <Field Name="Name_ACOProjectColorHeader">
           <DataField>Name_ACOProjectColorHeader</DataField>
         </Field>
-        <Field Name="ThickStaining">
-          <DataField>ThickStaining</DataField>
+        <Field Name="ThickStainingTimeLine">
+          <DataField>ThickStainingTimeLine</DataField>
         </Field>
-        <Field Name="ThickStainingFormat">
-          <DataField>ThickStainingFormat</DataField>
+        <Field Name="ThickStainingTimeLineFormat">
+          <DataField>ThickStainingTimeLineFormat</DataField>
         </Field>
-        <Field Name="ThinStaining">
-          <DataField>ThinStaining</DataField>
+        <Field Name="ThinStainingTimeLine">
+          <DataField>ThinStainingTimeLine</DataField>
         </Field>
-        <Field Name="ThinStainingFormat">
-          <DataField>ThinStainingFormat</DataField>
+        <Field Name="ThinStainingTimeLineFormat">
+          <DataField>ThinStainingTimeLineFormat</DataField>
         </Field>
       </Fields>
       <Query>

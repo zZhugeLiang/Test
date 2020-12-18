@@ -34,7 +34,12 @@ report 50000 "ACO Bath Sheet"
             }
             column(ThickStainingCaption; ThickStainingCaptionLbl) { }
             column(ThinStainingCaption; ThinStainingCaptionLbl) { }
-
+            column(ThickStaining; Thick)
+            {
+            }
+            column(ThinStaining; Thin)
+            {
+            }
             column(TotalProfileSurfaceCaption; TotalProfileSurfaceCaptionLbl) { }
             column(TotalSurfaceProfiles; "Total Surface Profiles")
             {
@@ -177,10 +182,10 @@ report 50000 "ACO Bath Sheet"
                 column(Name_ACOProjectColorHeader; ACOProjectColorHeader.Name)
                 {
                 }
-                column(ThickStaining; MaxThickStainingTime)
+                column(ThickStainingTimeLine; MaxThickStainingTime)
                 {
                 }
-                column(ThinStaining; MinThinStainingTime)
+                column(ThinStainingTimeLine; MinThinStainingTime)
                 {
                 }
                 trigger OnAfterGetRecord()
