@@ -19,31 +19,31 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.4cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.4cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.4cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.4cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>1.12062cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.9cm</Width>
+                  <Width>0.27938cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.1cm</Width>
@@ -51,7 +51,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.8cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -63,7 +63,7 @@
                                 <TextRun>
                                   <Value>=Fields!BathSheetCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -79,8 +79,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -97,7 +95,7 @@
                                 <TextRun>
                                   <Value>=Fields!BathSheetNo.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -113,8 +111,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -132,7 +128,7 @@
                                 <TextRun>
                                   <Value>=Fields!DateCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -148,8 +144,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -164,7 +158,7 @@
                                 <TextRun>
                                   <Value>=Fields!Creation_Date.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -178,8 +172,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -225,7 +217,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -238,7 +230,7 @@
                                   <Value>=Fields!SalesOrderCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -256,8 +248,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -275,7 +265,7 @@
                                   <Value>=Fields!ColorCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -293,8 +283,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -306,7 +294,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox5">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -315,7 +302,7 @@
                                   <Value>=Fields!CustomerNameCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -333,8 +320,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -380,7 +365,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -393,7 +378,7 @@
                                   <Value>=Fields!SOLineCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -411,8 +396,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -430,7 +413,7 @@
                                   <Value>=Fields!QuantityCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -448,8 +431,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -465,7 +446,7 @@
                                   <Value>=Fields!LengthCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -483,8 +464,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -500,7 +479,7 @@
                                   <Value>=Fields!ThickCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -518,8 +497,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -535,7 +512,7 @@
                                   <Value>=Fields!ThinCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -553,8 +530,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -570,7 +545,7 @@
                                   <Value>=Fields!TreatmentCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -588,8 +563,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -635,12 +608,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox165">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -649,7 +621,7 @@
                                   <Value>=Fields!ProfileCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -667,8 +639,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>6</ColSpan>
@@ -682,7 +652,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox171">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -691,7 +660,7 @@
                                   <Value>=Fields!ChargeNoCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -709,8 +678,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -756,7 +723,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -769,7 +736,7 @@
                                   <Value>=Fields!ProjectColorDescriptionCaption.Value</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -808,7 +775,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox123">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -840,7 +806,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.4cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -852,7 +818,7 @@
                                 <TextRun>
                                   <Value>=Fields!SalesOrderNo.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -868,8 +834,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -886,7 +850,7 @@
                                 <TextRun>
                                   <Value>=Fields!Color.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -902,8 +866,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -922,7 +884,7 @@
                                 <TextRun>
                                   <Value>=Fields!CustomerName.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -936,10 +898,8 @@
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>5pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingLeft>2pt</PaddingLeft>
                             <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -982,7 +942,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -994,7 +954,7 @@
                                 <TextRun>
                                   <Value>=Fields!SalesOrderLineNo.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1010,8 +970,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -1028,7 +986,7 @@
                                 <TextRun>
                                   <Value>=Fields!Quantity.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1046,8 +1004,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>5pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1062,7 +1018,7 @@
                                 <TextRun>
                                   <Value>=Fields!Length.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1080,8 +1036,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>5pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1096,7 +1050,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThickStaining.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1112,8 +1066,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1128,7 +1080,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThinStaining.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1144,8 +1096,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1160,7 +1110,7 @@
                                 <TextRun>
                                   <Value>=Fields!Treatment.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1174,10 +1124,8 @@
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>5pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingLeft>2pt</PaddingLeft>
                             <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -1220,12 +1168,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox154">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1233,7 +1180,7 @@
                                 <TextRun>
                                   <Value>=Fields!ProfileCode.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1249,8 +1196,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>6</ColSpan>
@@ -1264,7 +1209,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox186">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1272,7 +1216,7 @@
                                 <TextRun>
                                   <Value>=Fields!ChargeNo.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1286,10 +1230,8 @@
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>5pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingLeft>2pt</PaddingLeft>
                             <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -1332,12 +1274,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox6">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1345,7 +1286,7 @@
                                 <TextRun>
                                   <Value>=Fields!Name_ACOProjectColorHeader.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1364,8 +1305,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>9</ColSpan>
@@ -1414,7 +1353,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.3cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1503,7 +1442,7 @@
                                 <TextRun>
                                   <Value>=Fields!MEASUREText.Value</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1521,8 +1460,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>10</ColSpan>
@@ -1552,7 +1489,7 @@
                                 <TextRun>
                                   <Value>=Fields!HighEndText.Value</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1570,8 +1507,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>10</ColSpan>
@@ -1601,7 +1536,7 @@
                                 <TextRun>
                                   <Value>=Fields!EURASText.Value</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1619,8 +1554,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>10</ColSpan>
@@ -1638,7 +1571,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.092cm</Height>
+                  <Height>0.2cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1954,7 +1887,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.3cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2181,7 +2114,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2193,8 +2126,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThickStainingCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2210,8 +2142,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -2230,8 +2160,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2262,7 +2192,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThickStaining.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -2281,8 +2211,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2297,7 +2225,7 @@
                                 <TextRun>
                                   <Value>min</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2313,8 +2241,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2417,7 +2343,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2429,8 +2355,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThinStainingCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2446,8 +2371,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -2466,8 +2389,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2498,7 +2421,7 @@
                                 <TextRun>
                                   <Value>=Fields!ThinStaining.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -2517,8 +2440,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2533,7 +2454,7 @@
                                 <TextRun>
                                   <Value>min</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2549,8 +2470,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2653,7 +2572,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2665,8 +2584,7 @@
                                 <TextRun>
                                   <Value>=Fields!TotalProfileSurfaceCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2682,8 +2600,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -2702,8 +2618,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2734,7 +2650,7 @@
                                 <TextRun>
                                   <Value>=Fields!TotalSurfaceProfiles.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -2753,8 +2669,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2769,7 +2683,7 @@
                                 <TextRun>
                                   <Value>dm²</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2785,8 +2699,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2889,7 +2801,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2901,8 +2813,7 @@
                                 <TextRun>
                                   <Value>=Fields!SurfaceAttachmentRackCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2918,8 +2829,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -2938,8 +2847,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2970,7 +2879,7 @@
                                 <TextRun>
                                   <Value>=Fields!SurfaceAttachrack.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -2989,8 +2898,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3005,7 +2912,7 @@
                                 <TextRun>
                                   <Value>dm²</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3021,8 +2928,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3125,7 +3030,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3137,8 +3042,7 @@
                                 <TextRun>
                                   <Value>=Fields!SurfaceAdditionCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3154,8 +3058,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -3174,8 +3076,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3209,7 +3111,7 @@
                                 <TextRun>
                                   <Value>=Fields!SurfaceAddition.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -3231,8 +3133,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3247,7 +3147,7 @@
                                 <TextRun>
                                   <Value>dm²</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3263,8 +3163,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3367,7 +3265,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3379,8 +3277,7 @@
                                 <TextRun>
                                   <Value>=Fields!TotalSurfaceCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3396,8 +3293,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -3416,8 +3311,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3448,7 +3343,7 @@
                                 <TextRun>
                                   <Value>=Fields!TotalSurface.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -3467,8 +3362,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3483,7 +3376,7 @@
                                 <TextRun>
                                   <Value>dm²</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3499,8 +3392,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3603,7 +3494,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3615,8 +3506,7 @@
                                 <TextRun>
                                   <Value>=Fields!TotalQuantityCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3632,8 +3522,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -3652,8 +3540,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3684,7 +3572,7 @@
                                 <TextRun>
                                   <Value>=Fields!TotalQuantity.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -3703,8 +3591,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3719,7 +3605,7 @@
                                 <TextRun>
                                   <Value>=Fields!piecesCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3735,8 +3621,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3839,7 +3723,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3851,8 +3735,7 @@
                                 <TextRun>
                                   <Value>=Fields!LayerThicknessCaption.Value</Value>
                                   <Style>
-                                    <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3866,8 +3749,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
@@ -3886,8 +3767,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3916,7 +3797,7 @@
                                 <TextRun>
                                   <Value>=Fields!LayerThickness.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -3933,8 +3814,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3949,7 +3828,7 @@
                                 <TextRun>
                                   <Value>μ</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3963,8 +3842,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>8pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -4061,7 +3938,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.11317cm</Height>
+                  <Height>0.2cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -4407,7 +4284,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.30367cm</Height>
+                  <Height>0.2cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -4723,7 +4600,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.8cm</Height>
+                  <Height>0.4cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -4767,7 +4644,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -4799,7 +4677,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX1Caption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4818,8 +4696,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -4834,7 +4710,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX2Caption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4853,8 +4729,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -4869,7 +4743,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX3Caption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4888,8 +4762,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -4904,7 +4776,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSXLLCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4923,8 +4795,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -4939,7 +4809,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -5058,7 +4929,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.8cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -5103,7 +4974,7 @@
                                 <TextRun>
                                   <Value>=Fields!StrCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -5120,8 +4991,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5136,7 +5005,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX1Str.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5156,8 +5025,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5172,7 +5039,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX2Str.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5192,8 +5059,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5208,7 +5073,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX3Str.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5228,8 +5093,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5244,7 +5107,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX4Str.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5264,8 +5127,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5280,7 +5141,7 @@
                                 <TextRun>
                                   <Value>A</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -5297,8 +5158,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5400,7 +5259,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.8cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -5445,7 +5304,7 @@
                                 <TextRun>
                                   <Value>=Fields!DhdCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -5462,8 +5321,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5478,7 +5335,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX1Dhd.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -5498,8 +5355,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5514,7 +5369,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX2Dhd.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -5534,8 +5389,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5550,7 +5403,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX3Dhd.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -5570,8 +5423,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5586,7 +5437,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX4Dhd.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -5606,8 +5457,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5622,7 +5471,7 @@
                                 <TextRun>
                                   <Value>A/dm</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -5639,8 +5488,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5742,7 +5589,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.8cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -5785,7 +5632,7 @@
                                 <TextRun>
                                   <Value>=Fields!TimeCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -5800,8 +5647,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5816,7 +5661,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX1Time.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5834,8 +5679,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5850,7 +5693,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX2Time.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5868,8 +5711,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5884,7 +5725,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX3Time.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5902,8 +5743,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5918,7 +5757,7 @@
                                 <TextRun>
                                   <Value>=Fields!GSX4Time.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0</Format>
                                   </Style>
@@ -5936,8 +5775,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -5952,7 +5789,7 @@
                                 <TextRun>
                                   <Value>min</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -5967,8 +5804,6 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>5pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -6064,7 +5899,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.15021cm</Height>
+                  <Height>0.2cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -6434,7 +6269,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.3cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -6507,7 +6342,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -6519,7 +6354,7 @@
                                 <TextRun>
                                   <Value>=Fields!PayAttentionCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -6533,8 +6368,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
@@ -6552,6 +6385,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -6761,7 +6595,7 @@
                                 <TextRun>
                                   <Value>=Fields!NoteCaption.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -6775,8 +6609,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -6793,7 +6625,7 @@
                                 <TextRun>
                                   <Value>=Fields!AllComments.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -6807,8 +6639,6 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                         <ColSpan>7</ColSpan>
@@ -6858,7 +6688,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.54771cm</Height>
+                  <Height>0.3cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -6870,7 +6700,8 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -6933,7 +6764,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -6945,7 +6776,7 @@
                                 <TextRun>
                                   <Value>=Fields!PrintingDateCaption.Value &amp; ": "</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -6959,18 +6790,16 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>2</ColSpan>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox14">
-                          <CanGrow>true</CanGrow>
+                        <Textbox Name="Textbox16">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -6978,7 +6807,7 @@
                                 <TextRun>
                                   <Value>=Fields!PrintingDate.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -6994,72 +6823,13 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>2</ColSpan>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox72">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox72</rd:DefaultName>
-                          <Style>
-                            <Border />
-                            <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox73">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontWeight>Normal</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox73</rd:DefaultName>
-                          <Style>
-                            <Border />
-                            <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox74">
@@ -7182,7 +6952,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.7cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -7194,7 +6964,7 @@
                                 <TextRun>
                                   <Value>=Fields!CreatedbyCaption.Value &amp; ": "</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -7208,18 +6978,16 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>2</ColSpan>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox8">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -7227,7 +6995,7 @@
                                 <TextRun>
                                   <Value>=Fields!CreatedbyUser.Value</Value>
                                   <Style>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -7241,72 +7009,13 @@
                             <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>2</ColSpan>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox63">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox63</rd:DefaultName>
-                          <Style>
-                            <Border />
-                            <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox64">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontWeight>Normal</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox64</rd:DefaultName>
-                          <Style>
-                            <Border />
-                            <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox65">
@@ -7429,7 +7138,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.54699cm</Height>
+                  <Height>0.2cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -7825,8 +7534,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Height>25.15375cm</Height>
-            <Width>19cm</Width>
+            <Height>18.4cm</Height>
+            <Width>10.5cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -7835,17 +7544,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>25.15375cm</Height>
+        <Height>18.4cm</Height>
         <Style />
       </Body>
-      <Width>19cm</Width>
+      <Width>10.5cm</Width>
       <Page>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>1cm</LeftMargin>
-        <RightMargin>1cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
-        <BottomMargin>1cm</BottomMargin>
+        <PageHeight>20cm</PageHeight>
+        <PageWidth>11cm</PageWidth>
+        <LeftMargin>0.25cm</LeftMargin>
+        <RightMargin>0.25cm</RightMargin>
+        <TopMargin>0.5cm</TopMargin>
+        <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>

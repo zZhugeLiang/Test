@@ -89,12 +89,19 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         TotalCircumference: Decimal;
         MaxThickStainingTime: Decimal;
         MinThinStainingTime: Decimal;
+        PreviousMinThinStainingTime: Decimal;
+        PreviousMaxThickStainingTime: Decimal;
         First: Boolean;
         Measure: Boolean;
     begin
         // ProductionOrderLines.SetRange("ACO Included", true);
         First := true;
         Measure := true;
+        MaxThickStainingTime := -1;
+        MinThinStainingTime := 99999;
+        PreviousMaxThickStainingTime := -1;
+        PreviousMinThinStainingTime := 99999;
+
         if ProductionOrderLines.FindSet() then
             repeat
                 if First then begin
@@ -106,10 +113,19 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
                     First := false;
                 end;
+
                 CurrentSourceNo := ProductionOrderLines."ACO Source No.";
                 if SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLines."ACO Source No.", ProductionOrderLines."ACO Source Line No.") then begin
                     TotalCircumference += SalesLine."ACO Profile Circumference";
                     DetermineStainingTimes(SalesLine, MinThinStainingTime, MaxThickStainingTime, Customer);
+
+                    if ((PreviousMinThinStainingTime <> MinThinStainingTime) and (PreviousMinThinStainingTime <> -1)) or ((PreviousMaxThickStainingTime <> MaxThickStainingTime) and (PreviousMaxThickStainingTime <> -1)) then begin
+                        ACOAppSetup.Get();
+                        ACOBathSheetHeader."Bath Sheet Comment" := ACOAppSetup."Multiple Staining Times Text";
+                    end;
+
+                    PreviousMaxThickStainingTime := MaxThickStainingTime;
+                    PreviousMinThinStainingTime := MinThinStainingTime;
 
                     if SalesLine."ACO Euras Profile" then
                         ACOBathSheetHeader.Euras := true;
@@ -135,6 +151,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader.Thin := MinThinStainingTime;
         ACOBathSheetHeader.Measure := Measure;
         ACOBathSheetHeader.Circumference := TotalCircumference;
+        //ACOBathSheetHeader.Comment := Multiple Staining Times Text(Appsetup); bij afwijkende waarde, 0/10 0/10 niet 0/10 0/5 wel, dus bij dezelfde waarden voor vershcillende verkoopregels niet
         ACOBathSheetHeader.Insert(true);
     end;
 
@@ -142,35 +159,31 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     var
         SalesHeader: Record "Sales Header";
         ACOProfileCustomer: Record "ACO Profile Customer";
+        Item: Record Item;
+        ACOPretreatment: Record "ACO Pretreatment";
     begin
-        if SalesLine."ACO Thick St. Time Profile" >= MaxThickStainingTime then
-            MaxThickStainingTime := SalesLine."ACO Thick St. Time Profile";
+        if Item.Get(SalesLine."No.") then
+            if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
+                if ACOPretreatment."Thick Staining Time" <> -1 then
+                    if ACOPretreatment."Thick Staining Time" >= MaxThickStainingTime then
+                        MaxThickStainingTime := ACOPretreatment."Thick Staining Time";
 
-        if SalesLine."ACO Thick Staining Time PT" >= MaxThickStainingTime then
-            MaxThickStainingTime := SalesLine."ACO Thick Staining Time PT";
+                if ACOPretreatment."Thin Staining Time" <> -1 then
+                    if ACOPretreatment."Thin Staining Time" <= MinThinStainingTime then
+                        MinThinStainingTime := ACOPretreatment."Thick Staining Time";
 
-        if Customer."ACO Thick Staining Time" >= MaxThickStainingTime then
-            MaxThickStainingTime := Customer."ACO Thick Staining Time";
-
-        if SalesLine."ACO Thin Staining Time Profile" <= MinThinStainingTime then
-            MinThinStainingTime := SalesLine."ACO Thick St. Time Profile";
-
-        if SalesLine."ACO Thin Staining Time PT" <= MinThinStainingTime then
-            MinThinStainingTime := SalesLine."ACO Thick Staining Time PT";
-
-        if Customer."ACO Thin Staining Time" <= MinThinStainingTime then
-            MinThinStainingTime := Customer."ACO Thin Staining Time";
-
-        SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
-        ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
-        ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
-        // ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
-        if ACOProfileCustomer.FindFirst() then begin
-            if ACOProfileCustomer."Thin Staining Time" <= MinThinStainingTime then
-                MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-            if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
-                MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
-        end;
+                SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
+                ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
+                ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
+                if ACOProfileCustomer.FindFirst() then begin
+                    if ACOPretreatment."Thick Staining Time" = -1 then
+                        if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
+                            MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+                    if ACOPretreatment."Thin Staining Time" = -1 then
+                        if ACOProfileCustomer."Thin Staining Time" <= MinThinStainingTime then
+                            MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+                end;
+            end;
     end;
 
     local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; var ProductionOrderLines: Record "Prod. Order Line")

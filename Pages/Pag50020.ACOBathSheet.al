@@ -173,6 +173,7 @@ page 50020 "ACO Bath Sheet"
                     Caption = 'Calculated Values';
                     field("GSX 1 Str."; "GSX 1 Str.")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                     field("GSX 1 Dhd."; "GSX 1 Dhd.")
@@ -181,10 +182,12 @@ page 50020 "ACO Bath Sheet"
                     }
                     field("GSX 1 Time"; "GSX 1 Time")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                     field("GSX 2 Str."; "GSX 2 Str.")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                     field("GSX 2 Dhd."; "GSX 2 Dhd.")
@@ -193,10 +196,12 @@ page 50020 "ACO Bath Sheet"
                     }
                     field("GSX 2 Time"; "GSX 2 Time")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                     field("GSX 3 Str."; "GSX 3 Str.")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                     field("GSX 3 Dhd."; "GSX 3 Dhd.")
@@ -205,11 +210,13 @@ page 50020 "ACO Bath Sheet"
                     }
                     field("GSX 3 Time"; "GSX 3 Time")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
 
                     field("GSX LL Str."; "GSX LL Str.")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                     field("GSX LL Dhd."; "GSX LL Dhd.")
@@ -218,6 +225,7 @@ page 50020 "ACO Bath Sheet"
                     }
                     field("GSX LL Time"; "GSX LL Time")
                     {
+                        DecimalPlaces = 0;
                         ApplicationArea = All;
                     }
                 }

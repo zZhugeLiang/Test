@@ -454,7 +454,7 @@ table 50016 "ACO Bath Sheet Header"
 
     local procedure CalculateTotalSurface()
     begin
-        "Total Surface" := "Total Surface Profiles" + "Surface Attachrack" + "Surface Addition";
+        "Total Surface" := Round("Total Surface Profiles" + "Surface Attachrack" + "Surface Addition", 1);
     end;
 
     procedure UpdateBathSheetHeader()
@@ -464,6 +464,7 @@ table 50016 "ACO Bath Sheet Header"
         ACOLayerThickness: Record "ACO Layer Thickness";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOProfile: Record "ACO Profile";
+        ACOProfileCustomer: Record "ACO Profile Customer";
         BathSheetComment: Text;
         TotalSurfaceProfiles: Decimal;
         SurfaceAddition: Decimal;
@@ -482,15 +483,18 @@ table 50016 "ACO Bath Sheet Header"
         ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
         if ACOBathSheetLine.FindSet() then
             repeat
+                ExtraToEnumerate := 0;
                 TotalSurfaceProfiles += ACOBathSheetLine.Surface;
 
                 if ACOProfile.Get(ACOBathSheetLine."Profile Code") and (StrLen(BathSheetComment) < MaxStrLen("Bath Sheet Comment")) then begin
                     BathSheetComment += ACOProfile."Comment Bath Card";
-
                     SurfaceAddition += (ACOProfile."Correction Factor" - 1) * ACOBathSheetLine.Surface;
-                    ExtraToEnumerate := ACOProfile."Extra to Enumerate";
-                end else
-                    ExtraToEnumerate := 0;
+
+                    ACOProfileCustomer.SetRange("Profile Code", ACOProfile.Code);
+                    ACOProfileCustomer.SetRange("Customer No.", ACOBathSheetLine."Customer No.");
+                    if ACOProfileCustomer.FindFirst() then
+                        ExtraToEnumerate := ACOProfileCustomer."Extra to Enumerate";
+                end;
 
                 if Item.Get(ACOBathSheetLine.Treatment) then
                     if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
@@ -514,7 +518,7 @@ table 50016 "ACO Bath Sheet Header"
             Error(LayerThicknessToleranceExceededErr);
 
         "Layer Thickness" := LargestCombinationLT;
-        "Total Surface Profiles" := TotalSurfaceProfiles;
+        "Total Surface Profiles" := Round(TotalSurfaceProfiles, 1);
         "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment"));
         "Surface Addition" := SurfaceAddition;
 
@@ -584,14 +588,15 @@ table 50016 "ACO Bath Sheet Header"
             if ("GSX LL Dhd." + "GSX LL Str." + "GSX LL Time") = 0 then
                 Error(NoBathsCalculatedErr);
         end else begin
+            Str := ACOAppSetup."Max. Current Density Bath 1";
             CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime,
                                         MinCurrDens, MaxCurrDens, ACOAppSetup."Max. Current Density Bath 1");
 
-            if ACOAppSetup."Max. Current Density Bath 1" >= Str then begin
-                "GSX 1 Dhd." := Dhd;
-                "GSX 1 Str." := Str;
-                "GSX 1 Time" := BathTime;
-            end;
+            // if ACOAppSetup."Max. Current Density Bath 1" >= Str then begin
+            "GSX 1 Dhd." := Dhd;
+            "GSX 1 Str." := Str;
+            "GSX 1 Time" := BathTime;
+            // end;
 
             Str := ACOAppSetup."Max. Current Density Bath 2";
             CalculateProcessTimeBath(Dhd, Str, BathTime, TotalSurface, LayerThickness, MinAnodiseTime,
@@ -651,6 +656,10 @@ table 50016 "ACO Bath Sheet Header"
 
         // Str := CurrDens * TotalSurface * 100;
         Str := CurrDens * TotalSurface;
+
+        Str := Round(Str, 1);
+        CurrDens := Round(CurrDens, 0.01);
+        BathTime := Round(BathTime, 1);
 
         // if Str > MaxCurrentDensityBath then begin
         //     CurrDens := 0;

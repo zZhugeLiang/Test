@@ -34,30 +34,62 @@ xmlport 50000 "ACO Aucos Export"
                     {
                         trigger OnBeforePassVariable()
                         begin
-                            BathSheetComment := CopyStr(ACOBathSheetHeader."Bath Sheet Comment", 1, 40);
+                            bathSheetComment := CopyStr(ACOBathSheetHeader."Bath Sheet Comment", 1, 40);
                         end;
                     }
-                    fieldelement(totalSurface; ACOBathSheetHeader."Total Surface")
-                    {
-                    }
-                    textelement(commentProfile)
+                    textelement(profileComment)
                     {
                         trigger OnBeforePassVariable()
                         var
                             ACOProfile: Record "ACO Profile";
                         begin
                             if ACOProfile.Get(ACOBathSheetLine."Profile Code") then
-                                commentProfile := CopyStr(ACOProfile."Comment Bath Card", 1, 40);
+                                profileComment := CopyStr(ACOProfile."Comment Bath Card", 1, 40);
                         end;
                     }
-                    fieldelement(quantity_Line; ACOBathSheetLine.Quantity)
+                    textelement(totalSurface)
                     {
+                        trigger OnBeforePassVariable()
+                        begin
+                            totalSurface := FormatAndRound(ACOBathSheetHeader."Total Surface");
+                        end;
                     }
-                    fieldelement(length_Line; ACOBathSheetLine.Length)
+
+                    fieldelement(profileCode; ACOBathSheetLine."Profile Code")
                     {
+
                     }
-                    fieldelement(circumference_Line; ACOBathSheetLine.Circumference)
+
+                    textelement(profileDescription)
                     {
+                        trigger OnBeforePassVariable()
+                        var
+                            ACOProfile: Record "ACO Profile";
+                        begin
+                            if ACOProfile.Get(ACOBathSheetLine."Profile Code") then
+                                profileDescription := CopyStr(ACOProfile."Description", 1, 40);
+                        end;
+                    }
+                    textelement(quantity_Line)
+                    {
+                        trigger OnBeforePassVariable()
+                        begin
+                            quantity_Line := FormatAndRound(ACOBathSheetLine.Quantity);
+                        end;
+                    }
+                    textelement(length_Line)
+                    {
+                        trigger OnBeforePassVariable()
+                        begin
+                            length_Line := FormatAndRound(ACOBathSheetLine.Length);
+                        end;
+                    }
+                    textelement(circumference_Line)
+                    {
+                        trigger OnBeforePassVariable()
+                        begin
+                            circumference_Line := FormatAndRound(ACOBathSheetLine.Circumference);
+                        end;
                     }
 
                     textelement(ablageNo)
@@ -66,6 +98,7 @@ xmlport 50000 "ACO Aucos Export"
                         var
                             Item: Record Item;
                             ACOBathSheetLineAll: Record "ACO Bath Sheet Line";
+                            ACOProfile: Record "ACO Profile";
                             AucosFlush: Boolean;
                         begin
                             if Item.Get(ACOBathSheetLine.Treatment) then
@@ -74,9 +107,10 @@ xmlport 50000 "ACO Aucos Export"
                             ACOBathSheetLineAll.SetRange("Bath Sheet No.", ACOBathSheetLine."Bath Sheet No.");
                             if ACOBathSheetLineAll.FindSet() then
                                 repeat
-                                // if Item.Get(ACOBathSheetLineAll.Treatment) and Item. then
-
+                                    if ACOProfile.Get(ACOBathSheetLine."Profile Code") and ACOProfile."Extra Flushing" then
+                                        AucosFlush := true;
                                 until ACOBathSheetLineAll.Next() = 0;
+
                             if AucosFlush then
                                 ablageNo += 's';
                             // if Item.Get(ACOBathSheetLine.Treatment) then
@@ -112,10 +146,9 @@ xmlport 50000 "ACO Aucos Export"
 
                     textelement(GSXLLTime)
                     {
-
                         trigger OnBeforePassVariable()
                         begin
-                            GSXLLTime := Format(ACOBathSheetHeader."GSX LL Time");
+                            GSXLLTime := FormatAndRound(ACOBathSheetHeader."GSX LL Time");
                         end;
                     }
 
@@ -124,7 +157,7 @@ xmlport 50000 "ACO Aucos Export"
 
                         trigger OnBeforePassVariable()
                         begin
-                            GSXLLStr := Format(ACOBathSheetHeader."GSX LL Str.");
+                            GSXLLStr := FormatAndRound(ACOBathSheetHeader."GSX LL Str.");
                         end;
                     }
 
@@ -133,7 +166,7 @@ xmlport 50000 "ACO Aucos Export"
 
                         trigger OnBeforePassVariable()
                         begin
-                            GSXLLDhd := Format(ACOBathSheetHeader."GSX LL Dhd.");
+                            GSXLLDhd := FormatAndRound(ACOBathSheetHeader."GSX LL Dhd.");
                         end;
                     }
 
@@ -142,7 +175,7 @@ xmlport 50000 "ACO Aucos Export"
 
                         trigger OnBeforePassVariable()
                         begin
-                            thickStainingTime := Format(ACOBathSheetHeader.Thick);
+                            thickStainingTime := FormatAndRound(ACOBathSheetHeader.Thick);
                         end;
                     }
 
@@ -151,7 +184,7 @@ xmlport 50000 "ACO Aucos Export"
 
                         trigger OnBeforePassVariable()
                         begin
-                            thinStainingTime := Format(ACOBathSheetHeader.Thin);
+                            thinStainingTime := FormatAndRound(ACOBathSheetHeader.Thin);
                         end;
                     }
 
@@ -175,7 +208,7 @@ xmlport 50000 "ACO Aucos Export"
                                         if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then
                                             CalculatedSealingTime += ACOLayerThickness."mu Value";
 
-                            sealingTime := Format(CalculatedSealingTime);
+                            sealingTime := FormatAndRound(CalculatedSealingTime);
                         end;
                     }
                     // tableelement(ACOProfile; "ACO Profile")
@@ -222,4 +255,9 @@ xmlport 50000 "ACO Aucos Export"
         currXMLport.Filename := 'AucosExport' + '.csv';
     end;
 
+
+    local procedure FormatAndRound(Input: Decimal): Text
+    begin
+        exit(Format(Round(Input, 0.000001), 0, 1));
+    end;
 }
