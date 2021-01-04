@@ -595,20 +595,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 if "ACO Start Length" > AppSetup."Maximum Sawing Length" then
                     Error(FinalLengtGtMaxSawingLengthErr);
 
-                if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                    Clear(ItemVariant);
-
-                if (ItemVariant."ACO Number of Meters" * "ACO Number of Units") <> 0 then begin
-                    ProdOrderLine.SetRange("ACO Source No.", "Document No.");
-                    ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
-                    if ProdOrderLine.FindFirst() then begin
-                        BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
-                        BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
-                        BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
-                        BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
-                        if BathSheetLine.FindFirst() then
-                            Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
-                    end;
+                ProdOrderLine.SetRange("ACO Source No.", "Document No.");
+                ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
+                if ProdOrderLine.FindFirst() then begin
+                    BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
+                    BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
+                    BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
+                    BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
+                    if BathSheetLine.FindFirst() then
+                        Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
                 end;
             end;
         }
