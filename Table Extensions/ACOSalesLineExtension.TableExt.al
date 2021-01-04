@@ -599,14 +599,9 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     Clear(ItemVariant);
 
                 if (ItemVariant."ACO Number of Meters" * "ACO Number of Units") <> 0 then begin
-                    Validate("ACO Number of Units", Round(("ACO Start Length" - AppSetup."Min. Residue Saw") / ItemVariant."ACO Number of Meters" * 1000 * "ACO Number of Units", 1, '<'));
-                   // Validate("ACO Number of Units", Round((ItemVariant."ACO Number of Meters" * 1000 - AppSetup."Min. Residue Saw") / "ACO Final Length" * "ACO Number of Units", 1, '<'));
                     ProdOrderLine.SetRange("ACO Source No.", "Document No.");
                     ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
                     if ProdOrderLine.FindFirst() then begin
-                        ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
-                        ProdOrderLine.Modify();
-
                         BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
                         BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
                         BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
