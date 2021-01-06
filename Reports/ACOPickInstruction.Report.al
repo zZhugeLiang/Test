@@ -97,9 +97,9 @@ report 50013 "ACO Pick Instruction"
                 column(TotalGrossWeight; TotalGrossWeight)
                 {
                 }
-                column(PackageTypeText; PackageTypeText)
-                {
-                }
+                column(NumberOfPallets; NumberOfPallets) { }
+                column(NumberOfPacks; NumberOfPacks) { }
+                column(NumberOfBundles; NumberOfBundles) { }
                 column(UserID; UserID()) { }
                 dataitem("ACO Package Line"; "ACO Package Line")
                 {
@@ -112,77 +112,6 @@ report 50013 "ACO Pick Instruction"
                     // }
                     column(Sales_Line_No; "Sales Line No") { }
 
-                    //
-                    // dataitem("Sales Line"; "Sales Line")
-                    // {
-                    //     DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
-                    //     DataItemTableView = SORTING("Document Type", "Document No.", "Line No.") WHERE(Type = CONST(Item));
-                    //     column(LineNo_SalesLine; "Line No.")
-                    //     {
-                    //     }
-                    //     column(ItemNo_SalesLine; "No.")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(Description_SalesLine; Description)
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(VariantCode_SalesLine; "Variant Code")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(LocationCode_SalesLine; "Location Code")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(BinCode_SalesLine; "Bin Code")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(ShipmentDate_SalesLine; Format("Shipment Date"))
-                    //     {
-                    //     }
-                    //     column(Quantity_SalesLine; Quantity)
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(UnitOfMeasure_SalesLine; "Unit of Measure")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(QuantityToShip_SalesLine; "Qty. to Ship")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(QuantityShipped_SalesLine; "Quantity Shipped")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(QtyToAsm; QtyToAsm)
-                    //     {
-                    //     }
-                    //     //
-                    //     column(Line_No_; "Line No.")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     // column(Net_Weight; "Net Weight")
-                    //     // {
-                    //     //     IncludeCaption = true;
-                    //     // }
-                    //     // column(Gross_Weight; "Gross Weight")
-                    //     // {
-                    //     //     IncludeCaption = true;
-                    //     // }
-                    //     column(NetWeight; NetWeight)
-                    //     {
-
-                    //     }
-                    //     column(GrossWeight; GrossWeight)
-                    //     {
-
-                    //     }
                     column(ACO_Profile_Code; SalesLine."ACO Profile Code")
                     {
                         IncludeCaption = true;
@@ -211,23 +140,9 @@ report 50013 "ACO Pick Instruction"
                     {
                         IncludeCaption = true;
                     }
-                    column(NumberOfPallets; NumberOfPallets) { }
-                    column(NumberOfPacks; NumberOfPacks) { }
-                    column(NumberOfBundles; NumberOfBundles) { }
-                    //     column(ACO_Customer_Item_No_; "ACO Customer Item No.")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters")
-                    //     {
-                    //         IncludeCaption = true;
-                    //     }
-                    //     column(LengthInMilliMeters; ItemVariant."ACO Number of Meters" * 1000)
-                    //     {
-                    //     }
-
-                    //     //
-
+                    column(PackageTypeText; PackageTypeText)
+                    {
+                    }
                     trigger OnAfterGetRecord()
                     begin
                         Clear(SalesLine);
@@ -242,11 +157,7 @@ report 50013 "ACO Pick Instruction"
                                 GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
                             end else
                                 Clear(ACOProfile);
-
                         end;
-
-
-
                     end;
                 }
 
@@ -313,17 +224,7 @@ report 50013 "ACO Pick Instruction"
         BundleCaption = 'Bundle';// NLD= Bundel
 
         PageCaption = 'Page';
-        // ItemNoCaption = 'Item No.';
-        // OrderNoCaption = 'Order No.';
-        // CustomerNoCaption = 'Customer No.';
-        // CustomerNameCaption = 'Customer Name';
-        // QtyToAssembleCaption = 'Quantity to Assemble';
-        // QtyAssembledCaption = 'Quantity Assembled';
-        // ShipmentDateCaption = 'Shipment Date';
-        // QtyPickedCaption = 'Quantity Picked';
-        // UOMCaption = 'Unit of Measure';
-        // QtyConsumedCaption = 'Quantity Consumed';
-        // CopyCaption = 'Copy';
+
         PrintedByCaption = 'Printed by';
         OfCaption = 'of';
         PageOfCaption = 'Page %1 of %2';
@@ -402,26 +303,12 @@ report 50013 "ACO Pick Instruction"
             PackageTypeText := Format(ACOPackageHeader."Packing Type");
             repeat
                 case ACOPackageHeader."Packing Type" of
-                    // Packagetype::Box:
-                    //     NumberOfBoxes += 1;
                     Packagetype::Bundle:
                         NumberOfBundles += 1;
-                    // Packagetype::Carton:
-                    //     NumberOfCartons += 1;
-                    // Packagetype::Cart:
-                    //     NumberOfCarts += 1;
-                    // Packagetype::Chest:
-                    //     NumberOfChests += 1;
-                    // Packagetype::Tube:
-                    //     NumberOfTubes += 1;
-                    // Packagetype::"Empty Racks":
-                    //     NumberOfEmptyRacks += 1;
                     Packagetype::Pack:
                         NumberOfPacks += 1;
                     Packagetype::Pallet:
                         NumberOfPallets += 1;
-                // Packagetype::Rack:
-                //     NumberOfRacks += 1;
                 end;
             until ACOPackageLine.Next() = 0;
         end else
