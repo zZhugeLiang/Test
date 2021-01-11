@@ -283,6 +283,8 @@ report 50012 "ACO Sales - Shipment"
                     column(BilltoContact_SalesShptHeader; "Sales Shipment Header"."Bill-to Contact") { }
                     column(ShortcutDimension1Code_SalesShptHeader; "Sales Shipment Header"."Shortcut Dimension 1 Code") { }
                     column(ShortcutDimension2Code_SalesShptHeader; "Sales Shipment Header"."Shortcut Dimension 2 Code") { }
+
+                    column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor") { }
                     ///// Values >>
                     ///// Added Fields from Page >>
                     dataitem(DimensionLoop1; "Integer")
@@ -385,7 +387,7 @@ report 50012 "ACO Sales - Shipment"
                         column(Type_SalesShptLineCaption; "Sales Shipment Line".FieldCaption(Type)) { }
                         // column(FilteredTypeField; FormatType)) { }
                         // column(No_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("No.")) { }
-                        column(CrossReferenceNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Cross-Reference No.")) { }
+                        column(CrossReferenceNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Item Reference No.")) { }
                         column(VariantCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Variant Code")) { }
                         // column(Description_SalesShptLineCaption; "Sales Shipment Line".FieldCaption(Description)) { }
                         column(ReturnReasonCode_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Return Reason Code")) { }
@@ -421,12 +423,15 @@ report 50012 "ACO Sales - Shipment"
                         column(ACOProfileCustDescription_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Profile Cust. Description")) { }
                         column(ACONumberofUnits_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Number of Units")) { }
                         column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
+                        column(Weightpermeter_ACOProfileCaption; ACOProfile.FieldCaption("Weight per meter")) { }
+                        column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
+                        column(ACOSawing_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Sawing")) { }
                         ///// Captions >>>>>
                         ///// Values <<<<<
                         // column(Type_SalesShptLine; "Sales Shipment Line".Type) { }
                         column(FilteredTypeField; FormatType) { }
                         // column(No_SalesShptLine; "Sales Shipment Line"."No.") { }
-                        column(CrossReferenceNo_SalesShptLine; "Sales Shipment Line"."Cross-Reference No.") { }
+                        column(CrossReferenceNo_SalesShptLine; "Sales Shipment Line"."Item Reference No.") { }
                         column(VariantCode_SalesShptLine; "Sales Shipment Line"."Variant Code") { }
                         // column(Description_SalesShptLine; "Sales Shipment Line".Description) { }
                         column(ReturnReasonCode_SalesShptLine; "Sales Shipment Line"."Return Reason Code") { }
@@ -461,6 +466,9 @@ report 50012 "ACO Sales - Shipment"
                         column(ACOCustomerItemNo_SalesShptLine; "Sales Shipment Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesShptLine; "Sales Shipment Line"."ACO Profile Cust. Description") { }
                         column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
+                        column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter") { }
+                        column(Circumference_ACOProfile; ACOProfile.Circumference) { }
+                        column(ACOSawing_SalesShptLine; "Sales Shipment Line"."ACO Sawing") { }
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")
@@ -564,6 +572,9 @@ report 50012 "ACO Sales - Shipment"
 
                             if not ItemVariant.Get("No.", "Variant Code") then
                                 Clear(ItemVariant);
+
+                            if not ACOProfile.Get("ACO Profile Code") then
+                                Clear(ACOProfile);
                         end;
 
                         trigger OnPostDataItem()
@@ -855,8 +866,8 @@ report 50012 "ACO Sales - Shipment"
         CompanyInfo.Get();
         SalesSetup.Get();
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
-
-        OnAfterInitReport;
+        ACOAppSetup.Get();
+        OnAfterInitReport();
     end;
 
     trigger OnPostReport()
@@ -901,6 +912,8 @@ report 50012 "ACO Sales - Shipment"
         ShortcutDimCode8Dimension: Record Dimension;
         ItemVariant: Record "Item Variant";
         ItemTrackingAppendix: Report "Item Tracking Appendix";
+        ACOProfile: Record "ACO Profile";
+        ACOAppSetup: Record "ACO App Setup";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
@@ -991,10 +1004,8 @@ report 50012 "ACO Sales - Shipment"
 
     local procedure FormatDocumentFields(SalesShipmentHeader: Record "Sales Shipment Header")
     begin
-        with SalesShipmentHeader do begin
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FieldCaption("Your Reference"));
-        end;
+        FormatDocument.SetSalesPerson(SalesPurchPerson, SalesShipmentHeader."Salesperson Code", SalesPersonText);
+        ReferenceText := FormatDocument.SetText(SalesShipmentHeader."Your Reference" <> '', SalesShipmentHeader.FieldCaption("Your Reference"));
     end;
 
     local procedure GetUnitOfMeasureDescr(UOMCode: Code[10]): Text[50]

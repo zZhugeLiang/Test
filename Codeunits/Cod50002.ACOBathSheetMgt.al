@@ -217,7 +217,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 Error(NumberofUnitsLtQuantityToBathSheetErr);
 
         ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
-        ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status;
+        ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status.AsInteger();
         ACOBathSheetLine."Production Order No." := ProductionOrderLine."Prod. Order No.";
         ACOBathSheetLine."Production Order Line No." := ProductionOrderLine."Line No.";
         ACOBathSheetLine."Sales Order No." := ProductionOrderLine."ACO Source No.";

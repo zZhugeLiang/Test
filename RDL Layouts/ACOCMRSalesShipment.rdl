@@ -986,6 +986,45 @@ End Function
         <Field Name="Sales_Shipment_Header_No_">
           <DataField>Sales_Shipment_Header_No_</DataField>
         </Field>
+        <Field Name="ACOAppSetup_NetGrossWeightFactorCaption">
+          <DataField>ACOAppSetup_NetGrossWeightFactorCaption</DataField>
+        </Field>
+        <Field Name="ACOAppSetup_NetGrossWeightFactor">
+          <DataField>ACOAppSetup_NetGrossWeightFactor</DataField>
+        </Field>
+        <Field Name="ACOAppSetup_NetGrossWeightFactorFormat">
+          <DataField>ACOAppSetup_NetGrossWeightFactorFormat</DataField>
+        </Field>
+        <Field Name="Name_CompanyInfo">
+          <DataField>Name_CompanyInfo</DataField>
+        </Field>
+        <Field Name="Address_CompanyInfo">
+          <DataField>Address_CompanyInfo</DataField>
+        </Field>
+        <Field Name="PostCode_CompanyInfo">
+          <DataField>PostCode_CompanyInfo</DataField>
+        </Field>
+        <Field Name="City_CompanyInfo">
+          <DataField>City_CompanyInfo</DataField>
+        </Field>
+        <Field Name="CountryRegionCode_CompanyInfo">
+          <DataField>CountryRegionCode_CompanyInfo</DataField>
+        </Field>
+        <Field Name="ShiptoName_SalesShipmentHeader">
+          <DataField>ShiptoName_SalesShipmentHeader</DataField>
+        </Field>
+        <Field Name="ShiptoAddress_SalesShipmentHeader">
+          <DataField>ShiptoAddress_SalesShipmentHeader</DataField>
+        </Field>
+        <Field Name="ShiptoCity_SalesShipmentHeader">
+          <DataField>ShiptoCity_SalesShipmentHeader</DataField>
+        </Field>
+        <Field Name="ShipmentDate_SalesShipmentHeader">
+          <DataField>ShipmentDate_SalesShipmentHeader</DataField>
+        </Field>
+        <Field Name="ShiptoPostCode_SalesShipmentHeader">
+          <DataField>ShiptoPostCode_SalesShipmentHeader</DataField>
+        </Field>
         <Field Name="SenderAddr_1_">
           <DataField>SenderAddr_1_</DataField>
         </Field>
@@ -1103,6 +1142,18 @@ End Function
         <Field Name="ACONumberofMeters_ItemVariantCaption">
           <DataField>ACONumberofMeters_ItemVariantCaption</DataField>
         </Field>
+        <Field Name="Weightpermeter_ACOProfileCaption">
+          <DataField>Weightpermeter_ACOProfileCaption</DataField>
+        </Field>
+        <Field Name="Circumference_ACOProfileCaption">
+          <DataField>Circumference_ACOProfileCaption</DataField>
+        </Field>
+        <Field Name="ACOSawing_SalesShptLineCaption">
+          <DataField>ACOSawing_SalesShptLineCaption</DataField>
+        </Field>
+        <Field Name="DocumentNo_SalesShptLineCaption">
+          <DataField>DocumentNo_SalesShptLineCaption</DataField>
+        </Field>
         <Field Name="ACOProfileCode_SalesShipmentLine">
           <DataField>ACOProfileCode_SalesShipmentLine</DataField>
         </Field>
@@ -1120,6 +1171,24 @@ End Function
         </Field>
         <Field Name="ACONumberofMeters_ItemVariantFormat">
           <DataField>ACONumberofMeters_ItemVariantFormat</DataField>
+        </Field>
+        <Field Name="Weightpermeter_ACOProfile">
+          <DataField>Weightpermeter_ACOProfile</DataField>
+        </Field>
+        <Field Name="Weightpermeter_ACOProfileFormat">
+          <DataField>Weightpermeter_ACOProfileFormat</DataField>
+        </Field>
+        <Field Name="Circumference_ACOProfile">
+          <DataField>Circumference_ACOProfile</DataField>
+        </Field>
+        <Field Name="Circumference_ACOProfileFormat">
+          <DataField>Circumference_ACOProfileFormat</DataField>
+        </Field>
+        <Field Name="ACOSawing_SalesShptLine">
+          <DataField>ACOSawing_SalesShptLine</DataField>
+        </Field>
+        <Field Name="DocumentNo_SalesShptLine">
+          <DataField>DocumentNo_SalesShptLine</DataField>
         </Field>
       </Fields>
       <Query>

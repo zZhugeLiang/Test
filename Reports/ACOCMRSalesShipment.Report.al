@@ -19,6 +19,19 @@ report 50014 "ACO CMR - Sales Shipment"
             {
                 DataItemLink = "Document No." = FIELD("No.");
                 DataItemTableView = SORTING("Document No.", "Line No.") WHERE(Type = CONST(Item));
+                column(ACOAppSetup_NetGrossWeightFactorCaption; ACOAppSetup.FieldCaption("Net/Gross Weight Factor")) { }
+                column(ACOAppSetup_NetGrossWeightFactor; ACOAppSetup."Net/Gross Weight Factor") { }
+                column(Name_CompanyInfo; CompanyInfo.Name) { }
+                column(Address_CompanyInfo; CompanyInfo.Address) { }
+                column(PostCode_CompanyInfo; CompanyInfo."Post Code") { }
+                column(City_CompanyInfo; CompanyInfo.City) { }
+                column(CountryRegionCode_CompanyInfo; CompanyInfo."Country/Region Code") { }
+                column(ShiptoName_SalesShipmentHeader; "Sales Shipment Header"."Ship-to Name") { }
+                column(ShiptoAddress_SalesShipmentHeader; "Sales Shipment Header"."Ship-to Address") { }
+                column(ShiptoCity_SalesShipmentHeader; "Sales Shipment Header"."Ship-to City") { }
+                column(ShipmentDate_SalesShipmentHeader; "Sales Shipment Header"."Shipment Date") { }
+                column(ShiptoPostCode_SalesShipmentHeader; "Sales Shipment Header"."Ship-to Post Code") { }
+
                 column(SenderAddr_1_; SenderAddr[1])
                 {
                 }
@@ -109,18 +122,26 @@ report 50014 "ACO CMR - Sales Shipment"
                 column(Sales_Shipment_Line_Line_No_; "Line No.")
                 {
                 }
+
                 column(ACOProfileCode_SalesShipmentLineCaption; FieldCaption("ACO Profile Code")) { }
                 column(ACOProfileDescription_SalesShipmentLineCaption; FieldCaption("ACO Profile Description")) { }
                 column(ACOCustomerItemNo_SalesShipmentLineCaption; FieldCaption("ACO Customer Item No.")) { }
                 column(ACOProfileCustDescription_SalesShipmentLineCaption; FieldCaption("ACO Profile Cust. Description")) { }
                 column(ACONumberofUnits_SalesInvLineCaption; FieldCaption("ACO Number of Units")) { }
                 column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
+                column(Weightpermeter_ACOProfileCaption; ACOProfile.FieldCaption("Weight per meter")) { }
+                column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
+                column(ACOSawing_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("ACO Sawing")) { }
+                column(DocumentNo_SalesShptLineCaption; "Sales Shipment Line".FieldCaption("Document No.")) { }
                 column(ACOProfileCode_SalesShipmentLine; "ACO Profile Code") { }
                 column(ACOProfileDescription_SalesShipmentLine; "ACO Profile Description") { }
                 column(ACOCustomerItemNo_SalesShipmentLine; "ACO Customer Item No.") { }
                 column(ACOProfileCustDescription_SalesShipmentLine; "ACO Profile Cust. Description") { }
                 column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
-
+                column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter") { }
+                column(Circumference_ACOProfile; ACOProfile.Circumference) { }
+                column(ACOSawing_SalesShptLine; "Sales Shipment Line"."ACO Sawing") { }
+                column(DocumentNo_SalesShptLine; "Sales Shipment Line"."Document No.") { }
                 trigger OnAfterGetRecord()
                 begin
                     if "Units per Parcel" <> 0 then begin
@@ -136,6 +157,9 @@ report 50014 "ACO CMR - Sales Shipment"
 
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
+
+                    if not ACOProfile.Get("ACO Profile Code") then
+                        Clear(ACOProfile);
                 end;
             }
 
@@ -207,12 +231,20 @@ report 50014 "ACO CMR - Sales Shipment"
         Country: Record "Country/Region";
         FormatAddr: Codeunit "Format Address";
         ItemVariant: Record "Item Variant";
+        SalesLine: Record "Sales Line";
+        ACOProfile: Record "ACO Profile";
+        ACOAppSetup: Record "ACO App Setup";
         SenderAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         ShipTo: Text[80];
         ShipFrom: Text[80];
         EstdIn: Text[50];
         ParcelTxt: Label 'parcel(s)';
+
+    trigger OnInitReport()
+    begin
+        ACOAppSetup.Get();
+    end;
 
     [Scope('OnPrem')]
     procedure AddText(Text: Text[249]): Text[250]

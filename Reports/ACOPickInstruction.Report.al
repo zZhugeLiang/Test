@@ -29,6 +29,10 @@ report 50013 "ACO Pick Instruction"
                 DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
                 RequestFilterFields = "No.", "Sell-to Customer No.";
 
+                column(No_SalesHeader; "Sales Header"."No.")
+                {
+                    IncludeCaption = true;
+                }
                 column(CustomerNo_SalesHeader; "Sell-to Customer No.")
                 {
                     IncludeCaption = true;
@@ -110,6 +114,7 @@ report 50013 "ACO Pick Instruction"
                     // column(LineNo_SalesLine; "Line No.")
                     // {
                     // }
+                    column(SalesOrderNo; SalesOrderNo) { }
                     column(Sales_Line_No; "Sales Line No") { }
 
                     column(ACO_Profile_Code; SalesLine."ACO Profile Code")
@@ -132,13 +137,9 @@ report 50013 "ACO Pick Instruction"
                     {
                         // IncludeCaption = true;
                     }
-                    column(No_SalesHeader; "Sales Header"."No.")
+
+                    column(Your_Reference; YourReference)
                     {
-                        IncludeCaption = true;
-                    }
-                    column(Your_Reference; "Your Reference")
-                    {
-                        IncludeCaption = true;
                     }
                     column(PackageTypeText; PackageTypeText)
                     {
@@ -158,6 +159,8 @@ report 50013 "ACO Pick Instruction"
                             end else
                                 Clear(ACOProfile);
                         end;
+                        SalesOrderNo := "ACO Package Line"."Sales Order No.";
+                        YourReference := "Sales Header"."Your Reference";
                     end;
                 }
 
@@ -266,6 +269,8 @@ report 50013 "ACO Pick Instruction"
         DateTxt: Text;
         CompNameText: Text;
         PackageTypeText: Text;
+        SalesOrderNo: Text;
+        YourReference: Text;
         // QtyToAsm: Decimal;
         TotalNetWeight: Decimal;
         TotalGrossWeight: Decimal;

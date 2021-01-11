@@ -577,7 +577,7 @@ report 50010 "ACO Sales - Invoice"
                         ///// Captions <<
                         // column(FilteredTypeField_SalesInvLineCaption; "Sales Invoice Line".FormatType)) { }
                         // column(No_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("No.")) { }
-                        column(CrossReferenceNo_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("Cross-Reference No.")) { }
+                        column(CrossReferenceNo_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("Item Reference No.")) { }
                         column(ICPartnerCode_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("IC Partner Code")) { }
                         column(VariantCode_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("Variant Code")) { }
                         column(Description_SalesInvLineCaption; "Sales Invoice Line".FieldCaption(Description)) { }
@@ -607,12 +607,14 @@ report 50010 "ACO Sales - Invoice"
                         column(ShortcutDimCode6_SalesInvLineCaption; ShortcutDimCode6Dimension.Name) { }
                         column(ShortcutDimCode7_SalesInvLineCaption; ShortcutDimCode7Dimension.Name) { }
                         column(ShortcutDimCode8_SalesInvLineCaption; ShortcutDimCode8Dimension.Name) { }
+                        column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
+                        column(ACOSawing_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("ACO Sawing")) { }
                         ///// Captions >>
                         ///// Values <<
                         // column(Type_SalesInvLine; "Sales Invoice Line".Type) { }
                         column(FilteredTypeField_SalesInvLine; "Sales Invoice Line".FormatType) { }
                         // column(No_SalesInvLine; "Sales Invoice Line"."No.") { }
-                        column(CrossReferenceNo_SalesInvLine; "Sales Invoice Line"."Cross-Reference No.") { }
+                        column(CrossReferenceNo_SalesInvLine; "Sales Invoice Line"."Item Reference No.") { }
                         column(ICPartnerCode_SalesInvLine; "Sales Invoice Line"."IC Partner Code") { }
                         column(VariantCode_SalesInvLine; "Sales Invoice Line"."Variant Code") { }
                         column(Description_SalesInvLine; "Sales Invoice Line".Description) { }
@@ -647,6 +649,8 @@ report 50010 "ACO Sales - Invoice"
                         column(ACOCustomerItemNo_SalesInvoiceLine; "Sales Invoice Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesInvoiceLine; "Sales Invoice Line"."ACO Profile Cust. Description") { }
                         column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
+                        column(Circumference_ACOProfile; ACOProfile.Circumference) { }
+                        column(ACOSawing_SalesInvLine; "Sales Invoice Line"."ACO Sawing") { }
                         ///// Values >>
                         dataitem("Sales Shipment Buffer"; "Integer")
                         {
@@ -803,6 +807,9 @@ report 50010 "ACO Sales - Invoice"
 
                             if not ItemVariant.Get("Sales Invoice Line"."No.", "Sales Invoice Line"."Variant Code") then
                                 Clear(ItemVariant);
+
+                            if not ACOProfile.Get("ACO Profile Code") then
+                                Clear(ACOProfile);
                         end;
 
                         trigger OnPreDataItem()
@@ -1259,6 +1266,7 @@ report 50010 "ACO Sales - Invoice"
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
         ItemVariant: Record "Item Variant";
+        ACOProfile: Record "ACO Profile";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
@@ -1508,17 +1516,15 @@ report 50010 "ACO Sales - Invoice"
             exit;
         end;
 
-        with SalesShipmentBuffer do begin
-            "Document No." := SalesInvoiceLine."Document No.";
-            "Line No." := SalesInvoiceLine."Line No.";
-            "Entry No." := NextEntryNo;
-            Type := SalesInvoiceLine.Type;
-            "No." := SalesInvoiceLine."No.";
-            Quantity := QtyOnShipment;
-            "Posting Date" := PostingDate;
-            Insert;
-            NextEntryNo := NextEntryNo + 1
-        end;
+        SalesShipmentBuffer."Document No." := SalesInvoiceLine."Document No.";
+        SalesShipmentBuffer."Line No." := SalesInvoiceLine."Line No.";
+        SalesShipmentBuffer."Entry No." := NextEntryNo;
+        SalesShipmentBuffer.Type := SalesInvoiceLine.Type;
+        SalesShipmentBuffer."No." := SalesInvoiceLine."No.";
+        SalesShipmentBuffer.Quantity := QtyOnShipment;
+        SalesShipmentBuffer."Posting Date" := PostingDate;
+        SalesShipmentBuffer.Insert();
+        NextEntryNo := NextEntryNo + 1
     end;
 
     local procedure DocumentCaption(): Text[250]
@@ -1543,16 +1549,14 @@ report 50010 "ACO Sales - Invoice"
 
     local procedure FormatDocumentFields(SalesInvoiceHeader: Record "Sales Invoice Header")
     begin
-        with SalesInvoiceHeader do begin
-            FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
-            FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
-            FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
+        FormatDocument.SetTotalLabels(SalesInvoiceHeader."Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
+        FormatDocument.SetSalesPerson(SalesPurchPerson, SalesInvoiceHeader."Salesperson Code", SalesPersonText);
+        FormatDocument.SetPaymentTerms(PaymentTerms, SalesInvoiceHeader."Payment Terms Code", SalesInvoiceHeader."Language Code");
+        FormatDocument.SetShipmentMethod(ShipmentMethod, SalesInvoiceHeader."Shipment Method Code", SalesInvoiceHeader."Language Code");
 
-            OrderNoText := FormatDocument.SetText("Order No." <> '', FieldCaption("Order No."));
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FieldCaption("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FieldCaption("VAT Registration No."));
-        end;
+        OrderNoText := FormatDocument.SetText(SalesInvoiceHeader."Order No." <> '', SalesInvoiceHeader.FieldCaption("Order No."));
+        ReferenceText := FormatDocument.SetText(SalesInvoiceHeader."Your Reference" <> '', SalesInvoiceHeader.FieldCaption(SalesInvoiceHeader."Your Reference"));
+        VATNoText := FormatDocument.SetText(SalesInvoiceHeader."VAT Registration No." <> '', SalesInvoiceHeader.FieldCaption("VAT Registration No."));
     end;
 
     local procedure FormatAddressFields(SalesInvoiceHeader: Record "Sales Invoice Header")
@@ -1573,15 +1577,15 @@ report 50010 "ACO Sales - Invoice"
         TempPostedAsmLine.DeleteAll();
         if "Sales Invoice Line".Type <> "Sales Invoice Line".Type::Item then
             exit;
-        with ValueEntry do begin
-            SetCurrentKey("Document No.");
-            SetRange("Document No.", "Sales Invoice Line"."Document No.");
-            SetRange("Document Type", "Document Type"::"Sales Invoice");
-            SetRange("Document Line No.", "Sales Invoice Line"."Line No.");
-            SetRange(Adjustment, false);
-            if not FindSet then
-                exit;
-        end;
+
+        ValueEntry.SetCurrentKey("Document No.");
+        ValueEntry.SetRange("Document No.", "Sales Invoice Line"."Document No.");
+        ValueEntry.SetRange("Document Type", ValueEntry."Document Type"::"Sales Invoice");
+        ValueEntry.SetRange("Document Line No.", "Sales Invoice Line"."Line No.");
+        ValueEntry.SetRange(Adjustment, false);
+        if not ValueEntry.FindSet() then
+            exit;
+
         repeat
             if ItemLedgerEntry.Get(ValueEntry."Item Ledger Entry No.") then
                 if ItemLedgerEntry."Document Type" = ItemLedgerEntry."Document Type"::"Sales Shipment" then begin
@@ -1671,16 +1675,14 @@ report 50010 "ACO Sales - Invoice"
 
         TempVATAmountLineLCY2.Init();
         TempVATAmountLineLCY2 := TempVATAmountLine2;
-        with SalesInvoiceHeader do begin
-            VATBaseLCY :=
-              CurrExchRate.ExchangeAmtFCYToLCY(
-                "Posting Date", "Currency Code", TempVATAmountLine2."VAT Base", "Currency Factor") +
-              VATBaseRemainderAfterRoundingLCY2;
-            AmtInclVATLCY :=
-              CurrExchRate.ExchangeAmtFCYToLCY(
-                "Posting Date", "Currency Code", TempVATAmountLine2."Amount Including VAT", "Currency Factor") +
-              AmtInclVATRemainderAfterRoundingLCY2;
-        end;
+        VATBaseLCY :=
+          CurrExchRate.ExchangeAmtFCYToLCY(
+            SalesInvoiceHeader."Posting Date", SalesInvoiceHeader."Currency Code", TempVATAmountLine2."VAT Base", SalesInvoiceHeader."Currency Factor") +
+          VATBaseRemainderAfterRoundingLCY2;
+        AmtInclVATLCY :=
+          CurrExchRate.ExchangeAmtFCYToLCY(
+            SalesInvoiceHeader."Posting Date", SalesInvoiceHeader."Currency Code", TempVATAmountLine2."Amount Including VAT", SalesInvoiceHeader."Currency Factor") +
+          AmtInclVATRemainderAfterRoundingLCY2;
         TempVATAmountLineLCY2."VAT Base" := Round(VATBaseLCY);
         TempVATAmountLineLCY2."Amount Including VAT" := Round(AmtInclVATLCY);
         TempVATAmountLineLCY2.InsertLine;

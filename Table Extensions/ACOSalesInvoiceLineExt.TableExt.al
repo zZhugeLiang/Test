@@ -17,6 +17,11 @@ tableextension 50011 "ACO Sales Invoice Line Ext." extends "Sales Invoice Line"
             Caption = 'Number of Units';
             DataClassification = CustomerContent;
         }
+        field(50040; "ACO Sawing"; Boolean)
+        {
+            Caption = 'Sawing';
+            DataClassification = CustomerContent;
+        }
         field(50063; "ACO Customer Item No."; Code[50])
         {
             Caption = 'Customer Item No.';

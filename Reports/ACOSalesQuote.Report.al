@@ -584,7 +584,7 @@ report 50008 "ACO Sales - Quote"
                         }
                         ///// Fields on Subform Page <<
                         ///// Captions <<
-                        column(CrossReferenceNo_SalesLineCaption; SalesLine.FieldCaption("Cross-Reference No.")) { }
+                        column(CrossReferenceNo_SalesLineCaption; SalesLine.FieldCaption("Item Reference No.")) { }
                         column(ICPartnerCode_SalesLineCaption; SalesLine.FieldCaption("IC Partner Code")) { }
                         column(ICPartnerRefType_SalesLineCaption; SalesLine.FieldCaption("IC Partner Ref. Type")) { }
                         column(ICPartnerReference_SalesLineCaption; SalesLine.FieldCaption("IC Partner Reference")) { }
@@ -699,7 +699,7 @@ report 50008 "ACO Sales - Quote"
                         // column(Type_SalesLine; SalesLine.Type) { }
                         // column(FilteredTypecolumn_SalesLine; TypeAsText) { }
                         // column(No_SalesLine; SalesLine."No.") { }
-                        column(CrossReferenceNo_SalesLine; SalesLine."Cross-Reference No.") { }
+                        column(CrossReferenceNo_SalesLine; SalesLine."Item Reference No.") { }
                         column(ICPartnerCode_SalesLine; SalesLine."IC Partner Code") { }
                         column(ICPartnerRefType_SalesLine; SalesLine."IC Partner Ref. Type") { }
                         column(ICPartnerReference_SalesLine; SalesLine."IC Partner Reference") { }
@@ -1390,15 +1390,13 @@ report 50008 "ACO Sales - Quote"
 
     local procedure FormatDocumentFields(SalesHeader: Record "Sales Header")
     begin
-        with SalesHeader do begin
-            FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
-            FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
-            FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
+        FormatDocument.SetTotalLabels(SalesHeader."Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
+        FormatDocument.SetSalesPerson(SalesPurchPerson, SalesHeader."Salesperson Code", SalesPersonText);
+        FormatDocument.SetPaymentTerms(PaymentTerms, SalesHeader."Payment Terms Code", SalesHeader."Language Code");
+        FormatDocument.SetShipmentMethod(ShipmentMethod, SalesHeader."Shipment Method Code", SalesHeader."Language Code");
 
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FieldCaption("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FieldCaption("VAT Registration No."));
-        end;
+        ReferenceText := FormatDocument.SetText(SalesHeader."Your Reference" <> '', SalesHeader.FieldCaption("Your Reference"));
+        VATNoText := FormatDocument.SetText(SalesHeader."VAT Registration No." <> '', SalesHeader.FieldCaption("VAT Registration No."));
     end;
 
     local procedure FormatAddressFields(var SalesHeader: Record "Sales Header")
@@ -1420,12 +1418,10 @@ report 50008 "ACO Sales - Quote"
 
     local procedure LogSalesQuote(SalesHeader: Record "Sales Header"; AccountTableNo: Integer; AccountNo: Code[20])
     begin
-        with SalesHeader do begin
-            CalcFields("No. of Archived Versions");
-            SegManagement.LogDocument(
-              1, "No.", "Doc. No. Occurrence", "No. of Archived Versions", AccountTableNo, AccountNo,
-              "Salesperson Code", "Campaign No.", "Posting Description", "Opportunity No.");
-        end;
+        SalesHeader.CalcFields("No. of Archived Versions");
+        SegManagement.LogDocument(
+          1, SalesHeader."No.", SalesHeader."Doc. No. Occurrence", SalesHeader."No. of Archived Versions", AccountTableNo, AccountNo,
+          SalesHeader."Salesperson Code", SalesHeader."Campaign No.", SalesHeader."Posting Description", SalesHeader."Opportunity No.");
     end;
 
     [IntegrationEvent(TRUE, false)]

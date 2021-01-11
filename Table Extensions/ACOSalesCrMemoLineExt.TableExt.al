@@ -17,6 +17,11 @@ tableextension 50012 "ACO Sales Cr.Memo Line Ext." extends "Sales Cr.Memo Line"
             Caption = 'Number of Units';
             DataClassification = CustomerContent;
         }
+        field(50040; "ACO Sawing"; Boolean)
+        {
+            Caption = 'Sawing';
+            DataClassification = CustomerContent;
+        }
         field(50063; "ACO Customer Item No."; Code[50])
         {
             Caption = 'Customer Item No.';

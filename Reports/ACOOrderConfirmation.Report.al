@@ -648,7 +648,7 @@ report 50009 "ACO Order Confirmation"
                         }
                         ///// Fields on Subform Page <<
                         ///// Captions <<
-                        column(CrossReferenceNo_SalesLineCaption; SalesLine.FieldCaption("Cross-Reference No.")) { }
+                        column(CrossReferenceNo_SalesLineCaption; SalesLine.FieldCaption("Item Reference No.")) { }
                         column(ICPartnerCode_SalesLineCaption; SalesLine.FieldCaption("IC Partner Code")) { }
                         column(ICPartnerRefType_SalesLineCaption; SalesLine.FieldCaption("IC Partner Ref. Type")) { }
                         column(ICPartnerReference_SalesLineCaption; SalesLine.FieldCaption("IC Partner Reference")) { }
@@ -758,12 +758,14 @@ report 50009 "ACO Order Confirmation"
                         column(ACOLowerAccuracy_SalesLineCaption; SalesLine.FieldCaption("ACO Lower Accuracy")) { }
                         column(ACOUpperAccuracy_SalesLineCaption; SalesLine.FieldCaption("ACO Upper Accuracy")) { }
                         column(ACOCustomerItemNo_SalesLineCaption; SalesLine.FieldCaption("ACO Customer Item No.")) { }
+                        column(ACOProfileCustDescription_SalesLineCaption; SalesLine.FieldCaption("ACO Profile Cust. Description")) { }
+                        column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
                         ///// Caption >>
                         ///// Values <<
                         // column(Type_SalesLine; SalesLine.Type) { }
                         // column(FilteredTypecolumn_SalesLine; TypeAsText) { }
                         // column(No_SalesLine; SalesLine."No.") { }
-                        column(CrossReferenceNo_SalesLine; SalesLine."Cross-Reference No.") { }
+                        column(CrossReferenceNo_SalesLine; SalesLine."Item Reference No.") { }
                         column(ICPartnerCode_SalesLine; SalesLine."IC Partner Code") { }
                         column(ICPartnerRefType_SalesLine; SalesLine."IC Partner Ref. Type") { }
                         column(ICPartnerReference_SalesLine; SalesLine."IC Partner Reference") { }
@@ -873,7 +875,8 @@ report 50009 "ACO Order Confirmation"
                         column(ACOLowerAccuracy_SalesLine; SalesLine."ACO Lower Accuracy") { }
                         column(ACOUpperAccuracy_SalesLine; SalesLine."ACO Upper Accuracy") { }
                         column(ACOCustomerItemNo_SalesLine; SalesLine."ACO Customer Item No.") { }
-
+                        column(ACOProfileCustDescription_SalesLine; SalesLine."ACO Profile Cust. Description") { }
+                        column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")
@@ -996,6 +999,10 @@ report 50009 "ACO Order Confirmation"
                             NNCTotalExclVAT2 := VATBaseAmount;
 
                             SalesLine.ShowShortcutDimCode(ShortCutDimCode);
+
+
+                            if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+                                Clear(ItemVariant);
                         end;
 
                         trigger OnPostDataItem()
@@ -1603,6 +1610,7 @@ report 50009 "ACO Order Confirmation"
         ShortcutDimCode6Dimension: Record Dimension;
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
+        ItemVariant: Record "Item Variant";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         SegManagement: Codeunit SegManagement;
@@ -1730,15 +1738,13 @@ report 50009 "ACO Order Confirmation"
 
     local procedure FormatDocumentFields(SalesHeader: Record "Sales Header")
     begin
-        with SalesHeader do begin
-            FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
-            FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
-            FormatDocument.SetPaymentTerms(PrepmtPaymentTerms, "Prepmt. Payment Terms Code", "Language Code");
-            FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
+        FormatDocument.SetTotalLabels(SalesHeader."Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
+        FormatDocument.SetSalesPerson(SalesPurchPerson, SalesHeader."Salesperson Code", SalesPersonText);
+        FormatDocument.SetPaymentTerms(PaymentTerms, SalesHeader."Payment Terms Code", SalesHeader."Language Code");
+        FormatDocument.SetPaymentTerms(PrepmtPaymentTerms, SalesHeader."Prepmt. Payment Terms Code", SalesHeader."Language Code");
+        FormatDocument.SetShipmentMethod(ShipmentMethod, SalesHeader."Shipment Method Code", SalesHeader."Language Code");
 
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FieldCaption("VAT Registration No."));
-        end;
+        VATNoText := FormatDocument.SetText(SalesHeader."VAT Registration No." <> '', SalesHeader.FieldCaption("VAT Registration No."));
     end;
 
     local procedure GetUnitOfMeasureDescr(UOMCode: Code[10]): Text[50]

@@ -486,7 +486,7 @@ report 50011 "ACO Sales - Credit Memo"
                         ///// Captions <<
                         column(Type_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption(Type)) { }
                         // column(No_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("No.")) { }
-                        column(CrossReferenceNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Cross-Reference No.")) { }
+                        column(CrossReferenceNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Item Reference No.")) { }
                         column(ICPartnerCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("IC Partner Code")) { }
                         column(VariantCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("Variant Code")) { }
                         column(Description_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption(Description)) { }
@@ -519,12 +519,14 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ACOProfileDescription_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Profile Description")) { }
                         column(ACOCustomerItemNo_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Customer Item No.")) { }
                         column(ACOProfileCustDescription_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Profile Cust. Description")) { }
+                        column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
+                        column(ACOSawing_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Sawing")) { }
                         ///// Captions >>
                         ///// Values <<
                         // column(Type_SalesCrMemoLine; "Sales Cr.Memo Line".Type) { }
                         column(FilteredTypeField_SalesCrMemoLine; "Sales Cr.Memo Line".FormatType) { }
                         // column(No_SalesCrMemoLine; "Sales Cr.Memo Line"."No.") { }
-                        column(CrossReferenceNo_SalesCrMemoLine; "Sales Cr.Memo Line"."Cross-Reference No.") { }
+                        column(CrossReferenceNo_SalesCrMemoLine; "Sales Cr.Memo Line"."Item Reference No.") { }
                         column(ICPartnerCode_SalesCrMemoLine; "Sales Cr.Memo Line"."IC Partner Code") { }
                         column(VariantCode_SalesCrMemoLine; "Sales Cr.Memo Line"."Variant Code") { }
                         column(Description_SalesCrMemoLine; "Sales Cr.Memo Line".Description) { }
@@ -557,6 +559,8 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ACOProfileDescription_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Description") { }
                         column(ACOCustomerItemNo_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Cust. Description") { }
+                        column(Circumference_ACOProfile; ACOProfile.Circumference) { }
+                        column(ACOSawing_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Sawing") { }
                         dataitem(DimensionLoop2; "Integer")
                         {
                             DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
@@ -627,6 +631,9 @@ report 50011 "ACO Sales - Credit Memo"
                             VATAmountLine."Invoice Discount Amount" := "Inv. Discount Amount";
                             VATAmountLine."VAT Clause Code" := "VAT Clause Code";
                             VATAmountLine.InsertLine;
+
+                            if not ACOProfile.Get("ACO Profile Code") then
+                                Clear(ACOProfile);
                         end;
 
                         trigger OnPreDataItem()
@@ -1018,6 +1025,7 @@ report 50011 "ACO Sales - Credit Memo"
         ShortcutDimCode6Dimension: Record Dimension;
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
+        ACOProfile: Record "ACO Profile";
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -1122,17 +1130,15 @@ report 50011 "ACO Sales - Credit Memo"
 
     local procedure FormatDocumentFields(SalesCrMemoHeader: Record "Sales Cr.Memo Header")
     begin
-        with SalesCrMemoHeader do begin
-            FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalesPurchPerson, "Salesperson Code", SalesPersonText);
+        FormatDocument.SetTotalLabels(SalesCrMemoHeader."Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
+        FormatDocument.SetSalesPerson(SalesPurchPerson, SalesCrMemoHeader."Salesperson Code", SalesPersonText);
 
-            ReturnOrderNoText := FormatDocument.SetText("Return Order No." <> '', FieldCaption("Return Order No."));
-            ReferenceText := FormatDocument.SetText("Your Reference" <> '', FieldCaption("Your Reference"));
-            VATNoText := FormatDocument.SetText("VAT Registration No." <> '', FieldCaption("VAT Registration No."));
-            AppliedToText :=
-              FormatDocument.SetText(
-                "Applies-to Doc. No." <> '', Format(StrSubstNo(Text003, Format("Applies-to Doc. Type"), "Applies-to Doc. No.")));
-        end;
+        ReturnOrderNoText := FormatDocument.SetText(SalesCrMemoHeader."Return Order No." <> '', SalesCrMemoHeader.FieldCaption("Return Order No."));
+        ReferenceText := FormatDocument.SetText(SalesCrMemoHeader."Your Reference" <> '', SalesCrMemoHeader.FieldCaption("Your Reference"));
+        VATNoText := FormatDocument.SetText(SalesCrMemoHeader."VAT Registration No." <> '', SalesCrMemoHeader.FieldCaption("VAT Registration No."));
+        AppliedToText :=
+          FormatDocument.SetText(
+            SalesCrMemoHeader."Applies-to Doc. No." <> '', Format(StrSubstNo(Text003, Format(SalesCrMemoHeader."Applies-to Doc. Type"), SalesCrMemoHeader."Applies-to Doc. No.")));
     end;
 
     [IntegrationEvent(false, false)]

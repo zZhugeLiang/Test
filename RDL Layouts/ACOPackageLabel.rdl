@@ -1167,6 +1167,39 @@ End Function
         <Field Name="TreatmentLbl">
           <DataField>TreatmentLbl</DataField>
         </Field>
+        <Field Name="Address1Caption">
+          <DataField>Address1Caption</DataField>
+        </Field>
+        <Field Name="Address2Caption">
+          <DataField>Address2Caption</DataField>
+        </Field>
+        <Field Name="RemarkCaption">
+          <DataField>RemarkCaption</DataField>
+        </Field>
+        <Field Name="Date_TimeCaption">
+          <DataField>Date_TimeCaption</DataField>
+        </Field>
+        <Field Name="NetGrossWeighFactorACOAppSetupCaption">
+          <DataField>NetGrossWeighFactorACOAppSetupCaption</DataField>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+        </Field>
+        <Field Name="Remark">
+          <DataField>Remark</DataField>
+        </Field>
+        <Field Name="Date_Time">
+          <DataField>Date_Time</DataField>
+        </Field>
+        <Field Name="asd">
+          <DataField>asd</DataField>
+        </Field>
+        <Field Name="asdFormat">
+          <DataField>asdFormat</DataField>
+        </Field>
         <Field Name="Customer_Item_No_Caption">
           <DataField>Customer_Item_No_Caption</DataField>
         </Field>
@@ -1178,6 +1211,18 @@ End Function
         </Field>
         <Field Name="NumberOfMeters_ItemVariantCaption">
           <DataField>NumberOfMeters_ItemVariantCaption</DataField>
+        </Field>
+        <Field Name="ACOKundentourHUECK_SalesLineCaption">
+          <DataField>ACOKundentourHUECK_SalesLineCaption</DataField>
+        </Field>
+        <Field Name="Weightpermeter_ACOProfileCaption">
+          <DataField>Weightpermeter_ACOProfileCaption</DataField>
+        </Field>
+        <Field Name="PictureFile_ACOProfileCaption">
+          <DataField>PictureFile_ACOProfileCaption</DataField>
+        </Field>
+        <Field Name="Circumference_ACOProfileCaption">
+          <DataField>Circumference_ACOProfileCaption</DataField>
         </Field>
         <Field Name="Profile_no_">
           <DataField>Profile_no_</DataField>
@@ -1226,6 +1271,24 @@ End Function
         </Field>
         <Field Name="NumberOfMeters_ItemVariantFormat">
           <DataField>NumberOfMeters_ItemVariantFormat</DataField>
+        </Field>
+        <Field Name="ACOKundentourHUECK_SalesLine">
+          <DataField>ACOKundentourHUECK_SalesLine</DataField>
+        </Field>
+        <Field Name="Weightpermeter_ACOProfile">
+          <DataField>Weightpermeter_ACOProfile</DataField>
+        </Field>
+        <Field Name="Weightpermeter_ACOProfileFormat">
+          <DataField>Weightpermeter_ACOProfileFormat</DataField>
+        </Field>
+        <Field Name="PictureFile_ACOProfile">
+          <DataField>PictureFile_ACOProfile</DataField>
+        </Field>
+        <Field Name="Circumference_ACOProfile">
+          <DataField>Circumference_ACOProfile</DataField>
+        </Field>
+        <Field Name="Circumference_ACOProfileFormat">
+          <DataField>Circumference_ACOProfileFormat</DataField>
         </Field>
       </Fields>
       <Query>
