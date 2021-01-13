@@ -175,7 +175,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
                 if ACOPretreatment."Thin Staining Time" <> -1 then
                     if ACOPretreatment."Thin Staining Time" <= MinThinStainingTime then
-                        MinThinStainingTime := ACOPretreatment."Thick Staining Time";
+                        MinThinStainingTime := ACOPretreatment."Thin Staining Time";
             end;
 
         SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
