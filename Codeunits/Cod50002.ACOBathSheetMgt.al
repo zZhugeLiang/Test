@@ -147,6 +147,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 PreviousSourceNo := CurrentSourceNo;
             until ProductionOrderLines.Next() = 0;
 
+        if MaxThickStainingTime = -1 then
+            MaxThickStainingTime := 0;
+
+        if MinThinStainingTime = 99999 then
+            MinThinStainingTime := 0;
+
         ACOBathSheetHeader.Thick := MaxThickStainingTime;
         ACOBathSheetHeader.Thin := MinThinStainingTime;
         ACOBathSheetHeader.Measure := Measure;
@@ -170,19 +176,19 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 if ACOPretreatment."Thin Staining Time" <> -1 then
                     if ACOPretreatment."Thin Staining Time" <= MinThinStainingTime then
                         MinThinStainingTime := ACOPretreatment."Thick Staining Time";
-
-                SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
-                ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
-                ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
-                if ACOProfileCustomer.FindFirst() then begin
-                    if ACOPretreatment."Thick Staining Time" = -1 then
-                        if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
-                            MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
-                    if ACOPretreatment."Thin Staining Time" = -1 then
-                        if ACOProfileCustomer."Thin Staining Time" <= MinThinStainingTime then
-                            MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-                end;
             end;
+
+        SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
+        ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
+        ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
+        if ACOProfileCustomer.FindFirst() then begin
+            if ACOPretreatment."Thick Staining Time" = -1 then
+                if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
+                    MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+            if ACOPretreatment."Thin Staining Time" = -1 then
+                if ACOProfileCustomer."Thin Staining Time" <= MinThinStainingTime then
+                    MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+        end;
     end;
 
     local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; var ProductionOrderLines: Record "Prod. Order Line")

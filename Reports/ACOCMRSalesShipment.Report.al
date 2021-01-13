@@ -164,6 +164,8 @@ report 50014 "ACO CMR - Sales Shipment"
             }
 
             trigger OnAfterGetRecord()
+            var
+                CompanyInfo: Record "Company Information";
             begin
                 SalesShipmentLine.Reset();
                 SalesShipmentLine.SetRange("Document No.", "No.");
@@ -244,6 +246,7 @@ report 50014 "ACO CMR - Sales Shipment"
     trigger OnInitReport()
     begin
         ACOAppSetup.Get();
+        CompanyInfo.Get();
     end;
 
     [Scope('OnPrem')]

@@ -1194,11 +1194,11 @@ End Function
         <Field Name="Date_Time">
           <DataField>Date_Time</DataField>
         </Field>
-        <Field Name="asd">
-          <DataField>asd</DataField>
+        <Field Name="NetGrossWeightFactor_ACOAppSetup">
+          <DataField>NetGrossWeightFactor_ACOAppSetup</DataField>
         </Field>
-        <Field Name="asdFormat">
-          <DataField>asdFormat</DataField>
+        <Field Name="NetGrossWeightFactor_ACOAppSetupFormat">
+          <DataField>NetGrossWeightFactor_ACOAppSetupFormat</DataField>
         </Field>
         <Field Name="Customer_Item_No_Caption">
           <DataField>Customer_Item_No_Caption</DataField>

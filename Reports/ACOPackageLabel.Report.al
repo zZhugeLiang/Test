@@ -53,7 +53,7 @@ report 50001 "ACO Package Label"
             column(Address2; Address2) { }
             column(Remark; Remark) { }
             column(Date_Time; "Date-Time") { }
-            column(asd; ACOAppSetup."Net/Gross Weight Factor") { }
+            column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor") { }
             column(Customer_Item_No_Caption; ACOPackageLine.FieldCaption("Customer Item No.")) { }
             column(Profile_Cust__DescriptionCaption; ACOPackageLine.FieldCaption("Profile Cust. Description")) { }
             column(Number_of_UnitsCaption; ACOPackageLine.FieldCaption("Number of Units")) { }

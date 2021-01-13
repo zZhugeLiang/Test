@@ -233,7 +233,7 @@ report 50010 "ACO Sales - Invoice"
                     column(SelltoCountryRegionCode_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Sell-to Country/Region Code")) { }
                     column(SelltoContactNo_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Sell-to Contact No.")) { }
                     column(SelltoContact_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Sell-to Contact")) { }
-                    // column(YourReference_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Your Reference")) { }
+                    column(YourReference_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Your Reference")) { }
                     column(DocumentDate_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Document Date")) { }
                     // column(PostingDate_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Posting Date")) { }
                     // column(DueDate_SalesInvHdrCaption; "Sales Invoice Header".FieldCaption("Due Date")) { }
@@ -1724,6 +1724,7 @@ report 50010 "ACO Sales - Invoice"
     [IntegrationEvent(TRUE, false)]
     local procedure OnAfterPostDataItem(var SalesInvoiceHeader: Record "Sales Invoice Header")
     begin
+
     end;
 }
 

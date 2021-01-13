@@ -195,8 +195,8 @@ report 50000 "ACO Bath Sheet"
                     SalesLine: Record "Sales Line";
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
-                    MaxThickStainingTime := 0;
-                    MinThinStainingTime := 0;
+                    MaxThickStainingTime := -1;
+                    MinThinStainingTime := 99999;
                     if not Item.Get("Treatment") then
                         Clear(Item);
 
@@ -218,6 +218,12 @@ report 50000 "ACO Bath Sheet"
                     CustomerName := Customer.Name;
 
                     ACOBathSheetMgt.DetermineStainingTimes(SalesLine, MinThinStainingTime, MaxThickStainingTime, Customer);
+
+                    if MaxThickStainingTime = -1 then
+                        MaxThickStainingTime := 0;
+
+                    if MinThinStainingTime = 99999 then
+                        MinThinStainingTime := 0;
                 end;
             }
 
