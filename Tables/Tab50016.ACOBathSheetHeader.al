@@ -654,17 +654,16 @@ table 50016 "ACO Bath Sheet Header"
             BathTime := (3 * LayerThickness / CurrDens);
         end;
 
-        // Str := CurrDens * TotalSurface * 100;
         Str := CurrDens * TotalSurface;
 
         Str := Round(Str, 1);
         CurrDens := Round(CurrDens, 0.01);
         BathTime := Round(BathTime, 1);
 
-        // if Str > MaxCurrentDensityBath then begin
-        //     CurrDens := 0;
-        //     BathTime := 0;
-        //     Str := 0;
-        // end;
+        if Str > MaxCurrentDensityBath then begin
+            CurrDens := 0;
+            BathTime := 0;
+            Str := 0;
+        end;
     end;
 }

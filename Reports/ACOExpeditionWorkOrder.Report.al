@@ -117,7 +117,8 @@ report 50004 "ACO Expedition Work Order"
                 {
                 }
                 trigger OnAfterGetRecord()
-
+                var
+                    Item: Record Item;
                 begin
                     ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
@@ -131,6 +132,13 @@ report 50004 "ACO Expedition Work Order"
                         ACOProfile.CalcFields("Picture File")
                     else
                         Clear(ACOProfile);
+
+                    Clear(Item);
+                    if Type = Type::Item then
+                        if Item.Get("No.") then begin
+                            if Item."ACO Color" = '' then
+                                CurrReport.Skip();
+                        end;
 
                     NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
                 end;

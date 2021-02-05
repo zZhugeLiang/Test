@@ -308,58 +308,6 @@ Page 50025 "ACO Selection Bath Sheet List"
                     end;
                 end;
             }
-            // action(SetIncluded)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Set Included';
-            //     Image = Completed;
-            //     Promoted = true;
-            //     PromotedCategory = Process;
-            //     PromotedIsBig = true;
-            //     ToolTip = 'Set Included';
-            //     trigger OnAction()
-            //     var
-            //         ProdOrderLine: Record "Prod. Order Line";
-            //     begin
-            //         // ProdOrderLine.CopyFilters(Rec);
-            //         CurrPage.SetSelectionFilter(ProdOrderLine);
-            //         ProdOrderLine.ModifyAll("ACO Included", true);
-            //         CurrPage.Update(false);
-            //     end;
-            // }
-            // action(ClearIncluded)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Clear Included';
-            //     Image = ResetStatus;
-            //     Promoted = true;
-            //     PromotedCategory = Process;
-            //     PromotedIsBig = true;
-            //     ToolTip = 'Clear Included';
-            //     trigger OnAction()
-            //     var
-            //         ProdOrderLine: Record "Prod. Order Line";
-            //     begin
-            //         ProdOrderLine.CopyFilters(Rec);
-            //         ProdOrderLine.ModifyAll("ACO Included", false);
-            //         CurrPage.Update(false);
-            //     end;
-            // }
-            // action(ShowIncluded)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Show Included';
-            //     Image = ShowSelected;
-            //     Promoted = true;
-            //     PromotedCategory = Process;
-            //     PromotedIsBig = true;
-            //     ToolTip = 'Show Included';
-            //     trigger OnAction()
-            //     begin
-            //         SetRange("ACO Included", true);
-            //         CurrPage.Update(false);
-            //     end;
-            // }
         }
 
         area(navigation)

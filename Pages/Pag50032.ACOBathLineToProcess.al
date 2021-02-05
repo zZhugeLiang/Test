@@ -220,6 +220,7 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                     if Customer.Get(tempCustomerNo) then begin
                         GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
+                        Commit();///
                         temptext := GenPackage.RunRequestPage();
                         // Create PackageHeader;
                         PackageHeader.Init();

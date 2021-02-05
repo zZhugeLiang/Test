@@ -231,8 +231,14 @@ table 50017 "ACO Bath Sheet Line"
     end;
 
     trigger OnDelete()
+    var
+        ProdOrderLine: Record "Prod. Order Line";
     begin
         CalculateProcessTimesBathSheetHeader();
+        // if ProdOrderLine.Get(Rec."Production Order No.", Rec."Production Order Status", Rec."Production Order Line No.") then begin
+        //     ProdOrderLine."ACO Remaining Quantity" += ProdOrderLine."ACO Remaining Quantity" + Rec.Quantity;
+        //     ProdOrderLine.Modify();
+        // end;
     end;
 
     local procedure CalculateProcessTimesBathSheetHeader()

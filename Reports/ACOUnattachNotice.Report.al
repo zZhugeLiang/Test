@@ -212,11 +212,16 @@ report 50007 "ACO Unattach Notice"
                     if not ACOProfileCustomer.FindFirst() then
                         Clear(ACOProfileCustomer);
 
-                    if not Item.Get("No.") then
-                        Clear(Item);
+                    Clear(Item);
 
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
+
+                    if Type = Type::Item then
+                        if Item.Get("No.") then begin
+                            if Item."ACO Color" = '' then
+                                CurrReport.Skip();
+                        end;
 
                     ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
                     ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
