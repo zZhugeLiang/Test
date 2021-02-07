@@ -55,7 +55,7 @@ xmlport 50000 "ACO Aucos Export"
                     {
                         trigger OnBeforePassVariable()
                         begin
-                            totalSurface := FormatAndRound(ACOBathSheetHeader."Total Surface");
+                            totalSurface := FormatAndRound(ACOBathSheetHeader."Total Surface" / 1000);
                         end;
                     }
 

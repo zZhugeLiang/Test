@@ -449,7 +449,7 @@ table 50016 "ACO Bath Sheet Header"
         BathSheetLine: Record "ACO Bath Sheet Line";
     begin
         BathSheetLine.SetRange("Bath Sheet No.", Rec."No.");
-        BathSheetLine.DeleteAll();
+        BathSheetLine.DeleteAll(true);
     end;
 
     local procedure CalculateTotalSurface()

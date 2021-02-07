@@ -310,18 +310,19 @@ codeunit 50000 "ACO Event Subscribers"
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
-    local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
-    var
-        ProdOrderLine: Record "Prod. Order Line";
-    begin
-        if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then begin
-            //TODO
-            ProdOrderLine."ACO Number of Units" += Rec.Quantity;
-            ProdOrderLine."ACO Complete" := false;
-            ProdOrderLine.Modify();
-        end;
-    end;
+    // [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
+    // local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
+    // var
+    //     ProdOrderLine: Record "Prod. Order Line";
+    // //ACOBathSheetLine: Record "ACO Bath Sheet Line";
+    // begin
+    //     if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then begin
+    //         //TODO
+    //         ProdOrderLine."ACO Remaining Quantity" += Rec.Quantity;
+    //         ProdOrderLine."ACO Complete" := false;
+    //         ProdOrderLine.Modify();
+    //     end;
+    // end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
     local procedure CreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
