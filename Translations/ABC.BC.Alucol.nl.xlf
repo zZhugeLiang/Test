@@ -6544,7 +6544,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3450995919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shelf No. Mandatory on Package</source>
-          <target>Locatie nummer verplicht op collie</target>
+          <target>Locatie nummer verplicht op colli</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Shelf No. Mand. on Package - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 1138253110 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

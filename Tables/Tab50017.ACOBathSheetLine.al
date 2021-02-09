@@ -235,12 +235,6 @@ table 50017 "ACO Bath Sheet Line"
         ProdOrderLine: Record "Prod. Order Line";
     begin
         CalculateProcessTimesBathSheetHeader();
-
-        if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then begin
-            ProdOrderLine."ACO Remaining Quantity" += Rec.Quantity;
-            ProdOrderLine."ACO Complete" := false;
-            ProdOrderLine.Modify();
-        end;
     end;
 
     local procedure CalculateProcessTimesBathSheetHeader()
