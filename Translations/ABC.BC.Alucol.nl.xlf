@@ -63,22 +63,22 @@
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 640498295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density Bath 1</source>
-          <target>Max. Stroomdichtheid Bad 1</target>
+          <target>Max. Stroom Bad 1</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Max. Current Density Bath 1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 2553588146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density Bath 2</source>
-          <target>Max. Stroomdichtheid Bad 2</target>
+          <target>Max. Stroom Bad 2</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Max. Current Density Bath 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1915891529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density Bath 3</source>
-          <target>Max. Stroomdichtheid Bad 3</target>
+          <target>Max. Stroom Bad 3</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Max. Current Density Bath 3 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 340619724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density Bath L</source>
-          <target>Max. Stroomdichtheid Bad LL</target>
+          <target>Max. Stroom Bad LL</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Max. Current Density Bath L - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1559654101 - Field 1619105478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

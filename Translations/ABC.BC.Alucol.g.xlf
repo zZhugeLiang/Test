@@ -5173,6 +5173,86 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Invoice - NamedType EMailCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 1087014013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pro Forma Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - ReportDataItem 907109761 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pro Forma Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - ReportDataItem Header - Property RequestFilterHeading</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 2623093095" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pro Forma Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType DocumentTitleLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 1877187315" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType PageLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 1464398968" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType CountryOfManufactuctureLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 3182469044" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType TotalWeightLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 3878637365" size-unit="char" translate="yes" xml:space="preserve">
+          <source>For customs purposes only.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType DeclartionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 3058433994" size-unit="char" translate="yes" xml:space="preserve">
+          <source>For and on behalf of the above named company:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType SignatureLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 1119192707" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name (in print) Signature</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType SignatureNameLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 2756798833" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position in company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType SignaturePositionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 1096796838" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Contact Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType SellToContactPhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 689955230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Contact Mobile Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType SellToContactMobilePhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 2518404021" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Contact E-Mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType SellToContactEmailLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 24137681" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Contact Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType BillToContactPhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 2423794985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Contact Mobile Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType BillToContactMobilePhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1087014013 - NamedType 1851005282" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Contact E-Mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Pro Forma Inv - NamedType BillToContactEmailLbl</note>
+        </trans-unit>
         <trans-unit id="Report 3431786094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Quote</source>
           <note from="Developer" annotates="general" priority="2"></note>

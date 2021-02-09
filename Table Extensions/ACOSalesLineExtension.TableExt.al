@@ -711,4 +711,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         Validate("Unit Price", NewUnitPrice);
     end;
+
+    procedure ACOCopyCustomFieldsFromSalesInvoiceLines(SalesInvoiceLine: Record "Sales Invoice Line");
+    begin
+        Rec."ACO Profile Code" := SalesInvoiceLine."ACO Profile Code";
+        Rec."ACO Profile Description" := SalesInvoiceLine."ACO Profile Description";
+        Rec."ACO Number of Units" := SalesInvoiceLine."ACO Number of Units";
+        Rec."ACO Sawing" := SalesInvoiceLine."ACO Sawing";
+        Rec."ACO Customer Item No." := SalesInvoiceLine."ACO Customer Item No.";
+        Rec."ACO Profile Cust. Description" := SalesInvoiceLine."ACO Profile Cust. Description";
+        Rec.Modify(true);
+    end;
 }

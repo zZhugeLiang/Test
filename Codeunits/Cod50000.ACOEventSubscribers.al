@@ -310,20 +310,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;
 
-    // [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
-    // local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
-    // var
-    //     ProdOrderLine: Record "Prod. Order Line";
-    // //ACOBathSheetLine: Record "ACO Bath Sheet Line";
-    // begin
-    //     if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then begin
-    //         //TODO
-    //         ProdOrderLine."ACO Remaining Quantity" += Rec.Quantity;
-    //         ProdOrderLine."ACO Complete" := false;
-    //         ProdOrderLine.Modify();
-    //     end;
-    // end;
-
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
     local procedure CreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
     var
@@ -347,8 +333,6 @@ codeunit 50000 "ACO Event Subscribers"
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
         ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
 
-        // if ACOProfile.Get(SalesLine."ACO Profile Code") then
-
         if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
             Clear(ItemVariant);
 
@@ -357,8 +341,11 @@ codeunit 50000 "ACO Event Subscribers"
 
         if ProdOrderLine."ACO Number of Units" <> 0 then
             ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";
+    end;
 
-        /// SalesLine."ACO Area Profile";
-        //ProdOrderLine."ACO Total m2" := ProdOrderLine."ACO Quantity to Bath Sheet" * ProdOrderLine."ACO Profile m2 per Qty.";
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnAfterCopySalesInvLine', '', false, false)]
+    local procedure CopyDocumentMgt_OnAfterCopySalesInvLine(var TempDocSalesLine: Record "Sales Line" temporary; var ToSalesHeader: Record "Sales Header"; var FromSalesLineBuf: Record "Sales Line"; var FromSalesInvLine: Record "Sales Invoice Line")
+    begin
+        TempDocSalesLine.ACOCopyCustomFieldsFromSalesInvoiceLines(FromSalesInvLine);
     end;
 }

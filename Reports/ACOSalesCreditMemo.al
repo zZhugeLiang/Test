@@ -521,6 +521,10 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ACOProfileCustDescription_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Profile Cust. Description")) { }
                         column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
                         column(ACOSawing_SalesCrMemoLineCaption; "Sales Cr.Memo Line".FieldCaption("ACO Sawing")) { }
+                        column(ACOProfileCode_SalesCrMemoLineCaption; "Sales Cr.Memo Line"."ACO Profile Code") { }
+                        column(ACONumberofMeters_ItemVariantCaption; ItemVariant."ACO Number of Meters") { }
+                        column(ACONumberofUnits_SalesCrMemoLineCaption; "Sales Cr.Memo Line"."ACO Number of Units") { }
+
                         ///// Captions >>
                         ///// Values <<
                         // column(Type_SalesCrMemoLine; "Sales Cr.Memo Line".Type) { }
@@ -556,11 +560,15 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ShortcutDimCode6_SalesCrMemoLine; ShortcutDimCode[6]) { }
                         column(ShortcutDimCode7_SalesCrMemoLine; ShortcutDimCode[7]) { }
                         column(ShortcutDimCode8_SalesCrMemoLine; ShortcutDimCode[8]) { }
+                        column(ACOProfileCode_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Code") { }
                         column(ACOProfileDescription_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Description") { }
                         column(ACOCustomerItemNo_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Profile Cust. Description") { }
+                        column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                         column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                         column(ACOSawing_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Sawing") { }
+                        column(ACONumberofUnits_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Number of Units") { }
+
                         dataitem(DimensionLoop2; "Integer")
                         {
                             DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
@@ -634,6 +642,9 @@ report 50011 "ACO Sales - Credit Memo"
 
                             if not ACOProfile.Get("ACO Profile Code") then
                                 Clear(ACOProfile);
+
+                            if not ItemVariant.Get("ACO Profile Code") then
+                                Clear(ItemVariant);
                         end;
 
                         trigger OnPreDataItem()
@@ -1015,6 +1026,7 @@ report 50011 "ACO Sales - Credit Memo"
         DimSetEntry1: Record "Dimension Set Entry";
         DimSetEntry2: Record "Dimension Set Entry";
         CurrExchRate: Record "Currency Exchange Rate";
+        ItemVariant: Record "Item Variant";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
