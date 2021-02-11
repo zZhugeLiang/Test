@@ -177,6 +177,7 @@ page 50009 "ACO Profile Card"
                 var
                     InStr: InStream;
                 begin
+                    CalcFields("Picture File");
                     "Picture File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', "Picture Filename");
                 end;
@@ -191,6 +192,7 @@ page 50009 "ACO Profile Card"
                 var
                     InStr: InStream;
                 begin
+                    CalcFields("Clamping Method File");
                     "Clamping Method File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', "Clamping Method Filename");
                 end;
@@ -205,6 +207,7 @@ page 50009 "ACO Profile Card"
                 var
                     InStr: InStream;
                 begin
+                    CalcFields("Packaging Instructions File");
                     "Packaging Instructions File".CreateInStream(InStr);
                     DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename");
                 end;
