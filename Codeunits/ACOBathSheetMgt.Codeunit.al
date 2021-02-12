@@ -215,7 +215,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     begin
         SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
-
+        LineNo := LineNo;  // Dummy Regel -> AUB Oplossen als je hier bij uit komt, LineNo wordt niet meer gebruikt? <-- 
         if not ProductionOrderLine."ACO Rerun" then
             if ProductionOrderLine."ACO Remaining Quantity" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
                 Error(NumberofUnitsLtQuantityToBathSheetErr);

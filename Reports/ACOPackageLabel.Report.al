@@ -129,6 +129,7 @@ report 50001 "ACO Package Label"
                     {
                         ApplicationArea = All;
                         Caption = 'Package Type';
+                        OptionCaption = 'Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack';
                         ToolTip = '';
                     }
                     field("RackNumber"; "Rack Number")

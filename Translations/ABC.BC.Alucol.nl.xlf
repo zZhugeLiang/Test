@@ -4467,6 +4467,12 @@
           <target>Colli type</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Package Type - Property Caption</note>
         </trans-unit>
+         <trans-unit id="Report 4164356835 - Control 116357982 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack</source>
+          <target>Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Package Label - Control Package Type - Property OptionCaption</note>
+        </trans-unit>       
         <trans-unit id="Report 4164356835 - Control 116357982 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>
           <note from="Developer" annotates="general" priority="2"></note>

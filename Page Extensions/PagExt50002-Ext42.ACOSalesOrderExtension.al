@@ -163,7 +163,7 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                    SalesHeader: Record "Sales Header";
+                    //SalesHeader: Record "Sales Header";
                     SalesLine: Record "Sales Line";
                 begin
                     // SalesHeader := Rec;

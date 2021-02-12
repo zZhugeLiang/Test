@@ -287,9 +287,9 @@ page 50020 "ACO Bath Sheet"
                 end;
             }
 
-            action("Export Aucos")
+            action("Download Aucos")
             {
-                Caption = 'Export Aucos';
+                Caption = 'Download Aucos File';
                 Image = Export;
                 ApplicationArea = All;
 
@@ -360,7 +360,88 @@ page 50020 "ACO Bath Sheet"
                     DownloadFromStream(FileInStream, '', '', '', FileName);
                 end;
             }
+            action("Send to Aucos")
+            {
+                Caption = 'Send to Aucos';
+                Image = Export;
+                ApplicationArea = All;
 
+                trigger OnAction()
+                var
+                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
+                    ACOBathSheetLine: Record "ACO Bath Sheet Line";
+                    ACOColor: Record "ACO Color";
+                    ACOProfile: Record "ACO Profile";
+                    ACOPretreatment: Record "ACO Pretreatment";
+                    ACOAppSetup: Record "ACO App Setup";
+                    Item: Record Item;
+                    TempBlob: Codeunit "Temp Blob";
+                    base64Convert: Codeunit "Base64 Convert";
+                    ACOFTPConnector: Codeunit "ACO FTP Connector";
+                    FileOutStream: OutStream;
+                    FileInStream: InStream;
+                    FileBuffer: Text;
+                    LastColorCode: Code[20];
+                    LastPretreatmentCode: Code[20];
+                    ExtraFlushing: Boolean;
+                    MaxNumberOfLinesErr: Label 'The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.';
+                    NotIntendedforLongLineErr: Label 'This Bath Sheet is not intended for the long line.';
+                    NotAllLinesSameColorErr: Label 'Not all lines have the same color.';
+                    NotAllLinesSamePretreatmentErr: Label 'Not all lines have the same pretreatment.';
+                    ColorCannotBeExportedToAucosErr: Label 'This color cannot be exported to Aucos.';
+                begin
+                    ACOAppSetup.Get();
+                    ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
+                    if ACOAppSetup."Aucos Max. No. of Lines" > 0 then
+                        if ACOBathSheetLine.Count() > ACOAppSetup."Aucos Max. No. of Lines" then
+                            Error(MaxNumberOfLinesErr);
+
+                    if "Production Line" <> "Production Line"::Long then
+                        Error(NotIntendedforLongLineErr);
+
+                    if ACOBathSheetLine.FindSet() then
+                        repeat
+                            if LastColorCode <> '' then
+                                if LastColorCode <> ACOBathSheetLine.Color then
+                                    Error(NotAllLinesSameColorErr);
+
+                            ACOColor.Get(ACOBathSheetLine.Color);
+                            if not ACOColor.Aucos then
+                                Error(ColorCannotBeExportedToAucosErr);
+
+                            Item.Get(ACOBathSheetLine.Treatment);
+
+                            ACOPretreatment.Get(Item."ACO Pretreatment");
+
+                            if LastPretreatmentCode <> '' then
+                                if LastPretreatmentCode <> Item."ACO Pretreatment" then
+                                    Error(NotAllLinesSamePretreatmentErr);
+
+                            LastColorCode := ACOBathSheetLine.Color;
+                            LastPretreatmentCode := Item."ACO Pretreatment";
+                            ACOProfile.Get(ACOBathSheetLine."Profile Code");
+                            if ACOProfile."Extra Flushing" then
+                                ExtraFlushing := true;
+                        // ACOBathSheetLine
+                        until ACOBathSheetLine.Next() = 0;
+
+                    TempBlob.CreateOutStream(FileOutStream);
+                    ACOBathSheetHeader := Rec;
+                    ACOBathSheetHeader.SetRecFilter();
+                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
+                    TempBlob.CreateInStream(FileInStream);
+                    FileInStream.ReadText(FileBuffer);
+
+
+                    ACOFTPConnector.uploadFile(
+                        ACOAppSetup."Aucos FTP Path" + "No." + '_export.csv',
+                        ACOAppSetup."Aucos FTP Server",
+                        ACOAppSetup."Aucos FTP Port",
+                        ACOAppSetup."Aucos FTP Username",
+                        ACOAppSetup."Aucos FTP Password",
+                        base64Convert.ToBase64(FileBuffer));
+                end;
+            }
             action("Export Aucos2")
             {
                 Caption = 'Export Aucos test';

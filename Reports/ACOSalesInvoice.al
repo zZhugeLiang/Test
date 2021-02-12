@@ -1103,8 +1103,8 @@ report 50010 "ACO Sales - Invoice"
             }
 
             trigger OnAfterGetRecord()
-            var
-                Handled: Boolean;
+            //            var
+            //                Handled: Boolean;
             begin
                 CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
 

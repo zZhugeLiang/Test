@@ -233,7 +233,6 @@ report 50014 "ACO CMR - Sales Shipment"
         Country: Record "Country/Region";
         FormatAddr: Codeunit "Format Address";
         ItemVariant: Record "Item Variant";
-        SalesLine: Record "Sales Line";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
         SenderAddr: array[8] of Text[100];

@@ -235,6 +235,39 @@ table 50000 "ACO App Setup"
             DataClassification = CustomerContent;
         }
 
+        field(38; "Aucos FTP Server"; Text[250])
+        {
+            Caption = 'Aucos FTP Server';
+            DataClassification = CustomerContent;
+        }
+        field(39; "Aucos FTP Port"; Integer)
+        {
+            Caption = 'Aucos FTP Port';
+            DataClassification = CustomerContent;
+        }
+        field(40; "Aucos FTP Username"; Text[50])
+        {
+            Caption = 'Aucos FTP Username';
+            DataClassification = CustomerContent;
+        }
+        field(41; "Aucos FTP Password"; Text[50])
+        {
+            Caption = 'Aucos FTP Password';
+            ExtendedDatatype = Masked;
+            DataClassification = CustomerContent;
+        }
+        field(42; "Aucos FTP Path"; Text[50])
+        {
+            Caption = 'Aucos FTP Path';
+            DataClassification = CustomerContent;
+            trigger OnValidate()
+            begin
+                if not ("Aucos FTP Path".EndsWith('/')) then begin
+                    "Aucos FTP Path" := "Aucos FTP Path" + '/';
+                    Rec.Modify();
+                end
+            end;
+        }
     }
 
     keys

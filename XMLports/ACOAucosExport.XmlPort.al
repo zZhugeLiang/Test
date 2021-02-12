@@ -8,7 +8,7 @@ xmlport 50000 "ACO Aucos Export"
     FieldSeparator = ',';
     RecordSeparator = '<NewLine>';
     TableSeparator = ',';
-    TextEncoding = UTF8;
+    TextEncoding = WINDOWS;
 
     schema
     {

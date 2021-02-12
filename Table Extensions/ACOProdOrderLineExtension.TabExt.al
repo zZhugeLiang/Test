@@ -45,7 +45,7 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         {
             Caption = 'Source Type';
             ObsoleteState = Removed;
-            ObsoleteReason = '';
+            ObsoleteReason = 'No longer used';
             OptionMembers = Item,Family,"Sales Header";
             Editable = false;
             DataClassification = CustomerContent;
