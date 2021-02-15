@@ -307,7 +307,7 @@ page 50020 "ACO Bath Sheet"
                     FileInStream: InStream;
                     LastColorCode: Code[20];
                     LastPretreatmentCode: Code[20];
-                    FileName: Text;
+                    AucosFileName: Text;
                     ExtraFlushing: Boolean;
                     MaxNumberOfLinesErr: Label 'The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.';
                     NotIntendedforLongLineErr: Label 'This Bath Sheet is not intended for the long line.';
@@ -356,8 +356,8 @@ page 50020 "ACO Bath Sheet"
                     Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
                     TempBlob.CreateInStream(FileInStream);
 
-                    FileName := "No." + '_export.csv';
-                    DownloadFromStream(FileInStream, '', '', '', FileName);
+                    AucosFileName := "No." + '_export.csv';
+                    DownloadFromStream(FileInStream, '', '', '', AucosFileName);
                 end;
             }
             action("Send to Aucos")
@@ -454,7 +454,7 @@ page 50020 "ACO Bath Sheet"
                     TempBlob: Codeunit "Temp Blob";
                     FileOutStream: OutStream;
                     FileInStream: InStream;
-                    FileName: Text;
+                    AucosFileName: Text;
                 begin
                     TempBlob.CreateOutStream(FileOutStream);
 
@@ -463,8 +463,8 @@ page 50020 "ACO Bath Sheet"
                     Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
                     TempBlob.CreateInStream(FileInStream);
 
-                    FileName := "No." + '_export.csv';
-                    DownloadFromStream(FileInStream, '', '', '', FileName);
+                    AucosFileName := "No." + '_export.csv';
+                    DownloadFromStream(FileInStream, '', '', '', AucosFileName);
                 end;
             }
         }

@@ -261,8 +261,8 @@ xmlport 50000 "ACO Aucos Export"
     end;
 
 
-    local procedure FormatAndRound(Input: Decimal): Text
+    local procedure FormatAndRound(InputDec: Decimal): Text
     begin
-        exit(Format(Round(Input, 0.000001), 0, 1));
+        exit(Format(Round(InputDec, 0.000001), 0, 1));
     end;
 }
