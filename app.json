@@ -27,11 +27,7 @@
   "screenshots": [],
   "platform": "17.0.0.0",
   "runtime": "6.0",
-<<<<<<< HEAD
-  "features": ["TranslationFile"]
-=======
   "features": ["TranslationFile"],
   "suppressWarnings": ["AA0175","AA0206","AL0606","AA0150","AA0205","AA0072","AA0218","AL0604",
                        "AA0215","AW0005","AW0006","AW0011","AA0232","AA0204","AA0074","AA0470","AA0217","AA0008","AA0139","AA0005","AA0073","AA0021"]
->>>>>>> f4f5030cb0fadc8eaea0fa795e8047e755912fab
 }
