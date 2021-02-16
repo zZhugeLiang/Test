@@ -111,7 +111,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOProfile: Record "ACO Profile";
                 ACOProfileCustomer: Record "ACO Profile Customer";
                 ACOManagement: Codeunit "ACO Management";
-                ProfileInactiveErr: Label 'Profile Code %1 is inactive.';
+                ProfileInactiveErr: Label 'Profile Code %1 is inactive.', Comment = '%1 = Profile Code';
             begin
                 if "ACO Profile Code" <> '' then begin
                     ACOProfile.Get("ACO Profile Code");
@@ -583,9 +583,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             var
                 AppSetup: Record "ACO App Setup";
                 ProdOrderLine: Record "Prod. Order Line";
-                ItemVariant: Record "Item Variant";
                 BathSheetLine: Record "ACO Bath Sheet Line";
-                BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
+                BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.', Comment = '%1 = The Number of the Bath Sheet';
                 FinalLengtGtMaxSawingLengthErr: Label 'Start Length can not be greater than the Maximum Sawing Length.';
             begin
                 AppSetup.Get();

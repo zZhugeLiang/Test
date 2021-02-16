@@ -176,10 +176,13 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
+                    FileNameBuffer: Text;
                 begin
                     CalcFields("Picture File");
                     "Picture File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Picture Filename");
+
+                    DownloadFromStream(InStr, '', '', '', FileNameBuffer);
+                    Rec."Picture Filename" := FilenameBuffer.Substring(1, MaxStrLen(Rec."Picture Filename"));
                 end;
             }
             action(DownloadClampingMethod)
@@ -191,10 +194,12 @@ page 50009 "ACO Profile Card"
                 trigger OnAction()
                 var
                     InStr: InStream;
+                    ClampingBuffer: Text;
                 begin
                     CalcFields("Clamping Method File");
                     "Clamping Method File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Clamping Method Filename");
+                    DownloadFromStream(InStr, '', '', '', ClampingBuffer);
+                    Rec."Clamping Method Filename" := ClampingBuffer.Substring(1, MaxStrLen((Rec."Clamping Method Filename")));
                 end;
             }
             action(DownloadPackagingInstructions)

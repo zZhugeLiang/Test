@@ -319,7 +319,6 @@ report 50000 "ACO Bath Sheet"
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;
-        BathSheetLineComments: Text;
         AllComments: Text;
         MaxThickStainingTime: Decimal;
         MinThinStainingTime: Decimal;

@@ -232,7 +232,6 @@ table 50017 "ACO Bath Sheet Line"
 
     trigger OnDelete()
     var
-        ProdOrderLine: Record "Prod. Order Line";
     begin
         CalculateProcessTimesBathSheetHeader();
     end;

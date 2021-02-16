@@ -204,7 +204,6 @@ report 50007 "ACO Unattach Notice"
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
-                    Customer: Record Customer;
                     RoutingLine: Record "Routing Line";
                 begin
                     ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
@@ -218,10 +217,10 @@ report 50007 "ACO Unattach Notice"
                         Clear(ItemVariant);
 
                     if Type = Type::Item then
-                        if Item.Get("No.") then begin
+                        if Item.Get("No.") then
                             if Item."ACO Color" = '' then
                                 CurrReport.Skip();
-                        end;
+
 
                     ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
                     ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
@@ -425,7 +424,7 @@ report 50007 "ACO Unattach Notice"
         MaxWidthCaptionLbl: Label 'Max Width';
         MaxHeightCaptionLbl: Label 'Max Height';
         RemarkCaptionLbl: Label 'Remark';
-        NameCaptionLbl: Label 'Name';
+
         // Totals
         FillClampedTotalsHereCaptionLbl: Label 'Fill in the clamped totals here (OK + Rejected)';
         QuantityOKCaptionLbl: Label 'Quantity OK';
@@ -447,8 +446,6 @@ report 50007 "ACO Unattach Notice"
         LocationCaptionLbl: Label 'Location';
 
     local procedure GetHolders()
-    var
-        Counter: Integer;
     begin
         if not ACOLinkedPackaging.Get("Sales Line"."ACO Packaging") then
             Clear(ACOLinkedPackaging);

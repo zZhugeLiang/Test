@@ -147,8 +147,6 @@ report 50004 "ACO Expedition Work Order"
             trigger OnAfterGetRecord()
             var
                 SalesLine: Record "Sales Line";
-                ACOProfile: Record "ACO Profile";
-                Item: Record Item;
             begin
                 SalesLine.SetRange("Document Type", "Document Type");
                 SalesLine.SetRange("Document No.", "No.");
@@ -174,11 +172,7 @@ report 50004 "ACO Expedition Work Order"
         User: Record User;
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
-        ACOColor: Record "ACO Color";
         ACOProfile: Record "ACO Profile";
-        CustomerName: Text[100];
-        ItemDescription: Text[100];
-        MeasureText: Text;
         BagDescriptionsText: Text;
         TotalNumberOfUnits: Decimal;
         NumberOfMeters: Decimal;
@@ -187,14 +181,12 @@ report 50004 "ACO Expedition Work Order"
         NoteCaptionLbl: Label 'Note';
         SalesOrderNoCaptionLbl: Label 'Sales Order No.';
         ExpeditionWorkOrderCaptionLbl: Label 'Expedition Work Order';
-        WorkOrderNoCaptionLbl: Label 'Work Order No.';
         OverviewVendorsAndBinsCaptionLbl: Label 'Overview Vendors and Bins';
         SupplierCaptionLbl: Label 'Supplier';
         BagDescriptionCaptionLbl: Label 'Bag Description';
         TotalNumberOfUnitsCaptionLbl: Label 'Total Number of Units';
         DeliveryDateCaptionLbl: Label 'Delivery Date';
         DeliveryIDCaptionLbl: Label 'DeliveryID';
-        ThinStainingCaptionLbl: Label 'Thin Staining';
         ItemNoAlucolCaptionLbl: Label 'Item No. Alucol';
         ItemNoCustomerCaptionLbl: Label 'Item No. Customer';
         QuantityCaptionLbl: Label 'Quantity';

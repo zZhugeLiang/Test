@@ -12,13 +12,13 @@
   "logo": "",
   "dependencies": [
     {
-      "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
       "publisher": "Microsoft",
       "name": "System Application",
       "version": "1.0.0.0"
     },
     {
-      "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
       "publisher": "Microsoft",
       "name": "Base Application",
       "version": "17.0.0.0"
@@ -27,5 +27,11 @@
   "screenshots": [],
   "platform": "17.0.0.0",
   "runtime": "6.0",
+<<<<<<< HEAD
   "features": ["TranslationFile"]
+=======
+  "features": ["TranslationFile"],
+  "suppressWarnings": ["AA0175","AA0206","AL0606","AA0150","AA0205","AA0072","AA0218","AL0604",
+                       "AA0215","AW0005","AW0006","AW0011","AA0232","AA0204","AA0074","AA0470","AA0217","AA0008","AA0139","AA0005","AA0073","AA0021"]
+>>>>>>> f4f5030cb0fadc8eaea0fa795e8047e755912fab
 }

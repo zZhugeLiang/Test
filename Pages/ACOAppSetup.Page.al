@@ -211,6 +211,41 @@ page 50000 "ACO App Setup"
 
                 }
             }
+            group(Communication)
+            {
+                Caption = 'Communications';
+                field("Aucos FTP Server"; "Aucos FTP Server")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Aucos FTP Server';
+                    ToolTip = 'Contains the Aucos FTP Server Hostname or IP';
+                }
+                field("Aucos FTP Port"; "Aucos FTP Port")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Aucos FTP Port';
+                    ToolTip = 'Contains the Port of the Aucos FTP Server';
+                }
+                field("Aucos FTP Username"; "Aucos FTP Username")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Aucos FTP Username';
+                    ToolTip = 'Contains the Username for the Aucos FTP Server';
+                }
+                field("Aucos FTP Password"; "Aucos FTP Password")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Aucos FTP Password';
+                    ToolTip = 'Contains the Username for the Aucos FTP Server';
+
+                }
+                field("Aucos FTP Path"; "Aucos FTP Path")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Aucos FTP Path';
+                    ToolTip = 'Contains the path for the Aucos FTP Server';
+                }
+            }
         }
     }
 
