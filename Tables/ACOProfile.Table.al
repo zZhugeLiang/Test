@@ -120,6 +120,7 @@ table 50008 "ACO Profile"
         field(21; "Picture File"; Blob)
         {
             Caption = 'Picture';
+            Subtype = Bitmap;
             DataClassification = CustomerContent;
         }
 
@@ -238,5 +239,51 @@ table 50008 "ACO Profile"
     trigger OnModify();
     begin
         "Last DateTime Modified" := CurrentDateTime();
+    end;
+
+    procedure DownloadPicture()
+
+    var
+        InStr: InStream;
+        FileNameBuffer: Text;
+    begin
+        Rec.CalcFields("Picture File");
+        if Rec."Picture Filename" = '' then
+            exit;
+        Rec."Picture File".CreateInStream(InStr);
+        DownloadBLOBFromStream(Instr, Rec."Picture Filename");
+    end;
+
+    procedure DownloadClampingMethod()
+    var
+        InStr: InStream;
+        ClampingBuffer: Text;
+    begin
+        Rec.CalcFields("Clamping Method File");
+        if Rec."Clamping Method Filename" = '' then
+            exit;
+        Rec."Clamping Method File".CreateInStream(InStr);
+        DownloadBLOBFromStream(Instr, Rec."Clamping Method Filename");
+    end;
+
+    procedure DownloadPackagingInstructions()
+    var
+        InStr: InStream;
+        PackagingInstructionBuffer: Text;
+    begin
+        Rec.CalcFields("Packaging Instructions File");
+        if Rec."Packaging Instr. Filename" = '' then
+            exit;
+        Rec."Packaging Instructions File".CreateInStream(InStr);
+        DownloadBLOBFromStream(Instr, Rec."Packaging Instr. Filename");
+    end;
+
+    local procedure DownloadBLOBFromStream(Instr: InStream; var FileName: Text[250])
+    var
+        TextBuffer: Text;
+    begin
+        TextBuffer := FileName;
+        DownloadFromStream(InStr, '', '', '', FileName);
+        FileName := TextBuffer.Substring(1);
     end;
 }

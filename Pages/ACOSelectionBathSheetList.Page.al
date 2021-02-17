@@ -14,11 +14,6 @@ Page 50025 "ACO Selection Bath Sheet List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                // field("ACO Included"; "ACO Included")
-                // {
-                //     Editable = true;
-                //     ApplicationArea = All;
-                // }
                 field("Prod. Order No."; "Prod. Order No.")
                 {
                     ApplicationArea = Manufacturing;
@@ -379,18 +374,10 @@ Page 50025 "ACO Selection Bath Sheet List"
 
     trigger OnOpenPage()
     begin
-        // ModifyAll("ACO Included", true);
         SetFilter("ACO Source No.", '<>%1', '');
         SetFilter("Item No.", '<>%1', '');
         SetFilter("ACO Profile Code", '<>%1', '');
     end;
-
-    // trigger OnClosePage()
-    // var
-    // begin
-    //     Reset();
-    //     ModifyAll("ACO Included", false);
-    // end;
 
     trigger OnAfterGetRecord()
     begin

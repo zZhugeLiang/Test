@@ -237,4 +237,26 @@ table 50009 "ACO Profile Customer"
     begin
         "Last DateTime Modified" := CurrentDateTime();
     end;
+
+    procedure DownloadPackagingInstructions(): Boolean
+    var
+        InStr: InStream;
+        PackagingInstructionBuffer: Text;
+    begin
+        Rec.CalcFields("Packaging Instructions File");
+        if Rec."Packaging Instr. Filename" = '' then
+            exit;
+        Rec."Packaging Instructions File".CreateInStream(InStr);
+        DownloadBLOBFromStream(Instr, Rec."Packaging Instr. Filename");
+        exit(true);
+    end;
+
+    local procedure DownloadBLOBFromStream(Instr: InStream; var FileName: Text[250])
+    var
+        TextBuffer: Text;
+    begin
+        TextBuffer := FileName;
+        DownloadFromStream(InStr, '', '', '', FileName);
+        FileName := TextBuffer.Substring(1);
+    end;
 }

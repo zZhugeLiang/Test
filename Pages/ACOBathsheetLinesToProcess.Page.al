@@ -301,6 +301,11 @@ page 50032 "ACO Bathsheet Lines To Process"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        Rec.SetAscending("Bath Sheet No.", true);
+    end;
+
     var
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';

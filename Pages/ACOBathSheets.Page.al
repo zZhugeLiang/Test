@@ -241,7 +241,6 @@ page 50019 "ACO Bath Sheets"
 
     trigger OnOpenPage()
     begin
-        //Rec.SetCurrentKey("No.");
-        Rec.SetAscending("No.", false);
+        Rec.SetAscending("No.", true);
     end;
 }

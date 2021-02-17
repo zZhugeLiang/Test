@@ -93,6 +93,8 @@ page 50011 "ACO Profile Customer Card"
                     begin
                         "Packaging Instructions File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
+                        if tmpFileName = '' then
+                            exit;
                         CopyStream(OutStr, InStr);
                         "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
@@ -128,6 +130,15 @@ page 50011 "ACO Profile Customer Card"
                 }
             }
         }
+        area(factboxes)
+        {
+            part(ProfilePicture; "ACO Profile Picture")
+            {
+                ApplicationArea = All;
+                Caption = 'Picture';
+                SubPageLink = "Code" = field("Profile Code");
+            }
+        }
     }
 
     actions
@@ -142,11 +153,8 @@ page 50011 "ACO Profile Customer Card"
                 Image = Document;
                 ToolTip = 'Download Packaging Instructions';
                 trigger OnAction()
-                var
-                    InStr: InStream;
                 begin
-                    "Packaging Instructions File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename");
+                    if Rec.DownloadPackagingInstructions() then;
                 end;
             }
         }

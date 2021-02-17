@@ -34,14 +34,6 @@ page 50009 "ACO Profile Card"
             {
                 Caption = 'Production Parameters';
 
-                // field(Hollow; Hollow)
-                // {
-                //     ApplicationArea = All;
-                // }
-                // field(Bent; Bent)
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Extra Flushing"; "Extra Flushing")
                 {
                     ApplicationArea = All;
@@ -100,6 +92,10 @@ page 50009 "ACO Profile Card"
                     begin
                         "Picture File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
+
+                        if tmpFileName = '' then
+                            exit;
+
                         CopyStream(OutStr, InStr);
                         "Picture Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
@@ -117,6 +113,10 @@ page 50009 "ACO Profile Card"
                     begin
                         "Clamping Method File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
+
+                        if tmpFileName = '' then
+                            exit;
+
                         CopyStream(OutStr, InStr);
                         "Clamping Method Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
@@ -134,6 +134,10 @@ page 50009 "ACO Profile Card"
                     begin
                         "Packaging Instructions File".CreateOutStream(OutStr);
                         UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
+
+                        if tmpFileName = '' then
+                            exit;
+
                         CopyStream(OutStr, InStr);
                         "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
                         Modify();
@@ -154,7 +158,17 @@ page 50009 "ACO Profile Card"
                 }
             }
         }
+        area(factboxes)
+        {
+            part(ProfilePicture; "ACO Profile Picture")
+            {
+                ApplicationArea = All;
+                Caption = 'Picture';
+                SubPageLink = "Code" = field("Code");
+            }
+        }
     }
+
     actions
     {
         area(Processing)
@@ -174,17 +188,11 @@ page 50009 "ACO Profile Card"
                 Image = Document;
                 ToolTip = 'Download Picture';
                 trigger OnAction()
-                var
-                    InStr: InStream;
-                    FileNameBuffer: Text;
                 begin
-                    CalcFields("Picture File");
-                    "Picture File".CreateInStream(InStr);
-
-                    DownloadFromStream(InStr, '', '', '', FileNameBuffer);
-                    Rec."Picture Filename" := FilenameBuffer.Substring(1, MaxStrLen(Rec."Picture Filename"));
+                    DownloadPicture();
                 end;
             }
+
             action(DownloadClampingMethod)
             {
                 Caption = 'Download Clamping Method';
@@ -192,16 +200,11 @@ page 50009 "ACO Profile Card"
                 Image = Document;
                 ToolTip = 'Download Clamping Method';
                 trigger OnAction()
-                var
-                    InStr: InStream;
-                    ClampingBuffer: Text;
                 begin
-                    CalcFields("Clamping Method File");
-                    "Clamping Method File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', ClampingBuffer);
-                    Rec."Clamping Method Filename" := ClampingBuffer.Substring(1, MaxStrLen((Rec."Clamping Method Filename")));
+                    DownloadClampingMethod();
                 end;
             }
+
             action(DownloadPackagingInstructions)
             {
                 Caption = 'Download Packaging Instructions';
@@ -209,14 +212,15 @@ page 50009 "ACO Profile Card"
                 Image = Document;
                 ToolTip = 'Download Packaging Instructions';
                 trigger OnAction()
-                var
-                    InStr: InStream;
                 begin
-                    CalcFields("Packaging Instructions File");
-                    "Packaging Instructions File".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', '', "Packaging Instr. Filename");
+                    DownloadPackagingInstructions();
                 end;
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        Rec.CalcFields(Rec."Picture File");
+    end;
 }

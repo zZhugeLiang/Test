@@ -2817,6 +2817,11 @@
           <target>Opmerkingen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control Comments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3325455334 - Control 1767490681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Afbeelding</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Control ProfilePicture - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3325455334 - Action 339208784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customers</source>
           <target>Product klanten</target>
@@ -6392,6 +6397,16 @@
           <source>Sawing Notice</source>
           <target>Zaagbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Sawing Notice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Download Packaging Instructions</source>
+          <target>Verpakkingsinstructies downloaden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Download Packaging Instructions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Download Packaging Instructions</source>
+          <target>Verpakkingsinstructies downloaden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Download Packaging Instructions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 73372350 - Field 2282563268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Production Line</source>

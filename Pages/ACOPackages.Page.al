@@ -60,4 +60,8 @@ page 50029 "ACO Packages"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        Rec.SetAscending("No.", true);
+    end;
 }

@@ -251,31 +251,38 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
 
-        if not ProductionOrderLine."ACO Rerun" then
-            ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
-
+        ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
         ProductionOrderLine."ACO Quantity to Bath Sheet" := ProductionOrderLine."ACO Remaining Quantity";
-        ProductionOrderLine."ACO Rerun" := false;
-        ProductionOrderLine."ACO Rerun Reason" := '';
         ProductionOrderLine.Modify();
     end;
 
     procedure DetermineCurrentDensities(SalesLine: Record "Sales Line"; var MinCurrentDensity: Decimal; var MaxCurrentDensity: Decimal)
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        CheckProfileCustomer: Boolean;
     begin
-        MinCurrentDensity := SalesLine."ACO Min. Curr. Density Profile";
+        ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
+        ACOProfileCustomer.SetRange("Customer No.", SalesLine."Sell-to Customer No.");
+        CheckProfileCustomer := ACOProfileCustomer.FindFirst();
+
+        MinCurrentDensity := 0;
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Min. Current Density Color";
         if SalesLine."ACO Minimum Current Density LT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density LT";
         if SalesLine."ACO Minimum Current Density PT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density PT";
+        if CheckProfileCustomer then
+            if ACOProfileCustomer."Minimum Current Density" >= MinCurrentDensity then
+                MinCurrentDensity := ACOProfileCustomer."Minimum Current Density";
 
         MaxCurrentDensity := 1000;
-        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Curr. Density Profile");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Current Density Color");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density LT");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density PT");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Cur. Density Category");
+        if CheckProfileCustomer then
+            CheckMaximumCurrentDensity(MaxCurrentDensity, ACOProfileCustomer."Maximum Current Density");
     end;
 
     local procedure CheckMaximumCurrentDensity(var MaxCurrentDensity: Decimal; CurrentDensity: Decimal)

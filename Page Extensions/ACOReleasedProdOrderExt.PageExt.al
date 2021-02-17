@@ -10,10 +10,4 @@ pageextension 50006 "ACO Released Prod. Order Ext." extends "Released Production
             }
         }
     }
-
-    trigger OnOpenPage()
-    begin
-        Rec.SetCurrentKey("No.");
-        Rec.SetAscending("No.", false);
-    end;
 }

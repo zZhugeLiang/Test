@@ -139,4 +139,34 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             }
         }
     }
+
+    actions
+    {
+        addlast("&Line")
+        {
+            action("ACO Download Packaging Instructions")
+            {
+                Caption = 'Download Packaging Instructions';
+                Image = Documents;
+                ApplicationArea = All;
+                ToolTip = 'Download Packaging Instructions';
+
+                trigger OnAction()
+                var
+                    ACOProfile: Record "ACO Profile";
+                    ACOProfileCustomer: Record "ACO Profile Customer";
+                begin
+                    ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+                    ACOProfileCustomer.SetRange("Customer No.", Rec."Sell-to Customer No.");
+                    if ACOProfileCustomer.FindFirst() then begin
+                        if not ACOProfileCustomer.DownloadPackagingInstructions() then
+                            if ACOProfile.Get(Rec."ACO Profile Code") then
+                                ACOProfile.DownloadPackagingInstructions();
+                    end else
+                        if ACOProfile.Get(Rec."ACO Profile Code") then
+                            ACOProfile.DownloadPackagingInstructions();
+                end;
+            }
+        }
+    }
 }

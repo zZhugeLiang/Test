@@ -91,6 +91,17 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 ToolTip = 'Own Shipping Agent';
             }
         }
+        addfirst(factboxes)
+        {
+            part(ProfilePicture; "ACO Profile Picture")
+            {
+                ApplicationArea = All;
+                Provider = SalesLines;
+                UpdatePropagation = Both;
+                Caption = 'Picture';
+                SubPageLink = "Code" = field("ACO Profile Code");
+            }
+        }
     }
 
     actions
@@ -163,11 +174,8 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                    //SalesHeader: Record "Sales Header";
                     SalesLine: Record "Sales Line";
                 begin
-                    // SalesHeader := Rec;
-                    // SalesHeader.SetRecFilter();
                     SalesLine.SetRange("Document Type", Rec."Document Type");
                     SalesLine.SetRange("Document No.", Rec."No.");
                     Report.Run(Report::"ACO Sawing Notice", true, false, SalesLine);
