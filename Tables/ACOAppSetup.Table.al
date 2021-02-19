@@ -216,11 +216,6 @@ table 50000 "ACO App Setup"
             TableRelation = "Machine Center";
             DataClassification = CustomerContent;
         }
-        // field(25; "Maximum Bath Length"; Decimal)
-        // {
-        //     Caption = 'Maximum Bath Length';
-        //     DataClassification = CustomerContent;
-        // }
 
         field(36; "Remove Foil Routing No."; Code[20])
         {

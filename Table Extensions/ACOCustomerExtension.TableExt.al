@@ -2,12 +2,6 @@ tableextension 50000 "ACO Customer Extension" extends Customer
 {
     fields
     {
-        field(50000; "ACO OVIS Mail"; Boolean)
-        {
-            Caption = 'OVIS Mail';
-            DataClassification = CustomerContent;
-        }
-
         field(50001; "ACO Euras"; Boolean)
         {
             Caption = 'Euras';

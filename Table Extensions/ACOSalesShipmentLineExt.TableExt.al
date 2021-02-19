@@ -22,11 +22,6 @@ tableextension 50010 "ACO Sales Shipment Line Ext." extends "Sales Shipment Line
             Caption = 'Sawing';
             DataClassification = CustomerContent;
         }
-        field(50042; "ACO Qty. After Production"; Decimal)
-        {
-            Caption = 'Qty. After Production';
-            DataClassification = CustomerContent;
-        }
         field(50063; "ACO Customer Item No."; Code[50])
         {
             Caption = 'Customer Item No.';

@@ -82,36 +82,6 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(14; "Extra to Enumerate"; Integer)
-        {
-            Caption = 'Extra to Enumerate [mm]';
-            DataClassification = CustomerContent;
-        }
-
-        field(16; "Minimum Current Density"; Decimal)
-        {
-            Caption = 'Minimum Current Density [A/dm²]';
-            DataClassification = CustomerContent;
-        }
-
-        field(17; "Maximum Current Density"; Decimal)
-        {
-            Caption = 'Maximum Current Density [A/dm²]';
-            DataClassification = CustomerContent;
-        }
-
-        field(18; "Thick Staining Time"; Decimal)
-        {
-            Caption = 'Thick Staining Time [min]';
-            DataClassification = CustomerContent;
-        }
-
-        field(19; "Thin Staining Time"; Decimal)
-        {
-            Caption = 'Thin Staining Time [min]';
-            DataClassification = CustomerContent;
-        }
-
         field(20; "Picture Filename"; Text[250])
         {
             DataClassification = CustomerContent;
@@ -146,12 +116,6 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(26; "Euras"; Boolean)
-        {
-            Caption = 'Euras';
-            DataClassification = CustomerContent;
-        }
-
         field(27; "Holders"; Code[20])
         {
             Caption = 'Holders';
@@ -162,26 +126,6 @@ table 50008 "ACO Profile"
         {
             Caption = 'Attach Method Code';
             TableRelation = "ACO Attach Method";
-            DataClassification = CustomerContent;
-        }
-
-        field(29; "Type of Clamp"; Text[100])
-        {
-            Caption = 'Type of Clamp'; // DEPRECATED
-            ObsoleteState = Removed;
-            ObsoleteReason = 'Replaced by field Type of Clamp Code';
-            DataClassification = CustomerContent;
-        }
-
-        field(30; Helix; Decimal)
-        {
-            Caption = 'Helix';
-            DataClassification = CustomerContent;
-        }
-
-        field(31; Space; Decimal)
-        {
-            Caption = 'Space';
             DataClassification = CustomerContent;
         }
 

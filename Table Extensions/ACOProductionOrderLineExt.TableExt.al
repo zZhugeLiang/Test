@@ -41,16 +41,6 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             DataClassification = CustomerContent;
         }
 
-        field(50005; "ACO Source Type"; Option)
-        {
-            Caption = 'Source Type';
-            ObsoleteState = Removed;
-            ObsoleteReason = 'No longer used';
-            OptionMembers = Item,Family,"Sales Header";
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
-
         field(50006; "ACO Source No."; Code[20])
         {
             Caption = 'Source No.';
@@ -71,12 +61,6 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = Sum("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No.")));
-        }
-
-        field(50009; "ACO Included"; Boolean)
-        {
-            Caption = 'Include Bath Sheet'; // DEPRECATED, field not used anymore
-            DataClassification = CustomerContent;
         }
 
         field(50010; "ACO Charge No."; Code[10])

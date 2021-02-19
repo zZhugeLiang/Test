@@ -75,14 +75,6 @@ table 50021 "ACO Linked Holder"
             DataClassification = CustomerContent;
         }
 
-        field(11; "Type of Clamp"; Text[100])
-        {
-            Caption = 'Type of Clamp'; // DEPRECATED
-            ObsoleteState = Removed;
-            ObsoleteReason = 'Replaced by field Type of Clamp Code';
-            DataClassification = CustomerContent;
-        }
-
         field(12; Comment; Text[50])
         {
             Caption = 'Comment';

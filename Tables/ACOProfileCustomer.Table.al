@@ -12,19 +12,6 @@ table 50009 "ACO Profile Customer"
             Caption = 'Profile Code';
             TableRelation = "ACO Profile";
             DataClassification = CustomerContent;
-
-            trigger OnValidate()
-            var
-                ACOProfile: Record "ACO Profile";
-            begin
-                if ACOProfile.Get("Profile Code") then begin
-                    "Maximum Current Density" := ACOProfile."Maximum Current Density";
-                    "Minimum Current Density" := ACOProfile."Minimum Current Density";
-                end else begin
-                    "Maximum Current Density" := 0;
-                    "Minimum Current Density" := 0;
-                end;
-            end;
         }
 
         field(2; "Customer No."; Code[20])
@@ -130,16 +117,6 @@ table 50009 "ACO Profile Customer"
         field(11; "City"; Text[30])
         {
             Caption = 'City';
-            DataClassification = CustomerContent;
-        }
-
-        field(12; "Packaging Instructions"; Option)
-        {
-            ObsoleteState = Removed;
-            ObsoleteReason = 'Replaced by Packagin Instructions File';
-            Caption = 'Packaging Instructions';
-            OptionMembers = jpg,pdf,xlsx;
-            OptionCaption = 'jpg,pdf,xlsx';
             DataClassification = CustomerContent;
         }
 

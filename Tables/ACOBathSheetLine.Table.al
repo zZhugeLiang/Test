@@ -172,19 +172,6 @@ table 50017 "ACO Bath Sheet Line"
             DataClassification = CustomerContent;
         }
 
-        field(23; "Wrapped"; Boolean)
-        {
-            Caption = 'Wrapped';
-            DataClassification = CustomerContent;
-        }
-
-        field(24; "Packed"; Boolean)
-        {
-            Caption = 'Packed';
-            Editable = true;
-            DataClassification = CustomerContent;
-        }
-
         field(25; "Completed"; Boolean)
         {
             Caption = 'Completed';

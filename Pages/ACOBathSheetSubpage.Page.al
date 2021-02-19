@@ -95,10 +95,6 @@ page 50021 "ACO Bath Sheet Subpage"
                 {
                     ApplicationArea = All;
                 }
-                field(Wrapped; Wrapped)
-                {
-                    ApplicationArea = All;
-                }
             }
         }
     }

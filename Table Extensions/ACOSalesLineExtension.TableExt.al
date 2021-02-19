@@ -21,42 +21,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50003; "ACO Thin Staining Time PT"; Decimal)
-        {
-            Caption = 'Thin Staining Time [min] Pretreatment';
-            DataClassification = CustomerContent;
-        }
-
-        field(50004; "ACO Thick Staining Time PT"; Decimal)
-        {
-            Caption = 'Thick Staining Time [min] Pretreatment';
-            DataClassification = CustomerContent;
-        }
-
-        field(50005; "ACO Do Not Calc. Short Length"; Boolean)
-        {
-            Caption = 'Do Not Calculate Short Length';
-            DataClassification = CustomerContent;
-        }
-
-        field(50006; "ACO Aucos"; Boolean)
-        {
-            Caption = 'Aucos';
-            DataClassification = CustomerContent;
-        }
-
-        field(50007; "ACO Aucos Sealing Time"; Boolean)
-        {
-            Caption = 'Aucos Sealing Time';
-            DataClassification = CustomerContent;
-        }
-
-        field(50008; "ACO Aucos Flushing Time"; Boolean)
-        {
-            Caption = 'Aucos Flushing Time';
-            DataClassification = CustomerContent;
-        }
-
         field(50009; "ACO British Standard"; Boolean)
         {
             Caption = 'British Standard';
@@ -204,24 +168,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50025; "ACO Comment Bath Card"; Text[100])
-        {
-            Caption = 'Comment Bath Card';
-            DataClassification = CustomerContent;
-        }
-
-        field(50026; "ACO Comment Work Note"; Text[100])
-        {
-            Caption = 'Comment Work Note';
-            DataClassification = CustomerContent;
-        }
-
-        field(50027; "ACO Bent Profile"; Boolean)
-        {
-            Caption = 'Bent Profile';
-            DataClassification = CustomerContent;
-        }
-
         field(50028; "ACO Max. Curr. Density Profile"; Decimal)
         {
             Caption = 'Maximum Current Density Profile [A/dm²]';
@@ -305,26 +251,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50037; "ACO Type of Clamp Profile"; Text[100])
-        {
-            Caption = 'Type of Clamp Profile'; // DEPRECATED
-            ObsoleteState = Removed;
-            ObsoleteReason = 'Replaced by field Type of Clamp Code';
-            DataClassification = CustomerContent;
-        }
-
-        field(50038; "ACO Helix Profile"; Decimal)
-        {
-            Caption = 'Helix Profile';
-            DataClassification = CustomerContent;
-        }
-
-        field(50039; "ACO Space Profile"; Decimal)
-        {
-            Caption = 'Space Profile';
-            DataClassification = CustomerContent;
-        }
-
         field(50040; "ACO Sawing"; Boolean)
         {
             Caption = 'Sawing';
@@ -335,53 +261,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 "ACO Lower Accuracy" := 1;
                 "ACO Upper Accuracy" := 1;
             end;
-        }
-
-        field(50041; "ACO Final Length"; Decimal)
-        {
-            Caption = 'Final Length';
-            ObsoleteState = Removed;
-            ObsoleteReason = 'Replaced by field ACO Starting Length';
-            DataClassification = CustomerContent;
-
-            // trigger OnValidate()
-            // var
-            //     AppSetup: Record "ACO App Setup";
-            //     ProdOrderLine: Record "Prod. Order Line";
-            //     ItemVariant: Record "Item Variant";
-            //     BathSheetLine: Record "ACO Bath Sheet Line";
-            //     BathSheetLineExistsMsg: Label 'A Bath Sheet Line in Bath Sheet %1 is linked to this Sales Line, it has to be changed manually.';
-            // begin
-            //     AppSetup.Get();
-            //     AppSetup.TestField("Min. Residue Saw");
-            //     if ("ACO Final Length" * "ACO Number of Units") <> 0 then begin
-            //         // itemvariant (beginlengte) - appsetupresiduesaw / final length * aantal eenheden
-            //         // Validate("ACO Number of Units", Round(("ACO Number of Units" - AppSetup."Min. Residue Saw") * "ACO Final Length", 1, '<'));
-            //         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-            //             Clear(ItemVariant);
-            //         Validate("ACO Number of Units", Round((ItemVariant."ACO Number of Meters" * 1000 - AppSetup."Min. Residue Saw") / "ACO Final Length" * "ACO Number of Units", 1, '<'));
-            //         //100-59*1000 Checken of dit klopt bij EWI
-
-            //         ProdOrderLine.SetRange("ACO Source No.", "Document No.");
-            //         ProdOrderLine.SetRange("ACO Source Line No.", "Line No.");
-            //         if ProdOrderLine.FindFirst() then begin
-            //             if "ACO Sawing" and ("ACO Final Length" <> 0) then
-            //                 ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ("ACO Final Length" / 1000) * "ACO Number of Units" / 1000
-            //             else
-            //                 if ItemVariant.Get("No.", "Variant Code") then
-            //                     ProdOrderLine."ACO Total m2" := "ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
-
-            //             ProdOrderLine.Modify();
-
-            //             BathSheetLine.SetCurrentKey("Production Order No.", "Production Order Status", "Production Order Line No.");
-            //             BathSheetLine.SetRange("Production Order No.", ProdOrderLine."Prod. Order No.");
-            //             BathSheetLine.SetRange("Production Order Status", ProdOrderLine.Status);
-            //             BathSheetLine.SetRange("Production Order Line No.", ProdOrderLine."Line No.");
-            //             if BathSheetLine.FindFirst() then
-            //                 Message(BathSheetLineExistsMsg, BathSheetLine."Bath Sheet No.");
-            //         end;
-            //     end;
-            // end;
         }
 
         field(50042; "ACO Qty. After Production"; Decimal)
@@ -401,12 +280,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Shipping Bag';
             DataClassification = CustomerContent;
         }
-
-        // field(50046; "ACO Circumference"; Decimal)
-        // {
-        //     Caption = 'Circumference';
-        //     DataClassification = CustomerContent;
-        // }
 
         field(50047; "ACO Area"; Decimal)
         {

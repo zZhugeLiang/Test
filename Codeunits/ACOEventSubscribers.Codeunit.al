@@ -164,21 +164,6 @@ codeunit 50000 "ACO Event Subscribers"
                 end;
     end;
 
-    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Category', false, false)]
-    // local procedure SalesLine_OnAfterValidate_ACOCategory(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    // var
-    //     Item: Record Item;
-    //     ACOCategory: Record "ACO Category";
-    // begin
-    //     if Rec.IsTemporary() then
-    //         exit;
-
-    //     if Rec.Type = Rec.Type::Item then
-    //         if Item.Get(Rec."No.") then
-    //             if ACOCategory.Get(Item."ACO Category Code") then
-    //                 Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";
-    // end;
-
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Profile Code', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOProfileCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
@@ -186,6 +171,7 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfile: Record "ACO Profile";
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
+        ACOCategory: Record "ACO Category";
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
         ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
     begin
@@ -230,6 +216,9 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Extra to Enumerate Profile" := ACOProfileCustomer."Extra to Enumerate";
             Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
+
+            if ACOCategory.Get(ACOProfile.Category) then
+                Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";
         end;
     end;
 
