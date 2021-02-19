@@ -224,6 +224,10 @@ report 50017 "ACO Sales - Pro Forma Inv"
                 DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
                 DataItemLinkReference = Header;
                 DataItemTableView = SORTING("Document No.", "Line No.");
+
+                column(LineNo; "Line No.")
+                {
+                }
                 column(ItemDescription; Description)
                 {
                 }
