@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[],"Removed":[]}
+﻿{"Added":[],"Modified":[{"Id":50017,"Kind":13,"Name":"ACO Sales - Pro Forma Inv","PackagePath":"/src/Reports/ACOSalesProFormaInv.Report.al"}],"Removed":[{"Id":0,"Kind":12,"Name":"_symbolcache","PackagePath":"/src/.vscode/temp-al-proxy.al"},{"Id":0,"Kind":13,"Name":"_symbolcache","PackagePath":"/src/.vscode/temp-al-proxy.al"}]}
