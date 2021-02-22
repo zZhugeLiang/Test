@@ -271,6 +271,9 @@ End Function
         <Field Name="VATRegNoLbl">
           <DataField>VATRegNoLbl</DataField>
         </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
         <Field Name="ItemDescription">
           <DataField>ItemDescription</DataField>
         </Field>
