@@ -106,6 +106,11 @@ page 50031 "ACO Package Card SubPage"
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
+                field("Reject Reason Code"; "Reject Reason Code")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
             }
         }
     }

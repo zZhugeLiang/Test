@@ -62,6 +62,7 @@ report 50001 "ACO Package Label"
             column(Weightpermeter_ACOProfileCaption; ACOProfile.FieldCaption("Weight per meter")) { }
             column(PictureFile_ACOProfileCaption; ACOProfile.FieldCaption("Picture File")) { }
             column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
+            column(Reject; Reject) { }
             dataitem(ACOPackageLine; "ACO Package Line")
             {
                 DataItemLinkReference = ACOPackageHeader;
@@ -83,6 +84,7 @@ report 50001 "ACO Package Label"
                 column(ACOKundentourHUECK_SalesLine; SalesLine."ACO Kundentour HUECK") { }
                 column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter") { }
                 column(PictureFile_ACOProfile; ACOProfile."Picture File") { }
+                column(Reject_Reason_Code; "Reject Reason Code") { }
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                 trigger OnAfterGetRecord()
                 begin

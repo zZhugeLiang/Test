@@ -159,6 +159,9 @@ page 50032 "ACO Bathsheet Lines To Process"
             action("Generate Package Label")
             {
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
                 Caption = 'Generate Package Label';
                 ToolTip = 'Generate Package Label';
                 Image = ShowInventoryPeriods;
@@ -187,12 +190,12 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                     if ACOBathSheetLinesToProcess.FindSet() then
                         repeat
-                            CalcFields("Quantity Processed");
-                            if ("Qty in Package" > (Quantity - "Quantity Processed")) then
-                                Error(QtyTooLargeErr);
+                            // CalcFields("Quantity Processed");
+                            // if ("Qty in Package" > (Quantity - "Quantity Processed")) then
+                            //     Error(QtyTooLargeErr);
 
-                            if ACOBathSheetLinesToProcess."Remaining Quantity" = 0 then
-                                Error(LabelsAlreadyPrintedErr);
+                            // if ACOBathSheetLinesToProcess."Remaining Quantity" = 0 then
+                            //     Error(LabelsAlreadyPrintedErr);
 
                             BathLineTempRecord.SetRecFilter();
 
@@ -295,6 +298,66 @@ page 50032 "ACO Bathsheet Lines To Process"
                                     ACOBathSheetLine.Modify();
                                 end;
                             until BathLineTempRecord.Next() = 0;
+                    end;
+                end;
+            }
+
+            action(GenerateRejectionLabel)
+            {
+                ApplicationArea = All;
+                Caption = 'Generate Rejection Label', comment = 'NLD="YourLanguageCaption"';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = CreateDocument;
+                trigger OnAction()
+                var
+                    BathSheetLine: Record "ACO Bath Sheet Line";
+                    Resource: Record Resource;
+
+                    ACORejLabelSelectLines: Page "ACO Rej. Label Select Lines";
+                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
+                    ACOSelectionResources: Page "ACO Selection Resources";
+                    Only1LineErr: Label 'Only 1 line can be processed at a time.';
+                begin
+                    CurrPage.SetSelectionFilter(BathSheetLine);
+
+                    if BathSheetLine.Count() > 1 then
+                        Error(Only1LineErr);
+
+                    ACORejLabelSelectLines.SetBathSheetLine(Rec);
+                    //ACORejLabelSelectLines.LookupMode(true);
+                    ACORejLabelSelectLines.RunModal();
+                    // if ACORejLabelSelectLines.RunModal() = Action::LookupOK then begin
+
+                    //     // ACOSelectionResources.SetSelectionFilter(Resource);
+
+                    //     // ACOBathSheetMgt.CreateBathSheet(ProdOrderLine, Resource);
+
+                    //     ///CopyFilters(ProdOrderLineFilters);
+                    //     CurrPage.Update(false);
+                    // end;
+                end;
+            }
+
+            action(PrintLabel)
+            {
+                ApplicationArea = All;
+                Caption = 'Print Label', comment = 'NLD="YourLanguageCaption"';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Print;
+                trigger OnAction()
+                var
+                    PackageHeader: Record "ACO Package Header";
+                    PrintPackageLabel: Report "ACO Package Label";
+                begin
+                    if PackageHeader.FindLast() then begin
+                        PackageHeader.SetRecFilter();
+                        PrintPackageLabel.SetTableView(PackageHeader);
+                        PrintPackageLabel.UseRequestPage := false;
+                        PrintPackageLabel.Run();
                     end;
                 end;
             }

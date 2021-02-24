@@ -50,6 +50,10 @@ page 50030 "ACO Package Card"
                 {
                     ApplicationArea = All;
                 }
+                field(Reject; Reject)
+                {
+                    ApplicationArea = All;
+                }
             }
 
             Part("Package Lines"; "ACO Package Card SubPage")

@@ -89,6 +89,12 @@ table 50024 "ACO Package Line"
         {
             DataClassification = CustomerContent;
         }
+        field(19; "Reject Reason Code"; Code[10])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Reason Code";
+        }
+
         field(5402; "Variant Code"; Code[10])
         {
             DataClassification = CustomerContent;

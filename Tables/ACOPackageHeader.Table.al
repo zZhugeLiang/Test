@@ -59,6 +59,11 @@ table 50023 "ACO Package Header"
             DataClassification = CustomerContent;
             Editable = false;
         }
+        field(11; Reject; Boolean)
+        {
+            Caption = 'Reject';
+            Editable = false;
+        }
         field(107; "No. Series"; Code[20])
         {
             Caption = 'No. Series';
@@ -74,4 +79,24 @@ table 50023 "ACO Package Header"
             Clustered = true;
         }
     }
+
+    trigger OnDelete()
+    var
+        ACOBathSheetLine: Record "ACO Bath Sheet Line";
+        ACOPackageLine: Record "ACO Package Line";
+    begin
+        if Rec.Reject then begin
+            ACOPackageLine.SetRange("Package No.", Rec."No.");
+            if ACOPackageLine.FindSet() then
+                repeat
+                    if ACOBathSheetLine.Get(Rec."No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
+                        ACOBathSheetLine."Reject Quantity" -= ACOBathSheetLine.Quantity;
+                        ACOBathSheetLine.Modify();
+                    end;
+                until ACOPackageLine.Next() = 0;
+
+            ACOPackageLine.SetRange("Package No.", Rec."No.");
+            ACOPackageLine.DeleteAll();
+        end;
+    end;
 }

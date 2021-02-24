@@ -1938,6 +1938,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Date-Time - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1441553428 - Field 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Reject - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1441553428 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2042,6 +2047,11 @@
           <source>Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4136019483 - Field 1256263810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reject Reason Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Reject Reason Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Field 3450651614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Variant Code</source>
@@ -3153,6 +3163,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType LabelsAlreadyPrintedErr</note>
         </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 1870968742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Rejection Label</source>
+          <note from="Developer" annotates="general" priority="2">NLD="YourLanguageCaption"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action GenerateRejectionLabel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 1870968742 - Method 1377591017 - NamedType 4156361610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only 1 line can be processed at a time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action GenerateRejectionLabel - Method OnAction - NamedType Only1LineErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Label</source>
+          <note from="Developer" annotates="general" priority="2">NLD="YourLanguageCaption"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action PrintLabel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2436688764 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3448,6 +3473,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Variant Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 368852624 - Control 1256263810 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Reject Reason Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2572220696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packages</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3662,6 +3692,31 @@
           <source>Project Color Subpage</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Color Subpage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2244607703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rejection Label Select Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2244607703 - Action 1036512167 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action GenerateLabel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3035616146" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Labels have already been printed. Please print them from the Packages list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType LabelsAlreadyPrintedErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer is not the same for all selected bathsheet lines.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType lblCustomerErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The number series was not set in both the Customer and App Settings.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType lblNoNumberSeriesErr</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Bath Sheet List</source>

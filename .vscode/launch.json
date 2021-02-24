@@ -8,8 +8,8 @@
             //"server": "http://nlbcAlucol7",
             //"serverInstance": "BC",
             "tenant": "305f396e-f113-4f68-9f01-ae83ae55dd8e",
-            "environmentType": "Production",
-            "environmentName": "Production",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
             //"authentication": "Windows",
             "startupObjectId": 42,
             "schemaUpdateMode": "ForceSync"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
