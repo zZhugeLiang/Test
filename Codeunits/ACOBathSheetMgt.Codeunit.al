@@ -239,6 +239,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if SalesLine.Type = SalesLine.Type::Item then // is deze regel nodig?
             ACOBathSheetLine.Treatment := SalesLine."No.";
 
+        MinCurrentDensity := 0;
+        MaxCurrentDensity := 1000;
         DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
         ACOBathSheetLine."Minimum Current Density" := MinCurrentDensity;
         ACOBathSheetLine."Maximum Current Density" := MaxCurrentDensity;
@@ -265,7 +267,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOProfileCustomer.SetRange("Customer No.", SalesLine."Sell-to Customer No.");
         CheckProfileCustomer := ACOProfileCustomer.FindFirst();
 
-        MinCurrentDensity := 0;
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Min. Current Density Color";
         if SalesLine."ACO Minimum Current Density LT" >= MinCurrentDensity then
@@ -276,7 +277,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             if ACOProfileCustomer."Minimum Current Density" >= MinCurrentDensity then
                 MinCurrentDensity := ACOProfileCustomer."Minimum Current Density";
 
-        MaxCurrentDensity := 1000;
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Current Density Color");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density LT");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density PT");

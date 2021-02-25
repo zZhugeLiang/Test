@@ -288,7 +288,8 @@ report 50007 "ACO Unattach Notice"
                 ThinStainingTime := 0;
                 ThickStainingTime := 0;
                 MinCurrentDensity := 0;
-                MaxCurrentDensity := 0;
+                MaxCurrentDensity := 1000;
+                
                 Customer.Get("Sell-to Customer No.");
                 SalesLine.SetRange("Document Type", "Document Type");
                 SalesLine.SetRange("Document No.", "No.");

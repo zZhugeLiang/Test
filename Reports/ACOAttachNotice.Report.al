@@ -316,7 +316,7 @@ report 50005 "ACO Attach Notice"
                 ThinStainingTime := 0;
                 ThickStainingTime := 0;
                 MinCurrentDensity := 0;
-                MaxCurrentDensity := 0;
+                MaxCurrentDensity := 1000;
 
                 Customer.Get("Sell-to Customer No.");
                 SalesLine.SetRange("Document Type", "Document Type");
