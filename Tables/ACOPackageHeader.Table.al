@@ -89,8 +89,8 @@ table 50023 "ACO Package Header"
             ACOPackageLine.SetRange("Package No.", Rec."No.");
             if ACOPackageLine.FindSet() then
                 repeat
-                    if ACOBathSheetLine.Get(Rec."No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
-                        ACOBathSheetLine."Reject Quantity" -= ACOBathSheetLine.Quantity;
+                    if ACOBathSheetLine.Get(ACOPackageLine."Bathsheet No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
+                        ACOBathSheetLine."Reject Quantity" -= ACOPackageLine.Quantity;
                         ACOBathSheetLine.Modify();
                     end;
                 until ACOPackageLine.Next() = 0;

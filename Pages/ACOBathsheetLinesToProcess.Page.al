@@ -176,7 +176,8 @@ page 50032 "ACO Bathsheet Lines To Process"
                     SalesLine: Record "Sales Line";
                     ACOBathSheetLine: Record "ACO Bath Sheet Line";
                     ACOBathSheetLinesToProcess: Record "ACO Bath Sheet Line";
-                    GenPackage: Report "ACO Generate Package";
+                    // GenPackage: Report "ACO Generate Package";
+                    GenPackage: Page "ACO Generate Package Dialog";
                     PrintPackageLabel: Report "ACO Package Label";
                     NumberSeriesManagement: Codeunit NoSeriesManagement;
                     tempCustomerNo: Code[20];
@@ -186,17 +187,11 @@ page 50032 "ACO Bathsheet Lines To Process"
                     LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';
                 begin
                     BathLineTempRecord.DeleteAll();
-                    CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
+
+                    if not (GenPackage.RunModal() = Action::OK) then Error('');
 
                     if ACOBathSheetLinesToProcess.FindSet() then
                         repeat
-                            // CalcFields("Quantity Processed");
-                            // if ("Qty in Package" > (Quantity - "Quantity Processed")) then
-                            //     Error(QtyTooLargeErr);
-
-                            // if ACOBathSheetLinesToProcess."Remaining Quantity" = 0 then
-                            //     Error(LabelsAlreadyPrintedErr);
-
                             BathLineTempRecord.SetRecFilter();
 
                             if BathLineTempRecord.Get(ACOBathSheetLinesToProcess."Bath Sheet No.", ACOBathSheetLinesToProcess."Production Order No.", ACOBathSheetLinesToProcess."Production Order Status", ACOBathSheetLinesToProcess."Production Order Line No.") then begin
@@ -224,7 +219,8 @@ page 50032 "ACO Bathsheet Lines To Process"
                     if Customer.Get(tempCustomerNo) then begin
                         GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
                         Commit();///
-                        temptext := GenPackage.RunRequestPage();
+                        // temptext := GenPackage.RunRequestPage();
+                        CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
                         // Create PackageHeader;
                         PackageHeader.Init();
                         If (Customer."ACO Package Label Nos." <> '') then begin

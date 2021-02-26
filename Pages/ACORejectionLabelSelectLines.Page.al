@@ -66,7 +66,8 @@ page 50055 "ACO Rej. Label Select Lines"
         // ACOBathSheetLine: Record "ACO Bath Sheet Line";
         // ACOBathSheetLinesToProcess: Record "ACO Bath Sheet Line";
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
-        GenPackage: Report "ACO Generate Package";
+        // GenPackage: Report "ACO Generate Package";
+        GenPackage: Page "ACO Generate Package Dialog";
         PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
         tempCustomerNo: Code[20];
@@ -115,7 +116,9 @@ page 50055 "ACO Rej. Label Select Lines"
         if Customer.Get(tempCustomerNo) then begin
             GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
             Commit();///
-            temptext := GenPackage.RunRequestPage();
+            // temptext := GenPackage.RunRequestPage();
+            //GenPackage.
+            if not (GenPackage.RunModal() = Action::OK) then Error('');
             // Create PackageHeader;
             PackageHeader.Init();
             If (Customer."ACO Package Label Nos." <> '') then begin
