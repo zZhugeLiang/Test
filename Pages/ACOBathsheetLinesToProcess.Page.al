@@ -6,7 +6,7 @@ page 50032 "ACO Bathsheet Lines To Process"
     ApplicationArea = All;
     SourceTable = "ACO Bath Sheet Line";
     //SourceTableTemporary = true;
-    SourceTableView = sorting("Bath Sheet No.", "Production Order No.", "Production Order Status", "Production Order Line No.") where(Completed = Filter(TRUE), Rerun = const(false));
+    SourceTableView = sorting("Bath Sheet No.", "Production Order No.", "Production Order Status", "Production Order Line No.") where(Completed = Filter(true));
     layout
     {
         area(Content)
@@ -189,7 +189,9 @@ page 50032 "ACO Bathsheet Lines To Process"
                     BathLineTempRecord.DeleteAll();
 
                     if not (GenPackage.RunModal() = Action::OK) then Error('');
+                    Commit();
 
+                    CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
                     if ACOBathSheetLinesToProcess.FindSet() then
                         repeat
                             BathLineTempRecord.SetRecFilter();
@@ -218,9 +220,9 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                     if Customer.Get(tempCustomerNo) then begin
                         GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
-                        Commit();///
+                        // Commit();///
                         // temptext := GenPackage.RunRequestPage();
-                        CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
+
                         // Create PackageHeader;
                         PackageHeader.Init();
                         If (Customer."ACO Package Label Nos." <> '') then begin

@@ -85,6 +85,7 @@ report 50001 "ACO Package Label"
                 column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter") { }
                 column(PictureFile_ACOProfile; ACOProfile."Picture File") { }
                 column(Reject_Reason_Code; "Reject Reason Code") { }
+                column(DescriptionRejectReasonCode; RejectReasonCode.Description) { }
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                 trigger OnAfterGetRecord()
                 begin
@@ -104,7 +105,10 @@ report 50001 "ACO Package Label"
                         Clear(SalesLine);
 
                     if not ACOProfile.Get("Profile no.") then
-                        Clear(ACOProfile)
+                        Clear(ACOProfile);
+
+                    if not RejectReasonCode.Get("Reject Reason Code") then
+                        Clear(RejectReasonCode);
                 end;
             }
         }
@@ -165,6 +169,7 @@ report 50001 "ACO Package Label"
         SalesLine: Record "Sales Line";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
+        RejectReasonCode: Record "Reason Code";
         ItemLbl: Label 'Item';
         AmountLbl: Label 'Amount';
         LengthLbl: Label 'Length';

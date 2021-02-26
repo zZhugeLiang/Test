@@ -78,8 +78,10 @@ page 50055 "ACO Rej. Label Select Lines"
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
     begin
-        // BathLineTempRecord.DeleteAll();
+        BathLineTempRecord.DeleteAll();
         // CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
+        if not (GenPackage.RunModal() = Action::OK) then Error('');
+        Commit();
 
         if Rec.FindSet() then
             repeat
@@ -115,10 +117,11 @@ page 50055 "ACO Rej. Label Select Lines"
 
         if Customer.Get(tempCustomerNo) then begin
             GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
+
             Commit();///
             // temptext := GenPackage.RunRequestPage();
             //GenPackage.
-            if not (GenPackage.RunModal() = Action::OK) then Error('');
+
             // Create PackageHeader;
             PackageHeader.Init();
             If (Customer."ACO Package Label Nos." <> '') then begin
