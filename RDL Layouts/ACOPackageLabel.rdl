@@ -1290,6 +1290,9 @@ End Function
         <Field Name="Reject_Reason_Code">
           <DataField>Reject_Reason_Code</DataField>
         </Field>
+        <Field Name="DescriptionRejectReasonCode">
+          <DataField>DescriptionRejectReasonCode</DataField>
+        </Field>
         <Field Name="Circumference_ACOProfile">
           <DataField>Circumference_ACOProfile</DataField>
         </Field>

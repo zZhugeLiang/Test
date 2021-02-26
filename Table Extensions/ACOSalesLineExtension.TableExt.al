@@ -345,7 +345,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             trigger OnValidate()
             begin
-                "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
+                if Rec."ACO Charges per Bath Profile" <> 0 then
+                    "ACO Quantity Charges" := "ACO Number of Units" / "ACO Charges per Bath Profile";
             end;
         }
 
