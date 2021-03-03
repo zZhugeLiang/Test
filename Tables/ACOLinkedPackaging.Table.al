@@ -22,8 +22,6 @@ table 50026 "ACO Linked Packaging"
         field(3; "Code"; Code[20])
         {
             Caption = 'Code';
-            TableRelation = "ACO Packaging";
-            ValidateTableRelation = false;
             DataClassification = CustomerContent;
 
             trigger OnValidate()

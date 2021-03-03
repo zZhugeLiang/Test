@@ -12,6 +12,17 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(SalesLineProfileCode);
     end;
 
+    procedure SetSalesLineCustomerItemNo(NewSalesLineCustomerItemNo: Code[50]);
+    begin
+        SalesLineCustomerItemNo := NewSalesLineCustomerItemNo;
+    end;
+
+    procedure GetSalesLineCustomerItemNo(): Code[50];
+    begin
+        exit(SalesLineCustomerItemNo);
+    end;
+
     var
         SalesLineProfileCode: Code[30];
+        SalesLineCustomerItemNo: Code[50];
 }

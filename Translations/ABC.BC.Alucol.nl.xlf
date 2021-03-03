@@ -2319,12 +2319,12 @@
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 441237434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Item No.</source>
-          <target>Artikelnummer klant</target>
+          <target>Productnummer klant</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Item No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 131416759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Description</source>
-          <target>Product omschrijving</target>
+          <target>Product omschrijving klant</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -4017,14 +4017,14 @@
           <target>Aantal eenheden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType NumberOfUnitsCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 1261740140" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area incl. Hollow</source>
-          <target>Oppervlakte incl. Hollow</target>
+        <trans-unit id="Report 2678580552 - NamedType 2898600151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Line</source>
+          <target>Oppervlakte Regel</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaIncHollowCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 3073791222" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area excl. Hollow</source>
-          <target>Oppervlakte excl. Hollow</target>
+        <trans-unit id="Report 2678580552 - NamedType 793999142" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Worknote</source>
+          <target>Oppervlakte Werkbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaExcHollowCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
@@ -5788,6 +5788,11 @@
           <target>Max. Hoogte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType MaxHeightCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 1270528838 - NamedType 2855844002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remark</source>
+          <target>Opmerking</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType RemarkCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unattach Notice</source>
           <target>Afspan bon</target>
@@ -6138,14 +6143,14 @@
           <target>Aantal eenheden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfUnitsCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 287955129 - NamedType 1261740140" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area incl. Hollow</source>
-          <target>Oppervlakte incl. Hollow</target>
+        <trans-unit id="Report 287955129 - NamedType 2898600151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Line</source>
+          <target>Oppervlakte Regel</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType AreaIncHollowCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 287955129 - NamedType 3073791222" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area excl. Hollow</source>
-          <target>Oppervlakte excl. Hollow</target>
+        <trans-unit id="Report 287955129 - NamedType 793999142" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Worknote</source>
+          <target>Oppervlakte Werkbon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType AreaExcHollowCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">

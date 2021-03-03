@@ -6,21 +6,14 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetHeader: Record "ACO Bath Sheet Header";
     begin
         GetAppSetupAndCheckFields();
-        // CheckResourceFilter(ResourceFilter);
-
         CheckProductionLines(ProductionOrderLines);
 
         CreateBathSheetHeader(ACOBathSheetHeader, ProductionOrderLines);
         CreateBathSheetLines(ACOBathSheetHeader."No.", ProductionOrderLines);
 
         ACOBathSheetHeader.UpdateBathSheetHeader();
-        // CalculateProcessTimes(ACOBathSheetHeader, ProductionOrderLines);
-        //CompleteBathSheet(ProductionOrderLines);
-        // ProductionOrderLines.SetRange("ACO Included", true);
         ProductionOrderLines.ModifyAll("ACO Complete", true);
         ProductionOrderLines.ModifyAll("Quantity", 0);
-        // how to make it so that the line is processed?
-        // ProductionOrderLines.ModifyAll("ACO Included", false);
 
         InsertResources(ACOBathSheetHeader."No.", Resource)
     end;
@@ -50,7 +43,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         Max2ChargesErr: Label 'A maximum of 2 charges is allowed, per Bath Sheet.';
     begin
         ProductionOrderLines.SetCurrentKey("ACO Charge No.", Status, "Prod. Order No.");
-        // ProductionOrderLines.SetRange("ACO Included", true);
         if ProductionOrderLines.FindSet() then
             repeat
                 if ProductionOrderLines."Variant Code" = '' then
@@ -94,7 +86,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         First: Boolean;
         Measure: Boolean;
     begin
-        // ProductionOrderLines.SetRange("ACO Included", true);
         First := true;
         Measure := true;
         MaxThickStainingTime := -1;
@@ -192,18 +183,14 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     end;
 
     local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; var ProductionOrderLines: Record "Prod. Order Line")
-    var
-        LineNo: Integer;
     begin
-        LineNo := 10000;
         if ProductionOrderLines.FindSet(true) then
             repeat
-                CreateBathSheetLine(ACOBathSheetHeaderNo, ProductionOrderLines, LineNo);
-                LineNo += 10000;
+                CreateBathSheetLine(ACOBathSheetHeaderNo, ProductionOrderLines);
             until ProductionOrderLines.Next() = 0;
     end;
 
-    local procedure CreateBathSheetLine(ACOBathSheetHeaderNo: Code[20]; ProductionOrderLine: Record "Prod. Order Line"; var LineNo: Integer)
+    local procedure CreateBathSheetLine(ACOBathSheetHeaderNo: Code[20]; ProductionOrderLine: Record "Prod. Order Line")
     var
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
@@ -215,10 +202,12 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     begin
         SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
-        LineNo := LineNo;  // Dummy Regel -> AUB Oplossen als je hier bij uit komt, LineNo wordt niet meer gebruikt? <-- 
+
+        // TODO Comment code below
         if not ProductionOrderLine."ACO Rerun" then
             if ProductionOrderLine."ACO Remaining Quantity" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
                 Error(NumberofUnitsLtQuantityToBathSheetErr);
+        //
 
         ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
         ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status.AsInteger();

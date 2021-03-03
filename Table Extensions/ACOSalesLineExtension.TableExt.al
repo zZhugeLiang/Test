@@ -109,6 +109,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     ACOProfileCustomers.SetSelectionFilter(ACOProfileCustomer);
                     RecRef.GetTable(ACOProfileCustomer);
                     ACOProfileCustomers.GetRecord(ACOProfileCustomer2);
+                    Rec."ACO Customer Item No." := ACOProfileCustomer2."Customer Item No.";
                     Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
                 end;
             end;
@@ -250,6 +251,68 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Attach Method Profile';
             DataClassification = CustomerContent;
         }
+        //TODO
+        // field(50037; "ACO Number of Units to Ship"; Decimal)
+        // {
+        //     Caption = 'Number of Units to Ship';
+        //     DataClassification = CustomerContent;
+
+        //     trigger OnValidate()
+        //     var
+        //         Item: Record Item;
+        //         ItemVariant: Record "Item Variant";
+        //         ACOAppSetup: Record "ACO App Setup";
+        //         NewQuantity: Decimal;
+        //     begin
+        //         if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
+        //             ACOAppSetup.Get();
+
+        //             NewQuantity := "ACO Number of Units to Ship";
+
+        //             if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+        //                 Clear(ItemVariant);
+
+        //             if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
+        //                 NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship";
+
+        //             if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+        //                 NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship" / 1000;
+
+        //             Validate("Qty. to Ship", NewQuantity);
+        //         end;
+        //     end;
+        // }
+
+        // field(50038; "ACO Number of Units to Invoice"; Decimal)
+        // {
+        //     Caption = 'Number of Units to Invoice';
+        //     DataClassification = CustomerContent;
+
+        //     trigger OnValidate()
+        //     var
+        //         Item: Record Item;
+        //         ItemVariant: Record "Item Variant";
+        //         ACOAppSetup: Record "ACO App Setup";
+        //         NewQuantity: Decimal;
+        //     begin
+        //         if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
+        //             ACOAppSetup.Get();
+
+        //             NewQuantity := "ACO Number of Units to Invoice";
+
+        //             if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+        //                 Clear(ItemVariant);
+
+        //             if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
+        //                 NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units to Invoice";
+
+        //             if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+        //                 NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Invoice" / 1000;
+
+        //             Validate("Qty. to Invoice", NewQuantity);
+        //         end;
+        //     end;
+        // }
 
         field(50040; "ACO Sawing"; Boolean)
         {

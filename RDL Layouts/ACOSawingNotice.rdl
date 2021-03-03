@@ -3570,10 +3570,10 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!PackageTypeCode_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
+                                        <FontSize>11pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -3593,41 +3593,10 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
+                            <ColSpan>2</ColSpan>
                           </CellContents>
                         </TablixCell>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox27">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value />
-                                      <Style>
-                                        <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox27</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <BackgroundColor>White</BackgroundColor>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
+                        <TablixCell />
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox43">
@@ -3636,7 +3605,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!PackagingTypeCode_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>11pt</FontSize>
@@ -3670,7 +3639,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!PackagingUOMCode_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>11pt</FontSize>
@@ -4150,10 +4119,10 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!PackagingUOMCode_ACOLinkedPackaging.Value &amp; " + " &amp; Fields!Quantity_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
+                                        <FontSize>11pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -4173,42 +4142,10 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
+                            <ColSpan>2</ColSpan>
                           </CellContents>
                         </TablixCell>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox162">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value />
-                                      <Style>
-                                        <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox162</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <BackgroundColor>White</BackgroundColor>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
+                        <TablixCell />
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox163">
@@ -4218,7 +4155,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!InsideUOMCode_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>11pt</FontSize>
@@ -4252,7 +4189,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!BuildupLayerCode_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>11pt</FontSize>
@@ -4768,10 +4705,10 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!BuildupQuantityPerLayer_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
+                                        <FontSize>11pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -4802,10 +4739,10 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!BuildupNumberOfLayers_ACOLinkedPackaging.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
+                                        <FontSize>11pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -4836,7 +4773,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>cm</Value>
+                                      <Value>=Fields!BuildupMaximumWidth_ACOLinkedPackaging.Value &amp; " cm"</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>11pt</FontSize>
@@ -4871,7 +4808,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>cm</Value>
+                                      <Value>=Fields!BuildupMaximumHeight_ACOLinkedPackaging.Value &amp; " cm"</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>11pt</FontSize>
@@ -5004,36 +4941,33 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>9.8cm</Height>
+                      <Height>9.2cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox583">
+                            <Textbox Name="Textbox173">
+                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=Fields!RemarkCaption.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
+                                        <FontSize>11pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
-                                        <Color>#333333</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox583</rd:DefaultName>
+                              <rd:DefaultName>Textbox171</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <BottomBorder>
-                                  <Style>Solid</Style>
-                                </BottomBorder>
                                 <BackgroundColor>White</BackgroundColor>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -5069,9 +5003,6 @@
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <BottomBorder>
-                                  <Style>Solid</Style>
-                                </BottomBorder>
                                 <BackgroundColor>White</BackgroundColor>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -5083,7 +5014,53 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox148">
+                            <Textbox Name="Textbox172">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Remark_ACOLinkedPackaging.Value</Value>
+                                      <Style>
+                                        <FontFamily>Calibri</FontFamily>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox171</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BackgroundColor>White</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <ColSpan>7</ColSpan>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell />
+                        <TablixCell />
+                        <TablixCell />
+                        <TablixCell />
+                        <TablixCell />
+                        <TablixCell />
+                      </TablixCells>
+                    </TablixRow>
+                    <TablixRow>
+                      <Height>0.6cm</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox3">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -5102,7 +5079,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox148</rd:DefaultName>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -5121,81 +5098,7 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox30">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value />
-                                      <Style>
-                                        <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#333333</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox30</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <BottomBorder>
-                                  <Style>Solid</Style>
-                                </BottomBorder>
-                                <BackgroundColor>White</BackgroundColor>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox46">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value />
-                                      <Style>
-                                        <FontFamily>Calibri</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#333333</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox46</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <BottomBorder>
-                                  <Style>Solid</Style>
-                                </BottomBorder>
-                                <BackgroundColor>White</BackgroundColor>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox89">
+                            <Textbox Name="Textbox4">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -5214,7 +5117,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox89</rd:DefaultName>
+                              <rd:DefaultName>Textbox4</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -5233,7 +5136,7 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox138">
+                            <Textbox Name="Textbox17">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -5252,7 +5155,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox138</rd:DefaultName>
+                              <rd:DefaultName>Textbox17</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -5271,7 +5174,7 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox103">
+                            <Textbox Name="Textbox21">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -5290,7 +5193,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox103</rd:DefaultName>
+                              <rd:DefaultName>Textbox21</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -5309,7 +5212,8 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox62">
+                            <Textbox Name="Textbox22">
+                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -5327,7 +5231,159 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox62</rd:DefaultName>
+                              <rd:DefaultName>Textbox22</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BottomBorder>
+                                  <Style>Solid</Style>
+                                </BottomBorder>
+                                <BackgroundColor>White</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox27">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Calibri</FontFamily>
+                                        <FontSize>12pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#333333</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox27</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BottomBorder>
+                                  <Style>Solid</Style>
+                                </BottomBorder>
+                                <BackgroundColor>White</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox28">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Calibri</FontFamily>
+                                        <FontSize>12pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#333333</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox28</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BottomBorder>
+                                  <Style>Solid</Style>
+                                </BottomBorder>
+                                <BackgroundColor>White</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox29">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Calibri</FontFamily>
+                                        <FontSize>12pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#333333</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox29</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BottomBorder>
+                                  <Style>Solid</Style>
+                                </BottomBorder>
+                                <BackgroundColor>White</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox32">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Calibri</FontFamily>
+                                        <FontSize>12pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#333333</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox32</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -5712,6 +5768,7 @@
                         <TablixMember />
                         <TablixMember />
                         <TablixMember />
+                        <TablixMember />
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
@@ -5768,7 +5825,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Left>12.89276cm</Left>
               <Height>11pt</Height>
               <Width>5.27947cm</Width>
@@ -5794,7 +5850,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0cm</Top>
               <Height>11pt</Height>
               <Width>11.94697cm</Width>
               <ZIndex>1</ZIndex>
@@ -6095,6 +6150,51 @@ End Function
         </Field>
         <Field Name="RemainingFormat">
           <DataField>RemainingFormat</DataField>
+        </Field>
+        <Field Name="ACO_Packaging">
+          <DataField>ACO_Packaging</DataField>
+        </Field>
+        <Field Name="PackageTypeCode_ACOLinkedPackaging">
+          <DataField>PackageTypeCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="Width_ACOLinkedPackaging">
+          <DataField>Width_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="PackagingTypeCode_ACOLinkedPackaging">
+          <DataField>PackagingTypeCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="InsideCode_ACOLinkedPackaging">
+          <DataField>InsideCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="PackagingUOMCode_ACOLinkedPackaging">
+          <DataField>PackagingUOMCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedPackaging">
+          <DataField>Quantity_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="InsideUOMCode_ACOLinkedPackaging">
+          <DataField>InsideUOMCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="BuildupLayerCode_ACOLinkedPackaging">
+          <DataField>BuildupLayerCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="BuildupQuantityPerLayer_ACOLinkedPackaging">
+          <DataField>BuildupQuantityPerLayer_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="BuildupNumberOfLayers_ACOLinkedPackaging">
+          <DataField>BuildupNumberOfLayers_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="BuildupMaximumWidth_ACOLinkedPackaging">
+          <DataField>BuildupMaximumWidth_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="BuildupMaximumHeight_ACOLinkedPackaging">
+          <DataField>BuildupMaximumHeight_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="RemarkCaption">
+          <DataField>RemarkCaption</DataField>
+        </Field>
+        <Field Name="Remark_ACOLinkedPackaging">
+          <DataField>Remark_ACOLinkedPackaging</DataField>
         </Field>
       </Fields>
       <Query>

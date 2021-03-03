@@ -60,6 +60,7 @@ codeunit 50000 "ACO Event Subscribers"
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
         ACOSingleInstanceMgt.SetSalesLineProfileCode(Rec."ACO Profile Code");
+        ACOSingleInstanceMgt.SetSalesLineCustomerItemNo(Rec."ACO Customer Item No.");
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'No.', false, false)]
@@ -77,7 +78,9 @@ codeunit 50000 "ACO Event Subscribers"
             exit;
 
         Rec."ACO Profile Code" := ACOSingleInstanceMgt.GetSalesLineProfileCode();
+        Rec."ACO Customer Item No." := ACOSingleInstanceMgt.GetSalesLineCustomerItemNo();
         ACOSingleInstanceMgt.SetSalesLineProfileCode('');
+        ACOSingleInstanceMgt.SetSalesLineCustomerItemNo('');
 
         ACOAppSetup.Get();
 
@@ -183,14 +186,17 @@ codeunit 50000 "ACO Event Subscribers"
 
         if ACOProfile.Get(Rec."ACO Profile Code") then begin
             ACOProfile.TestField(Circumference);
+
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-            ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-            ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-            if not ACOProfileCustomer.FindFirst() then
-                Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code")
-            else
-                if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
-                    Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
+            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
+                ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                if not ACOProfileCustomer.FindFirst() then
+                    Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
+            end;
+
+            if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
+                Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
 
             Rec."ACO Profile Description" := ACOProfile.Description;
             Rec."ACO Profile Category" := ACOProfile.Category;
@@ -205,7 +211,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
             if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters");
+                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000);
 
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
@@ -259,6 +265,8 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec.ACOCalculateUnitPrice();
+        //TODO
+        // Rec.Quantity := Round(Rec.Quantity, 0.01);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Unit Price', false, false)]

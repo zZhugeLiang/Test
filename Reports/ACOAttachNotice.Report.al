@@ -51,10 +51,10 @@ report 50005 "ACO Attach Notice"
             column(QuantityRejectedWithReasonsCaption; QuantityRejectedWithReasonsCaptionLbl) { }
             column(TotalsCaption; TotalsCaptionLbl) { }
             column(NumberOfUnitsCaption; NumberOfUnitsCaptionLbl) { }
-            column(AreaIncHollowCaption; AreaIncHollowCaptionLbl) { }
+            column(AreaLineCaption; AreaLineCaptionLbl) { }
             column(TotalNumberOfBaths; TotalNumberOfBaths) { }
             column(AreaIncHollow; AreaIncHollow) { }
-            column(AreaExcHollowCaption; AreaExcHollowCaptionLbl) { }
+            column(AreaWorknoteCaption; AreaWorknoteCaptionLbl) { }
             column(AreaExcHollow; AreaExcHollow) { }
             // Totals >>            
             // Footer <<
@@ -66,6 +66,11 @@ report 50005 "ACO Attach Notice"
             column(CreatedbyUser; User."User Name")
             {
             }
+            column(Requested_Delivery_DateCaption; FieldCaption("Requested Delivery Date")) { }
+            column(Requested_Delivery_Date; "Requested Delivery Date") { }
+            column(Promised_Delivery_DateCaption; FieldCaption("Promised Delivery Date")) { }
+            column(Promised_Delivery_Date; "Promised Delivery Date") { }
+
             // Footer >>
             dataitem("Sales Line"; "Sales Line")
             {
@@ -94,7 +99,7 @@ report 50005 "ACO Attach Notice"
                 column(CircumferenceCaption; CircumferenceCaptionLbl) { }
                 column(Circumference; Circumference) { }
                 column(DefWghtCaption; DefWghtCaptionLbl) { }
-                column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter") { }
+                column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter" * ItemVariant."ACO Number of Meters") { }
                 column(ExtraToEnumerateCaption; ExtraToEnumerateCaptionLbl) { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(FoilCaption; FoilCaptionLbl) { }
@@ -274,7 +279,7 @@ report 50005 "ACO Attach Notice"
                     NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
 
                     Circumference := "ACO Profile Circumference";
-                    NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";
+                    NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units" * ItemVariant."ACO Number of Meters";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
                     if ACOProfile."Charges per Bath Profile" <> 0 then
                         NumberOfBaths := "ACO Number of Units" / ACOProfile."Charges per Bath Profile"
@@ -469,8 +474,8 @@ report 50005 "ACO Attach Notice"
         QuantityRejectedWithReasonsCaptionLbl: Label 'Quantity rejected with reason(s)';
         TotalsCaptionLbl: Label 'Totals';
         NumberOfUnitsCaptionLbl: Label 'Number of Units';
-        AreaIncHollowCaptionLbl: Label 'Area incl. Hollow';
-        AreaExcHollowCaptionLbl: Label 'Area excl. Hollow';
+        AreaLineCaptionLbl: Label 'Area Line';
+        AreaWorknoteCaptionLbl: Label 'Area Worknote';
         // Footer
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';

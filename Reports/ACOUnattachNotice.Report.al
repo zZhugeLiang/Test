@@ -51,10 +51,10 @@ report 50007 "ACO Unattach Notice"
             column(QuantityRejectedWithReasonsCaption; QuantityRejectedWithReasonsCaptionLbl) { }
             column(TotalsCaption; TotalsCaptionLbl) { }
             column(NumberOfUnitsCaption; NumberOfUnitsCaptionLbl) { }
-            column(AreaIncHollowCaption; AreaIncHollowCaptionLbl) { }
+            column(AreaLineCaption; AreaLineCaptionLbl) { }
             column(TotalNumberOfBaths; TotalNumberOfBaths) { }
             column(AreaIncHollow; AreaIncHollow) { }
-            column(AreaExcHollowCaption; AreaExcHollowCaptionLbl) { }
+            column(AreaWorknoteCaption; AreaWorknoteCaptionLbl) { }
             column(AreaExcHollow; AreaExcHollow) { }
             // Totals >>            
             // Footer <<
@@ -66,6 +66,10 @@ report 50007 "ACO Unattach Notice"
             column(CreatedbyUser; User."User Name")
             {
             }
+            column(Requested_Delivery_DateCaption; FieldCaption("Requested Delivery Date")) { }
+            column(Requested_Delivery_Date; "Requested Delivery Date") { }
+            column(Promised_Delivery_DateCaption; FieldCaption("Promised Delivery Date")) { }
+            column(Promised_Delivery_Date; "Promised Delivery Date") { }
             // Footer >>
             dataitem("Sales Line"; "Sales Line")
             {
@@ -94,7 +98,7 @@ report 50007 "ACO Unattach Notice"
                 column(CircumferenceCaption; CircumferenceCaptionLbl) { }
                 column(Circumference; Circumference) { }
                 column(DefWghtCaption; DefWghtCaptionLbl) { }
-                column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter") { }
+                column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter" * ItemVariant."ACO Number of Meters") { }
                 column(ExtraToEnumerateCaption; ExtraToEnumerateCaptionLbl) { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(FoilCaption; FoilCaptionLbl) { }
@@ -175,10 +179,11 @@ report 50007 "ACO Unattach Notice"
                 column(PackagingCaption; PackagingCaptionLbl) { }
                 column(PackageTypeCaption; PackageTypeCaptionLbl) { }
                 column(ACO_Packaging; "ACO Packaging") { }
+                column(PackageTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Package Type Code") { }
                 column(WidthCaption; WidthCaptionLbl) { }
                 column(Width_ACOLinkedPackaging; Format(ACOLinkedPackaging.Width)) { }
                 column(TypeCaption; TypeCaptionLbl) { }
-                column(PackageTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Packaging Type Code") { }
+                column(PackagingTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Packaging Type Code") { }
                 column(InsideCaption; InsideCaptionLbl) { }
                 column(InsideCode_ACOLinkedPackaging; ACOLinkedPackaging."Inside Code") { }
                 column(ProfilesCaption; ProfilesCaptionLbl) { }
@@ -225,7 +230,7 @@ report 50007 "ACO Unattach Notice"
                     ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
                     ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
 
-                    GetHolders();
+                    GetLinkedPackaging();
 
                     if ACOProfile.Get("ACO Profile Code") then
                         ACOProfile.CalcFields("Picture File")
@@ -244,7 +249,7 @@ report 50007 "ACO Unattach Notice"
                     NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
 
                     Circumference := "ACO Profile Circumference";
-                    NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units";
+                    NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units" * ItemVariant."ACO Number of Meters";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
                     if ACOProfile."Charges per Bath Profile" <> 0 then
                         NumberOfBaths := "ACO Number of Units" / ACOProfile."Charges per Bath Profile"
@@ -289,7 +294,7 @@ report 50007 "ACO Unattach Notice"
                 ThickStainingTime := 0;
                 MinCurrentDensity := 0;
                 MaxCurrentDensity := 1000;
-                
+
                 Customer.Get("Sell-to Customer No.");
                 SalesLine.SetRange("Document Type", "Document Type");
                 SalesLine.SetRange("Document No.", "No.");
@@ -432,8 +437,8 @@ report 50007 "ACO Unattach Notice"
         QuantityRejectedWithReasonsCaptionLbl: Label 'Quantity rejected with reason(s)';
         TotalsCaptionLbl: Label 'Totals';
         NumberOfUnitsCaptionLbl: Label 'Number of Units';
-        AreaIncHollowCaptionLbl: Label 'Area incl. Hollow';
-        AreaExcHollowCaptionLbl: Label 'Area excl. Hollow';
+        AreaLineCaptionLbl: Label 'Area Line';
+        AreaWorknoteCaptionLbl: Label 'Area Worknote';
         // Footer
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
@@ -446,9 +451,9 @@ report 50007 "ACO Unattach Notice"
         LengthCaptionLbl: Label 'Length';
         LocationCaptionLbl: Label 'Location';
 
-    local procedure GetHolders()
+    local procedure GetLinkedPackaging()
     begin
-        if not ACOLinkedPackaging.Get("Sales Line"."ACO Packaging") then
+        if not ACOLinkedPackaging.Get("Sales Line"."ACO Profile Code", "Sales Line"."Sell-to Customer No.", "Sales Line"."ACO Packaging", ItemVariant."ACO Number of Meters" * 1000) then
             Clear(ACOLinkedPackaging);
     end;
 }

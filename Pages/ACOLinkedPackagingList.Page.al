@@ -4,9 +4,7 @@ page 50034 "ACO Linked Packaging List"
     PageType = List;
     SourceTable = "ACO Linked Packaging";
     Caption = 'Packaging List';
-    ApplicationArea = All;
-    UsageCategory = Lists;
-
+    UsageCategory = None;
     layout
     {
         area(content)

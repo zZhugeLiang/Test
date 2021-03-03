@@ -13,42 +13,52 @@ page 50011 "ACO Profile Customer Card"
             group(General)
             {
                 Caption = 'General';
-
-                field("Customer No."; "Customer No.")
+                Group(Column1)
                 {
-                    ApplicationArea = All;
+                    ShowCaption = false;
+                    field("Customer No."; "Customer No.")
+                    {
+                        ShowMandatory = true;
+                        ApplicationArea = All;
+                    }
+
+                    field("Profile Code"; "Profile Code")
+                    {
+                        ShowMandatory = true;
+                        ApplicationArea = All;
+                    }
+
+                    field("Customer Item No."; "Customer Item No.")
+                    {
+                        ShowMandatory = true;
+                        ApplicationArea = All;
+                    }
                 }
 
-                field("Customer Name"; "Customer Name")
-                {
-                    ApplicationArea = All;
-                }
 
-                field("Profile Code"; "Profile Code")
+                Group(Column2)
                 {
-                    ApplicationArea = All;
-                }
+                    ShowCaption = false;
+                    field("Customer Name"; "Customer Name")
+                    {
+                        ApplicationArea = All;
+                    }
 
-                field("Profile Description"; "Profile Description")
-                {
-                    ApplicationArea = All;
-                }
+                    field("Profile Description"; "Profile Description")
+                    {
+                        ApplicationArea = All;
+                    }
 
-                field("Customer Item No."; "Customer Item No.")
-                {
-                    ApplicationArea = All;
-                }
+                    field("Customer of Customer"; "Customer of Customer")
+                    {
+                        ApplicationArea = All;
 
-                field("Customer of Customer"; "Customer of Customer")
-                {
-                    ApplicationArea = All;
-
+                    }
                 }
                 field("Price Scheme Code"; "Price Scheme Code")
                 {
                     ApplicationArea = All;
                 }
-
                 field("Last DateTime Modified"; "Last DateTime Modified")
                 {
                     ApplicationArea = All;
@@ -186,14 +196,11 @@ page 50011 "ACO Profile Customer Card"
                 RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
                 ApplicationArea = All;
             }
-
-            action("ACO Packaging List")
-            {
-                Caption = 'Packaging List';
-                Image = CopyItem;
-                RunObject = Page "ACO Packaging List";
-                ApplicationArea = All;
-            }
         }
     }
+
+    trigger OnClosePage()
+    begin
+        Rec.TestPK();
+    end;
 }

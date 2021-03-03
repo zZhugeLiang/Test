@@ -64,6 +64,24 @@ report 50006 "ACO Sawing Notice"
             column(RemCaption; RemCaptionLbl) { }
             column(Remaining; Remaining) { }
 
+            // Packaging <<
+            column(ACO_Packaging; "ACO Packaging") { }
+            column(PackageTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Package Type Code") { }
+            column(Width_ACOLinkedPackaging; Format(ACOLinkedPackaging.Width)) { }
+            column(PackagingTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Packaging Type Code") { }
+            column(InsideCode_ACOLinkedPackaging; ACOLinkedPackaging."Inside Code") { }
+            column(PackagingUOMCode_ACOLinkedPackaging; ACOLinkedPackaging."Packaging Unit of Measure Code") { }
+            column(Quantity_ACOLinkedPackaging; Format(ACOLinkedPackaging.Quantity)) { }
+            column(InsideUOMCode_ACOLinkedPackaging; ACOLinkedPackaging."Inside Unit of Measure Code") { }
+            column(BuildupLayerCode_ACOLinkedPackaging; ACOLinkedPackaging."Build-up Layer Code") { }
+            column(BuildupQuantityPerLayer_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Quantity per Layer")) { }
+            column(BuildupNumberOfLayers_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Number of Layers")) { }
+            column(BuildupMaximumWidth_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Width")) { }
+            column(BuildupMaximumHeight_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Height")) { }
+            column(RemarkCaption; RemarkCaptionLbl) { }
+            column(Remark_ACOLinkedPackaging; ACOLinkedPackaging.Remark) { }
+            // Packaging >>            
+
             trigger OnAfterGetRecord()
             var
                 SalesLine: Record "Sales Line";
@@ -71,7 +89,6 @@ report 50006 "ACO Sawing Notice"
                 SalesHeader.Get("Document Type", "Document No.");
                 ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
                 ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                // ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
                 if not ACOProfileCustomer.FindFirst() then
                     Clear(ACOProfileCustomer);
 
@@ -81,19 +98,19 @@ report 50006 "ACO Sawing Notice"
                 if not ACOProfile.Get("ACO Profile Code") then
                     Clear(ACOProfile);
 
+                GetLinkedPackaging();
+
                 SalesLine.Reset();
                 SalesLine.SetRange("Document Type", "Document Type");
                 SalesLine.SetRange("Document No.", "No.");
                 if SalesLine.FindSet() then
                     repeat
                         BagDescriptionsText += SalesLine."ACO Receipt Bag" + '/';
-                    // TotalQuantity += SalesLine."ACO Number of Units" / Round((SalesLine."ACO Start Length" - ACOAppSetup."Min. Residue Saw") / (ItemVariant."ACO Number of Meters" * 1000), 1, '<');
                     until SalesLine.Next() = 0;
 
                 if StrLen(BagDescriptionsText) > 1 then
                     BagDescriptionsText := CopyStr(BagDescriptionsText, 1, StrLen(BagDescriptionsText) - 1);
 
-                // NumberOfMeters := Round(ItemVariant."ACO Number of Meters", 1) * 1000;
                 LengthAfterSawing := ItemVariant."ACO Number of Meters" * 1000;
                 if LengthAfterSawing <> 0 then
                     QuantityAfterSawing := Round(("ACO Start Length" - ACOAppSetup."Min. Residue Saw") / LengthAfterSawing, 1, '<')
@@ -132,9 +149,8 @@ report 50006 "ACO Sawing Notice"
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
+        ACOLinkedPackaging: Record "ACO Linked Packaging";
         BagDescriptionsText: Text;
-        //TotalNumberOfUnits: Decimal;
-        //NumberOfMeters: Decimal;
         TotalQuantity: Decimal;
         QuantityAfterSawing: Decimal;
         LengthAfterSawing: Decimal;
@@ -148,7 +164,6 @@ report 50006 "ACO Sawing Notice"
         LengthCaptionLbl: Label 'Length';
         DateCaptionLbl: Label 'Date';
         DeliveryDateCaptionLbl: Label 'Delivery Date';
-        // ItemNoCustomerCaptionLbl: Label 'Item No. Customer';
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
         QuantityAfterSawingCaptionLbl: Label 'Quantity (after sawing)';
@@ -171,4 +186,12 @@ report 50006 "ACO Sawing Notice"
         NumberOfLayersCaptionLbl: Label '# Layers';
         MaxWidthCaptionLbl: Label 'Max Width';
         MaxHeightCaptionLbl: Label 'Max Height';
+        RemarkCaptionLbl: Label 'Remark';
+
+
+    local procedure GetLinkedPackaging()
+    begin
+        if not ACOLinkedPackaging.Get("Sales Line"."ACO Profile Code", "Sales Line"."Sell-to Customer No.", "Sales Line"."ACO Packaging", ItemVariant."ACO Number of Meters" * 1000) then
+            Clear(ACOLinkedPackaging);
+    end;
 }

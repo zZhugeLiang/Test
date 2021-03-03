@@ -202,17 +202,26 @@ table 50009 "ACO Profile Customer"
 
     trigger OnInsert();
     begin
-        "Last DateTime Modified" := CurrentDateTime();
+        TestPK();
+        Rec."Last DateTime Modified" := CurrentDateTime();
     end;
 
     trigger OnRename();
     begin
-        "Last DateTime Modified" := CurrentDateTime();
+        TestPK();
+        Rec."Last DateTime Modified" := CurrentDateTime();
     end;
 
     trigger OnModify();
     begin
-        "Last DateTime Modified" := CurrentDateTime();
+        Rec."Last DateTime Modified" := CurrentDateTime();
+    end;
+
+    procedure TestPK()
+    begin
+        Rec.TestField("Profile Code");
+        Rec.TestField("Customer No.");
+        Rec.TestField("Customer Item No.");
     end;
 
     procedure DownloadPackagingInstructions(): Boolean
