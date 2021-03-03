@@ -219,6 +219,15 @@ report 50017 "ACO Sales - Pro Forma Inv"
             column(VATRegNoLbl; CompanyInformation.GetVATRegistrationNumberLbl())
             {
             }
+            column(Sell_to_Customer_No_; "Sell-to Customer No.")
+            {
+            }
+            column(Amount; Amount)
+            {
+            }
+            column(Amount_Including_VAT; "Amount Including VAT")
+            {
+            }
             dataitem(Line; "Sales Line")
             {
                 DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
@@ -276,6 +285,14 @@ report 50017 "ACO Sales - Pro Forma Inv"
                 column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                 column(ACOSawing_SalesInvLine; Line."ACO Sawing") { }
+                column(No_; "No.") { }
+                column(Unit_of_Measure; "Unit of Measure") { }
+                column(Quantity_Line; Quantity) { }
+                column(Line_Amount; "Line Amount") { }
+                column(Amount_Line; Amount) { }
+                column(Amount_Including_VAT_SalesLin; "Amount Including VAT") { }
+                column(ACO_Number_of_Units; "ACO Number of Units") { }
+                column(Unit_of_Measure_Code; "Unit of Measure Code") { }
                 // Values >>
 
                 trigger OnAfterGetRecord()

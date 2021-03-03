@@ -271,6 +271,21 @@ End Function
         <Field Name="VATRegNoLbl">
           <DataField>VATRegNoLbl</DataField>
         </Field>
+        <Field Name="Sell_to_Customer_No_">
+          <DataField>Sell_to_Customer_No_</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Amount_Including_VAT">
+          <DataField>Amount_Including_VAT</DataField>
+        </Field>
+        <Field Name="Amount_Including_VATFormat">
+          <DataField>Amount_Including_VATFormat</DataField>
+        </Field>
         <Field Name="LineNo">
           <DataField>LineNo</DataField>
         </Field>
@@ -357,6 +372,45 @@ End Function
         </Field>
         <Field Name="ACOSawing_SalesInvLine">
           <DataField>ACOSawing_SalesInvLine</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Unit_of_Measure">
+          <DataField>Unit_of_Measure</DataField>
+        </Field>
+        <Field Name="Quantity_Line">
+          <DataField>Quantity_Line</DataField>
+        </Field>
+        <Field Name="Quantity_LineFormat">
+          <DataField>Quantity_LineFormat</DataField>
+        </Field>
+        <Field Name="Line_Amount">
+          <DataField>Line_Amount</DataField>
+        </Field>
+        <Field Name="Line_AmountFormat">
+          <DataField>Line_AmountFormat</DataField>
+        </Field>
+        <Field Name="Amount_Line">
+          <DataField>Amount_Line</DataField>
+        </Field>
+        <Field Name="Amount_LineFormat">
+          <DataField>Amount_LineFormat</DataField>
+        </Field>
+        <Field Name="Amount_Including_VAT_SalesLin">
+          <DataField>Amount_Including_VAT_SalesLin</DataField>
+        </Field>
+        <Field Name="Amount_Including_VAT_SalesLinFormat">
+          <DataField>Amount_Including_VAT_SalesLinFormat</DataField>
+        </Field>
+        <Field Name="ACO_Number_of_Units">
+          <DataField>ACO_Number_of_Units</DataField>
+        </Field>
+        <Field Name="ACO_Number_of_UnitsFormat">
+          <DataField>ACO_Number_of_UnitsFormat</DataField>
+        </Field>
+        <Field Name="Unit_of_Measure_Code">
+          <DataField>Unit_of_Measure_Code</DataField>
         </Field>
         <Field Name="TotalWeight">
           <DataField>TotalWeight</DataField>

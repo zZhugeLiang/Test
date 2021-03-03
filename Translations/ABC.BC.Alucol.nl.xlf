@@ -7043,6 +7043,16 @@
           <target>Ophangmethode code</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Attach Method Code Profile - Property Caption</note>
         </trans-unit>
+ 	<trans-unit id="TableExtension 632998638 - Field 2280265949 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Number of Units to Ship</source>
+          <target>Te verzenden eenheden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Number of Units to Ship - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 3990606612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Number of Units to Invoice</source>
+          <target>Te factureren eenheden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Number of Units to Invoice - Property Caption</note>
+        </trans-unit>	
         <trans-unit id="TableExtension 632998638 - Field 4185750204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sawing</source>
           <target>Zagen</target>

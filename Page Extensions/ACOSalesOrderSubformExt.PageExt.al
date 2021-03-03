@@ -137,15 +137,14 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-            //TODO
-            // field("ACO Number of Units to Ship"; "ACO Number of Units to Ship")
-            // {
-            //     ApplicationArea = All;
-            // }
-            // field("ACO Number of Units to Invoice"; "ACO Number of Units to Invoice")
-            // {
-            //     ApplicationArea = All;
-            // }
+            field("ACO Number of Units to Ship"; "ACO Number of Units to Ship")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Number of Units to Invoice"; "ACO Number of Units to Invoice")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 
