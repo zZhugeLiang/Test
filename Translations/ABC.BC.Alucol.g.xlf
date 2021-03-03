@@ -3153,16 +3153,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType QtyTooLargeErr</note>
-        </trans-unit>
-        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 3035616146" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Labels have already been printed. Please print them from the Packages list.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType LabelsAlreadyPrintedErr</note>
-        </trans-unit>
         <trans-unit id="Page 2436688764 - Action 1870968742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Rejection Label</source>
           <note from="Developer" annotates="general" priority="2">NLD="YourLanguageCaption"</note>
@@ -3697,11 +3687,6 @@
           <source>Generate Label</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action GenerateLabel - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3035616146" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Labels have already been printed. Please print them from the Packages list.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType LabelsAlreadyPrintedErr</note>
         </trans-unit>
         <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>

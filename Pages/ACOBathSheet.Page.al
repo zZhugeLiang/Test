@@ -430,7 +430,7 @@ page 50020 "ACO Bath Sheet"
                     ACOBathSheetHeader.SetRecFilter();
                     Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
                     TempBlob.CreateInStream(FileInStream);
-                    FileInStream.ReadText(FileBuffer);
+                    FileInStream.Read(FileBuffer, TempBlob.Length());
 
 
                     ACOFTPConnector.uploadFile(
