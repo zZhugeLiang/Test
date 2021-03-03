@@ -222,19 +222,19 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec.ACOCalculateUnitPrice();
-        Rec.Quantity := Round(Rec.Quantity, 0.01);
+        Rec.Quantity := Round(Rec.Quantity, 0.001);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Ship', false, false)]
     local procedure SalesLine_OnAfterValidate_QtytoShip(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
-        Rec."Qty. to Ship" := Round(Rec."Qty. to Ship", 0.01);
+        Rec."Qty. to Ship" := Round(Rec."Qty. to Ship", 0.001);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Invoice', false, false)]
     local procedure SalesLine_OnAfterValidate_QtytoInvoice(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
-        Rec."Qty. to Invoice" := Round(Rec."Qty. to Invoice", 0.01);
+        Rec."Qty. to Invoice" := Round(Rec."Qty. to Invoice", 0.001);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Unit Price', false, false)]

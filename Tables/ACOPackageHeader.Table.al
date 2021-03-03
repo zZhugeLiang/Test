@@ -97,6 +97,19 @@ table 50023 "ACO Package Header"
 
             ACOPackageLine.SetRange("Package No.", Rec."No.");
             ACOPackageLine.DeleteAll();
+        end else begin
+            ACOPackageLine.SetRange("Package No.", Rec."No.");
+            if ACOPackageLine.FindSet() then
+                repeat
+                    if ACOBathSheetLine.Get(ACOPackageLine."Bathsheet No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
+                        ACOBathSheetLine."Remaining Quantity" += ACOPackageLine.Quantity;
+                        ACOBathSheetLine."Quantity Processed" -= ACOPackageLine.Quantity;
+                        ACOBathSheetLine.Modify();
+                    end;
+                until ACOPackageLine.Next() = 0;
+
+            ACOPackageLine.SetRange("Package No.", Rec."No.");
+            ACOPackageLine.DeleteAll();
         end;
     end;
 }
