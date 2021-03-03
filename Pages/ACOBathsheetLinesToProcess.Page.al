@@ -181,10 +181,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                     PrintPackageLabel: Report "ACO Package Label";
                     NumberSeriesManagement: Codeunit NoSeriesManagement;
                     tempCustomerNo: Code[20];
-                    temptext: Text;
                     LineNumber: Integer;
-                    QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
-                    LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';
                 begin
                     BathLineTempRecord.DeleteAll();
 
@@ -311,11 +308,11 @@ page 50032 "ACO Bathsheet Lines To Process"
                 trigger OnAction()
                 var
                     BathSheetLine: Record "ACO Bath Sheet Line";
-                    Resource: Record Resource;
+                    //Resource: Record Resource;
 
                     ACORejLabelSelectLines: Page "ACO Rej. Label Select Lines";
-                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
-                    ACOSelectionResources: Page "ACO Selection Resources";
+                    //ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
+                    //ACOSelectionResources: Page "ACO Selection Resources";
                     Only1LineErr: Label 'Only 1 line can be processed at a time.';
                 begin
                     CurrPage.SetSelectionFilter(BathSheetLine);
