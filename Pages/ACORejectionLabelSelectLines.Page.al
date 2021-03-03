@@ -73,7 +73,7 @@ page 50055 "ACO Rej. Label Select Lines"
         tempCustomerNo: Code[20];
         temptext: Text;
         LineNumber: Integer;
-        // QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
+        QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
         LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
@@ -199,8 +199,6 @@ page 50055 "ACO Rej. Label Select Lines"
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    var
-        myInt: Integer;
     begin
         LineNo += 10000;
         Rec."Line No." := LineNo;
