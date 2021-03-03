@@ -2612,11 +2612,6 @@
           <target>Een maximum van 2 balken per bad is toegestaan</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckProductionLines - NamedType Max2ChargesErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3646941407 - Method 3494150390 - NamedType 948129302" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Remaining Quantity cannot be less than Quantity to Bath Sheet.</source>
-          <target>Resterend aantal kan niet minder zijn dan aantal naar Badkaart.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CreateBathSheetLine - NamedType NumberofUnitsLtQuantityToBathSheetErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
           <target>Klant %1 heeft geen verzendcode %2 welke gekoppeld is met product %3.</target>

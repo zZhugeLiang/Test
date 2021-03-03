@@ -110,29 +110,6 @@ codeunit 50000 "ACO Event Subscribers"
             Rec.Validate("ACO Profile Code");
     end;
 
-    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Pretreatment', false, false)]
-    // local procedure SalesLine_OnAfterValidate_ACOPretreatment(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    // var
-    //     Item: Record Item;
-    //     ACOPretreatment: Record "ACO Pretreatment";
-    // begin
-    //     if Rec.IsTemporary() then
-    //         exit;
-
-    //     if Rec.Type = Rec.Type::Item then
-    //         if Item.Get(Rec."No.") then
-    //             if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
-    //                 Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
-    //                 Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
-    //                 Rec."ACO Thick Staining Time PT" := ACOPretreatment."Thick Staining Time";
-    //                 Rec."ACO Thin Staining Time PT" := ACOPretreatment."Thin Staining Time";
-    //                 Rec."ACO Do Not Calc. Short Length" := ACOPretreatment."Do Not Calculate Short Length";
-    //                 Rec."ACO Aucos" := ACOPretreatment.Aucos;
-    //                 Rec."ACO Aucos Flushing Time" := ACOPretreatment."Aucos Flushing Time";
-    //                 Rec."ACO British Standard" := ACOPretreatment."British Standard";
-    //             end;
-    // end;
-
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Color', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOColor(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
@@ -235,38 +212,29 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
     end;
 
-    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Routing No.', false, false)]
-    // local procedure SalesLine_OnAfterValidate_RoutingNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    // var
-    //     Item: Record Item;
-    // begin
-    //     if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then
-    //         Rec."ACO Sawing" := Item."Routing No." = 'ZAGEN'; // Code nog naar Setup
-    // end;
-
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Start Length', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOFinalLength(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec."ACO Qty. After Production" := Rec.Quantity;
     end;
 
-    // [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'ACO Number of Units', false, false)]
-    // local procedure SalesHeader_OnAfterValidate_ACONumberofUnits(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
-    // var
-    //     Item: Record Item;
-    //     ACOCategory: Record "ACO Category";
-    // begin
-    //     if Rec.IsTemporary() then
-    //         exit;
-    // end;
-
-
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec.ACOCalculateUnitPrice();
-        //TODO
-        // Rec.Quantity := Round(Rec.Quantity, 0.01);
+        Rec.Quantity := Round(Rec.Quantity, 0.01);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Ship', false, false)]
+    local procedure SalesLine_OnAfterValidate_QtytoShip(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    begin
+        Rec."Qty. to Ship" := Round(Rec."Qty. to Ship", 0.01);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Invoice', false, false)]
+    local procedure SalesLine_OnAfterValidate_QtytoInvoice(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    begin
+        Rec."Qty. to Invoice" := Round(Rec."Qty. to Invoice", 0.01);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Unit Price', false, false)]
@@ -280,7 +248,6 @@ codeunit 50000 "ACO Event Subscribers"
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
             ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
             ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-            // ACOProfileCustomer.SetRange("Ship-to Code", SalesHeader."Ship-to Code");
             if ACOProfileCustomer.FindFirst() then
                 Rec."Unit Price" := Rec."Unit Price" - (Rec."Unit Price" * ACOProfileCustomer."Sawing Discount" / 100);
         end;
