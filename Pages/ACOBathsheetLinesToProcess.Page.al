@@ -176,19 +176,25 @@ page 50032 "ACO Bathsheet Lines To Process"
                     SalesLine: Record "Sales Line";
                     ACOBathSheetLine: Record "ACO Bath Sheet Line";
                     ACOBathSheetLinesToProcess: Record "ACO Bath Sheet Line";
-                    // GenPackage: Report "ACO Generate Package";
                     GenPackage: Page "ACO Generate Package Dialog";
                     PrintPackageLabel: Report "ACO Package Label";
                     NumberSeriesManagement: Codeunit NoSeriesManagement;
                     tempCustomerNo: Code[20];
+                    SalesOrderNo: Code[20];
                     LineNumber: Integer;
+                    OneSalesOrderErr: Label 'Only 1 Sales Order can be processed at a time.';
                 begin
                     if not (GenPackage.RunModal() = Action::OK) then Error('');
                     Commit();
 
                     CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
-                    if ACOBathSheetLinesToProcess.FindSet() then
+                    if ACOBathSheetLinesToProcess.FindSet() then begin
+                        SalesOrderNo := ACOBathSheetLine."Sales Order No.";
                         repeat
+                            //TODO 1
+                            if SalesOrderNo <> ACOBathSheetLine."Sales Order No." then
+                                Error(OneSalesOrderErr);
+
                             BathLineTempRecord.SetRecFilter();
 
                             if BathLineTempRecord.Get(ACOBathSheetLinesToProcess."Bath Sheet No.", ACOBathSheetLinesToProcess."Production Order No.", ACOBathSheetLinesToProcess."Production Order Status", ACOBathSheetLinesToProcess."Production Order Line No.") then begin
@@ -199,7 +205,9 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 BathLineTempRecord := ACOBathSheetLinesToProcess;
                                 BathLineTempRecord.Insert();
                             end;
+
                         until ACOBathSheetLinesToProcess.Next() = 0;
+                    end;
 
                     AppSetup.Reset();
                     AppSetup.Get();
@@ -215,9 +223,6 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                     if Customer.Get(tempCustomerNo) then begin
                         GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
-                        // Commit();///
-                        // temptext := GenPackage.RunRequestPage();
-
                         // Create PackageHeader;
                         PackageHeader.Init();
                         If (Customer."ACO Package Label Nos." <> '') then begin

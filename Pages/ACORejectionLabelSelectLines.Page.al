@@ -63,10 +63,7 @@ page 50055 "ACO Rej. Label Select Lines"
         PackageLine: Record "ACO Package Line";
         SalesOrder: Record "Sales Header";
         SalesLine: Record "Sales Line";
-        // ACOBathSheetLine: Record "ACO Bath Sheet Line";
-        // ACOBathSheetLinesToProcess: Record "ACO Bath Sheet Line";
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
-        // GenPackage: Report "ACO Generate Package";
         GenPackage: Page "ACO Generate Package Dialog";
         PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
@@ -78,7 +75,6 @@ page 50055 "ACO Rej. Label Select Lines"
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
     begin
-        // CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
         if not (GenPackage.RunModal() = Action::OK) then Error('');
         Commit();
 
@@ -86,20 +82,12 @@ page 50055 "ACO Rej. Label Select Lines"
             repeat
                 BathLineTempRecord.SetRecFilter();
 
-                // if BathLineTempRecord.Get(ACOBathSheetLine."Bath Sheet No.", ACOBathSheetLine."Production Order No.", ACOBathSheetLine."Production Order Status", ACOBathSheetLine."Production Order Line No.") then begin
-                //     BathLineTempRecord := ACOBathSheetLine;
-                //     BathLineTempRecord.Quantity := Rec.Quantity;
-                //     BathLineTempRecord."Charge No." := Rec."Reject Reason Code";
-                //     BathLineTempRecord.Modify();
-                // end else begin
                 BathLineTempRecord.Init();
                 BathLineTempRecord := ACOBathSheetLine;
-                //BathLineTempRecord.Quantity := Rec.Quantity;
                 BathLineTempRecord."Qty in Package" := Rec.Quantity;
                 BathLineTempRecord."Charge No." := Rec."Reject Reason Code";
                 BathLineTempRecord."Production Order Line No." := Rec."Line No.";
                 BathLineTempRecord.Insert();
-            // end;
             until Rec.Next() = 0;
 
         AppSetup.Reset();
@@ -118,8 +106,6 @@ page 50055 "ACO Rej. Label Select Lines"
             GenPackage.setRackNoVisible(Customer."ACO Rack No. Mand. on Package");
 
             Commit();///
-            // temptext := GenPackage.RunRequestPage();
-            //GenPackage.
 
             // Create PackageHeader;
             PackageHeader.Init();

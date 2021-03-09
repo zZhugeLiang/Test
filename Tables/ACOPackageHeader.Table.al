@@ -63,12 +63,22 @@ table 50023 "ACO Package Header"
         {
             Caption = 'Reject';
             Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(12; "Sales Shipment No."; Code[20])
+        {
+            //TODO 2
+            Caption = 'Sales Shipment No.';
+            Editable = false;
+            TableRelation = "Sales Shipment Header";
+            DataClassification = CustomerContent;
         }
         field(107; "No. Series"; Code[20])
         {
             Caption = 'No. Series';
             Editable = false;
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
     }
 
@@ -84,7 +94,12 @@ table 50023 "ACO Package Header"
     var
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOPackageLine: Record "ACO Package Line";
+        SalesShipmentLinkedErr: Label 'Package can not be deleted while a Sales Shipment is linked to it.';
     begin
+        //TODO 5
+        if Rec."Sales Shipment No." <> '' then
+            Error(SalesShipmentLinkedErr);
+
         if Rec.Reject then begin
             ACOPackageLine.SetRange("Package No.", Rec."No.");
             if ACOPackageLine.FindSet() then

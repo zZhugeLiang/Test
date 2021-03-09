@@ -184,5 +184,75 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 end;
             }
         }
+
+        addfirst(processing)
+        {
+            action(ACOSelectPackageForShipment)
+            {
+                Caption = 'Select Package for Shipment';
+                Image = Bin;
+                ApplicationArea = All;
+                ToolTip = 'Select Package for Shipment';
+
+                trigger OnAction()
+                var
+                    ACOPackageHeader: Record "ACO Package Header";
+                    ACOPackageLine: Record "ACO Package Line";
+                    SalesLine: Record "Sales Line";
+                    TempSalesLine: Record "Sales Line" temporary;
+                    ACOSelectionPackageLines: Page "ACO Selection Package Lines";
+                    Alllines: Text;
+                begin
+                    //TODO 3
+
+                    // ACOPackageHeader.SetRange("Sales Shipment No.", '');
+                    // if ACOPackageHeader.FindSet() then
+                    //     repeat
+
+
+                    //     until ACOPackageHeader.Next() = 0;
+
+                    ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
+                    ACOSelectionPackageLines.SetTableView(ACOPackageLine);
+                    ACOSelectionPackageLines.LookupMode(true);
+
+                    if ACOSelectionPackageLines.RunModal() = Action::LookupOK then begin
+                        // ACOPackageLine := Rec;
+                        // CurrPage.SetSelectionFilter(ACOPackageLine);
+                        ACOSelectionPackageLines.SetSelectionFilter(ACOPackageLine);
+                        // ACOSelectionPackageLines.GetRecord(ACOPackageLine);
+                        // ProdOrderLineFilters.CopyFilters(Rec); 
+                        //ACOBathSheetMgt.CreateBathSheet(ProdOrderLine, Resource);
+                        // CopyFilters(ProdOrderLineFilters);
+                        if ACOPackageLine.FindSet() then
+                            repeat
+                                //Alllines += Format(ACOPackageLine."Line No.");
+                                if TempSalesLine.Get(TempSalesLine."Document Type"::Order, ACOPackageLine."Sales Order No.", ACOPackageLine."Sales Line No") then begin
+                                    TempSalesLine.Quantity += ACOPackageLine.Quantity;
+                                    TempSalesLine.Modify();
+                                end else begin
+                                    TempSalesLine."Document Type" := TempSalesLine."Document Type"::Order;
+                                    TempSalesLine."Document No." := ACOPackageLine."Sales Order No.";
+                                    TempSalesLine."Line No." := ACOPackageLine."Sales Line No";
+                                    TempSalesLine.Quantity := ACOPackageLine.Quantity;
+                                    TempSalesLine.Insert();
+                                end;
+                            until ACOPackageLine.Next() = 0;
+
+                        if TempSalesLine.FindSet() then
+                            repeat
+                                if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
+                                    SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
+                                    SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
+                                    SalesLine.Modify();
+                                end;
+                            until TempSalesLine.Next() < 1;
+
+                        TempSalesLine.DeleteAll();
+                        CurrPage.Update(false);
+                    end;
+                end;
+            }
+        }
     }
 }

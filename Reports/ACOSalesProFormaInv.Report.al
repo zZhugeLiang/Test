@@ -12,7 +12,7 @@ report 50017 "ACO Sales - Pro Forma Inv"
             DataItemTableView = SORTING("Document Type", "No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Pro Forma Invoice';
-            column(DocumentDate; Format("Document Date", 0, 4))
+            column(DocumentDate; "Document Date")
             {
             }
             column(CompanyPicture; CompanyInformation.Picture)
@@ -321,6 +321,12 @@ report 50017 "ACO Sales - Pro Forma Inv"
                     FormattedLinePrice := Format(LinePrice, 0, AutoFormat.ResolveAutoFormat(AutoFormatType::UnitAmountFormat, CurrencyCode));
                     FormattedLineAmount := Format(LineAmount, 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, CurrencyCode));
                     FormattedVATAmount := Format(VATAmount, 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, CurrencyCode));
+
+                    if not ACOProfile.Get(Line."ACO Profile Code") then
+                        Clear(ACOProfile);
+
+                    if not ItemVariant.Get(Line."No.", Line."Variant Code") then
+                        Clear(ItemVariant);
                 end;
 
                 trigger OnPreDataItem()

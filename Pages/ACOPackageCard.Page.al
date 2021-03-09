@@ -42,6 +42,11 @@ page 50030 "ACO Package Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Sales Shipment No."; "Sales Shipment No.")
+                {
+                    //TODO 2
+                    ApplicationArea = All;
+                }
                 field(Remark; Remark)
                 {
                     ApplicationArea = All;

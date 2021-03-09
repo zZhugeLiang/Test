@@ -1943,10 +1943,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Reject - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1441553428 - Field 3201609449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Shipment No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Sales Shipment No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1441553428 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1441553428 - Method 3152277940 - NamedType 1623002992" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package can not be deleted while a Sales Shipment is linked to it.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Method OnDelete - NamedType SalesShipmentLinkedErr</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Line</source>
@@ -3153,6 +3163,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 1329350209" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only 1 Sales Order can be processed at a time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType OneSalesOrderErr</note>
+        </trans-unit>
         <trans-unit id="Page 2436688764 - Action 1870968742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Rejection Label</source>
           <note from="Developer" annotates="general" priority="2">NLD="YourLanguageCaption"</note>
@@ -3852,6 +3867,11 @@
           <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowTrackingLines - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 560858142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selection Package Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Package Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 202071904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Resources</source>
@@ -7252,6 +7272,16 @@
           <source>Sawing Notice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Sawing Notice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Select Package for Shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Select Package for Shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>
