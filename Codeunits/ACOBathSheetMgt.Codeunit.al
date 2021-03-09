@@ -203,12 +203,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");
 
-        // TODO Comment code below after all issues on the quantites are fixed
-        if not ProductionOrderLine."ACO Rerun" then
-            if ProductionOrderLine."ACO Remaining Quantity" < ProductionOrderLine."ACO Quantity to Bath Sheet" then
-                Error(NumberofUnitsLtQuantityToBathSheetErr);
-        //
-
         ACOBathSheetLine."Bath Sheet No." := ACOBathSheetHeaderNo;
         ACOBathSheetLine."Production Order Status" := ProductionOrderLine.Status.AsInteger();
         ACOBathSheetLine."Production Order No." := ProductionOrderLine."Prod. Order No.";
@@ -243,7 +237,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine.Insert();
 
         ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
-        ProductionOrderLine."ACO Quantity to Bath Sheet" := ProductionOrderLine."ACO Remaining Quantity";
+        ProductionOrderLine."ACO Quantity to Bath Sheet" := 0;
         ProductionOrderLine.Modify();
     end;
 

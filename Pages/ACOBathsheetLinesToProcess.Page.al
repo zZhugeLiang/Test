@@ -183,8 +183,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                     tempCustomerNo: Code[20];
                     LineNumber: Integer;
                 begin
-                    BathLineTempRecord.DeleteAll();
-
                     if not (GenPackage.RunModal() = Action::OK) then Error('');
                     Commit();
 
@@ -289,11 +287,13 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 if ACOBathSheetLine.Get(BathLineTempRecord."Bath Sheet No.", BathLineTempRecord."Production Order No.", BathLineTempRecord."Production Order Status", BathLineTempRecord."Production Order Line No.") then begin
                                     ACOBathSheetLine.CalcFields("Quantity Processed");
                                     ACOBathSheetLine."Remaining Quantity" := ACOBathSheetLine.Quantity - ACOBathSheetLine."Quantity Processed";
-                                    ACOBathSheetLine."Qty in Package" := ACOBathSheetLine."Remaining Quantity";
+                                    ACOBathSheetLine."Qty in Package" := 0;
                                     ACOBathSheetLine.Modify();
                                 end;
                             until BathLineTempRecord.Next() = 0;
                     end;
+
+                    BathLineTempRecord.DeleteAll();
                 end;
             }
 
@@ -308,11 +308,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                 trigger OnAction()
                 var
                     BathSheetLine: Record "ACO Bath Sheet Line";
-                    //Resource: Record Resource;
-
                     ACORejLabelSelectLines: Page "ACO Rej. Label Select Lines";
-                    //ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
-                    //ACOSelectionResources: Page "ACO Selection Resources";
                     Only1LineErr: Label 'Only 1 line can be processed at a time.';
                 begin
                     CurrPage.SetSelectionFilter(BathSheetLine);
@@ -321,17 +317,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                         Error(Only1LineErr);
 
                     ACORejLabelSelectLines.SetBathSheetLine(Rec);
-                    //ACORejLabelSelectLines.LookupMode(true);
                     ACORejLabelSelectLines.RunModal();
-                    // if ACORejLabelSelectLines.RunModal() = Action::LookupOK then begin
-
-                    //     // ACOSelectionResources.SetSelectionFilter(Resource);
-
-                    //     // ACOBathSheetMgt.CreateBathSheet(ProdOrderLine, Resource);
-
-                    //     ///CopyFilters(ProdOrderLineFilters);
-                    //     CurrPage.Update(false);
-                    // end;
                 end;
             }
 

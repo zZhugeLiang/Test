@@ -326,7 +326,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.3cm</Height>
+                      <Height>0.7cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -1187,7 +1187,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.8cm</Height>
+                      <Height>1cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -13516,7 +13516,7 @@
                 </TablixRowHierarchy>
                 <KeepTogether>true</KeepTogether>
                 <DataSetName>DataSet_Result</DataSetName>
-                <Height>26.5cm</Height>
+                <Height>27.1cm</Height>
                 <Width>19cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
@@ -13529,7 +13529,7 @@
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>26.5cm</Height>
+            <Height>27.1cm</Height>
             <Width>19cm</Width>
             <Style>
               <Border>
@@ -13538,7 +13538,7 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>26.5cm</Height>
+        <Height>27.1cm</Height>
         <Style />
       </Body>
       <Width>19cm</Width>
@@ -13622,6 +13622,7 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
+              <Top>0cm</Top>
               <Left>12cm</Left>
               <Height>11pt</Height>
               <Width>7cm</Width>
@@ -13647,6 +13648,7 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
+              <Top>0cm</Top>
               <Height>11pt</Height>
               <Width>12cm</Width>
               <ZIndex>1</ZIndex>

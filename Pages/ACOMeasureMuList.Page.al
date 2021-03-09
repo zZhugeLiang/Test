@@ -18,6 +18,7 @@ page 50028 "ACO Measure Mu List"
                 }
                 field("No."; "No.")
                 {
+                    Visible = false;
                     ApplicationArea = All;
                 }
                 field(Value; Value)

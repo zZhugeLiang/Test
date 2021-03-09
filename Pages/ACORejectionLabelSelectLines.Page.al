@@ -78,7 +78,6 @@ page 50055 "ACO Rej. Label Select Lines"
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
     begin
-        BathLineTempRecord.DeleteAll();
         // CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
         if not (GenPackage.RunModal() = Action::OK) then Error('');
         Commit();
@@ -190,12 +189,13 @@ page 50055 "ACO Rej. Label Select Lines"
 
             if BathLineTempRecord.FindSet() then
                 repeat
-                    // if ACOBathSheetLine.Get(BathLineTempRecord."Bath Sheet No.", BathLineTempRecord."Production Order No.", BathLineTempRecord."Production Order Status", BathLineTempRecord."Production Order Line No.") then begin
                     ACOBathSheetLine."Reject Quantity" += BathLineTempRecord."Qty in Package";
+                    ACOBathSheetLine."Qty in Package" := 0;
                     ACOBathSheetLine.Modify();
-                // end;
                 until BathLineTempRecord.Next() = 0;
         end;
+
+        BathLineTempRecord.DeleteAll();
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean

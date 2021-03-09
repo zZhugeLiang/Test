@@ -33,4 +33,21 @@ table 50022 "ACO Measure Mu"
             Clustered = true;
         }
     }
+
+    trigger OnInsert();
+    var
+        ACOAppSetup: Record "ACO App Setup";
+        ACOMeasureMu: Record "ACO Measure Mu";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
+    begin
+        ACOMeasureMu.SetRange("Bath Sheet No.", Rec."Bath Sheet No.");
+        if ACOMeasureMu.FindLast() then begin
+            Rec."No." := IncStr(ACOMeasureMu."No.");
+        end else begin
+            ACOAppSetup.Get();
+            ACOAppSetup.Testfield("Bath Sheet Measure Mu No.");
+            Rec."No." := ACOAppSetup."Bath Sheet Measure Mu No.";
+        end;
+        // NoSeriesManagement.InitSeries(ACOAppSetup."Default Measured Color Nos.", xRec."No. Series", Today(), "No.", Rec."No. Series");
+    end;
 }
