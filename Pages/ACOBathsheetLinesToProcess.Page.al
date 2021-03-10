@@ -189,10 +189,10 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                     CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
                     if ACOBathSheetLinesToProcess.FindSet() then begin
-                        SalesOrderNo := ACOBathSheetLine."Sales Order No.";
+                        SalesOrderNo := ACOBathSheetLinesToProcess."Sales Order No.";
                         repeat
                             //TODO 1
-                            if SalesOrderNo <> ACOBathSheetLine."Sales Order No." then
+                            if SalesOrderNo <> ACOBathSheetLinesToProcess."Sales Order No." then
                                 Error(OneSalesOrderErr);
 
                             BathLineTempRecord.SetRecFilter();
@@ -206,6 +206,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 BathLineTempRecord.Insert();
                             end;
 
+                            SalesOrderNo := ACOBathSheetLinesToProcess."Sales Order No.";
                         until ACOBathSheetLinesToProcess.Next() = 0;
                     end;
 
@@ -240,6 +241,8 @@ page 50032 "ACO Bathsheet Lines To Process"
                         PackageHeader."Customer Name" := Customer.Name;
                         PackageHeader.Address1 := Customer.Address;
                         PackageHeader.Address2 := Customer."Address 2";
+                        PackageHeader.City := Customer.City;
+                        PackageHeader."Post Code" := Customer."Post Code";
                         PackageHeader."Packing Type" := GenPackage.getPackageType();
                         PackageHeader."Rack No. Customer" := '';
                         PackageHeader.Remark := '';

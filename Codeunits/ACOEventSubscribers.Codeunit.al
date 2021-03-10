@@ -274,17 +274,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Header", 'OnAfterDeleteEvent', '', false, false)]
-    local procedure SalesShipmentHeader_OnAfterDelete(Rec: Record "Sales Shipment Header"; RunTrigger: Boolean)
-    var
-        ACOPackageHeader: Record "ACO Package Header";
-    begin
-        //TODO 6
-        ACOPackageHeader.SetRange("Sales Shipment No.", Rec."No.");
-        ACOPackageHeader.ModifyAll("Sales Shipment No.", '');
-    end;
-
-
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure ACOBathSheetLine_OnAfterDelete(Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
     var

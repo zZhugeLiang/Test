@@ -34,6 +34,14 @@ page 50030 "ACO Package Card"
                 {
                     ApplicationArea = All;
                 }
+                field(City; City)
+                {
+                    ApplicationArea = All;
+                }
+                field("Post Code"; "Post Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("Packing Type"; "Packing Type")
                 {
                     ApplicationArea = All;

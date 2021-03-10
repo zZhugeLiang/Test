@@ -11,6 +11,7 @@
             "environmentType": "Sandbox",
             "environmentName": "Sandbox",
             //"authentication": "Windows",
+            "breakOnError": true,
             "startupObjectId": 9305,
             "schemaUpdateMode": "ForceSync"// nog niks bij klant zetten, dit pas doen als de dataset zeker is, of in sandbox omgeving zetten.
 

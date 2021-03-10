@@ -1948,6 +1948,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Sales Shipment No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1441553428 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1441553428 - Field 3660300303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Post Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1441553428 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>

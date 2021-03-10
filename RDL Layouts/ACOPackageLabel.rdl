@@ -1188,6 +1188,12 @@ End Function
         <Field Name="Address2">
           <DataField>Address2</DataField>
         </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="Post_Code">
+          <DataField>Post_Code</DataField>
+        </Field>
         <Field Name="Remark">
           <DataField>Remark</DataField>
         </Field>

@@ -235,7 +235,7 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                         if TempSalesLine.FindSet() then
                             repeat
                                 if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
-                                    if TempSalesLine.Quantity > SalesLine.Quantity then begin
+                                    if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
                                         SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
                                         ShowMessage := true;
                                     end;

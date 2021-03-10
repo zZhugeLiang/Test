@@ -129,6 +129,8 @@ page 50055 "ACO Rej. Label Select Lines"
             PackageHeader.Remark := '';
             PackageHeader."Date-Time" := CurrentDateTime();
             PackageHeader.Reject := true;
+            PackageHeader.City := Customer.City;
+            PackageHeader."Post Code" := Customer."Post Code";
             PackageHeader.Insert();
             // Create PackageLines;
             BathLineTempRecord.Reset();

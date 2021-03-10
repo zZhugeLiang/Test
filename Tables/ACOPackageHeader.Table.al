@@ -73,6 +73,19 @@ table 50023 "ACO Package Header"
             TableRelation = "Sales Shipment Header";
             DataClassification = CustomerContent;
         }
+
+        field(13; City; Text[30])
+        {
+            Caption = 'City';
+            Editable = false;
+        }
+
+        field(14; "Post Code"; Code[20])
+        {
+            Caption = 'Post Code';
+            Editable = false;
+        }
+
         field(107; "No. Series"; Code[20])
         {
             Caption = 'No. Series';

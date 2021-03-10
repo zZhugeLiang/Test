@@ -51,6 +51,8 @@ report 50001 "ACO Package Label"
             column(NetGrossWeighFactorACOAppSetupCaption; ACOAppSetup.FieldCaption("Net/Gross Weight Factor")) { }
             column(Address1; Address1) { }
             column(Address2; Address2) { }
+            column(City; City) { }
+            column(Post_Code; "Post Code") { }
             column(Remark; Remark) { }
             column(Date_Time; "Date-Time") { }
             column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor") { }
