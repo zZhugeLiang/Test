@@ -297,6 +297,27 @@ codeunit 50000 "ACO Event Subscribers"
         end;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesShptHeaderInsert', '', false, false)]
+    local procedure SalesPost_OnAfterSalesShptHeaderInsert(var SalesShipmentHeader: Record "Sales Shipment Header"; SalesHeader: Record "Sales Header"; SuppressCommit: Boolean; WhseShip: Boolean; WhseReceive: Boolean; var TempWhseShptHeader: Record "Warehouse Shipment Header"; var TempWhseRcptHeader: Record "Warehouse Receipt Header")
+    var
+        ACOPackageHeader: Record "ACO Package Header";
+        ACOPackageLine: Record "ACO Package Line";
+        PackageNo: Code[20];
+    begin
+        //TODO 3
+        ACOPackageLine.SetCurrentKey("Sales Order No.");
+        ACOPackageLine.SetRange("Sales Order No.", SalesHeader."No.");
+        if ACOPackageLine.FindSet() then
+            repeat
+                if ACOPackageLine."Package No." <> PackageNo then begin
+                    ACOPackageHeader.Get(ACOPackageLine."Package No.");
+                    ACOPackageHeader."Sales Shipment No." := SalesShipmentHeader."No.";
+                    ACOPackageHeader.Modify();
+                end;
+                PackageNo := ACOPackageLine."Package No.";
+            until ACOPackageLine.Next() = 0;
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
     local procedure CreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
     var

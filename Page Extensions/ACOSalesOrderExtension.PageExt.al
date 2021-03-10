@@ -201,32 +201,25 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                     SalesLine: Record "Sales Line";
                     TempSalesLine: Record "Sales Line" temporary;
                     ACOSelectionPackageLines: Page "ACO Selection Package Lines";
-                    Alllines: Text;
+                    ShowMessage: Boolean;
+                    PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
                 begin
                     //TODO 3
-
-                    // ACOPackageHeader.SetRange("Sales Shipment No.", '');
-                    // if ACOPackageHeader.FindSet() then
-                    //     repeat
-
-
-                    //     until ACOPackageHeader.Next() = 0;
-
                     ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
+                    if ACOPackageLine.FindSet() then
+                        repeat
+                            if ACOPackageHeader.Get(ACOPackageLine."Package No.") and (ACOPackageHeader."Sales Shipment No." = '') then
+                                ACOPackageLine.Mark(true);
+                        until ACOPackageLine.Next() = 0;
+
+                    ACOPackageLine.MarkedOnly(true);
                     ACOSelectionPackageLines.SetTableView(ACOPackageLine);
                     ACOSelectionPackageLines.LookupMode(true);
 
                     if ACOSelectionPackageLines.RunModal() = Action::LookupOK then begin
-                        // ACOPackageLine := Rec;
-                        // CurrPage.SetSelectionFilter(ACOPackageLine);
                         ACOSelectionPackageLines.SetSelectionFilter(ACOPackageLine);
-                        // ACOSelectionPackageLines.GetRecord(ACOPackageLine);
-                        // ProdOrderLineFilters.CopyFilters(Rec); 
-                        //ACOBathSheetMgt.CreateBathSheet(ProdOrderLine, Resource);
-                        // CopyFilters(ProdOrderLineFilters);
                         if ACOPackageLine.FindSet() then
                             repeat
-                                //Alllines += Format(ACOPackageLine."Line No.");
                                 if TempSalesLine.Get(TempSalesLine."Document Type"::Order, ACOPackageLine."Sales Order No.", ACOPackageLine."Sales Line No") then begin
                                     TempSalesLine.Quantity += ACOPackageLine.Quantity;
                                     TempSalesLine.Modify();
@@ -242,6 +235,10 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                         if TempSalesLine.FindSet() then
                             repeat
                                 if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
+                                    if TempSalesLine.Quantity > SalesLine.Quantity then begin
+                                        SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
+                                        ShowMessage := true;
+                                    end;
                                     SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
                                     SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
                                     SalesLine.Modify();
@@ -249,6 +246,8 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                             until TempSalesLine.Next() < 1;
 
                         TempSalesLine.DeleteAll();
+                        if ShowMessage then
+                            Message(PackageQuantityMsg);
                         CurrPage.Update(false);
                     end;
                 end;

@@ -741,6 +741,67 @@ report 50012 "ACO Sales - Shipment"
                     end;
                 }
 
+                dataitem("ACO Package Header"; "ACO Package Header")
+                {
+                    DataItemLink = "Sales Shipment No." = field("No.");
+                    DataItemLinkReference = "Sales Shipment Header";
+                    column(No_; "No.")
+                    {
+
+                    }
+                    column(Rack_No__Customer; "Rack No. Customer")
+                    {
+
+                    }
+                    column(Remark; Remark)
+                    {
+
+                    }
+                    dataitem("ACO Package Line"; "ACO Package Line")
+                    {
+                        DataItemLink = "Package No." = field("No.");
+                        DataItemLinkReference = "ACO Package Header";
+                        column(Profile_no_; "Profile no.")
+                        {
+
+                        }
+                        column(Quantity; Quantity)
+                        {
+
+                        }
+                        column(Length; Length)
+                        {
+
+                        }
+                        column(Your_Reference; "Your Reference")
+                        {
+
+                        }
+                        column(NetWeight; NetWeight)
+                        {
+
+                        }
+                        column(GrossWeight; GrossWeight)
+                        {
+
+                        }
+
+                        trigger OnAfterGetRecord()
+                        var
+                            ACOProfile: Record "ACO Profile";
+                        begin
+                            if ACOProfile.Get("ACO Package Line"."Profile no.") then begin
+                                NetWeight := "ACO Package Line".Quantity * ACOProfile."Weight per meter" * ("ACO Package Line".Length / 1000);
+                                GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
+                            end else begin
+                                NetWeight := 0;
+                                GrossWeight := 0;
+                            end;
+                        end;
+                    }
+                }
+
+
                 trigger OnAfterGetRecord()
                 begin
                     if Number > 1 then begin
@@ -764,7 +825,6 @@ report 50012 "ACO Sales - Shipment"
                     OutputNo := 1;
                 end;
             }
-
             trigger OnAfterGetRecord()
             begin
                 CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
@@ -945,7 +1005,8 @@ report 50012 "ACO Sales - Shipment"
         ShowGroup: Boolean;
         TotalQty: Decimal;
         [InDataSet]
-
+        NetWeight: Decimal;
+        GrossWeight: Decimal;
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
         AsmHeaderExists: Boolean;

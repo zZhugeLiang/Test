@@ -1776,10 +1776,20 @@
           <target>Afkeur</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Reject - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1441553428 - Field 3201609449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Shipment No.</source>
+          <target>Verzendingsnr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field Sales Shipment No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1441553428 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
           <target>Nr.-reeks</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1441553428 - Method 3152277940 - NamedType 1623002992" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package can not be deleted while a Sales Shipment is linked to it.</source>
+          <target>Colli kan niet verwijderd worden wanneer er een Verkoopverzending aan gekoppeld is.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Header - Method OnDelete - NamedType SalesShipmentLinkedErr</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Line</source>
@@ -6436,6 +6446,11 @@
           <source>Select Package for Shipment</source>
           <target>Selecteer colli voor verzending</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 2857859604" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
+          <source>The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).</source>
+          <target>Het colli aantal is groter dan het regelaantal. Er moet eerst opnieuw een productie order worden aangemaakt voordat de colli uitgeleverd kunnen worden.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType PackageQuantityMsg</note>
         </trans-unit>
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>

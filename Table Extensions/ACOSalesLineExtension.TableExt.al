@@ -278,7 +278,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
                         NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship" / 1000;
 
-                    Validate("Qty. to Ship", NewQuantity);
+                    Rec.Validate("Qty. to Ship", NewQuantity);
+                    Rec.Validate("ACO Number of Units to Invoice", Rec."ACO Number of Units to Ship");
                 end;
             end;
         }
