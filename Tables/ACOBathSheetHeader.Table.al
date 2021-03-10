@@ -529,7 +529,7 @@ table 50016 "ACO Bath Sheet Header"
     procedure CalculateProcessTimes()
     var
         ACOAppSetup: Record "ACO App Setup";
-        //ACOBathSheetLine: Record "ACO Bath Sheet Line";
+        ACOBathSheetLine: Record "ACO Bath Sheet Line";
         MaxCurrDens: Decimal;
         MinCurrDens: Decimal;
         Str: Decimal;
@@ -549,21 +549,21 @@ table 50016 "ACO Bath Sheet Header"
         ACOAppSetup.TestField("Max. Current Density Bath L");
         ACOAppSetup.TestField("Min. Anodise Time");
 
-        // First := true;
-        // ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
-        // if ACOBathSheetLine.FindSet() then
-        //     repeat
-        //         if First then begin
-        //             MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-        //             MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-        //             First := false;
-        //         end;
+        First := true;
+        ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
+        if ACOBathSheetLine.FindSet() then
+            repeat
+                if First then begin
+                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
+                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
+                    First := false;
+                end;
 
-        //         if MaxCurrDens <= ACOBathSheetLine."Maximum Current Density" then
-        //             MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-        //         if MinCurrDens >= ACOBathSheetLine."Minimum Current Density" then
-        //             MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-        //     until ACOBathSheetLine.Next() = 0;
+                if MaxCurrDens <= ACOBathSheetLine."Maximum Current Density" then
+                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
+                if MinCurrDens >= ACOBathSheetLine."Minimum Current Density" then
+                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
+            until ACOBathSheetLine.Next() = 0;
 
         if MinCurrDens > MaxCurrDens then
             Error(MinCannotBeLargerThanMaxDensityErr);
