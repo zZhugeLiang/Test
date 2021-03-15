@@ -526,10 +526,10 @@ table 50016 "ACO Bath Sheet Header"
         Modify();
     end;
 
-    procedure CalculateProcessTimes()
+    procedure CalculateProcessTimes(ACOBathSheetHeader: Record "ACO Bath Sheet Header")
     var
         ACOAppSetup: Record "ACO App Setup";
-        ACOBathSheetLine: Record "ACO Bath Sheet Line";
+        // ACOBathSheetLine: Record "ACO Bath Sheet Line";
         MaxCurrDens: Decimal;
         MinCurrDens: Decimal;
         Str: Decimal;
@@ -538,7 +538,7 @@ table 50016 "ACO Bath Sheet Header"
         TotalSurface: Decimal;
         LayerThickness: Decimal;
         MinAnodiseTime: Decimal;
-        First: Boolean;
+        // First: Boolean;
         MinCannotBeLargerThanMaxDensityErr: Label 'Minimum Current Density cannot be larger than Maximum Current Density.';
         NoBathsCalculatedErr: Label 'None of the baths could be calculated.';
     begin
@@ -549,31 +549,20 @@ table 50016 "ACO Bath Sheet Header"
         ACOAppSetup.TestField("Max. Current Density Bath L");
         ACOAppSetup.TestField("Min. Anodise Time");
 
-        First := true;
-        ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
-        if ACOBathSheetLine.FindSet() then
-            repeat
-                if First then begin
-                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-                    First := false;
-                end;
-
-                if MaxCurrDens <= ACOBathSheetLine."Maximum Current Density" then
-                    MaxCurrDens := ACOBathSheetLine."Maximum Current Density";
-                if MinCurrDens >= ACOBathSheetLine."Minimum Current Density" then
-                    MinCurrDens := ACOBathSheetLine."Minimum Current Density";
-            until ACOBathSheetLine.Next() = 0;
+        ACOBathSheetHeader.CalcFields("Maximum Current Density");
+        ACOBathSheetHeader.CalcFields("Minimum Current Density");
+        MaxCurrDens := ACOBathSheetHeader."Maximum Current Density";
+        MinCurrDens := ACOBathSheetHeader."Minimum Current Density";
 
         if MinCurrDens > MaxCurrDens then
             Error(MinCannotBeLargerThanMaxDensityErr);
 
         Str := ACOAppSetup."Max. Current Density Bath 1";
 
-        TestField("Total Surface");
+        Rec.TestField("Total Surface");
 
-        TotalSurface := "Total Surface";
-        LayerThickness := "Layer Thickness";
+        TotalSurface := Rec."Total Surface";
+        LayerThickness := Rec."Layer Thickness" + Rec."Extra to Enumerate";
         MinAnodiseTime := ACOAppSetup."Min. Anodise Time";
 
         Str := ACOAppSetup."Max. Current Density Bath L";

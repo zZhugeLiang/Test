@@ -67,7 +67,6 @@ table 50023 "ACO Package Header"
         }
         field(12; "Sales Shipment No."; Code[20])
         {
-            //TODO 2
             Caption = 'Sales Shipment No.';
             Editable = false;
             TableRelation = "Sales Shipment Header";
@@ -109,7 +108,6 @@ table 50023 "ACO Package Header"
         ACOPackageLine: Record "ACO Package Line";
         SalesShipmentLinkedErr: Label 'Package can not be deleted while a Sales Shipment is linked to it.';
     begin
-        //TODO 5
         if Rec."Sales Shipment No." <> '' then
             Error(SalesShipmentLinkedErr);
 

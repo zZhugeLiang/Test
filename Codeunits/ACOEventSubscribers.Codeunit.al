@@ -293,7 +293,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOPackageLine: Record "ACO Package Line";
         PackageNo: Code[20];
     begin
-        //TODO 3
         ACOPackageLine.SetCurrentKey("Sales Order No.");
         ACOPackageLine.SetRange("Sales Order No.", SalesHeader."No.");
         if ACOPackageLine.FindSet() then

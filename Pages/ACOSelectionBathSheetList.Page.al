@@ -3,7 +3,7 @@ Page 50025 "ACO Selection Bath Sheet List"
     Caption = 'Selection Bath Sheet List';
     PageType = List;
     SourceTable = "Prod. Order Line";
-    SourceTableView = where(Status = const(Released));//, "ACO Source Type Enum" = const("Sales Header"));
+    SourceTableView = where(Status = const(Released));
     UsageCategory = Lists;
     ApplicationArea = All;
 
@@ -247,6 +247,18 @@ Page 50025 "ACO Selection Bath Sheet List"
                     ApplicationArea = Manufacturing;
                     ToolTip = 'Specifies the total cost on the line by multiplying the unit cost by the quantity.';
                     Editable = false;
+                }
+                field("ACO Rerun"; "ACO Rerun")
+                {
+                    ApplicationArea = Manufacturing;
+                    ToolTip = ' ';
+                    Editable = true;
+                }
+                field("ACO Rerun Reason"; "ACO Rerun Reason")
+                {
+                    ApplicationArea = Manufacturing;
+                    ToolTip = ' ';
+                    Editable = true;
                 }
             }
         }

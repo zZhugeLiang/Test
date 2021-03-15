@@ -204,7 +204,6 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                     ShowMessage: Boolean;
                     PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
                 begin
-                    //TODO 3
                     ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
                     if ACOPackageLine.FindSet() then
                         repeat

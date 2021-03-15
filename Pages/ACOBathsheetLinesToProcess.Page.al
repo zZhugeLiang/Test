@@ -191,7 +191,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                     if ACOBathSheetLinesToProcess.FindSet() then begin
                         SalesOrderNo := ACOBathSheetLinesToProcess."Sales Order No.";
                         repeat
-                            //TODO 1
                             if SalesOrderNo <> ACOBathSheetLinesToProcess."Sales Order No." then
                                 Error(OneSalesOrderErr);
 

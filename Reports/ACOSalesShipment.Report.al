@@ -757,6 +757,11 @@ report 50012 "ACO Sales - Shipment"
                     {
 
                     }
+
+                    column(Reject; Reject)
+                    {
+
+                    }
                     dataitem("ACO Package Line"; "ACO Package Line")
                     {
                         DataItemLink = "Package No." = field("No.");
@@ -786,6 +791,14 @@ report 50012 "ACO Sales - Shipment"
 
                         }
 
+                        column(Reject_Reason_Code; "Reject Reason Code")
+                        {
+
+                        }
+                        column(Description_RejectReasonCode; RejectReasonCode.Description)
+                        {
+
+                        }
                         trigger OnAfterGetRecord()
                         var
                             ACOProfile: Record "ACO Profile";
@@ -797,6 +810,8 @@ report 50012 "ACO Sales - Shipment"
                                 NetWeight := 0;
                                 GrossWeight := 0;
                             end;
+                            if not RejectReasonCode.Get("ACO Package Line"."Reject Reason Code") then
+                                Clear(RejectReasonCode);
                         end;
                     }
                 }
@@ -974,6 +989,7 @@ report 50012 "ACO Sales - Shipment"
         ItemTrackingAppendix: Report "Item Tracking Appendix";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
+        RejectReasonCode: Record "Reason Code";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";

@@ -228,7 +228,7 @@ table 50017 "ACO Bath Sheet Line"
         ACOBathSheetHeader: Record "ACO Bath Sheet Header";
     begin
         ACOBathSheetHeader.Get(Rec."Bath Sheet No.");
-        ACOBathSheetHeader.CalculateProcessTimes();
+        ACOBathSheetHeader.CalculateProcessTimes(ACOBathSheetHeader);
     end;
 
     procedure CalculateSurface()

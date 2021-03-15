@@ -3833,6 +3833,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Cost Amount - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2943489305 - Control 2251616525 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control ACO Rerun - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Control 2493101769 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control ACO Rerun Reason - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
