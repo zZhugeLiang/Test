@@ -200,8 +200,10 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                     ACOPackageLine: Record "ACO Package Line";
                     SalesLine: Record "Sales Line";
                     TempSalesLine: Record "Sales Line" temporary;
+                    ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
                     ACOSelectionPackageLines: Page "ACO Selection Package Lines";
-                    ShowMessage: Boolean;
+                    ProductionOrderStatus: Enum "Production Order Status";
+                    CreateProdOrder: Boolean;
                     PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
                 begin
                     ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
@@ -236,7 +238,7 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                                 if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
                                     if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
                                         SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
-                                        ShowMessage := true;
+                                        CreateProdOrder := true;
                                     end;
                                     SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
                                     SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
@@ -245,8 +247,12 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                             until TempSalesLine.Next() < 1;
 
                         TempSalesLine.DeleteAll();
-                        if ShowMessage then
-                            Message(PackageQuantityMsg);
+                        if CreateProdOrder then begin
+                            ProdOrderFromSale.SetHideValidationDialog(true);
+                            ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
+
+                            // Message(PackageQuantityMsg);
+                        end;
                         CurrPage.Update(false);
                     end;
                 end;
