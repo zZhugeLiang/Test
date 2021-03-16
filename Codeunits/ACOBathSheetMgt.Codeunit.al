@@ -238,7 +238,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
 
-        ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
+        if not ProductionOrderLine."ACO Rerun" then
+            ProductionOrderLine."ACO Remaining Quantity" := ProductionOrderLine."ACO Remaining Quantity" - ProductionOrderLine."ACO Quantity to Bath Sheet";
         ProductionOrderLine."ACO Quantity to Bath Sheet" := 0;
         ProductionOrderLine.Modify();
     end;

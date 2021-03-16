@@ -218,21 +218,21 @@ codeunit 50000 "ACO Event Subscribers"
         Rec."ACO Qty. After Production" := Rec.Quantity;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
-    local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Quantity', false, false)]
+    local procedure SalesLine_OnBeforeValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
-        Rec.ACOCalculateUnitPrice();
         Rec.Quantity := Round(Rec.Quantity, 0.001);
+        Rec.ACOCalculateUnitPrice();
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Ship', false, false)]
-    local procedure SalesLine_OnAfterValidate_QtytoShip(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Qty. to Ship', false, false)]
+    local procedure SalesLine_OnBeforeValidate_QtytoShip(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec."Qty. to Ship" := Round(Rec."Qty. to Ship", 0.001);
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Invoice', false, false)]
-    local procedure SalesLine_OnAfterValidate_QtytoInvoice(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Qty. to Invoice', false, false)]
+    local procedure SalesLine_OnBeforeValidate_QtytoInvoice(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec."Qty. to Invoice" := Round(Rec."Qty. to Invoice", 0.001);
     end;
