@@ -248,10 +248,10 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 
                         TempSalesLine.DeleteAll();
                         if CreateProdOrder then begin
-                            ProdOrderFromSale.SetHideValidationDialog(true);
-                            ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
+                            // ProdOrderFromSale.SetHideValidationDialog(true);
+                            // ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
 
-                            // Message(PackageQuantityMsg);
+                            Message(PackageQuantityMsg);
                         end;
                         CurrPage.Update(false);
                     end;
