@@ -14,6 +14,15 @@ Page 50057 "ACO Selection Package Lines"
             repeater(Control1)
             {
                 ShowCaption = false;
+
+                field("Sales Order No"; Rec."Sales Order No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Sales Line No"; Rec."Sales Line No")
+                {
+                    ApplicationArea = All;
+                }
                 field("Package No."; Rec."Package No.")
                 {
                     ApplicationArea = All;
@@ -39,10 +48,6 @@ Page 50057 "ACO Selection Package Lines"
                     ApplicationArea = All;
                 }
 
-                field("Sales Line No"; Rec."Sales Line No")
-                {
-                    ApplicationArea = All;
-                }
             }
         }
     }

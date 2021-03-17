@@ -13,7 +13,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
         ACOBathSheetHeader.UpdateBathSheetHeader();
         ProductionOrderLines.ModifyAll("ACO Complete", true);
-        ProductionOrderLines.ModifyAll("Quantity", 0);
+        // ProductionOrderLines.ModifyAll("Quantity", 0);
         ProductionOrderLines.ModifyAll("ACO Rerun", false);
         ProductionOrderLines.ModifyAll("ACO Rerun Reason", '');
 

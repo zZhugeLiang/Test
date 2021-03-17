@@ -160,6 +160,13 @@ table 50008 "ACO Profile"
             Editable = false;
             DataClassification = CustomerContent;
         }
+
+        field(37; "Unit of Measure Code"; Code[10])
+        {
+            Caption = 'Unit of Measure Code';
+            TableRelation = "Unit of Measure";
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

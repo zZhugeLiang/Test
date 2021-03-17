@@ -34,6 +34,10 @@ page 50009 "ACO Profile Card"
             {
                 Caption = 'Production Parameters';
 
+                field("Unit of Measure Code"; "Unit of Measure Code")
+                {
+                    ApplicationArea = All;
+                }
                 field("Extra Flushing"; "Extra Flushing")
                 {
                     ApplicationArea = All;

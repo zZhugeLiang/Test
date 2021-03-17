@@ -2483,6 +2483,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Last DateTime Modified - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2385270358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Unit of Measure Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1025398750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3258,6 +3263,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Distance Holders - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2905872408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> Generate Package Dialog</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 348912950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resource</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Resource - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 348912950 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Resource - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 3078357494 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Box,Bundle,Carton,Cart,Chest,Tube,Empty racks,Pack,Pallet,Rack</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control PackageType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 3078357494 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control PackageType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 2667757584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rack No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Rack No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 2667757584 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Rack No. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2169947147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3977,41 +4017,6 @@
           <source>Project Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Project Color - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source> Generate Package Dialog</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Control 348912950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Resource</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Resource - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Control 348912950 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Resource - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Control 3078357494 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Box,Bundle,Carton,Cart,Chest,Tube,Empty racks,Pack,Pallet,Rack</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control PackageType - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Control 3078357494 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control PackageType - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Control 2667757584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rack No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Rack No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2905872408 - Control 2667757584 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Rack No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
@@ -7178,6 +7183,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Pstd Sales CrMemo Subf Ext - Control ACO Number of Units - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Control 1698738422 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Order Complete</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ACO Order Complete - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 3652365079 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Week Capacity</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7307,6 +7317,16 @@
           <source>The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType PackageQuantityMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 3048221880" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
+          <source>The following Production Orders have been created: %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType ProductionOrderCreatedMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 1449115895" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
+          <source>No Production Order have been created.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType NoProductionOrderCreatedMsg</note>
         </trans-unit>
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>
@@ -7752,6 +7772,16 @@
           <source>Own Shipping Agent</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Own Shipping Agent - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 1698738422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Order Complete</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Order Complete - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 3448708896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Customer Pick-up Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Customer Pick-up Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 940324757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Profile Code</source>

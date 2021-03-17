@@ -2320,7 +2320,12 @@
           <source>Last DateTime Modified</source>
           <target>Laatste wijziging</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Last DateTime Modified - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2385270358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure Code</source>
+          <target>Eenheidscode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Unit of Measure Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1025398750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Customer</source>
           <target>Product klant</target>
@@ -6337,7 +6342,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Pstd Sales CrMemo Subf Ext - Control ACO Number of Units - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 163665622 - Control 3652365079 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 163665622 - Control 1698738422 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Order Complete</source>
+          <target>Order gereed</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ACO Order Complete - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Control 3652365079 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Week Capacity</source>
           <target>Week capaciteit</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ACO Week Capacity - Property ToolTip</note>
@@ -6461,6 +6471,16 @@
           <source>The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).</source>
           <target>Het colli aantal is groter dan het regelaantal. Er moet eerst opnieuw een productie order worden aangemaakt voordat de colli uitgeleverd kunnen worden.</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType PackageQuantityMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 3048221880" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
+          <source>The following Production Orders have been created: %1.</source>
+          <target>De volgende productie orders zijn aangemaakt: %1.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType ProductionOrderCreatedMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 1449115895" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
+          <source>No Production Order have been created.</source>
+          <target>Er zijn geen productie orders aangemaakt.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType NoProductionOrderCreatedMsg</note>
         </trans-unit>
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>
@@ -6906,6 +6926,16 @@
           <source>Own Shipping Agent</source>
           <target>Eigen Expediteur</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Own Shipping Agent - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 1698738422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Order Complete</source>
+          <target>Order gereed</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Order Complete - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3445842965 - Field 3448708896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Customer Pick-up Date</source>
+          <target>Klant pick-up datum</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Customer Pick-up Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 940324757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Profile Code</source>

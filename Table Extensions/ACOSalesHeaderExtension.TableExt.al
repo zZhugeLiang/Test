@@ -36,7 +36,7 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         {
             Caption = 'Quantity Charges';
             FieldClass = FlowField;
-            CalcFormula = Sum ("Sales Line"."ACO Quantity Charges" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
+            CalcFormula = Sum("Sales Line"."ACO Quantity Charges" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
         }
         field(50007; "ACO Supplier"; Text[100])
         {
@@ -133,6 +133,16 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
         field(50024; "ACO Own Shipping Agent"; Boolean)
         {
             Caption = 'Own Shipping Agent';
+            DataClassification = CustomerContent;
+        }
+        field(50025; "ACO Order Complete"; Boolean)
+        {
+            Caption = 'Order Complete';
+            DataClassification = CustomerContent;
+        }
+        field(50026; "ACO Customer Pick-up Date"; Date)
+        {
+            Caption = 'Customer Pick-up Date';
             DataClassification = CustomerContent;
         }
     }
