@@ -165,12 +165,8 @@ codeunit 50000 "ACO Event Subscribers"
             ACOProfile.TestField(Circumference);
 
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
-                ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                if not ACOProfileCustomer.FindFirst() then
-                    Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
-            end;
+            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then
+                Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
 
             if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
                 Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
@@ -197,7 +193,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Thin Staining Time Profile" := ACOProfileCustomer."Thin Staining Time";
             Rec."ACO Thick St. Time Profile" := ACOProfileCustomer."Thick Staining Time";
             Rec."ACO Extra to Enumerate Profile" := ACOProfileCustomer."Extra to Enumerate";
-            Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
+            // Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
 
             if ACOCategory.Get(ACOProfile.Category) then
@@ -246,9 +242,7 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") and Item."ACO Sawing" then begin
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-            ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-            ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-            if ACOProfileCustomer.FindFirst() then
+            if ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then
                 Rec."Unit Price" := Rec."Unit Price" - (Rec."Unit Price" * ACOProfileCustomer."Sawing Discount" / 100);
         end;
     end;

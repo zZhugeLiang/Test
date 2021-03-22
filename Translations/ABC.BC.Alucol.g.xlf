@@ -4963,46 +4963,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ForkliftDriverCaption</note>
         </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 690520591" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer %1 does not exist as Customer in the database or as EDI Customer.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CustomerDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 1442883392" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item %1 does not exist.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 851382453" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item Variant with Item No. %1 and Variant Code %2 does not exist.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ItemVariantDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 731385328" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invalid value %1 for field Number of Units.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType InvalidValueForNumberofUnitsLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 2255546338" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Number of Units is not larger than 0.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType NumberOfUnitsNotLargerThanZeroLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3001609905" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile Code %1 does not exist.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCodeDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 194039618" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile Code %1 does not exist as a Profile Customer.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType ProfileCustomerDoesNotExistLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1193230122 - Method 36341020 - NamedType 3530122017" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Category of the Profile is not identical to the Category of the Item</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Process Import Sales Lines - Method CheckLine - NamedType CategoryProfileNotIdenticalToCategoryItemLbl</note>
-        </trans-unit>
         <trans-unit id="Report 2588589973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Credit Memo</source>
           <note from="Developer" annotates="general" priority="2"></note>

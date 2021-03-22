@@ -241,9 +241,7 @@ report 50005 "ACO Attach Notice"
                     Item: Record Item;
                     RoutingLine: Record "Routing Line";
                 begin
-                    ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
-                    ACOProfileCustomer.SetRange("Customer No.", "Sales Header"."Sell-to Customer No.");
-                    if not ACOProfileCustomer.FindFirst() then
+                    if ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", "Sales Header"."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
                         Clear(ACOProfileCustomer);
 
                     Clear(Item);

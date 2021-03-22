@@ -8,7 +8,6 @@ report 50006 "ACO Sawing Notice"
     {
         dataitem("Sales Line"; "Sales Line")
         {
-
             column(SawingNoteCaption; SawingNoteCaptionlbl) { }
             column(Picture_CompanyInfo; CompanyInfo.Picture) { }
 
@@ -87,9 +86,7 @@ report 50006 "ACO Sawing Notice"
                 SalesLine: Record "Sales Line";
             begin
                 SalesHeader.Get("Document Type", "Document No.");
-                ACOProfileCustomer.SetRange("Profile Code", "Sales Line"."ACO Profile Code");
-                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                if not ACOProfileCustomer.FindFirst() then
+                if ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", SalesHeader."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
                     Clear(ACOProfileCustomer);
 
                 if not ItemVariant.Get("No.", "Variant Code") then

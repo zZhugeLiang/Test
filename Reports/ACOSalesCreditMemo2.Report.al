@@ -1,7 +1,7 @@
 report 50015 "ACO Std. Sales - Credit Memo"
 {
     RDLCLayout = './StandardSalesCreditMemo.rdlc';
-    WordLayout = './StandardSalesCreditMemo.docx';
+    // WordLayout = './StandardSalesCreditMemo.docx';
     Caption = 'Sales - Credit Memo';
     DefaultLayout = Word;
     Permissions = TableData "Sales Shipment Buffer" = rimd;

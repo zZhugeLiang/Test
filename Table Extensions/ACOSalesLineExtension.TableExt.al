@@ -577,9 +577,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         SalesHeader.Get("Document Type", "Document No.");
 
-        ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-        ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-        if not ACOProfileCustomer.FindFirst() then
+        if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then
             exit;
 
         if not ACOPriceScheme.Get(ACOProfileCustomer."Price Scheme Code") then

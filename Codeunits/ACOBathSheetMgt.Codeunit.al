@@ -172,9 +172,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             end;
 
         SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
-        ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
-        ACOProfileCustomer.SetRange("Customer No.", Customer."No.");
-        if ACOProfileCustomer.FindFirst() then begin
+        if ACOProfileCustomer.Get(SalesLine."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesLine."ACO Customer Item No.") then begin
             if ACOPretreatment."Thick Staining Time" = -1 then
                 if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
                     MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
@@ -249,9 +247,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOProfileCustomer: Record "ACO Profile Customer";
         CheckProfileCustomer: Boolean;
     begin
-        ACOProfileCustomer.SetRange("Profile Code", SalesLine."ACO Profile Code");
-        ACOProfileCustomer.SetRange("Customer No.", SalesLine."Sell-to Customer No.");
-        CheckProfileCustomer := ACOProfileCustomer.FindFirst();
+        CheckProfileCustomer := ACOProfileCustomer.Get(SalesLine."ACO Profile Code", SalesLine."Sell-to Customer No.", SalesLine."ACO Customer Item No.");
 
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Min. Current Density Color";

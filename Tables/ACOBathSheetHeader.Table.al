@@ -465,6 +465,7 @@ table 50016 "ACO Bath Sheet Header"
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOProfile: Record "ACO Profile";
         ACOProfileCustomer: Record "ACO Profile Customer";
+        SalesLine: Record "Sales Line";
         BathSheetComment: Text;
         TotalSurfaceProfiles: Decimal;
         SurfaceAddition: Decimal;
@@ -490,10 +491,9 @@ table 50016 "ACO Bath Sheet Header"
                     BathSheetComment += ACOProfile."Comment Bath Card";
                     SurfaceAddition += (ACOProfile."Correction Factor" - 1) * ACOBathSheetLine.Surface;
 
-                    ACOProfileCustomer.SetRange("Profile Code", ACOProfile.Code);
-                    ACOProfileCustomer.SetRange("Customer No.", ACOBathSheetLine."Customer No.");
-                    if ACOProfileCustomer.FindFirst() then
-                        ExtraToEnumerate := ACOProfileCustomer."Extra to Enumerate";
+                    if SalesLine.Get(SalesLine."Document Type"::Order, ACOBathSheetLine."Sales Order No.", ACOBathSheetLine."Sales Order Line No.") then
+                        if ACOProfileCustomer.Get(ACOProfile.Code, ACOBathSheetLine."Customer No.", SalesLine."ACO Customer Item No.") then
+                            ExtraToEnumerate := ACOProfileCustomer."Extra to Enumerate";
                 end;
 
                 if Item.Get(ACOBathSheetLine.Treatment) then

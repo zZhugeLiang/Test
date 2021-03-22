@@ -164,9 +164,7 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                     ACOProfile: Record "ACO Profile";
                     ACOProfileCustomer: Record "ACO Profile Customer";
                 begin
-                    ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-                    ACOProfileCustomer.SetRange("Customer No.", Rec."Sell-to Customer No.");
-                    if ACOProfileCustomer.FindFirst() then begin
+                    if ACOProfileCustomer.Get(Rec."ACO Profile Code", Rec."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
                         if not ACOProfileCustomer.DownloadPackagingInstructions() then
                             if ACOProfile.Get(Rec."ACO Profile Code") then
                                 ACOProfile.DownloadPackagingInstructions();
