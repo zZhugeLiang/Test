@@ -269,7 +269,8 @@ report 50007 "ACO Unattach Notice"
                                     IsVEC := RoutingLine."No." = ACOAPPSetup."VEC Routing No.";
                             until (RoutingLine.Next() = 0);
                     end;
-
+                    MinCurrentDensity := 0;
+                    MaxCurrentDensity := 1000;
                     ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
                 end;
             }
