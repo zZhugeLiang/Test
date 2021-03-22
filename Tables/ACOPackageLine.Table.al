@@ -94,7 +94,10 @@ table 50024 "ACO Package Line"
             DataClassification = CustomerContent;
             TableRelation = "Reason Code";
         }
-
+        field(20; "Ship"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
         field(5402; "Variant Code"; Code[10])
         {
             DataClassification = CustomerContent;

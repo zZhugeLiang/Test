@@ -227,6 +227,7 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 begin
                     ACOAppSetup.Get();
                     ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
+                    ACOPackageLine.SetRange(Ship, false);
                     if ACOPackageLine.FindSet() then
                         repeat
                             if ACOPackageHeader.Get(ACOPackageLine."Package No.") and (ACOPackageHeader."Sales Shipment No." = '') then
@@ -236,10 +237,11 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                     ACOPackageLine.MarkedOnly(true);
                     ACOSelectionPackageLines.SetTableView(ACOPackageLine);
                     ACOSelectionPackageLines.LookupMode(true);
+                    ACOSelectionPackageLines.Editable(true);
 
                     if ACOSelectionPackageLines.RunModal() = Action::LookupOK then begin
                         ACOSelectionPackageLines.SetSelectionFilter(ACOPackageLine);
-                        if ACOPackageLine.FindSet() then
+                        if ACOPackageLine.FindSet(true) then
                             repeat
                                 if TempSalesLine.Get(TempSalesLine."Document Type"::Order, ACOPackageLine."Sales Order No.", ACOPackageLine."Sales Line No") then begin
                                     TempSalesLine.Quantity += ACOPackageLine.Quantity;
@@ -251,25 +253,15 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                                     TempSalesLine.Quantity := ACOPackageLine.Quantity;
                                     TempSalesLine.Insert();
                                 end;
+                                ACOPackageLine.Ship := true;
+                                ACOPackageLine.Modify();
                             until ACOPackageLine.Next() = 0;
 
                         if TempSalesLine.FindSet() then
                             repeat
                                 if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
-                                    // if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
-                                    //     Clear(ItemVariant);
-
-                                    // if SalesLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                                    //     NumberOfUnitsShipped := SalesLine."Quantity Shipped" / ItemVariant."ACO Number of Meters";
-
-                                    // if SalesLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                                    //     NumberOfUnitsShipped := Round(SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000, 1);
-
-                                    //if TempSalesLine.Quantity >= (SalesLine."ACO Number of Units" - NumberOfUnitsShipped) then begin
                                     if TempSalesLine.Quantity >= SalesLine."ACO Number of Units" then begin
-                                        //SalesLine.Validate("ACO Number of Units", SalesLine."ACO Number of Units" + TempSalesLine.Quantity);// Move this to the TempSalesLine loop
                                         ShowMessage := true;
-                                        //TODO
                                         if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
                                             SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
                                             SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);

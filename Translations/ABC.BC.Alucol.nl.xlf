@@ -1906,6 +1906,11 @@
           <target>Afkeur redencode</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Reject Reason Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4136019483 - Field 4180147670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship</source>
+          <target>Verzenden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Ship - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4136019483 - Field 3450651614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Variant Code</source>
           <target>Variant</target>

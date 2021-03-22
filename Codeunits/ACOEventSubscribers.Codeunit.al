@@ -287,8 +287,9 @@ codeunit 50000 "ACO Event Subscribers"
         ACOPackageLine: Record "ACO Package Line";
         PackageNo: Code[20];
     begin
-        ACOPackageLine.SetCurrentKey("Sales Order No.");
+        ACOPackageLine.SetCurrentKey("Sales Order No.", Ship);
         ACOPackageLine.SetRange("Sales Order No.", SalesHeader."No.");
+        ACOPackageLine.Setrange(Ship, true);
         if ACOPackageLine.FindSet() then
             repeat
                 if ACOPackageLine."Package No." <> PackageNo then begin

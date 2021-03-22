@@ -3,6 +3,8 @@ page 50030 "ACO Package Card"
     PageType = Card;
     SourceTable = "ACO Package Header";
     Caption = 'Package Card';
+    ModifyAllowed = true;
+    Editable = true;
 
     layout
     {
@@ -12,65 +14,79 @@ page 50030 "ACO Package Card"
             {
                 field("No."; "No.")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Resource No."; "Resource No.")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Customer No."; "Customer No.")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Customer Name"; "Customer Name")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field(Address1; Address1)
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field(Address2; Address2)
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field(City; City)
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Post Code"; "Post Code")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Packing Type"; "Packing Type")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Rack No. Customer"; "Rack No. Customer")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Sales Shipment No."; "Sales Shipment No.")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field(Remark; Remark)
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Date-Time"; "Date-Time")
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field(Reject; Reject)
                 {
+                    Editable = false;
                     ApplicationArea = All;
                 }
             }
 
             Part("Package Lines"; "ACO Package Card SubPage")
             {
-                Editable = false;
+                Editable = true;
                 SubPageLink = "Package No." = field("No.");
                 UpdatePropagation = Both;
                 ApplicationArea = All;

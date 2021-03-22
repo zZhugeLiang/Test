@@ -2073,6 +2073,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Reject Reason Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4136019483 - Field 4180147670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Ship - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4136019483 - Field 3450651614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Variant Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3532,6 +3537,11 @@
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Reject Reason Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 368852624 - Control 4180147670 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Ship - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2572220696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packages</source>
