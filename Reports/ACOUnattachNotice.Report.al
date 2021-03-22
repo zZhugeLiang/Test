@@ -210,8 +210,9 @@ report 50007 "ACO Unattach Notice"
                 var
                     Item: Record Item;
                     RoutingLine: Record "Routing Line";
+                    ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
-                    if ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", "Sales Header"."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
+                    if not ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", "Sales Header"."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
                         Clear(ACOProfileCustomer);
 
                     Clear(Item);
@@ -268,6 +269,8 @@ report 50007 "ACO Unattach Notice"
                                     IsVEC := RoutingLine."No." = ACOAPPSetup."VEC Routing No.";
                             until (RoutingLine.Next() = 0);
                     end;
+
+                    ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
                 end;
             }
 
@@ -313,7 +316,7 @@ report 50007 "ACO Unattach Notice"
                         if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
                             TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile";
 
-                        ACOBathSheetMgt.DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
+                    // ACOBathSheetMgt.DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
                     until SalesLine.Next() = 0;
 
                 if StrLen(BagDescriptionsText) > 1 then

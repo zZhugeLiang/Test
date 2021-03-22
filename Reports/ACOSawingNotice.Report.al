@@ -86,7 +86,7 @@ report 50006 "ACO Sawing Notice"
                 SalesLine: Record "Sales Line";
             begin
                 SalesHeader.Get("Document Type", "Document No.");
-                if ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", SalesHeader."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
+                if not ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", SalesHeader."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
                     Clear(ACOProfileCustomer);
 
                 if not ItemVariant.Get("No.", "Variant Code") then

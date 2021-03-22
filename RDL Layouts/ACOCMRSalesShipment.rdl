@@ -1010,6 +1010,9 @@ End Function
         <Field Name="CountryRegionCode_CompanyInfo">
           <DataField>CountryRegionCode_CompanyInfo</DataField>
         </Field>
+        <Field Name="SelltoCustomerNo_SalesShipmentHeader">
+          <DataField>SelltoCustomerNo_SalesShipmentHeader</DataField>
+        </Field>
         <Field Name="ShiptoName_SalesShipmentHeader">
           <DataField>ShiptoName_SalesShipmentHeader</DataField>
         </Field>

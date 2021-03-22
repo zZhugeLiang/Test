@@ -120,7 +120,7 @@ report 50004 "ACO Expedition Work Order"
                 var
                     Item: Record Item;
                 begin
-                    if ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", "Sales Header"."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
+                    if not ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", "Sales Header"."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
                         Clear(ACOProfileCustomer);
 
                     if not ItemVariant.Get("No.", "Variant Code") then

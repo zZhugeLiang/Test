@@ -94,7 +94,7 @@ report 50001 "ACO Package Label"
                     if not Resource.Get(ACOPackageHeader."Resource No.") then
                         Clear(Resource);
 
-                    if ACOProfileCustomer.Get(ACOPackageLine."Profile no.", ACOPackageHeader."Customer No.", ACOPackageLine."Customer Item No.") then
+                    if not ACOProfileCustomer.Get(ACOPackageLine."Profile no.", ACOPackageHeader."Customer No.", ACOPackageLine."Customer Item No.") then
                         Clear(ACOProfileCustomer);
 
                     if not ItemVariant.Get("Item No.", "Variant Code") then

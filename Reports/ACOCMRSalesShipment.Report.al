@@ -26,6 +26,7 @@ report 50014 "ACO CMR - Sales Shipment"
                 column(PostCode_CompanyInfo; CompanyInfo."Post Code") { }
                 column(City_CompanyInfo; CompanyInfo.City) { }
                 column(CountryRegionCode_CompanyInfo; CompanyInfo."Country/Region Code") { }
+                column(SelltoCustomerNo_SalesShipmentHeader; "Sales Shipment Header"."Sell-to Customer No.") { }
                 column(ShiptoName_SalesShipmentHeader; "Sales Shipment Header"."Ship-to Name") { }
                 column(ShiptoAddress_SalesShipmentHeader; "Sales Shipment Header"."Ship-to Address") { }
                 column(ShiptoCity_SalesShipmentHeader; "Sales Shipment Header"."Ship-to City") { }
