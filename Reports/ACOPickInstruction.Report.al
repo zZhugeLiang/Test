@@ -145,9 +145,15 @@ report 50013 "ACO Pick Instruction"
                     {
                     }
                     trigger OnAfterGetRecord()
+                    // var
+                    //     ACOPackageHeader: Record "ACO Package Header";
                     begin
                         Clear(SalesLine);
                         Clear(ItemVariant);
+
+                        // ACOPackageHeader.Get("ACO Package Line"."Package No.");
+                        // if ACOPackageHeader."Sales Shipment No." <> '' then
+                        //     CurrReport.Skip();
 
                         if SalesLine.Get(SalesLine."Document Type"::Order, "ACO Package Line"."Sales Order No.", "ACO Package Line"."Sales Line No") then begin
                             if not ItemVariant.Get(SalesLine."No.", "Variant Code") then
@@ -162,6 +168,11 @@ report 50013 "ACO Pick Instruction"
                         SalesOrderNo := "ACO Package Line"."Sales Order No.";
                         YourReference := "Sales Header"."Your Reference";
                     end;
+
+                    // trigger OnPreDataItem()
+                    // begin
+                    //     "ACO Package Line".SetRange(Sales );
+                    // end;
                 }
 
                 trigger OnAfterGetRecord()
