@@ -193,6 +193,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Thin Staining Time Profile" := ACOProfileCustomer."Thin Staining Time";
             Rec."ACO Thick St. Time Profile" := ACOProfileCustomer."Thick Staining Time";
             Rec."ACO Extra to Enumerate Profile" := ACOProfileCustomer."Extra to Enumerate";
+            Rec."ACO High End" := ACOProfileCustomer."High End";
             // Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
 

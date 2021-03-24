@@ -268,8 +268,13 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                                             SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
                                             SalesLine.Modify();
 
+                                            // Create Production Order
                                             ProdOrderFromSale.SetHideValidationDialog(true);
                                             ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
+                                        end else begin
+                                            SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
+                                            SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
+                                            SalesLine.Modify();
                                         end;
 
                                         ProdOrderLine.SetRange("ACO Source No.", SalesLine."Document No.");
