@@ -7233,6 +7233,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ProfilePicture - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3006493959 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Pick Instruction Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action Pick Instruction Customer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3006493959 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action Pick Instruction Customer - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 2397299197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Expedition Work Order</source>
           <note from="Developer" annotates="general" priority="2"></note>

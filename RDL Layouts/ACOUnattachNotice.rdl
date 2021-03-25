@@ -1348,7 +1348,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.6cm</Height>
+                      <Height>1.2cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -1387,7 +1387,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>2.4cm</Height>
+                      <Height>1.8cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>

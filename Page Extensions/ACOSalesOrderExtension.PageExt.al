@@ -117,6 +117,29 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
     {
         addlast("&Print")
         {
+            action("Pick Instruction Customer")
+            {
+                ApplicationArea = Warehouse;
+                Caption = 'Pick Instruction Customer';
+                Image = Print;
+                ToolTip = ' ';
+
+                trigger OnAction()
+                var
+                    SalesHeader: Record "Sales Header";
+                    ACOPickInstruction: Report "ACO Pick Instruction";
+                    Usage: Enum "Report Selection Usage";
+                begin
+                    Clear(SalesHeader);
+                    SalesHeader.SetRange("Document Type", Rec."Document Type"::Order);
+                    SalesHeader.SetRange("Sell-to Customer No.", Rec."Sell-to Customer No.");
+                    // SalesHeader.SetRecFilter();
+                    ACOPickInstruction.SetTableView(SalesHeader);
+                    // Report.Run(Report::"ACO Pick Instruction", true, false, SalesHeader);
+                    ACOPickInstruction.RunModal();
+                end;
+            }
+
             action("ACO Expedition Work Order")
             {
                 Caption = 'Expedition Work Order';

@@ -6129,7 +6129,7 @@
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3323605874" size-unit="char" translate="yes" xml:space="preserve">
           <source># Layers</source>
-          <target># laagdikte</target>
+          <target># lagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType NumberOfLayersCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3682501610" size-unit="char" translate="yes" xml:space="preserve">
@@ -6421,6 +6421,11 @@
           <source>Own Shipping Agent</source>
           <target>Eigen Expediteur</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ACO Own Shipping Agent - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3006493959 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Pick Instruction Customer</source>
+          <target>Pickinstructie klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action Pick Instruction with Shipment - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 2397299197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Expedition Work Order</source>
