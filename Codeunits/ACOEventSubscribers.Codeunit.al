@@ -340,4 +340,26 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         TempDocSalesLine.ACOCopyCustomFieldsFromSalesInvoiceLines(FromSalesInvLine);
     end;
+
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Get Shipment", 'OnAfterInsertLine', '', true, true)]
+    // local procedure SalesGetShipment_OnAfterInsertLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; SalesShptLine2: Record "Sales Shipment Line"; TransferLine: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnAfterDescriptionSalesLineInsert', '', true, true)]
+    local procedure SalesShptLine_OnAfterDescriptionSalesLineInsert(var SalesLine: Record "Sales Line"; SalesShipmentLine: Record "Sales Shipment Line"; var NextLineNo: Integer)
+    var
+        NewSalesLine: Record "Sales Line";
+        SalesShipmentHeader: Record "Sales Shipment Header";
+        ACOManagement: Codeunit "ACO Management";
+        NewDescription: Text;
+    // Text000: Label 'Shipment No. %1:';
+    begin
+        if SalesShipmentHeader.Get(SalesShipmentLine."Document No.") then
+            if StrPos(SalesLine.Description, SalesShipmentLine."Document No.") <> 0 then begin
+                NewDescription := SalesShipmentHeader.FieldCaption("Shipment Date") + ' ' + Format(SalesShipmentHeader."Shipment Date");
+                ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 10, NewDescription);
+                NewDescription := SalesShipmentHeader.FieldCaption("Order No.") + ' ' + Format(SalesShipmentHeader."Order No.");
+                ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 20, NewDescription);
+                NewDescription := SalesShipmentHeader.FieldCaption("Your Reference") + ' ' + Format(SalesShipmentHeader."Your Reference");
+                ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 30, NewDescription);
+            end;
+    end;
 }

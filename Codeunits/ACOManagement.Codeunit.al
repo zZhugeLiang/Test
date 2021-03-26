@@ -81,4 +81,15 @@ codeunit 50003 "ACO Management"
 
         exit(true);
     end;
+
+    procedure InsertExtraSalesLineFromSalesShptLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; LineNoIncrement: Integer; NewDescription: Text)
+    var
+        NewSalesLine: Record "Sales Line";
+        SalesShipmentHeader: Record "Sales Shipment Header";
+    begin
+        NewSalesLine := SalesLine;
+        NewSalesLine."Line No." += LineNoIncrement;
+        NewSalesLine.Description := CopyStr(NewDescription, 1, MaxStrLen(NewSalesLine.Description));
+        NewSalesLine.Insert();
+    end;
 }

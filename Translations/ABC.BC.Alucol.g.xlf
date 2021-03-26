@@ -4973,6 +4973,146 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction - ReportLabel ForkliftDriverCaption</note>
         </trans-unit>
+        <trans-unit id="Report 2215479274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pick Instruction 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - Control 4285444229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No of Copies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - Control No of Copies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - Control 4285444229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many copies of the document to print.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - Control No of Copies - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 3140931181" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pick Instruction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel OrderPickingListCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1628563900" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picking note for customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PickingNoteForCustomerCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 3443039713" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colli No. + Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel ColliNoCustomerNoCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 3415716336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order + Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel SalesOrderPlusLineCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 942581119" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference + Sales Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel YourReferencePlusSalesCommentCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1680161648" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack/Rack</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PackRackCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 3728671708" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel SalesOrderCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1042063553" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item + Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel ItemPlusDescriptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 54430663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel QuantityCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1210406510" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel LengthCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 604259918" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picture</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PictureCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1464042409" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overview Package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel OverviewPackageCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 2956119802" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pallet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PalletCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1747541873" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PackCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1771083126" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bundle</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel BundleCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 501693335" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PageCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 289772055" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printed by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PrintedByCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 263692209" size-unit="char" translate="yes" xml:space="preserve">
+          <source>of</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel OfCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1944624824" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page %1 of %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel PageOfCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 383460440" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel TotalWeightCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1139421189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Net Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel TotalNetWeightCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 3715266898" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Gross Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel TotalGrossWeightCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 1311424508" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Driver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel DriverCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2215479274 - ReportLabel 2005013753" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forklift Driver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Pick Instruction 2 - ReportLabel ForkliftDriverCaption</note>
+        </trans-unit>
         <trans-unit id="Report 2588589973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Credit Memo</source>
           <note from="Developer" annotates="general" priority="2"></note>

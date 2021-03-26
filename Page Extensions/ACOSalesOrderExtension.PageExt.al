@@ -127,16 +127,16 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 trigger OnAction()
                 var
                     SalesHeader: Record "Sales Header";
-                    ACOPickInstruction: Report "ACO Pick Instruction";
+                    ACOPickInstruction2: Report "ACO Pick Instruction 2";
                     Usage: Enum "Report Selection Usage";
                 begin
                     Clear(SalesHeader);
                     SalesHeader.SetRange("Document Type", Rec."Document Type"::Order);
                     SalesHeader.SetRange("Sell-to Customer No.", Rec."Sell-to Customer No.");
                     // SalesHeader.SetRecFilter();
-                    ACOPickInstruction.SetTableView(SalesHeader);
+                    ACOPickInstruction2.SetTableView(SalesHeader);
                     // Report.Run(Report::"ACO Pick Instruction", true, false, SalesHeader);
-                    ACOPickInstruction.RunModal();
+                    ACOPickInstruction2.RunModal();
                 end;
             }
 
