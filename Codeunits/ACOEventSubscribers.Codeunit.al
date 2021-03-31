@@ -165,8 +165,12 @@ codeunit 50000 "ACO Event Subscribers"
             ACOProfile.TestField(Circumference);
 
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then
-                Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
+            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
+                ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                if not ACOProfileCustomer.FindFirst() then
+                    Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
+            end;
 
             if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
                 Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
@@ -194,7 +198,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Thick St. Time Profile" := ACOProfileCustomer."Thick Staining Time";
             Rec."ACO Extra to Enumerate Profile" := ACOProfileCustomer."Extra to Enumerate";
             Rec."ACO High End" := ACOProfileCustomer."High End";
-            // Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
+            Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
 
             if ACOCategory.Get(ACOProfile.Category) then
@@ -219,6 +223,11 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnBeforeValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec.Quantity := Round(Rec.Quantity, 0.001);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
+    local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    begin
         Rec.ACOCalculateUnitPrice();
     end;
 
@@ -347,19 +356,24 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesShptLine_OnAfterDescriptionSalesLineInsert(var SalesLine: Record "Sales Line"; SalesShipmentLine: Record "Sales Shipment Line"; var NextLineNo: Integer)
     var
         NewSalesLine: Record "Sales Line";
+        SalesHeader: Record "Sales Header";
         SalesShipmentHeader: Record "Sales Shipment Header";
         ACOManagement: Codeunit "ACO Management";
+        TranslationHelper: Codeunit "Translation Helper";
         NewDescription: Text;
     // Text000: Label 'Shipment No. %1:';
     begin
         if SalesShipmentHeader.Get(SalesShipmentLine."Document No.") then
             if StrPos(SalesLine.Description, SalesShipmentLine."Document No.") <> 0 then begin
+                SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
+                TranslationHelper.SetGlobalLanguageByCode(SalesHeader."Language Code");
                 NewDescription := SalesShipmentHeader.FieldCaption("Shipment Date") + ' ' + Format(SalesShipmentHeader."Shipment Date");
                 ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 10, NewDescription);
                 NewDescription := SalesShipmentHeader.FieldCaption("Order No.") + ' ' + Format(SalesShipmentHeader."Order No.");
                 ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 20, NewDescription);
-                NewDescription := SalesShipmentHeader.FieldCaption("Your Reference") + ' ' + Format(SalesShipmentHeader."Your Reference");
+                NewDescription := SalesShipmentHeader.FieldCaption("Your Reference") + ' ' + Format(SalesShipmentHeader."External Document No.") + ' / ' + Format(SalesShipmentHeader."Your Reference");
                 ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 30, NewDescription);
+                TranslationHelper.RestoreGlobalLanguage();
             end;
     end;
 }

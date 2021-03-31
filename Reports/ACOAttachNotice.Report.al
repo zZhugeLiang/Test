@@ -89,7 +89,7 @@ report 50005 "ACO Attach Notice"
                 column(ItemNoCustomerCaption; ItemNoCustomerCaptionLbl) { }
                 column(CustomerItemNo; "ACO Customer Item No.") { }
                 column(ItemDescrCustomerCaption; ItemDescrCustomerCaptionLbl) { }
-                column(ProfileDescription_ProfileCustomer; "ACO Profile Description") { }
+                column(ProfileDescription_ProfileCustomer; ACOProfileCustomer."Profile Description") { }
                 column(ColorNoteCaption; ColorNoteCaptionLbl) { }
                 column(Name_ACOColorProjectHeader; ACOColorProjectHeader.Name) { }
                 column(QuantityCaption; QuantityCaptionLbl) { }

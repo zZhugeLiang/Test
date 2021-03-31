@@ -5,107 +5,107 @@ report 50013 "ACO Pick Instruction"
 
     dataset
     {
-
-        dataitem("Sales Header"; "Sales Header")
+        dataitem(CopyLoop; "Integer")
         {
-            DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
-            RequestFilterFields = "No.", "Sell-to Customer No.";
+            DataItemTableView = SORTING(Number);
+            column(Number; Number)
+            {
+            }
+            column(CompanyNameText; CompNameText)
+            {
+            }
+            column(DateText; DateTxt)
+            {
+            }
+            column(CurrentDateTime; CurrentDateTime())
+            {
+            }
+            column(CreatedbyUser; User."User Name")
+            {
+            }
+            dataitem("Sales Header"; "Sales Header")
+            {
+                DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
+                RequestFilterFields = "No.", "Sell-to Customer No.";
 
-            column(No_SalesHeader; "Sales Header"."No.")
-            {
-                IncludeCaption = true;
-            }
-            column(CustomerNo_SalesHeader; "Sell-to Customer No.")
-            {
-                IncludeCaption = true;
-            }
-            column(CustomerName_SalesHeader; "Sell-to Customer Name")
-            {
-                IncludeCaption = true;
-            }
-            column(Sell_to_Address; "Sell-to Address")
-            {
-                IncludeCaption = true;
-            }
-            column(Sell_to_Post_Code; "Sell-to Post Code")
-            {
-                IncludeCaption = true;
-            }
-            column(Sell_to_City; "Sell-to City")
-            {
-                IncludeCaption = true;
-            }
-            //
-            column(BilltoCustomerNo_SalesHeader; "Bill-to Customer No.")
-            {
-                IncludeCaption = true;
-            }
-            column(BilltoName_SalesHeader; "Bill-to Name")
-            {
-                IncludeCaption = true;
-            }
-            column(Ship_to_Name; "Ship-to Name")
-            {
-                IncludeCaption = true;
-            }
-            column(Ship_to_Address; "Ship-to Address")
-            {
-                IncludeCaption = true;
-            }
-            column(Ship_to_Post_Code; "Ship-to Post Code")
-            {
-                IncludeCaption = true;
-            }
-            column(Ship_to_City; "Ship-to City")
-            {
-                IncludeCaption = true;
-            }
-            column(Ship_to_Country_Region_Code; "Ship-to Country/Region Code")
-            {
-                IncludeCaption = true;
-            }
-            column(NameShipToCountryRegion; ShipToCountryRegion.Name)
-            {
-            }
-            column(External_Document_No_; "External Document No.")
-            {
-                IncludeCaption = true;
-            }
-            column(ACO_Customer_Comment; "ACO Customer Comment")
-            {
-                IncludeCaption = true;
-            }
-            column(WorkDescription_SalesHeaderCaption; "Sales Header".FieldCaption("Work Description")) { }
-            column(WorkDescription_SalesHeader; "Sales Header".GetWorkDescription()) { }
-            column(TotalNetWeight; TotalNetWeight)
-            {
-            }
-            column(TotalGrossWeight; TotalGrossWeight)
-            {
-            }
-            column(NumberOfPallets; NumberOfPallets) { }
-            column(NumberOfPacks; NumberOfPacks) { }
-            column(NumberOfBundles; NumberOfBundles) { }
-            column(UserID; UserID()) { }
+                column(No_SalesHeader; "Sales Header"."No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(CustomerNo_SalesHeader; "Sell-to Customer No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(CustomerName_SalesHeader; "Sell-to Customer Name")
+                {
+                    IncludeCaption = true;
+                }
+                column(Sell_to_Address; "Sell-to Address")
+                {
+                    IncludeCaption = true;
+                }
+                column(Sell_to_Post_Code; "Sell-to Post Code")
+                {
+                    IncludeCaption = true;
+                }
+                column(Sell_to_City; "Sell-to City")
+                {
+                    IncludeCaption = true;
+                }
+                //
+                column(BilltoCustomerNo_SalesHeader; "Bill-to Customer No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(BilltoName_SalesHeader; "Bill-to Name")
+                {
+                    IncludeCaption = true;
+                }
+                column(Ship_to_Name; "Ship-to Name")
+                {
+                    IncludeCaption = true;
+                }
+                column(Ship_to_Address; "Ship-to Address")
+                {
+                    IncludeCaption = true;
+                }
+                column(Ship_to_Post_Code; "Ship-to Post Code")
+                {
+                    IncludeCaption = true;
+                }
+                column(Ship_to_City; "Ship-to City")
+                {
+                    IncludeCaption = true;
+                }
+                column(Ship_to_Country_Region_Code; "Ship-to Country/Region Code")
+                {
+                    IncludeCaption = true;
+                }
+                column(NameShipToCountryRegion; ShipToCountryRegion.Name)
+                {
+                }
+                column(External_Document_No_; "External Document No.")
+                {
+                    IncludeCaption = true;
+                }
+                column(ACO_Customer_Comment; "ACO Customer Comment")
+                {
+                    IncludeCaption = true;
+                }
+                column(WorkDescription_SalesHeaderCaption; "Sales Header".FieldCaption("Work Description")) { }
+                column(WorkDescription_SalesHeader; "Sales Header".GetWorkDescription()) { }
+                column(TotalNetWeight; TotalNetWeight)
+                {
+                }
+                column(TotalGrossWeight; TotalGrossWeight)
+                {
+                }
+                column(NumberOfPallets; NumberOfPallets) { }
+                column(NumberOfPacks; NumberOfPacks) { }
+                column(NumberOfBundles; NumberOfBundles) { }
+                column(UserID; UserID()) { }
 
-            dataitem(CopyLoop; "Integer")
-            {
-                DataItemTableView = SORTING(Number);
-                column(Number; Number)
-                {
-                }
-                column(CompanyNameText; CompNameText)
-                {
-                }
-                column(DateText; DateTxt)
-                {
-                }
-                column(CurrentDateTime; CurrentDateTime())
-                {
-                }
-                column(CreatedbyUser; User."User Name")
-                {
-                }
+
                 dataitem("ACO Package Line"; "ACO Package Line")
                 {
                     DataItemLinkReference = "Sales Header";
@@ -168,28 +168,21 @@ report 50013 "ACO Pick Instruction"
                         YourReference := "Sales Header"."Your Reference";
                     end;
                 }
-
-                trigger OnPreDataItem()
+                trigger OnAfterGetRecord()
                 begin
-                    SetRange(Number, 1, NoOfCopies + 1);
-                    // User.Get(UserSecurityId());
-                    // ACOAppSetup.Get();
+                    if not ShipToCountryRegion.Get("Ship-to Country/Region Code") then
+                        Clear(ShipToCountryRegion);
+
+                    GetPackageInfo("Sales Header");
+                    GetWeights("Sales Header");
                 end;
             }
-
-            trigger OnAfterGetRecord()
-            begin
-                if not ShipToCountryRegion.Get("Ship-to Country/Region Code") then
-                    Clear(ShipToCountryRegion);
-
-                GetPackageInfo("Sales Header");
-                GetWeights("Sales Header");
-            end;
-
             trigger OnPreDataItem()
             begin
                 User.Get(UserSecurityId());
                 ACOAppSetup.Get();
+                SetRange(Number, 1, NoOfCopies + 1);
+
             end;
         }
     }
