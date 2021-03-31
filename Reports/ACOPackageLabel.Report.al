@@ -89,6 +89,11 @@ report 50001 "ACO Package Label"
                 column(Reject_Reason_Code; "Reject Reason Code") { }
                 column(DescriptionRejectReasonCode; RejectReasonCode.Description) { }
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
+                column(ShiptoCode_SalesHeader; SalesHeader."Ship-to Code") { }
+                column(ShiptoName_SalesHeader; SalesHeader."Ship-to Name") { }
+                column(ShiptoCity_SalesHeader; SalesHeader."Ship-to City") { }
+                column(ShiptoPostCode_SalesHeader; SalesHeader."Ship-to Post Code") { }
+                column(ShiptoCountryRegionCode_SalesHeader; SalesHeader."Ship-to Country/Region Code") { }
                 trigger OnAfterGetRecord()
                 begin
                     if not Resource.Get(ACOPackageHeader."Resource No.") then
@@ -99,6 +104,10 @@ report 50001 "ACO Package Label"
 
                     if not ItemVariant.Get("Item No.", "Variant Code") then
                         Clear(ItemVariant);
+
+                    //TODO
+                    if not SalesHeader.Get(SalesHeader."Document Type"::Order, "Sales Order No.") then
+                        Clear(SalesHeader);
 
                     if not SalesLine.Get(SalesLine."Document Type"::Order, "Sales Order No.", "Sales Line No") then
                         Clear(SalesLine);
@@ -165,6 +174,7 @@ report 50001 "ACO Package Label"
         ACOProfileCustomer: Record "ACO Profile Customer";
         Resource: Record Resource;
         ItemVariant: Record "Item Variant";
+        SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";

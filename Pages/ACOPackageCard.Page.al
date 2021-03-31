@@ -59,7 +59,7 @@ page 50030 "ACO Package Card"
                 }
                 field("Rack No. Customer"; "Rack No. Customer")
                 {
-                    Editable = false;
+                    Editable = true;
                     ApplicationArea = All;
                 }
                 field("Sales Shipment No."; "Sales Shipment No.")
@@ -69,7 +69,7 @@ page 50030 "ACO Package Card"
                 }
                 field(Remark; Remark)
                 {
-                    Editable = false;
+                    Editable = true;
                     ApplicationArea = All;
                 }
                 field("Date-Time"; "Date-Time")

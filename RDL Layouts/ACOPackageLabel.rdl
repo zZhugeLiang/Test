@@ -1305,6 +1305,21 @@ End Function
         <Field Name="Circumference_ACOProfileFormat">
           <DataField>Circumference_ACOProfileFormat</DataField>
         </Field>
+        <Field Name="ShiptoCode_SalesHeader">
+          <DataField>ShiptoCode_SalesHeader</DataField>
+        </Field>
+        <Field Name="ShiptoName_SalesHeader">
+          <DataField>ShiptoName_SalesHeader</DataField>
+        </Field>
+        <Field Name="ShiptoCity_SalesHeader">
+          <DataField>ShiptoCity_SalesHeader</DataField>
+        </Field>
+        <Field Name="ShiptoPostCode_SalesHeader">
+          <DataField>ShiptoPostCode_SalesHeader</DataField>
+        </Field>
+        <Field Name="ShiptoCountryRegionCode_SalesHeader">
+          <DataField>ShiptoCountryRegionCode_SalesHeader</DataField>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>

@@ -1,6 +1,6 @@
 report 50011 "ACO Sales - Credit Memo"
 {
-    RDLCLayout = './StandardSalesCreditMemo.rdlc';
+    // RDLCLayout = './StandardSalesCreditMemo.rdlc';
     // WordLayout = './StandardSalesCreditMemo.docx';
     Caption = 'Sales - Credit Memo';
     DefaultLayout = Word;

@@ -253,31 +253,39 @@ page 50032 "ACO Bathsheet Lines To Process"
                         if BathLineTempRecord.FindSet() then
                             repeat
                                 LineNumber := LineNumber + 10000;
-                                PackageLine.Init();
-                                PackageLine."Package No." := PackageHeader."No.";
-                                PackageLine."Line No." := LineNumber;
-                                PackageLine."Sales Order No." := BathLineTempRecord."Sales Order No.";
-                                PackageLine."Sales Line No" := BathLineTempRecord."Sales Order Line No.";
-                                PackageLine."Bathsheet No." := BathLineTempRecord."Bath Sheet No.";
-                                PackageLine."Production Order No." := BathLineTempRecord."Production Order No.";
-                                PackageLine."Production Order Status" := BathLineTempRecord."Production Order Status";
-                                PackageLine."Production Order Line No." := BathLineTempRecord."Production Order Line No.";
-                                PackageLine."Profile No." := BathLineTempRecord."Profile Code";
-                                PackageLine."Profile Description" := BathLineTempRecord."Profile Description";
-                                PackageLine.Length := BathLineTempRecord.Length;
-                                PackageLine.Treatment := BathLineTempRecord.Treatment;
-                                PackageLine.Quantity := BathLineTempRecord."Qty in Package";
-                                if SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.") then begin
-                                    PackageLine."Your Reference" := SalesOrder."Your Reference";
-                                    PackageLine."External Document No." := SalesOrder."External Document No.";
-                                    if SalesLine.Get(SalesLine."Document Type"::Order, BathLineTempRecord."Sales Order No.", BathLineTempRecord."Sales Order Line No.") then begin
-                                        PackageLine."Variant Code" := SalesLine."Variant Code";
-                                        PackageLine."Number of Units" := SalesLine."ACO Number of Units";
-                                        PackageLine."Customer Item No." := SalesLine."ACO Customer Item No.";
-                                        PackageLine."Profile Cust. Description" := SalesLine."ACO Profile Cust. Description";
+
+                                PackageLine.SetRange("Sales Order No.", BathLineTempRecord."Sales Order No.");
+                                PackageLine.SetRange("Sales Line No", BathLineTempRecord."Sales Order Line No.");
+                                if PackageLine.FindFirst() then begin
+                                    PackageLine.Quantity += BathLineTempRecord."Qty in Package";
+                                    PackageLine.Modify();
+                                end else begin
+                                    PackageLine.Init();
+                                    PackageLine."Package No." := PackageHeader."No.";
+                                    PackageLine."Line No." := LineNumber;
+                                    PackageLine."Sales Order No." := BathLineTempRecord."Sales Order No.";
+                                    PackageLine."Sales Line No" := BathLineTempRecord."Sales Order Line No.";
+                                    PackageLine."Bathsheet No." := BathLineTempRecord."Bath Sheet No.";
+                                    PackageLine."Production Order No." := BathLineTempRecord."Production Order No.";
+                                    PackageLine."Production Order Status" := BathLineTempRecord."Production Order Status";
+                                    PackageLine."Production Order Line No." := BathLineTempRecord."Production Order Line No.";
+                                    PackageLine."Profile No." := BathLineTempRecord."Profile Code";
+                                    PackageLine."Profile Description" := BathLineTempRecord."Profile Description";
+                                    PackageLine.Length := BathLineTempRecord.Length;
+                                    PackageLine.Treatment := BathLineTempRecord.Treatment;
+                                    PackageLine.Quantity := BathLineTempRecord."Qty in Package";
+                                    if SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.") then begin
+                                        PackageLine."Your Reference" := SalesOrder."Your Reference";
+                                        PackageLine."External Document No." := SalesOrder."External Document No.";
+                                        if SalesLine.Get(SalesLine."Document Type"::Order, BathLineTempRecord."Sales Order No.", BathLineTempRecord."Sales Order Line No.") then begin
+                                            PackageLine."Variant Code" := SalesLine."Variant Code";
+                                            PackageLine."Number of Units" := SalesLine."ACO Number of Units";
+                                            PackageLine."Customer Item No." := SalesLine."ACO Customer Item No.";
+                                            PackageLine."Profile Cust. Description" := SalesLine."ACO Profile Cust. Description";
+                                        end;
                                     end;
+                                    PackageLine.Insert();
                                 end;
-                                PackageLine.Insert();
                             until BathLineTempRecord.Next() = 0;
 
                         Commit();
