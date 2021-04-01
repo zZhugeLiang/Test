@@ -254,6 +254,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                             repeat
                                 LineNumber := LineNumber + 10000;
 
+                                PackageLine.SetRange("Package No.", PackageHeader."No.");
                                 PackageLine.SetRange("Sales Order No.", BathLineTempRecord."Sales Order No.");
                                 PackageLine.SetRange("Sales Line No", BathLineTempRecord."Sales Order Line No.");
                                 if PackageLine.FindFirst() then begin
