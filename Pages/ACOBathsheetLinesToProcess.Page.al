@@ -185,7 +185,10 @@ page 50032 "ACO Bathsheet Lines To Process"
                     OneSalesOrderErr: Label 'Only 1 Sales Order can be processed at a time.';
                 begin
                     if not (GenPackage.RunModal() = Action::OK) then Error('');
+
                     Commit();
+
+                    BathLineTempRecord.DeleteAll();
 
                     CurrPage.SetSelectionFilter(ACOBathSheetLinesToProcess);
                     if ACOBathSheetLinesToProcess.FindSet() then begin
@@ -193,8 +196,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                         repeat
                             if SalesOrderNo <> ACOBathSheetLinesToProcess."Sales Order No." then
                                 Error(OneSalesOrderErr);
-
-                            BathLineTempRecord.SetRecFilter();
 
                             if BathLineTempRecord.Get(ACOBathSheetLinesToProcess."Bath Sheet No.", ACOBathSheetLinesToProcess."Production Order No.", ACOBathSheetLinesToProcess."Production Order Status", ACOBathSheetLinesToProcess."Production Order Line No.") then begin
                                 BathLineTempRecord := ACOBathSheetLinesToProcess;
