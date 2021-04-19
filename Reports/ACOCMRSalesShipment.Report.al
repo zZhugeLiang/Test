@@ -164,6 +164,83 @@ report 50014 "ACO CMR - Sales Shipment"
                 end;
             }
 
+
+            dataitem("ACO Package Header"; "ACO Package Header")
+            {
+                DataItemLink = "Sales Shipment No." = field("No.");
+                DataItemLinkReference = "Sales Shipment Header";
+                column(No_; "No.")
+                {
+
+                }
+                column(Rack_No__Customer; "Rack No. Customer")
+                {
+
+                }
+                column(Remark; Remark)
+                {
+
+                }
+
+                column(Reject; Reject)
+                {
+
+                }
+                dataitem("ACO Package Line"; "ACO Package Line")
+                {
+                    DataItemLink = "Package No." = field("No.");
+                    DataItemLinkReference = "ACO Package Header";
+                    column(Profile_no_; "Profile no.")
+                    {
+
+                    }
+                    column(Quantity; Quantity)
+                    {
+
+                    }
+                    column(Length; Length)
+                    {
+
+                    }
+                    column(Your_Reference; "Your Reference")
+                    {
+
+                    }
+                    column(NetWeight; NetWeight)
+                    {
+
+                    }
+                    column(GrossWeight; GrossWeight)
+                    {
+
+                    }
+
+                    column(Reject_Reason_Code; "Reject Reason Code")
+                    {
+
+                    }
+                    column(Description_RejectReasonCode; RejectReasonCode.Description)
+                    {
+
+                    }
+                    trigger OnAfterGetRecord()
+                    var
+                        ACOProfile: Record "ACO Profile";
+                    begin
+                        if ACOProfile.Get("ACO Package Line"."Profile no.") then begin
+                            NetWeight := "ACO Package Line".Quantity * ACOProfile."Weight per meter" * ("ACO Package Line".Length / 1000);
+                            GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
+                        end else begin
+                            NetWeight := 0;
+                            GrossWeight := 0;
+                        end;
+                        if not RejectReasonCode.Get("ACO Package Line"."Reject Reason Code") then
+                            Clear(RejectReasonCode);
+                    end;
+                }
+            }
+
+
             trigger OnAfterGetRecord()
             var
                 CompanyInfo: Record "Company Information";
@@ -236,11 +313,15 @@ report 50014 "ACO CMR - Sales Shipment"
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
+        RejectReasonCode: Record "Reason Code";
         SenderAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         ShipTo: Text[80];
         ShipFrom: Text[80];
         EstdIn: Text[50];
+
+        NetWeight: Decimal;
+        GrossWeight: Decimal;
         ParcelTxt: Label 'parcel(s)';
 
     trigger OnInitReport()

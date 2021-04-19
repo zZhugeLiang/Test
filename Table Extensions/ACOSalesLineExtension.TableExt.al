@@ -278,6 +278,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
                         NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship" / 1000;
 
+                    //TODO QtyBase
+                    NewQuantity := Round(NewQuantity, 0.001);
+                    if Rec."Outstanding Quantity" + 0.001 = NewQuantity then
+                        NewQuantity := Round(Rec."Outstanding Quantity", 0.001);
+
                     Rec.Validate("Qty. to Ship", NewQuantity);
                     Rec.Validate("ACO Number of Units to Invoice", Rec."ACO Number of Units to Ship");
                 end;
@@ -310,6 +315,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
                         NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Invoice" / 1000;
 
+                    NewQuantity := Round(NewQuantity, 0.001);
                     Validate("Qty. to Invoice", NewQuantity);
                 end;
             end;
@@ -550,7 +556,16 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Profile Customer Description';
             DataClassification = CustomerContent;
         }
+
+        field(50066; "ACO Manual Unit Price"; Boolean)
+        {
+            Caption = 'Manual Unit Price';
+            DataClassification = CustomerContent;
+        }
     }
+
+    var
+        ACOUnitPrice: Decimal;
 
     procedure ACOCalculateUnitPrice()
     var
@@ -568,8 +583,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         Factor: Decimal;
         RangedQty: Decimal;
     begin
-        BaseUnitPrice := "Unit Price";
-        NewUnitPrice := BaseUnitPrice;
         ACOAppSetup.Get();
 
         if Rec."Unit of Measure Code" <> ACOAppSetup."Area Unit of Measure Code" then
@@ -588,6 +601,10 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         if not ACOCategory.Get(Item."ACO Category Code") then
             exit;
+
+        BaseUnitPrice := "Unit Price";
+        NewUnitPrice := BaseUnitPrice;
+        //BaseUnitPrice := Item."Unit Price";
 
         if ACOCategory."Add Short Length Charge" then begin
             if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
@@ -656,5 +673,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         Rec."ACO Customer Item No." := SalesInvoiceLine."ACO Customer Item No.";
         Rec."ACO Profile Cust. Description" := SalesInvoiceLine."ACO Profile Cust. Description";
         Rec.Modify(true);
+    end;
+
+    procedure ACOSetACOUnitPrice(NewACOUnitPrice: Decimal);
+    begin
+        ACOUnitPrice := NewACOUnitPrice;
+    end;
+
+    procedure ACOGetACOUnitPrice(): Decimal;
+    begin
+        exit(ACOUnitPrice);
     end;
 }

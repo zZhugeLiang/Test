@@ -8013,6 +8013,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Lower Accuracy - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 3920582032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Manual Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Manual Unit Price - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 1508541975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Maximum Current Density Category [A/dm²]</source>
           <note from="Developer" annotates="general" priority="2"></note>

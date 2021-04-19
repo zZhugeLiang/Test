@@ -2,6 +2,14 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
 {
     layout
     {
+
+        modify("Unit Price")
+        {
+            trigger OnAfterValidate()
+            begin
+                Rec."ACO Manual Unit Price" := true;
+            end;
+        }
         addlast(Control1)
         {
             field("ACO Number of Units"; "ACO Number of Units")

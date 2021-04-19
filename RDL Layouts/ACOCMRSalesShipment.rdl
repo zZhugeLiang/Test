@@ -1193,6 +1193,51 @@ End Function
         <Field Name="DocumentNo_SalesShptLine">
           <DataField>DocumentNo_SalesShptLine</DataField>
         </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Rack_No__Customer">
+          <DataField>Rack_No__Customer</DataField>
+        </Field>
+        <Field Name="Remark">
+          <DataField>Remark</DataField>
+        </Field>
+        <Field Name="Reject">
+          <DataField>Reject</DataField>
+        </Field>
+        <Field Name="Profile_no_">
+          <DataField>Profile_no_</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="Length">
+          <DataField>Length</DataField>
+        </Field>
+        <Field Name="LengthFormat">
+          <DataField>LengthFormat</DataField>
+        </Field>
+        <Field Name="Your_Reference">
+          <DataField>Your_Reference</DataField>
+        </Field>
+        <Field Name="NetWeight">
+          <DataField>NetWeight</DataField>
+        </Field>
+        <Field Name="NetWeightFormat">
+          <DataField>NetWeightFormat</DataField>
+        </Field>
+        <Field Name="GrossWeight">
+          <DataField>GrossWeight</DataField>
+        </Field>
+        <Field Name="GrossWeightFormat">
+          <DataField>GrossWeightFormat</DataField>
+        </Field>
+        <Field Name="Reject_Reason_Code">
+          <DataField>Reject_Reason_Code</DataField>
+        </Field>
+        <Field Name="Description_RejectReasonCode">
+          <DataField>Description_RejectReasonCode</DataField>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>

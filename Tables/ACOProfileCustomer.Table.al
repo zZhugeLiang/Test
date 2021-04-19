@@ -207,9 +207,17 @@ table 50009 "ACO Profile Customer"
     end;
 
     trigger OnRename();
+    var
+        SalesLine: Record "Sales Line";
     begin
         TestPK();
         Rec."Last DateTime Modified" := CurrentDateTime();
+        if Rec."Customer Item No." <> xRec."Customer Item No." then begin
+            SalesLine.SetRange("ACO Profile Code", xRec."Profile Code");
+            SalesLine.SetRange("Sell-to Customer No.", xRec."Customer No.");
+            SalesLine.SetRange("ACO Customer Item No.", xRec."Customer Item No.");
+            SalesLine.ModifyAll("ACO Customer Item No.", Rec."Customer Item No.");
+        end;
     end;
 
     trigger OnModify();

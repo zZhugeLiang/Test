@@ -642,10 +642,10 @@ report 50011 "ACO Sales - Credit Memo"
                             VATAmountLine."VAT Clause Code" := "VAT Clause Code";
                             VATAmountLine.InsertLine;
 
-                            if not ACOProfile.Get("ACO Profile Code") then
+                            if not ACOProfile.Get("Sales Cr.Memo Line"."ACO Profile Code") then
                                 Clear(ACOProfile);
 
-                            if not ItemVariant.Get("ACO Profile Code") then
+                            if not ItemVariant.Get("Sales Cr.Memo Line"."No.", "Sales Cr.Memo Line"."Variant Code") then
                                 Clear(ItemVariant);
                         end;
 

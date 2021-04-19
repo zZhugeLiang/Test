@@ -332,6 +332,7 @@ report 50009 "ACO Order Confirmation"
                     column(SelltoCounty_SalesHeader; "Sales Header"."Sell-to County") { }
                     column(SelltoPostCode_SalesHeader; "Sales Header"."Sell-to Post Code") { }
                     column(SelltoCountryRegionCode_SalesHeader; "Sales Header"."Sell-to Country/Region Code") { }
+                    column(Name_ShiptoCountryRegion; ShipToCountryRegion.Name) { }
                     column(SelltoContactNo_SalesHeader; "Sales Header"."Sell-to Contact No.") { }
                     column(SelltoPhoneNo_SalesHeader; "Sales Header"."Sell-to Phone No.") { }
                     column(SelltoEMail_SalesHeader; "Sales Header"."Sell-to E-Mail") { }
@@ -1440,6 +1441,9 @@ report 50009 "ACO Order Confirmation"
                 end;
 
                 CalcFields("Work Description");
+
+                if not ShipToCountryRegion.Get("Ship-to Country/Region Code") then
+                    Clear(ShipToCountryRegion);
             end;
 
             trigger OnPostDataItem()
@@ -1611,6 +1615,7 @@ report 50009 "ACO Order Confirmation"
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
         ItemVariant: Record "Item Variant";
+        ShipToCountryRegion: Record "Country/Region";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         SegManagement: Codeunit SegManagement;

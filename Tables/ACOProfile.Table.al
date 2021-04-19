@@ -183,13 +183,32 @@ table 50008 "ACO Profile"
     end;
 
     trigger OnRename();
+    var
+        SalesLine: Record "Sales Line";
+        ACOProfileCustomer: Record "ACO Profile Customer";
     begin
         "Last DateTime Modified" := CurrentDateTime();
+        if Rec."Code" <> xRec."Code" then begin
+            SalesLine.SetRange("ACO Profile Code", xRec."Code");
+            SalesLine.ModifyAll("ACO Profile Code", Rec."Code");
+
+            ACOProfileCustomer.SetRange("Profile Code", xRec.Code);
+            if ACOProfileCustomer.FindSet(true, true) then
+                repeat
+                    ACOProfileCustomer.Rename(Rec.Code, ACOProfileCustomer."Customer No.", ACOProfileCustomer."Customer Item No.");
+                until ACOProfileCustomer.Next() = 0;
+        end;
     end;
 
     trigger OnModify();
+    var
+        SalesLine: Record "Sales Line";
     begin
         "Last DateTime Modified" := CurrentDateTime();
+        if Rec."Description" <> xRec.Description then begin
+            SalesLine.SetRange("ACO Profile Description", xRec.Description);
+            SalesLine.ModifyAll("ACO Profile Description", Rec.Description);
+        end;
     end;
 
     procedure DownloadPicture()

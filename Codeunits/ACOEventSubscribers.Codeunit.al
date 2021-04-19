@@ -86,10 +86,13 @@ codeunit 50000 "ACO Event Subscribers"
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
-                if ACOPretreatment.Get(Item."ACO Pretreatment") then
+                if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
                     Rec."ACO British Standard" := ACOPretreatment."British Standard";
+                    Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
+                    Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
+                end;
 
-                Rec."ACO Layer Thickness" := Item."ACO Layer Thickness Code";
+                Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness Code");
 
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
             end;
@@ -108,6 +111,8 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
         if not ACOProfileCustomer.IsEmpty() then
             Rec.Validate("ACO Profile Code");
+
+
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Color', false, false)]
@@ -223,12 +228,23 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnBeforeValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec.Quantity := Round(Rec.Quantity, 0.001);
+        Rec.PlanPriceCalcByField(Rec.FieldNo(Quantity));
+        if Rec."ACO Manual Unit Price" then
+            Rec.ACOSetACOUnitPrice(Rec."Unit Price");
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        SalesHeader: Record "Sales Header";
     begin
-        Rec.ACOCalculateUnitPrice();
+        Rec.ClearFieldCausedPriceCalculation();
+
+        if Rec."ACO Manual Unit Price" then begin
+            Rec.Validate("Unit Price", Rec.ACOGetACOUnitPrice());
+            Rec.ACOSetACOUnitPrice(0);
+        end else
+            Rec.ACOCalculateUnitPrice();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Qty. to Ship', false, false)]
@@ -276,6 +292,23 @@ codeunit 50000 "ACO Event Subscribers"
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
+    end;
+
+    //TODO QtyBase
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterInitOutstandingQty', '', false, false)]
+    local procedure SalesLine_OnAfterInitOutstandingQty(var SalesLine: Record "Sales Line");
+    var
+        SalesHeader: Record "Sales Header";
+        ItemVariant: Record "Item Variant";
+        ACOProfile: Record "ACO Profile";
+        ACOManagement: Codeunit "ACO Management";
+    begin
+        SalesLine."Outstanding Quantity" := Round(SalesLine."Outstanding Quantity", 0.001);
+        SalesLine."Outstanding Qty. (Base)" := Round(SalesLine."Outstanding Qty. (Base)", 0.001);
+        SalesLine."Return Qty. Rcd. Not Invd." := Round(SalesLine."Return Qty. Rcd. Not Invd.", 0.001);
+        SalesLine."Ret. Qty. Rcd. Not Invd.(Base)" := Round(SalesLine."Ret. Qty. Rcd. Not Invd.(Base)", 0.001);
+        SalesLine."Qty. Shipped Not Invoiced" := Round(SalesLine."Qty. Shipped Not Invoiced", 0.001);
+        SalesLine."Qty. Shipped Not Invd. (Base)" := Round(SalesLine."Qty. Shipped Not Invd. (Base)", 0.001);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
@@ -350,9 +383,7 @@ codeunit 50000 "ACO Event Subscribers"
         TempDocSalesLine.ACOCopyCustomFieldsFromSalesInvoiceLines(FromSalesInvLine);
     end;
 
-    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Get Shipment", 'OnAfterInsertLine', '', true, true)]
-    // local procedure SalesGetShipment_OnAfterInsertLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; SalesShptLine2: Record "Sales Shipment Line"; TransferLine: Boolean)
-    [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnAfterDescriptionSalesLineInsert', '', true, true)]
+    [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnAfterDescriptionSalesLineInsert', '', false, false)]
     local procedure SalesShptLine_OnAfterDescriptionSalesLineInsert(var SalesLine: Record "Sales Line"; SalesShipmentLine: Record "Sales Shipment Line"; var NextLineNo: Integer)
     var
         NewSalesLine: Record "Sales Line";
@@ -361,7 +392,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOManagement: Codeunit "ACO Management";
         TranslationHelper: Codeunit "Translation Helper";
         NewDescription: Text;
-    // Text000: Label 'Shipment No. %1:';
     begin
         if SalesShipmentHeader.Get(SalesShipmentLine."Document No.") then
             if StrPos(SalesLine.Description, SalesShipmentLine."Document No.") <> 0 then begin
@@ -375,5 +405,12 @@ codeunit 50000 "ACO Event Subscribers"
                 ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 30, NewDescription);
                 TranslationHelper.RestoreGlobalLanguage();
             end;
+    end;
+
+    //TODO QtyBase
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Unit of Measure Management", 'OnAfterCalcQtyFromBasePerUnitOfMeasure', '', false, false)]
+    local procedure UnitofMeasureManagement_OnAfterCalcQtyFromBasePerUnitOfMeasure(ItemNo: Code[20]; VariantCode: Code[10]; UOMCode: Code[10]; QtyBase: Decimal; QtyPerUOM: Decimal; var QtyRounded: Decimal)
+    begin
+        QtyRounded := Round(QtyRounded, 0.001);
     end;
 }
