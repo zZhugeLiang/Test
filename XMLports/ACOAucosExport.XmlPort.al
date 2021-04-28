@@ -31,7 +31,7 @@ xmlport 50000 "ACO Aucos Export"
                     {
                         trigger OnBeforePassVariable()
                         begin
-                            layerThickness := Format(Round(ACOBathSheetHeader."Layer Thickness", 1));
+                            layerThickness := Format(Round(ACOBathSheetHeader."Layer Thickness" + ACOBathSheetHeader."Extra to Enumerate", 1));
                         end;
                     }
                     textelement(bathSheetComment)
@@ -210,7 +210,7 @@ xmlport 50000 "ACO Aucos Export"
                                 if ACOPretreatment.Get(Item."ACO Pretreatment") then
                                     if not ACOPretreatment."Aucos Sealing Time" then
                                         if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
-                                            CalculatedSealingTime := ACOAppSetup."Aucos Sealconstant" + (ACOLayerThickness."mu Value" * 3);
+                                            CalculatedSealingTime := ACOAppSetup."Aucos Sealconstant" + ((ACOLayerThickness."mu Value" + ACOBathSheetHeader."Extra to Enumerate") * 3);
                                         end;
 
                             sealingTime := FormatAndRound(CalculatedSealingTime);

@@ -88,6 +88,13 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                     AssistEdit = true;
+                    trigger OnValidate()
+                    begin
+                        if Rec."Picture Filename" = '' then
+                            Clear(Rec."Picture File");
+                        CurrPage.Update();
+                    end;
+
                     trigger OnAssistEdit()
                     var
                         InStr: InStream;
@@ -102,13 +109,21 @@ page 50009 "ACO Profile Card"
 
                         CopyStream(OutStr, InStr);
                         "Picture Filename" := CopyStr(tmpFileName, 1, 250);
-                        Modify();
+                        Rec.Modify();
                     end;
                 }
                 field("Clamping Method Filename"; "Clamping Method Filename")
                 {
                     ApplicationArea = All;
                     AssistEdit = true;
+
+                    trigger OnValidate()
+                    begin
+                        if Rec."Clamping Method Filename" = '' then
+                            Clear(Rec."Clamping Method File");
+                        CurrPage.Update();
+                    end;
+
                     trigger OnAssistEdit()
                     var
                         InStr: InStream;
@@ -123,13 +138,21 @@ page 50009 "ACO Profile Card"
 
                         CopyStream(OutStr, InStr);
                         "Clamping Method Filename" := CopyStr(tmpFileName, 1, 250);
-                        Modify();
+                        Rec.Modify();
                     end;
                 }
                 field("Packaging Instr. Filename"; "Packaging Instr. Filename")
                 {
                     ApplicationArea = All;
                     AssistEdit = true;
+
+                    trigger OnValidate()
+                    begin
+                        if Rec."Packaging Instr. Filename" = '' then
+                            Clear(Rec."Packaging Instructions File");
+                        CurrPage.Update();
+                    end;
+
                     trigger OnAssistEdit()
                     var
                         InStr: InStream;
@@ -144,7 +167,7 @@ page 50009 "ACO Profile Card"
 
                         CopyStream(OutStr, InStr);
                         "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
-                        Modify();
+                        Rec.Modify();
                     end;
                 }
             }

@@ -3078,6 +3078,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Rack No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 2969163710 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Remark - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 2969163710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Remark - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2905872408 - Control 348912950 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>

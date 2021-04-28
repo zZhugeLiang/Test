@@ -125,8 +125,12 @@ page 50055 "ACO Rej. Label Select Lines"
             PackageHeader.Address1 := Customer.Address;
             PackageHeader.Address2 := Customer."Address 2";
             PackageHeader."Packing Type" := GenPackage.getPackageType();
-            PackageHeader."Rack No. Customer" := '';
-            PackageHeader.Remark := '';
+            PackageHeader."Rack No. Customer" := GenPackage.getRackNo();
+
+            if (Customer."ACO Rack No. Mand. on Package") and (PackageHeader."Rack No. Customer" = '') then
+                PackageHeader.TestField("Rack No. Customer");
+
+            PackageHeader.Remark := GenPackage.GetRemark();
             PackageHeader."Date-Time" := CurrentDateTime();
             PackageHeader.Reject := true;
             PackageHeader.City := Customer.City;

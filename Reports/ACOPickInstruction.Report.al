@@ -105,76 +105,113 @@ report 50013 "ACO Pick Instruction"
                 column(NumberOfBundles; NumberOfBundles) { }
                 column(UserID; UserID()) { }
 
-
-                dataitem("ACO Package Line"; "ACO Package Line")
+                dataitem(PackageHeader; Integer)
                 {
-                    DataItemLinkReference = "Sales Header";
-                    DataItemLink = "Sales Order No." = field("No.");
-                    column(Package_No_; "Package No.") { }
-                    column(SalesOrderNo; SalesOrderNo) { }
-                    column(Sales_Line_No; "Sales Line No") { }
+                    column(No_TempACOPackageHeader; TempACOPackageHeader."No.") { }
+                    column(OrderNo_TempACOPackageHeader; TempACOPackageHeader."Sales Shipment No.") { }
+                    dataitem("ACO Package Line"; "ACO Package Line")
+                    {
+                        // DataItemLinkReference = "Sales Header";
+                        // DataItemLink = "Sales Order No." = field("No.");
+                        column(Package_No_; "Package No.") { }
+                        column(SalesOrderNo; SalesOrderNo) { }
+                        column(Sales_Line_No; "Sales Line No") { }
 
-                    column(ACO_Profile_Code; SalesLine."ACO Profile Code")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(ACO_Profile_Description; SalesLine."ACO Profile Description")
-                    {
-                        IncludeCaption = true;
-                    }
-                    column(Quantity; Quantity)
-                    {
-                    }
-                    column(Length; Length)
-                    {
-                    }
-                    column(PictureFile_ACOProfile; ACOProfile."Picture File")
-                    {
-                    }
+                        column(ACO_Profile_Code; SalesLine."ACO Profile Code")
+                        {
+                            IncludeCaption = true;
+                        }
+                        column(ACO_Profile_Description; SalesLine."ACO Profile Description")
+                        {
+                            IncludeCaption = true;
+                        }
+                        column(Quantity; Quantity)
+                        {
+                        }
+                        column(Length; Length)
+                        {
+                        }
+                        column(PictureFile_ACOProfile; ACOProfile."Picture File")
+                        {
+                        }
 
-                    column(Your_Reference; YourReference)
-                    {
-                    }
-                    column(PackageTypeText; PackageTypeText)
-                    {
-                    }
-                    column(RackNoCustomer_ACOPackageHeader; ACOPackageHeader."Rack No. Customer")
-                    {
-                    }
-                    trigger OnAfterGetRecord()
-                    // var
-                    // ACOPackageHeader: Record "ACO Package Header";
-                    begin
-                        Clear(SalesLine);
-                        Clear(ItemVariant);
+                        column(Your_Reference; YourReference)
+                        {
+                        }
+                        column(PackageTypeText; PackageTypeText)
+                        {
+                        }
+                        column(RackNoCustomer_ACOPackageHeader; ACOPackageHeader."Rack No. Customer")
+                        {
+                        }
+                        trigger OnAfterGetRecord()
+                        // var
+                        // ACOPackageHeader: Record "ACO Package Header";
+                        begin
+                            Clear(SalesLine);
+                            Clear(ItemVariant);
 
-                        if not ACOPackageHeader.Get("ACO Package Line"."Package No.") then
-                            Clear(ACOPackageHeader);
+                            if not ACOPackageHeader.Get("ACO Package Line"."Package No.") then
+                                Clear(ACOPackageHeader);
 
-                        if ACOPackageHeader."Sales Shipment No." <> '' then
-                            CurrReport.Skip();
+                            if ACOPackageHeader."Sales Shipment No." <> '' then
+                                CurrReport.Skip();
 
-                        if SalesLine.Get(SalesLine."Document Type"::Order, "ACO Package Line"."Sales Order No.", "ACO Package Line"."Sales Line No") then begin
-                            if not ItemVariant.Get(SalesLine."No.", "Variant Code") then
-                                Clear(ItemVariant);
-                            if ACOProfile.Get(SalesLine."ACO Profile Code") then begin
-                                ACOProfile.CalcFields("Picture File");
-                                NetWeight := ACOProfile."Weight per meter" * SalesLine."ACO Number of Units";
-                                GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
-                            end else
-                                Clear(ACOProfile);
+                            if SalesLine.Get(SalesLine."Document Type"::Order, "ACO Package Line"."Sales Order No.", "ACO Package Line"."Sales Line No") then begin
+                                if not ItemVariant.Get(SalesLine."No.", "Variant Code") then
+                                    Clear(ItemVariant);
+                                if ACOProfile.Get(SalesLine."ACO Profile Code") then begin
+                                    ACOProfile.CalcFields("Picture File");
+                                    NetWeight := ACOProfile."Weight per meter" * SalesLine."ACO Number of Units";
+                                    GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
+                                end else
+                                    Clear(ACOProfile);
+                            end;
+                            SalesOrderNo := "ACO Package Line"."Sales Order No.";
+                            YourReference := "Sales Header"."Your Reference";
                         end;
-                        SalesOrderNo := "ACO Package Line"."Sales Order No.";
-                        YourReference := "Sales Header"."Your Reference";
+
+                        trigger OnPreDataItem()
+                        begin
+                            "ACO Package Line".SetRange("Package No.", TempACOPackageHeader."No.");
+                        end;
+                    }
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        if PackageHeader.Number = 1 then
+                            TempACOPackageHeader.FindFirst()
+                        else
+                            TempACOPackageHeader.Next();
+                    end;
+
+                    trigger OnPreDataItem()
+                    begin
+                        PackageHeader.SetRange(Number, 1, TempACOPackageHeader.Count());
                     end;
                 }
                 trigger OnAfterGetRecord()
+                var
+                    ACOPackageHeaderSearch: Record "ACO Package Header";
+                    ACOPackageLineSearch: Record "ACO Package Line";
                 begin
                     if not ShipToCountryRegion.Get("Ship-to Country/Region Code") then
                         Clear(ShipToCountryRegion);
 
                     GetPackageInfo("Sales Header");
                     GetWeights("Sales Header");
+
+                    TempACOPackageHeader.DeleteAll();
+                    ACOPackageLineSearch.SetRange("Sales Order No.", "Sales Header"."No.");
+                    if ACOPackageLineSearch.FindSet() then
+                        repeat
+                            if not TempACOPackageHeader.Get(ACOPackageLineSearch."Package No.") then
+                                if ACOPackageHeaderSearch.Get(ACOPackageLineSearch."Package No.") then begin
+                                    TempACOPackageHeader := ACOPackageHeaderSearch;
+                                    TempACOPackageHeader."Sales Shipment No." := ACOPackageLineSearch."Sales Order No.";
+                                    TempACOPackageHeader.Insert();
+                                end;
+                        until ACOPackageLineSearch.Next() = 0;
                 end;
             }
             trigger OnPreDataItem()
@@ -257,6 +294,7 @@ report 50013 "ACO Pick Instruction"
         ACOPackageLine: Record "ACO Package Line";
         ACOPackageHeader: Record "ACO Package Header";
         SalesLine: Record "Sales Line";
+        TempACOPackageHeader: Record "ACO Package Header" temporary;
         NoOfCopies: Integer;
         NumberOfBundles: Integer;
         NumberOfPacks: Integer;
@@ -284,22 +322,24 @@ report 50013 "ACO Pick Instruction"
         NumberOfBundles := 0;
         NumberOfPacks := 0;
         NumberOfPallets := 0;
+        PackageTypeText := '';
 
         ACOPackageLine.SetCurrentKey("Sales Order No.");
         ACOPackageLine.SetRange("Sales Order No.", SalesHeader."No.");
         if ACOPackageLine.FindSet() then begin
-            ACOPackageHeader.Get(ACOPackageLine."Package No.");
-            PackageTypeText := Format(ACOPackageHeader."Packing Type");
-            repeat
-                case ACOPackageHeader."Packing Type" of
-                    Packagetype::Bundle:
-                        NumberOfBundles += 1;
-                    Packagetype::Pack:
-                        NumberOfPacks += 1;
-                    Packagetype::Pallet:
-                        NumberOfPallets += 1;
-                end;
-            until ACOPackageLine.Next() = 0;
+            if ACOPackageHeader.Get(ACOPackageLine."Package No.") then begin
+                PackageTypeText := Format(ACOPackageHeader."Packing Type");
+                repeat
+                    case ACOPackageHeader."Packing Type" of
+                        Packagetype::Bundle:
+                            NumberOfBundles += 1;
+                        Packagetype::Pack:
+                            NumberOfPacks += 1;
+                        Packagetype::Pallet:
+                            NumberOfPallets += 1;
+                    end;
+                until ACOPackageLine.Next() = 0;
+            end;
         end else
             Clear(ACOPackageLine);
     end;

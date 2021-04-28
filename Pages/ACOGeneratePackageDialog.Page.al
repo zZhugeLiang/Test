@@ -28,7 +28,13 @@ page 50056 "ACO Generate Package Dialog"
                 {
                     Caption = 'Rack No.';
                     ApplicationArea = Suite;
-                    Visible = _RackNoVisible;
+                    // Visible = _RackNoVisible;
+                    ToolTip = ' ';
+                }
+                field(Remark; Remark)
+                {
+                    Caption = 'Remark';
+                    ApplicationArea = Suite;
                     ToolTip = ' ';
                 }
             }
@@ -54,10 +60,17 @@ page 50056 "ACO Generate Package Dialog"
         exit("_RackNo.");
     end;
 
+    procedure GetRemark(): Text[100]
+    begin
+        exit(Remark);
+    end;
+
+
     var
 
         _Resource: Code[20];
         _Packagetype: Option Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack;
         "_RackNo.": Text;
+        Remark: Text[100];
         _RackNoVisible: Boolean;
 }

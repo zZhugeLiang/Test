@@ -3086,6 +3086,16 @@
           <target>Afstandhouders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Distance Holders - Property Caption</note>
         </trans-unit>			
+        <trans-unit id="Page 2905872408 - Control 2667757584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rack No.</source>
+          <target>Reknr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Rack No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2905872408 - Control 2969163710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remark</source>
+          <target>Opmerking</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Remark - Property Caption</note>
+        </trans-unit>
 	<trans-unit id="Page 2169947147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Card</source>
           <target>Houder kaart</target>

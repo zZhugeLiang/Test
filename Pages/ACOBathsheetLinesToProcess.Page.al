@@ -244,8 +244,12 @@ page 50032 "ACO Bathsheet Lines To Process"
                         PackageHeader.City := Customer.City;
                         PackageHeader."Post Code" := Customer."Post Code";
                         PackageHeader."Packing Type" := GenPackage.getPackageType();
-                        PackageHeader."Rack No. Customer" := '';
-                        PackageHeader.Remark := '';
+                        PackageHeader."Rack No. Customer" := GenPackage.getRackNo();
+
+                        if (Customer."ACO Rack No. Mand. on Package") and (PackageHeader."Rack No. Customer" = '') then
+                            PackageHeader.TestField("Rack No. Customer");
+
+                        PackageHeader.Remark := GenPackage.GetRemark();
                         PackageHeader."Date-Time" := CurrentDateTime();
                         PackageHeader.Insert();
                         // Create PackageLines;

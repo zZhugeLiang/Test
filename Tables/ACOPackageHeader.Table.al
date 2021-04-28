@@ -106,6 +106,7 @@ table 50023 "ACO Package Header"
     var
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOPackageLine: Record "ACO Package Line";
+        ACOPackageLinesToDelete: Record "ACO Package Line";
         SalesShipmentLinkedErr: Label 'Package can not be deleted while a Sales Shipment is linked to it.';
     begin
         if Rec."Sales Shipment No." <> '' then
@@ -121,8 +122,7 @@ table 50023 "ACO Package Header"
                     end;
                 until ACOPackageLine.Next() = 0;
 
-            ACOPackageLine.SetRange("Package No.", Rec."No.");
-            ACOPackageLine.DeleteAll();
+
         end else begin
             ACOPackageLine.SetRange("Package No.", Rec."No.");
             if ACOPackageLine.FindSet() then
@@ -133,9 +133,10 @@ table 50023 "ACO Package Header"
                         ACOBathSheetLine.Modify();
                     end;
                 until ACOPackageLine.Next() = 0;
-
-            ACOPackageLine.SetRange("Package No.", Rec."No.");
-            ACOPackageLine.DeleteAll();
         end;
+
+        ACOPackageLinesToDelete.Reset();
+        ACOPackageLinesToDelete.SetRange("Package No.", Rec."No.");
+        ACOPackageLinesToDelete.DeleteAll();
     end;
 }
