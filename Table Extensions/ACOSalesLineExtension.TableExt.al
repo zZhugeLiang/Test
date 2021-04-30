@@ -339,13 +339,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50044; "ACO Receipt Bag"; Text[100])
+        field(50044; "ACO Receipt Bag"; Text[250])
         {
             Caption = 'Receipt Bag';
             DataClassification = CustomerContent;
         }
 
-        field(50045; "ACO Shipping Bag"; Text[100])
+        field(50045; "ACO Shipping Bag"; Text[250])
         {
             Caption = 'Shipping Bag';
             DataClassification = CustomerContent;

@@ -7845,6 +7845,9 @@ End Function
         <Field Name="ProjectColorDescriptionCaption">
           <DataField>ProjectColorDescriptionCaption</DataField>
         </Field>
+        <Field Name="RerunText">
+          <DataField>RerunText</DataField>
+        </Field>
         <Field Name="ProductionOrderStatus">
           <DataField>ProductionOrderStatus</DataField>
         </Field>

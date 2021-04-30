@@ -131,6 +131,7 @@ report 50000 "ACO Bath Sheet"
             {
             }
             column(ProjectColorDescriptionCaption; ProjectColorDescriptionCaptionLbl) { }
+            column(RerunText; RerunText) { }
             dataitem(ACOBathSheetLine; "ACO Bath Sheet Line")
             {
                 DataItemLinkReference = ACOBathSheetHeader;
@@ -241,6 +242,7 @@ report 50000 "ACO Bath Sheet"
                 HighEndText := '';
                 EURASText := '';
                 AllComments := '';
+                RerunText := '';
 
                 CRLF[1] := 13;
                 CRLF[2] := 10;
@@ -271,6 +273,9 @@ report 50000 "ACO Bath Sheet"
                                 if not ACOProfile."Not Measurable" then
                                     MeasureText := MEASURECaptionLbl;
                         end;
+                        if RerunText = '' then
+                            if ACOBathSheetLine.Rerun then
+                                RerunText := RerunCaptionLbl;
                     until (ACOBathSheetLine.Next() = 0) or ((HighEndText = HighEndCaptionLbl) and (MeasureText = MEASURECaptionLbl));
 
                 if TempCustomer.FindSet() then
@@ -320,6 +325,7 @@ report 50000 "ACO Bath Sheet"
         HighEndText: Text;
         EURASText: Text;
         AllComments: Text;
+        RerunText: Text;
         MaxThickStainingTime: Decimal;
         MinThinStainingTime: Decimal;
         BathSheetCaptionLbl: Label 'Bath Sheet';
@@ -364,5 +370,6 @@ report 50000 "ACO Bath Sheet"
         PrintingDateCaptionLbl: Label 'Printing Date';
         CreatedbyCaptionLbl: Label 'Created by';
         ProjectColorDescriptionCaptionLbl: Label 'Project Color Description';
+        RerunCaptionLbl: Label 'Rerun';
 
 }

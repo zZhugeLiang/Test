@@ -4308,6 +4308,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType QuantityCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 753914718" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rerun</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType RerunCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 2074925846" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
