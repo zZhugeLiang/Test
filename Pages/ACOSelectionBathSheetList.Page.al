@@ -27,6 +27,12 @@ Page 50025 "ACO Selection Bath Sheet List"
                     Editable = false;
                 }
 
+                field("ACO Source Line No."; "ACO Source Line No.")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                }
+
                 field("ACO Production Line"; "ACO Production Line")
                 {
                     ApplicationArea = All;

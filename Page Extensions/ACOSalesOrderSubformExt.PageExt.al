@@ -183,4 +183,12 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             }
         }
     }
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    var
+        SalesHeader: Record "Sales Header";
+    begin
+        if SalesHeader.Get(xRec."Document Type", xRec."Document No.") then
+            Rec."Sell-to Customer No." := SalesHeader."Sell-to Customer No.";
+    end;
 }

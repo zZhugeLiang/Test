@@ -211,13 +211,6 @@ codeunit 50000 "ACO Event Subscribers"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Receipt Bag', false, false)]
-    local procedure SalesLine_OnAfterValidate_ACOReceiptBag(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    begin
-        if Rec."ACO Shipping Bag" = '' then
-            Rec."ACO Shipping Bag" := Rec."ACO Receipt Bag";
-    end;
-
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Start Length', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOFinalLength(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin

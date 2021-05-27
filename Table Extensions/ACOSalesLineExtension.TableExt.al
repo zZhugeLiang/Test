@@ -67,6 +67,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50016; "ACO Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
+            TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
+            //TableRelation = "Custom Report Layout" where("Report ID" = field("ACO Package Label Report ID"));
             DataClassification = CustomerContent;
 
             trigger OnValidate()
@@ -92,27 +94,27 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
             end;
 
-            trigger OnLookup()
-            var
-                SalesHeader: Record "Sales Header";
-                ACOProfileCustomer: Record "ACO Profile Customer";
-                ACOProfileCustomer2: Record "ACO Profile Customer";
-                ACOProfileCustomers: Page "ACO Profile Customers";
-                RecRef: RecordRef;
-            begin
-                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                ACOProfileCustomers.LookupMode(true);
-                ACOProfileCustomers.SetTableView(ACOProfileCustomer);
+            // trigger OnLookup()
+            // var
+            //     SalesHeader: Record "Sales Header";
+            //     ACOProfileCustomer: Record "ACO Profile Customer";
+            //     ACOProfileCustomer2: Record "ACO Profile Customer";
+            //     ACOProfileCustomers: Page "ACO Profile Customers";
+            //     RecRef: RecordRef;
+            // begin
+            //     SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+            //     ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+            //     ACOProfileCustomers.LookupMode(true);
+            //     ACOProfileCustomers.SetTableView(ACOProfileCustomer);
 
-                if ACOProfileCustomers.RunModal() = Action::LookupOK then begin
-                    ACOProfileCustomers.SetSelectionFilter(ACOProfileCustomer);
-                    RecRef.GetTable(ACOProfileCustomer);
-                    ACOProfileCustomers.GetRecord(ACOProfileCustomer2);
-                    Rec."ACO Customer Item No." := ACOProfileCustomer2."Customer Item No.";
-                    Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
-                end;
-            end;
+            //     if ACOProfileCustomers.RunModal() = Action::LookupOK then begin
+            //         ACOProfileCustomers.SetSelectionFilter(ACOProfileCustomer);
+            //         RecRef.GetTable(ACOProfileCustomer);
+            //         ACOProfileCustomers.GetRecord(ACOProfileCustomer2);
+            //         Rec."ACO Customer Item No." := ACOProfileCustomer2."Customer Item No.";
+            //         Validate("ACO Profile Code", ACOProfileCustomer2."Profile Code");
+            //     end;
+            // end;
         }
 
         field(50017; "ACO Profile Description"; Text[100])
@@ -516,6 +518,29 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Customer Item No.';
             DataClassification = CustomerContent;
+            // TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."), "Profile Code" = field("ACO Profile Code"));
+
+            // trigger OnValidate()
+            // var
+            //     SalesHeader: Record "Sales Header";
+            //     ACOProfile: Record "ACO Profile";
+            //     ACOProfileCustomer: Record "ACO Profile Customer";
+            //     ACOManagement: Codeunit "ACO Management";
+            //     ProfileInactiveErr: Label 'Profile Code %1 is inactive.', Comment = '%1 = Profile Code';
+            // begin
+            //     if "ACO Profile Code" <> '' then begin
+            //         ACOProfile.Get("ACO Profile Code");
+            //         if ACOProfile."Blocked State Inactive" then
+            //             Error(ProfileInactiveErr, "ACO Profile Code");
+
+            //         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+
+            //         ACOProfileCustomer.SetRange("Profile Code", "ACO Profile Code");
+            //         ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+            //         ACOProfileCustomer.FindFirst();
+            //     end;
+            //     ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
+            // end;
         }
 
         field(50064; "ACO Start Length"; Decimal)

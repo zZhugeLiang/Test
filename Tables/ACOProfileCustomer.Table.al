@@ -200,6 +200,11 @@ table 50009 "ACO Profile Customer"
         }
     }
 
+    fieldgroups
+    {
+        fieldgroup(DropDown; "Profile Code", "Profile Description") { }
+    }
+
     trigger OnInsert();
     begin
         TestPK();

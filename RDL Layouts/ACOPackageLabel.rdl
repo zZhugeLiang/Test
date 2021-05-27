@@ -1311,6 +1311,9 @@ End Function
         <Field Name="ShiptoName_SalesHeader">
           <DataField>ShiptoName_SalesHeader</DataField>
         </Field>
+        <Field Name="ShiptoAddress_SalesHeader">
+          <DataField>ShiptoAddress_SalesHeader</DataField>
+        </Field>
         <Field Name="ShiptoCity_SalesHeader">
           <DataField>ShiptoCity_SalesHeader</DataField>
         </Field>

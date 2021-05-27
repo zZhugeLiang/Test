@@ -91,6 +91,7 @@ report 50001 "ACO Package Label"
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                 column(ShiptoCode_SalesHeader; SalesHeader."Ship-to Code") { }
                 column(ShiptoName_SalesHeader; SalesHeader."Ship-to Name") { }
+                column(ShiptoAddress_SalesHeader; SalesHeader."Ship-to Address") { }
                 column(ShiptoCity_SalesHeader; SalesHeader."Ship-to City") { }
                 column(ShiptoPostCode_SalesHeader; SalesHeader."Ship-to Post Code") { }
                 column(ShiptoCountryRegionCode_SalesHeader; SalesHeader."Ship-to Country/Region Code") { }

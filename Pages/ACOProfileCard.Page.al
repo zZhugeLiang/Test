@@ -176,11 +176,13 @@ page 50009 "ACO Profile Card"
                 Caption = 'Comments';
                 field("ACO Comment Bath Card"; "Comment Bath Card")
                 {
+                    MultiLine = true;
                     ApplicationArea = All;
                 }
 
                 field("ACO Comment Work Note"; "Comment Work Note")
                 {
+                    MultiLine = true;
                     ApplicationArea = All;
                 }
             }

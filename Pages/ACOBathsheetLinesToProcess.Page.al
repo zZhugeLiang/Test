@@ -142,6 +142,16 @@ page 50032 "ACO Bathsheet Lines To Process"
                     Editable = true;
                     ApplicationArea = All;
                 }
+                field("Sales Order No."; "Sales Order No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Sales Order Line No."; "Sales Order Line No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
             }
 
 
