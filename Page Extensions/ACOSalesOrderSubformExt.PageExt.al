@@ -31,6 +31,16 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             field("ACO Profile Code"; "ACO Profile Code")
             {
                 ApplicationArea = All;
+                // trigger OnValidate()
+                // var
+                //     ACOProfileCustomer: Record "ACO Profile Customer";
+                //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+                // begin
+                //     ACOSingleInstanceMgt.GetACOProfileCustomer(ACOProfileCustomer);
+                //     if not ACOProfileCustomer.IsEmpty() then begin
+                //         Rec.ACO Profile de
+                //     end;
+                // end;
             }
             field("ACO Profile Description"; "ACO Profile Description")
             {
@@ -160,6 +170,21 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     {
         addlast("&Line")
         {
+
+            action("ACO Create Production Order(s)")
+            {
+                ApplicationArea = All;
+                Caption = 'Create Production Order(s)';
+                Image = Production;
+                trigger OnAction()
+                var
+                    SalesLine: Record "Sales Line";
+                    ACOManagement: Codeunit "ACO Management";
+                begin
+                    CurrPage.SetSelectionFilter(SalesLine);
+                    ACOManagement.CreateOrders(SalesLine);
+                end;
+            }
             action("ACO Download Packaging Instructions")
             {
                 Caption = 'Download Packaging Instructions';
@@ -184,11 +209,21 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
         }
     }
 
-    trigger OnNewRecord(BelowxRec: Boolean)
+    trigger OnOpenPage()
     var
-        SalesHeader: Record "Sales Header";
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
-        if SalesHeader.Get(xRec."Document Type", xRec."Document No.") then
-            Rec."Sell-to Customer No." := SalesHeader."Sell-to Customer No.";
+        Clear(ACOProfileCustomer);
+        ACOSingleInstanceMgt.ClearACOProfileCustomer();
+    end;
+
+    trigger OnClosePage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        Clear(ACOProfileCustomer);
+        ACOSingleInstanceMgt.ClearACOProfileCustomer();
     end;
 }

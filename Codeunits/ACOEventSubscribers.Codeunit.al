@@ -157,6 +157,7 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
         ACOCategory: Record "ACO Category";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
         ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
     begin
@@ -170,12 +171,15 @@ codeunit 50000 "ACO Event Subscribers"
             ACOProfile.TestField(Circumference);
 
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
-            if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
-                ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
-                ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-                if not ACOProfileCustomer.FindFirst() then
-                    Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
-            end;
+
+            ACOSingleInstanceMgt.GetACOProfileCustomer(ACOProfileCustomer);
+            if ACOProfileCustomer.IsEmpty() then
+                if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
+                    ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
+                    ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
+                    if not ACOProfileCustomer.FindFirst() then
+                        Error(CustomerNotLinkedToProfileErr, SalesHeader."Sell-to Customer No.", SalesHeader."Ship-to Code", Rec."ACO Profile Code");
+                end;
 
             if ACOProfileCustomer.Status = ACOProfileCustomer.Status::Inactive then
                 Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
@@ -405,5 +409,106 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure UnitofMeasureManagement_OnAfterCalcQtyFromBasePerUnitOfMeasure(ItemNo: Code[20]; VariantCode: Code[10]; UOMCode: Code[10]; QtyBase: Decimal; QtyPerUOM: Decimal; var QtyRounded: Decimal)
     begin
         QtyRounded := Round(QtyRounded, 0.001);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
+    local procedure CreateProdOrderfromSale_OnAfterCreateProdOrderFromSalesLine(var ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line");
+    var
+        LeadTimeMgt: Codeunit "Lead-Time Management";
+    begin
+        ProdOrder."Location Code" := '';
+        ProdOrder."Bin Code" := '';
+        ProdOrder.Validate("Source No.", '');
+        ProdOrder.Validate(Description, '');
+        // SalesLine.CalcFields("Reserved Qty. (Base)");
+        ProdOrder.Quantity := 0;
+        ProdOrder."Source Type" := ProdOrder."Source Type"::"Sales Header";
+        ProdOrder.Validate("Source No.", SalesLine."Document No.");
+        ProdOrder."Due Date" := SalesLine."Shipment Date";
+        ProdOrder."Ending Date" :=
+          LeadTimeMgt.PlannedEndingDate(SalesLine."No.", SalesLine."Location Code", '', ProdOrder."Due Date", '', 2);
+
+
+    end;
+
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
+    local procedure SalesOrder_OnClosePage(var Rec: Record "Sales Header");
+    var
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        SingleInstance.SetCustomerNo('');
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnAfterGetRecordEvent', '', false, false)]
+    local procedure SalesOrder_OnAfterGetRecord(var Rec: Record "Sales Header");
+    var
+        Customer: Record Customer;
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        if not Customer.Get(Rec."Sell-to Customer No.") then
+            Clear(Customer);
+
+        SingleInstance.SetCustomerNo(Customer."No.");
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Quote", 'OnClosePageEvent', '', false, false)]
+    local procedure SalesQuote_OnClosePage(var Rec: Record "Sales Header");
+    var
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        SingleInstance.SetCustomerNo('');
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Quote", 'OnAfterGetRecordEvent', '', false, false)]
+    local procedure SalesQuote_OnAfterGetRecord(var Rec: Record "Sales Header");
+    var
+        Customer: Record Customer;
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        if not Customer.Get(Rec."Sell-to Customer No.") then
+            Clear(Customer);
+
+        SingleInstance.SetCustomerNo(Customer."No.");
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Invoice", 'OnClosePageEvent', '', false, false)]
+    local procedure SalesInvoice_OnClosePage(var Rec: Record "Sales Header");
+    var
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        SingleInstance.SetCustomerNo('');
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Invoice", 'OnAfterGetRecordEvent', '', false, false)]
+    local procedure SalesInvoice_OnAfterGetRecord(var Rec: Record "Sales Header");
+    var
+        Customer: Record Customer;
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        if not Customer.Get(Rec."Sell-to Customer No.") then
+            Clear(Customer);
+
+        SingleInstance.SetCustomerNo(Customer."No.");
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Credit Memo", 'OnClosePageEvent', '', false, false)]
+    local procedure SalesCreditMemo_OnClosePage(var Rec: Record "Sales Header");
+    var
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        SingleInstance.SetCustomerNo('');
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Credit Memo", 'OnAfterGetRecordEvent', '', false, false)]
+    local procedure SalesCreditMemo_OnAfterGetRecord(var Rec: Record "Sales Header");
+    var
+        Customer: Record Customer;
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        if not Customer.Get(Rec."Sell-to Customer No.") then
+            Clear(Customer);
+
+        SingleInstance.SetCustomerNo(Customer."No.");
     end;
 }

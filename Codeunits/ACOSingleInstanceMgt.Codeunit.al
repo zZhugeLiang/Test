@@ -2,6 +2,46 @@ codeunit 50001 "ACO Single Instance Mgt"
 {
     SingleInstance = true;
 
+    procedure SetCustomerNo(NewCustomerNo: Code[20]);
+    begin
+        if (NewCustomerNo = '') and TemporaryUserSetup.Get(UserId()) then begin
+            TemporaryUserSetup.Delete();
+            exit;
+        end;
+
+        if TemporaryUserSetup.Get(UserId()) then begin
+            TemporaryUserSetup."Salespers./Purch. Code" := NewCustomerNo;
+            TemporaryUserSetup.Modify();
+        end else begin
+            TemporaryUserSetup."User ID" := UserId();
+            TemporaryUserSetup."Salespers./Purch. Code" := NewCustomerNo;
+            TemporaryUserSetup.Insert();
+        end;
+    end;
+
+    procedure GetCustomerNo(): Code[20];
+    begin
+        if not TemporaryUserSetup.Get(UserId()) then
+            Clear(TemporaryUserSetup);
+
+        exit(TemporaryUserSetup."Salespers./Purch. Code");
+    end;
+
+    procedure ClearACOProfileCustomer();
+    begin
+        Clear(ACOProfileCustomer);
+    end;
+
+    procedure SetACOProfileCustomer(NewACOProfileCustomer: Record "ACO Profile Customer");
+    begin
+        ACOProfileCustomer := NewACOProfileCustomer;
+    end;
+
+    procedure GetACOProfileCustomer(var NewACOProfileCustomer: Record "ACO Profile Customer");
+    begin
+        NewACOProfileCustomer := ACOProfileCustomer;
+    end;
+
     procedure SetSalesLineProfileCode(NewSalesLineProfileCode: Code[30]);
     begin
         SalesLineProfileCode := NewSalesLineProfileCode;
@@ -23,6 +63,8 @@ codeunit 50001 "ACO Single Instance Mgt"
     end;
 
     var
+        TemporaryUserSetup: Record "User Setup" temporary;
+        ACOProfileCustomer: Record "ACO Profile Customer";
         SalesLineProfileCode: Code[30];
         SalesLineCustomerItemNo: Code[50];
 }

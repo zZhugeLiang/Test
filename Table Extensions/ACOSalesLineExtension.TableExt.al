@@ -67,7 +67,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50016; "ACO Profile Code"; Code[30])
         {
             Caption = 'Profile Code';
-            TableRelation = "ACO Profile Customer"."Profile Code" where("Customer No." = field("Sell-to Customer No."));
+            TableRelation = "ACO Profile Customer"."Profile Code";
             //TableRelation = "Custom Report Layout" where("Report ID" = field("ACO Package Label Report ID"));
             DataClassification = CustomerContent;
 

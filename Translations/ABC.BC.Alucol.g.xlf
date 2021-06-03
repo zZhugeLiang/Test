@@ -2563,6 +2563,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO FTP Connector - NamedType noGatewaySetupErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 Prod. Order %2 has been created.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - NamedType Text000</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3570798162 - Method 1905556532 - NamedType 2102726506" size-unit="char" translate="yes" xml:space="preserve">
           <source>An inactive holder cannot be selected.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7462,6 +7467,11 @@
           <source>Picture</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ProfilePicture - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3089797906 - Action 482705298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Create Production Order(s)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Create Production Order(s) - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>

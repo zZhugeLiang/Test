@@ -74,4 +74,25 @@ page 50010 "ACO Profile Customers"
             }
         }
     }
+
+    trigger OnOpenPage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        if ACOSingleInstanceMgt.GetCustomerNo() <> '' then
+            Rec.SetFilter("Customer No.", ACOSingleInstanceMgt.GetCustomerNo());
+    end;
+
+    trigger OnClosePage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        // CurrPage.SetSelectionFilter(ACOProfileCustomer);
+        // CurrPage.GetRecord(ACOProfileCustomer);
+        // CurrPage.SetSelectionFilter(Rec);
+        CurrPage.GetRecord(ACOProfileCustomer);
+        ACOSingleInstanceMgt.SetACOProfileCustomer(ACOProfileCustomer);
+    end;
 }
