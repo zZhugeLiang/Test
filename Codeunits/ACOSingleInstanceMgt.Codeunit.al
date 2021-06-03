@@ -2,6 +2,7 @@ codeunit 50001 "ACO Single Instance Mgt"
 {
     SingleInstance = true;
 
+
     procedure SetCustomerNo(NewCustomerNo: Code[20]);
     begin
         if (NewCustomerNo = '') and TemporaryUserSetup.Get(UserId()) then begin
@@ -27,20 +28,22 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(TemporaryUserSetup."Salespers./Purch. Code");
     end;
 
-    procedure ClearACOProfileCustomer();
+
+
+    procedure SetACOProfileCustomerPK(NewACOProfileCustomerProfileCode: Code[30]; NewACOProfileCustomerCustomerNo: Code[20]; NewACOProfileCustomerCustomerItemNo: Code[50]);
     begin
-        Clear(ACOProfileCustomer);
+        ACOProfileCustomerProfileCode := NewACOProfileCustomerProfileCode;
+        ACOProfileCustomerCustomerNo := NewACOProfileCustomerCustomerNo;
+        ACOProfileCustomerCustomerItemNo := NewACOProfileCustomerCustomerItemNo;
     end;
 
-    procedure SetACOProfileCustomer(NewACOProfileCustomer: Record "ACO Profile Customer");
+    procedure GetACOProfileCustomerPK(var NewACOProfileCustomerProfileCode: Code[30]; var NewACOProfileCustomerCustomerNo: Code[20]; var NewACOProfileCustomerCustomerItemNo: Code[50])
     begin
-        ACOProfileCustomer := NewACOProfileCustomer;
+        NewACOProfileCustomerProfileCode := ACOProfileCustomerProfileCode;
+        NewACOProfileCustomerCustomerNo := ACOProfileCustomerCustomerNo;
+        NewACOProfileCustomerCustomerItemNo := ACOProfileCustomerCustomerItemNo;
     end;
 
-    procedure GetACOProfileCustomer(var NewACOProfileCustomer: Record "ACO Profile Customer");
-    begin
-        NewACOProfileCustomer := ACOProfileCustomer;
-    end;
 
     procedure SetSalesLineProfileCode(NewSalesLineProfileCode: Code[30]);
     begin
@@ -64,7 +67,9 @@ codeunit 50001 "ACO Single Instance Mgt"
 
     var
         TemporaryUserSetup: Record "User Setup" temporary;
-        ACOProfileCustomer: Record "ACO Profile Customer";
         SalesLineProfileCode: Code[30];
         SalesLineCustomerItemNo: Code[50];
+        ACOProfileCustomerProfileCode: Code[30];
+        ACOProfileCustomerCustomerNo: Code[20];
+        ACOProfileCustomerCustomerItemNo: Code[50];
 }

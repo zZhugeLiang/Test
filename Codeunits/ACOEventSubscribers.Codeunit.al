@@ -158,6 +158,9 @@ codeunit 50000 "ACO Event Subscribers"
         ItemVariant: Record "Item Variant";
         ACOCategory: Record "ACO Category";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+        ProfileCode: Code[30];
+        CustomerNo: Code[20];
+        CustomerItemNo: Code[50];
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
         ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
     begin
@@ -172,8 +175,8 @@ codeunit 50000 "ACO Event Subscribers"
 
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
-            ACOSingleInstanceMgt.GetACOProfileCustomer(ACOProfileCustomer);
-            if ACOProfileCustomer.IsEmpty() then
+            ACOSingleInstanceMgt.GetACOProfileCustomerPK(ProfileCode, CustomerNo, CustomerItemNo);
+            if not ACOProfileCustomer.Get(ProfileCode, CustomerNo, CustomerItemNo) then
                 if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
                     ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
                     ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");

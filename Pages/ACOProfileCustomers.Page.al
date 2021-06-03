@@ -93,6 +93,6 @@ page 50010 "ACO Profile Customers"
         // CurrPage.GetRecord(ACOProfileCustomer);
         // CurrPage.SetSelectionFilter(Rec);
         CurrPage.GetRecord(ACOProfileCustomer);
-        ACOSingleInstanceMgt.SetACOProfileCustomer(ACOProfileCustomer);
+        ACOSingleInstanceMgt.SetACOProfileCustomerPK(ACOProfileCustomer."Profile Code", ACOProfileCustomer."Customer No.", ACOProfileCustomer."Customer Item No.");
     end;
 }
