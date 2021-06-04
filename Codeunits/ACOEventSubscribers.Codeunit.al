@@ -377,6 +377,39 @@ codeunit 50000 "ACO Event Subscribers"
             ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"ACO Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
+    local procedure ACOCreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
+    var
+        SalesHeader: Record "Sales Header";
+        ItemVariant: Record "Item Variant";
+    begin
+        ProdOrderLine."ACO Source Type Enum" := ProductionOrder."Source Type";
+        ProdOrderLine."ACO Source No." := ProductionOrder."Source No.";
+        ProdOrderLine."ACO Source Line No." := SalesLine."Line No.";
+        ProdOrderLine."ACO Profile Code" := SalesLine."ACO Profile Code";
+
+        SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
+        if SalesHeader."ACO Large Line" then
+            ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Long
+        else
+            ProdOrderLine."ACO Production Line" := ProdOrderLine."ACO Production Line"::Short;
+
+        ProdOrderLine."ACO Number of Units" := SalesLine."ACO Number of Units";
+        ProdOrderLine."ACO Remaining Quantity" := SalesLine."ACO Number of Units";
+        ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
+        ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
+        ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
+
+        if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+            Clear(ItemVariant);
+
+        if SalesLine."ACO Sawing" then
+            ProdOrderLine."ACO Total m2" := SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * SalesLine."ACO Number of Units" / 1000;
+
+        if ProdOrderLine."ACO Number of Units" <> 0 then
+            ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnAfterCopySalesInvLine', '', false, false)]
     local procedure CopyDocumentMgt_OnAfterCopySalesInvLine(var TempDocSalesLine: Record "Sales Line" temporary; var ToSalesHeader: Record "Sales Header"; var FromSalesLineBuf: Record "Sales Line"; var FromSalesInvLine: Record "Sales Invoice Line")
     begin
@@ -414,25 +447,25 @@ codeunit 50000 "ACO Event Subscribers"
         QtyRounded := Round(QtyRounded, 0.001);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
-    local procedure CreateProdOrderfromSale_OnAfterCreateProdOrderFromSalesLine(var ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line");
-    var
-        LeadTimeMgt: Codeunit "Lead-Time Management";
-    begin
-        ProdOrder."Location Code" := '';
-        ProdOrder."Bin Code" := '';
-        ProdOrder.Validate("Source No.", '');
-        ProdOrder.Validate(Description, '');
-        // SalesLine.CalcFields("Reserved Qty. (Base)");
-        ProdOrder.Quantity := 0;
-        ProdOrder."Source Type" := ProdOrder."Source Type"::"Sales Header";
-        ProdOrder.Validate("Source No.", SalesLine."Document No.");
-        ProdOrder."Due Date" := SalesLine."Shipment Date";
-        ProdOrder."Ending Date" :=
-          LeadTimeMgt.PlannedEndingDate(SalesLine."No.", SalesLine."Location Code", '', ProdOrder."Due Date", '', 2);
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
+    // local procedure CreateProdOrderfromSale_OnAfterCreateProdOrderFromSalesLine(var ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line");
+    // var
+    //     LeadTimeMgt: Codeunit "Lead-Time Management";
+    // begin
+    //     ProdOrder."Location Code" := '';
+    //     ProdOrder."Bin Code" := '';
+    //     ProdOrder.Validate("Source No.", '');
+    //     ProdOrder.Validate(Description, '');
+    //     // SalesLine.CalcFields("Reserved Qty. (Base)");
+    //     ProdOrder.Quantity := 0;
+    //     ProdOrder."Source Type" := ProdOrder."Source Type"::"Sales Header";
+    //     ProdOrder.Validate("Source No.", SalesLine."Document No.");
+    //     ProdOrder."Due Date" := SalesLine."Shipment Date";
+    //     ProdOrder."Ending Date" :=
+    //       LeadTimeMgt.PlannedEndingDate(SalesLine."No.", SalesLine."Location Code", '', ProdOrder."Due Date", '', 2);
 
 
-    end;
+    // end;
 
 
     [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
