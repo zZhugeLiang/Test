@@ -2563,11 +2563,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO FTP Connector - NamedType noGatewaySetupErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3570798162 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 Prod. Order %2 has been created.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - NamedType Text000</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3570798162 - Method 1905556532 - NamedType 2102726506" size-unit="char" translate="yes" xml:space="preserve">
           <source>An inactive holder cannot be selected.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2577,6 +2572,11 @@
           <source>A Holder has been found, but it is inactive, the value of Holder has not changed.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CheckStatusLinkedHolders - NamedType InactiveHolderMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 1459908139 - NamedType 3243494066" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Production Order(s) created: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CreateOrders - NamedType ProductionOrdersCreated</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
@@ -7363,6 +7363,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action Pick Instruction Customer - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 482705298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Create Production Order(s)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Create Production Order(s) - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 3804261416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Select Package for Shipment</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7467,11 +7472,6 @@
           <source>Picture</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Control ProfilePicture - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3089797906 - Action 482705298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>Create Production Order(s)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Create Production Order(s) - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>

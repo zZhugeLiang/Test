@@ -2671,6 +2671,11 @@
           <target>Er is een houder gevonden, echter deze heeft de status inactief. De waarde van de houder is niet aangepast</target>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CheckStatusLinkedHolders - NamedType InactiveHolderMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 1459908139 - NamedType 3243494066" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Production Order(s) created: %1</source>
+          <target>Aantal productie order(s) aangemaakt: %1</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CreateOrders - NamedType ProductionOrdersCreated</note>
+        </trans-unit>
         <trans-unit id="Page 2147013590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Methods</source>
           <target>Ophangmethode code</target>
@@ -6356,6 +6361,11 @@
           <source> </source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Pstd Sales CrMemo Subf Ext - Control ACO Number of Units - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 482705298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Create Production Order(s)</source>
+          <target>Productie order(s) aanmaken</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Create Production Order(s) - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 1698738422 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Order Complete</source>

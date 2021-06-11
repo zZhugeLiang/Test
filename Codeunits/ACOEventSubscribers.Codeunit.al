@@ -111,8 +111,59 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
         if not ACOProfileCustomer.IsEmpty() then
             Rec.Validate("ACO Profile Code");
+    end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Shipment Date', false, false)]
+    local procedure SalesLine_OnAfterValidate_ShipmentDate(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        Item: Record Item;
+        ACOColor: Record "ACO Color";
+        ProductionOrder: Record "Production Order";
+        ProductionOrderLine: Record "Prod. Order Line";
+        ProdOrderLine: Record "Prod. Order Line";
+        NewShippingTimeText: Text[10];
+        NewShippingTime: DateFormula;
+    begin
+        if Rec.IsTemporary() then
+            exit;
 
+        ProductionOrderLine.SetFilter("Prod. Order No.", '<>%1', '');
+        ProductionOrderLine.SetRange("ACO Source No.", Rec."Document No.");
+        ProductionOrderLine.SetRange("ACO Source Line No.", Rec."Line No.");
+        if ProductionOrderLine.FindFirst() then
+            if ProductionOrder.Get(ProductionOrderLine.Status, ProductionOrderLine."Prod. Order No.") then begin
+                ProductionOrder.SetUpdateEndDate();
+                ProductionOrder.Validate("Due Date", Rec."Shipment Date");
+                ProductionOrder.Modify(true);
+
+                // ProdOrderLine.SetCurrentKey(Status, "Prod. Order No.", "Planning Level Code");
+                // ProdOrderLine.Ascending(true);
+                // ProdOrderLine.SetRange(Status, Status);
+                // ProdOrderLine.SetRange("Prod. Order No.", "No.");
+                // ProdOrderLine.SetFilter("Item No.", '<>%1', '');
+                //     ProdOrderLine.SetRange("Planning Level Code");
+                //     if not ProdOrderLine.IsEmpty then
+                //         ProductionOrder.UpdateEndingDate(ProdOrderLine)
+                //     else begin
+                //         if "Source Type" = "Source Type"::Item then
+                //             "Ending Date" :=
+                //                 LeadTimeMgt.PlannedEndingDate("Source No.", "Location Code", '', "Due Date", '', 2)
+                //         else
+                //             "Ending Date" := "Due Date";
+                //         "Starting Date" := "Ending Date";
+                //         "Starting Date-Time" := CreateDateTime("Starting Date", "Starting Time");
+                //         "Ending Date-Time" := CreateDateTime("Ending Date", "Ending Time");
+                //     end;
+                //     ProductionOrder.AdjustStartEndingDate;
+                //     ProductionOrder.Modify;
+                // end;
+                // ProductionLine2.SetRange("ACO Source No.", ProductionOrder."No.");
+                // if ProductionLine2.FindSet(true) then
+                //     repeat
+                //         ProductionLine2.Validate("Due Date", ProductionOrder."Due Date");
+                //         ProductionLine2.Modify(true);
+                //     until ProductionLine2.Next() = 0;
+            end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Color', false, false)]

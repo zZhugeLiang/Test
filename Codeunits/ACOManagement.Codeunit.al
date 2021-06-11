@@ -95,7 +95,6 @@ codeunit 50003 "ACO Management"
 
 
     var
-        Text000: Label '%1 Prod. Order %2 has been created.';
         UOMMgt: Codeunit "Unit of Measure Management";
 
     protected var
@@ -173,22 +172,23 @@ codeunit 50003 "ACO Management"
 
         if ProdOrder.Status = ProdOrder.Status::Released then
             ProdOrderStatusMgt.FlushProdOrder(ProdOrder, ProdOrder.Status, WorkDate);
-
-        if not HideValidationDialog then
-            Message(
-              Text000,
-              ProdOrder.Status, ProdOrder."No.");
     end;
 
 
-    procedure CreateOrders(var SalesLine: Record "Sales Line") OrdersCreated: Boolean
+    procedure CreateOrders(var SalesHeader: Record "Sales Header") OrdersCreated: Boolean
     var
+        SalesLine: Record "Sales Line";
         Item: Record Item;
         SKU: Record "Stockkeeping Unit";
+        Counter: Integer;
         CreateProdOrder: Boolean;
         EndLoop: Boolean;
         IsHandled: Boolean;
+        ProductionOrdersCreated: Label 'Number of Production Order(s) created: %1';
     begin
+        SalesLine.SetRange("Document Type", SalesHeader."Document Type");
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetRange(Type, SalesLine.Type::Item);
         if not SalesLine.FindSet() then
             exit;
 
@@ -207,10 +207,14 @@ codeunit 50003 "ACO Management"
                     Item.Get(SalesLine."No.");
                     CreateProdOrder := Item."Replenishment System" = Item."Replenishment System"::"Prod. Order";
                 end;
-                CreateProdOrder(SalesLine);//, NewStatus, NewOrderType)
+                if CreateProdOrder then begin
+                    CreateProdOrder(SalesLine);//, NewStatus, NewOrderType)
+                    Counter += 1;
+                end;
             end;
         until (SalesLine.Next = 0) or EndLoop;
 
+        Message(ProductionOrdersCreated, Format(Counter));
     end;
 
     // procedure Copy(ProdOrder2: Record "Production Order"; Direction: Option Forward,Backward; VariantCode: Code[10]; LetDueDateDecrease: Boolean): Boolean

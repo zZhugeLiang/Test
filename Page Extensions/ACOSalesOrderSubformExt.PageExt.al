@@ -170,21 +170,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     {
         addlast("&Line")
         {
-
-            action("ACO Create Production Order(s)")
-            {
-                ApplicationArea = All;
-                Caption = 'Create Production Order(s)';
-                Image = Production;
-                trigger OnAction()
-                var
-                    SalesLine: Record "Sales Line";
-                    ACOManagement: Codeunit "ACO Management";
-                begin
-                    CurrPage.SetSelectionFilter(SalesLine);
-                    ACOManagement.CreateOrders(SalesLine);
-                end;
-            }
             action("ACO Download Packaging Instructions")
             {
                 Caption = 'Download Packaging Instructions';

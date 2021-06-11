@@ -219,6 +219,19 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 
         addfirst(processing)
         {
+            action("ACO Create Production Order(s)")
+            {
+                ApplicationArea = All;
+                Caption = 'Create Production Order(s)';
+                Image = Production;
+                trigger OnAction()
+                var
+                    ACOManagement: Codeunit "ACO Management";
+                begin
+                    ACOManagement.CreateOrders(Rec);
+                end;
+            }
+
             action(ACOSelectPackageForShipment)
             {
                 Caption = 'Select Package for Shipment';
