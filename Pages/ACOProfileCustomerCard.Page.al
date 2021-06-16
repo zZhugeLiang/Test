@@ -90,26 +90,6 @@ page 50011 "ACO Profile Customer Card"
             group(ProductionParameters)
             {
                 Caption = 'Production Parameters';
-
-                field("Packaging Instr. Filename"; "Packaging Instr. Filename")
-                {
-                    ApplicationArea = All;
-                    AssistEdit = true;
-                    trigger OnAssistEdit()
-                    var
-                        InStr: InStream;
-                        OutStr: OutStream;
-                        tmpFileName: Text;
-                    begin
-                        "Packaging Instructions File".CreateOutStream(OutStr);
-                        UploadIntoStream('Upload document', '', '', tmpFileName, InStr);
-                        if tmpFileName = '' then
-                            exit;
-                        CopyStream(OutStr, InStr);
-                        "Packaging Instr. Filename" := CopyStr(tmpFileName, 1, 250);
-                        Modify();
-                    end;
-                }
                 field(Euras; Euras)
                 {
                     ApplicationArea = All;
@@ -153,22 +133,6 @@ page 50011 "ACO Profile Customer Card"
 
     actions
     {
-        area(Processing)
-        {
-
-            action(DownloadPackagingInstructions)
-            {
-                Caption = 'Download Packaging Instructions';
-                ApplicationArea = All;
-                Image = Document;
-                ToolTip = 'Download Packaging Instructions';
-                trigger OnAction()
-                begin
-                    if Rec.DownloadPackagingInstructions() then;
-                end;
-            }
-        }
-
         area(Navigation)
         {
             action("ACO Linked Holders")

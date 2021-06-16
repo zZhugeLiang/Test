@@ -45,6 +45,32 @@ codeunit 50000 "ACO Event Subscribers"
         Rec."ACO Document Date Year" := Date2DWY(Rec."Document Date", 3);
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeUpdateSalesLinesByFieldNo', '', false, false)]
+    local procedure SalesHeader_OnBeforeUpdateSalesLinesByFieldNo(var SalesHeader: Record "Sales Header"; ChangedFieldNo: Integer; var AskQuestion: Boolean; var IsHandled: Boolean)
+    var
+        a: Integer;
+    begin
+        a := 10
+    end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeSalesLineByChangedFieldNo', '', false, false)]
+    local procedure OnBeforeSalesLineByChangedFieldNo(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; ChangedFieldNo: Integer; var IsHandled: Boolean)
+    var
+        a: Integer;
+    begin
+        a := 10
+    end;
+    //OnBeforeUpdateSalesLinesByFieldNo
+
+    [EventSubscriber(ObjectType::Table, Database::"Reservation Entry", 'OnBeforeDeleteEvent', '', false, false)]
+    local procedure ReserveEntry_OnAfterDelete(Rec: Record "Reservation Entry"; RunTrigger: Boolean)
+    var
+        a: Integer;
+    begin
+        a := 10
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Shipping Agent Code', false, false)]
     local procedure SalesHeader_OnAfterValidate_ShippingAgentCode(var Rec: Record "Sales Header"; var xRec: Record "Sales Header")
     var
@@ -111,6 +137,36 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
         if not ACOProfileCustomer.IsEmpty() then
             Rec.Validate("ACO Profile Code");
+    end;
+
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Shipment Date', false, false)]
+    local procedure SalesLine_OnBeforeValidate_ShipmentDate(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        //         asd: Integer;
+        //     begin
+        //    procedure SalesLineCheck(SalesLine: Record "Sales Line"; ForceRequest: Boolean)
+        //     var
+        ReservEntry: Record "Reservation Entry";
+        SalesLineReserve: Codeunit "Sales Line-Reserve";
+        ReservationCheckDateConfl: Codeunit "Reservation-Check Date Confl.";
+        ReservMgt: Codeunit "Reservation Management";
+        IsHandled: Boolean;
+    begin
+        if not SalesLineReserve.FindReservEntry(Rec, ReservEntry) then
+            exit;
+
+        // if DateConflict(SalesLine."Shipment Date", ForceRequest, ReservEntry) then
+        //     if ForceRequest then
+        //         IssueError(SalesLine."Shipment Date");
+
+        ReservationCheckDateConfl.UpdateDate(ReservEntry, Rec."Shipment Date");
+
+        ReservMgt.SetReservSource(Rec);
+        ReservMgt.ClearSurplus();
+        ReservMgt.AutoTrack(Rec."Outstanding Qty. (Base)");
+
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Shipment Date', false, false)]

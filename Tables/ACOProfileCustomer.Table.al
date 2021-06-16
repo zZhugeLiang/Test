@@ -237,19 +237,6 @@ table 50009 "ACO Profile Customer"
         Rec.TestField("Customer Item No.");
     end;
 
-    procedure DownloadPackagingInstructions(): Boolean
-    var
-        InStr: InStream;
-        PackagingInstructionBuffer: Text;
-    begin
-        Rec.CalcFields("Packaging Instructions File");
-        if Rec."Packaging Instr. Filename" = '' then
-            exit;
-        Rec."Packaging Instructions File".CreateInStream(InStr);
-        DownloadBLOBFromStream(Instr, Rec."Packaging Instr. Filename");
-        exit(true);
-    end;
-
     local procedure DownloadBLOBFromStream(Instr: InStream; var FileName: Text[250])
     var
         TextBuffer: Text;

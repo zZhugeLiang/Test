@@ -3421,6 +3421,11 @@
           <target>Downloaden afbeeldiing</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadPicture - Property ToolTip</note>
         </trans-unit>
+	<trans-unit id="Page 3325455334 - Action 1169933228 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Clamping Method</source>
+          <target>Downloaden ophangmethode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Card - Action DownloadClampingMethod - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3325455334 - Action 1169933228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Download Clamping Method</source>
           <target>Downloaden ophangmethode</target>
@@ -3485,6 +3490,11 @@
           <source>Linked Packaging List</source>
           <target>Gekoppelde eindverpakkingen overzicht</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Linked Packaging List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1029845018 - Action 2656612740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Packaging Instructions</source>
+          <target>Download verpakkingsinstructies</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action DownloadPackagingInstructions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1029845018 - Action 1420859964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging List</source>
@@ -6517,6 +6527,16 @@
           <target>Verpakkingsinstructies downloaden</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Download Packaging Instructions - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3089797906 - Control 3996824077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Clamping Method</source>
+          <target>Opspanmethode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Control ACOHasClampingMethod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3089797906 - Control 1718555869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Packaging Instructions</source>
+          <target>Verpakkingsinstructies</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Control ACOHasPackagingInstructions - Property Caption</note>
+        </trans-unit>	
         <trans-unit id="PageExtension 3089797906 - Action 2150853599 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Download Packaging Instructions</source>
           <target>Verpakkingsinstructies downloaden</target>
