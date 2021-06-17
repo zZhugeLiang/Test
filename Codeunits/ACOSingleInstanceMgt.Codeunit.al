@@ -2,47 +2,45 @@ codeunit 50001 "ACO Single Instance Mgt"
 {
     SingleInstance = true;
 
+    // TODO issue 8
+    // procedure SetCustomerNo(NewCustomerNo: Code[20]);
+    // begin
+    //     if (NewCustomerNo = '') and TemporaryUserSetup.Get(UserId()) then begin
+    //         TemporaryUserSetup.Delete();
+    //         exit;
+    //     end;
 
-    procedure SetCustomerNo(NewCustomerNo: Code[20]);
-    begin
-        if (NewCustomerNo = '') and TemporaryUserSetup.Get(UserId()) then begin
-            TemporaryUserSetup.Delete();
-            exit;
-        end;
+    //     if TemporaryUserSetup.Get(UserId()) then begin
+    //         TemporaryUserSetup."Salespers./Purch. Code" := NewCustomerNo;
+    //         TemporaryUserSetup.Modify();
+    //     end else begin
+    //         TemporaryUserSetup."User ID" := UserId();
+    //         TemporaryUserSetup."Salespers./Purch. Code" := NewCustomerNo;
+    //         TemporaryUserSetup.Insert();
+    //     end;
+    // end;
 
-        if TemporaryUserSetup.Get(UserId()) then begin
-            TemporaryUserSetup."Salespers./Purch. Code" := NewCustomerNo;
-            TemporaryUserSetup.Modify();
-        end else begin
-            TemporaryUserSetup."User ID" := UserId();
-            TemporaryUserSetup."Salespers./Purch. Code" := NewCustomerNo;
-            TemporaryUserSetup.Insert();
-        end;
-    end;
+    // procedure GetCustomerNo(): Code[20];
+    // begin
+    //     if not TemporaryUserSetup.Get(UserId()) then
+    //         Clear(TemporaryUserSetup);
 
-    procedure GetCustomerNo(): Code[20];
-    begin
-        if not TemporaryUserSetup.Get(UserId()) then
-            Clear(TemporaryUserSetup);
+    //     exit(TemporaryUserSetup."Salespers./Purch. Code");
+    // end;
 
-        exit(TemporaryUserSetup."Salespers./Purch. Code");
-    end;
+    // procedure SetACOProfileCustomerPK(NewACOProfileCustomerProfileCode: Code[30]; NewACOProfileCustomerCustomerNo: Code[20]; NewACOProfileCustomerCustomerItemNo: Code[50]);
+    // begin
+    //     ACOProfileCustomerProfileCode := NewACOProfileCustomerProfileCode;
+    //     ACOProfileCustomerCustomerNo := NewACOProfileCustomerCustomerNo;
+    //     ACOProfileCustomerCustomerItemNo := NewACOProfileCustomerCustomerItemNo;
+    // end;
 
-
-
-    procedure SetACOProfileCustomerPK(NewACOProfileCustomerProfileCode: Code[30]; NewACOProfileCustomerCustomerNo: Code[20]; NewACOProfileCustomerCustomerItemNo: Code[50]);
-    begin
-        ACOProfileCustomerProfileCode := NewACOProfileCustomerProfileCode;
-        ACOProfileCustomerCustomerNo := NewACOProfileCustomerCustomerNo;
-        ACOProfileCustomerCustomerItemNo := NewACOProfileCustomerCustomerItemNo;
-    end;
-
-    procedure GetACOProfileCustomerPK(var NewACOProfileCustomerProfileCode: Code[30]; var NewACOProfileCustomerCustomerNo: Code[20]; var NewACOProfileCustomerCustomerItemNo: Code[50])
-    begin
-        NewACOProfileCustomerProfileCode := ACOProfileCustomerProfileCode;
-        NewACOProfileCustomerCustomerNo := ACOProfileCustomerCustomerNo;
-        NewACOProfileCustomerCustomerItemNo := ACOProfileCustomerCustomerItemNo;
-    end;
+    // procedure GetACOProfileCustomerPK(var NewACOProfileCustomerProfileCode: Code[30]; var NewACOProfileCustomerCustomerNo: Code[20]; var NewACOProfileCustomerCustomerItemNo: Code[50])
+    // begin
+    //     NewACOProfileCustomerProfileCode := ACOProfileCustomerProfileCode;
+    //     NewACOProfileCustomerCustomerNo := ACOProfileCustomerCustomerNo;
+    //     NewACOProfileCustomerCustomerItemNo := ACOProfileCustomerCustomerItemNo;
+    // end;
 
 
     procedure SetSalesLineProfileCode(NewSalesLineProfileCode: Code[30]);

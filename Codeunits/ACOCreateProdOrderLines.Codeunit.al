@@ -108,6 +108,9 @@ codeunit 50005 "ACO Create Prod. Order Lines"
     var
         SalesPlanLine: Record "Sales Planning Line" temporary;
         Location: Record Location;
+        ACOProjectColorHeader: Record "ACO Project Color Header";
+        ACOColorGroup: Record "ACO Color Group";
+        ACOColor: Record "ACO Color";
         LeadTimeMgt: Codeunit "Lead-Time Management";
         ItemTrackingMgt: Codeunit "Item Tracking Management";
         SalesLineReserve: Codeunit "Sales Line-Reserve";
@@ -138,9 +141,14 @@ codeunit 50005 "ACO Create Prod. Order Lines"
         SalesPlanLine.SetCurrentKey("Low-Level Code");
         if SalesPlanLine.FindSet then
             repeat
-                SalesLine.Get(SalesHeader."Document Type", SalesPlanLine."Sales Order No.", SalesPlanLine."Sales Order Line No.");
-                SalesLine.CalcFields("Reserved Quantity");
-
+                // TODO issue 13
+                // SalesLine.Get(SalesHeader."Document Type", SalesPlanLine."Sales Order No.", SalesPlanLine."Sales Order Line No.");
+                // SalesLine.CalcFields("Reserved Quantity");
+                // if ACOColor.Get(SalesLine."ACO Color") then
+                //     if ACOColorGroup.Get(ACOColor."Color Group") and not (ACOColorGroup."Exclude from Check") then begin
+                //         SalesLine.TestField("ACO Project Color Code");
+                //     end;
+                //
                 InitProdOrderLine(SalesLine."No.", SalesLine."Variant Code", SalesLine."Location Code");
                 ProdOrderLine.Description := SalesLine.Description;
                 ProdOrderLine."Description 2" := SalesLine."Description 2";

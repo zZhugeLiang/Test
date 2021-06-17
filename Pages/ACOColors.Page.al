@@ -58,4 +58,10 @@ page 50005 "ACO Colors"
         {
         }
     }
+
+    // TODO issue 13
+    // trigger OnClosePage()
+    // begin
+    //     Rec.TestField("Color Group");
+    // end;
 }
