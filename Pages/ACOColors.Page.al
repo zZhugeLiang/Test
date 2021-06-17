@@ -2,6 +2,7 @@ page 50005 "ACO Colors"
 {
     Caption = 'Colors';
     PageType = List;
+    DelayedInsert = true;
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "ACO Color";
@@ -60,7 +61,7 @@ page 50005 "ACO Colors"
     }
 
     // TODO issue 13
-    // trigger OnClosePage()
+    // trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     // begin
     //     Rec.TestField("Color Group");
     // end;
