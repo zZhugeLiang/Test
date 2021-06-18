@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[{"Id":50005,"Kind":12,"Name":"ACO Colors","PackagePath":"/src/Pages/ACOColors.Page.al"},{"Id":50006,"Kind":12,"Name":"ACO Color Groups","PackagePath":"/src/Pages/ACOColorGroups.Page.al"},{"Id":50006,"Kind":10,"Name":"ACO Color Group","PackagePath":"/src/Tables/ACOColorGroup.Table.al"},{"Id":50005,"Kind":11,"Name":"ACO Create Prod. Order Lines","PackagePath":"/src/Codeunits/ACOCreateProdOrderLines.Codeunit.al"}],"Removed":[]}
+﻿{"Added":[],"Modified":[],"Removed":[]}
