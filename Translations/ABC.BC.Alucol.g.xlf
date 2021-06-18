@@ -8158,11 +8158,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Receipt Bag - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 469018315 - Field 127857927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
-          <source>Receipt Shelf</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Receipt Shelf - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 469018315 - Field 4185750204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Sawing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8172,11 +8167,6 @@
           <source>Shipping Bag</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Shipping Bag - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 469018315 - Field 2328278277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
-          <source>Shipping Shelf</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Shipping Shelf - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 469018315 - Field 4044582590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Type of Clamp Code Profile</source>
@@ -8378,11 +8368,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Receipt Bag - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4107270599 - Field 127857927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
-          <source>Receipt Shelf</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Receipt Shelf - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 4185750204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Sawing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8392,11 +8377,6 @@
           <source>Shipping Bag</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Shipping Bag - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 4107270599 - Field 2328278277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
-          <source>Shipping Shelf</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Shipping Shelf - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 4044582590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Type of Clamp Code Profile</source>
@@ -8763,11 +8743,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Receipt Bag - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 993637128 - Field 127857927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
-          <source>Receipt Shelf</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Receipt Shelf - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 4185750204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Sawing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8777,11 +8752,6 @@
           <source>Shipping Bag</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Shipping Bag - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 993637128 - Field 2328278277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
-          <source>Shipping Shelf</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Shipping Shelf - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 4044582590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Type of Clamp Code Profile</source>

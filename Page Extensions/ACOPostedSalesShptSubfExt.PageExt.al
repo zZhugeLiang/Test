@@ -79,7 +79,17 @@ pageextension 50013 "ACO Posted Sales Shpt Subf Ext" extends "Posted Sales Shpt.
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
+            field("ACO Receipt Shelf"; "ACO Receipt Shelf")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
             field("ACO Shipping Bag"; "ACO Shipping Bag")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+            field("ACO Shipping Shelf"; "ACO Shipping Shelf")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
