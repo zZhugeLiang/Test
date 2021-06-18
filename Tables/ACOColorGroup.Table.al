@@ -19,11 +19,11 @@ table 50006 "ACO Color Group"
             DataClassification = CustomerContent;
         }
         // TODO issue 13
-        // field(11; "Exclude from Check"; Boolean)
-        // {
-        //     Caption = 'Exclude from Check';
-        //     DataClassification = CustomerContent;
-        // }
+        field(11; "Exclude from Check"; Boolean)
+        {
+            Caption = 'Exclude from Check';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

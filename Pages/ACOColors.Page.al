@@ -61,8 +61,8 @@ page 50005 "ACO Colors"
     }
 
     // TODO issue 13
-    // trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    // begin
-    //     Rec.TestField("Color Group");
-    // end;
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        Rec.TestField("Color Group");
+    end;
 }

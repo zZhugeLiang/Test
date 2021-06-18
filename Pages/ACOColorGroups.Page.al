@@ -21,10 +21,10 @@ page 50006 "ACO Color Groups"
                     ApplicationArea = All;
                 }
                 // TODO issue 13
-                // field("Exclude from Check"; "Exclude from Check")
-                // {
-                //     ApplicationArea = All;
-                // }
+                field("Exclude from Check"; "Exclude from Check")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

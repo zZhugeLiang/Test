@@ -241,111 +241,12 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                    ACOPackageHeader: Record "ACO Package Header";
-                    ACOPackageLine: Record "ACO Package Line";
-                    SalesLine: Record "Sales Line";
-                    TempSalesLine: Record "Sales Line" temporary;
-                    ProductionOrder: Record "Production Order";
-                    // LastProductionOrder: Record "Production Order";
-                    ProdOrderLine: Record "Prod. Order Line";
-                    ACOAppSetup: Record "ACO App Setup";
-                    ItemVariant: Record "Item Variant";
-                    ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
-                    ProdOrderStatusMgt: Codeunit "Prod. Order Status Management";
-                    ACOSelectionPackageLines: Page "ACO Selection Package Lines";
-                    ProductionOrderStatus: Enum "Production Order Status";
-                    ProdOrderNos: Text;
-                    NumberOfUnitsShipped: Decimal;
-                    ShowMessage: Boolean;
-                    PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
-                    ProductionOrderCreatedMsg: Label 'The following Production Orders have been created: %1.';
-                    NoProductionOrderCreatedMsg: Label 'No Production Order have been created.';
+                    ACOManagement: Codeunit "ACO Management";
+                    UpdateCurrPage: Boolean;
                 begin
-                    ACOAppSetup.Get();
-                    ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
-                    ACOPackageLine.SetRange(Ship, false);
-                    if ACOPackageLine.FindSet() then
-                        repeat
-                            if ACOPackageHeader.Get(ACOPackageLine."Package No.") and (ACOPackageHeader."Sales Shipment No." = '') then
-                                ACOPackageLine.Mark(true);
-                        until ACOPackageLine.Next() = 0;
-
-                    ACOPackageLine.MarkedOnly(true);
-                    ACOSelectionPackageLines.SetTableView(ACOPackageLine);
-                    ACOSelectionPackageLines.LookupMode(true);
-                    ACOSelectionPackageLines.Editable(true);
-
-                    if ACOSelectionPackageLines.RunModal() = Action::LookupOK then begin
-                        ACOSelectionPackageLines.SetSelectionFilter(ACOPackageLine);
-                        if ACOPackageLine.FindSet(true) then
-                            repeat
-                                if TempSalesLine.Get(TempSalesLine."Document Type"::Order, ACOPackageLine."Sales Order No.", ACOPackageLine."Sales Line No") then begin
-                                    TempSalesLine.Quantity += ACOPackageLine.Quantity;
-                                    TempSalesLine.Modify();
-                                end else begin
-                                    TempSalesLine."Document Type" := TempSalesLine."Document Type"::Order;
-                                    TempSalesLine."Document No." := ACOPackageLine."Sales Order No.";
-                                    TempSalesLine."Line No." := ACOPackageLine."Sales Line No";
-                                    TempSalesLine.Quantity := ACOPackageLine.Quantity;
-                                    TempSalesLine.Insert();
-                                end;
-                                ACOPackageLine.Ship := true;
-                                ACOPackageLine.Modify();
-                            until ACOPackageLine.Next() = 0;
-
-                        if TempSalesLine.FindSet() then
-                            repeat
-                                if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
-                                    if TempSalesLine.Quantity >= SalesLine."ACO Number of Units" then begin
-                                        ShowMessage := true;
-                                        if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
-                                            SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
-                                            SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
-                                            SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
-                                            SalesLine.Modify();
-
-                                            // Create Production Order
-                                            ProdOrderFromSale.SetHideValidationDialog(true);
-                                            ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
-                                        end else begin
-                                            SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
-                                            SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
-                                            SalesLine.Modify();
-                                        end;
-
-                                        ProdOrderLine.SetRange("ACO Source No.", SalesLine."Document No.");
-                                        ProdOrderLine.SetRange("ACO Source Line No.", SalesLine."Line No.");
-                                        if ProdOrderLine.FindSet() then
-                                            repeat
-                                                if ProductionOrder.Get(ProductionOrder.Status::Released, ProdOrderLine."Prod. Order No.") then begin
-                                                    // Status Production Order to Finished
-                                                    ProdOrderStatusMgt.ChangeProdOrderStatus(ProductionOrder, "Production Order Status"::Finished, Today(), false);
-                                                    if ProdOrderNos = '' then
-                                                        ProdOrderNos += ProductionOrder."No."
-                                                    else
-                                                        ProdOrderNos += ', ' + ProductionOrder."No.";
-                                                end;
-
-                                            until ProdOrderLine.Next() = 0;
-
-                                    end else begin
-                                        SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
-                                        SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
-                                        SalesLine.Modify();
-                                    end;
-                                end;
-                            until TempSalesLine.Next() < 1;
-
-                        TempSalesLine.DeleteAll();
-
-                        if ShowMessage then begin
-                            if ProdOrderNos = '' then
-                                Message(NoProductionOrderCreatedMsg)
-                            else
-                                Message(ProductionOrderCreatedMsg, ProdOrderNos)
-                        end;
+                    ACOManagement.SelectPackageForShipment(Rec, UpdateCurrPage);
+                    if UpdateCurrPage then
                         CurrPage.Update(false);
-                    end;
                 end;
             }
         }
