@@ -788,6 +788,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color Group - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 391613001 - Field 1194056338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exclude from Check</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Color Group - Field Exclude from Check - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2614308890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Distance Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2577,6 +2582,21 @@
           <source>Number of Production Order(s) created: %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CreateOrders - NamedType ProductionOrdersCreated</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 2855046171 - NamedType 2857859604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method SelectPackageForShipment - NamedType PackageQuantityMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 2855046171 - NamedType 1202892362" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The following Production Orders have been set to Finished: %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method SelectPackageForShipment - NamedType ProductionOrderFinishedMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3570798162 - Method 2855046171 - NamedType 805703409" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Production Order have been set to Finished.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method SelectPackageForShipment - NamedType NoProductionOrderFinishedMsg</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
@@ -7367,21 +7387,6 @@
           <source>Select Package for Shipment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 2857859604" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
-          <source>The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType PackageQuantityMsg</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 3048221880" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
-          <source>The following Production Orders have been created: %1.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType ProductionOrderCreatedMsg</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 163665622 - Action 3804261416 - Method 1377591017 - NamedType 1449115895" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 163665622">
-          <source>No Production Order have been created.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACOSelectPackageForShipment - Method OnAction - NamedType NoProductionOrderCreatedMsg</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Control 1698738422 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Order Complete</source>

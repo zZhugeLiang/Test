@@ -217,203 +217,131 @@ codeunit 50003 "ACO Management"
         Message(ProductionOrdersCreated, Format(Counter));
     end;
 
-    // procedure Copy(ProdOrder2: Record "Production Order"; Direction: Option Forward,Backward; VariantCode: Code[10]; LetDueDateDecrease: Boolean): Boolean
-    // var
-    //     SalesHeader: Record "Sales Header";
-    //     ErrorOccured: Boolean;
-    //     IsHandled: Boolean;
-    // begin
-    //     if IsHandled then
-    //         exit(ErrorOccured);
+    procedure SelectPackageForShipment(var Rec: Record "Sales Header"; var UpdateCurrPage: Boolean)
 
+    var
+        ACOPackageHeader: Record "ACO Package Header";
+        ACOPackageLine: Record "ACO Package Line";
+        SalesLine: Record "Sales Line";
+        TempSalesLine: Record "Sales Line" temporary;
+        ACOAppSetup: Record "ACO App Setup";
+        ItemVariant: Record "Item Variant";
+        ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
+        ACOSelectionPackageLines: Page "ACO Selection Package Lines";
+        ProductionOrderStatus: Enum "Production Order Status";
+        ProdOrderNos: Text;
+        NumberOfUnitsShipped: Decimal;
+        ShipToQty: Decimal;
+        ShowMessage: Boolean;
+        PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
+        ProductionOrderFinishedMsg: Label 'The following Production Orders have been set to Finished: %1.';
+        NoProductionOrderFinishedMsg: Label 'No Production Order have been set to Finished.';
+    begin
+        ACOAppSetup.Get();
+        ACOPackageLine.SetFilter("Sales Order No.", Rec."No.");
+        ACOPackageLine.SetRange(Ship, false);
+        if ACOPackageLine.FindSet() then
+            repeat
+                if ACOPackageHeader.Get(ACOPackageLine."Package No.") and (ACOPackageHeader."Sales Shipment No." = '') then
+                    ACOPackageLine.Mark(true);
+            until ACOPackageLine.Next() = 0;
 
-    //     ProdOrder2.TestField("Source No.");
-    //     ProdOrder2.TestField("Starting Time");
-    //     ProdOrder2.TestField("Starting Date");
-    //     ProdOrder2.TestField("Ending Time");
-    //     ProdOrder2.TestField("Ending Date");
-    //     if Direction = Direction::Backward then
-    //         ProdOrder2.TestField("Due Date");
+        ACOPackageLine.MarkedOnly(true);
+        ACOSelectionPackageLines.SetTableView(ACOPackageLine);
+        ACOSelectionPackageLines.LookupMode(true);
+        ACOSelectionPackageLines.Editable(true);
 
-    //     ProdOrder := ProdOrder2;
+        if ACOSelectionPackageLines.RunModal() = Action::LookupOK then begin
+            ACOSelectionPackageLines.SetSelectionFilter(ACOPackageLine);
+            if ACOPackageLine.FindSet(true) then
+                repeat
+                    if TempSalesLine.Get(TempSalesLine."Document Type"::Order, ACOPackageLine."Sales Order No.", ACOPackageLine."Sales Line No") then begin
+                        TempSalesLine.Quantity += ACOPackageLine.Quantity;
+                        TempSalesLine.Modify();
+                    end else begin
+                        TempSalesLine."Document Type" := TempSalesLine."Document Type"::Order;
+                        TempSalesLine."Document No." := ACOPackageLine."Sales Order No.";
+                        TempSalesLine."Line No." := ACOPackageLine."Sales Line No";
+                        TempSalesLine.Quantity := ACOPackageLine.Quantity;
+                        TempSalesLine.Insert();
+                    end;
+                    ACOPackageLine.Ship := true;
+                    ACOPackageLine.Modify();
+                until ACOPackageLine.Next() = 0;
 
-    //     CreateProdOrderLine(ProdOrder, VariantCode, ErrorOccured);
+            if TempSalesLine.FindSet() then
+                repeat
+                    if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
+                        if TempSalesLine.Quantity >= SalesLine."ACO Number of Units" then begin
+                            ShowMessage := true;
+                            if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
+                                SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
+                                SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
+                                SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
+                                SalesLine.Modify();
 
-    //     if not ProcessProdOrderLines(Direction, LetDueDateDecrease) then
-    //         ErrorOccured := true;
+                                // Create Production Order
+                                ProdOrderFromSale.SetHideValidationDialog(true);
+                                ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
+                            end else begin
+                                SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
+                                SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
+                                SalesLine.Modify();
+                            end;
 
-    //     CheckMultiLevelStructure(Direction, true, LetDueDateDecrease);
+                            // Message per case?
+                            FinishProductionOrder(SalesLine, ProdOrderNos);
+                        end else begin
+                            SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
+                            SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
+                            SalesLine.Modify();
 
+                            if SalesLine."Qty. to Ship" = SalesLine."Outstanding Quantity" then
+                                FinishProductionOrder(SalesLine, ProdOrderNos);
+                            // else
+                            //     if SalesLine."Qty. to Ship" < SalesLine."Outstanding Quantity" then
+                            //         FillProductionJournalAndPost(SalesLine);
+                        end;
+                    end;
+                until TempSalesLine.Next() < 1;
 
-    //     exit(not ErrorOccured);
-    // end;
+            TempSalesLine.DeleteAll();
 
+            if ShowMessage then begin
+                if ProdOrderNos = '' then
+                    Message(NoProductionOrderFinishedMsg)
+                else
+                    Message(ProductionOrderFinishedMsg, ProdOrderNos)
+            end;
+            UpdateCurrPage := true;
+        end;
+    end;
 
-    // local procedure CreateProdOrderLine(ProdOrder: Record "Production Order"; VariantCode: Code[10]; var ErrorOccured: Boolean)
-    // var
-    //     SalesHeader: Record "Sales Header";
-    // begin
-    //     ProdOrderLine.LockTable();
-    //     ProdOrderLine.SetRange(Status, ProdOrder.Status);
-    //     ProdOrderLine.SetRange("Prod. Order No.", ProdOrder."No.");
-    //     ProdOrderLine.DeleteAll(true);
+    local procedure FinishProductionOrder(SalesLine: Record "Sales Line"; var ProdOrderNos: Text)
+    var
+        ProdOrderLine: Record "Prod. Order Line";
+        ProductionOrder: Record "Production Order";
+        ProdOrderStatusMgt: Codeunit "Prod. Order Status Management";
+    begin
+        ProdOrderLine.SetRange("ACO Source No.", SalesLine."Document No.");
+        ProdOrderLine.SetRange("ACO Source Line No.", SalesLine."Line No.");
+        if ProdOrderLine.FindSet() then
+            repeat
+                if ProductionOrder.Get(ProductionOrder.Status::Released, ProdOrderLine."Prod. Order No.") then begin
+                    // Status Production Order to Finished
+                    ProdOrderStatusMgt.ChangeProdOrderStatus(ProductionOrder, "Production Order Status"::Finished, Today(), false);
+                    if ProdOrderNos = '' then
+                        ProdOrderNos += ProductionOrder."No."
+                    else
+                        ProdOrderNos += ', ' + ProductionOrder."No.";
+                end;
+            until ProdOrderLine.Next() = 0;
+    end;
 
-    //     NextProdOrderLineNo := 10000;
+    local procedure FillProductionJournalAndPost(SalesLine: Record "Sales Line")
+    var
+        myInt: Integer;
+    begin
 
-    //     InsertNew := false;
-
-    //     case ProdOrder."Source Type" of
-    //         ProdOrder."Source Type"::"Sales Header":
-    //             begin
-    //                 InsertNew := true;
-    //                 if ProdOrder.Status <> ProdOrder.Status::Simulated then
-    //                     SalesHeader.Get(SalesHeader."Document Type"::Order, ProdOrder."Source No.")
-    //                 else
-    //                     SalesHeader.Get(SalesHeader."Document Type"::Quote, ProdOrder."Source No.");
-    //                 if not CopyFromSalesOrder(SalesHeader) then
-    //                     ErrorOccured := true;
-    //             end;
-    //     end;
-
-    // end;
-
-    // local procedure CopyFromSalesOrder(SalesHeader: Record "Sales Header"): Boolean
-    // var
-    //     SalesPlanLine: Record "Sales Planning Line" temporary;
-    //     Location: Record Location;
-    //     LeadTimeMgt: Codeunit "Lead-Time Management";
-    //     ItemTrackingMgt: Codeunit "Item Tracking Management";
-    //     SalesLineReserve: Codeunit "Sales Line-Reserve";
-    //     ErrorOccured: Boolean;
-    //     QuantityBase: Decimal;
-    //     //
-    //     SalesLine: Record "Sales Line";
-    //     ProdOrderLine: Record "Prod. Order Line";
-    // //
-    // begin
-    //     SalesLine.SetRange("Document Type", SalesHeader."Document Type");
-    //     SalesLine.SetRange("Document No.", SalesHeader."No.");
-    //     if SalesLine.FindSet then
-    //         repeat
-    //             SalesLine.CalcFields("Reserved Quantity");
-    //             if (SalesLine.Type = SalesLine.Type::Item) and
-    //                (SalesLine."No." <> '') and
-    //                ((SalesLine."Outstanding Quantity" - SalesLine."Reserved Quantity") <> 0)
-    //             then
-    //                 if IsReplSystemProdOrder(SalesLine."No.", SalesLine."Variant Code", SalesLine."Location Code") then begin
-    //                     SalesPlanLine.Init();
-    //                     SalesPlanLine."Sales Order No." := SalesLine."Document No.";
-    //                     SalesPlanLine."Sales Order Line No." := SalesLine."Line No.";
-    //                     SalesPlanLine.Validate("Item No.", SalesLine."No.");
-    //                     SalesPlanLine.Insert();
-    //                 end;
-    //         until SalesLine.Next = 0;
-
-    //     SalesPlanLine.SetCurrentKey("Low-Level Code");
-    //     if SalesPlanLine.FindSet then
-    //         repeat
-    //             SalesLine.Get(SalesHeader."Document Type", SalesPlanLine."Sales Order No.", SalesPlanLine."Sales Order Line No.");
-    //             SalesLine.CalcFields("Reserved Quantity");
-
-    //             InitProdOrderLine(SalesLine."No.", SalesLine."Variant Code", SalesLine."Location Code");
-    //             ProdOrderLine.Description := SalesLine.Description;
-    //             ProdOrderLine."Description 2" := SalesLine."Description 2";
-    //             SalesLine.CalcFields("Reserved Qty. (Base)");
-    //             QuantityBase := SalesLine."Outstanding Qty. (Base)" - SalesLine."Reserved Qty. (Base)";
-    //             ProdOrderLine.Validate("Quantity (Base)", QuantityBase);
-
-    //             if Location.Get(ProdOrderLine."Location Code") and not Location."Require Pick" and (SalesLine."Bin Code" <> '') then
-    //                 ProdOrderLine."Bin Code" := SalesLine."Bin Code";
-
-    //             ProdOrderLine."Due Date" := SalesLine."Shipment Date";
-    //             ProdOrderLine."Ending Date" :=
-    //               LeadTimeMgt.PlannedEndingDate(ProdOrderLine."Item No.", ProdOrderLine."Location Code", '', ProdOrderLine."Due Date", '', 2);
-    //             ProdOrderLine.Validate("Ending Date");
-
-    //             InsertProdOrderLine;
-    //             if ProdOrderLine.HasErrorOccured then
-    //                 ErrorOccured := true;
-    //             ItemTrackingMgt.CopyItemTracking(SalesLine.RowID1, ProdOrderLine.RowID1, true, true);
-
-    //             if SalesLine."Document Type" = SalesLine."Document Type"::Order then begin // Not simulated
-    //                 ProdOrderLine.CalcFields("Reserved Quantity", "Reserved Qty. (Base)");
-    //                 SalesLineReserve.BindToProdOrder(SalesLine, ProdOrderLine,
-    //                   ProdOrderLine."Remaining Quantity" - ProdOrderLine."Reserved Quantity",
-    //                   ProdOrderLine."Remaining Qty. (Base)" - ProdOrderLine."Reserved Qty. (Base)");
-    //             end;
-    //             ProdOrderLine.Modify();
-    //         until (SalesPlanLine.Next = 0);
-    //     exit(not ErrorOccured);
-    // end;
-
-
-    // local procedure IsReplSystemProdOrder(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10]): Boolean
-    // var
-    //     SKU: Record "Stockkeeping Unit";
-    //     Item: Record Item;
-    //     IsHandled: Boolean;
-    //     ReplanSystemProdOrder: Boolean;
-    // begin
-    //     OnBeforeIsReplSystemProdOrder(SalesLine, ReplanSystemProdOrder, IsHandled);
-    //     if IsHandled then
-    //         exit(ReplanSystemProdOrder);
-
-    //     if SKU.Get(LocationCode, ItemNo, VariantCode) then
-    //         exit(SKU."Replenishment System" = SKU."Replenishment System"::"Prod. Order");
-
-    //     Item.Get(ItemNo);
-    //     exit(Item."Replenishment System" = Item."Replenishment System"::"Prod. Order");
-    // end;
-
-
-
-    // local procedure InitProdOrderLine(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10])
-    // var
-    //     Item: Record Item;
-    // begin
-    //     ProdOrderLine.Init();
-    //     ProdOrderLine.SetIgnoreErrors;
-    //     ProdOrderLine.Status := ProdOrder.Status;
-    //     ProdOrderLine."Prod. Order No." := ProdOrder."No.";
-    //     ProdOrderLine."Line No." := NextProdOrderLineNo;
-    //     ProdOrderLine."Routing Reference No." := ProdOrderLine."Line No.";
-    //     OnInitProdOrderLineBeforeAssignItemNo(ProdOrderLine, ItemNo, VariantCode, LocationCode);
-    //     ProdOrderLine.Validate("Item No.", ItemNo);
-    //     ProdOrderLine."Location Code" := LocationCode;
-    //     ProdOrderLine."Variant Code" := VariantCode;
-    //     OnInitProdOrderLineAfterVariantCode(ProdOrderLine, VariantCode);
-    //     if (LocationCode = ProdOrder."Location Code") and (ProdOrder."Bin Code" <> '') then
-    //         ProdOrderLine.Validate("Bin Code", ProdOrder."Bin Code")
-    //     else
-    //         CalcProdOrder.SetProdOrderLineBinCodeFromRoute(ProdOrderLine, ProdOrderLine."Location Code", ProdOrderLine."Routing No.");
-
-    //     Item.Get(ItemNo);
-    //     ProdOrderLine."Scrap %" := Item."Scrap %";
-    //     OnInitProdOrderLineAfterScrap(ProdOrderLine, ProdOrder);
-    //     ProdOrderLine."Due Date" := ProdOrder."Due Date";
-    //     ProdOrderLine."Starting Date" := ProdOrder."Starting Date";
-    //     ProdOrderLine."Starting Time" := ProdOrder."Starting Time";
-    //     ProdOrderLine."Ending Date" := ProdOrder."Ending Date";
-    //     ProdOrderLine."Ending Time" := ProdOrder."Ending Time";
-    //     ProdOrderLine."Planning Level Code" := 0;
-    //     ProdOrderLine."Inventory Posting Group" := Item."Inventory Posting Group";
-    //     ProdOrderLine.UpdateDatetime;
-    //     ProdOrderLine.Validate("Unit Cost");
-
-    //     OnAfterInitProdOrderLine(ProdOrderLine, ProdOrder, SalesLine);
-
-    //     NextProdOrderLineNo := NextProdOrderLineNo + 10000;
-    // end;
-
-    // local procedure MyProcedure()
-    // begin
-
-    //     InsertNew := true;
-    //     if ProdOrder.Status <> ProdOrder.Status::Simulated then
-    //         SalesHeader.Get(SalesHeader."Document Type"::Order, ProdOrder."Source No.")
-    //     else
-    //         SalesHeader.Get(SalesHeader."Document Type"::Quote, ProdOrder."Source No.");
-    //     if not CopyFromSalesOrder(SalesHeader) then
-    //         ErrorOccured := true;
-    // end;
+    end;
 }
