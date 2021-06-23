@@ -166,11 +166,13 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             field(ACOHasClampingMethod; ACOHasClampingMethod)
             {
                 Caption = 'Clamping Method';
+                Editable = false;
                 ApplicationArea = All;
             }
             field(ACOHasPackagingInstructions; ACOHasPackagingInstructions)
             {
                 Caption = 'Packaging Instructions';
+                Editable = false;
                 ApplicationArea = All;
             }
         }
@@ -192,8 +194,13 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                     ACOProfile: Record "ACO Profile";
                     ACOProfileCustomer: Record "ACO Profile Customer";
                 begin
-                    if ACOProfile.Get(Rec."ACO Profile Code") then
-                        ACOProfile.DownloadPackagingInstructions();
+                    if ACOProfileCustomer.Get(Rec."ACO Profile Code", Rec."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
+                        if not ACOProfileCustomer.DownloadPackagingInstructions() then
+                            if ACOProfile.Get(Rec."ACO Profile Code") then
+                                ACOProfile.DownloadPackagingInstructions();
+                    end else
+                        if ACOProfile.Get(Rec."ACO Profile Code") then
+                            ACOProfile.DownloadPackagingInstructions();
                 end;
             }
 

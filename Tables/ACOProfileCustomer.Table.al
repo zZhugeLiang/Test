@@ -230,6 +230,19 @@ table 50009 "ACO Profile Customer"
         Rec."Last DateTime Modified" := CurrentDateTime();
     end;
 
+    procedure DownloadPackagingInstructions(): Boolean
+    var
+        InStr: InStream;
+        PackagingInstructionBuffer: Text;
+    begin
+        Rec.CalcFields("Packaging Instructions File");
+        if Rec."Packaging Instr. Filename" = '' then
+            exit;
+        Rec."Packaging Instructions File".CreateInStream(InStr);
+        DownloadBLOBFromStream(Instr, Rec."Packaging Instr. Filename");
+        exit(true);
+    end;
+
     procedure TestPK()
     begin
         Rec.TestField("Profile Code");

@@ -195,6 +195,7 @@ codeunit 50003 "ACO Management"
         repeat
             SalesLine.TestField("Shipment Date");
             SalesLine.CalcFields("Reserved Qty. (Base)");
+            SalesLine.TestField("ACO Color");
 
             IsHandled := false;
             if IsHandled then

@@ -1,4 +1,4 @@
-pageextension 50013 "ACO Posted Sales Shpt Subf Ext" extends "Posted Sales Shpt. Subform"
+pageextension 50018 "ACO Sales Quote Archive Subf." extends "Sales Quote Archive Subform"
 {
     layout
     {

@@ -4,102 +4,102 @@ pageextension 50015 "ACO Pstd Sales CrMemo Subf Ext" extends "Posted Sales Cr. M
     {
         addlast(Control1)
         {
-            field("ACO Variant Code"; "Variant Code")
+            field("ACO Variant Code"; Rec."Variant Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Number of Units"; "ACO Number of Units")
+            field("ACO Number of Units"; Rec."ACO Number of Units")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO British Standard"; "ACO British Standard")
+            field("ACO British Standard"; Rec."ACO British Standard")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Layer Thickness"; "ACO Layer Thickness")
+            field("ACO Layer Thickness"; Rec."ACO Layer Thickness")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Color"; "ACO Color")
+            field("ACO Color"; Rec."ACO Color")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Code"; "ACO Profile Code")
+            field("ACO Profile Code"; Rec."ACO Profile Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Description"; "ACO Profile Description")
+            field("ACO Profile Description"; Rec."ACO Profile Description")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Circumference"; "ACO Profile Circumference")
+            field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Customer Item No."; "ACO Customer Item No.")
+            field("ACO Customer Item No."; Rec."ACO Customer Item No.")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Cust. Description"; "ACO Profile Cust. Description")
+            field("ACO Profile Cust. Description"; Rec."ACO Profile Cust. Description")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Attach Method Code Profile"; "ACO Attach Method Code Profile")
+            field("ACO Attach Method Code Profile"; Rec."ACO Attach Method Code Profile")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Type of Clamp Code"; "ACO Type of Clamp Code")
+            field("ACO Type of Clamp Code"; Rec."ACO Type of Clamp Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Area"; "ACO Area")
+            field("ACO Area"; Rec."ACO Area")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Linked Holder"; "ACO Linked Holder")
+            field("ACO Linked Holder"; Rec."ACO Linked Holder")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Receipt Bag"; "ACO Receipt Bag")
+            field("ACO Receipt Bag"; Rec."ACO Receipt Bag")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Receipt Shelf"; "ACO Receipt Shelf")
+            field("ACO Receipt Shelf"; Rec."ACO Receipt Shelf")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Shipping Bag"; "ACO Shipping Bag")
+            field("ACO Shipping Bag"; Rec."ACO Shipping Bag")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Shipping Shelf"; "ACO Shipping Shelf")
+            field("ACO Shipping Shelf"; Rec."ACO Shipping Shelf")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Kundentour HUECK"; "ACO Kundentour HUECK")
+            field("ACO Kundentour HUECK"; Rec."ACO Kundentour HUECK")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Project Color Code"; "ACO Project Color Code")
+            field("ACO Project Color Code"; Rec."ACO Project Color Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
