@@ -31,16 +31,17 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             field("ACO Profile Code"; "ACO Profile Code")
             {
                 ApplicationArea = All;
-                // trigger OnValidate()
+                trigger OnValidate()
                 // var
                 //     ACOProfileCustomer: Record "ACO Profile Customer";
                 //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-                // begin
-                //     ACOSingleInstanceMgt.GetACOProfileCustomer(ACOProfileCustomer);
-                //     if not ACOProfileCustomer.IsEmpty() then begin
-                //         Rec.ACO Profile de
-                //     end;
-                // end;
+                begin
+                    // ACOSingleInstanceMgt.GetACOProfileCustomer(ACOProfileCustomer);
+                    // if not ACOProfileCustomer.IsEmpty() then begin
+                    //     Rec.ACO Profile de
+                    // end;
+                    ACOSetCheckboxes();
+                end;
             }
             field("ACO Profile Description"; "ACO Profile Description")
             {
@@ -234,18 +235,8 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     // end;
 
     trigger OnAfterGetRecord()
-    var
-        ACOProfile: Record "ACO Profile";
     begin
-        if ACOProfile.Get(Rec."ACO Profile Code") then begin
-            ACOProfile.CalcFields("Clamping Method File", "Packaging Instructions File");
-
-            ACOHasClampingMethod := ACOProfile."Clamping Method File".HasValue();
-            ACOHasPackagingInstructions := ACOProfile."Packaging Instructions File".HasValue();
-        end else begin
-            ACOHasClampingMethod := false;
-            ACOHasPackagingInstructions := false;
-        end;
+        ACOSetCheckboxes();
     end;
 
     // TODO issue 8
@@ -261,4 +252,19 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     var
         ACOHasClampingMethod: Boolean;
         ACOHasPackagingInstructions: Boolean;
+
+    local procedure ACOSetCheckboxes()
+    var
+        ACOProfile: Record "ACO Profile";
+    begin
+        if ACOProfile.Get(Rec."ACO Profile Code") then begin
+            ACOProfile.CalcFields("Clamping Method File", "Packaging Instructions File");
+
+            ACOHasClampingMethod := ACOProfile."Clamping Method File".HasValue();
+            ACOHasPackagingInstructions := ACOProfile."Packaging Instructions File".HasValue();
+        end else begin
+            ACOHasClampingMethod := false;
+            ACOHasPackagingInstructions := false;
+        end;
+    end;
 }
