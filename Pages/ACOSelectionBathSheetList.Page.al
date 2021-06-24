@@ -321,6 +321,31 @@ Page 50025 "ACO Selection Bath Sheet List"
                     end;
                 end;
             }
+
+            action(CreateRejectionOBRLabel)
+            {
+                ApplicationArea = All;
+                Caption = 'Generate OBR Rejection Label';
+                Image = CreateDocument;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                ToolTip = 'Generate OBR Rejection Label';
+                trigger OnAction()
+                var
+                    BathSheetLine: Record "ACO Bath Sheet Line";
+                    ACORejLabelSelectLines: Page "ACO Rej. Label Select Lines";
+                    Only1LineErr: Label 'Only 1 line can be processed at a time.';
+                begin
+                    CurrPage.SetSelectionFilter(BathSheetLine);
+
+                    if BathSheetLine.Count() > 1 then
+                        Error(Only1LineErr);
+
+                    ACORejLabelSelectLines.SetBathSheetLine(Rec);
+                    ACORejLabelSelectLines.RunModal();
+                end;
+            }
         }
 
         area(navigation)

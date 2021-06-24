@@ -50,8 +50,29 @@ page 50055 "ACO Rej. Label Select Lines"
                     GeneratePackageLabel();
                 end;
             }
-        }
 
+            action(PrintLabel)
+            {
+                ApplicationArea = All;
+                Caption = 'Print Label';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Print;
+                trigger OnAction()
+                var
+                    PackageHeader: Record "ACO Package Header";
+                    PrintPackageLabel: Report "ACO Package Label";
+                begin
+                    if PackageHeader.FindLast() then begin
+                        PackageHeader.SetRecFilter();
+                        PrintPackageLabel.SetTableView(PackageHeader);
+                        PrintPackageLabel.UseRequestPage := false;
+                        PrintPackageLabel.Run();
+                    end;
+                end;
+            }
+        }
     }
 
 
@@ -63,7 +84,9 @@ page 50055 "ACO Rej. Label Select Lines"
         PackageLine: Record "ACO Package Line";
         SalesOrder: Record "Sales Header";
         SalesLine: Record "Sales Line";
+        SalesLineGet: Record "Sales Line";
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
+        ItemVariant: Record "Item Variant";
         GenPackage: Page "ACO Generate Package Dialog";
         PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
@@ -83,7 +106,25 @@ page 50055 "ACO Rej. Label Select Lines"
                 BathLineTempRecord.SetRecFilter();
 
                 BathLineTempRecord.Init();
-                BathLineTempRecord := ACOBathSheetLine;
+
+                if ACOBathSheetLine."Bath Sheet No." <> '' then
+                    BathLineTempRecord := ACOBathSheetLine
+                else
+                    if ProdOrderLine."Prod. Order No." <> '' then begin
+                        BathLineTempRecord."Sales Order No." := ProdOrderLine."ACO Source No.";
+                        BathLineTempRecord."Sales Order Line No." := ProdOrderLine."ACO Source Line No.";
+                        BathLineTempRecord."Production Order No." := ProdOrderLine."Prod. Order No.";
+                        BathLineTempRecord."Production Order Status" := ProdOrderLine.Status.AsInteger();
+                        ACOBathSheetLine."Production Order Line No." := ProdOrderLine."Line No.";
+                        BathLineTempRecord."Profile Code" := ProdOrderLine."ACO Profile Code";
+                        // BathLineTempRecord."Profile Description" := ProdOrderLine.Profil desc; is this field ever filled?
+                        if ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code") then
+                            BathLineTempRecord.Length := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
+                        if SalesLineGet.Get(SalesLineGet."Document Type"::Order, ProdOrderLine."ACO Source No.", ProdOrderLine."ACO Source Line No.") then
+                            if SalesLineGet.Type = SalesLineGet.Type::Item then
+                                BathLineTempRecord.Treatment := SalesLine."No.";
+                    end;
+
                 BathLineTempRecord."Qty in Package" := Rec.Quantity;
                 BathLineTempRecord."Charge No." := Rec."Reject Reason Code";
                 BathLineTempRecord."Production Order Line No." := Rec."Line No.";
@@ -97,7 +138,7 @@ page 50055 "ACO Rej. Label Select Lines"
             repeat
                 SalesOrder.Reset();
                 SalesOrder.Get(SalesOrder."Document Type"::Order, BathLineTempRecord."Sales Order No.");
-                IF (BathLineTempRecord."Qty in Package" > 0) and (tempCustomerNo <> '') and (SalesOrder."Sell-to Customer No." <> tempCustomerNo) then
+                if (BathLineTempRecord."Qty in Package" > 0) and (tempCustomerNo <> '') and (SalesOrder."Sell-to Customer No." <> tempCustomerNo) then
                     Error(lblCustomerErr);
                 tempCustomerNo := SalesOrder."Sell-to Customer No.";
             until BathLineTempRecord.Next() = 0;
@@ -199,6 +240,7 @@ page 50055 "ACO Rej. Label Select Lines"
 
     var
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
+        ProdOrderLine: Record "Prod. Order Line";
         ResourceNo: Code[20];
         Resource: Record Resource;
         LineNo: Integer;
@@ -206,5 +248,10 @@ page 50055 "ACO Rej. Label Select Lines"
     procedure SetBathSheetLine(NewACOBathSheetLine: Record "ACO Bath Sheet Line")
     begin
         ACOBathSheetLine.Get(NewACOBathSheetLine."Bath Sheet No.", NewACOBathSheetLine."Production Order No.", NewACOBathSheetLine."Production Order Status", NewACOBathSheetLine."Production Order Line No.");
+    end;
+
+    procedure SetProdOrderLine(NewProdOrderLine: Record "Prod. Order Line")
+    begin
+        ProdOrderLine.Get(NewProdOrderLine.Status, NewProdOrderLine."Prod. Order No.", NewProdOrderLine."Line No.");
     end;
 }

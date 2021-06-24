@@ -3,6 +3,111 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="ABC.BC.Alucol">
     <body>
       <group id="body">
+        <trans-unit id="Table 1473540866 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add EDI Information Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 2172860841 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Alloy</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Alloy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 1825585793 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Item Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Customer Item Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 1772862636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Item No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Customer Item No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 138204021 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Order No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Customer Order No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 1588174788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Endcustomer Adress 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Endcustomer Adress 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 2225871405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Endcustomer Adress 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Endcustomer Adress 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 2863568022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Endcustomer Adress 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Endcustomer Adress 3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 2694658999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Endcustomer Adress 4</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Endcustomer Adress 4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 2402882376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Endcustomer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Endcustomer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 4121873296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field External Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 4093990710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Language - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 4227658057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Loc City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Loc City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 1894358228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Loc Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Loc Country - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 1992184985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Loc Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Loc Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 286929306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Loc ZipCode</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Loc ZipCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 3254456809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Sales Order Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 4090506529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Sales Order No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 863186931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field Sawing Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1473540866 - Field 863379167 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ZIN</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Add EDI Info Customer - Field ZIN - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1559654101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
