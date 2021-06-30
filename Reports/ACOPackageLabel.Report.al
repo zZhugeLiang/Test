@@ -78,6 +78,7 @@ report 50001 "ACO Package Label"
                 column(Length; Length) { }
                 column(External_Document_No_; "External Document No.") { }
                 column(Your_Reference; "Your Reference") { }
+                column(Sales_Order_No_; "Sales Order No.") { }
                 column(Treatment_Description; "Treatment Description") { }
                 column(Customer_Item_No_; "Customer Item No.") { }
                 column(Profile_Cust__Description; "Profile Cust. Description") { }

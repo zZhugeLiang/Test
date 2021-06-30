@@ -564,6 +564,20 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Manual Unit Price';
             DataClassification = CustomerContent;
         }
+
+        field(50067; "ACO Reject Billable Shipped"; Integer)
+        {
+            Caption = 'Reject Billable Shipped';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50068; "Reject Not Billable Shipped"; Integer)
+        {
+            Caption = 'Reject Not Billable Shipped';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
     }
 
     var

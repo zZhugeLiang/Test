@@ -146,6 +146,13 @@ report 50018 "ACO Pick Instruction 2"
                         column(RackNoCustomer_ACOPackageHeader; ACOPackageHeader."Rack No. Customer")
                         {
                         }
+                        column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter")
+                        {
+                        }
+                        column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor")
+                        {
+                        }
+
                         trigger OnAfterGetRecord()
                         begin
                             Clear(SalesLine);

@@ -134,7 +134,6 @@ report 50013 "ACO Pick Instruction"
                         column(PictureFile_ACOProfile; ACOProfile."Picture File")
                         {
                         }
-
                         column(Your_Reference; YourReference)
                         {
                         }
@@ -144,6 +143,13 @@ report 50013 "ACO Pick Instruction"
                         column(RackNoCustomer_ACOPackageHeader; ACOPackageHeader."Rack No. Customer")
                         {
                         }
+                        column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter")
+                        {
+                        }
+                        column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor")
+                        {
+                        }
+
                         trigger OnAfterGetRecord()
                         // var
                         // ACOPackageHeader: Record "ACO Package Header";

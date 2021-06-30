@@ -342,7 +342,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                     if BathSheetLine.Count() > 1 then
                         Error(Only1LineErr);
 
-                    ACORejLabelSelectLines.SetBathSheetLine(Rec);
+                    ACORejLabelSelectLines.SetProdOrderLine(Rec);
                     ACORejLabelSelectLines.RunModal();
                 end;
             }

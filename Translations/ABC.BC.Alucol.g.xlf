@@ -3708,6 +3708,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action GenerateLabel - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2244607703 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action PrintLabel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Bath Sheet List</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3862,6 +3867,21 @@
           <source>Create Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2500824358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate OBR Rejection Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2500824358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate OBR Rejection Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2500824358 - Method 1377591017 - NamedType 4156361610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only 1 line can be processed at a time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Method OnAction - NamedType Only1LineErr</note>
         </trans-unit>
         <trans-unit id="Page 560858142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Package Lines</source>
