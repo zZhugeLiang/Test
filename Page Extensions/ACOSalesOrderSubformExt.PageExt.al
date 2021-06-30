@@ -164,6 +164,22 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Reject Billable"; "ACO Reject Billable")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Reject Not Billable"; "ACO Reject Not Billable")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Reject Billable Shipped"; "ACO Reject Billable Shipped")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Rej. Not Billable Shipped"; "ACO Rej. Not Billable Shipped")
+            {
+                ApplicationArea = All;
+            }
             field(ACOHasClampingMethod; ACOHasClampingMethod)
             {
                 Caption = 'Clamping Method';

@@ -104,6 +104,17 @@ pageextension 50013 "ACO Posted Sales Shpt Subf Ext" extends "Posted Sales Shpt.
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
+            field("ACO Reject Billable Shipped"; "ACO Reject Billable Shipped")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+
+            field("ACO Rej. Not Billable Shipped"; "ACO Rej. Not Billable Shipped")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
         }
     }
 }

@@ -540,6 +540,15 @@ codeunit 50000 "ACO Event Subscribers"
         QtyRounded := Round(QtyRounded, 0.001);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
+    local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
+    var
+        myInt: Integer;
+    begin
+        SalesLine."ACO Reject Billable Shipped" += SalesLine."ACO Reject Billable";
+        SalesLine."ACO Rej. Not Billable Shipped" += SalesLine."ACO Reject Not Billable";
+    end;
+
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
     // local procedure CreateProdOrderfromSale_OnAfterCreateProdOrderFromSalesLine(var ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line");
     // var

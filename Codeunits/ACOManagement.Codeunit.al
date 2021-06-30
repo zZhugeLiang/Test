@@ -219,7 +219,6 @@ codeunit 50003 "ACO Management"
     end;
 
     procedure SelectPackageForShipment(var Rec: Record "Sales Header"; var UpdateCurrPage: Boolean)
-
     var
         ACOPackageHeader: Record "ACO Package Header";
         ACOPackageLine: Record "ACO Package Line";
@@ -270,7 +269,7 @@ codeunit 50003 "ACO Management"
                             if ReasonCode."ACO Billable" then
                                 TempSalesLine."ACO Reject Billable" := ACOPackageLine.Quantity
                             else
-                                TempSalesLine."ACO Reject Not Billable" := ACOPackageLine.Quantity
+                                TempSalesLine."ACO Reject Not Billable" := ACOPackageLine.Quantity;
                         end else
                             Clear(ReasonCode);
 
@@ -287,25 +286,18 @@ codeunit 50003 "ACO Management"
                             ShowMessage := true;
                             if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
                                 SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
-                                SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
-                                SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
-                                SalesLine.Modify();
+                                UpdateSalesLine(SalesLine, TempSalesLine);
 
                                 // Create Production Order
                                 ProdOrderFromSale.SetHideValidationDialog(true);
                                 ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
-                            end else begin
-                                SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
-                                SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
-                                SalesLine.Modify();
-                            end;
+                            end else
+                                UpdateSalesLine(SalesLine, TempSalesLine);
 
                             // Message per case?
                             FinishProductionOrder(SalesLine, ProdOrderNos);
                         end else begin
-                            SalesLine.Validate("ACO Number of Units to Ship", TempSalesLine.Quantity);
-                            SalesLine.Validate("ACO Number of Units to Invoice", TempSalesLine.Quantity);
-                            SalesLine.Modify();
+                            UpdateSalesLine(SalesLine, TempSalesLine);
 
                             if SalesLine."Qty. to Ship" = SalesLine."Outstanding Quantity" then
                                 FinishProductionOrder(SalesLine, ProdOrderNos);
@@ -326,6 +318,18 @@ codeunit 50003 "ACO Management"
             end;
             UpdateCurrPage := true;
         end;
+    end;
+
+    local procedure UpdateSalesLine(var SalesLine: Record "Sales Line"; SalesLine2: Record "Sales Line")
+    var
+        RejectInvoiceDiscountLbl: Label 'Reject: %1 PCE Invoice / %2 PCE Discount';
+    begin
+        SalesLine.Validate("ACO Number of Units to Ship", SalesLine2.Quantity);
+        SalesLine.Validate("ACO Number of Units to Invoice", SalesLine2.Quantity);
+        SalesLine."ACO Reject Billable" := SalesLine2."ACO Reject Billable";
+        SalesLine."ACO Reject Not Billable" := SalesLine2."ACO Reject Not Billable";
+        SalesLine."Description 2" := StrSubstNo(RejectInvoiceDiscountLbl, SalesLine."ACO Reject Billable", SalesLine."ACO Reject Not Billable");
+        SalesLine.Modify();
     end;
 
     local procedure FinishProductionOrder(SalesLine: Record "Sales Line"; var ProdOrderNos: Text)

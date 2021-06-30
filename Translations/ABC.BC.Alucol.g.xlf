@@ -9098,6 +9098,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Receipt Shelf - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 564975995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Not Billable Shipped</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Rej. Not Billable Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 826999573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Billable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Reject Billable - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 879046660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Billable Shipped</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Reject Billable Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2680834858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Not Billable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Reject Not Billable - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2418564229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Return Remaining</source>
           <note from="Developer" annotates="general" priority="2"></note>

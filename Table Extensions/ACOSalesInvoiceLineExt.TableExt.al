@@ -123,5 +123,19 @@ tableextension 50011 "ACO Sales Invoice Line Ext." extends "Sales Invoice Line"
             Caption = 'Profile Customer Description';
             DataClassification = CustomerContent;
         }
+
+        field(50069; "ACO Reject Billable Shipped"; Integer)
+        {
+            Caption = 'Reject Billable Shipped';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50070; "ACO Rej. Not Billable Shipped"; Integer)
+        {
+            Caption = 'Reject Not Billable Shipped';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
     }
 }

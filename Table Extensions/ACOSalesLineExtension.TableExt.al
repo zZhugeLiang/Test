@@ -586,7 +586,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(500670; "ACO Rej. Not Billable Shipped"; Integer)
+        field(50070; "ACO Rej. Not Billable Shipped"; Integer)
         {
             Caption = 'Reject Not Billable Shipped';
             Editable = false;

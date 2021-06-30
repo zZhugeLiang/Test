@@ -122,5 +122,19 @@ tableextension 50010 "ACO Sales Shipment Line Ext." extends "Sales Shipment Line
             Caption = 'Profile Customer Description';
             DataClassification = CustomerContent;
         }
+
+        field(50069; "ACO Reject Billable Shipped"; Integer)
+        {
+            Caption = 'Reject Billable Shipped';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50070; "ACO Rej. Not Billable Shipped"; Integer)
+        {
+            Caption = 'Reject Not Billable Shipped';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
     }
 }
