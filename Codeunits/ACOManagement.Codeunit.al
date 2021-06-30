@@ -227,6 +227,7 @@ codeunit 50003 "ACO Management"
         TempSalesLine: Record "Sales Line" temporary;
         ACOAppSetup: Record "ACO App Setup";
         ItemVariant: Record "Item Variant";
+        ReasonCode: Record "Reason Code";
         ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
         ACOSelectionPackageLines: Page "ACO Selection Package Lines";
         ProductionOrderStatus: Enum "Production Order Status";
@@ -264,6 +265,15 @@ codeunit 50003 "ACO Management"
                         TempSalesLine."Document No." := ACOPackageLine."Sales Order No.";
                         TempSalesLine."Line No." := ACOPackageLine."Sales Line No";
                         TempSalesLine.Quantity := ACOPackageLine.Quantity;
+
+                        if ReasonCode.Get(ACOPackageLine."Reject Reason Code") then begin
+                            if ReasonCode."ACO Billable" then
+                                TempSalesLine."ACO Reject Billable" := ACOPackageLine.Quantity
+                            else
+                                TempSalesLine."ACO Reject Not Billable" := ACOPackageLine.Quantity
+                        end else
+                            Clear(ReasonCode);
+
                         TempSalesLine.Insert();
                     end;
                     ACOPackageLine.Ship := true;

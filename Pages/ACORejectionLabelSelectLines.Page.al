@@ -50,28 +50,6 @@ page 50055 "ACO Rej. Label Select Lines"
                     GeneratePackageLabel();
                 end;
             }
-
-            action(PrintLabel)
-            {
-                ApplicationArea = All;
-                Caption = 'Print Label';
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                Image = Print;
-                trigger OnAction()
-                var
-                    PackageHeader: Record "ACO Package Header";
-                    PrintPackageLabel: Report "ACO Package Label";
-                begin
-                    if PackageHeader.FindLast() then begin
-                        PackageHeader.SetRecFilter();
-                        PrintPackageLabel.SetTableView(PackageHeader);
-                        PrintPackageLabel.UseRequestPage := false;
-                        PrintPackageLabel.Run();
-                    end;
-                end;
-            }
         }
     }
 
@@ -221,12 +199,12 @@ page 50055 "ACO Rej. Label Select Lines"
 
             // Commit();
 
-            if BathLineTempRecord.FindSet() then
-                repeat
-                    ACOBathSheetLine."Reject Quantity" += BathLineTempRecord."Qty in Package";
-                    ACOBathSheetLine."Qty in Package" := 0;
-                    ACOBathSheetLine.Modify();
-                until BathLineTempRecord.Next() = 0;
+            // if BathLineTempRecord.FindSet() then
+            //     repeat
+            //         ACOBathSheetLine."Reject Quantity" += BathLineTempRecord."Qty in Package";
+            //         ACOBathSheetLine."Qty in Package" := 0;
+            //         ACOBathSheetLine.Modify();
+            //     until BathLineTempRecord.Next() = 0;
         end;
 
         BathLineTempRecord.DeleteAll();

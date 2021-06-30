@@ -565,14 +565,28 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50067; "ACO Reject Billable Shipped"; Integer)
+        field(50067; "ACO Reject Billable"; Integer)
+        {
+            Caption = 'Reject Billable';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50068; "ACO Reject Not Billable"; Integer)
+        {
+            Caption = 'Reject Not Billable';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50069; "ACO Reject Billable Shipped"; Integer)
         {
             Caption = 'Reject Billable Shipped';
             Editable = false;
             DataClassification = CustomerContent;
         }
 
-        field(50068; "Reject Not Billable Shipped"; Integer)
+        field(500670; "ACO Rej. Not Billable Shipped"; Integer)
         {
             Caption = 'Reject Not Billable Shipped';
             Editable = false;

@@ -333,17 +333,39 @@ Page 50025 "ACO Selection Bath Sheet List"
                 ToolTip = 'Generate OBR Rejection Label';
                 trigger OnAction()
                 var
-                    BathSheetLine: Record "ACO Bath Sheet Line";
+                    ProdOrderLine: Record "Prod. Order Line";
                     ACORejLabelSelectLines: Page "ACO Rej. Label Select Lines";
                     Only1LineErr: Label 'Only 1 line can be processed at a time.';
                 begin
-                    CurrPage.SetSelectionFilter(BathSheetLine);
+                    CurrPage.SetSelectionFilter(ProdOrderLine);
 
-                    if BathSheetLine.Count() > 1 then
+                    if ProdOrderLine.Count() > 1 then
                         Error(Only1LineErr);
 
                     ACORejLabelSelectLines.SetProdOrderLine(Rec);
                     ACORejLabelSelectLines.RunModal();
+                end;
+            }
+
+            action(PrintLabel)
+            {
+                ApplicationArea = All;
+                Caption = 'Print Label';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Print;
+                trigger OnAction()
+                var
+                    PackageHeader: Record "ACO Package Header";
+                    PrintPackageLabel: Report "ACO Package Label";
+                begin
+                    if PackageHeader.FindLast() then begin
+                        PackageHeader.SetRecFilter();
+                        PrintPackageLabel.SetTableView(PackageHeader);
+                        PrintPackageLabel.UseRequestPage := false;
+                        PrintPackageLabel.Run();
+                    end;
                 end;
             }
         }

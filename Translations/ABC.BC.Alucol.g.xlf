@@ -3708,11 +3708,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action GenerateLabel - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2244607703 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Print Label</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action PrintLabel - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2943489305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Bath Sheet List</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3882,6 +3877,11 @@
           <source>Only 1 line can be processed at a time.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Method OnAction - NamedType Only1LineErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action PrintLabel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 560858142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Package Lines</source>
@@ -8447,6 +8447,11 @@
           <source>Total m2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Production Order Line Ext. - Field ACO Total m2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 926877045 - Field 2492129152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1908046867">
+          <source>Billable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Reason Code Ext. - Field ACO Billable - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 469018315 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Area</source>
