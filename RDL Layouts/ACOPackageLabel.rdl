@@ -1326,6 +1326,66 @@ End Function
         <Field Name="ShiptoCountryRegionCode_SalesHeader">
           <DataField>ShiptoCountryRegionCode_SalesHeader</DataField>
         </Field>
+        <Field Name="EntryNo_ACOAddEDIInfoCustomer">
+          <DataField>EntryNo_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="SalesOrderNo_ACOAddEDIInfoCustomer">
+          <DataField>SalesOrderNo_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="SalesOrderLineNoACOAddEDIInfoCustomer">
+          <DataField>SalesOrderLineNoACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="EndcustomerName_ACOAddEDIInfoCustomer">
+          <DataField>EndcustomerName_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="EndcustomerAddress1_ACOAddEDIInfoCustomer">
+          <DataField>EndcustomerAddress1_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="EndcustomerAddress2_ACOAddEDIInfoCustomer">
+          <DataField>EndcustomerAddress2_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="EndcustomerAddress3_ACOAddEDIInfoCustomer">
+          <DataField>EndcustomerAddress3_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="EndcustomerAddress4_ACOAddEDIInfoCustomer">
+          <DataField>EndcustomerAddress4_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="CustomerItemNo_ACOAddEDIInfoCustomer">
+          <DataField>CustomerItemNo_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="CustomerItemDescription_ACOAddEDIInfoCustomer">
+          <DataField>CustomerItemDescription_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="Alloy_ACOAddEDIInfoCustomer">
+          <DataField>Alloy_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="LocName_ACOAddEDIInfoCustomer">
+          <DataField>LocName_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="LocZipCode_ACOAddEDIInfoCustomer">
+          <DataField>LocZipCode_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="LocCityACOAddEDIInfoCustomer">
+          <DataField>LocCityACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="LocCountry_ACOAddEDIInfoCustomer">
+          <DataField>LocCountry_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="ZIN_ACOAddEDIInfoCustomer">
+          <DataField>ZIN_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="CustomerOrderNo_ACOAddEDIInfoCustomer">
+          <DataField>CustomerOrderNo_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="Language_ACOAddEDIInfoCustomer">
+          <DataField>Language_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="SawingLength_ACOAddEDIInfoCustomer">
+          <DataField>SawingLength_ACOAddEDIInfoCustomer</DataField>
+        </Field>
+        <Field Name="ExternalLineNo_ACOAddEDIInfoCustomer">
+          <DataField>ExternalLineNo_ACOAddEDIInfoCustomer</DataField>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>

@@ -3202,6 +3202,11 @@
           <target>Algemeen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2169947147 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holders</source>
+          <target>Gekoppelde afstandshouder</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2169947147 - Action 404499832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Holders Types</source>
           <target>Gekoppelde houdertypes</target>
@@ -3212,47 +3217,42 @@
           <target>Gekoppelde ondersteuningshouders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Support Holders - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2169947147 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linked Distance Holders</source>
-          <target>Gekoppelde afstandshouder</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
+        <trans-unit id="Page 2469371202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holder Types</source>
+          <target>Houder types</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Types - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holders</source>
           <target>Houders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holders - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2469371202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder Types</source>
-          <target>Houder types</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Types - Property Caption</note>
-        </trans-unit>
-	<trans-unit id="Page 2295214127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2295214127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Sales Orders</source>
           <target>Import verkooporders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Import Sales Orders - Property Caption</note>
-        </trans-unit>		
-	<trans-unit id="Page 2295214127 - Action 2333931147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Page 2295214127 - Action 2333931147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set Status to New</source>
           <target>Zet status naar nieuw</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Import Sales Orders - Action Set Status to New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1219096983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside Units of Measure</source>
+          <target>Binnenzijde eenheidscode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Inside Units of Measure - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2683207574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Insides</source>
           <target>Binnenzijden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Insides - Property Caption</note>
         </trans-unit>
- 	<trans-unit id="Page 1219096983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Inside Units of Measure</source>
-          <target>Binnenzijde eenheidscode</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Inside Units of Measure - Property Caption</note>
-        </trans-unit>
-	<trans-unit id="Page 3595491298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3595491298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Layer Thicknesses</source>
           <target>Laagdikten</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Layer Thicknesses - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Distance Holders</source>
           <target>Gekoppelde afstandshouder</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Distance Holders - Property Caption</note>
@@ -3267,6 +3267,11 @@
           <target>Algemeen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1191417292 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Distance Holders</source>
+          <target>Gekoppelde afstandshouder</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1191417292 - Action 404499832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Holders Types</source>
           <target>Gekoppelde houdertypes</target>
@@ -3277,20 +3282,15 @@
           <target>Gekoppelde ondersteuningshouders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Support Holders - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1191417292 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linked Distance Holders</source>
-          <target>Gekoppelde afstandshouder</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
+        <trans-unit id="Page 4122716569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked Holder Types</source>
+          <target>Gekoppelde houdertypes</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Types - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Holders</source>
           <target>Gekoppelde houders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holders - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4122716569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linked Holder Types</source>
-          <target>Gekoppelde houdertypes</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Holder Types - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 73309779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging List</source>
@@ -3301,16 +3301,16 @@
           <source>Linked Support Holders</source>
           <target>Gekoppelde ondersteuningshouders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Linked Support Holders - Property Caption</note>
-        </trans-unit>		
+        </trans-unit>
+        <trans-unit id="Page 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Mu List</source>
+          <target>Mu meten overzicht</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measure Mu List - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
           <target>Gemeten kleuren</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measured Colors - Property Caption</note>
-        </trans-unit>
-	<trans-unit id="Page 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Measure Mu List</source>
-          <target>Mu meten overzicht</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Measure Mu List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 787245541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Operating Types</source>
@@ -3326,7 +3326,7 @@
           <source>Print Label</source>
           <target>Afdrukken etiket</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card - Action Print Label - Property Caption</note>
-        </trans-unit>					
+        </trans-unit>
         <trans-unit id="Page 368852624 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>
           <target>Regels</target>
@@ -3401,6 +3401,11 @@
           <source> </source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Your Reference - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 258550150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Lines</source>
+          <target>Colliregels</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 1527563463 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
@@ -3612,15 +3617,15 @@
           <target>Projectkleur</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Color - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3304970746 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Colors</source>
-          <target>Projectkleuren</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Colors - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2674767870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color Subpage</source>
           <target>Project kleur subpagina</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Color Subpage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3304970746 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Colors</source>
+          <target>Projectkleuren</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2244607703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rejection Label Select Lines</source>
@@ -3632,6 +3637,16 @@
           <target>Aanmaken etiket</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Action GenerateLabel - Property Caption</note>
         </trans-unit>
+	<trans-unit id="Page 290612570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Lines</source>
+          <target>Verkooporderregels</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 285665476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Sales Invoice Lines</source>
+          <target>Geboekte verkoopfactuurregels</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Invoice Lines - Property Caption</note>
+        </trans-unit>	
         <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
           <source>The number series was not set in both the Customer and App Settings.</source>
           <target>De Nr.-reeks is niet ingesteld in zowel de klantenkaart als de Alucol instellingen.</target>

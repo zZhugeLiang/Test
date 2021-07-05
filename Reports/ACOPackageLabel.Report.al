@@ -96,6 +96,27 @@ report 50001 "ACO Package Label"
                 column(ShiptoCity_SalesHeader; SalesHeader."Ship-to City") { }
                 column(ShiptoPostCode_SalesHeader; SalesHeader."Ship-to Post Code") { }
                 column(ShiptoCountryRegionCode_SalesHeader; SalesHeader."Ship-to Country/Region Code") { }
+                column(EntryNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Entry No.") { }
+                column(SalesOrderNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sales Order No") { }
+                column(SalesOrderLineNoACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sales Order Line No.") { }
+                column(EndcustomerName_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Endcustomer Name") { }
+                column(EndcustomerAddress1_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Endcustomer Adress 1") { }
+                column(EndcustomerAddress2_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Endcustomer Adress 2") { }
+                column(EndcustomerAddress3_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Endcustomer Adress 3") { }
+                column(EndcustomerAddress4_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Endcustomer Adress 4") { }
+                column(CustomerItemNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Customer Item No") { }
+                column(CustomerItemDescription_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Customer Item Description") { }
+                column(Alloy_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer.Alloy) { }
+                column(LocName_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Loc Name") { }
+                column(LocZipCode_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Loc ZipCode") { }
+                column(LocCityACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Loc City") { }
+                column(LocCountry_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Loc Country") { }
+                column(ZIN_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer.ZIN) { }
+                column(CustomerOrderNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Customer Order No") { }
+                column(Language_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer.Language) { }
+                column(SawingLength_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sawing Length") { }
+                column(ExternalLineNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."External Line No.") { }
+
                 trigger OnAfterGetRecord()
                 begin
                     if not Resource.Get(ACOPackageHeader."Resource No.") then
@@ -119,6 +140,11 @@ report 50001 "ACO Package Label"
 
                     if not RejectReasonCode.Get("Reject Reason Code") then
                         Clear(RejectReasonCode);
+
+                    ACOAddEDIInfoCustomer.SetRange("Sales Order No", ACOPackageLine."Sales Order No.");
+                    ACOAddEDIInfoCustomer.SetRange("Sales Order Line No.", Format(ACOPackageLine."Sales Line No"));
+                    if not ACOAddEDIInfoCustomer.FindFirst() then
+                        Clear(ACOAddEDIInfoCustomer);
                 end;
             }
         }
@@ -181,12 +207,12 @@ report 50001 "ACO Package Label"
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
         RejectReasonCode: Record "Reason Code";
+        ACOAddEDIInfoCustomer: Record "ACO Add EDI Info Customer";
         ItemLbl: Label 'Item';
         AmountLbl: Label 'Amount';
         LengthLbl: Label 'Length';
         ReferenceLbl: Label 'Reference';
         TreatmentLbl: Label 'Treatment';
-
         "filter Package Type": Option Box,Bundle,Carton,Cart,Chest,Tube,"Empty racks",Pack,Pallet,Rack;
         "Rack Number": Integer;
 }

@@ -180,6 +180,7 @@ codeunit 50003 "ACO Management"
         SalesLine: Record "Sales Line";
         Item: Record Item;
         SKU: Record "Stockkeeping Unit";
+        ItemType: Record Item;
         Counter: Integer;
         CreateProdOrder: Boolean;
         EndLoop: Boolean;
@@ -195,7 +196,12 @@ codeunit 50003 "ACO Management"
         repeat
             SalesLine.TestField("Shipment Date");
             SalesLine.CalcFields("Reserved Qty. (Base)");
-            SalesLine.TestField("ACO Color");
+
+            if (SalesLine.Type = SalesLine.Type::Item) and (SalesLine."No." <> '') then begin
+                ItemType.Get(SalesLine."No.");
+                if ItemType.Type = ItemType.Type::Inventory then
+                    SalesLine.TestField("ACO Color");
+            end;
 
             IsHandled := false;
             if IsHandled then
