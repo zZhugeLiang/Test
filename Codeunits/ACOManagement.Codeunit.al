@@ -324,6 +324,7 @@ codeunit 50003 "ACO Management"
 
     local procedure UpdateSalesLine(var SalesLine: Record "Sales Line"; SalesLine2: Record "Sales Line")
     var
+        NewLineDiscountAmount: Decimal;
         RejectInvoiceDiscountLbl: Label 'Reject: %1 PCE Invoice / %2 PCE Discount';
     begin
         SalesLine.Validate("ACO Number of Units to Ship", SalesLine2.Quantity);
@@ -331,6 +332,8 @@ codeunit 50003 "ACO Management"
         SalesLine."ACO Reject Billable" := SalesLine2."ACO Reject Billable";
         SalesLine."ACO Reject Not Billable" := SalesLine2."ACO Reject Not Billable";
         SalesLine."Description 2" := StrSubstNo(RejectInvoiceDiscountLbl, SalesLine."ACO Reject Billable", SalesLine."ACO Reject Not Billable");
+        NewLineDiscountAmount := SalesLine.Quantity / SalesLine."ACO Number of Units" * SalesLine."ACO Reject Not Billable" * SalesLine."Unit Price";
+        SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
         SalesLine.Modify();
     end;
 

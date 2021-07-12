@@ -69,7 +69,6 @@ page 50055 "ACO Rej. Label Select Lines"
         PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
         tempCustomerNo: Code[20];
-        temptext: Text;
         LineNumber: Integer;
         QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
         LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';

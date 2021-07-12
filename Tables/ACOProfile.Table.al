@@ -215,7 +215,6 @@ table 50008 "ACO Profile"
 
     var
         InStr: InStream;
-        FileNameBuffer: Text;
     begin
         Rec.CalcFields("Picture File");
         if Rec."Picture Filename" = '' then
@@ -227,7 +226,6 @@ table 50008 "ACO Profile"
     procedure DownloadClampingMethod()
     var
         InStr: InStream;
-        ClampingBuffer: Text;
     begin
         Rec.CalcFields("Clamping Method File");
         if Rec."Clamping Method Filename" = '' then
@@ -239,7 +237,6 @@ table 50008 "ACO Profile"
     procedure DownloadPackagingInstructions()
     var
         InStr: InStream;
-        PackagingInstructionBuffer: Text;
     begin
         Rec.CalcFields("Packaging Instructions File");
         if Rec."Packaging Instr. Filename" = '' then
