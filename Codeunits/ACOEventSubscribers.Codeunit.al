@@ -118,15 +118,10 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Shipment Date', false, false)]
     local procedure SalesLine_OnBeforeValidate_ShipmentDate(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
-        //         asd: Integer;
-        //     begin
-        //    procedure SalesLineCheck(SalesLine: Record "Sales Line"; ForceRequest: Boolean)
-        //     var
         ReservEntry: Record "Reservation Entry";
         SalesLineReserve: Codeunit "Sales Line-Reserve";
         ReservationCheckDateConfl: Codeunit "Reservation-Check Date Confl.";
         ReservMgt: Codeunit "Reservation Management";
-        IsHandled: Boolean;
     begin
         if not SalesLineReserve.FindReservEntry(Rec, ReservEntry) then
             exit;
@@ -146,23 +141,16 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Shipment Date', false, false)]
     local procedure SalesLine_OnAfterValidate_ShipmentDate(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
-        Item: Record Item;
-        ACOColor: Record "ACO Color";
         ProductionOrder: Record "Production Order";
         ProductionOrderLine: Record "Prod. Order Line";
         ProdOrderLine: Record "Prod. Order Line";
         ReservationEntry: Record "Reservation Entry";
         SalesLineReserve: Codeunit "Sales Line-Reserve";
-        ACOCreateProdOrderLines: Codeunit "ACO Create Prod. Order Lines";
-        ProdOrderStatusMgt: Codeunit "Prod. Order Status Management";
-        LeadTimeMgt: Codeunit "Lead-Time Management";
         ItemTrackingMgt: Codeunit "Item Tracking Management";
         UOMMgt: Codeunit "Unit of Measure Management";
         ReservQty: Decimal;
         ReservQtyBase: Decimal;
         ProdOrderRowID: Text[250];
-        NewShippingTimeText: Text[10];
-        NewShippingTime: DateFormula;
     begin
         if Rec.IsTemporary() then
             exit;
@@ -249,10 +237,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
         ACOCategory: Record "ACO Category";
-        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-        ProfileCode: Code[30];
-        CustomerNo: Code[20];
-        CustomerItemNo: Code[50];
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
         ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
     begin
@@ -328,8 +312,6 @@ codeunit 50000 "ACO Event Subscribers"
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        SalesHeader: Record "Sales Header";
     begin
         Rec.ClearFieldCausedPriceCalculation();
 
@@ -390,11 +372,6 @@ codeunit 50000 "ACO Event Subscribers"
     //TODO QtyBase
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterInitOutstandingQty', '', false, false)]
     local procedure SalesLine_OnAfterInitOutstandingQty(var SalesLine: Record "Sales Line");
-    var
-        SalesHeader: Record "Sales Header";
-        ItemVariant: Record "Item Variant";
-        ACOProfile: Record "ACO Profile";
-        ACOManagement: Codeunit "ACO Management";
     begin
         SalesLine."Outstanding Quantity" := Round(SalesLine."Outstanding Quantity", 0.001);
         SalesLine."Outstanding Qty. (Base)" := Round(SalesLine."Outstanding Qty. (Base)", 0.001);
@@ -512,7 +489,6 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnAfterDescriptionSalesLineInsert', '', false, false)]
     local procedure SalesShptLine_OnAfterDescriptionSalesLineInsert(var SalesLine: Record "Sales Line"; SalesShipmentLine: Record "Sales Shipment Line"; var NextLineNo: Integer)
     var
-        NewSalesLine: Record "Sales Line";
         SalesHeader: Record "Sales Header";
         SalesShipmentHeader: Record "Sales Shipment Header";
         ACOManagement: Codeunit "ACO Management";
@@ -542,8 +518,6 @@ codeunit 50000 "ACO Event Subscribers"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
     local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
-    var
-        myInt: Integer;
     begin
         SalesLine."ACO Reject Billable Shipped" += SalesLine."ACO Reject Billable";
         SalesLine."ACO Rej. Not Billable Shipped" += SalesLine."ACO Reject Not Billable";

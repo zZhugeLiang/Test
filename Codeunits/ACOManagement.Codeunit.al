@@ -85,7 +85,6 @@ codeunit 50003 "ACO Management"
     procedure InsertExtraSalesLineFromSalesShptLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; LineNoIncrement: Integer; NewDescription: Text)
     var
         NewSalesLine: Record "Sales Line";
-        SalesShipmentHeader: Record "Sales Shipment Header";
     begin
         NewSalesLine := SalesLine;
         NewSalesLine."Line No." += LineNoIncrement;
@@ -231,14 +230,11 @@ codeunit 50003 "ACO Management"
         SalesLine: Record "Sales Line";
         TempSalesLine: Record "Sales Line" temporary;
         ACOAppSetup: Record "ACO App Setup";
-        ItemVariant: Record "Item Variant";
         ReasonCode: Record "Reason Code";
         ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
         ACOSelectionPackageLines: Page "ACO Selection Package Lines";
         ProductionOrderStatus: Enum "Production Order Status";
         ProdOrderNos: Text;
-        NumberOfUnitsShipped: Decimal;
-        ShipToQty: Decimal;
         ShowMessage: Boolean;
         PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
         ProductionOrderFinishedMsg: Label 'The following Production Orders have been set to Finished: %1.';

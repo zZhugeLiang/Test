@@ -40,7 +40,6 @@ codeunit 50005 "ACO Create Prod. Order Lines"
 
     procedure Copy(ProdOrder2: Record "Production Order"; Direction: Option Forward,Backward; SalesLine: Record "Sales Line"; LetDueDateDecrease: Boolean): Boolean
     var
-        SalesHeader: Record "Sales Header";
         ErrorOccured: Boolean;
         IsHandled: Boolean;
     begin
@@ -108,7 +107,6 @@ codeunit 50005 "ACO Create Prod. Order Lines"
     var
         SalesPlanLine: Record "Sales Planning Line" temporary;
         Location: Record Location;
-        ACOProjectColorHeader: Record "ACO Project Color Header";
         ACOColorGroup: Record "ACO Color Group";
         ACOColor: Record "ACO Color";
         LeadTimeMgt: Codeunit "Lead-Time Management";

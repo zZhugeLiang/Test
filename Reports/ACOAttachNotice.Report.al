@@ -240,6 +240,7 @@ report 50005 "ACO Attach Notice"
                 var
                     Item: Record Item;
                     RoutingLine: Record "Routing Line";
+                    Customer: Record Customer;
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 begin
                     if not ACOProfileCustomer.Get("Sales Line"."ACO Profile Code", "Sales Header"."Sell-to Customer No.", "Sales Line"."ACO Customer Item No.") then
@@ -256,8 +257,13 @@ report 50005 "ACO Attach Notice"
                                 CurrReport.Skip();
                         end;
 
-                    ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-                    ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+                    // ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+                    // ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+
+                    if not Customer.Get("Sales Line"."Sell-to Customer No.") then
+                        Clear(Customer);
+
+                    ACOBathSheetMgt.DetermineStainingTimes("Sales Line", ThinStainingTime, ThickStainingTime, Customer);
 
                     GetHolders();
 
@@ -311,7 +317,6 @@ report 50005 "ACO Attach Notice"
                 SalesLine: Record "Sales Line";
                 ItemVariant: Record "Item Variant";
                 Customer: Record Customer;
-                ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
                 NumberOfMiliMeters: Decimal;
             begin
                 MaxLength := 0;
