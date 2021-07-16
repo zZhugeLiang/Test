@@ -196,7 +196,6 @@
           <target>Bewerkingsplaats zagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Sawing Routing No. - Property Caption</note>
         </trans-unit>
-
         <trans-unit id="Table 1559654101 - Field 2784732813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VEC Routing No.</source>
           <target>Bewerkingsplaats VEC</target>
@@ -1767,6 +1766,11 @@
           <target>Colli Nr.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Package No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4136019483 - Field 3522229920 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Production Order Line No.</source>
+          <target>Productieorder regelnr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Production Order Line No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4136019483 - Field 743612366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Production Order No.</source>
           <target>Productieordernr.</target>
@@ -1826,7 +1830,7 @@
           <source>Treatment</source>
           <target>Voorbehandeling</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Treatment - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
         <trans-unit id="Table 4136019483 - Field 1204010302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Treatment Description</source>
           <target>Voorbehandeling omschrijving</target>
@@ -1876,7 +1880,7 @@
           <source>Build-up Maximum Width</source>
           <target>Opb, Max. breedte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Maximum Width - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
         <trans-unit id="Table 888430590 - Field 165805856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Number of Layers</source>
           <target>Opb aantal per laag</target>
@@ -2107,21 +2111,21 @@
           <target>Product</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3974017570 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Area</source>
           <target>Oppervlakte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Area - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3342707286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last DateTime Modified</source>
-          <target>Laatste wijziging</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Last DateTime Modified - Property Caption</note>
+        <trans-unit id="Table 3974017570 - Field 1075152387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attach Method Code</source>
+          <target>Ophangmethode code</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Attach Method Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3007047366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Not Measurable</source>
-          <target>Niet meetbaar</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Not Measurable - Property Caption</note>
-        </trans-unit>	
+        <trans-unit id="Table 3974017570 - Field 1787343288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blocked State Inactive</source>
+          <target>Geblokkeerd status inactief</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Blocked State Inactive - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3702373668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Category</source>
           <target>Categorie</target>
@@ -2142,30 +2146,15 @@
           <target>Opspanmethode bestandspad</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Clamping Method File - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 2484013727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Clamping Method Filename</source>
+          <target>Opspanmethode bestandspad</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Clamping Method Filename - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <target>Code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 1064475362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extra Flushing</source>
-          <target>Extra spoelen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Extra Flushing - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 115750533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Correction Factor</source>
-          <target>Correctie factor</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Correction Factor - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <target>Omschrijving</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 4111052763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Height Level [mm]</source>
-          <target>Peilhoogte [mm]</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Height Level - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 1086683620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comment Bath Card</source>
@@ -2177,20 +2166,45 @@
           <target>Opmerking verkooporder</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Comment Work Note - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 4007194687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Picture Filename</source>
-          <target>Afbeelding bestandsnaam</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Picture Filename - Property Caption</note>
+        <trans-unit id="Table 3974017570 - Field 115750533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correction Factor</source>
+          <target>Correctie factor</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Correction Factor - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3333565510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Picture</source>
-          <target>Afbeelding</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Picture File - Property Caption</note>
+        <trans-unit id="Table 3974017570 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Omschrijving</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 2484013727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Clamping Method Filename</source>
-          <target>Opspanmethode bestandspad</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Clamping Method Filename - Property Caption</note>
+        <trans-unit id="Table 3974017570 - Field 1064475362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra Flushing</source>
+          <target>Extra spoelen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Extra Flushing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 4111052763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Height Level [mm]</source>
+          <target>Peilhoogte [mm]</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Height Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>High End</source>
+          <target>High End</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field High End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3705274901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Holders</source>
+          <target>Houders</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Holders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3342707286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last DateTime Modified</source>
+          <target>Laatste wijziging</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Last DateTime Modified - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3974017570 - Field 3007047366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Measurable</source>
+          <target>Niet meetbaar</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Not Measurable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 1902966350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Instr. Filename</source>
@@ -2202,30 +2216,15 @@
           <target>Eindverpakking instructies</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Packaging Instructions File - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <target>Euras</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Euras - Property Caption</note>
+        <trans-unit id="Table 3974017570 - Field 3333565510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picture</source>
+          <target>Afbeelding</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Picture File - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3705274901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holders</source>
-          <target>Houders</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Holders - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 1075152387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Attach Method Code</source>
-          <target>Ophangmethode code</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Attach Method Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 1787343288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Blocked State Inactive</source>
-          <target>Geblokkeerd status inactief</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Blocked State Inactive - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field High End - Property Caption</note>
+        <trans-unit id="Table 3974017570 - Field 4007194687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picture Filename</source>
+          <target>Afbeelding bestandsnaam</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Picture Filename - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 2495577545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type of Clamp Code</source>
@@ -2247,46 +2246,6 @@
           <target>Product klant</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile Code</source>
-          <target>Product code</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer No.</source>
-          <target>Klantnummer</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 441237434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Item No.</source>
-          <target>Productnummer klant</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Item No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 131416759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profile Description</source>
-          <target>Product omschrijving klant</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Name</source>
-          <target>Klantnaam</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Name - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Status</source>
-          <target>Status</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Status - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Active,Inactive</source>
-          <target>Actief,Inactief</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Status - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Code</source>
-          <target>Verzendadres</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Ship-to Code - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1025398750 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address</source>
           <target>Adres</target>
@@ -2296,6 +2255,26 @@
           <source>City</source>
           <target>Plaats</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 441237434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Item No.</source>
+          <target>Productnummer klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Name</source>
+          <target>Klantnaam</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <target>Klantnummer</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1973653763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer of Customer</source>
+          <target>Klant van klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer of Customer - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Euras</source>
@@ -2307,31 +2286,6 @@
           <target>Extra uittellen [mm]</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Extra to Enumerate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 3173631833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thin Staining Time [min]</source>
-          <target>Dunne Beitstijd [min]</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Thin Staining Time - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 135659731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thick Staining Time [min]</source>
-          <target>Dikke Beitstijd [min]</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Thick Staining Time - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 1005909100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sawing Discount</source>
-          <target>Zaagkorting</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Sawing Discount - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 505065745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Minimum Current Density [A/dm²]</source>
-          <target>Minimale Stroomdichtheid [A/dm²]</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Minimum Current Density - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 71536763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Maximum Current Density [A/dm²]</source>
-          <target>Maximale Stroomdichtheid [A/dm²]</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Maximum Current Density - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1025398750 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>High End</source>
           <target>High End</target>
@@ -2341,6 +2295,16 @@
           <source>Last DateTime Modified</source>
           <target>Laatste wijziging</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Last DateTime Modified - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 71536763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maximum Current Density [A/dm²]</source>
+          <target>Maximale Stroomdichtheid [A/dm²]</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Maximum Current Density - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 505065745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Minimum Current Density [A/dm²]</source>
+          <target>Minimale Stroomdichtheid [A/dm²]</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Minimum Current Density - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 1902966350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Instr. Filename</source>
@@ -2362,45 +2326,50 @@
           <target>Prijzenschema</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Price Scheme Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 1973653763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer of Customer</source>
-          <target>Klant van klant</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer of Customer - Property Caption</note>
+        <trans-unit id="Table 1025398750 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Code</source>
+          <target>Product code</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 131416759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile Description</source>
+          <target>Product omschrijving klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Profile Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 1005909100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing Discount</source>
+          <target>Zaagkorting</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Sawing Discount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Code</source>
+          <target>Verzendadres</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Ship-to Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Status</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active,Inactive</source>
+          <target>Actief,Inactief</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 135659731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thick Staining Time [min]</source>
+          <target>Dikke Beitstijd [min]</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Thick Staining Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 3173631833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thin Staining Time [min]</source>
+          <target>Dunne Beitstijd [min]</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Thin Staining Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 619236694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color</source>
           <target>Projectkleur</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 619236694 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No.</source>
-          <target>Nr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 619236694 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Name</source>
-          <target>Naam</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Name - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 619236694 - Field 2571230357 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Number of Measurements</source>
-          <target>Aantal metingen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Number of Measurements - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 619236694 - Field 3925446560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Target Time</source>
-          <target>Target tijd</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Target Time - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 619236694 - Field 2898143332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Note</source>
-          <target>Notitie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Note - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 619236694 - Field 3758282540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Note Operator</source>
-          <target>Notitie Operator</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Note Operator - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 619236694 - Field 3196841606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Conductivity Factor</source>
@@ -2412,25 +2381,60 @@
           <target>Inactief</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Inactive - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 619236694 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Naam</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 619236694 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>Nr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 619236694 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
           <target>Nr.-reeks</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field No. Series - Property Caption</note>
-        </trans-unit>	
-	<trans-unit id="Table 600960317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Table 619236694 - Field 2898143332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <target>Notitie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Note - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 619236694 - Field 3758282540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note Operator</source>
+          <target>Notitie Operator</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Note Operator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 619236694 - Field 2571230357 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Measurements</source>
+          <target>Aantal metingen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Number of Measurements - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 619236694 - Field 3925446560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Target Time</source>
+          <target>Target tijd</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Header - Field Target Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 600960317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color Line</source>
           <target>Projectkleur regel</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 600960317 - Field 3652422241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Color No.</source>
-          <target>Projectkleur nr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Project Color No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Regelnr.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 600960317 - Field 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <target>Locatie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 600960317 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Color,Seal,Tin Bath,Anodize,Gold Bath</source>
+          <target>,Na kleuren,Na sealen,Na tinbad,Na goudbad</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Name</source>
@@ -2442,20 +2446,30 @@
           <target>Aantal metingen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Number of Measurements - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 600960317 - Field 984679514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operator Visible</source>
+          <target>Zichtbaar voor operator</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Operator Visible - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 600960317 - Field 3652422241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Color No.</source>
+          <target>Projectkleur nr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Project Color No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 600960317 - Field 3087555523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Target Maximum</source>
+          <target>Target Maximum</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Maximum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 600960317 - Field 2524223145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Target Minimum</source>
+          <target>Target Minimum</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Minimum - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 600960317 - Field 3925446560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Time</source>
           <target>Target tijd</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Time - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 600960317 - Field 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Location</source>
-          <target>Locatie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 600960317 - Field 3891454143 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Color,Seal,Tin Bath,Anodize,Gold Bath</source>
-          <target>,Na kleuren,Na sealen,Na tinbad,Na goudbad</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Location - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 600960317 - Field 2539230715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Type</source>
@@ -2471,21 +2485,6 @@
           <source>Target Value</source>
           <target>Target waarde</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Value - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 600960317 - Field 2524223145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Target Minimum</source>
-          <target>Target Minimum</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Minimum - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 600960317 - Field 3087555523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Target Maximum</source>
-          <target>Target Maximum</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Target Maximum - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 600960317 - Field 984679514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operator Visible</source>
-          <target>Zichtbaar voor operator</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Project Color Line - Field Operator Visible - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2425748438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Support Holder</source>
@@ -2607,11 +2606,6 @@
           <target>Aucos Max. regels</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Aucos Max. No. of Lines - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 3266292953 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Aucos Staining Time</source>
-          <target>Aucos Beitstijd</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Aucos Staining Time - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 1559654101 - Control 2056616895 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Seal Time</source>
           <target>Aucos sealtijd</target>
@@ -2622,65 +2616,70 @@
           <target>Aucos Sealconstante</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Aucos Sealconstant - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 1724122585 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Net/Gross Weight Factor</source>
-          <target>Factor Bruto/Netto gewicht</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Net/Gross Weight Factor - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 3266292953 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aucos Staining Time</source>
+          <target>Aucos Beitstijd</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Aucos Staining Time - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1753180932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Min. Residue Saw</source>
           <target>Min. rest zagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Min. Residue Saw - Property ToolTip</note>
         </trans-unit>	
-	<trans-unit id="Table 4136019483 - Field 3522229920 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Production Order Line No.</source>
-          <target>Productieorder regelnr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Production Order Line No. - Property Caption</note>
+        <trans-unit id="Page 1559654101 - Control 261671863 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Unit of Measure Code</source>
+          <target>Oppervlakte Eenheidscode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Area Unit of Measure Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 502119421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Default Package Label Nos.</source>
-          <target>Standaard Nr. reeks colli </target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Package Label Nos. - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 3741738785 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"Bath Sheet Measure Mu No.</source>
+          <target>Badkaart nr.-reeks Mu meten</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Bath Sheet Measure Mu No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 3983821652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Dimension Code</source>
+          <target>Dimensiecode Kleur</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Color Dimension Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 107962960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Bath Card Nos.</source>
           <target>Standaard Badkaart Nr.-reeks</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Bath Card Nos. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 2131016905 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Default Project Color Nos.</source>
-          <target>Standaard Nr.-reeks Projectkleuren</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Project Color Nos. - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 1559654101 - Control 35361578 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Measured Color Nos.</source>
           <target>Standaard gemeten kleuren Nr.-reeks</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Measured Color Nos. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 3585308602 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Pretreatment Dimension Code</source>
-          <target>Dimensiecode Voorbehandeling</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Pretreatment Dimension Code - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 502119421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Package Label Nos.</source>
+          <target>Standaard Nr. reeks colli </target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Package Label Nos. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 3983821652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Color Dimension Code</source>
-          <target>DImensiecode Kleur</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Color Dimension Code - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 2131016905 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Project Color Nos.</source>
+          <target>Standaard Nr.-reeks Projectkleuren</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Project Color Nos. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 3588803993 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Foil Routing No.</source>
+          <target>Bwerkingsplaat folie toevoegen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Foil Routing No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 4002724476 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Layer Thickness Dimension Code</source>
           <target>Dimensiecode Laagdikte</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Layer Thickness Dimension Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 685212800 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thickness Tolerance</source>
+          <target>Laagdikte tolerantie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Layer Thickness Tolerance - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Control 320209346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Length Unit of Measure Code</source>
           <target>Eenheidscode M</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Length Unit of Measure Code - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 261671863 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area Unit of Measure Code</source>
-          <target>Oppervlakte Eenheidscode</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Area Unit of Measure Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 640498295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density Bath 1</source>
@@ -2702,60 +2701,55 @@
           <target>Max. Stroomdichtheid Bad LL</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Max. Current Density Bath L - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 1619105478 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Min. Anodise Time</source>
-          <target>Minimale Anodiseertijd</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Min. Anodise Time - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 1244094275 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maximum Sawing Length</source>
+          <target>Maximale zaaglengte</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Maximum Sawing Length - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 3725408295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Maximum Surface Attachrack</source>
           <target>Maximale oppervlakte ophangrek</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Maximum Surface Attachrack - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 1619105478 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Min. Anodise Time</source>
+          <target>Minimale Anodiseertijd</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Min. Anodise Time - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Control 1256312134 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Multiple Staining Times Text</source>
           <target>Meer beitstijden tekst</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Multiple Staining Times Text - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 685212800 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Layer Thickness Tolerance</source>
-          <target>Laagdikte tolerantie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Layer Thickness Tolerance - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 3741738785 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"Bath Sheet Measure Mu No.</source>
-          <target>Badkaart nr.-reeks Mu meten</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Bath Sheet Measure Mu No. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 565146195 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rack Packaging Code</source>
-          <target>Rek verpakkingscode</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Rack Packaging Code - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 1724122585 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net/Gross Weight Factor</source>
+          <target>Factor Bruto/Netto gewicht</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Net/Gross Weight Factor - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 669089404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Packaging Code</source>
           <target>Eindverpakking PAK Code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Package Packaging Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 1244094275 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Maximum Sawing Length</source>
-          <target>Maximale zaaglengte</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Maximum Sawing Length - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 3585308602 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pretreatment Dimension Code</source>
+          <target>Dimensiecode Voorbehandeling</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Pretreatment Dimension Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 3156103170 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sawing Routing No.</source>
-          <target>Bewerkingsplaats Zagen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Sawing Routing No. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1559654101 - Control 3588803993 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add Foil Routing No.</source>
-          <target>Bwerkingsplaat folie toevoegen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Foil Routing No. - Property ToolTip</note>
+        <trans-unit id="Page 1559654101 - Control 565146195 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rack Packaging Code</source>
+          <target>Rek verpakkingscode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Rack Packaging Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 2095644491 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Remove Foil Routing No.</source>
           <target>Bwerkingsplaat folie verwijderen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Remove Foil Routing No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 3156103170 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sawing Routing No.</source>
+          <target>Bewerkingsplaats Zagen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Sawing Routing No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1559654101 - Control 2784732813 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>VEC Routing No.</source>
@@ -2766,21 +2760,16 @@
           <source>Wrap Routing No.</source>
           <target>Bewerkingsplaats Wikkelen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Wrap Routing No. - Property ToolTip</note>
-        </trans-unit>		
+        </trans-unit>
         <trans-unit id="Page 2147013590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Methods</source>
           <target>Ophangmethode code</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Attach Methods - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet</source>
           <target>Badkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <target>Algemeen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
@@ -2792,15 +2781,40 @@
           <target>Waardes berekenen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control CalculatedValues - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 371732247 - Action 3566282224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update Process Times</source>
-          <target>Update bewerkingstijden</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
+        <trans-unit id="Page 371732247 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Algemeen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet Resources</source>
+          <target>Badkaart medewerkers</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Bath Sheet Resources - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measure Mu List</source>
+          <target>Mu meten overzicht</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measure Mu List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Measured Colors</source>
+          <target>Gemeten kleuren</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measured Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 1566538523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Complete Bath Sheet</source>
           <target>Badkaart gereed melden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Complete Bath Sheet - Property Caption</note>
+        </trans-unit>
+	<trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 681936706" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.</source>
+          <target>Het aantal regels van de Badkaart is groter dan het maximum aantal regels welke toegestaan zijn.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType MaxNumberOfLinesErr</note>
+        </trans-unit>
+	<trans-unit id="Page 371732247 - Action 3566282224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Process Times</source>
+          <target>Update bewerkingstijden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 707697803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print Bath Sheet</source>
@@ -2811,11 +2825,6 @@
           <source>Export Aucos</source>
           <target>Exporteren naar Aucos</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 681936706" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.</source>
-          <target>Het aantal regels van de Badkaart is groter dan het maximum aantal regels welke toegestaan zijn.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType MaxNumberOfLinesErr</note>
         </trans-unit>
         <trans-unit id="Page 371732247 - Action 3717496217 - Method 1377591017 - NamedType 315208502" size-unit="char" translate="yes" xml:space="preserve">
           <source>This Bath Sheet is not intended for the long line.</source>
@@ -2841,21 +2850,6 @@
           <source>Export Aucos test</source>
           <target>Exporteren naar Aucos test</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bath Sheet Resources</source>
-          <target>Badkaart medewerkers</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Bath Sheet Resources - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Action 4264871009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Measure Mu List</source>
-          <target>Mu meten overzicht</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measure Mu List - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Action 2110749209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Measured Colors</source>
-          <target>Gemeten kleuren</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action ACO Measured Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet</source>
@@ -3157,12 +3151,12 @@
           <target>Badkaart subpagina</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Subpage - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 2949633637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2949633637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Layers</source>
           <target>Laagopbouw</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Build-up Layers - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 2624490701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2624490701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Categories</source>
           <target>Categorieën</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Categories - Property Caption</note>
@@ -3171,17 +3165,17 @@
           <source>Color Groups</source>
           <target>Kleurgroepen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Color Groups - Property Caption</note>
-        </trans-unit>	
- 	<trans-unit id="Page 1459384309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Page 1459384309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Colors</source>
           <target>Kleuren</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Colors - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 1602251431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1602251431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Distance Holders</source>
           <target>Afstandhouders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Distance Holders - Property Caption</note>
-        </trans-unit>			
+        </trans-unit>
         <trans-unit id="Page 2905872408 - Control 2667757584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rack No.</source>
           <target>Reknr.</target>
@@ -3192,7 +3186,7 @@
           <target>Opmerking</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Remark - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 2169947147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2169947147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Card</source>
           <target>Houder kaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Property Caption</note>
@@ -3369,32 +3363,32 @@
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 54515159 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Profile description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 441237434 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Customer Item No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 2157246790 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Profile Cust. Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 1881551368 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Length - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 2609919304 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Treatment - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 1204010302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Treatment Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 368852624 - Control 3001618318 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
