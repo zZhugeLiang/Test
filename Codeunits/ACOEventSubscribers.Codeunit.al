@@ -393,10 +393,19 @@ codeunit 50000 "ACO Event Subscribers"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostSalesLine', '', false, false)]
-    local procedure SalesPost_OnAfterPostSalesLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; CommitIsSuppressed: Boolean; var SalesInvLine: Record "Sales Invoice Line"; var SalesCrMemoLine: Record "Sales Cr.Memo Line"; var xSalesLine: Record "Sales Line")
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostUpdateOrderLineModifyTempLine', '', false, false)]
+    local procedure SalesPost_OnBeforePostUpdateOrderLineModifyTempLine(var TempSalesLine: Record "Sales Line" temporary; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
     begin
-
+        //TODO issue 1.6 + 1.7
+        TempSalesLine."ACO Number of Units" := TempSalesLine."ACO Number of Units" - TempSalesLine."ACO Number of Units to Ship";
+        if TempSalesLine."Qty. to Ship" = 0 then
+            TempSalesLine."ACO Number of Units to Ship" := 0;
+        if TempSalesLine."Qty. to Invoice" = 0 then
+            TempSalesLine."ACO Number of Units to Invoice" := 0;
+        TempSalesLine."ACO Reject Billable Shipped" += TempSalesLine."ACO Reject Billable";
+        TempSalesLine."ACO Rej. Not Billable Shipped" += TempSalesLine."ACO Reject Not Billable";
+        TempSalesLine."ACO Reject Billable" := 0;
+        TempSalesLine."ACO Reject Not Billable" := 0;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesShptHeaderInsert', '', false, false)]
@@ -419,6 +428,15 @@ codeunit 50000 "ACO Event Subscribers"
                 PackageNo := ACOPackageLine."Package No.";
             until ACOPackageLine.Next() = 0;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesShptLineInsert', '', false, false)]
+    local procedure SalesPost_OnBeforeSalesShptLineInsert(var SalesShptLine: Record "Sales Shipment Line"; SalesShptHeader: Record "Sales Shipment Header"; SalesLine: Record "Sales Line"; CommitIsSuppressed: Boolean; PostedWhseShipmentLine: Record "Posted Whse. Shipment Line"; SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; ItemLedgShptEntryNo: Integer; xSalesLine: record "Sales Line"; var TempSalesLineGlobal: record "Sales Line" temporary; var IsHandled: Boolean)
+    begin
+        //TODO1.7
+        SalesShptLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable";
+        SalesShptLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Reject Not Billable";
+    end;
+
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order Lines", 'OnBeforeProdOrderLineInsert', '', false, false)]
     local procedure CreateProdOrderLines_OnBeforeProdOrderLineInsert(var ProdOrderLine: Record "Prod. Order Line"; var ProductionOrder: Record "Production Order"; SalesLineIsSet: Boolean; var SalesLine: Record "Sales Line")
@@ -522,12 +540,12 @@ codeunit 50000 "ACO Event Subscribers"
         QtyRounded := Round(QtyRounded, 0.001);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
-    local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
-    begin
-        SalesLine."ACO Reject Billable Shipped" += SalesLine."ACO Reject Billable";
-        SalesLine."ACO Rej. Not Billable Shipped" += SalesLine."ACO Reject Not Billable";
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
+    // local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
+    // begin
+    //     SalesLine."ACO Reject Billable Shipped" += SalesLine."ACO Reject Billable";
+    //     SalesLine."ACO Rej. Not Billable Shipped" += SalesLine."ACO Reject Not Billable";
+    // end;
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
     // local procedure CreateProdOrderfromSale_OnAfterCreateProdOrderFromSalesLine(var ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line");
