@@ -63,6 +63,16 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(SalesLineCustomerItemNo);
     end;
 
+    procedure SetPostProductionJournal(NewPostProductionJournal: Boolean);
+    begin
+        PostProductionJournal := NewPostProductionJournal;
+    end;
+
+    procedure GetPostProductionJournal(): Boolean;
+    begin
+        exit(PostProductionJournal);
+    end;
+
     var
         TemporaryUserSetup: Record "User Setup" temporary;
         SalesLineProfileCode: Code[30];
@@ -70,4 +80,5 @@ codeunit 50001 "ACO Single Instance Mgt"
         ACOProfileCustomerProfileCode: Code[30];
         ACOProfileCustomerCustomerNo: Code[20];
         ACOProfileCustomerCustomerItemNo: Code[50];
+        PostProductionJournal: Boolean;
 }

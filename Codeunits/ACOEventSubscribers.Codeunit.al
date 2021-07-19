@@ -538,7 +538,41 @@ codeunit 50000 "ACO Event Subscribers"
         QtyRounded := Round(QtyRounded, 0.001);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Production Journal Mgt", 'OnBeforeRunProductionJnl', '', false, false)]
+    local procedure ProductionJournalMgt_OnBeforeRunProductionJnl(ToTemplateName: Code[10]; ToBatchName: Code[10]; ProdOrder: Record "Production Order"; ActualLineNo: Integer; PostingDate: Date; var IsHandled: Boolean)
+    var
+        ItemJnlLine: Record "Item Journal Line";
+        ItemJnlTemplate: Record "Item Journal Template";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+        PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
+        //ToBatchName: Code[10];
+        User: Text;
+    begin
+        // TODO Create Production Journal
 
+        if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
+            // ItemJnlTemplate.Reset();
+            // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
+            // ItemJnlTemplate.SetRange(Recurring, false);
+            // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
+            // if ItemJnlTemplate.FindFirst() then begin
+            //     User := UpperCase(UserId);
+            //     if User <> '' then
+            //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
+            //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
+            //         else
+            //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
+
+            // Post Production Journal
+            ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
+            ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
+            ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
+            Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
+            ACOSingleInstanceMgt.SetPostProductionJournal(false);
+            // end;
+        end;
+        //ACOSingleInstanceMgt
+    end;
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
     // local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)

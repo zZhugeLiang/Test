@@ -60,14 +60,19 @@ page 50055 "ACO Rej. Label Select Lines"
         Customer: Record "Customer";
         PackageHeader: Record "ACO Package Header";
         PackageLine: Record "ACO Package Line";
+        PackageLineToProductionJournal: Record "ACO Package Line";
         SalesOrder: Record "Sales Header";
         SalesLine: Record "Sales Line";
         SalesLineGet: Record "Sales Line";
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
         ItemVariant: Record "Item Variant";
+        ProductionOrder: Record "Production Order";
+        ProdOrderLine: Record "Prod. Order Line";
         GenPackage: Page "ACO Generate Package Dialog";
         PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
+        ProductionJrnlMgt: Codeunit "Production Journal Mgt";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         tempCustomerNo: Code[20];
         LineNumber: Integer;
         QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
@@ -190,6 +195,23 @@ page 50055 "ACO Rej. Label Select Lines"
                 until BathLineTempRecord.Next() = 0;
 
             Commit();
+
+            // TODO Create Production Journal
+            ACOSingleInstanceMgt.SetPostProductionJournal(true);
+
+            PackageLineToProductionJournal.SetRange("Package No.", PackageHeader."No.");
+            if PackageLineToProductionJournal.FindSet() then
+                repeat
+                    if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
+                        if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
+                            ProductionJrnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
+                        end;
+                until PackageLineToProductionJournal.Next() = 0;
+
+            ACOSingleInstanceMgt.SetPostProductionJournal(false);
+
+            Commit();
+            // TODO Create Production Journal
 
             PackageHeader.SetRecFilter();
             PrintPackageLabel.SetTableView(PackageHeader);
