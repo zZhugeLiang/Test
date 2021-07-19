@@ -280,7 +280,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
                         NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship" / 1000;
 
-                    //TODO QtyBase
                     NewQuantity := Round(NewQuantity, 0.001);
                     if Rec."Outstanding Quantity" + 0.001 = NewQuantity then
                         NewQuantity := Round(Rec."Outstanding Quantity", 0.001);

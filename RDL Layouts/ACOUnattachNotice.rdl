@@ -1737,7 +1737,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox198">
                                     <KeepTogether>true</KeepTogether>
@@ -1966,7 +1966,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox196">
                                     <KeepTogether>true</KeepTogether>
@@ -2190,7 +2190,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox197">
                                     <KeepTogether>true</KeepTogether>
@@ -2404,7 +2404,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox211">
                                     <KeepTogether>true</KeepTogether>
@@ -2623,7 +2623,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox7">
                                     <KeepTogether>true</KeepTogether>
@@ -2847,7 +2847,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox52">
                                     <KeepTogether>true</KeepTogether>
@@ -3063,7 +3063,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>18.9cm</Size>
+                                <Size>18.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox205">
                                     <KeepTogether>true</KeepTogether>
@@ -3099,7 +3099,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox8">
                                     <KeepTogether>true</KeepTogether>
@@ -3361,7 +3361,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox203">
                                     <KeepTogether>true</KeepTogether>
@@ -3621,7 +3621,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox424">
                                     <KeepTogether>true</KeepTogether>
@@ -3881,7 +3881,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.3cm</Size>
+                                <Size>4.35604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox32">
                                     <KeepTogether>true</KeepTogether>
@@ -4373,7 +4373,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox459">
                                     <KeepTogether>true</KeepTogether>
@@ -4407,7 +4407,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.82458cm</Size>
+                                    <Size>1.22458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox1421">
                                         <KeepTogether>true</KeepTogether>
@@ -4436,6 +4436,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
@@ -4775,7 +4776,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox452">
                                     <KeepTogether>true</KeepTogether>
@@ -4809,7 +4810,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.82458cm</Size>
+                                    <Size>1.22458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox1422">
                                         <KeepTogether>true</KeepTogether>
@@ -5180,7 +5181,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox445">
                                     <KeepTogether>true</KeepTogether>
@@ -5214,7 +5215,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.82458cm</Size>
+                                    <Size>1.22458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox1423">
                                         <KeepTogether>true</KeepTogether>
@@ -5583,7 +5584,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox40">
                                     <KeepTogether>true</KeepTogether>
@@ -5617,7 +5618,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.82458cm</Size>
+                                    <Size>1.22458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox1">
                                         <KeepTogether>true</KeepTogether>
@@ -6087,7 +6088,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.02958cm</Size>
+                                    <Size>0.68562cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox178">
                                         <KeepTogether>true</KeepTogether>
@@ -6121,7 +6122,7 @@
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>0.82458cm</Size>
+                                        <Size>1.22458cm</Size>
                                         <CellContents>
                                           <Textbox Name="Textbox438">
                                             <KeepTogether>true</KeepTogether>
@@ -6606,7 +6607,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>8cm</Size>
+                            <Size>8.05604cm</Size>
                             <CellContents>
                               <Rectangle Name="Rectangle2">
                                 <ReportItems>
@@ -8804,7 +8805,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>18.9cm</Size>
+                                <Size>18.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox164">
                                     <KeepTogether>true</KeepTogether>
@@ -8847,7 +8848,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox165">
                                     <KeepTogether>true</KeepTogether>
@@ -8883,7 +8884,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.82458cm</Size>
+                                    <Size>1.22458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox166">
                                         <KeepTogether>true</KeepTogether>
@@ -9150,7 +9151,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.85416cm</Size>
+                                    <Size>1.9102cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox181">
                                         <KeepTogether>true</KeepTogether>
@@ -9568,7 +9569,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.85416cm</Size>
+                                    <Size>1.9102cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox194">
                                         <KeepTogether>true</KeepTogether>
@@ -9987,7 +9988,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.85416cm</Size>
+                                    <Size>1.9102cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox153">
                                         <KeepTogether>true</KeepTogether>
@@ -10406,7 +10407,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>9.05416cm</Size>
+                                    <Size>9.1102cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox46">
                                         <KeepTogether>true</KeepTogether>
@@ -10678,7 +10679,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>18.9cm</Size>
+                                <Size>18.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox145">
                                     <KeepTogether>true</KeepTogether>
@@ -10720,7 +10721,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>17.9cm</Size>
+                                <Size>17.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox66">
                                     <KeepTogether>true</KeepTogether>
@@ -10793,7 +10794,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>17.9cm</Size>
+                                <Size>17.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox67">
                                     <KeepTogether>true</KeepTogether>
@@ -10866,7 +10867,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>17.9cm</Size>
+                                <Size>17.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox68">
                                     <KeepTogether>true</KeepTogether>
@@ -10945,7 +10946,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox71">
                                     <KeepTogether>true</KeepTogether>
@@ -10979,7 +10980,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>4.52458cm</Size>
+                                    <Size>4.92458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox354">
                                         <KeepTogether>true</KeepTogether>
@@ -11199,7 +11200,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.47542cm</Size>
+                                <Size>3.13146cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox72">
                                     <KeepTogether>true</KeepTogether>
@@ -11238,7 +11239,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>4.52458cm</Size>
+                                    <Size>4.92458cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox2224">
                                         <KeepTogether>true</KeepTogether>
@@ -11364,7 +11365,7 @@
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value>=Fields!AreaIncHollow.Value</Value>
+                                                            <Value>=Fields!SalesLineAreaIncHollow.Value</Value>
                                                             <Style>
                                                               <FontFamily>Calibri</FontFamily>
                                                               <FontWeight>Bold</FontWeight>
@@ -11560,7 +11561,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value>=Fields!AreaExcHollow.Value</Value>
+                                                                                <Value>=Fields!AreaIncHollow.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Calibri</FontFamily>
                                                                                   <FontWeight>Bold</FontWeight>
@@ -11695,7 +11696,7 @@
                             </TablixMember>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>18.9cm</Size>
+                                <Size>18.95604cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox5">
                                     <KeepTogether>true</KeepTogether>
@@ -11737,7 +11738,7 @@
                 <KeepTogether>true</KeepTogether>
                 <DataSetName>DataSet_Result</DataSetName>
                 <Height>27.1cm</Height>
-                <Width>19cm</Width>
+                <Width>19.05604cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -11750,7 +11751,7 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Height>27.1cm</Height>
-            <Width>19cm</Width>
+            <Width>19.05604cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -11761,7 +11762,7 @@
         <Height>27.1cm</Height>
         <Style />
       </Body>
-      <Width>19cm</Width>
+      <Width>19.05604cm</Width>
       <Page>
         <PageHeader>
           <Height>1.2cm</Height>
@@ -12525,6 +12526,12 @@ End Function
         </Field>
         <Field Name="Remark_ACOLinkedPackaging">
           <DataField>Remark_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="SalesLineAreaIncHollow">
+          <DataField>SalesLineAreaIncHollow</DataField>
+        </Field>
+        <Field Name="SalesLineAreaIncHollowFormat">
+          <DataField>SalesLineAreaIncHollowFormat</DataField>
         </Field>
       </Fields>
       <Query>

@@ -136,7 +136,9 @@ report 50001 "ACO Package Label"
                         Clear(SalesLine);
 
                     if not ACOProfile.Get("Profile no.") then
-                        Clear(ACOProfile);
+                        Clear(ACOProfile)
+                    else
+                        ACOProfile.CalcFields("Picture File");
 
                     if not RejectReasonCode.Get("Reject Reason Code") then
                         Clear(RejectReasonCode);

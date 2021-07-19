@@ -188,7 +188,7 @@ table 50008 "ACO Profile"
         ACOProfileCustomer: Record "ACO Profile Customer";
     begin
         "Last DateTime Modified" := CurrentDateTime();
-        if Rec."Code" <> xRec."Code" then begin
+        if (Rec."Code" <> xRec."Code") and (Rec."Code" <> '') and (xRec."Code" <> '') then begin
             SalesLine.SetRange("ACO Profile Code", xRec."Code");
             SalesLine.ModifyAll("ACO Profile Code", Rec."Code");
 
@@ -205,7 +205,7 @@ table 50008 "ACO Profile"
         SalesLine: Record "Sales Line";
     begin
         "Last DateTime Modified" := CurrentDateTime();
-        if Rec."Description" <> xRec.Description then begin
+        if (Rec."Description" <> xRec.Description) and (Rec.Description <> '') and (xRec.Description <> '') then begin
             SalesLine.SetRange("ACO Profile Description", xRec.Description);
             SalesLine.ModifyAll("ACO Profile Description", Rec.Description);
         end;

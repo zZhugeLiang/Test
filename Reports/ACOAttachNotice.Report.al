@@ -235,6 +235,7 @@ report 50005 "ACO Attach Notice"
                 column(Position_ACOLinkedDistanceHolder2; ACOLinkedDistanceHolder2.Position) { }
                 column(Position_ACOLinkedDistanceHolder3; ACOLinkedDistanceHolder3.Position) { }
                 column(Position_ACOLinkedDistanceHolder4; ACOLinkedDistanceHolder4.Position) { }
+                column(SalesLineAreaIncHollow; "Sales Line"."ACO Area" * "Sales Line"."ACO Correction Factor Profile") { }
                 // Holders >>
                 trigger OnAfterGetRecord()
                 var

@@ -369,7 +369,6 @@ codeunit 50000 "ACO Event Subscribers"
         ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
     end;
 
-    //TODO QtyBase
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterInitOutstandingQty', '', false, false)]
     local procedure SalesLine_OnAfterInitOutstandingQty(var SalesLine: Record "Sales Line");
     begin
@@ -533,12 +532,13 @@ codeunit 50000 "ACO Event Subscribers"
             end;
     end;
 
-    //TODO QtyBase
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Unit of Measure Management", 'OnAfterCalcQtyFromBasePerUnitOfMeasure', '', false, false)]
     local procedure UnitofMeasureManagement_OnAfterCalcQtyFromBasePerUnitOfMeasure(ItemNo: Code[20]; VariantCode: Code[10]; UOMCode: Code[10]; QtyBase: Decimal; QtyPerUOM: Decimal; var QtyRounded: Decimal)
     begin
         QtyRounded := Round(QtyRounded, 0.001);
     end;
+
+
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
     // local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
