@@ -229,8 +229,10 @@ report 50007 "ACO Unattach Notice"
                                 CurrReport.Skip();
 
 
-                    ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-                    ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+                    // ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
+                    // ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+                    ThinStainingTime := 99999;
+                    ThickStainingTime := -1;
 
                     if not Customer.Get("Sales Line"."Sell-to Customer No.") then
                         Clear(Customer);

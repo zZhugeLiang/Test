@@ -260,6 +260,8 @@ report 50005 "ACO Attach Notice"
 
                     // ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
                     // ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
+                    ThinStainingTime := 99999;
+                    ThickStainingTime := -1;
 
                     if not Customer.Get("Sales Line"."Sell-to Customer No.") then
                         Clear(Customer);
