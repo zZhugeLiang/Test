@@ -7430,6 +7430,46 @@
           <target> ,korte lijn,lange lijn</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Production Line - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 564975995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Reject Not Billable Shipped</source>
+          <target>Afkeur niet facturabel verzonden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Rej. Not Billable Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 879046660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Reject Billable Shipped</source>
+          <target>Afkeur facturabel verzonden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Reject Billable Shipped - Property Caption</note>
+        </trans-unit>	
+        <trans-unit id="TableExtension 632998638 - Field 564975995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Not Billable Shipped</source>
+          <target>Afkeur niet facturabel verzonden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Rej. Not Billable Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 826999573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Billable</source>
+          <target>Afkeur facturabel</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Reject Billable - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 879046660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Billable Shipped</source>
+          <target>Afkeur facturabel verzonden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Reject Billable Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 2680834858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Reject Not Billable</source>
+          <target>Afkeur niet facturabel</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Reject Not Billable - Property Caption</note>
+        </trans-unit>
+	<trans-unit id="TableExtension 993637128 - Field 564975995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Reject Not Billable Shipped</source>
+          <target>Afkeur facturabel niet verzonden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Rej. Not Billable Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 879046660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Reject Billable Shipped</source>
+          <target>Afkeur facturabel verzonden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Reject Billable Shipped - Property Caption</note>
+        </trans-unit>	
       </group>
     </body>
   </file>
