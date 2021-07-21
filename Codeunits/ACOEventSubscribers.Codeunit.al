@@ -574,12 +574,15 @@ codeunit 50000 "ACO Event Subscribers"
         //ACOSingleInstanceMgt
     end;
 
-    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterUpdateSalesLineBeforePost', '', false, false)]
-    // local procedure SalesPost_OnAfterUpdateSalesLineBeforePost(var SalesLine: Record "Sales Line"; var SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
-    // begin
-    //     SalesLine."ACO Reject Billable Shipped" += SalesLine."ACO Reject Billable";
-    //     SalesLine."ACO Rej. Not Billable Shipped" += SalesLine."ACO Reject Not Billable";
-    // end;
+    [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
+    local procedure SalesGetShipment_OnBeforeInsertInvLineFromShptLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; SalesOrderLine: Record "Sales Line"; var IsHandled: Boolean)
+    var
+        NewLineDiscountAmount: Decimal;
+    begin
+        // Issue 1.8
+        NewLineDiscountAmount := SalesLine.Quantity / SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price";
+        SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
+    end;
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
     // local procedure CreateProdOrderfromSale_OnAfterCreateProdOrderFromSalesLine(var ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line");

@@ -367,6 +367,8 @@ report 50010 "ACO Sales - Invoice"
                     column(ACOProfileCustDescription_SalesInvoiceLineCaption; "Sales Invoice Line".FieldCaption("ACO Profile Cust. Description")) { }
                     column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
                     column(ACONumberofUnits_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("ACO Number of Units")) { }
+                    column(ACORejectBillableShipped_SalesInvLineCaption; "Sales Invoice Line".FieldCaption("ACO Reject Billable Shipped")) { }
+                    column(ACO_RejNotBillableShippedSalesInvLineCaption; "Sales Invoice Line".FieldCaption("ACO Rej. Not Billable Shipped")) { }
                     ///// >>
                     dataitem(DimensionLoop1; "Integer")
                     {
@@ -651,6 +653,8 @@ report 50010 "ACO Sales - Invoice"
                         column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                         column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                         column(ACOSawing_SalesInvLine; "Sales Invoice Line"."ACO Sawing") { }
+                        column(ACORejectBillableShipped_SalesInvLine; "Sales Invoice Line"."ACO Reject Billable Shipped") { }
+                        column(ACO_RejNotBillableShippedSalesInvLine; "Sales Invoice Line"."ACO Rej. Not Billable Shipped") { }
                         ///// Values >>
                         dataitem("Sales Shipment Buffer"; "Integer")
                         {

@@ -105,13 +105,13 @@ pageextension 50014 "ACO Posted Sales Inv Subf Ext" extends "Posted Sales Invoic
                 Tooltip = ' ';
             }
 
-            field("ACO Reject Billable Shipped"; "ACO Reject Billable Shipped")
+            field("ACO Reject Billable Shipped"; Rec."ACO Reject Billable Shipped")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
 
-            field("ACO Rej. Not Billable Shipped"; "ACO Rej. Not Billable Shipped")
+            field("ACO Rej. Not Billable Shipped"; Rec."ACO Rej. Not Billable Shipped")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
