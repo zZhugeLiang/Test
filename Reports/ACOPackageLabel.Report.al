@@ -128,7 +128,6 @@ report 50001 "ACO Package Label"
                     if not ItemVariant.Get("Item No.", "Variant Code") then
                         Clear(ItemVariant);
 
-                    //TODO
                     if not SalesHeader.Get(SalesHeader."Document Type"::Order, "Sales Order No.") then
                         Clear(SalesHeader);
 

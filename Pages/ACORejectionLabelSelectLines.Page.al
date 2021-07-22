@@ -60,21 +60,17 @@ page 50055 "ACO Rej. Label Select Lines"
         Customer: Record "Customer";
         PackageHeader: Record "ACO Package Header";
         PackageLine: Record "ACO Package Line";
-        PackageLineToProductionJournal: Record "ACO Package Line";
         SalesOrder: Record "Sales Header";
         SalesLine: Record "Sales Line";
         SalesLineGet: Record "Sales Line";
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
         ItemVariant: Record "Item Variant";
-        ProductionOrder: Record "Production Order";
-        ProdOrderLine: Record "Prod. Order Line";
         GenPackage: Page "ACO Generate Package Dialog";
         PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
-        ProductionJrnlMgt: Codeunit "Production Journal Mgt";
-        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         tempCustomerNo: Code[20];
         LineNumber: Integer;
+        RemainingQuantityToDeduct: Decimal;
         QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
         LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
@@ -86,7 +82,7 @@ page 50055 "ACO Rej. Label Select Lines"
         if Rec.FindSet() then
             repeat
                 BathLineTempRecord.SetRecFilter();
-
+                /// TODO Issue
                 BathLineTempRecord.Init();
 
                 if ACOBathSheetLine."Bath Sheet No." <> '' then
@@ -111,7 +107,17 @@ page 50055 "ACO Rej. Label Select Lines"
                 BathLineTempRecord."Charge No." := Rec."Reject Reason Code";
                 BathLineTempRecord."Production Order Line No." := Rec."Line No.";
                 BathLineTempRecord.Insert();
+                RemainingQuantityToDeduct += Rec.Quantity;
             until Rec.Next() = 0;
+
+        if ACOBathSheetLine."Bath Sheet No." <> '' then begin
+            ACOBathSheetLine."Remaining Quantity" -= RemainingQuantityToDeduct;
+            ACOBathSheetLine.Modify();
+        end else
+            if ProdOrderLine."Prod. Order No." <> '' then begin
+                ProdOrderLine."ACO Remaining Quantity" -= RemainingQuantityToDeduct;
+                ProdOrderLine.Modify();
+            end;
 
         AppSetup.Reset();
         AppSetup.Get();
@@ -196,22 +202,22 @@ page 50055 "ACO Rej. Label Select Lines"
 
             Commit();
 
-            // TODO Create Production Journal
-            ACOSingleInstanceMgt.SetPostProductionJournal(true);
+            // // TODO Create Production Journal GIVES ERROR LATER ON IN PROCES ON EMPTY JOURNAL LINE IN EVENT TRIGGER see tag TODO Create Production Journal
+            // ACOSingleInstanceMgt.SetPostProductionJournal(true);
 
-            PackageLineToProductionJournal.SetRange("Package No.", PackageHeader."No.");
-            if PackageLineToProductionJournal.FindSet() then
-                repeat
-                    if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
-                        if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
-                            ProductionJrnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
-                        end;
-                until PackageLineToProductionJournal.Next() = 0;
+            // PackageLineToProductionJournal.SetRange("Package No.", PackageHeader."No.");
+            // if PackageLineToProductionJournal.FindSet() then
+            //     repeat
+            //         if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
+            //             if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
+            //                 ProductionJrnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
+            //             end;
+            //     until PackageLineToProductionJournal.Next() = 0;
 
-            ACOSingleInstanceMgt.SetPostProductionJournal(false);
+            // ACOSingleInstanceMgt.SetPostProductionJournal(false);
 
-            Commit();
-            // TODO Create Production Journal
+            // Commit();
+            // // TODO Create Production Journal
 
             PackageHeader.SetRecFilter();
             PrintPackageLabel.SetTableView(PackageHeader);

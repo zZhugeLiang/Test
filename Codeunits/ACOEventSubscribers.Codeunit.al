@@ -396,7 +396,7 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesPost_OnBeforePostUpdateOrderLineModifyTempLine(var TempSalesLine: Record "Sales Line" temporary; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
     begin
         //TODO issue 1.6 + 1.7
-        TempSalesLine."ACO Number of Units" := TempSalesLine."ACO Number of Units" - TempSalesLine."ACO Number of Units to Ship";
+        // TempSalesLine."ACO Number of Units" := TempSalesLine."ACO Number of Units" - TempSalesLine."ACO Number of Units to Ship";
         if TempSalesLine."Qty. to Ship" = 0 then
             TempSalesLine."ACO Number of Units to Ship" := 0;
         if TempSalesLine."Qty. to Invoice" = 0 then
@@ -432,8 +432,18 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesPost_OnBeforeSalesShptLineInsert(var SalesShptLine: Record "Sales Shipment Line"; SalesShptHeader: Record "Sales Shipment Header"; SalesLine: Record "Sales Line"; CommitIsSuppressed: Boolean; PostedWhseShipmentLine: Record "Posted Whse. Shipment Line"; SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; ItemLedgShptEntryNo: Integer; xSalesLine: record "Sales Line"; var TempSalesLineGlobal: record "Sales Line" temporary; var IsHandled: Boolean)
     begin
         //TODO1.7
+        SalesShptLine."ACO Number of Units" := SalesLine."ACO Number of Units to Ship";
         SalesShptLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable";
         SalesShptLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Reject Not Billable";
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesInvLineInsert', '', false, false)]
+    local procedure SalesPost_OnBeforeSalesInvLineInsert(var SalesInvLine: Record "Sales Invoice Line"; SalesInvHeader: Record "Sales Invoice Header"; SalesLine: Record "Sales Line"; CommitIsSuppressed: Boolean; var IsHandled: Boolean)
+    begin
+        //TODO1.7
+        SalesInvLine."ACO Number of Units" := SalesLine."ACO Number of Units to Invoice";
+        SalesInvLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable";
+        SalesInvLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Reject Not Billable";
     end;
 
 
@@ -538,41 +548,42 @@ codeunit 50000 "ACO Event Subscribers"
         QtyRounded := Round(QtyRounded, 0.001);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Production Journal Mgt", 'OnBeforeRunProductionJnl', '', false, false)]
-    local procedure ProductionJournalMgt_OnBeforeRunProductionJnl(ToTemplateName: Code[10]; ToBatchName: Code[10]; ProdOrder: Record "Production Order"; ActualLineNo: Integer; PostingDate: Date; var IsHandled: Boolean)
-    var
-        ItemJnlLine: Record "Item Journal Line";
-        ItemJnlTemplate: Record "Item Journal Template";
-        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-        PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
-        //ToBatchName: Code[10];
-        User: Text;
-    begin
-        // TODO Create Production Journal
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Production Journal Mgt", 'OnBeforeRunProductionJnl', '', false, false)]
+    // local procedure ProductionJournalMgt_OnBeforeRunProductionJnl(ToTemplateName: Code[10]; ToBatchName: Code[10]; ProdOrder: Record "Production Order"; ActualLineNo: Integer; PostingDate: Date; var IsHandled: Boolean)
+    // var
+    //     ItemJnlLine: Record "Item Journal Line";
+    //     ItemJnlTemplate: Record "Item Journal Template";
+    //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    //     PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
+    //     //ToBatchName: Code[10];
+    //     User: Text;
+    // begin
+    //     // TODO Create Production Journal
 
-        if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
-            // ItemJnlTemplate.Reset();
-            // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
-            // ItemJnlTemplate.SetRange(Recurring, false);
-            // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
-            // if ItemJnlTemplate.FindFirst() then begin
-            //     User := UpperCase(UserId);
-            //     if User <> '' then
-            //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
-            //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
-            //         else
-            //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
+    //     if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
+    //         // ItemJnlTemplate.Reset();
+    //         // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
+    //         // ItemJnlTemplate.SetRange(Recurring, false);
+    //         // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
+    //         // if ItemJnlTemplate.FindFirst() then begin
+    //         //     User := UpperCase(UserId);
+    //         //     if User <> '' then
+    //         //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
+    //         //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
+    //         //         else
+    //         //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
 
-            // Post Production Journal
-            ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
-            ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
-            ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
-            Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
-            ACOSingleInstanceMgt.SetPostProductionJournal(false);
-            // end;
-        end;
-        //ACOSingleInstanceMgt
-    end;
+    //         // Post Production Journal
+    //         ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
+    //         ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
+    //         ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
+    //         // TODO ItemJnlLine = empty, gives error
+    //         Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
+    //         ACOSingleInstanceMgt.SetPostProductionJournal(false);
+    //         // end;
+    //     end;
+    //     //ACOSingleInstanceMgt
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
     local procedure SalesGetShipment_OnBeforeInsertInvLineFromShptLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; SalesOrderLine: Record "Sales Line"; var IsHandled: Boolean)
@@ -580,8 +591,10 @@ codeunit 50000 "ACO Event Subscribers"
         NewLineDiscountAmount: Decimal;
     begin
         // Issue 1.8
-        NewLineDiscountAmount := SalesLine.Quantity / SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price";
-        SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
+        if (SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price") <> 0 then begin
+            NewLineDiscountAmount := SalesLine.Quantity / SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price";
+            SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
+        end;
     end;
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
@@ -605,13 +618,13 @@ codeunit 50000 "ACO Event Subscribers"
     // end;
 
     // TODO issue 8
-    // [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
-    // local procedure SalesOrder_OnClosePage(var Rec: Record "Sales Header");
-    // var
-    //     SingleInstance: Codeunit "ACO Single Instance Mgt";
-    // begin
-    //     SingleInstance.SetCustomerNo('');
-    // end;
+    [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
+    local procedure SalesOrder_OnClosePage(var Rec: Record "Sales Header");
+    var
+        SingleInstance: Codeunit "ACO Single Instance Mgt";
+    begin
+        SingleInstance.SetCustomerNo('');
+    end;
 
     // [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnAfterGetRecordEvent', '', false, false)]
     // local procedure SalesOrder_OnAfterGetRecord(var Rec: Record "Sales Header");

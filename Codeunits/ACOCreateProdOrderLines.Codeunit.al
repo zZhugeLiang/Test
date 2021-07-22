@@ -141,7 +141,7 @@ codeunit 50005 "ACO Create Prod. Order Lines"
             repeat
                 SalesLine.Get(SalesHeader."Document Type", SalesPlanLine."Sales Order No.", SalesPlanLine."Sales Order Line No.");
                 SalesLine.CalcFields("Reserved Quantity");
-                // TODO issue 13
+
                 if ACOColor.Get(SalesLine."ACO Color") then
                     if ACOColorGroup.Get(ACOColor."Color Group") and not (ACOColorGroup."Exclude from Check") then
                         SalesLine.TestField("ACO Project Color Code");

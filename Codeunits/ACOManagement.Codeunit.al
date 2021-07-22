@@ -260,6 +260,14 @@ codeunit 50003 "ACO Management"
                 repeat
                     if TempSalesLine.Get(TempSalesLine."Document Type"::Order, ACOPackageLine."Sales Order No.", ACOPackageLine."Sales Line No") then begin
                         TempSalesLine.Quantity += ACOPackageLine.Quantity;
+                        if ReasonCode.Get(ACOPackageLine."Reject Reason Code") then begin
+                            if ReasonCode."ACO Billable" then
+                                TempSalesLine."ACO Reject Billable" += ACOPackageLine.Quantity
+                            else
+                                TempSalesLine."ACO Reject Not Billable" += ACOPackageLine.Quantity;
+                        end else
+                            Clear(ReasonCode);
+
                         TempSalesLine.Modify();
                     end else begin
                         TempSalesLine."Document Type" := TempSalesLine."Document Type"::Order;
@@ -331,7 +339,11 @@ codeunit 50003 "ACO Management"
         SalesLine.Validate("ACO Number of Units to Invoice", SalesLine2.Quantity);
         SalesLine."ACO Reject Billable" := SalesLine2."ACO Reject Billable";
         SalesLine."ACO Reject Not Billable" := SalesLine2."ACO Reject Not Billable";
-        SalesLine."Description 2" := StrSubstNo(RejectInvoiceDiscountLbl, SalesLine."ACO Reject Billable", SalesLine."ACO Reject Not Billable");
+        if (SalesLine2."ACO Reject Billable" = 0) and (SalesLine2."ACO Reject Not Billable" = 0) then
+            SalesLine."Description 2" := ''
+        else
+            SalesLine."Description 2" := StrSubstNo(RejectInvoiceDiscountLbl, SalesLine."ACO Reject Billable", SalesLine."ACO Reject Not Billable");
+
         NewLineDiscountAmount := SalesLine.Quantity / SalesLine."ACO Number of Units" * SalesLine."ACO Reject Not Billable" * SalesLine."Unit Price";
         SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
         SalesLine.Modify();
