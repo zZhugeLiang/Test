@@ -8398,20 +8398,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Invoice Subform Ext. - Control ACO Rej. Not Billable Shipped - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1436885219 - Control 826999573 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Invoice Subform Ext. - Control ACO Reject Billable - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="PageExtension 1436885219 - Control 879046660 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Invoice Subform Ext. - Control ACO Reject Billable Shipped - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1436885219 - Control 2680834858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Invoice Subform Ext. - Control ACO Reject Not Billable - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1436885219 - Control 3137948029 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
           <source> </source>

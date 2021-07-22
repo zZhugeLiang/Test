@@ -591,10 +591,16 @@ codeunit 50000 "ACO Event Subscribers"
         NewLineDiscountAmount: Decimal;
     begin
         // Issue 1.8
-        if (SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price") <> 0 then begin
-            NewLineDiscountAmount := SalesLine.Quantity / SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price";
-            SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
-        end;
+        SalesLine."ACO Number of Units" := SalesShptLine."ACO Number of Units";
+        SalesLine."Description 2" := SalesShptLine."Description 2";
+        SalesLine."ACO Reject Billable" := 0;
+        SalesLine."ACO Reject Not Billable" := 0;
+        SalesLine."ACO Reject Billable Shipped" := SalesShptLine."ACO Reject Billable Shipped";
+        SalesLine."ACO Rej. Not Billable Shipped" := SalesShptLine."ACO Rej. Not Billable Shipped";
+        if (SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price") <> 0 then
+            NewLineDiscountAmount := SalesShptLine.Quantity / SalesShptLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price";
+
+        SalesLine.Validate("Line Discount Amount", NewLineDiscountAmount);
     end;
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Create Prod. Order from Sale", 'OnAfterCreateProdOrderFromSalesLine', '', false, false)]
@@ -618,13 +624,13 @@ codeunit 50000 "ACO Event Subscribers"
     // end;
 
     // TODO issue 8
-    [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
-    local procedure SalesOrder_OnClosePage(var Rec: Record "Sales Header");
-    var
-        SingleInstance: Codeunit "ACO Single Instance Mgt";
-    begin
-        SingleInstance.SetCustomerNo('');
-    end;
+    // [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
+    // local procedure SalesOrder_OnClosePage(var Rec: Record "Sales Header");
+    // var
+    //     SingleInstance: Codeunit "ACO Single Instance Mgt";
+    // begin
+    //     SingleInstance.SetCustomerNo('');
+    // end;
 
     // [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnAfterGetRecordEvent', '', false, false)]
     // local procedure SalesOrder_OnAfterGetRecord(var Rec: Record "Sales Header");

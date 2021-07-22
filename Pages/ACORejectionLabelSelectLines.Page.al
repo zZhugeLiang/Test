@@ -115,6 +115,7 @@ page 50055 "ACO Rej. Label Select Lines"
             ACOBathSheetLine.Modify();
         end else
             if ProdOrderLine."Prod. Order No." <> '' then begin
+                ProdOrderLine."ACO Quantity to Bath Sheet" := 0;
                 ProdOrderLine."ACO Remaining Quantity" -= RemainingQuantityToDeduct;
                 ProdOrderLine.Modify();
             end;

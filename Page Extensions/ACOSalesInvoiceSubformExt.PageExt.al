@@ -107,16 +107,6 @@ pageextension 50025 "ACO Sales Invoice Subform Ext." extends "Sales Invoice Subf
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Reject Billable"; "ACO Reject Billable")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
-            field("ACO Reject Not Billable"; "ACO Reject Not Billable")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
             field("ACO Reject Billable Shipped"; "ACO Reject Billable Shipped")
             {
                 ApplicationArea = All;
