@@ -591,6 +591,40 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Editable = false;
             DataClassification = CustomerContent;
         }
+        field(50071; "ACO Profile Customer PK"; Code[100])
+        {
+            Caption = 'PK as a field';
+            TableRelation = "ACO Profile Customer"."PK as a field";
+            DataClassification = CustomerContent;
+            // TODO issue 8
+            trigger OnValidate()
+            var
+                ACOProfileCustomer: Record "ACO Profile Customer";
+                ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+                PositionProfileCode: Integer;
+                PositionCustNo: Integer;
+                PositionCustomerItemNo: Integer;
+                CustNoLength: Integer;
+                CustomerNo: Code[20];
+                NewProfileCode: Code[30];
+                NewCustomerItemNo: Code[50];
+            begin
+                // TODO issue 8
+                CustomerNo := Rec."Sell-to Customer No.";
+                CustNoLength := StrLen(CustomerNo);
+                PositionCustNo := StrPos(Rec."ACO Profile Customer PK", CustomerNo);
+                PositionCustomerItemNo := PositionCustNo + CustNoLength;
+                NewProfileCode := CopyStr(Rec."ACO Profile Customer PK", 1, PositionCustNo - 1);
+                NewCustomerItemNo := CopyStr(Rec."ACO Profile Customer PK", PositionCustNo + CustNoLength);
+                ACOSingleInstanceMgt.GetACOProfileCustomerPK(NewProfileCode, CustomerNo, NewCustomerItemNo);
+                if not ACOProfileCustomer.Get(NewProfileCode, CustomerNo, NewCustomerItemNo) then begin
+                    Rec."ACO Customer Item No." := NewCustomerItemNo;
+                    Rec.Validate("ACO Profile Code", NewProfileCode);
+                end;
+                // TODO issue 8
+                // if not ACOProfileCustomer.Get(ProfileCode, CustomerNo, CustomerItemNo) then
+            end;
+        }
     }
 
     var

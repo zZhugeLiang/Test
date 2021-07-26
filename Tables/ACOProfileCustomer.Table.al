@@ -190,6 +190,12 @@ table 50009 "ACO Profile Customer"
             Caption = 'Customer of Customer';
             DataClassification = CustomerContent;
         }
+        field(27; "PK as a field"; Code[100])
+        {
+            // TODO issue 8
+            Caption = 'PK as a field';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
@@ -209,6 +215,8 @@ table 50009 "ACO Profile Customer"
     begin
         TestPK();
         Rec."Last DateTime Modified" := CurrentDateTime();
+        // TODO issue 8
+        Rec."PK as a field" := Rec."Profile Code" + Rec."Customer No." + Rec."Customer Item No.";
     end;
 
     trigger OnRename();
@@ -223,6 +231,8 @@ table 50009 "ACO Profile Customer"
             SalesLine.SetRange("ACO Customer Item No.", xRec."Customer Item No.");
             SalesLine.ModifyAll("ACO Customer Item No.", Rec."Customer Item No.");
         end;
+        // TODO issue 8
+        Rec."PK as a field" := Rec."Profile Code" + Rec."Customer No." + Rec."Customer Item No.";
     end;
 
     trigger OnModify();

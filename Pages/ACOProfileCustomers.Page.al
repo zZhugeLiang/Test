@@ -48,6 +48,11 @@ page 50010 "ACO Profile Customers"
                 {
                     ApplicationArea = All;
                 }
+
+                field("PK as a field"; "PK as a field")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
@@ -76,24 +81,24 @@ page 50010 "ACO Profile Customers"
     }
 
     // TODO issue 8
-    // trigger OnOpenPage()
-    // var
-    //     ACOProfileCustomer: Record "ACO Profile Customer";
-    //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-    // begin
-    //     if ACOSingleInstanceMgt.GetCustomerNo() <> '' then
-    //         Rec.SetFilter("Customer No.", ACOSingleInstanceMgt.GetCustomerNo());
-    // end;
+    trigger OnOpenPage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        if ACOSingleInstanceMgt.GetCustomerNo() <> '' then
+            Rec.SetFilter("Customer No.", ACOSingleInstanceMgt.GetCustomerNo());
+    end;
 
-    // trigger OnClosePage()
-    // var
-    //     ACOProfileCustomer: Record "ACO Profile Customer";
-    //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-    // begin
-    //     // CurrPage.SetSelectionFilter(ACOProfileCustomer);
-    //     // CurrPage.GetRecord(ACOProfileCustomer);
-    //     // CurrPage.SetSelectionFilter(Rec);
-    //     CurrPage.GetRecord(ACOProfileCustomer);
-    //     ACOSingleInstanceMgt.SetACOProfileCustomerPK(ACOProfileCustomer."Profile Code", ACOProfileCustomer."Customer No.", ACOProfileCustomer."Customer Item No.");
-    // end;
+    trigger OnClosePage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        // CurrPage.SetSelectionFilter(ACOProfileCustomer);
+        // CurrPage.GetRecord(ACOProfileCustomer);
+        // CurrPage.SetSelectionFilter(Rec);
+        CurrPage.GetRecord(ACOProfileCustomer);
+        ACOSingleInstanceMgt.SetACOProfileCustomerPK(ACOProfileCustomer."Profile Code", ACOProfileCustomer."Customer No.", ACOProfileCustomer."Customer Item No.");
+    end;
 }

@@ -192,6 +192,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                 Editable = false;
                 ApplicationArea = All;
             }
+            field("ACO Profile Customer PK"; "ACO Profile Customer PK")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 
@@ -240,15 +244,15 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     }
 
     // TODO issue 8
-    // trigger OnOpenPage()
-    // var
-    //     ACOProfileCustomer: Record "ACO Profile Customer";
-    //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-    // begin
-    //     // Clear(ACOProfileCustomer);
-    //     // ACOSingleInstanceMgt.ClearACOProfileCustomer();
-    //     ACOSingleInstanceMgt.SetACOProfileCustomerPK('', '', '');
-    // end;
+    trigger OnOpenPage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        // Clear(ACOProfileCustomer);
+        // ACOSingleInstanceMgt.ClearACOProfileCustomer();
+        ACOSingleInstanceMgt.SetACOProfileCustomerPK('', '', '');
+    end;
 
     trigger OnAfterGetRecord()
     begin
@@ -256,14 +260,14 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     end;
 
     // TODO issue 8
-    // trigger OnClosePage()
-    // var
-    //     ACOProfileCustomer: Record "ACO Profile Customer";
-    //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-    // begin
-    //     // Clear(ACOProfileCustomer);
-    //     ACOSingleInstanceMgt.SetACOProfileCustomerPK('', '', '');
-    // end;
+    trigger OnClosePage()
+    var
+        ACOProfileCustomer: Record "ACO Profile Customer";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        // Clear(ACOProfileCustomer);
+        ACOSingleInstanceMgt.SetACOProfileCustomerPK('', '', '');
+    end;
 
     var
         ACOHasClampingMethod: Boolean;
