@@ -593,7 +593,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         }
         field(50071; "ACO Profile Customer PK"; Code[100])
         {
-            Caption = 'PK as a field';
+            Caption = 'Profile Code Dropdown';
             TableRelation = "ACO Profile Customer"."PK as a field";
             ValidateTableRelation = false;
             DataClassification = CustomerContent;

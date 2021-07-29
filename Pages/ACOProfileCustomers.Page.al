@@ -48,11 +48,6 @@ page 50010 "ACO Profile Customers"
                 {
                     ApplicationArea = All;
                 }
-
-                field("PK as a field"; "PK as a field")
-                {
-                    ApplicationArea = All;
-                }
             }
         }
     }

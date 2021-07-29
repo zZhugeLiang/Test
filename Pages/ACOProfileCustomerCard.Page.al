@@ -53,11 +53,6 @@ page 50011 "ACO Profile Customer Card"
                     {
                         ApplicationArea = All;
                     }
-                    // TODO Issue 8
-                    field("PK as a field"; "PK as a field")
-                    {
-                        ApplicationArea = All;
-                    }
                 }
                 field("Price Scheme Code"; Rec."Price Scheme Code")
                 {

@@ -8028,6 +8028,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Customer Item No. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2283624698 - Control 1505468035 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Description 2 - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2283624698 - Control 568115138 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9714,7 +9719,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Cust. Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3689204467 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>PK as a field</source>
+          <source>Profile Code Dropdown</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Customer PK - Property Caption</note>
         </trans-unit>

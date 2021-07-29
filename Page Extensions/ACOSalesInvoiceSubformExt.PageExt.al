@@ -12,11 +12,6 @@ pageextension 50025 "ACO Sales Invoice Subform Ext." extends "Sales Invoice Subf
 
         addlast(Control1)
         {
-            field("ACO Description 2"; Rec."Description 2")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
             field("ACO Variant Code"; "Variant Code")
             {
                 ApplicationArea = All;

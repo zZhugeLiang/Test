@@ -4,6 +4,11 @@ pageextension 50014 "ACO Posted Sales Inv Subf Ext" extends "Posted Sales Invoic
     {
         addlast(Control1)
         {
+            field("ACO Description 2"; Rec."Description 2")
+            {
+                ApplicationArea = All;
+                ToolTip = ' ';
+            }
             field("ACO Variant Code"; Rec."Variant Code")
             {
                 ApplicationArea = All;

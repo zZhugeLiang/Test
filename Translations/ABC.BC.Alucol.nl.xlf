@@ -2316,6 +2316,11 @@
           <target>Eindverpakking instructies</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Packaging Instructions File - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1025398750 - Field 4128256974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PK as a field</source>
+          <target>PK als een veld</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field PK as a field - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1025398750 - Field 3660300303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Post Code</source>
           <target>Verzend postcode</target>
@@ -7469,7 +7474,12 @@
           <source>Reject Billable Shipped</source>
           <target>Afkeur facturabel verzonden</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Reject Billable Shipped - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
+	<trans-unit id="TableExtension 632998638 - Field 3689204467 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Profile Code Dropdown</source>
+          <target>Product code dropdown</target>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Profile Customer PK - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

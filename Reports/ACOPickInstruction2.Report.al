@@ -189,6 +189,8 @@ report 50018 "ACO Pick Instruction 2"
                             TempACOPackageHeader.FindFirst()
                         else
                             TempACOPackageHeader.Next();
+
+                        PackageTypeText := Format(ACOPackageHeader."Packing Type");
                     end;
 
                     trigger OnPreDataItem()
@@ -341,7 +343,6 @@ report 50018 "ACO Pick Instruction 2"
         ACOPackageLine.SetRange("Sales Order No.", SalesHeader."No.");
         if ACOPackageLine.FindSet() then begin
             if ACOPackageHeader.Get(ACOPackageLine."Package No.") then begin
-                PackageTypeText := Format(ACOPackageHeader."Packing Type");
                 repeat
                     case ACOPackageHeader."Packing Type" of
                         Packagetype::Bundle:
