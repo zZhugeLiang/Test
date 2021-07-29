@@ -137,6 +137,11 @@ page 50032 "ACO Bathsheet Lines To Process"
                     ApplicationArea = All;
                 }
 
+                field(ProcessedQuantity; ProcessedQuantity)
+                {
+                    Caption = 'Processed Quantity';
+                    ApplicationArea = All;
+                }
                 field("Qty in Package"; "Qty in Package")
                 {
                     Editable = true;
@@ -319,7 +324,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                             repeat
                                 if ACOBathSheetLine.Get(BathLineTempRecord."Bath Sheet No.", BathLineTempRecord."Production Order No.", BathLineTempRecord."Production Order Status", BathLineTempRecord."Production Order Line No.") then begin
                                     ACOBathSheetLine.CalcFields("Quantity Processed");
-                                    ACOBathSheetLine."Remaining Quantity" := ACOBathSheetLine.Quantity - ACOBathSheetLine."Quantity Processed";
+                                    ACOBathSheetLine."Remaining Quantity" := ACOBathSheetLine.Quantity - ACOBathSheetLine."Qty in Package";
                                     ACOBathSheetLine."Qty in Package" := 0;
                                     ACOBathSheetLine.Modify();
                                 end;
@@ -383,8 +388,14 @@ page 50032 "ACO Bathsheet Lines To Process"
         Rec.SetAscending("Bath Sheet No.", true);
     end;
 
+    trigger OnAfterGetRecord()
+    begin
+        ProcessedQuantity := Rec.Quantity - Rec."Remaining Quantity";
+    end;
+
     var
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
+        ProcessedQuantity: Decimal;
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
 }

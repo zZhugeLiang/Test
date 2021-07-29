@@ -390,10 +390,13 @@ codeunit 50000 "ACO Event Subscribers"
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
-    local procedure ACOBathSheetLine_OnAfterDelete(Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
+    local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
     var
         ProdOrderLine: Record "Prod. Order Line";
     begin
+        if Rec.IsTemporary() then
+            exit;
+
         if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then begin
             ProdOrderLine."ACO Remaining Quantity" += Rec.Quantity;
             ProdOrderLine."ACO Complete" := false;

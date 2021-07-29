@@ -110,6 +110,7 @@ report 50018 "ACO Pick Instruction 2"
                 {
                     column(No_TempACOPackageHeader; TempACOPackageHeader."No.") { }
                     column(OrderNo_TempACOPackageHeader; TempACOPackageHeader."Sales Shipment No.") { }
+                    column(PackageTypeText; PackageTypeText) { }
 
                     dataitem("ACO Package Line"; "ACO Package Line")
                     {
@@ -138,9 +139,6 @@ report 50018 "ACO Pick Instruction 2"
                         }
 
                         column(Your_Reference; YourReference)
-                        {
-                        }
-                        column(PackageTypeText; PackageTypeText)
                         {
                         }
                         column(RackNoCustomer_ACOPackageHeader; ACOPackageHeader."Rack No. Customer")

@@ -3098,6 +3098,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblNoNumberSeriesErr</note>
         </trans-unit>
+        <trans-unit id="Page 2436688764 - Control 3398811611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processed Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control ProcessedQuantity - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2436688764 - Action 2309546521 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Package Label</source>
           <note from="Developer" annotates="general" priority="2"></note>
