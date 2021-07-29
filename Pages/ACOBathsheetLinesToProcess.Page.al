@@ -313,6 +313,8 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                         // Commit();
 
+                        //1.1 and 1.4
+
                         if BathLineTempRecord.FindSet() then
                             repeat
                                 if ACOBathSheetLine.Get(BathLineTempRecord."Bath Sheet No.", BathLineTempRecord."Production Order No.", BathLineTempRecord."Production Order Status", BathLineTempRecord."Production Order Line No.") then begin

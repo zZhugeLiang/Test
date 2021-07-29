@@ -63,6 +63,18 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(SalesLineCustomerItemNo);
     end;
 
+    // TODO Issue 8
+    procedure SetProfileCustomerPK(NewProfileCustomerPK: Code[100]);
+    begin
+        ProfileCustomerPK := NewProfileCustomerPK;
+    end;
+
+    // TODO Issue 8
+    procedure GetProfileCustomerPK(): Code[100];
+    begin
+        exit(ProfileCustomerPK);
+    end;
+
     procedure SetPostProductionJournal(NewPostProductionJournal: Boolean);
     begin
         PostProductionJournal := NewPostProductionJournal;
@@ -80,5 +92,7 @@ codeunit 50001 "ACO Single Instance Mgt"
         ACOProfileCustomerProfileCode: Code[30];
         ACOProfileCustomerCustomerNo: Code[20];
         ACOProfileCustomerCustomerItemNo: Code[50];
+        // TODO Issue 8
+        ProfileCustomerPK: Code[100];
         PostProductionJournal: Boolean;
 }

@@ -61,6 +61,8 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         ACOSingleInstanceMgt.SetSalesLineProfileCode(Rec."ACO Profile Code");
         ACOSingleInstanceMgt.SetSalesLineCustomerItemNo(Rec."ACO Customer Item No.");
+        // TODO Issue 8
+        ACOSingleInstanceMgt.SetProfileCustomerPK(Rec."ACO Profile Customer PK");
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'No.', false, false)]
@@ -79,8 +81,13 @@ codeunit 50000 "ACO Event Subscribers"
 
         Rec."ACO Profile Code" := ACOSingleInstanceMgt.GetSalesLineProfileCode();
         Rec."ACO Customer Item No." := ACOSingleInstanceMgt.GetSalesLineCustomerItemNo();
+        // TODO Issue 8
+        Rec."ACO Profile Customer PK" := ACOSingleInstanceMgt.GetProfileCustomerPK();
+
         ACOSingleInstanceMgt.SetSalesLineProfileCode('');
         ACOSingleInstanceMgt.SetSalesLineCustomerItemNo('');
+        // TODO Issue 8
+        ACOSingleInstanceMgt.SetProfileCustomerPK('');
 
         ACOAppSetup.Get();
 
@@ -289,6 +296,8 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO High End" := ACOProfileCustomer."High End";
             Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
+            // TODO Issue 8
+            Rec."ACO Profile Customer PK" := ACOProfileCustomer."PK as a field";
 
             if ACOCategory.Get(ACOProfile.Category) then
                 Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";

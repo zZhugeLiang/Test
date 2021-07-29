@@ -1368,12 +1368,12 @@
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 165805856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Number of Layers</source>
-          <target>Opb. aantal per laag</target>
+          <target>Opb. Aantal lagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Packaging - Field Build-up Number of Layers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 3271315323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Quantity per Layer</source>
-          <target>Opb. Aantal lagen</target>
+          <target>Opb. aantal per laag</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Packaging - Field Build-up Quantity per Layer - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 444167357 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1883,12 +1883,12 @@
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 165805856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Number of Layers</source>
-          <target>Opb aantal per laag</target>
+          <target>Opb. Aantal lagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Number of Layers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 3271315323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Quantity per Layer</source>
-          <target>Opb. Aantal lagen</target>
+          <target>Opb. aantal per laag</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Packaging - Field Build-up Quantity per Layer - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 888430590 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

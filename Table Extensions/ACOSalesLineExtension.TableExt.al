@@ -595,13 +595,13 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'PK as a field';
             TableRelation = "ACO Profile Customer"."PK as a field";
+            ValidateTableRelation = false;
             DataClassification = CustomerContent;
             // TODO issue 8
             trigger OnValidate()
             var
                 ACOProfileCustomer: Record "ACO Profile Customer";
                 ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-                PositionProfileCode: Integer;
                 PositionCustNo: Integer;
                 PositionCustomerItemNo: Integer;
                 CustNoLength: Integer;
@@ -610,19 +610,30 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 NewCustomerItemNo: Code[50];
             begin
                 // TODO issue 8
-                CustomerNo := Rec."Sell-to Customer No.";
-                CustNoLength := StrLen(CustomerNo);
-                PositionCustNo := StrPos(Rec."ACO Profile Customer PK", CustomerNo);
-                PositionCustomerItemNo := PositionCustNo + CustNoLength;
-                NewProfileCode := CopyStr(Rec."ACO Profile Customer PK", 1, PositionCustNo - 1);
-                NewCustomerItemNo := CopyStr(Rec."ACO Profile Customer PK", PositionCustNo + CustNoLength);
-                ACOSingleInstanceMgt.GetACOProfileCustomerPK(NewProfileCode, CustomerNo, NewCustomerItemNo);
-                if not ACOProfileCustomer.Get(NewProfileCode, CustomerNo, NewCustomerItemNo) then begin
-                    Rec."ACO Customer Item No." := NewCustomerItemNo;
-                    Rec.Validate("ACO Profile Code", NewProfileCode);
+                if Rec."ACO Profile Customer PK" <> '' then begin
+                    if Rec."Sell-to Customer No." <> '' then
+                        CustomerNo := Rec."Sell-to Customer No."
+                    else
+                        CustomerNo := ACOSingleInstanceMgt.GetCustomerNo();
+
+                    CustNoLength := StrLen(CustomerNo);
+                    PositionCustNo := StrPos(Rec."ACO Profile Customer PK", CustomerNo);
+                    if PositionCustNo <> 0 then begin
+                        PositionCustomerItemNo := PositionCustNo + CustNoLength;
+                        NewProfileCode := CopyStr(Rec."ACO Profile Customer PK", 1, PositionCustNo - 1);
+                        NewCustomerItemNo := CopyStr(Rec."ACO Profile Customer PK", PositionCustNo + CustNoLength);
+                        ACOSingleInstanceMgt.GetACOProfileCustomerPK(NewProfileCode, CustomerNo, NewCustomerItemNo);
+                        if ACOProfileCustomer.Get(NewProfileCode, CustomerNo, NewCustomerItemNo) then begin
+                            Rec."ACO Customer Item No." := NewCustomerItemNo;
+                            Rec.Validate("ACO Profile Code", NewProfileCode);
+                        end;
+                    end else begin
+                        if StrLen(Rec."ACO Profile Customer PK") <= StrLen(Rec."ACO Profile Code") then
+                            Rec.Validate("ACO Profile Code", CopyStr(Rec."ACO Profile Customer PK", 1, StrLen(Rec."ACO Profile Customer PK")))
+                        else
+                            Rec.Validate("ACO Profile Code", CopyStr(Rec."ACO Profile Customer PK", 1, MaxStrLen(Rec."ACO Profile Code")));
+                    end;
                 end;
-                // TODO issue 8
-                // if not ACOProfileCustomer.Get(ProfileCode, CustomerNo, CustomerItemNo) then
             end;
         }
     }

@@ -208,7 +208,8 @@ table 50009 "ACO Profile Customer"
 
     fieldgroups
     {
-        fieldgroup(DropDown; "Profile Code", "Profile Description") { }
+        // TODO Issue 8
+        fieldgroup(DropDown; "Profile Code", "Customer Item No.", "Profile Description") { }
     }
 
     trigger OnInsert();

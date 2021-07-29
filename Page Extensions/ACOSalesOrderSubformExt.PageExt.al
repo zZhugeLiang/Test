@@ -192,8 +192,9 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                 Editable = false;
                 ApplicationArea = All;
             }
-            field("ACO Profile Customer PK"; "ACO Profile Customer PK")
+            field("ACO Profile Customer PK"; Rec."ACO Profile Customer PK")
             {
+                // TODO Issue 8
                 ApplicationArea = All;
             }
         }
