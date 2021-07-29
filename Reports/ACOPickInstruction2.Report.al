@@ -190,7 +190,7 @@ report 50018 "ACO Pick Instruction 2"
                         else
                             TempACOPackageHeader.Next();
 
-                        PackageTypeText := Format(ACOPackageHeader."Packing Type");
+                        PackageTypeText := Format(TempACOPackageHeader."Packing Type");
                     end;
 
                     trigger OnPreDataItem()

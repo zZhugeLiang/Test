@@ -9,7 +9,7 @@
             //"serverInstance": "BC",
             "tenant": "305f396e-f113-4f68-9f01-ae83ae55dd8e",
             "environmentType": "Sandbox",
-            "environmentName": "Sandbox_CTS_22072021",
+            "environmentName": "Sandbox",
             //"authentication": "Windows",
             "breakOnError": true,
             "startupObjectId": 9305,

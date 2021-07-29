@@ -188,7 +188,7 @@ report 50013 "ACO Pick Instruction"
                         else
                             TempACOPackageHeader.Next();
 
-                        PackageTypeText := Format(ACOPackageHeader."Packing Type");
+                        PackageTypeText := Format(TempACOPackageHeader."Packing Type");
                     end;
 
                     trigger OnPreDataItem()
