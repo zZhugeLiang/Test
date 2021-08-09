@@ -2847,11 +2847,21 @@
           <target>Deze kleur mag niet geëxporteerd worden naar Aucos</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType ColorCannotBeExportedToAucosErr</note>
         </trans-unit>
-        <trans-unit id="Page 371732247 - Action 2434374119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Export Aucos test</source>
-          <target>Exporteren naar Aucos test</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos2 - Property Caption</note>
+        <trans-unit id="Page 2436688764 - Control 3398811611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processed Quantity</source>
+          <target>Aantal verwerkt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control ProcessedQuantity - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3566282224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Process Times</source>
+          <target>Berekenen bewerkingstijden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 707697803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Bath Sheet</source>
+          <target>Afdrukken badkaart</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action Print Bath Sheet - Property Caption</note>
+        </trans-unit>	
         <trans-unit id="Report 371732247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet</source>
           <target>Badkaart</target>
@@ -3794,6 +3804,16 @@
           <target>Item &amp;Tracking Lines</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowTrackingLines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2500824358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate OBR Rejection Label</source>
+          <target>Aanmaken afkeur/OBR etiket</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2500824358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate OBR Rejection Label</source>
+          <target>Aanmaken afkeur/OBR etiket</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Property Caption</note>
+        </trans-unit>	
         <trans-unit id="Page 2943489305 - Action 2412936707 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
           <target>Bekijk of wijzig serienummers en lotnummers dat toegekend is aan het artikel op het document.</target>

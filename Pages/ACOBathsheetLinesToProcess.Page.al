@@ -132,14 +132,11 @@ page 50032 "ACO Bathsheet Lines To Process"
                     ApplicationArea = All;
                 }
 
-                field("Quantity Processed"; "Quantity Processed")
-                {
-                    ApplicationArea = All;
-                }
-
                 field(ProcessedQuantity; ProcessedQuantity)
                 {
                     Caption = 'Processed Quantity';
+                    DecimalPlaces = 0;
+                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Qty in Package"; "Qty in Package")

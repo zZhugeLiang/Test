@@ -3008,11 +3008,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Download Aucos - Method OnAction - NamedType ColorCannotBeExportedToAucosErr</note>
         </trans-unit>
-        <trans-unit id="Page 371732247 - Action 2434374119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Export Aucos test</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos2 - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 371732247 - Action 707697803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print Bath Sheet</source>
           <note from="Developer" annotates="general" priority="2"></note>

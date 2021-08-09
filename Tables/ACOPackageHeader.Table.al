@@ -107,6 +107,7 @@ table 50023 "ACO Package Header"
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOPackageLine: Record "ACO Package Line";
         ACOPackageLinesToDelete: Record "ACO Package Line";
+        ProdOrderLine: Record "Prod. Order Line";// TODO 9-8
         SalesShipmentLinkedErr: Label 'Package can not be deleted while a Sales Shipment is linked to it.';
     begin
         if Rec."Sales Shipment No." <> '' then
@@ -120,9 +121,13 @@ table 50023 "ACO Package Header"
                         ACOBathSheetLine."Reject Quantity" -= ACOPackageLine.Quantity;
                         ACOBathSheetLine.Modify();
                     end;
+
+                    if ACOPackageLine."Bathsheet No." = '' then
+                        if ProdOrderLine.Get(ACOPackageLine."Production Order Status", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Line No.") then begin
+                            ProdOrderLine."ACO Remaining Quantity" += ACOPackageLine.Quantity;
+                            ProdOrderLine.Modify();
+                        end;
                 until ACOPackageLine.Next() = 0;
-
-
         end else begin
             ACOPackageLine.SetRange("Package No.", Rec."No.");
             if ACOPackageLine.FindSet() then
@@ -132,6 +137,7 @@ table 50023 "ACO Package Header"
                         ACOBathSheetLine."Quantity Processed" -= ACOPackageLine.Quantity;
                         ACOBathSheetLine.Modify();
                     end;
+                //if ProdOrderLine.
                 until ACOPackageLine.Next() = 0;
         end;
 

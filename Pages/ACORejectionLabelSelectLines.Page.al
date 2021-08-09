@@ -79,6 +79,8 @@ page 50055 "ACO Rej. Label Select Lines"
         if not (GenPackage.RunModal() = Action::OK) then Error('');
         Commit();
 
+        RemainingQuantityToDeduct := 0;
+
         if Rec.FindSet() then
             repeat
                 BathLineTempRecord.SetRecFilter();
@@ -109,16 +111,6 @@ page 50055 "ACO Rej. Label Select Lines"
                 BathLineTempRecord.Insert();
                 RemainingQuantityToDeduct += Rec.Quantity;
             until Rec.Next() = 0;
-
-        if ACOBathSheetLine."Bath Sheet No." <> '' then begin
-            ACOBathSheetLine."Remaining Quantity" -= RemainingQuantityToDeduct;
-            ACOBathSheetLine.Modify();
-        end else
-            if ProdOrderLine."Prod. Order No." <> '' then begin
-                ProdOrderLine."ACO Quantity to Bath Sheet" := 0;
-                ProdOrderLine."ACO Remaining Quantity" -= RemainingQuantityToDeduct;
-                ProdOrderLine.Modify();
-            end;
 
         AppSetup.Reset();
         AppSetup.Get();
@@ -168,6 +160,16 @@ page 50055 "ACO Rej. Label Select Lines"
             PackageHeader.Insert();
             // Create PackageLines;
             BathLineTempRecord.Reset();
+
+            if ACOBathSheetLine."Bath Sheet No." <> '' then begin
+                ACOBathSheetLine."Remaining Quantity" -= RemainingQuantityToDeduct;
+                ACOBathSheetLine.Modify();
+            end else
+                if ProdOrderLine."Prod. Order No." <> '' then begin
+                    ProdOrderLine."ACO Quantity to Bath Sheet" := 0;
+                    ProdOrderLine."ACO Remaining Quantity" -= RemainingQuantityToDeduct;
+                    ProdOrderLine.Modify();
+                end;
             //BathLineTempRecord.SetFilter("Qty in Package", '<>0');
             if BathLineTempRecord.FindSet() then
                 repeat

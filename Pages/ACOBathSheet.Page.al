@@ -442,31 +442,6 @@ page 50020 "ACO Bath Sheet"
                         base64Convert.ToBase64(FileBuffer));
                 end;
             }
-            action("Export Aucos2")
-            {
-                Caption = 'Export Aucos test';
-                Image = Export;
-                ApplicationArea = All;
-
-                trigger OnAction()
-                var
-                    ACOBathSheetHeader: Record "ACO Bath Sheet Header";
-                    TempBlob: Codeunit "Temp Blob";
-                    FileOutStream: OutStream;
-                    FileInStream: InStream;
-                    AucosFileName: Text;
-                begin
-                    TempBlob.CreateOutStream(FileOutStream);
-
-                    ACOBathSheetHeader := Rec;
-                    ACOBathSheetHeader.SetRecFilter();
-                    Xmlport.Export(Xmlport::"ACO Aucos Export", FileOutStream, ACOBathSheetHeader);
-                    TempBlob.CreateInStream(FileInStream);
-
-                    AucosFileName := "No." + '_export.csv';
-                    DownloadFromStream(FileInStream, '', '', '', AucosFileName);
-                end;
-            }
         }
         area(Navigation)
         {
