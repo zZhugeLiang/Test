@@ -374,6 +374,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
                 ACOLinkedHolder.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                 ACOLinkedHolder.SetRange("Profile Code", Rec."ACO Profile Code");
+                // ACOLinkedHolder.SetRange("Color Group Code", Rec.Color);
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
                     ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
@@ -597,7 +598,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             TableRelation = "ACO Profile Customer"."PK as a field";
             ValidateTableRelation = false;
             DataClassification = CustomerContent;
-            // TODO issue 8
             trigger OnValidate()
             var
                 ACOProfileCustomer: Record "ACO Profile Customer";
@@ -609,7 +609,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 NewProfileCode: Code[30];
                 NewCustomerItemNo: Code[50];
             begin
-                // TODO issue 8
                 if Rec."ACO Profile Customer PK" <> '' then begin
                     if Rec."Sell-to Customer No." <> '' then
                         CustomerNo := Rec."Sell-to Customer No."

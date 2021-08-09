@@ -61,7 +61,6 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         ACOSingleInstanceMgt.SetSalesLineProfileCode(Rec."ACO Profile Code");
         ACOSingleInstanceMgt.SetSalesLineCustomerItemNo(Rec."ACO Customer Item No.");
-        // TODO Issue 8
         ACOSingleInstanceMgt.SetProfileCustomerPK(Rec."ACO Profile Customer PK");
     end;
 
@@ -81,12 +80,10 @@ codeunit 50000 "ACO Event Subscribers"
 
         Rec."ACO Profile Code" := ACOSingleInstanceMgt.GetSalesLineProfileCode();
         Rec."ACO Customer Item No." := ACOSingleInstanceMgt.GetSalesLineCustomerItemNo();
-        // TODO Issue 8
         Rec."ACO Profile Customer PK" := ACOSingleInstanceMgt.GetProfileCustomerPK();
 
         ACOSingleInstanceMgt.SetSalesLineProfileCode('');
         ACOSingleInstanceMgt.SetSalesLineCustomerItemNo('');
-        // TODO Issue 8
         ACOSingleInstanceMgt.SetProfileCustomerPK('');
 
         ACOAppSetup.Get();
@@ -258,9 +255,6 @@ codeunit 50000 "ACO Event Subscribers"
 
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
-            // TODO issue 8
-            // ACOSingleInstanceMgt.GetACOProfileCustomerPK(ProfileCode, CustomerNo, CustomerItemNo); // TODO issue 8
-            // if not ACOProfileCustomer.Get(ProfileCode, CustomerNo, CustomerItemNo) then
             if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
                 ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
                 ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
@@ -296,7 +290,6 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO High End" := ACOProfileCustomer."High End";
             Rec."ACO Customer Item No." := ACOProfileCustomer."Customer Item No.";
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
-            // TODO Issue 8
             Rec."ACO Profile Customer PK" := ACOProfileCustomer."PK as a field";
 
             if ACOCategory.Get(ACOProfile.Category) then
@@ -407,8 +400,6 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostUpdateOrderLineModifyTempLine', '', false, false)]
     local procedure SalesPost_OnBeforePostUpdateOrderLineModifyTempLine(var TempSalesLine: Record "Sales Line" temporary; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean)
     begin
-        //TODO issue 1.6 + 1.7
-        // TempSalesLine."ACO Number of Units" := TempSalesLine."ACO Number of Units" - TempSalesLine."ACO Number of Units to Ship";
         if TempSalesLine."Qty. to Ship" = 0 then
             TempSalesLine."ACO Number of Units to Ship" := 0;
         if TempSalesLine."Qty. to Invoice" = 0 then
@@ -443,7 +434,6 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesShptLineInsert', '', false, false)]
     local procedure SalesPost_OnBeforeSalesShptLineInsert(var SalesShptLine: Record "Sales Shipment Line"; SalesShptHeader: Record "Sales Shipment Header"; SalesLine: Record "Sales Line"; CommitIsSuppressed: Boolean; PostedWhseShipmentLine: Record "Posted Whse. Shipment Line"; SalesHeader: Record "Sales Header"; WhseShip: Boolean; WhseReceive: Boolean; ItemLedgShptEntryNo: Integer; xSalesLine: record "Sales Line"; var TempSalesLineGlobal: record "Sales Line" temporary; var IsHandled: Boolean)
     begin
-        //TODO1.7
         SalesShptLine."ACO Number of Units" := SalesLine."ACO Number of Units to Ship";
         SalesShptLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable";
         SalesShptLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Reject Not Billable";
@@ -452,7 +442,6 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesInvLineInsert', '', false, false)]
     local procedure SalesPost_OnBeforeSalesInvLineInsert(var SalesInvLine: Record "Sales Invoice Line"; SalesInvHeader: Record "Sales Invoice Header"; SalesLine: Record "Sales Line"; CommitIsSuppressed: Boolean; var IsHandled: Boolean)
     begin
-        //TODO1.7
         SalesInvLine."ACO Number of Units" := SalesLine."ACO Number of Units to Invoice";
         SalesInvLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable";
         SalesInvLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Reject Not Billable";
@@ -478,7 +467,6 @@ codeunit 50000 "ACO Event Subscribers"
 
         ProdOrderLine."ACO Number of Units" := SalesLine."ACO Number of Units";
         ProdOrderLine."ACO Remaining Quantity" := SalesLine."ACO Number of Units";
-        ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
         ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
 
@@ -511,7 +499,6 @@ codeunit 50000 "ACO Event Subscribers"
 
         ProdOrderLine."ACO Number of Units" := SalesLine."ACO Number of Units";
         ProdOrderLine."ACO Remaining Quantity" := SalesLine."ACO Number of Units";
-        ProdOrderLine.Validate("ACO Quantity to Bath Sheet", SalesLine."ACO Number of Units");
         ProdOrderLine."ACO Charges per Bath Profile" := SalesLine."ACO Charges per Bath Profile";
         ProdOrderLine."ACO Quantity Charges" := SalesLine."ACO Quantity Charges";
 
@@ -635,7 +622,6 @@ codeunit 50000 "ACO Event Subscribers"
 
     // end;
 
-    // TODO issue 8
     [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]
     local procedure SalesOrder_OnClosePage(var Rec: Record "Sales Header");
     var

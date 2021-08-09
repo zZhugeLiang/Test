@@ -5149,7 +5149,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO CMR - Sales Shipment - NamedType ParcelTxt</note>
         </trans-unit>
         <trans-unit id="Report 2397299197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Expedition Work Order</source>
+          <source>Work Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - Property Caption</note>
         </trans-unit>
@@ -5179,7 +5179,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType DeliveryIDCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2397299197 - NamedType 4165187414" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Expedition Work Order</source>
+          <source>Work Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Expedition Work Order - NamedType ExpeditionWorkOrderCaptionLbl</note>
         </trans-unit>

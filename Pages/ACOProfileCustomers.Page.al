@@ -75,7 +75,6 @@ page 50010 "ACO Profile Customers"
         }
     }
 
-    // TODO issue 8
     trigger OnOpenPage()
     var
         ACOProfileCustomer: Record "ACO Profile Customer";

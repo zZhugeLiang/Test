@@ -194,7 +194,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             }
             field("ACO Profile Customer PK"; Rec."ACO Profile Customer PK")
             {
-                // TODO Issue 8
                 ApplicationArea = All;
             }
         }
@@ -244,7 +243,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
         }
     }
 
-    // TODO issue 8
     trigger OnOpenPage()
     var
         ACOProfileCustomer: Record "ACO Profile Customer";
@@ -260,7 +258,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
         ACOSetCheckboxes();
     end;
 
-    // TODO issue 8
     trigger OnClosePage()
     var
         ACOProfileCustomer: Record "ACO Profile Customer";

@@ -404,6 +404,8 @@ report 50008 "ACO Sales - Quote"
                     column(ACOocumentDateYear_SalesHeader; "Sales Header"."ACO Document Date Year") { }
                     column(ACOSupplier_SalesHeader; "Sales Header"."ACO Supplier") { }
                     column(ACOOwnShippingAgent_SalesHeader; "Sales Header"."ACO Own Shipping Agent") { }
+                    column(ACOProfileCustDescription_SalesLineCaption; SalesLine.FieldCaption("ACO Profile Cust. Description")) { }
+                    column(ACONumberofMeters_ItemVariantCaption; ItemVariant.FieldCaption("ACO Number of Meters")) { }
                     ///// Values >>
                     ///// Added Fields from Page >>
                     dataitem(DimensionLoop1; "Integer")
@@ -809,6 +811,8 @@ report 50008 "ACO Sales - Quote"
                         column(ACOLowerAccuracy_SalesLine; SalesLine."ACO Lower Accuracy") { }
                         column(ACOUpperAccuracy_SalesLine; SalesLine."ACO Upper Accuracy") { }
                         column(ACOCustomerItemNo_SalesLine; "Sales Line"."ACO Customer Item No.") { }
+                        column(ACOProfileCustDescription_SalesLine; SalesLine."ACO Profile Cust. Description") { }
+                        column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                         ///// Values >>
                         ///// Added Fields from Page >>
                         dataitem(DimensionLoop2; "Integer")
@@ -875,6 +879,9 @@ report 50008 "ACO Sales - Quote"
                                 "Sales Line"."No." := '';
 
                             SalesLine.ShowShortcutDimCode(ShortCutDimCode);
+
+                            if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+                                Clear(ItemVariant);
                         end;
 
                         trigger OnPostDataItem()
@@ -1290,6 +1297,7 @@ report 50008 "ACO Sales - Quote"
         ShortcutDimCode6Dimension: Record Dimension;
         ShortcutDimCode7Dimension: Record Dimension;
         ShortcutDimCode8Dimension: Record Dimension;
+        ItemVariant: Record "Item Variant";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         SegManagement: Codeunit SegManagement;

@@ -107,7 +107,7 @@ table 50023 "ACO Package Header"
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOPackageLine: Record "ACO Package Line";
         ACOPackageLinesToDelete: Record "ACO Package Line";
-        ProdOrderLine: Record "Prod. Order Line";// TODO 9-8
+        ProdOrderLine: Record "Prod. Order Line";
         SalesShipmentLinkedErr: Label 'Package can not be deleted while a Sales Shipment is linked to it.';
     begin
         if Rec."Sales Shipment No." <> '' then
