@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Sell_to_Customer_No_">
+          <DataField>Sell_to_Customer_No_</DataField>
+        </Field>
+        <Field Name="Sell_to_Customer_Name">
+          <DataField>Sell_to_Customer_Name</DataField>
+        </Field>
+        <Field Name="ACO_Logged_In_DateTime">
+          <DataField>ACO_Logged_In_DateTime</DataField>
+        </Field>
+        <Field Name="TotalArea">
+          <DataField>TotalArea</DataField>
+        </Field>
+        <Field Name="TotalAreaFormat">
+          <DataField>TotalAreaFormat</DataField>
+        </Field>
+        <Field Name="MaxLength">
+          <DataField>MaxLength</DataField>
+        </Field>
+        <Field Name="MaxLengthFormat">
+          <DataField>MaxLengthFormat</DataField>
+        </Field>
+        <Field Name="ACO_Customer_Comment">
+          <DataField>ACO_Customer_Comment</DataField>
+        </Field>
+        <Field Name="Your_Reference">
+          <DataField>Your_Reference</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="ACO_Own_Shipping_Agent">
+          <DataField>ACO_Own_Shipping_Agent</DataField>
+        </Field>
+        <Field Name="ACO_Supplier">
+          <DataField>ACO_Supplier</DataField>
+        </Field>
+        <Field Name="TotalNumberOfUnits">
+          <DataField>TotalNumberOfUnits</DataField>
+        </Field>
+        <Field Name="TotalNumberOfUnitsFormat">
+          <DataField>TotalNumberOfUnitsFormat</DataField>
+        </Field>
+        <Field Name="ACO_Delivery_Date">
+          <DataField>ACO_Delivery_Date</DataField>
+        </Field>
+        <Field Name="TotalNumberOfBaths">
+          <DataField>TotalNumberOfBaths</DataField>
+        </Field>
+        <Field Name="TotalNumberOfBathsFormat">
+          <DataField>TotalNumberOfBathsFormat</DataField>
+        </Field>
+        <Field Name="AreaIncHollow">
+          <DataField>AreaIncHollow</DataField>
+        </Field>
+        <Field Name="AreaIncHollowFormat">
+          <DataField>AreaIncHollowFormat</DataField>
+        </Field>
+        <Field Name="AreaExcHollow">
+          <DataField>AreaExcHollow</DataField>
+        </Field>
+        <Field Name="AreaExcHollowFormat">
+          <DataField>AreaExcHollowFormat</DataField>
+        </Field>
+        <Field Name="PrintingDate">
+          <DataField>PrintingDate</DataField>
+        </Field>
+        <Field Name="CreatedbyUser">
+          <DataField>CreatedbyUser</DataField>
+        </Field>
+        <Field Name="Requested_Delivery_DateCaption">
+          <DataField>Requested_Delivery_DateCaption</DataField>
+        </Field>
+        <Field Name="Requested_Delivery_Date">
+          <DataField>Requested_Delivery_Date</DataField>
+        </Field>
+        <Field Name="Promised_Delivery_DateCaption">
+          <DataField>Promised_Delivery_DateCaption</DataField>
+        </Field>
+        <Field Name="Promised_Delivery_Date">
+          <DataField>Promised_Delivery_Date</DataField>
+        </Field>
+        <Field Name="Line_No_">
+          <DataField>Line_No_</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="ACO_Profile_Code">
+          <DataField>ACO_Profile_Code</DataField>
+        </Field>
+        <Field Name="Description_ACOProfile">
+          <DataField>Description_ACOProfile</DataField>
+        </Field>
+        <Field Name="ACO_Profile_Description">
+          <DataField>ACO_Profile_Description</DataField>
+        </Field>
+        <Field Name="CustomerItemNo">
+          <DataField>CustomerItemNo</DataField>
+        </Field>
+        <Field Name="ProfileDescription_ProfileCustomer">
+          <DataField>ProfileDescription_ProfileCustomer</DataField>
+        </Field>
+        <Field Name="Name_ACOColorProjectHeader">
+          <DataField>Name_ACOColorProjectHeader</DataField>
+        </Field>
+        <Field Name="ACO_Number_of_Units">
+          <DataField>ACO_Number_of_Units</DataField>
+        </Field>
+        <Field Name="ACO_Number_of_UnitsFormat">
+          <DataField>ACO_Number_of_UnitsFormat</DataField>
+        </Field>
+        <Field Name="NumberOfMeters">
+          <DataField>NumberOfMeters</DataField>
+        </Field>
+        <Field Name="NumberOfMetersFormat">
+          <DataField>NumberOfMetersFormat</DataField>
+        </Field>
+        <Field Name="Circumference">
+          <DataField>Circumference</DataField>
+        </Field>
+        <Field Name="CircumferenceFormat">
+          <DataField>CircumferenceFormat</DataField>
+        </Field>
+        <Field Name="WeightPerMeter_ACOProfile">
+          <DataField>WeightPerMeter_ACOProfile</DataField>
+        </Field>
+        <Field Name="WeightPerMeter_ACOProfileFormat">
+          <DataField>WeightPerMeter_ACOProfileFormat</DataField>
+        </Field>
+        <Field Name="ACO_Extra_to_Enumerate_Profile">
+          <DataField>ACO_Extra_to_Enumerate_Profile</DataField>
+        </Field>
+        <Field Name="IsFoil">
+          <DataField>IsFoil</DataField>
+        </Field>
+        <Field Name="RemoveFoil">
+          <DataField>RemoveFoil</DataField>
+        </Field>
+        <Field Name="Euras_ACOProfileCustomer">
+          <DataField>Euras_ACOProfileCustomer</DataField>
+        </Field>
+        <Field Name="NetWeight">
+          <DataField>NetWeight</DataField>
+        </Field>
+        <Field Name="NetWeightFormat">
+          <DataField>NetWeightFormat</DataField>
+        </Field>
+        <Field Name="GrossWeight">
+          <DataField>GrossWeight</DataField>
+        </Field>
+        <Field Name="GrossWeightFormat">
+          <DataField>GrossWeightFormat</DataField>
+        </Field>
+        <Field Name="ACO_Charges_per_Bath_Profile">
+          <DataField>ACO_Charges_per_Bath_Profile</DataField>
+        </Field>
+        <Field Name="ACO_Charges_per_Bath_ProfileFormat">
+          <DataField>ACO_Charges_per_Bath_ProfileFormat</DataField>
+        </Field>
+        <Field Name="NumberOfBaths">
+          <DataField>NumberOfBaths</DataField>
+        </Field>
+        <Field Name="NumberOfBathsFormat">
+          <DataField>NumberOfBathsFormat</DataField>
+        </Field>
+        <Field Name="ACO_Sawing">
+          <DataField>ACO_Sawing</DataField>
+        </Field>
+        <Field Name="ProfileDescription_ACOProfileCustomerCaption">
+          <DataField>ProfileDescription_ACOProfileCustomerCaption</DataField>
+        </Field>
+        <Field Name="ProfileDescription_ACOProfileCustomer">
+          <DataField>ProfileDescription_ACOProfileCustomer</DataField>
+        </Field>
+        <Field Name="CustomerofCustomer_ACOProfileCustomerCaption">
+          <DataField>CustomerofCustomer_ACOProfileCustomerCaption</DataField>
+        </Field>
+        <Field Name="BagDescriptionsText">
+          <DataField>BagDescriptionsText</DataField>
+        </Field>
+        <Field Name="Description_ACOCategory">
+          <DataField>Description_ACOCategory</DataField>
+        </Field>
+        <Field Name="CommentWorkNote_ACOProfile">
+          <DataField>CommentWorkNote_ACOProfile</DataField>
+        </Field>
+        <Field Name="CommentBathCard_ACOProfile">
+          <DataField>CommentBathCard_ACOProfile</DataField>
+        </Field>
+        <Field Name="CorrectionFactor_ACOProfile">
+          <DataField>CorrectionFactor_ACOProfile</DataField>
+        </Field>
+        <Field Name="CorrectionFactor_ACOProfileFormat">
+          <DataField>CorrectionFactor_ACOProfileFormat</DataField>
+        </Field>
+        <Field Name="ACO_Height_Level_Profile">
+          <DataField>ACO_Height_Level_Profile</DataField>
+        </Field>
+        <Field Name="ACO_Extra_Flushing">
+          <DataField>ACO_Extra_Flushing</DataField>
+        </Field>
+        <Field Name="ACO_Not_Measurable">
+          <DataField>ACO_Not_Measurable</DataField>
+        </Field>
+        <Field Name="ACO_Receipt_Bag">
+          <DataField>ACO_Receipt_Bag</DataField>
+        </Field>
+        <Field Name="ACO_Receipt_Shelf">
+          <DataField>ACO_Receipt_Shelf</DataField>
+        </Field>
+        <Field Name="PictureFile_ACOProfile">
+          <DataField>PictureFile_ACOProfile</DataField>
+        </Field>
+        <Field Name="CustomerofCustomer_ACOProfileCustomer">
+          <DataField>CustomerofCustomer_ACOProfileCustomer</DataField>
+        </Field>
+        <Field Name="MaxCurrentDensity">
+          <DataField>MaxCurrentDensity</DataField>
+        </Field>
+        <Field Name="MaxCurrentDensityFormat">
+          <DataField>MaxCurrentDensityFormat</DataField>
+        </Field>
+        <Field Name="MinCurrentDensity">
+          <DataField>MinCurrentDensity</DataField>
+        </Field>
+        <Field Name="MinCurrentDensityFormat">
+          <DataField>MinCurrentDensityFormat</DataField>
+        </Field>
+        <Field Name="ThickStainingTime">
+          <DataField>ThickStainingTime</DataField>
+        </Field>
+        <Field Name="ThickStainingTimeFormat">
+          <DataField>ThickStainingTimeFormat</DataField>
+        </Field>
+        <Field Name="ThinStainingTime">
+          <DataField>ThinStainingTime</DataField>
+        </Field>
+        <Field Name="ThinStainingTimeFormat">
+          <DataField>ThinStainingTimeFormat</DataField>
+        </Field>
+        <Field Name="IsVEC">
+          <DataField>IsVEC</DataField>
+        </Field>
+        <Field Name="ACO_British_Standard">
+          <DataField>ACO_British_Standard</DataField>
+        </Field>
+        <Field Name="IsWrap">
+          <DataField>IsWrap</DataField>
+        </Field>
+        <Field Name="ACO_High_End">
+          <DataField>ACO_High_End</DataField>
+        </Field>
+        <Field Name="ACO_Measure_Report">
+          <DataField>ACO_Measure_Report</DataField>
+        </Field>
+        <Field Name="ACO_Kundentour_HUECK">
+          <DataField>ACO_Kundentour_HUECK</DataField>
+        </Field>
+        <Field Name="HelixStart_ACOLinkedHolderCaption">
+          <DataField>HelixStart_ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="HelixStart_ACOLinkedHolder">
+          <DataField>HelixStart_ACOLinkedHolder</DataField>
+        </Field>
+        <Field Name="HelixStart_ACOLinkedHolderFormat">
+          <DataField>HelixStart_ACOLinkedHolderFormat</DataField>
+        </Field>
+        <Field Name="HelixEnd_ACOLinkedHolderCaption">
+          <DataField>HelixEnd_ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="HelixEnd_ACOLinkedHolder">
+          <DataField>HelixEnd_ACOLinkedHolder</DataField>
+        </Field>
+        <Field Name="HelixEnd_ACOLinkedHolderFormat">
+          <DataField>HelixEnd_ACOLinkedHolderFormat</DataField>
+        </Field>
+        <Field Name="Helix_ACOLinkedHolderCaption">
+          <DataField>Helix_ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="Helix_ACOLinkedHolder">
+          <DataField>Helix_ACOLinkedHolder</DataField>
+        </Field>
+        <Field Name="Space_ACOLinkedHolderCaption">
+          <DataField>Space_ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="Space_ACOLinkedHolder">
+          <DataField>Space_ACOLinkedHolder</DataField>
+        </Field>
+        <Field Name="Space_ACOLinkedHolderFormat">
+          <DataField>Space_ACOLinkedHolderFormat</DataField>
+        </Field>
+        <Field Name="AttachMethodCode_ACOLinkedHolderCaption">
+          <DataField>AttachMethodCode_ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="Description_ACOAttachmethod">
+          <DataField>Description_ACOAttachmethod</DataField>
+        </Field>
+        <Field Name="Comment_ACOLinkedHolderCaption">
+          <DataField>Comment_ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="Comment_ACOLinkedHolder">
+          <DataField>Comment_ACOLinkedHolder</DataField>
+        </Field>
+        <Field Name="ACOLinkedHolderCaption">
+          <DataField>ACOLinkedHolderCaption</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedHolderType1">
+          <DataField>Code_ACOLinkedHolderType1</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedHolderType2">
+          <DataField>Code_ACOLinkedHolderType2</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedHolderType3">
+          <DataField>Code_ACOLinkedHolderType3</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedHolderType4">
+          <DataField>Code_ACOLinkedHolderType4</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedHolderType1">
+          <DataField>Description_ACOLinkedHolderType1</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedHolderType2">
+          <DataField>Description_ACOLinkedHolderType2</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedHolderType3">
+          <DataField>Description_ACOLinkedHolderType3</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedHolderType4">
+          <DataField>Description_ACOLinkedHolderType4</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType1">
+          <DataField>Quantity_ACOLinkedHolderType1</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType1Format">
+          <DataField>Quantity_ACOLinkedHolderType1Format</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType2">
+          <DataField>Quantity_ACOLinkedHolderType2</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType2Format">
+          <DataField>Quantity_ACOLinkedHolderType2Format</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType3">
+          <DataField>Quantity_ACOLinkedHolderType3</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType3Format">
+          <DataField>Quantity_ACOLinkedHolderType3Format</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType4">
+          <DataField>Quantity_ACOLinkedHolderType4</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedHolderType4Format">
+          <DataField>Quantity_ACOLinkedHolderType4Format</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedHolderType1">
+          <DataField>Position_ACOLinkedHolderType1</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedHolderType2">
+          <DataField>Position_ACOLinkedHolderType2</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedHolderType3">
+          <DataField>Position_ACOLinkedHolderType3</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedHolderType4">
+          <DataField>Position_ACOLinkedHolderType4</DataField>
+        </Field>
+        <Field Name="ACOLinkedSupportHolderCaption">
+          <DataField>ACOLinkedSupportHolderCaption</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedSupportHolder1">
+          <DataField>Code_ACOLinkedSupportHolder1</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedSupportHolder2">
+          <DataField>Code_ACOLinkedSupportHolder2</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedSupportHolder3">
+          <DataField>Code_ACOLinkedSupportHolder3</DataField>
+        </Field>
+        <Field Name="Code_ACOLinkedSupportHolder4">
+          <DataField>Code_ACOLinkedSupportHolder4</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedSupportHolder1">
+          <DataField>Description_ACOLinkedSupportHolder1</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedSupportHolder2">
+          <DataField>Description_ACOLinkedSupportHolder2</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedSupportHolder3">
+          <DataField>Description_ACOLinkedSupportHolder3</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedSupportHolder4">
+          <DataField>Description_ACOLinkedSupportHolder4</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolderCaption">
+          <DataField>Distance_ACOLinkedSupportHolderCaption</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder1">
+          <DataField>Distance_ACOLinkedSupportHolder1</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder1Format">
+          <DataField>Distance_ACOLinkedSupportHolder1Format</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder2">
+          <DataField>Distance_ACOLinkedSupportHolder2</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder2Format">
+          <DataField>Distance_ACOLinkedSupportHolder2Format</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder3">
+          <DataField>Distance_ACOLinkedSupportHolder3</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder3Format">
+          <DataField>Distance_ACOLinkedSupportHolder3Format</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder4">
+          <DataField>Distance_ACOLinkedSupportHolder4</DataField>
+        </Field>
+        <Field Name="Distance_ACOLinkedSupportHolder4Format">
+          <DataField>Distance_ACOLinkedSupportHolder4Format</DataField>
+        </Field>
+        <Field Name="ACOLinkedDistanceHolderCaption">
+          <DataField>ACOLinkedDistanceHolderCaption</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedDistanceHolder1">
+          <DataField>Description_ACOLinkedDistanceHolder1</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedDistanceHolder2">
+          <DataField>Description_ACOLinkedDistanceHolder2</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedDistanceHolder3">
+          <DataField>Description_ACOLinkedDistanceHolder3</DataField>
+        </Field>
+        <Field Name="Description_ACOLinkedDistanceHolder4">
+          <DataField>Description_ACOLinkedDistanceHolder4</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolderCaption">
+          <DataField>Position_ACOLinkedDistanceHolderCaption</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder1">
+          <DataField>Position_ACOLinkedDistanceHolder1</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder1Format">
+          <DataField>Position_ACOLinkedDistanceHolder1Format</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder2">
+          <DataField>Position_ACOLinkedDistanceHolder2</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder2Format">
+          <DataField>Position_ACOLinkedDistanceHolder2Format</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder3">
+          <DataField>Position_ACOLinkedDistanceHolder3</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder3Format">
+          <DataField>Position_ACOLinkedDistanceHolder3Format</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder4">
+          <DataField>Position_ACOLinkedDistanceHolder4</DataField>
+        </Field>
+        <Field Name="Position_ACOLinkedDistanceHolder4Format">
+          <DataField>Position_ACOLinkedDistanceHolder4Format</DataField>
+        </Field>
+        <Field Name="SalesLineAreaIncHollow">
+          <DataField>SalesLineAreaIncHollow</DataField>
+        </Field>
+        <Field Name="SalesLineAreaIncHollowFormat">
+          <DataField>SalesLineAreaIncHollowFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

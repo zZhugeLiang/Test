@@ -369,12 +369,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 SalesHeader: Record "Sales Header";
                 ItemVariant: Record "Item Variant";
                 ACOLinkedHolder: Record "ACO Linked Holder";
+                Item: Record Item;
+                ACOColor: Record "ACO Color";
                 ACOLinkedHolders: Page "ACO Linked Holders";
             begin
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
                 ACOLinkedHolder.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
                 ACOLinkedHolder.SetRange("Profile Code", Rec."ACO Profile Code");
-                // ACOLinkedHolder.SetRange("Color Group Code", Rec.Color);
+
+                if Item.Get(Rec."No.") then
+                    if ACOColor.Get(Item."ACO Color") then
+                        ACOLinkedHolder.SetRange("Color Group Code", ACOColor."Color Group");
+
                 if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
                     ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
