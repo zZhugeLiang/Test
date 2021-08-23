@@ -6,6 +6,8 @@ codeunit 50003 "ACO Management"
         SalesHeader: Record "Sales Header";
         ACOLinkedHolder: Record "ACO Linked Holder";
         ACOLinkedPackaging: Record "ACO Linked Packaging";
+        Item: Record Item;
+        ACOColor: Record "ACO Color";
         ItemVariant: Record "Item Variant";
     begin
         if not ItemVariant.Get(Salesline."No.", Salesline."Variant Code") then
@@ -13,6 +15,11 @@ codeunit 50003 "ACO Management"
 
         ACOLinkedHolder.SetRange("Profile Code", Salesline."ACO Profile Code");
         ACOLinkedHolder.SetRange("Customer No.", CustomerNo);
+
+        if Item.Get(Salesline."No.") then
+            if ACOColor.Get(Item."ACO Color") then
+                ACOLinkedHolder.SetRange("Color Group Code", ACOColor."Color Group");
+
         if ItemVariant."ACO Number of Meters" <> 0 then
             ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
@@ -181,7 +188,7 @@ codeunit 50003 "ACO Management"
         SKU: Record "Stockkeeping Unit";
         ItemType: Record Item;
         Counter: Integer;
-        CreateProdOrder: Boolean;
+        DoCreateProdOrder: Boolean;
         EndLoop: Boolean;
         IsHandled: Boolean;
         ProductionOrdersCreated: Label 'Number of Production Order(s) created: %1';
@@ -196,24 +203,18 @@ codeunit 50003 "ACO Management"
             SalesLine.TestField("Shipment Date");
             SalesLine.CalcFields("Reserved Qty. (Base)");
 
-            if (SalesLine.Type = SalesLine.Type::Item) and (SalesLine."No." <> '') then begin
-                ItemType.Get(SalesLine."No.");
-                if ItemType.Type = ItemType.Type::Inventory then
-                    SalesLine.TestField("ACO Color");
-            end;
-
             IsHandled := false;
             if IsHandled then
                 exit;
 
             if SalesLine."Outstanding Qty. (Base)" > SalesLine."Reserved Qty. (Base)" then begin
                 if SKU.Get(SalesLine."Location Code", SalesLine."No.", SalesLine."Variant Code") then
-                    CreateProdOrder := SKU."Replenishment System" = SKU."Replenishment System"::"Prod. Order"
+                    DoCreateProdOrder := SKU."Replenishment System" = SKU."Replenishment System"::"Prod. Order"
                 else begin
                     Item.Get(SalesLine."No.");
-                    CreateProdOrder := Item."Replenishment System" = Item."Replenishment System"::"Prod. Order";
+                    DoCreateProdOrder := Item."Replenishment System" = Item."Replenishment System"::"Prod. Order";
                 end;
-                if CreateProdOrder then begin
+                if DoCreateProdOrder then begin
                     CreateProdOrder(SalesLine);//, NewStatus, NewOrderType)
                     Counter += 1;
                 end;

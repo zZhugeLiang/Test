@@ -3123,11 +3123,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action GenerateRejectionLabel - Method OnAction - NamedType Only1LineErr</note>
         </trans-unit>
-        <trans-unit id="Page 2436688764 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Print Label</source>
-          <note from="Developer" annotates="general" priority="2">NLD="YourLanguageCaption"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action PrintLabel - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2949633637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build-up Layers</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3994,19 +3989,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2244607703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rejection Label Select Lines</source>
+          <source>Label Select Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType QtyTooLargeErr</note>
-        </trans-unit>
-        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3035616146" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Labels have already been printed. Please print them from the Packages list.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType LabelsAlreadyPrintedErr</note>
         </trans-unit>
         <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
@@ -4308,6 +4293,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control Variant Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 290612570 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Action ShowDocument - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Bath Sheet List</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4478,10 +4468,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Method OnAction - NamedType Only1LineErr</note>
         </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Print Label</source>
+        <trans-unit id="Page 2943489305 - Action 88434777 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Sawing Label</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action PrintLabel - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateSawingLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 88434777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Sawing Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateSawingLabel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 88434777 - Method 1377591017 - NamedType 4156361610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only 1 line can be processed at a time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateSawingLabel - Method OnAction - NamedType Only1LineErr</note>
         </trans-unit>
         <trans-unit id="Page 560858142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Package Lines</source>

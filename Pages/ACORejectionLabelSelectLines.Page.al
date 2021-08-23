@@ -1,7 +1,7 @@
 page 50055 "ACO Rej. Label Select Lines"
 {
 
-    Caption = 'Rejection Label Select Lines';
+    Caption = 'Label Select Lines';
     PageType = List;
     SourceTable = "ACO Package Line";
     SourceTableTemporary = true;
@@ -20,6 +20,8 @@ page 50055 "ACO Rej. Label Select Lines"
                 {
                     field("Reject Reason Code"; Rec."Reject Reason Code")
                     {
+                        Visible = IsReject;
+                        Editable = IsReject;
                         ApplicationArea = All;
                     }
                     field(Quantity; Rec.Quantity)
@@ -71,8 +73,6 @@ page 50055 "ACO Rej. Label Select Lines"
         tempCustomerNo: Code[20];
         LineNumber: Integer;
         RemainingQuantityToDeduct: Decimal;
-        QtyTooLargeErr: Label 'Quantity in Package cannot be larger than Quantity minus Quantity Processed.';
-        LabelsAlreadyPrintedErr: Label 'Labels have already been printed. Please print them from the Packages list.';
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
     begin
@@ -154,7 +154,7 @@ page 50055 "ACO Rej. Label Select Lines"
 
             PackageHeader.Remark := GenPackage.GetRemark();
             PackageHeader."Date-Time" := CurrentDateTime();
-            PackageHeader.Reject := true;
+            PackageHeader.Reject := IsReject;
             PackageHeader.City := Customer.City;
             PackageHeader."Post Code" := Customer."Post Code";
             PackageHeader.Insert();
@@ -221,6 +221,7 @@ page 50055 "ACO Rej. Label Select Lines"
 
             // Commit();
             // // TODO Create Production Journal
+            // voor alle labels waarvoor een colli tabel wordt aangemaakt
 
             PackageHeader.SetRecFilter();
             PrintPackageLabel.SetTableView(PackageHeader);
@@ -249,9 +250,8 @@ page 50055 "ACO Rej. Label Select Lines"
     var
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ProdOrderLine: Record "Prod. Order Line";
-        ResourceNo: Code[20];
-        Resource: Record Resource;
         LineNo: Integer;
+        IsReject: Boolean;
 
     procedure SetBathSheetLine(NewACOBathSheetLine: Record "ACO Bath Sheet Line")
     begin
@@ -261,5 +261,10 @@ page 50055 "ACO Rej. Label Select Lines"
     procedure SetProdOrderLine(NewProdOrderLine: Record "Prod. Order Line")
     begin
         ProdOrderLine.Get(NewProdOrderLine.Status, NewProdOrderLine."Prod. Order No.", NewProdOrderLine."Line No.");
+    end;
+
+    procedure SetIsReject(NewIsReject: Boolean)
+    begin
+        IsReject := NewIsReject;
     end;
 }

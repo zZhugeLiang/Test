@@ -30,6 +30,14 @@ page 50045 "ACO Linked Holders"
                 {
                     ApplicationArea = All;
                 }
+                field(Length; Length)
+                {
+                    ApplicationArea = All;
+                }
+                field("Color Group Code"; "Color Group Code")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

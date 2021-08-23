@@ -351,30 +351,9 @@ page 50032 "ACO Bathsheet Lines To Process"
                     if BathSheetLine.Count() > 1 then
                         Error(Only1LineErr);
 
+                    ACORejLabelSelectLines.SetIsReject(true);
                     ACORejLabelSelectLines.SetBathSheetLine(Rec);
                     ACORejLabelSelectLines.RunModal();
-                end;
-            }
-
-            action(PrintLabel)
-            {
-                ApplicationArea = All;
-                Caption = 'Print Label', comment = 'NLD="YourLanguageCaption"';
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                Image = Print;
-                trigger OnAction()
-                var
-                    PackageHeader: Record "ACO Package Header";
-                    PrintPackageLabel: Report "ACO Package Label";
-                begin
-                    if PackageHeader.FindLast() then begin
-                        PackageHeader.SetRecFilter();
-                        PrintPackageLabel.SetTableView(PackageHeader);
-                        PrintPackageLabel.UseRequestPage := false;
-                        PrintPackageLabel.Run();
-                    end;
                 end;
             }
         }

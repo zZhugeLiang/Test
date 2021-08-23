@@ -2847,16 +2847,6 @@
           <target>Deze kleur mag niet geëxporteerd worden naar Aucos</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Export Aucos - Method OnAction - NamedType ColorCannotBeExportedToAucosErr</note>
         </trans-unit>
-        <trans-unit id="Page 2436688764 - Control 3398811611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Processed Quantity</source>
-          <target>Aantal verwerkt</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control ProcessedQuantity - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 371732247 - Action 3566282224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update Process Times</source>
-          <target>Berekenen bewerkingstijden</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 371732247 - Action 707697803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print Bath Sheet</source>
           <target>Afdrukken badkaart</target>
@@ -3067,6 +3057,16 @@
           <target>Afdrukdatum</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType PrintingDateCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Page 2436688764 - Control 3398811611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processed Quantity</source>
+          <target>Aantal verwerkt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control ProcessedQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 371732247 - Action 3566282224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Process Times</source>
+          <target>Berekenen bewerkingstijden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
+        </trans-unit>	
         <trans-unit id="Report 371732247 - NamedType 736763889" size-unit="char" translate="yes" xml:space="preserve">
           <source>Created by</source>
           <target>Aangemaakt door</target>
@@ -3096,7 +3096,7 @@
           <source>Only 1 Sales Order can be processed at a time.</source>
           <target>Er kan slechts 1 verkooporder per keer verwerkt worden.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType OneSalesOrderErr</note>
-        </trans-unit>	
+        </trans-unit>
         <trans-unit id="Page 2436688764 - Action 1870968742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Rejection Label</source>
           <target>Aanmaken afkeuretiket</target>
@@ -3387,15 +3387,15 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Variant Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2572220696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Packages</source>
-          <target>Colli</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packages - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 1279684272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Types</source>
           <target>Colli types</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Types - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2572220696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packages</source>
+          <target>Colli</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packages - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1420859964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging List</source>
@@ -3406,12 +3406,17 @@
           <source>Packaging Types</source>
           <target>Verpakking types</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packaging Types - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
         <trans-unit id="Page 1439247426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Units of Measure</source>
           <target>Eindverpakking eenheid</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Packaging Units of Measure - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
+        <trans-unit id="Page 285665476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Sales Invoice Lines</source>
+          <target>Geboekte verkoopfactuurregels</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Invoice Lines - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 300980991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pretreatments</source>
           <target>Voorbehandelingen</target>
@@ -3426,7 +3431,7 @@
           <source>Price Schemes</source>
           <target>Prijzenschema's</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Price Schemes - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
         <trans-unit id="Page 1037002210 - Action 637021826 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prices</source>
           <target>Prijzen</target>
@@ -3512,7 +3517,6 @@
           <target>Algemeen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control General - Property Caption</note>
         </trans-unit>
-
         <trans-unit id="Page 1029845018 - Control 1805007635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Production Parameters</source>
           <target>Productie parameters</target>
@@ -3589,29 +3593,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Project Colors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2244607703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rejection Label Select Lines</source>
-          <target>Selecteer regels afkeur etiket</target>
+          <source>Label Select Lines</source>
+          <target>Selecteer regels etiket</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 730614324" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity in Package cannot be larger than Quantity minus Quantity Processed.</source>
-          <target>Aantal naar colli kan niet groter zijn dan aantal min aantal verwerkt.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Control Qty in Package - Method OnValidate - NamedType QtyTooLargeErr</note>
-        </trans-unit>
-        <trans-unit id="Page 2436688764 - Action 2309546521 - Method 1377591017 - NamedType 3035616146" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Labels have already been printed. Please print them from the Packages list.</source>
-          <target>Etiketten zijn reeds afgedrukt. Gebruik het scherm Colli's voor het opnieuw afdrukken van de etiketten.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - Action Generate Package Label - Method OnAction - NamedType LabelsAlreadyPrintedErr</note>
-        </trans-unit>
-        <trans-unit id="Page 2436688764 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 3641393597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer is not the same for all selected bathsheet lines.</source>
           <target>Klant is niet dezelfde voor alle geselecteerde badkaartregels</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblCustomerErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType lblCustomerErr</note>
         </trans-unit>
-        <trans-unit id="Page 2436688764 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
           <source>The number series was not set in both the Customer and App Settings.</source>
           <target>De Nr.-reeks is niet ingesteld in zowel de klantenkaart als de Alucol instellingen.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bathsheet Lines To Process - NamedType lblNoNumberSeriesErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType lblNoNumberSeriesErr</note>
         </trans-unit>
         <trans-unit id="Page 2244607703 - Action 1036512167 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate Label</source>
@@ -3654,15 +3648,15 @@
           <target>Badkaart subpagina</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Subpage - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 285665476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posted Sales Invoice Lines</source>
-          <target>Geboekte verkoopfactuurregels</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Invoice Lines - Property Caption</note>
-        </trans-unit>	
         <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
           <source>The number series was not set in both the Customer and App Settings.</source>
           <target>De Nr.-reeks is niet ingesteld in zowel de klantenkaart als de Alucol instellingen.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType lblNoNumberSeriesErr</note>
+        </trans-unit>
+        <trans-unit id="Page 290612570 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Document</source>
+          <target>Weergeven document</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Action ShowDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2943489305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selection Bath Sheet List</source>
@@ -3764,16 +3758,6 @@
           <target>Geeft de totale kosten weer van de regel. Door de kostprijs te vermenigvuldigen met het aantal.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Control Cost Amount - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Bath Sheet</source>
-          <target>Aanmaken Badkaart</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Bath Sheet</source>
-          <target>Aanmaken Badkaart</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 2943489305 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Line</source>
           <target>&amp;Line</target>
@@ -3804,6 +3788,16 @@
           <target>Item &amp;Tracking Lines</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action ShowTrackingLines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Bath Sheet</source>
+          <target>Aanmaken Badkaart</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2280159880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Bath Sheet</source>
+          <target>Aanmaken Badkaart</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateBathSheet - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2500824358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Generate OBR Rejection Label</source>
           <target>Aanmaken afkeur/OBR etiket</target>
@@ -3813,7 +3807,27 @@
           <source>Generate OBR Rejection Label</source>
           <target>Aanmaken afkeur/OBR etiket</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Property Caption</note>
-        </trans-unit>	
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 2500824358 - Method 1377591017 - NamedType 4156361610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only 1 line can be processed at a time.</source>
+          <target>Er kan 1 regel per keer verwerkt worden.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateRejectionOBRLabel - Method OnAction - NamedType Only1LineErr</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 88434777 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Sawing Label</source>
+          <target>Aanmaken zaagetiket</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateSawingLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 88434777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generate Sawing Label</source>
+          <target>Aanmaken zaagetiket</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateSawingLabel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2943489305 - Action 88434777 - Method 1377591017 - NamedType 4156361610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only 1 line can be processed at a time.</source>
+          <target>Er kan 1 regel per keer verwerkt worden.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Selection Bath Sheet List - Action CreateSawingLabel - Method OnAction - NamedType Only1LineErr</note>
+        </trans-unit>
         <trans-unit id="Page 2943489305 - Action 2412936707 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
           <target>Bekijk of wijzig serienummers en lotnummers dat toegekend is aan het artikel op het document.</target>
@@ -3854,11 +3868,6 @@
           <target>Badkaarten</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2819774014 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <target>Algemeen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets - Control General - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2819774014 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
           <target>Details</target>
@@ -3869,15 +3878,15 @@
           <target>Waardes berekenen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets - Control CalculatedValues - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2819774014 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Algemeen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 733050471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheets with Color</source>
           <target>Badkaarten met kleur</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets with Color - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 733050471 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <target>Algemeen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets with Color - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 733050471 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
@@ -3889,17 +3898,22 @@
           <target>Waardes berekenen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets with Color - Control CalculatedValues - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 733050471 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Algemeen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Bath Sheets with Color - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2853634043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>WS Import Sales Orders</source>
           <target>WS Import Sales Orders</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Import Sales Orders - Property Caption</note>
-        </trans-unit>        
+        </trans-unit>
         <trans-unit id="Page 2373527957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measured Colors</source>
           <target>Gemeten kleuren</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Measured Colors - Property Caption</note>
         </trans-unit>
-	<trans-unit id="Page 1964841979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1964841979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Color</source>
           <target>Projectkleur</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO WS Project Color - Property Caption</note>

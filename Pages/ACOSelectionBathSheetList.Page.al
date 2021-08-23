@@ -342,30 +342,35 @@ Page 50025 "ACO Selection Bath Sheet List"
                     if ProdOrderLine.Count() > 1 then
                         Error(Only1LineErr);
 
+                    ACORejLabelSelectLines.SetIsReject(true);
                     ACORejLabelSelectLines.SetProdOrderLine(Rec);
                     ACORejLabelSelectLines.RunModal();
                 end;
             }
 
-            action(PrintLabel)
+            action(CreateSawingLabel)
             {
                 ApplicationArea = All;
-                Caption = 'Print Label';
+                Caption = 'Generate Sawing Label';
+                Image = CreateDocument;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
-                Image = Print;
+                ToolTip = 'Generate Sawing Label';
                 trigger OnAction()
                 var
-                    PackageHeader: Record "ACO Package Header";
-                    PrintPackageLabel: Report "ACO Package Label";
+                    ProdOrderLine: Record "Prod. Order Line";
+                    ACORejLabelSelectLines: Page "ACO Rej. Label Select Lines";
+                    Only1LineErr: Label 'Only 1 line can be processed at a time.';
                 begin
-                    if PackageHeader.FindLast() then begin
-                        PackageHeader.SetRecFilter();
-                        PrintPackageLabel.SetTableView(PackageHeader);
-                        PrintPackageLabel.UseRequestPage := false;
-                        PrintPackageLabel.Run();
-                    end;
+                    CurrPage.SetSelectionFilter(ProdOrderLine);
+
+                    if ProdOrderLine.Count() > 1 then
+                        Error(Only1LineErr);
+
+                    ACORejLabelSelectLines.SetIsReject(false);
+                    ACORejLabelSelectLines.SetProdOrderLine(Rec);
+                    ACORejLabelSelectLines.RunModal();
                 end;
             }
         }
