@@ -298,4 +298,22 @@ Page 50058 "ACO Sales Order Lines"
             }
         }
     }
+
+    actions
+    {
+        area(Navigation)
+        {
+            action(ShowDocument)
+            {
+                Caption = 'Show Document';
+                Image = View;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = All;
+                RunObject = page "Sales Order";
+                RunPageLink = "No." = field("Document No.");
+                RunPageView = where("Document Type" = const(Order));
+            }
+        }
+    }
 }
