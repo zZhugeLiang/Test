@@ -173,6 +173,10 @@ report 50020 "ACO Work Order"
                 column(Position_ACOLinkedDistanceHolder3; ACOLinkedDistanceHolder3.Position) { }
                 column(Position_ACOLinkedDistanceHolder4; ACOLinkedDistanceHolder4.Position) { }
                 column(SalesLineAreaIncHollow; "Sales Line"."ACO Area" * "Sales Line"."ACO Correction Factor Profile") { }
+                column(Status_ProdOrderLine; ProdOrderLine.Status) { }
+                column(ProdOrderNo_ProdOrderLine; ProdOrderLine."Prod. Order No.") { }
+                column(LineNo_ProdOrderLine; ProdOrderLine."Line No.") { }
+
                 trigger OnAfterGetRecord()
                 var
                     Item: Record Item;
@@ -214,6 +218,12 @@ report 50020 "ACO Work Order"
 
                     if not ACOColorProjectHeader.Get("ACO Project Color Code") then
                         Clear(ACOColorProjectHeader);
+
+                    ProdOrderLine.Reset();
+                    ProdOrderLine.SetRange("ACO Source No.", "Sales Line"."Document No.");
+                    ProdOrderLine.SetRange("ACO Source Line No.", "Sales Line"."Line No.");
+                    if not ProdOrderLine.FindFirst() then
+                        Clear(ProdOrderLine);
 
                     IsFoil := false;
                     RemoveFoil := false;
@@ -332,6 +342,7 @@ report 50020 "ACO Work Order"
         ACOLinkedSupportHolder4: Record "ACO Linked Support Holder";//New
 
         ACOAttachMethod: Record "ACO Attach Method";
+        ProdOrderLine: Record "Prod. Order Line";
         BagDescriptionsText: Text;
         TotalArea: Decimal; //New
         MaxLength: Decimal; //New

@@ -113,33 +113,22 @@ table 50023 "ACO Package Header"
         if Rec."Sales Shipment No." <> '' then
             Error(SalesShipmentLinkedErr);
 
-        if Rec.Reject then begin
-            ACOPackageLine.SetRange("Package No.", Rec."No.");
-            if ACOPackageLine.FindSet() then
-                repeat
-                    if ACOBathSheetLine.Get(ACOPackageLine."Bathsheet No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
-                        ACOBathSheetLine."Reject Quantity" -= ACOPackageLine.Quantity;
-                        ACOBathSheetLine.Modify();
-                    end;
-
-                    if ACOPackageLine."Bathsheet No." = '' then
-                        if ProdOrderLine.Get(ACOPackageLine."Production Order Status", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Line No.") then begin
-                            ProdOrderLine."ACO Remaining Quantity" += ACOPackageLine.Quantity;
-                            ProdOrderLine.Modify();
-                        end;
-                until ACOPackageLine.Next() = 0;
-        end else begin
-            ACOPackageLine.SetRange("Package No.", Rec."No.");
-            if ACOPackageLine.FindSet() then
-                repeat
-                    if ACOBathSheetLine.Get(ACOPackageLine."Bathsheet No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
-                        ACOBathSheetLine."Remaining Quantity" += ACOPackageLine.Quantity;
+        ACOPackageLine.SetRange("Package No.", Rec."No.");
+        if ACOPackageLine.FindSet() then
+            repeat
+                if ACOBathSheetLine.Get(ACOPackageLine."Bathsheet No.", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Status", ACOPackageLine."Production Order Line No.") then begin
+                    ACOBathSheetLine."Reject Quantity" -= ACOPackageLine.Quantity;
+                    if Rec.Reject then
                         ACOBathSheetLine."Quantity Processed" -= ACOPackageLine.Quantity;
-                        ACOBathSheetLine.Modify();
+                    ACOBathSheetLine.Modify();
+                end;
+
+                if ACOPackageLine."Bathsheet No." = '' then
+                    if ProdOrderLine.Get(ACOPackageLine."Production Order Status", ACOPackageLine."Production Order No.", ACOPackageLine."Production Order Line No.") then begin
+                        ProdOrderLine."ACO Remaining Quantity" += ACOPackageLine.Quantity;
+                        ProdOrderLine.Modify();
                     end;
-                //if ProdOrderLine.
-                until ACOPackageLine.Next() = 0;
-        end;
+            until ACOPackageLine.Next() = 0;
 
         ACOPackageLinesToDelete.Reset();
         ACOPackageLinesToDelete.SetRange("Package No.", Rec."No.");

@@ -538,6 +538,15 @@ End Function
         <Field Name="SalesLineAreaIncHollowFormat">
           <DataField>SalesLineAreaIncHollowFormat</DataField>
         </Field>
+        <Field Name="Status_ProdOrderLine">
+          <DataField>Status_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="ProdOrderNo_ProdOrderLine">
+          <DataField>ProdOrderNo_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="LineNo_ProdOrderLine">
+          <DataField>LineNo_ProdOrderLine</DataField>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>
