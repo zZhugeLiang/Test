@@ -145,6 +145,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50021; "ACO Area Profile"; Decimal)
         {
             Caption = 'Area Profile';
+            Editable = false;
             DataClassification = CustomerContent;
 
             trigger OnValidate()
@@ -355,6 +356,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         field(50047; "ACO Area"; Decimal)
         {
             Caption = 'Area';
+            Editable = false;
             DataClassification = CustomerContent;
         }
 

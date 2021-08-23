@@ -161,9 +161,13 @@ codeunit 50005 "ACO Create Prod. Order Lines"
                 ProdOrderLine."Ending Date" :=
                   LeadTimeMgt.PlannedEndingDate(ProdOrderLine."Item No.", ProdOrderLine."Location Code", '', ProdOrderLine."Due Date", '', 2);
                 ProdOrderLine.Validate("Ending Date");
+                ProdOrderLine."ACO Profile m2 per Qty." := SalesLine."ACO Area Profile";
+                ProdOrderLine."ACO Total m2" := SalesLine."ACO Area";
 
                 OnBeforeProdOrderLineInsert(ProdOrderLine, ProdOrder, true, SalesLine);
-                InsertProdOrderLine;
+
+                InsertProdOrderLine();
+
                 if ProdOrderLine.HasErrorOccured then
                     ErrorOccured := true;
                 ItemTrackingMgt.CopyItemTracking(SalesLine.RowID1, ProdOrderLine.RowID1, true, true);
@@ -195,26 +199,6 @@ codeunit 50005 "ACO Create Prod. Order Lines"
         InsertNew := false;
 
         case ProdOrder."Source Type" of
-            // ProdOrder."Source Type"::Item:
-            //     begin
-            //         OnCreateProdOrderLineOnBeforeInitProdOrderLine(InsertNew);
-            //         InitProdOrderLine(ProdOrder."Source No.", VariantCode, ProdOrder."Location Code");
-            //         ProdOrderLine.Description := ProdOrder.Description;
-            //         ProdOrderLine."Description 2" := ProdOrder."Description 2";
-            //         ProdOrderLine.Validate(Quantity, ProdOrder.Quantity);
-            //         ProdOrderLine.UpdateDatetime;
-            //         if SalesLineIsSet then
-            //             CopyDimFromSalesLine(SalesLine, ProdOrderLine);
-            //         OnBeforeProdOrderLineInsert(ProdOrderLine, ProdOrder, SalesLineIsSet, SalesLine);
-            //         ProdOrderLine.Insert();
-            //         if ProdOrderLine.HasErrorOccured then
-            //             ErrorOccured := true;
-
-            //         OnAfterProdOrderLineInsert(ProdOrder, ProdOrderLine, NextProdOrderLineNo);
-            //     end;
-            // ProdOrder."Source Type"::Family:
-            //     if not CopyFromFamily then
-            //         ErrorOccured := true;
             ProdOrder."Source Type"::"Sales Header":
                 begin
                     InsertNew := true;
@@ -226,8 +210,6 @@ codeunit 50005 "ACO Create Prod. Order Lines"
                         ErrorOccured := true;
                 end;
         end;
-
-        // OnAfterCreateProdOrderLine(ProdOrder, VariantCode, ErrorOccured);
     end;
 
     local procedure InitProdOrderLine(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10])
