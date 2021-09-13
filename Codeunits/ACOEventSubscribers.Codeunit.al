@@ -547,42 +547,102 @@ codeunit 50000 "ACO Event Subscribers"
         QtyRounded := Round(QtyRounded, 0.001);
     end;
 
-    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Production Journal Mgt", 'OnBeforeRunProductionJnl', '', false, false)]
-    // local procedure ProductionJournalMgt_OnBeforeRunProductionJnl(ToTemplateName: Code[10]; ToBatchName: Code[10]; ProdOrder: Record "Production Order"; ActualLineNo: Integer; PostingDate: Date; var IsHandled: Boolean)
-    // var
-    //     ItemJnlLine: Record "Item Journal Line";
-    //     ItemJnlTemplate: Record "Item Journal Template";
-    //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-    //     PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
-    //     //ToBatchName: Code[10];
-    //     User: Text;
-    // begin
-    //     // TODO Create Production Journal
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Production Journal Mgt", 'OnBeforeRunProductionJnl', '', false, false)]
+    local procedure ProductionJournalMgt_OnBeforeRunProductionJnl(ToTemplateName: Code[10]; ToBatchName: Code[10]; ProdOrder: Record "Production Order"; ActualLineNo: Integer; PostingDate: Date; var IsHandled: Boolean)
+    var
+        ItemJnlLine: Record "Item Journal Line";
+        ItemJnlTemplate: Record "Item Journal Template";
+        ProdOrderLine: Record "Prod. Order Line";
+        ACOAppSetup: Record "ACO App Setup";
+        ItemVariant: Record "Item Variant";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+        PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
+        //ToBatchName: Code[10];
+        User: Text;
+        NewQuantity: Decimal;
+    begin
+        // TODO Create Production Journal
 
-    //     if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
-    //         // ItemJnlTemplate.Reset();
-    //         // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
-    //         // ItemJnlTemplate.SetRange(Recurring, false);
-    //         // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
-    //         // if ItemJnlTemplate.FindFirst() then begin
-    //         //     User := UpperCase(UserId);
-    //         //     if User <> '' then
-    //         //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
-    //         //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
-    //         //         else
-    //         //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
+        if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
+            // ItemJnlTemplate.Reset();
+            // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
+            // ItemJnlTemplate.SetRange(Recurring, false);
+            // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
+            // if ItemJnlTemplate.FindFirst() then begin
+            //     User := UpperCase(UserId);
+            //     if User <> '' then
+            //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
+            //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
+            //         else
+            //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
 
-    //         // Post Production Journal
-    //         ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
-    //         ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
-    //         ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
-    //         // TODO ItemJnlLine = empty, gives error
-    //         Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
-    //         ACOSingleInstanceMgt.SetPostProductionJournal(false);
-    //         // end;
-    //     end;
-    //     //ACOSingleInstanceMgt
-    // end;
+            //
+            ItemJnlTemplate.Reset();
+            ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
+            ItemJnlTemplate.SetRange(Recurring, false);
+            ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
+            if ItemJnlTemplate.FindFirst() then begin
+                User := UpperCase(UserId);
+                if User <> '' then
+                    if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
+                        ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
+                    else
+                        ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
+            end;
+
+            ACOAppSetup.Get();
+
+            ItemJnlLine.Reset();
+            ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
+            ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
+            ItemJnlLine.SetRange(Type, ItemJnlLine."Entry Type"::Output);
+            ItemJnlLine.SetRange("Flushing Method", ItemJnlLine."Flushing Method"::Backward);
+            ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
+            // TODO cannot find anything, opens page afterwards, when selecting 'Backwards', lines appear, look at trigger on page
+            if ItemJnlLine.FindSet() then
+                repeat
+                    //if package
+                    //    ItemJnlLine.Validate("Output Quantity", NewQuantity);
+                    // if OBR/ Rejection
+                    // ProdOrderLine.Reset();
+                    // ProdOrderLine.SetRange("Prod. Order No.", ItemJnlLine."Document No.");
+                    // ProdOrderLine.SetRange("Line No.", ItemJnlLine."Document Line No.");
+                    // ProdOrderLine.FindFirst();
+                    ProdOrderLine.Get(ProdOrderLine.Status::Released, ItemJnlLine."Document No.", ItemJnlLine."Order Line No.");
+                    NewQuantity := 0;
+
+                    case ProdOrderLine."Unit of Measure Code" of
+                        ACOAppSetup."Length Unit of Measure Code":
+                            begin
+                                ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code");
+                                if ItemVariant."ACO Number of Meters" <> 0 then
+                                    NewQuantity := ProdOrderLine.Quantity / ItemVariant."ACO Number of Meters";
+                            end;
+                        ACOAppSetup."Area Unit of Measure Code":
+                            if ProdOrderLine."ACO Profile m2 per Qty." <> 0 then //begin
+                                NewQuantity := ProdOrderLine.Quantity / ProdOrderLine."ACO Profile m2 per Qty.";
+                        //end;
+                        else
+                            NewQuantity := ProdOrderLine.Quantity;
+                    end;
+                    ItemJnlLine.Validate("Scrap Quantity", NewQuantity);
+                    ItemJnlLine.Modify(true);
+                until ItemJnlLine.Next() = 0;
+            //ItemJnlLine.ModifyAll("Output Quantity");
+            //
+            // Post Production Journal
+            ItemJnlLine.Reset();
+            ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
+            ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
+            ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
+            ItemJnlLine.FindFirst();
+            // TODO ItemJnlLine = empty, gives error
+            Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
+            ACOSingleInstanceMgt.SetPostProductionJournal(false);
+            // end;
+        end;
+        //ACOSingleInstanceMgt
+    end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
     local procedure SalesGetShipment_OnBeforeInsertInvLineFromShptLine(var SalesShptLine: Record "Sales Shipment Line"; var SalesLine: Record "Sales Line"; SalesOrderLine: Record "Sales Line"; var IsHandled: Boolean)

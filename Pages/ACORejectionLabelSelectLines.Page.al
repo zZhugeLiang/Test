@@ -68,7 +68,6 @@ page 50055 "ACO Rej. Label Select Lines"
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
         ItemVariant: Record "Item Variant";
         GenPackage: Page "ACO Generate Package Dialog";
-        PrintPackageLabel: Report "ACO Package Label";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
         tempCustomerNo: Code[20];
         LineNumber: Integer;
@@ -205,28 +204,11 @@ page 50055 "ACO Rej. Label Select Lines"
 
             Commit();
 
-            // // TODO Create Production Journal GIVES ERROR LATER ON IN PROCES ON EMPTY JOURNAL LINE IN EVENT TRIGGER see tag TODO Create Production Journal
-            // ACOSingleInstanceMgt.SetPostProductionJournal(true);
+            // TODO Create Production Journal <<
+            PostProductionJournal(PackageHeader."No.");
+            // TODO Create Production Journal >>
 
-            // PackageLineToProductionJournal.SetRange("Package No.", PackageHeader."No.");
-            // if PackageLineToProductionJournal.FindSet() then
-            //     repeat
-            //         if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
-            //             if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
-            //                 ProductionJrnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
-            //             end;
-            //     until PackageLineToProductionJournal.Next() = 0;
-
-            // ACOSingleInstanceMgt.SetPostProductionJournal(false);
-
-            // Commit();
-            // // TODO Create Production Journal
-            // voor alle labels waarvoor een colli tabel wordt aangemaakt
-
-            PackageHeader.SetRecFilter();
-            PrintPackageLabel.SetTableView(PackageHeader);
-            PrintPackageLabel.UseRequestPage := false;
-            PrintPackageLabel.Run();
+            PrintPackageLabel(PackageHeader);
 
             // Commit();
 
@@ -252,6 +234,81 @@ page 50055 "ACO Rej. Label Select Lines"
         ProdOrderLine: Record "Prod. Order Line";
         LineNo: Integer;
         IsReject: Boolean;
+
+
+    local procedure PostProductionJournal(PackageHeaderNo: Code[20])
+    var
+        PackageLineToProductionJournal: Record "ACO Package Line";
+        ProductionOrder: Record "Production Order";
+        ItemJnlLine: Record "Item Journal Line";
+        ItemJnlTemplate: Record "Item Journal Template";
+        ProductionJnlMgt: Codeunit "Production Journal Mgt";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+        PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
+        User: Text;
+        ToBatchName: Code[10];
+        ToTemplateName: Code[10];
+        NewQuantity: Decimal;
+    begin
+        // TODO Create Production Journal <<
+        // GIVES ERROR LATER ON IN PROCES ON EMPTY JOURNAL LINE IN EVENT TRIGGER see tag TODO Create Production Journal
+        // voor alle labels waarvoor een colli tabel wordt aangemaakt, hier of in package header insert trigger
+        ACOSingleInstanceMgt.SetPostProductionJournal(true);
+
+        PackageLineToProductionJournal.SetRange("Package No.", PackageHeaderNo);
+        if PackageLineToProductionJournal.FindSet() then
+            repeat
+                if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
+                    if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
+                        ProductionJnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
+                        // //
+                        // ItemJnlTemplate.Reset();
+                        // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
+                        // ItemJnlTemplate.SetRange(Recurring, false);
+                        // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
+                        // if ItemJnlTemplate.FindFirst() then begin
+                        //     User := UpperCase(UserId);
+                        //     if User <> '' then
+                        //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
+                        //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
+                        //         else
+                        //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
+                        // end;
+
+                        // ItemJnlLine.Reset();
+                        // ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
+                        // ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
+                        // ItemJnlLine.SetRange("Document No.", ProductionOrder."No.");
+                        // if ItemJnlLine.FindSet() then
+                        //     repeat
+                        //         //if package
+                        //         //    ItemJnlLine.Validate("Output Quantity", NewQuantity);
+                        //         // if OBR/ Rejection
+                        //         ItemJnlLine.Validate("Scrap Quantity", NewQuantity);
+                        //     until ItemJnlLine.Next() = 0;
+                        // //ItemJnlLine.ModifyAll("Output Quantity");
+                        // //
+                    end;
+            until PackageLineToProductionJournal.Next() = 0;
+
+
+        ACOSingleInstanceMgt.SetPostProductionJournal(false);
+
+        Commit();
+        // TODO Create Production Journal >>
+    end;
+
+    local procedure PrintPackageLabel(var
+                                          PackageHeader: Record "ACO Package Header")
+    var
+        ACOPackageLabel: Report "ACO Package Label";
+    begin
+        PackageHeader.SetRecFilter();
+        ACOPackageLabel.SetTableView(PackageHeader);
+        ACOPackageLabel.UseRequestPage := false;
+        ACOPackageLabel.Run();
+    end;
+
 
     procedure SetBathSheetLine(NewACOBathSheetLine: Record "ACO Bath Sheet Line")
     begin
