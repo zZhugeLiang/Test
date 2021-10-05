@@ -377,4 +377,36 @@ codeunit 50003 "ACO Management"
     begin
 
     end;
+
+    procedure PostProductionJournal(PackageHeaderNo: Code[20]; ProdOrderLine: Record "Prod. Order Line")
+    var
+        PackageLineToProductionJournal: Record "ACO Package Line";
+        ProductionOrder: Record "Production Order";
+        // ItemJnlLine: Record "Item Journal Line";
+        // ItemJnlTemplate: Record "Item Journal Template";
+        ProductionJnlMgt: Codeunit "Production Journal Mgt";
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    // PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
+    // User: Text;
+    // ToBatchName: Code[10];
+    // ToTemplateName: Code[10];
+    // NewQuantity: Decimal;
+    begin
+        // TODO Create Production Journal <<
+        ACOSingleInstanceMgt.SetPostProductionJournal(true);
+
+        PackageLineToProductionJournal.SetRange("Package No.", PackageHeaderNo);
+        if PackageLineToProductionJournal.FindSet() then
+            repeat
+                if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
+                    if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
+                        ProductionJnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
+                    end;
+            until PackageLineToProductionJournal.Next() = 0;
+
+        ACOSingleInstanceMgt.SetPostProductionJournal(false);
+
+        Commit();
+        // TODO Create Production Journal >>
+    end;
 }

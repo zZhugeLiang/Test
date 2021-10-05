@@ -555,10 +555,12 @@ codeunit 50000 "ACO Event Subscribers"
         ProdOrderLine: Record "Prod. Order Line";
         ACOAppSetup: Record "ACO App Setup";
         ItemVariant: Record "Item Variant";
+        ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
         //ToBatchName: Code[10];
         User: Text;
+        QtyInPackage: Decimal;
         NewQuantity: Decimal;
     begin
         // TODO Create Production Journal
@@ -595,9 +597,19 @@ codeunit 50000 "ACO Event Subscribers"
             ItemJnlLine.Reset();
             ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
             ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
-            ItemJnlLine.SetRange(Type, ItemJnlLine."Entry Type"::Output);
+            ItemJnlLine.SetRange("Order Type", ItemJnlLine."Order Type"::Production);
+            ItemJnlLine.SetRange("Entry Type", ItemJnlLine."Entry Type"::Output);
             ItemJnlLine.SetRange("Flushing Method", ItemJnlLine."Flushing Method"::Backward);
-            ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
+            ItemJnlLine.SetRange("Order No.", ProdOrder."No.");
+            //570000 Consumption
+            // SetRange("Journal Template Name", ToTemplateName);
+            // SetRange("Journal Batch Name", ToBatchName);
+            // SetRange("Order Type", "Order Type"::Production);
+            // SetRange("Order No.", ProdOrder."No.");
+            // if ProdOrderLineNo <> 0 then
+            //     SetRange("Order Line No.", ProdOrderLineNo);
+            // SetFlushingFilter;
+
             // TODO cannot find anything, opens page afterwards, when selecting 'Backwards', lines appear, look at trigger on page
             if ItemJnlLine.FindSet() then
                 repeat
@@ -609,39 +621,89 @@ codeunit 50000 "ACO Event Subscribers"
                     // ProdOrderLine.SetRange("Line No.", ItemJnlLine."Document Line No.");
                     // ProdOrderLine.FindFirst();
                     ProdOrderLine.Get(ProdOrderLine.Status::Released, ItemJnlLine."Document No.", ItemJnlLine."Order Line No.");
-                    NewQuantity := 0;
+                    NewQuantity := ProdOrderLine.Quantity;
+                    QtyInPackage := ACOSingleInstanceMgt.GetTotalRejectionQuantity();
+
+                    if QtyInPackage = 0 then begin
+                        ACOBathSheetLine.SetRange("Production Order No.", ItemJnlLine."Document No.");
+                        ACOBathSheetLine.SetRange("Production Order Status", ACOBathSheetLine."Production Order Status"::Released);
+                        ACOBathSheetLine.SetRange("Production Order Line No.", ItemJnlLine."Order Line No.");
+                        if ACOBathSheetLine.FindFirst() then
+                            QtyInPackage := ACOBathSheetLine."Qty in Package";
+                    end;
 
                     case ProdOrderLine."Unit of Measure Code" of
                         ACOAppSetup."Length Unit of Measure Code":
                             begin
-                                ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code");
-                                if ItemVariant."ACO Number of Meters" <> 0 then
-                                    NewQuantity := ProdOrderLine.Quantity / ItemVariant."ACO Number of Meters";
+                                if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then begin
+                                    ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code");
+                                    if ItemVariant."ACO Number of Meters" <> 0 then
+                                        NewQuantity := QtyInPackage * ItemVariant."ACO Number of Meters"; //6,5
+                                end;
                             end;
                         ACOAppSetup."Area Unit of Measure Code":
-                            if ProdOrderLine."ACO Profile m2 per Qty." <> 0 then //begin
-                                NewQuantity := ProdOrderLine.Quantity / ProdOrderLine."ACO Profile m2 per Qty.";
-                        //end;
-                        else
-                            NewQuantity := ProdOrderLine.Quantity;
+                            begin
+                                if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+                                    if ProdOrderLine."ACO Profile m2 per Qty." <> 0 then
+                                        NewQuantity := QtyInPackage * ProdOrderLine."ACO Profile m2 per Qty.";
+                            end;
+                        else begin
+                                NewQuantity := QtyInPackage;
+                            end;
                     end;
-                    ItemJnlLine.Validate("Scrap Quantity", NewQuantity);
+
+                    ItemJnlLine.Validate("Output Quantity", NewQuantity);
                     ItemJnlLine.Modify(true);
                 until ItemJnlLine.Next() = 0;
+
+            Commit();
+
+            IsHandled := true;
             //ItemJnlLine.ModifyAll("Output Quantity");
             //
             // Post Production Journal
+            ItemJnlLine.FilterGroup(2);
             ItemJnlLine.Reset();
             ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
             ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
             ItemJnlLine.SetRange("Document No.", ProdOrder."No.");
-            ItemJnlLine.FindFirst();
+            ItemJnlLine.SetRange("Order Type", ItemJnlLine."Order Type"::Production);
+            ItemJnlLine.SetRange("Entry Type", ItemJnlLine."Entry Type"::Output);
+            //ItemJnlLine.FindFirst(); 04-10-2021
             // TODO ItemJnlLine = empty, gives error
-            Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
+            // Codeunit.Run(Codeunit::"Item Jnl.-Post", ItemJnlLine);
+
+            // ItemJnlLine.DeleteRecTemp;
+
+            ItemJnlLine.FilterGroup(0);
+            // FilterGroup(2);
+            // SetRange("Journal Template Name", ToTemplateName);
+            // SetRange("Journal Batch Name", ToBatchName);
+            // SetRange("Order Type", "Order Type"::Production);
+            // SetRange("Order No.", ProdOrder."No.");
+            // if ProdOrderLineNo <> 0 then
+            //     SetRange("Order Line No.", ProdOrderLineNo);
+            // SetFlushingFilter;
+            // OnAfterSetFilterGroup(Rec, ProdOrder, ProdOrderLineNo);
+            // FilterGroup(0);
+
+            ItemJnlLine.PostingItemJnlFromProduction(false);
+
+            // ItemJnlLine.InsertTempRec;
             ACOSingleInstanceMgt.SetPostProductionJournal(false);
             // end;
         end;
         //ACOSingleInstanceMgt
+    end;
+
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post", 'OnBeforeCode', '', false, false)]
+    local procedure ItemJnlPost_OnBeforeCode(var ItemJournalLine: Record "Item Journal Line"; var HideDialog: Boolean; var SuppressCommit: Boolean; var IsHandled: Boolean)
+    var
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        if ACOSingleInstanceMgt.GetPostProductionJournal() then
+            HideDialog := true;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
@@ -678,8 +740,6 @@ codeunit 50000 "ACO Event Subscribers"
     //     ProdOrder."Due Date" := SalesLine."Shipment Date";
     //     ProdOrder."Ending Date" :=
     //       LeadTimeMgt.PlannedEndingDate(SalesLine."No.", SalesLine."Location Code", '', ProdOrder."Due Date", '', 2);
-
-
     // end;
 
     [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnClosePageEvent', '', false, false)]

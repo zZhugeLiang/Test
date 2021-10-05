@@ -3648,11 +3648,6 @@
           <target>Badkaart subpagina</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Subpage - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2244607703 - Method 1225268777 - NamedType 1254340274" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The number series was not set in both the Customer and App Settings.</source>
-          <target>De Nr.-reeks is niet ingesteld in zowel de klantenkaart als de Alucol instellingen.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Rej. Label Select Lines - Method GeneratePackageLabel - NamedType lblNoNumberSeriesErr</note>
-        </trans-unit>
         <trans-unit id="Page 290612570 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Document</source>
           <target>Weergeven document</target>
@@ -6643,12 +6638,7 @@
           <source>Download Clamping Instructions</source>
           <target>Downloaden ophangmethode</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Download Clamping Instructions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3089797906 - Action 3219105747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>Download Clamping Instructions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Subform Ext. - Action ACO Download Clamping Instructions - Property Caption</note>
-        </trans-unit>			
+        </trans-unit>		
         <trans-unit id="PageExtension 163665622 - Action 3804261416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Select Package for Shipment</source>
           <target>Selecteer colli voor verzending</target>
@@ -7373,6 +7363,16 @@
           <source>Type of Clamp Code Profile</source>
           <target>Type klem product</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Type of Clamp Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 2071298838 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Work Order</source>
+          <target>Werkorder</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Work Order - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 2071298838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Work Order</source>
+          <target>Werkorder</target>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Work Order - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 3293107737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Head Cut</source>

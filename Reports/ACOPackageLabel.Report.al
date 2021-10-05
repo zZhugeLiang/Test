@@ -64,6 +64,8 @@ report 50001 "ACO Package Label"
             column(Weightpermeter_ACOProfileCaption; ACOProfile.FieldCaption("Weight per meter")) { }
             column(PictureFile_ACOProfileCaption; ACOProfile.FieldCaption("Picture File")) { }
             column(Circumference_ACOProfileCaption; ACOProfile.FieldCaption(Circumference)) { }
+            column(No_SalesLineCaption; SalesLine.FieldCaption("No.")) { }
+            column(Description_SalesLineCaption; SalesLine.FieldCaption("Description")) { }
             column(Reject; Reject) { }
             dataitem(ACOPackageLine; "ACO Package Line")
             {
@@ -96,6 +98,8 @@ report 50001 "ACO Package Label"
                 column(ShiptoCity_SalesHeader; SalesHeader."Ship-to City") { }
                 column(ShiptoPostCode_SalesHeader; SalesHeader."Ship-to Post Code") { }
                 column(ShiptoCountryRegionCode_SalesHeader; SalesHeader."Ship-to Country/Region Code") { }
+                column(No_SalesLine; SalesLine."No.") { }
+                column(Description_SalesLine; SalesLine."Description") { }
                 column(EntryNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Entry No.") { }
                 column(SalesOrderNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sales Order No") { }
                 column(SalesOrderLineNoACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sales Order Line No.") { }

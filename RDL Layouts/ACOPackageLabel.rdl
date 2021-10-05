@@ -1230,6 +1230,12 @@ End Function
         <Field Name="Circumference_ACOProfileCaption">
           <DataField>Circumference_ACOProfileCaption</DataField>
         </Field>
+        <Field Name="No_SalesLineCaption">
+          <DataField>No_SalesLineCaption</DataField>
+        </Field>
+        <Field Name="Description_SalesLineCaption">
+          <DataField>Description_SalesLineCaption</DataField>
+        </Field>
         <Field Name="Reject">
           <DataField>Reject</DataField>
         </Field>
@@ -1325,6 +1331,12 @@ End Function
         </Field>
         <Field Name="ShiptoCountryRegionCode_SalesHeader">
           <DataField>ShiptoCountryRegionCode_SalesHeader</DataField>
+        </Field>
+        <Field Name="No_SalesLine">
+          <DataField>No_SalesLine</DataField>
+        </Field>
+        <Field Name="Description_SalesLine">
+          <DataField>Description_SalesLine</DataField>
         </Field>
         <Field Name="EntryNo_ACOAddEDIInfoCustomer">
           <DataField>EntryNo_ACOAddEDIInfoCustomer</DataField>

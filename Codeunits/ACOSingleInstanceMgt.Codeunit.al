@@ -41,7 +41,6 @@ codeunit 50001 "ACO Single Instance Mgt"
         NewACOProfileCustomerCustomerItemNo := ACOProfileCustomerCustomerItemNo;
     end;
 
-
     procedure SetSalesLineProfileCode(NewSalesLineProfileCode: Code[30]);
     begin
         SalesLineProfileCode := NewSalesLineProfileCode;
@@ -82,6 +81,16 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(PostProductionJournal);
     end;
 
+    procedure SetTotalRejectionQuantity(NewTotalRejectionQuantity: Decimal);
+    begin
+        TotalRejectionQuantity := NewTotalRejectionQuantity;
+    end;
+
+    procedure GetTotalRejectionQuantity(): Decimal;
+    begin
+        exit(TotalRejectionQuantity);
+    end;
+
     var
         TemporaryUserSetup: Record "User Setup" temporary;
         SalesLineProfileCode: Code[30];
@@ -90,5 +99,6 @@ codeunit 50001 "ACO Single Instance Mgt"
         ACOProfileCustomerCustomerNo: Code[20];
         ACOProfileCustomerCustomerItemNo: Code[50];
         ProfileCustomerPK: Code[100];
+        TotalRejectionQuantity: Decimal;
         PostProductionJournal: Boolean;
 }

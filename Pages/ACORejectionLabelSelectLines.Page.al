@@ -69,9 +69,12 @@ page 50055 "ACO Rej. Label Select Lines"
         ItemVariant: Record "Item Variant";
         GenPackage: Page "ACO Generate Package Dialog";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
+        ACOManagement: Codeunit "ACO Management";
+        SingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         tempCustomerNo: Code[20];
         LineNumber: Integer;
         RemainingQuantityToDeduct: Decimal;
+        TotalRejectionQuantity: Decimal;
         lblCustomerErr: Label 'Customer is not the same for all selected bathsheet lines.';
         lblNoNumberSeriesErr: Label 'The number series was not set in both the Customer and App Settings.';
     begin
@@ -200,24 +203,17 @@ page 50055 "ACO Rej. Label Select Lines"
                     end;
                     PackageLine."Reject Reason Code" := BathLineTempRecord."Charge No.";
                     PackageLine.Insert();
+                    TotalRejectionQuantity += BathLineTempRecord."Qty in Package";
                 until BathLineTempRecord.Next() = 0;
 
             Commit();
-
             // TODO Create Production Journal <<
-            PostProductionJournal(PackageHeader."No.");
+            SingleInstanceMgt.SetTotalRejectionQuantity(TotalRejectionQuantity);
+            ACOManagement.PostProductionJournal(PackageHeader."No.", ProdOrderLine);
+            SingleInstanceMgt.SetTotalRejectionQuantity(0);
             // TODO Create Production Journal >>
 
             PrintPackageLabel(PackageHeader);
-
-            // Commit();
-
-            // if BathLineTempRecord.FindSet() then
-            //     repeat
-            //         ACOBathSheetLine."Reject Quantity" += BathLineTempRecord."Qty in Package";
-            //         ACOBathSheetLine."Qty in Package" := 0;
-            //         ACOBathSheetLine.Modify();
-            //     until BathLineTempRecord.Next() = 0;
         end;
 
         BathLineTempRecord.DeleteAll();
@@ -234,69 +230,6 @@ page 50055 "ACO Rej. Label Select Lines"
         ProdOrderLine: Record "Prod. Order Line";
         LineNo: Integer;
         IsReject: Boolean;
-
-
-    local procedure PostProductionJournal(PackageHeaderNo: Code[20])
-    var
-        PackageLineToProductionJournal: Record "ACO Package Line";
-        ProductionOrder: Record "Production Order";
-        ItemJnlLine: Record "Item Journal Line";
-        ItemJnlTemplate: Record "Item Journal Template";
-        ProductionJnlMgt: Codeunit "Production Journal Mgt";
-        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
-        PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
-        User: Text;
-        ToBatchName: Code[10];
-        ToTemplateName: Code[10];
-        NewQuantity: Decimal;
-    begin
-        // TODO Create Production Journal <<
-        // GIVES ERROR LATER ON IN PROCES ON EMPTY JOURNAL LINE IN EVENT TRIGGER see tag TODO Create Production Journal
-        // voor alle labels waarvoor een colli tabel wordt aangemaakt, hier of in package header insert trigger
-        ACOSingleInstanceMgt.SetPostProductionJournal(true);
-
-        PackageLineToProductionJournal.SetRange("Package No.", PackageHeaderNo);
-        if PackageLineToProductionJournal.FindSet() then
-            repeat
-                if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
-                    if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
-                        ProductionJnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
-                        // //
-                        // ItemJnlTemplate.Reset();
-                        // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
-                        // ItemJnlTemplate.SetRange(Recurring, false);
-                        // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
-                        // if ItemJnlTemplate.FindFirst() then begin
-                        //     User := UpperCase(UserId);
-                        //     if User <> '' then
-                        //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
-                        //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
-                        //         else
-                        //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
-                        // end;
-
-                        // ItemJnlLine.Reset();
-                        // ItemJnlLine.SetRange("Journal Template Name", ToTemplateName);
-                        // ItemJnlLine.SetRange("Journal Batch Name", ToBatchName);
-                        // ItemJnlLine.SetRange("Document No.", ProductionOrder."No.");
-                        // if ItemJnlLine.FindSet() then
-                        //     repeat
-                        //         //if package
-                        //         //    ItemJnlLine.Validate("Output Quantity", NewQuantity);
-                        //         // if OBR/ Rejection
-                        //         ItemJnlLine.Validate("Scrap Quantity", NewQuantity);
-                        //     until ItemJnlLine.Next() = 0;
-                        // //ItemJnlLine.ModifyAll("Output Quantity");
-                        // //
-                    end;
-            until PackageLineToProductionJournal.Next() = 0;
-
-
-        ACOSingleInstanceMgt.SetPostProductionJournal(false);
-
-        Commit();
-        // TODO Create Production Journal >>
-    end;
 
     local procedure PrintPackageLabel(var
                                           PackageHeader: Record "ACO Package Header")
