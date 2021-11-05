@@ -193,6 +193,7 @@ page 50032 "ACO Bathsheet Lines To Process"
                     PrintPackageLabel: Report "ACO Package Label";
                     NumberSeriesManagement: Codeunit NoSeriesManagement;
                     ACOManagement: Codeunit "ACO Management";
+                    ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
                     tempCustomerNo: Code[20];
                     SalesOrderNo: Code[20];
                     LineNumber: Integer;
@@ -309,8 +310,10 @@ page 50032 "ACO Bathsheet Lines To Process"
                                 Commit();
 
                                 // TODO Create Production Journal <<
+                                ACOSingleInstanceMgt.SetBathSheetNo(BathLineTempRecord."Bath Sheet No.");
                                 if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then
                                     ACOManagement.PostProductionJournal(PackageHeader."No.", ProdOrderLine);
+                                ACOSingleInstanceMgt.SetBathSheetNo('');
                             // TODO Create Production Journal >>
                             until BathLineTempRecord.Next() = 0;
 

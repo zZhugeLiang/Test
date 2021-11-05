@@ -371,13 +371,6 @@ codeunit 50003 "ACO Management"
             until ProdOrderLine.Next() = 0;
     end;
 
-    local procedure FillProductionJournalAndPost(SalesLine: Record "Sales Line")
-    var
-        myInt: Integer;
-    begin
-
-    end;
-
     procedure PostProductionJournal(PackageHeaderNo: Code[20]; ProdOrderLine: Record "Prod. Order Line")
     var
         PackageLineToProductionJournal: Record "ACO Package Line";
@@ -405,7 +398,6 @@ codeunit 50003 "ACO Management"
             until PackageLineToProductionJournal.Next() = 0;
 
         ACOSingleInstanceMgt.SetPostProductionJournal(false);
-
         Commit();
         // TODO Create Production Journal >>
     end;

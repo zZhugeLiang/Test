@@ -141,4 +141,21 @@ page 50060 "ACO Package Lines"
             }
         }
     }
+
+    actions
+    {
+        area(Navigation)
+        {
+            action(ShowDocument)
+            {
+                Caption = 'Show Document';
+                Image = View;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = All;
+                RunObject = page "ACO Package Card";
+                RunPageLink = "No." = field("Package No.");
+            }
+        }
+    }
 }

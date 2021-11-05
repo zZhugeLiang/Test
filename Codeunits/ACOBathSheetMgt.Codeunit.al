@@ -17,7 +17,9 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ProductionOrderLines.ModifyAll("ACO Rerun", false);
         ProductionOrderLines.ModifyAll("ACO Rerun Reason", '');
 
-        InsertResources(ACOBathSheetHeader."No.", Resource)
+        InsertResources(ACOBathSheetHeader."No.", Resource);
+        Commit();
+        Page.Run(Page::"ACO Bath Sheet", ACOBathSheetHeader);
     end;
 
     // 1. Get Setup and Check Fields

@@ -215,4 +215,20 @@ page 50059 "ACO Posted Sales Invoice Lines"
             }
         }
     }
+    actions
+    {
+        area(Navigation)
+        {
+            action(ShowDocument)
+            {
+                Caption = 'Show Document';
+                Image = View;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = All;
+                RunObject = page "Posted Sales Invoice";
+                RunPageLink = "No." = field("Document No.");
+            }
+        }
+    }
 }

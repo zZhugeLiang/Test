@@ -3387,6 +3387,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card SubPage - Control Variant Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 258550150 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Document</source>
+          <target>Weergeven document</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Lines - Action ShowDocument - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1279684272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package Types</source>
           <target>Colli types</target>
@@ -3416,6 +3421,11 @@
           <source>Posted Sales Invoice Lines</source>
           <target>Geboekte verkoopfactuurregels</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Invoice Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 285665476 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Document</source>
+          <target>Weergeven document</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Posted Sales Invoice Lines - Action ShowDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 300980991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pretreatments</source>

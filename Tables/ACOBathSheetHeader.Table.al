@@ -166,6 +166,9 @@ table 50016 "ACO Bath Sheet Header"
             var
                 ACOAppSetup: Record "ACO App Setup";
                 ACOMeasureMu: Record "ACO Measure Mu";
+                ACOSheetResource: Record "ACO Bath Sheet Resource";
+                Resource: Record Resource;
+                ACOSelectionResources: Page "ACO Selection Resources";
             begin
                 Testfield("Surface Attachrack");
                 TestField("Attach Method");
@@ -179,6 +182,22 @@ table 50016 "ACO Bath Sheet Header"
                     end;
                     Testfield("Measure Y-value");
                 end;
+
+
+                ACOSelectionResources.LookupMode(true);
+                //ACOSelectionResources.SetTableView(ACOProfileCustomer);
+
+                if ACOSelectionResources.RunModal() = Action::LookupOK then begin
+                    ACOSelectionResources.SetSelectionFilter(Resource);
+                    Resource.FindFirst();
+                    Resource.TestField("No.");
+                    if not ACOSheetResource.Get(Rec."No.", Resource."No.") then begin
+                        ACOSheetResource."Bath Sheet No." := Rec."No.";
+                        ACOSheetResource."Resource No." := Resource."No.";
+                        ACOSheetResource.Insert();
+                    end;
+                end else
+                    Resource.TestField("No.");
             end;
         }
 

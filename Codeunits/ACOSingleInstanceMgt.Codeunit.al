@@ -71,6 +71,16 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(ProfileCustomerPK);
     end;
 
+    procedure SetBathSheetNo(NewBathSheetNo: Code[20]);
+    begin
+        BathSheetNo := NewBathSheetNo;
+    end;
+
+    procedure GetBathSheetNo(): Code[20];
+    begin
+        exit(BathSheetNo);
+    end;
+
     procedure SetPostProductionJournal(NewPostProductionJournal: Boolean);
     begin
         PostProductionJournal := NewPostProductionJournal;
@@ -99,6 +109,7 @@ codeunit 50001 "ACO Single Instance Mgt"
         ACOProfileCustomerCustomerNo: Code[20];
         ACOProfileCustomerCustomerItemNo: Code[50];
         ProfileCustomerPK: Code[100];
+        BathSheetNo: Code[20];
         TotalRejectionQuantity: Decimal;
         PostProductionJournal: Boolean;
 }

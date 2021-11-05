@@ -625,10 +625,11 @@ codeunit 50000 "ACO Event Subscribers"
                     QtyInPackage := ACOSingleInstanceMgt.GetTotalRejectionQuantity();
 
                     if QtyInPackage = 0 then begin
-                        ACOBathSheetLine.SetRange("Production Order No.", ItemJnlLine."Document No.");
-                        ACOBathSheetLine.SetRange("Production Order Status", ACOBathSheetLine."Production Order Status"::Released);
-                        ACOBathSheetLine.SetRange("Production Order Line No.", ItemJnlLine."Order Line No.");
-                        if ACOBathSheetLine.FindFirst() then
+                        // ACOBathSheetLine.SetRange("Production Order No.", ItemJnlLine."Document No.");
+                        // ACOBathSheetLine.SetRange("Production Order Status", ACOBathSheetLine."Production Order Status"::Released);
+                        // ACOBathSheetLine.SetRange("Production Order Line No.", ItemJnlLine."Order Line No.");
+                        // if ACOBathSheetLine.FindFirst() then
+                        if ACOBathSheetLine.Get(ACOSingleInstanceMgt.GetBathSheetNo(), ItemJnlLine."Document No.", ACOBathSheetLine."Production Order Status"::Released, ItemJnlLine."Order Line No.") then
                             QtyInPackage := ACOBathSheetLine."Qty in Package";
                     end;
 
@@ -656,6 +657,7 @@ codeunit 50000 "ACO Event Subscribers"
                     ItemJnlLine.Modify(true);
                 until ItemJnlLine.Next() = 0;
 
+            ACOSingleInstanceMgt.SetBathSheetNo('');
             Commit();
 
             IsHandled := true;

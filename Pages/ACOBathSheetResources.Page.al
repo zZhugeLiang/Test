@@ -6,6 +6,10 @@ page 50026 "ACO Bath Sheet Resources"
     Caption = 'Bath Sheet Resources';
     ApplicationArea = All;
     UsageCategory = Lists;
+    Editable = false;
+    InsertAllowed = false;
+    ModifyAllowed = false;
+    DeleteAllowed = false;
 
     layout
     {
