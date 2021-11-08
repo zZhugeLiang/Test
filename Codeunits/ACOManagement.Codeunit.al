@@ -239,8 +239,8 @@ codeunit 50003 "ACO Management"
         ACOSelectionPackageLines: Page "ACO Selection Package Lines";
         ProductionOrderStatus: Enum "Production Order Status";
         ProdOrderNos: Text;
-        NewQuantity: Decimal;
-        ColliQuantity: Decimal;
+        NewNumberOfUnits: Decimal;
+        FinishedNumberOfUnits: Decimal;
         ShowMessage: Boolean;
         PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
         ProductionOrderFinishedMsg: Label 'The following Production Orders have been set to Finished: %1.';
@@ -301,38 +301,51 @@ codeunit 50003 "ACO Management"
                         //if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
                         ACOAppSetup.Get();
 
-                        NewQuantity := SalesLine."Quantity Shipped";
+                        NewNumberOfUnits := SalesLine."Quantity Shipped";
 
                         if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
                             Clear(ItemVariant);
 
                         if SalesLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                            NewQuantity := SalesLine."Quantity Shipped" / ItemVariant."ACO Number of Meters";
+                            NewNumberOfUnits := SalesLine."Quantity Shipped" / ItemVariant."ACO Number of Meters";
 
                         if SalesLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                            NewQuantity := SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
+                            NewNumberOfUnits := SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
 
-                        NewQuantity := TempSalesLine.Quantity + NewQuantity;
+                        NewNumberOfUnits := TempSalesLine.Quantity + NewNumberOfUnits;
 
-                        if NewQuantity >= SalesLine."ACO Number of Units" then begin
+                        if NewNumberOfUnits >= SalesLine."ACO Number of Units" then begin
                             ShowMessage := true;
-                            if NewQuantity > SalesLine."ACO Number of Units" then begin
-                                SalesLine.Validate("ACO Number of Units", NewQuantity);
+                            if NewNumberOfUnits > SalesLine."ACO Number of Units" then begin
+                                SalesLine.Validate("ACO Number of Units", NewNumberOfUnits);
                                 UpdateSalesLine(SalesLine, TempSalesLine);
 
                                 ProdOrderLine.SetRange("ACO Source Type Enum", ProdOrderLine."ACO Source Type Enum"::"Sales Header");
                                 ProdOrderLine.SetRange("ACO Source No.", SalesLine."Document No.");
                                 ProdOrderLine.SetRange("ACO Source Line No.", SalesLine."Line No.");
-                                if ProdOrderLine.FindFirst() then
+                                if ProdOrderLine.FindFirst() then begin
+
+                                    FinishedNumberOfUnits := ProdOrderLine."Finished Quantity";
+
+                                    if not ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code") then
+                                        Clear(ItemVariant);
+
+                                    if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
+                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" / ItemVariant."ACO Number of Meters";
+
+                                    if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
+
                                     // Finished Quantity Production ORder (103* area profile) compare to 78 ColliQty
-                                    if (ProdOrderLine."Finished Quantity" <= NewQuantity) then begin
-                                        if ProdOrderLine."Finished Quantity" < NewQuantity then begin
+                                    if (FinishedNumberOfUnits <= NewNumberOfUnits) then begin
+                                        if FinishedNumberOfUnits < NewNumberOfUnits then begin
                                             // Create Production Order
                                             ProdOrderFromSale.SetHideValidationDialog(true);
                                             ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
                                         end;
                                         FinishProductionOrder(SalesLine, ProdOrderNos);
                                     end;
+                                end;
                             end;
                             // if QPR > ColliQty then
                             // update qty on sales line and put qty in units to ship
