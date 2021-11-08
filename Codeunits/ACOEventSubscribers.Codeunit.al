@@ -566,19 +566,6 @@ codeunit 50000 "ACO Event Subscribers"
         // TODO Create Production Journal
 
         if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
-            // ItemJnlTemplate.Reset();
-            // ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
-            // ItemJnlTemplate.SetRange(Recurring, false);
-            // ItemJnlTemplate.SetRange(Type, PageTemplate::"Prod. Order");
-            // if ItemJnlTemplate.FindFirst() then begin
-            //     User := UpperCase(UserId);
-            //     if User <> '' then
-            //         if (StrLen(User) < MaxStrLen(ItemJnlLine."Journal Batch Name")) and (ItemJnlLine."Journal Batch Name" <> '') then
-            //             ToBatchName := CopyStr(ItemJnlLine."Journal Batch Name", 1, MaxStrLen(ItemJnlLine."Journal Batch Name") - 1) + 'A'
-            //         else
-            //             ToBatchName := DelChr(CopyStr(User, 1, MaxStrLen(ItemJnlLine."Journal Batch Name")), '>', '0123456789');
-
-            //
             ItemJnlTemplate.Reset();
             ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");
             ItemJnlTemplate.SetRange(Recurring, false);
@@ -657,7 +644,6 @@ codeunit 50000 "ACO Event Subscribers"
                     ItemJnlLine.Modify(true);
                 until ItemJnlLine.Next() = 0;
 
-            ACOSingleInstanceMgt.SetBathSheetNo('');
             Commit();
 
             IsHandled := true;

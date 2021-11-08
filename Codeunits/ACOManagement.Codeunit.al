@@ -232,10 +232,15 @@ codeunit 50003 "ACO Management"
         TempSalesLine: Record "Sales Line" temporary;
         ACOAppSetup: Record "ACO App Setup";
         ReasonCode: Record "Reason Code";
+        ProdOrderLine: Record "Prod. Order Line";
+        Item: Record Item;
+        ItemVariant: Record "Item Variant";
         ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
         ACOSelectionPackageLines: Page "ACO Selection Package Lines";
         ProductionOrderStatus: Enum "Production Order Status";
         ProdOrderNos: Text;
+        NewQuantity: Decimal;
+        ColliQuantity: Decimal;
         ShowMessage: Boolean;
         PackageQuantityMsg: Label 'The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).';
         ProductionOrderFinishedMsg: Label 'The following Production Orders have been set to Finished: %1.';
@@ -293,29 +298,62 @@ codeunit 50003 "ACO Management"
             if TempSalesLine.FindSet() then
                 repeat
                     if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
-                        if TempSalesLine.Quantity >= SalesLine."ACO Number of Units" then begin
+                        //if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
+                        ACOAppSetup.Get();
+
+                        NewQuantity := SalesLine."Quantity Shipped";
+
+                        if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+                            Clear(ItemVariant);
+
+                        if SalesLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
+                            NewQuantity := SalesLine."Quantity Shipped" / ItemVariant."ACO Number of Meters";
+
+                        if SalesLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
+                            NewQuantity := SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
+
+                        NewQuantity := TempSalesLine.Quantity + NewQuantity;
+
+                        if NewQuantity >= SalesLine."ACO Number of Units" then begin
                             ShowMessage := true;
-                            if TempSalesLine.Quantity > SalesLine."ACO Number of Units" then begin
-                                SalesLine.Validate("ACO Number of Units", TempSalesLine.Quantity);
+                            if NewQuantity > SalesLine."ACO Number of Units" then begin
+                                SalesLine.Validate("ACO Number of Units", NewQuantity);
                                 UpdateSalesLine(SalesLine, TempSalesLine);
 
-                                // Create Production Order
-                                ProdOrderFromSale.SetHideValidationDialog(true);
-                                ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
-                            end else
-                                UpdateSalesLine(SalesLine, TempSalesLine);
+                                ProdOrderLine.SetRange("ACO Source Type Enum", ProdOrderLine."ACO Source Type Enum"::"Sales Header");
+                                ProdOrderLine.SetRange("ACO Source No.", SalesLine."Document No.");
+                                ProdOrderLine.SetRange("ACO Source Line No.", SalesLine."Line No.");
+                                if ProdOrderLine.FindFirst() then
+                                    // Finished Quantity Production ORder (103* area profile) compare to 78 ColliQty
+                                    if (ProdOrderLine."Finished Quantity" <= NewQuantity) then begin
+                                        if ProdOrderLine."Finished Quantity" < NewQuantity then begin
+                                            // Create Production Order
+                                            ProdOrderFromSale.SetHideValidationDialog(true);
+                                            ProdOrderFromSale.CreateProdOrder(SalesLine, ProductionOrderStatus::Released, 1);
+                                        end;
+                                        FinishProductionOrder(SalesLine, ProdOrderNos);
+                                    end;
+                            end;
+                            // if QPR > ColliQty then
+                            // update qty on sales line and put qty in units to ship
+                            // if QPR = ColliQty then
+                            // update qty on sales line and put qty in units to ship + Close PO
+                            // if QPR < ColliQty then
+                            // do existing functionality
 
-                            // Message per case?
-                            FinishProductionOrder(SalesLine, ProdOrderNos);
-                        end else begin
+                        end else
                             UpdateSalesLine(SalesLine, TempSalesLine);
 
-                            if SalesLine."Qty. to Ship" = SalesLine."Outstanding Quantity" then
-                                FinishProductionOrder(SalesLine, ProdOrderNos);
-                            // else
-                            //     if SalesLine."Qty. to Ship" < SalesLine."Outstanding Quantity" then
-                            //         FillProductionJournalAndPost(SalesLine);
-                        end;
+                        // Message per case?
+                        // FinishProductionOrder(SalesLine, ProdOrderNos);
+                    end else begin
+                        UpdateSalesLine(SalesLine, TempSalesLine);
+
+                        if SalesLine."Qty. to Ship" = SalesLine."Outstanding Quantity" then
+                            FinishProductionOrder(SalesLine, ProdOrderNos);
+                        // else
+                        //     if SalesLine."Qty. to Ship" < SalesLine."Outstanding Quantity" then
+                        //         FillProductionJournalAndPost(SalesLine);
                     end;
                 until TempSalesLine.Next() < 1;
 
@@ -388,14 +426,14 @@ codeunit 50003 "ACO Management"
         // TODO Create Production Journal <<
         ACOSingleInstanceMgt.SetPostProductionJournal(true);
 
-        PackageLineToProductionJournal.SetRange("Package No.", PackageHeaderNo);
-        if PackageLineToProductionJournal.FindSet() then
-            repeat
-                if ProductionOrder.Get(PackageLineToProductionJournal."Production Order Status", PackageLineToProductionJournal."Production Order No.") then
-                    if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", PackageLineToProductionJournal."Production Order Line No.") then begin
-                        ProductionJnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
-                    end;
-            until PackageLineToProductionJournal.Next() = 0;
+        //PackageLineToProductionJournal.SetRange("Package No.", PackageHeaderNo);
+        //if PackageLineToProductionJournal.FindSet() then
+        //    repeat
+        if ProductionOrder.Get(ProdOrderLine."Status", ProdOrderLine."Prod. Order No.") then
+            if ProdOrderLine.Get(ProductionOrder."Status", ProductionOrder."No.", ProdOrderLine."Line No.") then begin
+                ProductionJnlMgt.Handling(ProductionOrder, ProdOrderLine."Line No.");
+            end;
+        //    until PackageLineToProductionJournal.Next() = 0;
 
         ACOSingleInstanceMgt.SetPostProductionJournal(false);
         Commit();

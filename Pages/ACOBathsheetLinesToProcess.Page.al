@@ -311,27 +311,16 @@ page 50032 "ACO Bathsheet Lines To Process"
 
                                 // TODO Create Production Journal <<
                                 ACOSingleInstanceMgt.SetBathSheetNo(BathLineTempRecord."Bath Sheet No.");
-                                if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then
+                                if ProdOrderLine.Get(BathLineTempRecord."Production Order Status", BathLineTempRecord."Production Order No.", BathLineTempRecord."Production Order Line No.") then
                                     ACOManagement.PostProductionJournal(PackageHeader."No.", ProdOrderLine);
                                 ACOSingleInstanceMgt.SetBathSheetNo('');
                             // TODO Create Production Journal >>
                             until BathLineTempRecord.Next() = 0;
 
-                        // Commit();
-
-                        // // TODO Create Production Journal <<
-                        // if ProdOrderLine.Get(Rec."Production Order Status", Rec."Production Order No.", Rec."Production Order Line No.") then
-                        //     ACOManagement.PostProductionJournal(PackageHeader."No.", ProdOrderLine);
-                        // // TODO Create Production Journal >>
-
                         PackageHeader.SetRecFilter();
                         PrintPackageLabel.SetTableView(PackageHeader);
                         PrintPackageLabel.UseRequestPage := false;
                         PrintPackageLabel.Run();
-
-                        // Commit();
-
-                        //1.1 and 1.4
 
                         if BathLineTempRecord.FindSet() then
                             repeat
