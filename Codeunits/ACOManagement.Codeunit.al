@@ -298,7 +298,6 @@ codeunit 50003 "ACO Management"
             if TempSalesLine.FindSet() then
                 repeat
                     if SalesLine.Get(TempSalesLine."Document Type", TempSalesLine."Document No.", TempSalesLine."Line No.") then begin
-                        //if (Rec.Type = Rec.Type::Item) and Item.Get(Rec."No.") then begin
                         ACOAppSetup.Get();
 
                         NewNumberOfUnits := SalesLine."Quantity Shipped";
@@ -313,13 +312,11 @@ codeunit 50003 "ACO Management"
                             NewNumberOfUnits := SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
 
                         NewNumberOfUnits := TempSalesLine.Quantity + NewNumberOfUnits;
+                        NewNumberOfUnits := Round(NewNumberOfUnits, 1);
 
                         if NewNumberOfUnits >= SalesLine."ACO Number of Units" then begin
                             ShowMessage := true;
                             if NewNumberOfUnits > SalesLine."ACO Number of Units" then begin
-                                SalesLine.Validate("ACO Number of Units", NewNumberOfUnits);
-                                UpdateSalesLine(SalesLine, TempSalesLine);
-
                                 ProdOrderLine.SetRange("ACO Source Type Enum", ProdOrderLine."ACO Source Type Enum"::"Sales Header");
                                 ProdOrderLine.SetRange("ACO Source No.", SalesLine."Document No.");
                                 ProdOrderLine.SetRange("ACO Source Line No.", SalesLine."Line No.");
@@ -334,7 +331,16 @@ codeunit 50003 "ACO Management"
                                         FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" / ItemVariant."ACO Number of Meters";
 
                                     if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
+                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" * 1000 / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters");
+
+                                    FinishedNumberOfUnits := Round(FinishedNumberOfUnits, 1);
+
+                                    if FinishedNumberOfUnits <> 0 then
+                                        SalesLine.Validate("ACO Number of Units", FinishedNumberOfUnits)
+                                    else
+                                        SalesLine.Validate("ACO Number of Units", NewNumberOfUnits);
+
+                                    UpdateSalesLine(SalesLine, TempSalesLine);
 
                                     // Finished Quantity Production ORder (103* area profile) compare to 78 ColliQty
                                     if (FinishedNumberOfUnits <= NewNumberOfUnits) then begin
@@ -346,38 +352,25 @@ codeunit 50003 "ACO Management"
                                         FinishProductionOrder(SalesLine, ProdOrderNos);
                                     end;
                                 end;
+                            end else begin
+                                UpdateSalesLine(SalesLine, TempSalesLine);
+                                FinishProductionOrder(SalesLine, ProdOrderNos);
                             end;
-                            // if QPR > ColliQty then
-                            // update qty on sales line and put qty in units to ship
-                            // if QPR = ColliQty then
-                            // update qty on sales line and put qty in units to ship + Close PO
-                            // if QPR < ColliQty then
-                            // do existing functionality
-
-                        end else
+                        end else begin
                             UpdateSalesLine(SalesLine, TempSalesLine);
 
-                        // Message per case?
-                        // FinishProductionOrder(SalesLine, ProdOrderNos);
-                    end else begin
-                        UpdateSalesLine(SalesLine, TempSalesLine);
-
-                        if SalesLine."Qty. to Ship" = SalesLine."Outstanding Quantity" then
-                            FinishProductionOrder(SalesLine, ProdOrderNos);
-                        // else
-                        //     if SalesLine."Qty. to Ship" < SalesLine."Outstanding Quantity" then
-                        //         FillProductionJournalAndPost(SalesLine);
+                            if SalesLine."Qty. to Ship" = SalesLine."Outstanding Quantity" then
+                                FinishProductionOrder(SalesLine, ProdOrderNos);
+                        end;
                     end;
                 until TempSalesLine.Next() < 1;
 
             TempSalesLine.DeleteAll();
 
-            if ShowMessage then begin
-                if ProdOrderNos = '' then
-                    Message(NoProductionOrderFinishedMsg)
-                else
-                    Message(ProductionOrderFinishedMsg, ProdOrderNos)
-            end;
+            if ShowMessage then
+                if ProdOrderNos <> '' then
+                    Message(ProductionOrderFinishedMsg, ProdOrderNos);
+
             UpdateCurrPage := true;
         end;
     end;

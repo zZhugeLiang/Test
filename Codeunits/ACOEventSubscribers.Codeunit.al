@@ -639,8 +639,7 @@ codeunit 50000 "ACO Event Subscribers"
                                 NewQuantity := QtyInPackage;
                             end;
                     end;
-
-                    ItemJnlLine.Validate("Output Quantity", NewQuantity);
+                    ItemJnlLine.Validate("Output Quantity", Round(NewQuantity, 0.001));
                     ItemJnlLine.Modify(true);
                 until ItemJnlLine.Next() = 0;
 
