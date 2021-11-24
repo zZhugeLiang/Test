@@ -7958,6 +7958,86 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 3041380928" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build-up Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType BuildupLayerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 637786100" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType InsideCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 1250789545" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inside Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType InsideUOMCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 3110081249" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max Height</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType MaxHeightCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 3682501610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max Width</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType MaxWidthCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 3323605874" size-unit="char" translate="yes" xml:space="preserve">
+          <source># Layers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType NumberOfLayersCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 2077875658" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType PackageTypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 238813293" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType PackagingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 758547372" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Instructions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType PackagingInstructionsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 2828139210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Packaging Structure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType PackagingStructureCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 3723069432" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profiles</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType ProfilesCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 1891290413" size-unit="char" translate="yes" xml:space="preserve">
+          <source># per Layer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType QuantityPerLayerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 2855844002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType RemarkCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 449695264" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType TypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 1421459925" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType UOMCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2071298838 - NamedType 105702718" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Width</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Work Order - NamedType WidthCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="XmlPort 3067113526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aucos Export</source>
           <note from="Developer" annotates="general" priority="2"></note>

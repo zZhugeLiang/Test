@@ -176,6 +176,39 @@ report 50020 "ACO Work Order"
                 column(Status_ProdOrderLine; ProdOrderLine.Status) { }
                 column(ProdOrderNo_ProdOrderLine; ProdOrderLine."Prod. Order No.") { }
                 column(LineNo_ProdOrderLine; ProdOrderLine."Line No.") { }
+                // Packaging <<
+                column(PackagingInstructionsCaption; PackagingInstructionsCaptionLbl) { }
+                column(PackagingCaption; PackagingCaptionLbl) { }
+                column(PackageTypeCaption; PackageTypeCaptionLbl) { }
+                column(ACO_Packaging; "ACO Packaging") { }
+                column(PackageTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Package Type Code") { }
+                column(WidthCaption; WidthCaptionLbl) { }
+                column(Width_ACOLinkedPackaging; Format(ACOLinkedPackaging.Width)) { }
+                column(TypeCaption; TypeCaptionLbl) { }
+                column(PackagingTypeCode_ACOLinkedPackaging; ACOLinkedPackaging."Packaging Type Code") { }
+                column(InsideCaption; InsideCaptionLbl) { }
+                column(InsideCode_ACOLinkedPackaging; ACOLinkedPackaging."Inside Code") { }
+                column(ProfilesCaption; ProfilesCaptionLbl) { }
+                column(UOMCaption; UOMCaptionLbl) { }
+                column(PackagingUOMCode_ACOLinkedPackaging; ACOLinkedPackaging."Packaging Unit of Measure Code") { }
+                column(Quantity_ACOLinkedPackaging; Format(ACOLinkedPackaging.Quantity)) { }
+                column(InsideUOMCaption; InsideUOMCaptionLbl) { }
+                column(InsideUOMCode_ACOLinkedPackaging; ACOLinkedPackaging."Inside Unit of Measure Code") { }
+                column(BuildupLayerCaption; BuildupLayerCaptionLbl) { }
+                column(BuildupLayerCode_ACOLinkedPackaging; ACOLinkedPackaging."Build-up Layer Code") { }
+                column(PackagingStructureCaption; PackagingStructureCaptionLbl) { }
+                column(QuantityPerLayerCaption; QuantityPerLayerCaptionLbl) { }
+                column(BuildupQuantityPerLayer_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Quantity per Layer")) { }
+                column(NumberOfLayersCaption; NumberOfLayersCaptionLbl) { }
+                column(BuildupNumberOfLayers_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Number of Layers")) { }
+                column(MaxWidthCaption; MaxWidthCaptionLbl) { }
+                column(BuildupMaximumWidth_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Width")) { }
+                column(MaxHeightCaption; MaxHeightCaptionLbl) { }
+                column(BuildupMaximumHeight_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Height")) { }
+                column(RemarkCaption; RemarkCaptionLbl) { }
+                column(Remark_ACOLinkedPackaging; ACOLinkedPackaging.Remark) { }
+
+                // Packaging >>      
 
                 trigger OnAfterGetRecord()
                 var
@@ -256,6 +289,7 @@ report 50020 "ACO Work Order"
                     MinCurrentDensity := 0;
                     MaxCurrentDensity := 1000;
                     ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
+                    GetLinkedPackaging();/////
                 end;
             }
 
@@ -343,6 +377,7 @@ report 50020 "ACO Work Order"
 
         ACOAttachMethod: Record "ACO Attach Method";
         ProdOrderLine: Record "Prod. Order Line";
+        ACOLinkedPackaging: Record "ACO Linked Packaging";
         BagDescriptionsText: Text;
         TotalArea: Decimal; //New
         MaxLength: Decimal; //New
@@ -362,7 +397,23 @@ report 50020 "ACO Work Order"
         IsFoil: Boolean;//New
         RemoveFoil: Boolean;
         IsVEC: Boolean;//New
-        IsWrap: Boolean;//New
+        IsWrap: Boolean;//New 
+        PackagingInstructionsCaptionLbl: Label 'Packaging Instructions';
+        PackagingCaptionLbl: Label 'Packaging';
+        PackageTypeCaptionLbl: Label 'Package Type';
+        WidthCaptionLbl: Label 'Width';
+        TypeCaptionLbl: Label 'Type';
+        InsideCaptionLbl: Label 'Inside';
+        ProfilesCaptionLbl: Label 'Profiles';
+        UOMCaptionLbl: Label 'Unit of Measure';
+        InsideUOMCaptionLbl: Label 'Inside Unit of Measure';
+        BuildupLayerCaptionLbl: Label 'Build-up Layer';
+        PackagingStructureCaptionLbl: Label 'Packaging Structure';
+        QuantityPerLayerCaptionLbl: Label '# per Layer';
+        NumberOfLayersCaptionLbl: Label '# Layers';
+        MaxWidthCaptionLbl: Label 'Max Width';
+        MaxHeightCaptionLbl: Label 'Max Height';
+        RemarkCaptionLbl: Label 'Remark';
 
     local procedure GetHolders()
     var
@@ -463,5 +514,11 @@ report 50020 "ACO Work Order"
         Clear(ACOLinkedSupportHolder2);
         Clear(ACOLinkedSupportHolder3);
         Clear(ACOLinkedSupportHolder4);
+    end;
+
+    local procedure GetLinkedPackaging()
+    begin
+        if not ACOLinkedPackaging.Get("Sales Line"."ACO Profile Code", "Sales Line"."Sell-to Customer No.", "Sales Line"."ACO Packaging", ItemVariant."ACO Number of Meters" * 1000) then
+            Clear(ACOLinkedPackaging);
     end;
 }

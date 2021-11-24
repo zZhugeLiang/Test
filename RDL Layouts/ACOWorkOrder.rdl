@@ -547,6 +547,96 @@ End Function
         <Field Name="LineNo_ProdOrderLine">
           <DataField>LineNo_ProdOrderLine</DataField>
         </Field>
+        <Field Name="PackagingInstructionsCaption">
+          <DataField>PackagingInstructionsCaption</DataField>
+        </Field>
+        <Field Name="PackagingCaption">
+          <DataField>PackagingCaption</DataField>
+        </Field>
+        <Field Name="PackageTypeCaption">
+          <DataField>PackageTypeCaption</DataField>
+        </Field>
+        <Field Name="ACO_Packaging">
+          <DataField>ACO_Packaging</DataField>
+        </Field>
+        <Field Name="PackageTypeCode_ACOLinkedPackaging">
+          <DataField>PackageTypeCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="WidthCaption">
+          <DataField>WidthCaption</DataField>
+        </Field>
+        <Field Name="Width_ACOLinkedPackaging">
+          <DataField>Width_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="TypeCaption">
+          <DataField>TypeCaption</DataField>
+        </Field>
+        <Field Name="PackagingTypeCode_ACOLinkedPackaging">
+          <DataField>PackagingTypeCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="InsideCaption">
+          <DataField>InsideCaption</DataField>
+        </Field>
+        <Field Name="InsideCode_ACOLinkedPackaging">
+          <DataField>InsideCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="ProfilesCaption">
+          <DataField>ProfilesCaption</DataField>
+        </Field>
+        <Field Name="UOMCaption">
+          <DataField>UOMCaption</DataField>
+        </Field>
+        <Field Name="PackagingUOMCode_ACOLinkedPackaging">
+          <DataField>PackagingUOMCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="Quantity_ACOLinkedPackaging">
+          <DataField>Quantity_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="InsideUOMCaption">
+          <DataField>InsideUOMCaption</DataField>
+        </Field>
+        <Field Name="InsideUOMCode_ACOLinkedPackaging">
+          <DataField>InsideUOMCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="BuildupLayerCaption">
+          <DataField>BuildupLayerCaption</DataField>
+        </Field>
+        <Field Name="BuildupLayerCode_ACOLinkedPackaging">
+          <DataField>BuildupLayerCode_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="PackagingStructureCaption">
+          <DataField>PackagingStructureCaption</DataField>
+        </Field>
+        <Field Name="QuantityPerLayerCaption">
+          <DataField>QuantityPerLayerCaption</DataField>
+        </Field>
+        <Field Name="BuildupQuantityPerLayer_ACOLinkedPackaging">
+          <DataField>BuildupQuantityPerLayer_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="NumberOfLayersCaption">
+          <DataField>NumberOfLayersCaption</DataField>
+        </Field>
+        <Field Name="BuildupNumberOfLayers_ACOLinkedPackaging">
+          <DataField>BuildupNumberOfLayers_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="MaxWidthCaption">
+          <DataField>MaxWidthCaption</DataField>
+        </Field>
+        <Field Name="BuildupMaximumWidth_ACOLinkedPackaging">
+          <DataField>BuildupMaximumWidth_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="MaxHeightCaption">
+          <DataField>MaxHeightCaption</DataField>
+        </Field>
+        <Field Name="BuildupMaximumHeight_ACOLinkedPackaging">
+          <DataField>BuildupMaximumHeight_ACOLinkedPackaging</DataField>
+        </Field>
+        <Field Name="RemarkCaption">
+          <DataField>RemarkCaption</DataField>
+        </Field>
+        <Field Name="Remark_ACOLinkedPackaging">
+          <DataField>Remark_ACOLinkedPackaging</DataField>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>
