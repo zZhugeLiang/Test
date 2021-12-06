@@ -15,19 +15,19 @@ page 50029 "ACO Packages"
         {
             repeater(General)
             {
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Resource No."; "Resource No.")
+                field("Resource No."; Rec."Resource No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer No."; "Customer No.")
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer Name"; "Customer Name")
+                field("Customer Name"; Rec."Customer Name")
                 {
                     ApplicationArea = All;
                 }
@@ -39,11 +39,11 @@ page 50029 "ACO Packages"
                 {
                     ApplicationArea = All;
                 }
-                field("Packing Type"; "Packing Type")
+                field("Packing Type"; Rec."Packing Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Rack No. Customer"; "Rack No. Customer")
+                field("Rack No. Customer"; Rec."Rack No. Customer")
                 {
                     ApplicationArea = All;
                 }
@@ -51,11 +51,34 @@ page 50029 "ACO Packages"
                 {
                     ApplicationArea = All;
                 }
-                field("Date-Time"; "Date-Time")
+                field("Date-Time"; Rec."Date-Time")
                 {
                     ApplicationArea = All;
                 }
-
+                field(City; Rec.City)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Post Code"; Rec."Post Code")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Sales Shipment No."; Rec."Sales Shipment No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field(Reject; Rec.Reject)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Visible = false;
+                }
             }
         }
     }

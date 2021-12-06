@@ -3282,6 +3282,11 @@
           <target>Colli kaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 321586477 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Algemeen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Package Card - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 321586477 - Action 3234235265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print Label</source>
           <target>Afdrukken etiket</target>

@@ -14,39 +14,92 @@ page 50010 "ACO Profile Customers"
         {
             repeater(ProfileCustomers)
             {
-                field("Customer No."; "Customer No.")
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Customer Name"; "Customer Name")
+                field("Customer Name"; Rec."Customer Name")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Profile Code"; "Profile Code")
+                field("Profile Code"; Rec."Profile Code")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Profile Description"; "Profile Description")
+                field("Profile Description"; Rec."Profile Description")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Customer Item No."; "Customer Item No.")
+                field("Customer Item No."; Rec."Customer Item No.")
                 {
                     ApplicationArea = All;
                 }
 
-                field("Ship-to Code"; "Ship-to Code")
+                field("Ship-to Code"; Rec."Ship-to Code")
                 {
                     ApplicationArea = All;
                 }
-
+                field(Address; Rec.Address)
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Post Code"; Rec."Post Code")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field(City; Rec.City)
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
                 field(Status; Status)
                 {
                     ApplicationArea = All;
+                }
+                field("Price Scheme Code"; Rec."Price Scheme Code")
+                {
+                    ApplicationArea = All;
+                }
+                field(Euras; Rec.Euras)
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("High End"; Rec."High End")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Extra to Enumerate"; Rec."Extra to Enumerate")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Thick Staining Time"; Rec."Thick Staining Time")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Thin Staining Time"; Rec."Thin Staining Time")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Minimum Current Density"; Rec."Minimum Current Density")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Maximum Current Density"; Rec."Maximum Current Density")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
                 }
             }
         }
@@ -63,6 +116,7 @@ page 50010 "ACO Profile Customers"
                 RunObject = Page "ACO Linked Holders";
                 RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
                 ApplicationArea = All;
+                Visible = false;
             }
 
             action("ACO Holders")
@@ -71,13 +125,13 @@ page 50010 "ACO Profile Customers"
                 Image = Category;
                 RunObject = Page "ACO Holders";
                 ApplicationArea = All;
+                Visible = false;
             }
         }
     }
 
     trigger OnOpenPage()
     var
-        ACOProfileCustomer: Record "ACO Profile Customer";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
         if ACOSingleInstanceMgt.GetCustomerNo() <> '' then
@@ -89,9 +143,6 @@ page 50010 "ACO Profile Customers"
         ACOProfileCustomer: Record "ACO Profile Customer";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
-        // CurrPage.SetSelectionFilter(ACOProfileCustomer);
-        // CurrPage.GetRecord(ACOProfileCustomer);
-        // CurrPage.SetSelectionFilter(Rec);
         CurrPage.GetRecord(ACOProfileCustomer);
         ACOSingleInstanceMgt.SetACOProfileCustomerPK(ACOProfileCustomer."Profile Code", ACOProfileCustomer."Customer No.", ACOProfileCustomer."Customer Item No.");
     end;

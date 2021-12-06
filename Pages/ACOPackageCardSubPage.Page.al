@@ -16,91 +16,91 @@ page 50031 "ACO Package Card SubPage"
             repeater(General)
             {
 
-                field("Package No."; "Package No.")
+                field("Package No."; Rec."Package No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Line No."; "Line No.")
+                field("Line No."; Rec."Line No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Sales Order No."; "Sales Order No.")
+                field("Sales Order No."; Rec."Sales Order No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Sales Line No."; "Sales Line No")
+                field("Sales Line No."; Rec."Sales Line No")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Bathsheet No."; "Bathsheet No.")
+                field("Bathsheet No."; Rec."Bathsheet No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Bathsheet line No."; "Bathsheet line No.")
+                field("Bathsheet line No."; Rec."Bathsheet line No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Profile no."; "Profile no.")
+                field("Profile no."; Rec."Profile no.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Profile description"; "Profile description")
+                field("Profile description"; Rec."Profile description")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Customer Item No."; "Customer Item No.")
+                field("Customer Item No."; Rec."Customer Item No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Profile Cust. Description"; "Profile Cust. Description")
+                field("Profile Cust. Description"; Rec."Profile Cust. Description")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field(Length; Length)
+                field(Length; Rec.Length)
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field(Treatment; Treatment)
+                field(Treatment; Rec.Treatment)
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Treatment Description"; "Treatment Description")
+                field("Treatment Description"; Rec."Treatment Description")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Your Reference"; "Your Reference")
+                field("Your Reference"; Rec."Your Reference")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("External Document No."; "External Document No.")
+                field("External Document No."; Rec."External Document No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
@@ -112,25 +112,25 @@ page 50031 "ACO Package Card SubPage"
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Number of Units"; "Number of Units")
+                field("Number of Units"; Rec."Number of Units")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Variant Code"; "Variant Code")
+                field("Variant Code"; Rec."Variant Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field("Reject Reason Code"; "Reject Reason Code")
+                field("Reject Reason Code"; Rec."Reject Reason Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
                     ToolTip = ' ';
                 }
-                field(Ship; Ship)
+                field(Ship; Rec.Ship)
                 {
                     Editable = true;
                     ApplicationArea = All;

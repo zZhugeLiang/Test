@@ -2,7 +2,6 @@ page 50008 "ACO Profiles"
 {
     Caption = 'Profiles';
     PageType = List;
-
     UsageCategory = Lists;
     CardPageId = "ACO Profile Card";
     RefreshOnActivate = true;
@@ -15,19 +14,73 @@ page 50008 "ACO Profiles"
         {
             repeater(Profiles)
             {
-                field("Code"; "Code")
+                field("Code"; Rec."Code")
+                {
+                    ApplicationArea = All;
+                }
+                field(Description; Rec.Description)
+                {
+                    ApplicationArea = All;
+                }
+                field("Circumference"; Rec."Circumference")
                 {
                     ApplicationArea = All;
                 }
 
-                field(Description; Description)
+                field("Last DateTime Modified"; Rec."Last DateTime Modified")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                 }
-
-                field("Circumference"; "Circumference")
+                field("Unit of Measure Code"; Rec."Unit of Measure Code")
                 {
                     ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Extra Flushing"; Rec."Extra Flushing")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Area"; Rec."Area")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Not Measurable"; Rec."Not Measurable")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("High End"; Rec."High End")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Weight per meter"; Rec."Weight per meter")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Category"; Rec."Category")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Correction Factor"; Rec."Correction Factor")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Height Level"; Rec."Height Level")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Charges per Bath Profile"; Rec."Charges per Bath Profile")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
                 }
             }
         }
@@ -41,6 +94,7 @@ page 50008 "ACO Profiles"
             {
                 Caption = 'Profile Customers';
                 ApplicationArea = All;
+                Visible = false;
                 RunObject = Page "ACO Profile Customers";
                 RunPageLink = "Profile Code" = field("Code");
             }

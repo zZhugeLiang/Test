@@ -12,72 +12,73 @@ page 50030 "ACO Package Card"
         {
             group(General)
             {
-                field("No."; "No.")
+                Caption = 'General';
+                field("No."; Rec."No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Resource No."; "Resource No.")
+                field("Resource No."; Rec."Resource No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Customer No."; "Customer No.")
+                field("Customer No."; Rec."Customer No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Customer Name"; "Customer Name")
+                field("Customer Name"; Rec."Customer Name")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(Address1; Address1)
+                field(Address1; Rec.Address1)
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(Address2; Address2)
+                field(Address2; Rec.Address2)
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(City; City)
+                field(City; Rec.City)
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Post Code"; "Post Code")
+                field("Post Code"; Rec."Post Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Packing Type"; "Packing Type")
+                field("Packing Type"; Rec."Packing Type")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Rack No. Customer"; "Rack No. Customer")
+                field("Rack No. Customer"; Rec."Rack No. Customer")
                 {
                     Editable = true;
                     ApplicationArea = All;
                 }
-                field("Sales Shipment No."; "Sales Shipment No.")
+                field("Sales Shipment No."; Rec."Sales Shipment No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(Remark; Remark)
+                field(Remark; REc.Remark)
                 {
                     Editable = true;
                     ApplicationArea = All;
                 }
-                field("Date-Time"; "Date-Time")
+                field("Date-Time"; Rec."Date-Time")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(Reject; Reject)
+                field(Reject; Rec.Reject)
                 {
                     Editable = false;
                     ApplicationArea = All;
