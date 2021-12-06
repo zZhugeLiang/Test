@@ -58,9 +58,10 @@ report 50020 "ACO Work Order"
                 column(ProfileDescription_ProfileCustomer; ACOProfileCustomer."Profile Description") { }
                 column(Name_ACOColorProjectHeader; ACOColorProjectHeader.Name) { }
                 column(ACO_Number_of_Units; "ACO Number of Units") { }
-                column(NumberOfMeters; NumberOfMeters) { }
+                column(NumberOfMeters; ItemVariant."ACO Number of Meters") { }
                 column(Circumference; Circumference) { }
-                column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter" * ItemVariant."ACO Number of Meters") { }
+                column(WeightPerMeter_ACOProfile; ACOProfile."Weight per meter") { }
+                column(WeightPerUnit_ACOProfile; ACOProfile."Weight per meter" * ItemVariant."ACO Number of Meters") { }
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(IsFoil; Format(IsFoil)) { }
                 column(RemoveFoil; Format(RemoveFoil)) { }
@@ -261,8 +262,6 @@ report 50020 "ACO Work Order"
                     IsFoil := false;
                     RemoveFoil := false;
 
-                    NumberOfMeters := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
-
                     Circumference := "ACO Profile Circumference";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units" * ItemVariant."ACO Number of Meters";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
@@ -393,7 +392,6 @@ report 50020 "ACO Work Order"
         TotalNumberOfUnits: Decimal; // New
         AreaIncHollow: Decimal; // New
         AreaExcHollow: Decimal; // New
-        NumberOfMeters: Decimal; // New
         IsFoil: Boolean;//New
         RemoveFoil: Boolean;
         IsVEC: Boolean;//New

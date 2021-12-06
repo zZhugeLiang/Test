@@ -431,7 +431,7 @@ report 50010 "ACO Sales - Invoice"
                         column(Desc_SalesInvLine; Description)
                         {
                         }
-                        column(Description2_SalesInvLine; "Description 2")
+                        column(Desc2_SalesInvLine; "Description 2")
                         {
                         }
                         column(No_SalesInvLine; "No.")

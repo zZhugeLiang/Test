@@ -137,12 +137,12 @@ pageextension 50002 "ACO Sales Order Extension" extends "Sales Order"
                 end;
             }
 
-            action("ACO Work Order")
+            action("ACO Production Note")
             {
-                Caption = 'Work Order';
+                Caption = 'Production Note';
                 Image = Print;
                 ApplicationArea = All;
-                ToolTip = 'Work Order';
+                ToolTip = 'Production Note';
 
                 trigger OnAction()
                 var

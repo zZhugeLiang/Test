@@ -237,7 +237,13 @@ report 50017 "ACO Sales - Pro Forma Inv"
                 column(LineNo; "Line No.")
                 {
                 }
-                column(ItemDescription; Description)
+                column(Desc_SalesLine; Description)
+                {
+                }
+                column(Desc2_SalesLine; Line."Description 2")
+                {
+                }
+                column(LineDiscountAmount_SalesLine; Line."Line Discount Amount")
                 {
                 }
                 column(CountryOfManufacturing; Item."Country/Region of Origin Code")

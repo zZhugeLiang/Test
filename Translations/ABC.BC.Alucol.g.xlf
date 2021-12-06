@@ -8643,6 +8643,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Expedition Work Order - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3143437242 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Production Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Production Note - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 163665622 - Action 3143437242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Production Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Production Note - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 1270528838 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Sawing Notice</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8662,16 +8672,6 @@
           <source>Unattach Notice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Unattach Notice - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 163665622 - Action 2071298838 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
-          <source>Work Order</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Work Order - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 163665622 - Action 2071298838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
-          <source>Work Order</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Sales Order Extension - Action ACO Work Order - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 163665622 - Action 3006493959 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source> </source>

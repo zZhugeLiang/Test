@@ -340,6 +340,9 @@ report 50012 "ACO Sales - Shipment"
                         column(Description_SalesShptLine; Description)
                         {
                         }
+                        column(Description2_SalesShptLine; "Sales Shipment Line"."Description 2")
+                        {
+                        }
                         column(ShowInternalInfo; ShowInternalInfo)
                         {
                         }

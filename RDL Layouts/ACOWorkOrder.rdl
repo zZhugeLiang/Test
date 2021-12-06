@@ -199,6 +199,12 @@ End Function
         <Field Name="WeightPerMeter_ACOProfileFormat">
           <DataField>WeightPerMeter_ACOProfileFormat</DataField>
         </Field>
+        <Field Name="WeightPerUnit_ACOProfile">
+          <DataField>WeightPerUnit_ACOProfile</DataField>
+        </Field>
+        <Field Name="WeightPerUnit_ACOProfileFormat">
+          <DataField>WeightPerUnit_ACOProfileFormat</DataField>
+        </Field>
         <Field Name="ACO_Extra_to_Enumerate_Profile">
           <DataField>ACO_Extra_to_Enumerate_Profile</DataField>
         </Field>

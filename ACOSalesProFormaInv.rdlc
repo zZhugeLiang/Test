@@ -289,8 +289,17 @@ End Function
         <Field Name="LineNo">
           <DataField>LineNo</DataField>
         </Field>
-        <Field Name="ItemDescription">
-          <DataField>ItemDescription</DataField>
+        <Field Name="Desc_SalesLine">
+          <DataField>Desc_SalesLine</DataField>
+        </Field>
+        <Field Name="Desc2_SalesLine">
+          <DataField>Desc2_SalesLine</DataField>
+        </Field>
+        <Field Name="LineDiscountAmount_SalesLine">
+          <DataField>LineDiscountAmount_SalesLine</DataField>
+        </Field>
+        <Field Name="LineDiscountAmount_SalesLineFormat">
+          <DataField>LineDiscountAmount_SalesLineFormat</DataField>
         </Field>
         <Field Name="CountryOfManufacturing">
           <DataField>CountryOfManufacturing</DataField>

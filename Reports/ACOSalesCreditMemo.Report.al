@@ -375,6 +375,9 @@ report 50011 "ACO Sales - Credit Memo"
                         column(Desc_SalesCrMemoLine; Description)
                         {
                         }
+                        column(Desc2_SalesCrMemoLine; "Sales Cr.Memo Line"."Description 2")
+                        {
+                        }
                         column(No_SalesCrMemoLine; "No.")
                         {
                         }
