@@ -132,6 +132,7 @@ report 50000 "ACO Bath Sheet"
             }
             column(ProjectColorDescriptionCaption; ProjectColorDescriptionCaptionLbl) { }
             column(RerunText; RerunText) { }
+            column(RerunCaption; RerunCaptionLbl) { }
             dataitem(ACOBathSheetLine; "ACO Bath Sheet Line")
             {
                 DataItemLinkReference = ACOBathSheetHeader;
@@ -187,6 +188,9 @@ report 50000 "ACO Bath Sheet"
                 {
                 }
                 column(ThinStainingTimeLine; MinThinStainingTime)
+                {
+                }
+                column(Rerun_ACOBathSheetLine; Format(ACOBathSheetLine.Rerun))
                 {
                 }
                 trigger OnAfterGetRecord()
@@ -275,8 +279,8 @@ report 50000 "ACO Bath Sheet"
                         end;
                         if RerunText = '' then
                             if ACOBathSheetLine.Rerun then
-                                RerunText := RerunCaptionLbl;
-                    until (ACOBathSheetLine.Next() = 0) or ((HighEndText = HighEndCaptionLbl) and (MeasureText = MEASURECaptionLbl));
+                                RerunText := RERUNUpperCaseCaptionLbl;
+                    until (ACOBathSheetLine.Next() = 0) or ((HighEndText = HighEndCaptionLbl) and (MeasureText = MEASURECaptionLbl) and (RerunText = RERUNUpperCaseCaptionLbl));
 
                 if TempCustomer.FindSet() then
                     repeat
@@ -344,6 +348,7 @@ report 50000 "ACO Bath Sheet"
         DONOTMEASURECaptionLbl: Label 'D O  N O T  M E A S U R E';
         HighEndCaptionLbl: Label 'High End';
         EURASCaptionLbl: Label 'E U R A S';
+        RERUNUpperCaseCaptionLbl: Label 'R E R U N';
         ThickStainingCaptionLbl: Label 'Thick Staining';
         ThinStainingCaptionLbl: Label 'Thin Staining';
         TotalProfileSurfaceCaptionLbl: Label 'Total Profile Surface';

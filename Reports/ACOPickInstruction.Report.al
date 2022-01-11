@@ -110,6 +110,7 @@ report 50013 "ACO Pick Instruction"
                     column(No_TempACOPackageHeader; TempACOPackageHeader."No.") { }
                     column(OrderNo_TempACOPackageHeader; TempACOPackageHeader."Sales Shipment No.") { }
                     column(PackageTypeText; PackageTypeText) { }
+                    column(Reject_TempACOPackageHeader; TempACOPackageHeader.Reject) { }
                     dataitem("ACO Package Line"; "ACO Package Line")
                     {
                         // DataItemLinkReference = "Sales Header";
@@ -147,7 +148,9 @@ report 50013 "ACO Pick Instruction"
                         column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor")
                         {
                         }
-
+                        column(Reject_Reason_Code; "Reject Reason Code")
+                        {
+                        }
                         trigger OnAfterGetRecord()
                         // var
                         // ACOPackageHeader: Record "ACO Package Header";

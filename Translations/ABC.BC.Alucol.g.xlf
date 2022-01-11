@@ -178,6 +178,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Bath Card Nos. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 2726468291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Linked Packaging Nos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Linked Packaging Nos. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1559654101 - Field 35361578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Project Color Nos.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1377,6 +1382,11 @@
           <source>Method</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field Method - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3220518104 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder - Field No. Series - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3220518104 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Code</source>
@@ -2818,6 +2828,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Bath Card Nos. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 1559654101 - Control 2726468291 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Linked Packaging Nos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO App Setup - Control Default Linked Packaging Nos. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1559654101 - Control 35361578 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Measured Color Nos.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3233,40 +3248,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Generate Package Dialog - Control Resource - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2169947147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holder Card</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2169947147 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Control General - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2169947147 - Action 4121583680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linked Distance Holders</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Distance Holders - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2169947147 - Action 404499832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linked Holders Types</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Holders Types - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2169947147 - Action 904919892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Linked Support Holders</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Card - Action ACO Linked Support Holders - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2469371202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder Types</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holder Types - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holders</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2295214127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Sales Orders</source>
@@ -3928,11 +3913,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Control ProfilePicture - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1029845018 - Action 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holders</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customer Card - Action ACO Holders - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 1029845018 - Action 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Holders</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3957,11 +3937,6 @@
           <source>Profile Customers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customers - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3197234571 - Action 323601146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Holders</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Profile Customers - Action ACO Holders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3197234571 - Action 1006607801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Holders</source>
@@ -5077,6 +5052,11 @@
           <source>Rerun</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType RerunCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2153880488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>R E R U N</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType RERUNUpperCaseCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 2074925846" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Order</source>

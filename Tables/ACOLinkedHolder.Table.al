@@ -1,8 +1,8 @@
 table 50021 "ACO Linked Holder"
 {
     Caption = 'Linked Holder';
-    DrillDownPageId = "ACO Holders";
-    LookupPageId = "ACO Holders";
+    // DrillDownPageId = "ACO Holders";
+    // LookupPageId = "ACO Holders";
     DataClassification = CustomerContent;
 
     fields
@@ -117,6 +117,11 @@ table 50021 "ACO Linked Holder"
             TableRelation = "ACO Type of Clamp";
             DataClassification = CustomerContent;
         }
+        field(19; "No. Series"; Code[20])
+        {
+            Caption = 'No. Series';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
@@ -126,4 +131,26 @@ table 50021 "ACO Linked Holder"
             Clustered = true;
         }
     }
+
+
+    // }
+    // keys
+    // {
+    //     key(PK; "No.")
+    //     {
+    //         Clustered = true;
+    //     }
+    // }
+
+    // trigger OnInsert();
+    // var
+    //     ACOAppSetup: Record "ACO App Setup";
+    //     NoSeriesManagement: Codeunit NoSeriesManagement;
+    // begin
+
+    //     ACOAppSetup.Get();
+    //     ACOAppSetup.TestField("Default Measured Color Nos.");
+
+    //     NoSeriesManagement.InitSeries(ACOAppSetup."Default Measured Color Nos.", xRec."No. Series", Today(), "No.", Rec."No. Series");
+    // end;
 }

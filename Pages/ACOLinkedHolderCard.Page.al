@@ -100,4 +100,17 @@ page 50046 "ACO Linked Holder Card"
             }
         }
     }
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    var
+        ACOAppSetup: Record "ACO App Setup";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
+    //ACOLinkedHolder: Record "ACO Linked Holder";
+    begin
+        ACOAppSetup.Get();
+        ACOAppSetup.TestField("Default Linked Packaging Nos.");
+
+        NoSeriesManagement.InitSeries(ACOAppSetup."Default Linked Packaging Nos.", xRec."No. Series", Today(), "Code", Rec."No. Series");
+        Rec.Insert();
+    end;
 }

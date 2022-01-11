@@ -263,6 +263,13 @@ table 50000 "ACO App Setup"
                 end
             end;
         }
+
+        field(43; "Default Linked Packaging Nos."; Code[30])
+        {
+            Caption = 'Default Linked Packaging Nos.';
+            TableRelation = "No. Series";
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

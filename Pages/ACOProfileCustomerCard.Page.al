@@ -179,13 +179,13 @@ page 50011 "ACO Profile Customer Card"
                 ApplicationArea = All;
             }
 
-            action("ACO Holders")
-            {
-                Caption = 'Holders';
-                Image = Category;
-                RunObject = Page "ACO Holders";
-                ApplicationArea = All;
-            }
+            // action("ACO Holders")
+            // {
+            //     Caption = 'Holders';
+            //     Image = Category;
+            //     RunObject = Page "ACO Holders";
+            //     ApplicationArea = All;
+            // }
 
             action("ACO Linked Packaging List")
             {

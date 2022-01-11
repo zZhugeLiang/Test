@@ -50,6 +50,9 @@ report 50020 "ACO Work Order"
                 DataItemLink = "Document No." = field("No.");
 
                 column(Line_No_; "Line No.") { }
+                column(SalesLineTotalLines; "Sales Line".Count()) { }
+                column(CurrentLineNo; CurrentLineNo) { }
+
                 column(Description; Description) { }
                 column(ACO_Profile_Code; "ACO Profile Code") { }
                 column(Description_ACOProfile; ACOProfile."Description") { }
@@ -125,7 +128,7 @@ report 50020 "ACO Work Order"
                 column(HelixEnd_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Helix End")) { }
                 column(HelixEnd_ACOLinkedHolder; ACOLinkedHolder."Helix End") { }
                 column(Helix_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Helix")) { }
-                column(Helix_ACOLinkedHolder; ACOLinkedHolder."Helix") { }
+                column(Helix_ACOLinkedHolder; '"' + ACOLinkedHolder."Helix" + '"') { }
                 column(Space_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption(Space)) { }
                 column(Space_ACOLinkedHolder; ACOLinkedHolder.Space) { }
                 column(AttachMethodCode_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Attach Method Code")) { }
@@ -289,6 +292,7 @@ report 50020 "ACO Work Order"
                     MaxCurrentDensity := 1000;
                     ACOBathSheetMgt.DetermineCurrentDensities("Sales Line", MinCurrentDensity, MaxCurrentDensity);
                     GetLinkedPackaging();/////
+                    CurrentLineNo += 1;
                 end;
             }
 
@@ -335,6 +339,8 @@ report 50020 "ACO Work Order"
 
                 if StrLen(BagDescriptionsText) > 1 then
                     BagDescriptionsText := CopyStr(BagDescriptionsText, 1, StrLen(BagDescriptionsText) - 1);
+
+                CurrentLineNo := 0;
             end;
         }
     }
@@ -396,6 +402,7 @@ report 50020 "ACO Work Order"
         RemoveFoil: Boolean;
         IsVEC: Boolean;//New
         IsWrap: Boolean;//New 
+        CurrentLineNo: Integer;
         PackagingInstructionsCaptionLbl: Label 'Packaging Instructions';
         PackagingCaptionLbl: Label 'Packaging';
         PackageTypeCaptionLbl: Label 'Package Type';

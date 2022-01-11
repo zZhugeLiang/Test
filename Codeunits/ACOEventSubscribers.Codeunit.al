@@ -531,7 +531,7 @@ codeunit 50000 "ACO Event Subscribers"
             if StrPos(SalesLine.Description, SalesShipmentLine."Document No.") <> 0 then begin
                 SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
                 TranslationHelper.SetGlobalLanguageByCode(SalesHeader."Language Code");
-                NewDescription := SalesShipmentHeader.FieldCaption("Shipment Date") + ' ' + Format(SalesShipmentHeader."Shipment Date");
+                NewDescription := SalesShipmentHeader.FieldCaption("Shipment Date") + ' ' + Format(SalesShipmentHeader."Posting Date");
                 ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 10, NewDescription);
                 NewDescription := SalesShipmentHeader.FieldCaption("Order No.") + ' ' + Format(SalesShipmentHeader."Order No.");
                 ACOManagement.InsertExtraSalesLineFromSalesShptLine(SalesShipmentLine, SalesLine, 20, NewDescription);

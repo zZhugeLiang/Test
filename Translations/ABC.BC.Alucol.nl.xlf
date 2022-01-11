@@ -76,6 +76,11 @@
           <target>Standaard Nr.-reeks Badkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Bath Card Nos. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1559654101 - Field 2726468291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Linked Packaging Nos.</source>
+          <target>Standaard Nr.-reeks Gekoppelde verpakkingen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO App Setup - Field Default Linked Packaging Nos. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1559654101 - Field 35361578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Project Color Nos.</source>
           <target>Standaard Nr.-reeks Projectkleuren</target>
@@ -2892,6 +2897,16 @@
           <target>Aantal</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType QuantityCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 753914718" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rerun</source>
+          <target>Overdraai</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType RerunCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 371732247 - NamedType 2153880488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>R E R U N</source>
+          <target>O V E R D R A A I</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType RERUNUpperCaseCaptionLbl</note>
+        </trans-unit>		
         <trans-unit id="Report 371732247 - NamedType 559612500" size-unit="char" translate="yes" xml:space="preserve">
           <source>Length</source>
           <target>Lengte</target>

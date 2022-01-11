@@ -154,6 +154,12 @@ End Function
         <Field Name="Line_No_">
           <DataField>Line_No_</DataField>
         </Field>
+        <Field Name="SalesLineTotalLines">
+          <DataField>SalesLineTotalLines</DataField>
+        </Field>
+        <Field Name="CurrentLineNo">
+          <DataField>CurrentLineNo</DataField>
+        </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
         </Field>

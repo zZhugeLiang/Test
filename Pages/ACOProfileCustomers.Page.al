@@ -119,14 +119,14 @@ page 50010 "ACO Profile Customers"
                 Visible = false;
             }
 
-            action("ACO Holders")
-            {
-                Caption = 'Holders';
-                Image = Category;
-                RunObject = Page "ACO Holders";
-                ApplicationArea = All;
-                Visible = false;
-            }
+            // action("ACO Holders")
+            // {
+            //     Caption = 'Holders';
+            //     Image = Category;
+            //     RunObject = Page "ACO Holders";
+            //     ApplicationArea = All;
+            //     Visible = false;
+            // }
         }
     }
 
