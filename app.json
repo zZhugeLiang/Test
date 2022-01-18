@@ -4,7 +4,7 @@
   "publisher": "ABC E BUSINESS",
   "brief": "",
   "description": "",
-  "version": "0.0.1.37", 
+  "version": "0.0.1.38", 
   "privacyStatement": "",
   "EULA": "",
   "help": "",
@@ -22,7 +22,14 @@
       "publisher": "Microsoft",
       "name": "Base Application",
       "version": "17.0.0.0"
+    },
+    {
+      "id": "fc195c4f-19bf-4167-bfe8-6d1ff7d266bc",
+      "publisher": "conion media GmbH",
+      "name": "Anveo EDI Connect",
+      "version": "5.2.0.8"
     }
+  
   ],
   "screenshots": [],
   "platform": "17.0.0.0",
