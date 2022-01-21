@@ -1308,11 +1308,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Length - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2739113065 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Line No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2739113065 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Position</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1442,11 +1437,6 @@
           <source>Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Length - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4085294584 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4085294584 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Position</source>
@@ -1607,11 +1597,6 @@
           <source>Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Length - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1823548541 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1823548541 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Code</source>

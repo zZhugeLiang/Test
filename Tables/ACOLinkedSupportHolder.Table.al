@@ -66,17 +66,17 @@ table 50035 "ACO Linked Support Holder"
             Caption = 'Distance';
             DataClassification = CustomerContent;
         }
-        field(9; "Line No."; Integer)
-        {
-            Caption = 'Line No.';
-            AutoIncrement = true;
-            DataClassification = CustomerContent;
-        }
+        // field(9; "Line No."; Integer)
+        // {
+        //     Caption = 'Line No.';
+        //     AutoIncrement = true;
+        //     DataClassification = CustomerContent;
+        // }
     }
 
     keys
     {
-        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Support Holder Code", "Line No.")
+        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Support Holder Code")
         {
             Clustered = true;
         }

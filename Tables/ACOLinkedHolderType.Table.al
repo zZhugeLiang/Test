@@ -76,17 +76,17 @@ table 50033 "ACO Linked Holder Type"
             OptionCaption = 'Active,Inactive';
             DataClassification = CustomerContent;
         }
-        field(10; "Line No."; Integer)
-        {
-            Caption = 'Line No.';
-            AutoIncrement = true;
-            DataClassification = CustomerContent;
-        }
+        // field(10; "Line No."; Integer)
+        // {
+        //     Caption = 'Line No.';
+        //     AutoIncrement = true;
+        //     DataClassification = CustomerContent;
+        // }
     }
 
     keys
     {
-        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Holder Type Code", "Line No.")
+        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Holder Type Code")
         {
             Clustered = true;
         }
