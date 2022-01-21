@@ -618,6 +618,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Bath Sheet No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2117661045 - Field 3281548515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bathsheet Complete</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Bathsheet Complete - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 3138973415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Charge No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1303,6 +1308,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Length - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2739113065 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Distance Holder - Field Line No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2739113065 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Position</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1432,6 +1442,11 @@
           <source>Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4085294584 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Holder Type - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4085294584 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Position</source>
@@ -1592,6 +1607,11 @@
           <source>Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1823548541 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Linked Support Holder - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1823548541 - Field 3498366530 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Code</source>
@@ -3062,6 +3082,21 @@
           <source>Update Process Times</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet - Action Update Process Times - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285976844 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285976844 - Control 3539610785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Lines - Control NumberOfUnits - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285976844 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Lines - Action ShowDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>

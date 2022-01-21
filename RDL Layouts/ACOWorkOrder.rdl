@@ -151,11 +151,14 @@ End Function
         <Field Name="Promised_Delivery_Date">
           <DataField>Promised_Delivery_Date</DataField>
         </Field>
-        <Field Name="Line_No_">
-          <DataField>Line_No_</DataField>
-        </Field>
         <Field Name="SalesLineTotalLines">
           <DataField>SalesLineTotalLines</DataField>
+        </Field>
+        <Field Name="NumberOfSkippedLines">
+          <DataField>NumberOfSkippedLines</DataField>
+        </Field>
+        <Field Name="Line_No_">
+          <DataField>Line_No_</DataField>
         </Field>
         <Field Name="CurrentLineNo">
           <DataField>CurrentLineNo</DataField>
@@ -339,6 +342,12 @@ End Function
         </Field>
         <Field Name="ACO_Kundentour_HUECK">
           <DataField>ACO_Kundentour_HUECK</DataField>
+        </Field>
+        <Field Name="ACOTypeofClampCode_SalesLine">
+          <DataField>ACOTypeofClampCode_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOTypeofClampDescription_SalesLine">
+          <DataField>ACOTypeofClampDescription_SalesLine</DataField>
         </Field>
         <Field Name="HelixStart_ACOLinkedHolderCaption">
           <DataField>HelixStart_ACOLinkedHolderCaption</DataField>

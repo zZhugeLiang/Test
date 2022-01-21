@@ -111,6 +111,6 @@ page 50046 "ACO Linked Holder Card"
         ACOAppSetup.TestField("Default Linked Packaging Nos.");
 
         NoSeriesManagement.InitSeries(ACOAppSetup."Default Linked Packaging Nos.", xRec."No. Series", Today(), "Code", Rec."No. Series");
-        Rec.Insert();
+        // Rec.Insert();
     end;
 }

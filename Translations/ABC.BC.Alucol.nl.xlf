@@ -516,6 +516,11 @@
           <target>Badkaart nr.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Bath Sheet No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2117661045 - Field 3281548515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bathsheet Complete</source>
+          <target>Badkaart compleet</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Bathsheet Complete - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 3138973415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Charge No.</source>
           <target>Balknummer</target>
@@ -3663,7 +3668,23 @@
           <target>Afdrukken Badkaart</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action Print Bath Sheet - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2112516322 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2285976844 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bath Sheet Lines</source>
+          <target>Badkaartregels</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285976844 - Control 3539610785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Units</source>
+          <target>Aantal eenheden</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Lines - Control NumberOfUnits - Property Caption</note>
+        </trans-unit>	
+
+        <trans-unit id="Page 2285976844 - Action 127686680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Document</source>
+          <target>Weergeven document</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheet Lines - Action ShowDocument - Property Caption</note>
+        </trans-unit>        
+	<trans-unit id="Page 2112516322 - Action 3397558544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bath Sheet Resources</source>
           <target>Badkaart medewerkers</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Bath Sheets - Action ACO Bath Sheet Resources - Property Caption</note>
@@ -3948,11 +3969,101 @@
           <target>Opspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2898600151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Line</source>
+          <target>Oppervlakte Regel</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaIncHollowCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 793999142" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Worknote</source>
+          <target>Oppervlakte Werkbon</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaExcHollowCaptionLbl</note>
+        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3164563799" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attach Notice</source>
           <target>Opspan bon</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AttachNoticeCaptionLbl</note>
         </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bag Description</source>
+          <target>Bakomschrijving</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType BagDescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2584541967" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BS</source>
+          <target>BS</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType BSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 389339736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Category</source>
+          <target>Categorie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType CategoryCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2654092471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Charge per Bath</source>
+          <target>Aantal balken per bad</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ChargesPerBathCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1974721189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Circumference</source>
+          <target>Omtrek</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType CircumferenceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3949578611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Note</source>
+          <target>Kleurnotitie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ColorNoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 4148697023" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Line No.</source>
+          <target>Verkooporder Regelnr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType SalesOrderLineNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 280778644" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Treatment</source>
+          <target>Voorbehandeling</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType TreatmentCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 142445042" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference</source>
+          <target>Uw referentie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType YourReferenceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 7978351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer of Customer</source>
+          <target>Klant van klant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType CustomerOfCustomerCaptionLbl</note>
+        </trans-unit>	
+        <trans-unit id="Report 2678580552 - NamedType 1761295175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Note for Work Order</source>
+          <target>Verkooporder notitie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemNoteForWorkOrderCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 2790046486" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Note for Bath Sheet</source>
+          <target>Badkaart notitie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemNoteForBathSheetCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 985419202" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hollow Factor</source>
+          <target>Hollow factor</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HollowFactorCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 3741191151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Height Level</source>
+          <target>Peilhoogte</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HeightLevelCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra Flushing</source>
+          <target>Extra Spoelen</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ExtraFlushingCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2678580552 - NamedType 240991354" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mu Not Measurable</source>
+          <target>Mu niet meetbaar</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MuNotMeasurableCaptionLbl</note>
+        </trans-unit>	
         <trans-unit id="Report 2678580552 - NamedType 2968792397" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Order No.</source>
           <target>Verkooporder Nr.</target>
@@ -3987,31 +4098,6 @@
           <source>Shipping Agent</source>
           <target>Expediteur</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ShippingAgentCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 3949578611" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Color Note</source>
-          <target>Kleurnotitie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ColorNoteCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 4148697023" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales Order Line No.</source>
-          <target>Verkooporder Regelnr.</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType SalesOrderLineNoCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 280778644" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Treatment</source>
-          <target>Voorbehandeling</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType TreatmentCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 142445042" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Your Reference</source>
-          <target>Uw referentie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType YourReferenceCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 7978351" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer of Customer</source>
-          <target>Klant van klant</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType CustomerOfCustomerCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 4104523779" size-unit="char" translate="yes" xml:space="preserve">
           <source>Max. Current Density</source>
@@ -4053,11 +4139,6 @@
           <target>Artikelomschrijving klant</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemDescrCustomerCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 1974721189" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Circumference</source>
-          <target>Omtrek</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType CircumferenceCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1443713985" size-unit="char" translate="yes" xml:space="preserve">
           <source>Def. Wght.</source>
           <target>St. gew</target>
@@ -4093,11 +4174,6 @@
           <target>Netto gewicht</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType NetWeightCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 2654092471" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Charge per Bath</source>
-          <target>Aantal balken per bad</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ChargesPerBathCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3758693577" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantity per Bath</source>
           <target>Aantal per bad</target>
@@ -4112,51 +4188,6 @@
           <source>Sawing</source>
           <target>Zagen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType SawingCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 1631844930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bag Description</source>
-          <target>Bakomschrijving</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType BagDescriptionCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 389339736" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Category</source>
-          <target>Categorie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType CategoryCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 1761295175" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item Note for Work Order</source>
-          <target>Verkooporder notitie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemNoteForWorkOrderCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 2790046486" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item Note for Bath Sheet</source>
-          <target>Badkaart notitie</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ItemNoteForBathSheetCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 985419202" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Hollow Factor</source>
-          <target>Hollow factor</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HollowFactorCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 3741191151" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Height Level</source>
-          <target>Peilhoogte</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HeightLevelCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extra Flushing</source>
-          <target>Extra Spoelen</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType ExtraFlushingCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 240991354" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Mu Not Measurable</source>
-          <target>Mu niet meetbaar</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType MuNotMeasurableCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 2584541967" size-unit="char" translate="yes" xml:space="preserve">
-          <source>BS</source>
-          <target>BS</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType BSCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1096431244" size-unit="char" translate="yes" xml:space="preserve">
           <source>Wrap</source>
@@ -4232,16 +4263,6 @@
           <source>Number of Units</source>
           <target>Aantal eenheden</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType NumberOfUnitsCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 2898600151" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area Line</source>
-          <target>Oppervlakte Regel</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaIncHollowCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 793999142" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Area Worknote</source>
-          <target>Oppervlakte Werkbon</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType AreaExcHollowCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3098024587" size-unit="char" translate="yes" xml:space="preserve">
           <source>Printing Date</source>

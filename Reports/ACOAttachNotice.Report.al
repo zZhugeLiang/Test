@@ -505,6 +505,7 @@ report 50005 "ACO Attach Notice"
     begin
         ClearHolderVariables();
 
+        ACOLinkedHolder.SetRange(Code, "Sales Line"."ACO Linked Holder");
         ACOLinkedHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
         ACOLinkedHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
         if ItemVariant."ACO Number of Meters" <> 0 then

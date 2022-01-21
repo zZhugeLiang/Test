@@ -196,6 +196,14 @@ table 50017 "ACO Bath Sheet Line"
                                                                     "Production Order Status" = field("Production Order Status"), "Production Order Line No." = field("Production Order Line No.")));
         }
 
+        field(28; "Bathsheet Complete"; Boolean)
+        {
+            Caption = 'Bathsheet Complete';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("ACO Bath Sheet Header".Complete where("No." = field("Bath Sheet No.")));
+        }
+
         field(50016; "Remaining Quantity"; Decimal)
         {
             Caption = 'Remaining Quantity';

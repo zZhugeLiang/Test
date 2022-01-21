@@ -44,15 +44,15 @@ report 50020 "ACO Work Order"
             column(Requested_Delivery_Date; "Requested Delivery Date") { }
             column(Promised_Delivery_DateCaption; FieldCaption("Promised Delivery Date")) { }
             column(Promised_Delivery_Date; "Promised Delivery Date") { }
+            column(SalesLineTotalLines; "Sales Line".Count()) { }
+            column(NumberOfSkippedLines; NumberOfSkippedLines) { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLinkReference = "Sales Header";
                 DataItemLink = "Document No." = field("No.");
 
                 column(Line_No_; "Line No.") { }
-                column(SalesLineTotalLines; "Sales Line".Count()) { }
                 column(CurrentLineNo; CurrentLineNo) { }
-
                 column(Description; Description) { }
                 column(ACO_Profile_Code; "ACO Profile Code") { }
                 column(Description_ACOProfile; ACOProfile."Description") { }
@@ -122,6 +122,8 @@ report 50020 "ACO Work Order"
                 column(ACO_Measure_Report; Format("ACO Measure Report")) { }
                 column(ACO_Kundentour_HUECK; "ACO Kundentour HUECK") { }
                 // Done >>
+                column(ACOTypeofClampCode_SalesLine; ACOLinkedHolder."Type of Clamp Code") { }
+                column(ACOTypeofClampDescription_SalesLine; GetTypeofClampDescription(ACOLinkedHolder."Type of Clamp Code")) { }
                 // Holders <<
                 column(HelixStart_ACOLinkedHolderCaption; ACOLinkedHolder.FieldCaption("Helix Start")) { }
                 column(HelixStart_ACOLinkedHolder; ACOLinkedHolder."Helix Start") { }
@@ -231,8 +233,10 @@ report 50020 "ACO Work Order"
 
                     if Type = Type::Item then
                         if Item.Get("No.") then begin
-                            if Item."ACO Color" = '' then
+                            if Item."ACO Color" = '' then begin
+                                NumberOfSkippedLines += 1;
                                 CurrReport.Skip();
+                            end;
                         end;
 
                     ThinStainingTime := 99999;
@@ -341,6 +345,7 @@ report 50020 "ACO Work Order"
                     BagDescriptionsText := CopyStr(BagDescriptionsText, 1, StrLen(BagDescriptionsText) - 1);
 
                 CurrentLineNo := 0;
+                GetNumberOfSkippedLines();
             end;
         }
     }
@@ -403,6 +408,7 @@ report 50020 "ACO Work Order"
         IsVEC: Boolean;//New
         IsWrap: Boolean;//New 
         CurrentLineNo: Integer;
+        NumberOfSkippedLines: Integer;
         PackagingInstructionsCaptionLbl: Label 'Packaging Instructions';
         PackagingCaptionLbl: Label 'Packaging';
         PackageTypeCaptionLbl: Label 'Package Type';
@@ -426,6 +432,7 @@ report 50020 "ACO Work Order"
     begin
         ClearHolderVariables();
 
+        ACOLinkedHolder.SetRange(Code, "Sales Line"."ACO Linked Holder");
         ACOLinkedHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
         ACOLinkedHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
         if ItemVariant."ACO Number of Meters" <> 0 then
@@ -525,5 +532,33 @@ report 50020 "ACO Work Order"
     begin
         if not ACOLinkedPackaging.Get("Sales Line"."ACO Profile Code", "Sales Line"."Sell-to Customer No.", "Sales Line"."ACO Packaging", ItemVariant."ACO Number of Meters" * 1000) then
             Clear(ACOLinkedPackaging);
+    end;
+
+    local procedure GetNumberOfSkippedLines()
+    var
+        SalesLine: Record "Sales Line";
+        Item: Record Item;
+    begin
+        NumberOfSkippedLines := 0;
+
+        SalesLine.SetRange("Document Type", "Sales Header"."Document Type");
+        SalesLine.SetRange("Document No.", "Sales Header"."No.");
+        if SalesLine.FindSet() then
+            repeat
+                if SalesLine.Type = SalesLine.Type::Item then
+                    if Item.Get(SalesLine."No.") then
+                        if Item."ACO Color" = '' then
+                            NumberOfSkippedLines += 1;
+            until SalesLine.Next() = 0;
+    end;
+
+    local procedure GetTypeofClampDescription(TypeofClampCode: Code[10]): Text
+    var
+        ACOTypeOfClamp: Record "ACO Type of Clamp";
+    begin
+        if ACOTypeOfClamp.Get(TypeofClampCode) then
+            exit(ACOTypeOfClamp.Description)
+        else
+            exit('');
     end;
 }

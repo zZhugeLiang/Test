@@ -13,9 +13,7 @@
             //"authentication": "Windows",
             "breakOnError": true,
             "startupObjectId": 9305,
-
-            "schemaUpdateMode": "Synchronize"
-
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }
