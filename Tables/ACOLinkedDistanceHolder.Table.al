@@ -74,17 +74,17 @@ table 50034 "ACO Linked Distance Holder"
             Caption = 'Position';
             DataClassification = CustomerContent;
         }
-        // field(10; "Line No."; Integer)
-        // {
-        //     Caption = 'Line No.';
-        //     AutoIncrement = true;
-        //     DataClassification = CustomerContent;
-        // }
+        field(10; "Line No."; Integer)
+        {
+            Caption = 'Line No.';
+            AutoIncrement = true;
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
     {
-        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Distance Holder Code")
+        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Distance Holder Code", "Line No.")
         {
             Clustered = true;
         }
