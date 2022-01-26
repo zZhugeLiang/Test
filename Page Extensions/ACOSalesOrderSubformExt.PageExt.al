@@ -167,6 +167,13 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             field("ACO Reject Billable"; "ACO Reject Billable")
             {
                 ApplicationArea = All;
+                Editable = true;
+
+            }
+            field("Description 2test"; "Description 2")
+            {
+                ApplicationArea = All;
+                Editable = true;
             }
             field("ACO Reject Not Billable"; "ACO Reject Not Billable")
             {

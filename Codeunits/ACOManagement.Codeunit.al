@@ -276,6 +276,7 @@ codeunit 50003 "ACO Management"
 
                         TempSalesLine.Modify();
                     end else begin
+                        TempSalesLine.Init();
                         TempSalesLine."Document Type" := TempSalesLine."Document Type"::Order;
                         TempSalesLine."Document No." := ACOPackageLine."Sales Order No.";
                         TempSalesLine."Line No." := ACOPackageLine."Sales Line No";
