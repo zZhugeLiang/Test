@@ -4,7 +4,7 @@
   "publisher": "ABC E BUSINESS",
   "brief": "",
   "description": "",
-  "version": "0.0.1.42", 
+  "version": "0.0.1.43", 
   "privacyStatement": "",
   "EULA": "",
   "help": "",
@@ -21,7 +21,7 @@
       "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
       "publisher": "Microsoft",
       "name": "Base Application",
-      "version": "17.0.0.0"
+      "version": "19.0.0.0"
     },
     {
       "id": "fc195c4f-19bf-4167-bfe8-6d1ff7d266bc",
@@ -32,8 +32,8 @@
   
   ],
   "screenshots": [],
-  "platform": "17.0.0.0",
-  "runtime": "6.0",
+  "platform": "19.0.0.0",
+  "runtime": "7.1",
   "features": ["TranslationFile"],
   "idRanges": [{
     "from": 50000,

@@ -472,6 +472,8 @@ report 50012 "ACO Sales - Shipment"
                         column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter") { }
                         column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                         column(ACOSawing_SalesShptLine; "Sales Shipment Line"."ACO Sawing") { }
+                        column(ACONumberofUnits_SalesShptLine; "Sales Shipment Line"."ACO Number of Units") { }
+                        column(ProfileCircumference_SalesShptLine; "Sales Shipment Line"."ACO Profile Circumference") { }
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")
@@ -1024,6 +1026,7 @@ report 50012 "ACO Sales - Shipment"
         ShowGroup: Boolean;
         TotalQty: Decimal;
         [InDataSet]
+
         NetWeight: Decimal;
         GrossWeight: Decimal;
         LogInteractionEnable: Boolean;
