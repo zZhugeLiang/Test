@@ -278,7 +278,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
             if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000);
+                Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000);
 
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
@@ -362,7 +362,7 @@ codeunit 50000 "ACO Event Subscribers"
             Clear(ItemVariant);
 
         if ACOProfile.Get(Rec."ACO Profile Code") then
-            Rec.Validate("ACO Area Profile", ACOProfile.Circumference * ItemVariant."ACO Number of Meters" / 1000)
+            Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000)
         else
             Rec.Validate("ACO Area Profile", 0);
 

@@ -134,6 +134,21 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Circumference [mm] Profile';
             DataClassification = CustomerContent;
+            trigger OnValidate()
+            var
+                ACOProfile: Record "ACO Profile";
+                ItemVariant: Record "Item Variant";
+            begin
+                if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+                    Clear(ItemVariant);
+
+                if ACOProfile.Get(Rec."ACO Profile Code") then
+                    Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000)
+                else
+                    Rec.Validate("ACO Area Profile", 0);
+
+                Rec.Validate("ACO Number of Units");
+            end;
         }
 
         field(50020; "ACO Not Measurable"; Boolean)
