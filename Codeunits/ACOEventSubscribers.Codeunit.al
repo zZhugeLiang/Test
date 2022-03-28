@@ -113,6 +113,8 @@ codeunit 50000 "ACO Event Subscribers"
                 Rec."ACO Pretreatment" := Item."ACO Pretreatment";
                 Rec."ACO Posttreatment" := Item."ACO Posttreatment";
                 Rec."ACO Particularity" := Item."ACO Particularity";
+                Rec."ACO Not Measurable" := Item."ACO Not Measurable";
+                Rec."ACO Charges per Bath Profile" := Item."ACO Charges per Bath Profile";
 
                 if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
                     Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
@@ -154,10 +156,6 @@ codeunit 50000 "ACO Event Subscribers"
     begin
         if not SalesLineReserve.FindReservEntry(Rec, ReservEntry) then
             exit;
-
-        // if DateConflict(SalesLine."Shipment Date", ForceRequest, ReservEntry) then
-        //     if ForceRequest then
-        //         IssueError(SalesLine."Shipment Date");
 
         ReservationCheckDateConfl.UpdateDate(ReservEntry, Rec."Shipment Date");
 
@@ -291,18 +289,12 @@ codeunit 50000 "ACO Event Subscribers"
 
             Rec."ACO Profile Description" := ACOProfile.Description;
             Rec."ACO Profile Category" := ACOProfile.Category;
-            // Rec."ACO Profile Circumference" := ACOProfile."Circumference";
-            Rec."ACO Not Measurable" := ACOProfile."Not Measurable";
-            Rec."ACO Extra Flushing" := ACOProfile."Extra Flushing";
             Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
             Rec."ACO Height Level Profile" := ACOProfile."Height Level";
 
             Rec."ACO Attach Method Code Profile" := ACOProfile."Attach Method Code";
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
-            Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
-            // if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-            //     Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000000);
 
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";

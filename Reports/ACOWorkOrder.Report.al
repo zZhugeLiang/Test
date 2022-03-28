@@ -227,6 +227,7 @@ report 50020 "ACO Work Order"
                         Clear(ACOProfileCustomer);
 
                     Clear(Item);
+                    NumberOfBaths := 0;
 
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
@@ -237,6 +238,8 @@ report 50020 "ACO Work Order"
                                 NumberOfSkippedLines += 1;
                                 CurrReport.Skip();
                             end;
+                            if Item."ACO Charges per Bath Profile" <> 0 then
+                                NumberOfBaths := "ACO Number of Units" / Item."ACO Charges per Bath Profile";
                         end;
 
                     ThinStainingTime := 99999;
@@ -272,10 +275,6 @@ report 50020 "ACO Work Order"
                     Circumference := "ACO Profile Circumference";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units" * ItemVariant."ACO Number of Meters";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
-                    if ACOProfile."Charges per Bath Profile" <> 0 then
-                        NumberOfBaths := "ACO Number of Units" / ACOProfile."Charges per Bath Profile"
-                    else
-                        NumberOfBaths := 0;
 
                     if (ACOAppSetup."Foil Routing No." <> '') and (ACOAppSetup."Wrap Routing No." <> '') and (ACOAppSetup."VEC Routing No." <> '') then begin
                         RoutingLine.SetRange("Routing No.", Item."Routing No.");
@@ -305,6 +304,7 @@ report 50020 "ACO Work Order"
                 SalesLine: Record "Sales Line";
                 ItemVariant: Record "Item Variant";
                 Customer: Record Customer;
+                Item: Record Item;
                 NumberOfMiliMeters: Decimal;
             begin
                 MaxLength := 0;
@@ -336,8 +336,9 @@ report 50020 "ACO Work Order"
                                 MaxLength := NumberOfMiliMeters;
                         end;
                         TotalNumberOfUnits += "Sales Line"."ACO Number of Units";
-                        if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
-                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile";
+
+                        if Item.Get(SalesLine."No.") and (Item."ACO Charges per Bath Profile" <> 0) then
+                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / Item."ACO Charges per Bath Profile";
 
                     until SalesLine.Next() = 0;
 

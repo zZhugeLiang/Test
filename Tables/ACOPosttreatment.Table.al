@@ -19,6 +19,7 @@ table 50040 "ACO Posttreatment"
             DataClassification = CustomerContent;
         }
     }
+
     keys
     {
         key(PK; "Code")

@@ -219,18 +219,20 @@ report 50007 "ACO Unattach Notice"
                         Clear(ACOProfileCustomer);
 
                     Clear(Item);
+                    NumberOfBaths := 0;
 
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 
                     if Type = Type::Item then
-                        if Item.Get("No.") then
+                        if Item.Get("No.") then begin
                             if Item."ACO Color" = '' then
                                 CurrReport.Skip();
 
+                            if Item."ACO Charges per Bath Profile" <> 0 then
+                                NumberOfBaths := "Sales Line"."ACO Number of Units" / Item."ACO Charges per Bath Profile";
+                        end;
 
-                    // ThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-                    // ThickStainingTime := ACOProfileCustomer."Thick Staining Time";
                     ThinStainingTime := 99999;
                     ThickStainingTime := -1;
 
@@ -260,10 +262,6 @@ report 50007 "ACO Unattach Notice"
                     Circumference := "ACO Profile Circumference";
                     NetWeight := ACOProfile."Weight per meter" * "ACO Number of Units" * ItemVariant."ACO Number of Meters";
                     GrossWeight := NetWeight * ACOAppSetup."Net/Gross Weight Factor";
-                    if ACOProfile."Charges per Bath Profile" <> 0 then
-                        NumberOfBaths := "ACO Number of Units" / ACOProfile."Charges per Bath Profile"
-                    else
-                        NumberOfBaths := 0;
 
                     if (ACOAppSetup."Foil Routing No." <> '') and (ACOAppSetup."Wrap Routing No." <> '') and (ACOAppSetup."VEC Routing No." <> '') then begin
                         RoutingLine.SetRange("Routing No.", Item."Routing No.");
@@ -288,8 +286,7 @@ report 50007 "ACO Unattach Notice"
             trigger OnAfterGetRecord()
             var
                 SalesLine: Record "Sales Line";
-                //ACOProfile: Record "ACO Profile";
-                //Item: Record Item;
+                Item: Record Item;
                 ItemVariant: Record "Item Variant";
                 Customer: Record Customer;
                 NumberOfMiliMeters: Decimal;
@@ -322,11 +319,11 @@ report 50007 "ACO Unattach Notice"
                             if NumberOfMiliMeters > MaxLength then
                                 MaxLength := NumberOfMiliMeters;
                         end;
-                        TotalNumberOfUnits += "Sales Line"."ACO Number of Units";
-                        if ACOProfile.Get(SalesLine."ACO Profile Code") and (ACOProfile."Charges per Bath Profile" <> 0) then
-                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / ACOProfile."Charges per Bath Profile";
 
-                    // ACOBathSheetMgt.DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);
+                        TotalNumberOfUnits += "Sales Line"."ACO Number of Units";
+
+                        if Item.Get(SalesLine."No.") and (Item."ACO Charges per Bath Profile" <> 0) then
+                            TotalNumberOfBaths += SalesLine."ACO Number of Units" / Item."ACO Charges per Bath Profile";
                     until SalesLine.Next() = 0;
 
                 if StrLen(BagDescriptionsText) > 1 then

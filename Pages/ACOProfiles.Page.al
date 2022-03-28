@@ -37,22 +37,7 @@ page 50008 "ACO Profiles"
                     ApplicationArea = All;
                     Visible = false;
                 }
-                field("Extra Flushing"; Rec."Extra Flushing")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
                 field("Area"; Rec."Area")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("Not Measurable"; Rec."Not Measurable")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("High End"; Rec."High End")
                 {
                     ApplicationArea = All;
                     Visible = false;
@@ -73,11 +58,6 @@ page 50008 "ACO Profiles"
                     Visible = false;
                 }
                 field("Height Level"; Rec."Height Level")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("Charges per Bath Profile"; Rec."Charges per Bath Profile")
                 {
                     ApplicationArea = All;
                     Visible = false;

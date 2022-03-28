@@ -102,7 +102,6 @@ xmlport 50000 "ACO Aucos Export"
                         var
                             Item: Record Item;
                             ACOBathSheetLineAll: Record "ACO Bath Sheet Line";
-                            ACOProfile: Record "ACO Profile";
                             AucosFlush: Boolean;
                         begin
                             if Item.Get(ACOBathSheetLine.Treatment) then
@@ -111,14 +110,12 @@ xmlport 50000 "ACO Aucos Export"
                             ACOBathSheetLineAll.SetRange("Bath Sheet No.", ACOBathSheetLine."Bath Sheet No.");
                             if ACOBathSheetLineAll.FindSet() then
                                 repeat
-                                    if ACOProfile.Get(ACOBathSheetLine."Profile Code") and ACOProfile."Extra Flushing" then
+                                    if Item.Get(ACOBathSheetLineAll.Treatment) and Item."ACO Extra Flushing" then
                                         AucosFlush := true;
-                                until ACOBathSheetLineAll.Next() = 0;
+                                until (ACOBathSheetLineAll.Next() = 0) or AucosFlush;
 
                             if AucosFlush then
                                 ablageNo += 's';
-                            // if Item.Get(ACOBathSheetLine.Treatment) then
-                            //     ablageNo := Item."ACO Pretreatment";
                         end;
                     }
 

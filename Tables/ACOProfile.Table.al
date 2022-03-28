@@ -40,23 +40,23 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(6; "Not Measurable"; Boolean)
-        {
-            Caption = 'Not Measurable';
-            DataClassification = CustomerContent;
-        }
+        // field(6; "Not Measurable"; Boolean)
+        // {
+        //     Caption = 'Not Measurable';
+        //     DataClassification = CustomerContent;
+        // }
 
-        field(7; "Charges per Bath Profile"; Decimal)
-        {
-            Caption = 'Charges per Bath Profile';
-            DataClassification = CustomerContent;
-        }
+        // field(7; "Charges per Bath Profile"; Decimal)
+        // {
+        //     Caption = 'Charges per Bath Profile';
+        //     DataClassification = CustomerContent;
+        // }
 
-        field(9; "Extra Flushing"; Boolean)
-        {
-            Caption = 'Extra Flushing';
-            DataClassification = CustomerContent;
-        }
+        // field(9; "Extra Flushing"; Boolean)
+        // {
+        //     Caption = 'Extra Flushing';
+        //     DataClassification = CustomerContent;
+        // }
 
         field(10; "Correction Factor"; Decimal)
         {
@@ -135,11 +135,11 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        field(33; "High End"; Boolean)
-        {
-            Caption = 'High End';
-            DataClassification = CustomerContent;
-        }
+        // field(33; "High End"; Boolean)
+        // {
+        //     Caption = 'High End';
+        //     DataClassification = CustomerContent;
+        // }
 
         field(34; "Type of Clamp Code"; Code[10])
         {

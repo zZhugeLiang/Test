@@ -38,19 +38,7 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Extra Flushing"; "Extra Flushing")
-                {
-                    ApplicationArea = All;
-                }
                 field("Area"; "Area")
-                {
-                    ApplicationArea = All;
-                }
-                field("Not Measurable"; "Not Measurable")
-                {
-                    ApplicationArea = All;
-                }
-                field("High End"; "High End")
                 {
                     ApplicationArea = All;
                 }
@@ -75,11 +63,6 @@ page 50009 "ACO Profile Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Charges per Bath Profile"; "Charges per Bath Profile")
-                {
-                    ApplicationArea = All;
-                }
-
             }
             group(Documents)
             {

@@ -240,6 +240,7 @@ report 50000 "ACO Bath Sheet"
                 TempACOProfile: Record "ACO Profile" temporary;
                 TempCustomer: Record Customer temporary;
                 Item: Record Item;
+                BathSheetLineItem: Record Item;
                 CRLF: Text[2];
             begin
                 MeasureText := DONOTMEASURECaptionLbl;
@@ -272,11 +273,13 @@ report 50000 "ACO Bath Sheet"
                                 TempACOProfile."Comment Bath Card" := ACOProfile."Comment Bath Card";
                                 TempACOProfile.Insert();
                             end;
-
-                            if MeasureText = DONOTMEASURECaptionLbl then
-                                if not ACOProfile."Not Measurable" then
-                                    MeasureText := MEASURECaptionLbl;
                         end;
+
+                        if BathSheetLineItem.Get(ACOBathSheetLine.Treatment) then
+                            if MeasureText = DONOTMEASURECaptionLbl then
+                                if not BathSheetLineItem."ACO Not Measurable" then
+                                    MeasureText := MEASURECaptionLbl;
+
                         if RerunText = '' then
                             if ACOBathSheetLine.Rerun then
                                 RerunText := RERUNUpperCaseCaptionLbl;

@@ -308,7 +308,6 @@ page 50020 "ACO Bath Sheet"
                     LastColorCode: Code[20];
                     LastPretreatmentCode: Code[20];
                     AucosFileName: Text;
-                    ExtraFlushing: Boolean;
                     MaxNumberOfLinesErr: Label 'The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.';
                     NotIntendedforLongLineErr: Label 'This Bath Sheet is not intended for the long line.';
                     NotAllLinesSameColorErr: Label 'Not all lines have the same color.';
@@ -345,9 +344,6 @@ page 50020 "ACO Bath Sheet"
                             LastColorCode := ACOBathSheetLine.Color;
                             LastPretreatmentCode := Item."ACO Pretreatment";
                             ACOProfile.Get(ACOBathSheetLine."Profile Code");
-                            if ACOProfile."Extra Flushing" then
-                                ExtraFlushing := true;
-                        // ACOBathSheetLine
                         until ACOBathSheetLine.Next() = 0;
 
                     TempBlob.CreateOutStream(FileOutStream);
@@ -383,7 +379,6 @@ page 50020 "ACO Bath Sheet"
                     FileBuffer: Text;
                     LastColorCode: Code[20];
                     LastPretreatmentCode: Code[20];
-                    ExtraFlushing: Boolean;
                     MaxNumberOfLinesErr: Label 'The number of lines in the Bath Sheet is larger than the maximum number of lines allowed.';
                     NotIntendedforLongLineErr: Label 'This Bath Sheet is not intended for the long line.';
                     NotAllLinesSameColorErr: Label 'Not all lines have the same color.';
@@ -420,9 +415,6 @@ page 50020 "ACO Bath Sheet"
                             LastColorCode := ACOBathSheetLine.Color;
                             LastPretreatmentCode := Item."ACO Pretreatment";
                             ACOProfile.Get(ACOBathSheetLine."Profile Code");
-                            if ACOProfile."Extra Flushing" then
-                                ExtraFlushing := true;
-                        // ACOBathSheetLine
                         until ACOBathSheetLine.Next() = 0;
 
                     TempBlob.CreateOutStream(FileOutStream);

@@ -2338,11 +2338,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 1064475362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extra Flushing</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Extra Flushing - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 4111052763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Height Level [mm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2753,11 +2748,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CheckProductionLines - NamedType Max2ChargesErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3646941407 - Method 3494150390 - NamedType 948129302" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Remaining Quantity cannot be less than Quantity to Bath Sheet.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Bath Sheet Mgt. - Method CreateBathSheetLine - NamedType NumberofUnitsLtQuantityToBathSheetErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3815566252 - Method 2398936018 - NamedType 2681049575" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer %1 with shipping code %2 does not have a link with the profile %3.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2788,20 +2778,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method CreateOrders - NamedType ProductionOrdersCreated</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3570798162 - Method 2855046171 - NamedType 2857859604" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The package quantity is larger than the Sales Line quantity. A new Production Order has to be created before you can ship the package(s).</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method SelectPackageForShipment - NamedType PackageQuantityMsg</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3570798162 - Method 2855046171 - NamedType 1202892362" size-unit="char" translate="yes" xml:space="preserve">
           <source>The following Production Orders have been set to Finished: %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method SelectPackageForShipment - NamedType ProductionOrderFinishedMsg</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3570798162 - Method 2855046171 - NamedType 805703409" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No Production Order have been set to Finished.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ACO Management - Method SelectPackageForShipment - NamedType NoProductionOrderFinishedMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 3570798162 - Method 2199692769 - NamedType 1000711907" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reject: %1 PCE Invoice / %2 PCE Discount</source>
@@ -10467,6 +10447,11 @@
           <source> ,Short Line,Long Line</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO User Setup Extension - Field ACO Production Line - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2523410528 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permission Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet ACO Permission Set - Property Caption</note>
         </trans-unit>
       </group>
     </body>
