@@ -67,6 +67,93 @@ tableextension 50001 "ACO Item Extension" extends Item
             Caption = 'Sawing';
             DataClassification = CustomerContent;
         }
+
+        field(50005; "ACO Price Scheme Code"; Code[10])
+        {
+            Caption = 'Price Scheme';
+            TableRelation = "ACO Price Scheme";
+            DataClassification = CustomerContent;
+        }
+
+        field(50006; "ACO Euras"; Boolean)
+        {
+            Caption = 'Euras';
+            DataClassification = CustomerContent;
+        }
+
+        field(50007; "ACO Extra to Enumerate"; Integer)
+        {
+            Caption = 'Extra to Enumerate [mm]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50008; "ACO Thin Staining Time"; Decimal)
+        {
+            Caption = 'Thin Staining Time [min]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50009; "ACO Thick Staining Time"; Decimal)
+        {
+            Caption = 'Thick Staining Time [min]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50010; "ACO Sawing Discount"; Decimal)
+        {
+            Caption = 'Sawing Discount';
+            DataClassification = CustomerContent;
+        }
+
+        field(50011; "ACO Minimum Current Density"; Decimal)
+        {
+            Caption = 'Minimum Current Density [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50012; "ACO Maximum Current Density"; Decimal)
+        {
+            Caption = 'Maximum Current Density [A/dm²]';
+            DataClassification = CustomerContent;
+        }
+
+        field(50013; "ACO High End"; Boolean)
+        {
+            Caption = 'High End';
+            DataClassification = CustomerContent;
+        }
+
+        field(50014; "ACO Not Measurable"; Boolean)
+        {
+            Caption = 'Not Measurable';
+            DataClassification = CustomerContent;
+        }
+
+        field(50015; "ACO Charges per Bath Profile"; Decimal)
+        {
+            Caption = 'Charges per Bath Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50016; "ACO Extra Flushing"; Boolean)
+        {
+            Caption = 'Extra Flushing';
+            DataClassification = CustomerContent;
+        }
+
+        field(50017; "ACO Posttreatment"; Code[20])
+        {
+            Caption = 'Posttreatment';
+            TableRelation = "ACO Posttreatment";
+            DataClassification = CustomerContent;
+        }
+
+        field(50018; "ACO Particularity"; Code[20])
+        {
+            Caption = 'Particularity';
+            TableRelation = "ACO Particularity";
+            DataClassification = CustomerContent;
+        }
     }
 
     local procedure ACOInsertDefaultDimension(DimensionCode: Code[20]; DimensionValueCode: Code[20])

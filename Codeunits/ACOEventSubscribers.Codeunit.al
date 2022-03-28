@@ -54,6 +54,19 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Own Shipping Agent" := ShippingAgent."ACO Own";
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Unit of Measure Code', false, false)]
+    local procedure SalesLine_OnAfterValidate_UnitofMeasureCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    var
+        ItemUnitofMeasure: Record "Item Unit of Measure";
+    begin
+        if Rec.Type = Rec.Type::Item then
+            if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
+                Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
+                Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
+            end;
+    end;
+
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'No.', false, false)]
     local procedure SalesLine_OnBeforeValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
@@ -73,6 +86,7 @@ codeunit 50000 "ACO Event Subscribers"
         ACOAppSetup: Record "ACO App Setup";
         ACOProfileCustomer: Record "ACO Profile Customer";
         ACOPretreatment: Record "ACO Pretreatment";
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
         if Rec.IsTemporary() then
@@ -95,6 +109,17 @@ codeunit 50000 "ACO Event Subscribers"
                     Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
                     Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
                 end;
+
+                Rec."ACO Pretreatment" := Item."ACO Pretreatment";
+                Rec."ACO Posttreatment" := Item."ACO Posttreatment";
+                Rec."ACO Particularity" := Item."ACO Particularity";
+
+                if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
+                    Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
+                    Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
+                end;
+
+                Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * Rec."ACO Profile Length" / 1000000);
 
                 Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness Code");
 
@@ -267,7 +292,7 @@ codeunit 50000 "ACO Event Subscribers"
 
             Rec."ACO Profile Description" := ACOProfile.Description;
             Rec."ACO Profile Category" := ACOProfile.Category;
-            Rec."ACO Profile Circumference" := ACOProfile."Circumference";
+            // Rec."ACO Profile Circumference" := ACOProfile."Circumference";
             Rec."ACO Not Measurable" := ACOProfile."Not Measurable";
             Rec."ACO Extra Flushing" := ACOProfile."Extra Flushing";
             Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
@@ -277,8 +302,8 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
             Rec.Validate("ACO Charges per Bath Profile", ACOProfile."Charges per Bath Profile");
-            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000);
+            // if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+            //     Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000000);
 
             Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
             Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
@@ -361,10 +386,10 @@ codeunit 50000 "ACO Event Subscribers"
         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
             Clear(ItemVariant);
 
-        if ACOProfile.Get(Rec."ACO Profile Code") then
-            Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000)
-        else
-            Rec.Validate("ACO Area Profile", 0);
+        // if ACOProfile.Get(Rec."ACO Profile Code") then
+        //     Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000000)
+        // else
+        //     Rec.Validate("ACO Area Profile", 0);
 
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 

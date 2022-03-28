@@ -28,18 +28,23 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Pretreatment"; "ACO Pretreatment")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Posttreatment"; "ACO Posttreatment")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Particularity"; "ACO Particularity")
+            {
+                ApplicationArea = All;
+            }
             field("ACO Profile Code"; "ACO Profile Code")
             {
                 ApplicationArea = All;
                 trigger OnValidate()
-                // var
-                //     ACOProfileCustomer: Record "ACO Profile Customer";
-                //     ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
                 begin
-                    // ACOSingleInstanceMgt.GetACOProfileCustomer(ACOProfileCustomer);
-                    // if not ACOProfileCustomer.IsEmpty() then begin
-                    //     Rec.ACO Profile de
-                    // end;
                     ACOSetCheckboxes();
                 end;
             }
@@ -48,6 +53,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                 ApplicationArea = All;
             }
             field("ACO Profile Circumference"; "ACO Profile Circumference")
+            {
+                ApplicationArea = All;
+            }
+            field("ACO Profile Length"; "ACO Profile Length")
             {
                 ApplicationArea = All;
             }
@@ -169,11 +178,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
                 ApplicationArea = All;
                 Editable = true;
 
-            }
-            field("Description 2test"; "Description 2")
-            {
-                ApplicationArea = All;
-                Editable = true;
             }
             field("ACO Reject Not Billable"; "ACO Reject Not Billable")
             {

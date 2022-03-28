@@ -143,7 +143,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                     Clear(ItemVariant);
 
                 if ACOProfile.Get(Rec."ACO Profile Code") then
-                    Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000)
+                    Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * Rec."ACO Profile Length" / 1000000)
                 else
                     Rec.Validate("ACO Area Profile", 0);
 
@@ -244,10 +244,10 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                         Clear(ItemVariant);
 
                     if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                        NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units";
+                        NewQuantity := (Rec."ACO Profile Length" / 1000) * Rec."ACO Number of Units";
 
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                        NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units" / 1000;
+                        NewQuantity := Rec."ACO Profile Circumference" * Rec."ACO Profile Length" * Rec."ACO Number of Units" / 1000000;
 
                     Validate(Quantity, NewQuantity);
                     Validate("ACO Area Profile");
@@ -656,6 +656,37 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                             Rec.Validate("ACO Profile Code", CopyStr(Rec."ACO Profile Customer PK", 1, MaxStrLen(Rec."ACO Profile Code")));
                     end;
                 end;
+            end;
+        }
+
+        field(50072; "ACO Pretreatment"; Code[10])
+        {
+            Caption = ' Pretreatment';
+            TableRelation = "ACO Pretreatment";
+            DataClassification = CustomerContent;
+        }
+
+        field(50073; "ACO Posttreatment"; Code[20])
+        {
+            Caption = 'Posttreatment';
+            TableRelation = "ACO Posttreatment";
+            DataClassification = CustomerContent;
+        }
+
+        field(50074; "ACO Particularity"; Code[20])
+        {
+            Caption = 'Particularity';
+            TableRelation = "ACO Particularity";
+            DataClassification = CustomerContent;
+        }
+        field(50075; "ACO Profile Length"; Decimal)
+        {
+            Caption = 'Length [mm] Profile';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * Rec."ACO Profile Length" / 1000000);
             end;
         }
     }
