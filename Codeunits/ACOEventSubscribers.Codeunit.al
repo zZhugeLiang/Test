@@ -264,7 +264,6 @@ codeunit 50000 "ACO Event Subscribers"
         SalesHeader: Record "Sales Header";
         ACOProfile: Record "ACO Profile";
         ACOProfileCustomer: Record "ACO Profile Customer";
-        ItemVariant: Record "Item Variant";
         ACOCategory: Record "ACO Category";
         CustomerNotLinkedToProfileErr: Label 'Customer %1 with shipping code %2 does not have a link with the profile %3.';
         ProfileInactiveErr: Label 'Profile %1 is inactive for Customer %2.';
@@ -380,16 +379,10 @@ codeunit 50000 "ACO Event Subscribers"
     var
         SalesHeader: Record "Sales Header";
         ItemVariant: Record "Item Variant";
-        ACOProfile: Record "ACO Profile";
         ACOManagement: Codeunit "ACO Management";
     begin
         if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
             Clear(ItemVariant);
-
-        // if ACOProfile.Get(Rec."ACO Profile Code") then
-        //     Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" / 1000000)
-        // else
-        //     Rec.Validate("ACO Area Profile", 0);
 
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
@@ -583,13 +576,11 @@ codeunit 50000 "ACO Event Subscribers"
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         PageTemplate: Option Item,Transfer,"Phys. Inventory",Revaluation,Consumption,Output,Capacity,"Prod. Order";
-        //ToBatchName: Code[10];
         User: Text;
         QtyInPackage: Decimal;
         NewQuantity: Decimal;
     begin
         // TODO Create Production Journal
-
         if ACOSingleInstanceMgt.GetPostProductionJournal() then begin
             ItemJnlTemplate.Reset();
             ItemJnlTemplate.SetRange("Page ID", PAGE::"Production Journal");

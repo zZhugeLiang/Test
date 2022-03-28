@@ -152,8 +152,6 @@ report 50013 "ACO Pick Instruction"
                         {
                         }
                         trigger OnAfterGetRecord()
-                        // var
-                        // ACOPackageHeader: Record "ACO Package Header";
                         begin
                             Clear(SalesLine);
                             Clear(ItemVariant);

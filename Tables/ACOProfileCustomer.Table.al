@@ -240,7 +240,7 @@ table 50009 "ACO Profile Customer"
     procedure DownloadPackagingInstructions(): Boolean
     var
         InStr: InStream;
-        PackagingInstructionBuffer: Text;
+    // PackagingInstructionBuffer: Text;
     begin
         Rec.CalcFields("Packaging Instructions File");
         if Rec."Packaging Instr. Filename" = '' then

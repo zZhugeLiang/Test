@@ -71,37 +71,37 @@ codeunit 50005 "ACO Create Prod. Order Lines"
         exit(not ErrorOccured);
     end;
 
-    local procedure CopyFromFamily(): Boolean
-    var
-        Family: Record Family;
-        FamilyLine: Record "Family Line";
-        ErrorOccured: Boolean;
-    begin
-        Family.Get(ProdOrder."Source No.");
-        FamilyLine.SetCurrentKey("Low-Level Code");
-        FamilyLine.SetRange("Family No.", ProdOrder."Source No.");
+    // local procedure CopyFromFamily(): Boolean
+    // var
+    //     Family: Record Family;
+    //     FamilyLine: Record "Family Line";
+    //     ErrorOccured: Boolean;
+    // begin
+    //     Family.Get(ProdOrder."Source No.");
+    //     FamilyLine.SetCurrentKey("Low-Level Code");
+    //     FamilyLine.SetRange("Family No.", ProdOrder."Source No.");
 
-        if FamilyLine.FindSet then
-            repeat
-                if FamilyLine."Item No." <> '' then begin
-                    InitProdOrderLine(FamilyLine."Item No.", '', ProdOrder."Location Code");
-                    OnCopyFromFamilyOnAfterInitProdOrderLine(ProdOrder, FamilyLine, ProdOrderLine);
-                    ProdOrderLine.Description := FamilyLine.Description;
-                    ProdOrderLine."Description 2" := FamilyLine."Description 2";
-                    ProdOrderLine.Validate("Unit of Measure Code", FamilyLine."Unit of Measure Code");
-                    ProdOrderLine.Validate(Quantity, FamilyLine.Quantity * ProdOrder.Quantity);
-                    ProdOrderLine."Routing No." := Family."Routing No.";
-                    ProdOrderLine."Routing Reference No." := 0;
-                    ProdOrderLine.UpdateDatetime;
-                    OnCopyFromFamilyOnBeforeInsertProdOrderLine(ProdOrderLine, FamilyLine);
-                    InsertProdOrderLine;
-                    if ProdOrderLine.HasErrorOccured then
-                        ErrorOccured := true;
-                    OnCopyFromFamilyOnAfterInsertProdOrderLine(ProdOrderLine);
-                end;
-            until FamilyLine.Next = 0;
-        exit(not ErrorOccured);
-    end;
+    //     if FamilyLine.FindSet then
+    //         repeat
+    //             if FamilyLine."Item No." <> '' then begin
+    //                 InitProdOrderLine(FamilyLine."Item No.", '', ProdOrder."Location Code");
+    //                 OnCopyFromFamilyOnAfterInitProdOrderLine(ProdOrder, FamilyLine, ProdOrderLine);
+    //                 ProdOrderLine.Description := FamilyLine.Description;
+    //                 ProdOrderLine."Description 2" := FamilyLine."Description 2";
+    //                 ProdOrderLine.Validate("Unit of Measure Code", FamilyLine."Unit of Measure Code");
+    //                 ProdOrderLine.Validate(Quantity, FamilyLine.Quantity * ProdOrder.Quantity);
+    //                 ProdOrderLine."Routing No." := Family."Routing No.";
+    //                 ProdOrderLine."Routing Reference No." := 0;
+    //                 ProdOrderLine.UpdateDatetime;
+    //                 OnCopyFromFamilyOnBeforeInsertProdOrderLine(ProdOrderLine, FamilyLine);
+    //                 InsertProdOrderLine;
+    //                 if ProdOrderLine.HasErrorOccured then
+    //                     ErrorOccured := true;
+    //                 OnCopyFromFamilyOnAfterInsertProdOrderLine(ProdOrderLine);
+    //             end;
+    //         until FamilyLine.Next = 0;
+    //     exit(not ErrorOccured);
+    // end;
 
     local procedure CopyFromSalesOrder(SalesHeader: Record "Sales Header"; SalesLine: Record "Sales Line"): Boolean
     var
@@ -570,10 +570,10 @@ codeunit 50005 "ACO Create Prod. Order Lines"
     begin
     end;
 
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCreateProdOrderLine(ProdOrder: Record "Production Order"; VariantCode: Code[10]; var ErrorOccured: Boolean)
-    begin
-    end;
+    // [IntegrationEvent(false, false)]
+    // local procedure OnAfterCreateProdOrderLine(ProdOrder: Record "Production Order"; VariantCode: Code[10]; var ErrorOccured: Boolean)
+    // begin
+    // end;
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterInitProdOrderLine(var ProdOrderLine: Record "Prod. Order Line"; ProdOrder: Record "Production Order"; SalesLine: Record "Sales Line")
@@ -605,10 +605,10 @@ codeunit 50005 "ACO Create Prod. Order Lines"
     begin
     end;
 
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCopy(var ProductionOrder: Record "Production Order"; Direction: Option Forward,Backward; VariantCode: Code[10]; LetDueDateDecrease: Boolean; var ErrorOccured: Boolean; var IsHandled: Boolean)
-    begin
-    end;
+    // [IntegrationEvent(false, false)]
+    // local procedure OnBeforeCopy(var ProductionOrder: Record "Production Order"; Direction: Option Forward,Backward; VariantCode: Code[10]; LetDueDateDecrease: Boolean; var ErrorOccured: Boolean; var IsHandled: Boolean)
+    // begin
+    // end;
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeCopyFromSalesOrder(SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; ProductionOrder: Record "Production Order"; var NextProdOrderLineNo: Integer)
@@ -640,20 +640,20 @@ codeunit 50005 "ACO Create Prod. Order Lines"
     begin
     end;
 
-    [IntegrationEvent(false, false)]
-    local procedure OnCopyFromFamilyOnAfterInitProdOrderLine(ProductionOrder: Record "Production Order"; FamilyLine: Record "Family Line"; var ProdOrderLine: Record "Prod. Order Line")
-    begin
-    end;
+    // [IntegrationEvent(false, false)]
+    // local procedure OnCopyFromFamilyOnAfterInitProdOrderLine(ProductionOrder: Record "Production Order"; FamilyLine: Record "Family Line"; var ProdOrderLine: Record "Prod. Order Line")
+    // begin
+    // end;
 
-    [IntegrationEvent(false, false)]
-    local procedure OnCopyFromFamilyOnAfterInsertProdOrderLine(var ProdOrderLine: Record "Prod. Order Line")
-    begin
-    end;
+    // [IntegrationEvent(false, false)]
+    // local procedure OnCopyFromFamilyOnAfterInsertProdOrderLine(var ProdOrderLine: Record "Prod. Order Line")
+    // begin
+    // end;
 
-    [IntegrationEvent(false, false)]
-    local procedure OnCopyFromFamilyOnBeforeInsertProdOrderLine(var ProdOrderLine: Record "Prod. Order Line"; FamilyLine: Record "Family Line")
-    begin
-    end;
+    // [IntegrationEvent(false, false)]
+    // local procedure OnCopyFromFamilyOnBeforeInsertProdOrderLine(var ProdOrderLine: Record "Prod. Order Line"; FamilyLine: Record "Family Line")
+    // begin
+    // end;
 
     [IntegrationEvent(false, false)]
     local procedure OnCopyFromSalesOrderOnBeforeSalesPlanLineInsert(var SalesLine: Record "Sales Line"; SalesPlanningLine: Record "Sales Planning Line")
@@ -700,10 +700,10 @@ codeunit 50005 "ACO Create Prod. Order Lines"
     begin
     end;
 
-    [IntegrationEvent(false, false)]
-    local procedure OnCopyOnProdOrderSourceTypeEnumExtension(var ProductionOrder: Record "Production Order")
-    begin
-    end;
+    // [IntegrationEvent(false, false)]
+    // local procedure OnCopyOnProdOrderSourceTypeEnumExtension(var ProductionOrder: Record "Production Order")
+    // begin
+    // end;
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeIsReplSystemProdOrder(SalesLine: Record "Sales Line"; var ReplanSystemProdOrder: Boolean; var IsHandled: Boolean);

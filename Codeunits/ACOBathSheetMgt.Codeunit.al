@@ -200,7 +200,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ItemVariant: Record "Item Variant";
         MinCurrentDensity: Decimal;
         MaxCurrentDensity: Decimal;
-        NumberofUnitsLtQuantityToBathSheetErr: Label 'Remaining Quantity cannot be less than Quantity to Bath Sheet.';
     begin
         SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLine."ACO Source No.");
         SalesLine.Get(SalesLine."Document Type"::Order, ProductionOrderLine."ACO Source No.", ProductionOrderLine."ACO Source Line No.");

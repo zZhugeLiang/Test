@@ -256,11 +256,8 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
 
     trigger OnOpenPage()
     var
-        ACOProfileCustomer: Record "ACO Profile Customer";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
-        // Clear(ACOProfileCustomer);
-        // ACOSingleInstanceMgt.ClearACOProfileCustomer();
         ACOSingleInstanceMgt.SetACOProfileCustomerPK('', '', '');
     end;
 
@@ -271,10 +268,8 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
 
     trigger OnClosePage()
     var
-        ACOProfileCustomer: Record "ACO Profile Customer";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
     begin
-        // Clear(ACOProfileCustomer);
         ACOSingleInstanceMgt.SetACOProfileCustomerPK('', '', '');
     end;
 
