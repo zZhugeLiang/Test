@@ -2293,11 +2293,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Category - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 2336647438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Charges per Bath Profile</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Charges per Bath Profile - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 926410393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Circumference [mm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2343,11 +2338,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Height Level - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field High End - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3705274901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holders</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2357,11 +2347,6 @@
           <source>Last DateTime Modified</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Last DateTime Modified - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3007047366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Not Measurable</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Not Measurable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3974017570 - Field 1902966350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Instr. Filename</source>
