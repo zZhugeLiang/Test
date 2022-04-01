@@ -559,13 +559,13 @@ report 50015 "ACO Std. Sales - Credit Memo"
                         column(ItemNo_Line_Lbl; FieldCaption("No."))
                         {
                         }
-                        column(CrossReferenceNo_Line; "Cross-Reference No.")
+                        column(CrossReferenceNo_Line; "Item Reference No.")
                         {
                             ObsoleteState = Pending;
                             ObsoleteReason = 'Replaced by Item Reference No.';
                             ObsoleteTag = '17.0';
                         }
-                        column(CrossReferenceNo_Line_Lbl; FieldCaption("Cross-Reference No."))
+                        column(CrossReferenceNo_Line_Lbl; FieldCaption("Item Reference No."))
                         {
                             ObsoleteState = Pending;
                             ObsoleteReason = 'Replaced by Item Reference No.';

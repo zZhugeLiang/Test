@@ -2268,6 +2268,66 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Price Scheme Price - Field Unit Price - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1619472047 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pricing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 3877927551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Category Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Category Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 2275574084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Color Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 2725149570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Price Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Customer Price Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 1370088844 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layer Thickness Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Layer Thickness Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 3091447642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Particularity Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Particularity Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 3258802091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posttreatment Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Posttreatment Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 2463427978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pretreatment Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Pretreatment Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 1920046521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Unit of Measure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1619472047 - Field 2937233469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Pricing - Field Unit Price - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3974017570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3917,6 +3977,66 @@
           <source>Prices</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Price Schemes - Action PriceSchemePrices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pricing List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 3877927551 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Category Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Category Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 2275574084 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Color Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Color Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 2725149570 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer Price Group field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Customer Price Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ending Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 1370088844 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Layer Thickness Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Layer Thickness Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 3091447642 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Particularity Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Particularity Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 3258802091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posttreatment Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Posttreatment Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 2463427978 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Pretreatment Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Pretreatment Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Starting Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Starting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 1920046521 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Unit of Measure field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Unit of Measure - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4152610489 - Control 2937233469 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Unit Price field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Pricing List - Control Unit Price - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3325455334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profile Card</source>

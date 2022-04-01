@@ -109,11 +109,14 @@ codeunit 50005 "ACO Create Prod. Order Lines"
         Location: Record Location;
         ACOColorGroup: Record "ACO Color Group";
         ACOColor: Record "ACO Color";
+        Item: Record Item;
+        ACORoutingSelection: Record "ACO Routing Selection";
         LeadTimeMgt: Codeunit "Lead-Time Management";
         ItemTrackingMgt: Codeunit "Item Tracking Management";
         SalesLineReserve: Codeunit "Sales Line-Reserve";
         ErrorOccured: Boolean;
         QuantityBase: Decimal;
+        RoutingNo: Code[20];
     begin
         OnBeforeCopyFromSalesOrder(SalesHeader, SalesLine, ProdOrder, NextProdOrderLineNo);
 
@@ -180,6 +183,18 @@ codeunit 50005 "ACO Create Prod. Order Lines"
                 end;
                 CopyDimFromSalesLine(SalesLine, ProdOrderLine);
                 OnCopyFromSalesOrderOnBeforeProdOrderLineModify(ProdOrderLine, SalesLine, SalesPlanLine, NextProdOrderLineNo);
+                //ProdOrderLine."Routing No." := '';
+                if Item.Get(ProdOrderLine."Item No.") then
+                    RoutingNo := Item."Routing No.";
+
+                if RoutingNo = '' then
+                    if ACORoutingSelection.Get(SalesLine."ACO Pretreatment", SalesLine."ACO Layer Thickness", SalesLine."ACO Color", SalesLine."ACO Posttreatment", SalesLine."ACO Particularity") then
+                        RoutingNo := ACORoutingSelection."Routing No.";
+
+                if RoutingNo <> '' then
+                    ProdOrderLine.Validate("Routing No.", RoutingNo);
+
+                ProdOrderLine.TestField("Routing No.");
                 ProdOrderLine.Modify();
             until (SalesPlanLine.Next = 0);
         exit(not ErrorOccured);

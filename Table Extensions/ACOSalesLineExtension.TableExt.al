@@ -7,6 +7,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Layer Thickness';
             TableRelation = "ACO Layer Thickness";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.GetPricingPrice();
+            end;
         }
 
         field(50001; "ACO Minimum Current Density PT"; Decimal)
@@ -32,6 +37,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Color';
             TableRelation = "ACO Color";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.GetPricingPrice();
+            end;
         }
 
         field(50011; "ACO Min. Current Density Color"; Decimal)
@@ -128,6 +138,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Profile Category';
             TableRelation = "ACO Category";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.GetPricingPrice();
+            end;
         }
 
         field(50019; "ACO Profile Circumference"; Decimal)
@@ -664,6 +679,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = ' Pretreatment';
             TableRelation = "ACO Pretreatment";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.GetPricingPrice();
+            end;
         }
 
         field(50073; "ACO Posttreatment"; Code[20])
@@ -671,6 +691,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Posttreatment';
             TableRelation = "ACO Posttreatment";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.GetPricingPrice();
+            end;
         }
 
         field(50074; "ACO Particularity"; Code[20])
@@ -678,6 +703,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             Caption = 'Particularity';
             TableRelation = "ACO Particularity";
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Rec.GetPricingPrice();
+            end;
         }
         field(50075; "ACO Profile Length"; Decimal)
         {
@@ -697,12 +727,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
     procedure ACOCalculateUnitPrice()
     var
         ItemVariant: Record "Item Variant";
-        ACOProfile: Record "ACO Profile";
         SalesHeader: Record "Sales Header";
-        ACOProfileCustomer: Record "ACO Profile Customer";
         ACOPriceScheme: Record "ACO Price Scheme";
         ACOPriceSchemePrice: Record "ACO Price Scheme Price";
         Item: Record Item;
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         ACOCategory: Record "ACO Category";
         ACOAppSetup: Record "ACO App Setup";
         NewUnitPrice: Decimal;
@@ -717,13 +746,10 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         SalesHeader.Get("Document Type", "Document No.");
 
-        if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then
-            exit;
-
-        if not ACOPriceScheme.Get(ACOProfileCustomer."Price Scheme Code") then
-            exit;
-
         if not Item.Get("No.") then
+            exit;
+
+        if not ACOPriceScheme.Get(Item."ACO Price Scheme Code") then
             exit;
 
         if not ACOCategory.Get(Item."ACO Category Code") then
@@ -731,11 +757,9 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
         BaseUnitPrice := "Unit Price";
         NewUnitPrice := BaseUnitPrice;
-        //BaseUnitPrice := Item."Unit Price";
 
         if ACOCategory."Add Short Length Charge" then begin
-            if ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                RangedQty := ItemVariant."ACO Number of Meters" * 1000;
+            RangedQty := Rec."ACO Profile Length";
 
             ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
             ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Length);
@@ -747,8 +771,8 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         end;
 
         if ACOCategory."Add High Weight Charge" then
-            if ACOProfile.Get("ACO Profile Code") then begin
-                RangedQty := ACOProfile."Weight per meter";
+            if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
+                RangedQty := ItemUnitofMeasure."ACO Weight per meter";
                 ACOPriceSchemePrice.SetRange("Price Scheme Code", ACOPriceScheme.Code);
                 ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Weight);
                 ACOPriceSchemePrice.SetFilter("Minimum Quantity", '>=%1', RangedQty);
@@ -768,27 +792,52 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             end;
         end;
 
-        if ACOCategory."Calculate Minimum Circumf." or ACOCategory."Add Height Level Charge" then
-            if ACOProfile.Get("ACO Profile Code") then begin
-                ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);
-                if ACOPriceSchemePrice.FindFirst() then
-                    if ACOProfile."Circumference" < ACOPriceSchemePrice."Minimum Quantity" then begin
-                        if ACOCategory."Calculate Minimum Circumf." and ACOCategory."Add Height Level Charge" then
-                            Factor := (ACOPriceSchemePrice."Minimum Quantity" + (2 * ACOProfile."Height Level")) / ACOProfile."Circumference"
+        if ACOCategory."Calculate Minimum Circumf." or ACOCategory."Add Height Level Charge" then begin
+            ACOPriceSchemePrice.SetRange(Type, ACOPriceSchemePrice.Type::Circumference);
+            if ACOPriceSchemePrice.FindFirst() then
+                if (Rec."ACO Profile Circumference" < ACOPriceSchemePrice."Minimum Quantity") and (Rec."ACO Profile Circumference" <> 0) then begin
+                    if ACOCategory."Calculate Minimum Circumf." and ACOCategory."Add Height Level Charge" then
+                        Factor := (ACOPriceSchemePrice."Minimum Quantity" + (2 * Rec."ACO Height Level Profile")) / Rec."ACO Profile Circumference"
+                    else
+                        if ACOCategory."Add Height Level Charge" then
+                            Factor := (2 * Rec."ACO Height Level Profile" + Rec."ACO Profile Circumference") / Rec."ACO Profile Circumference"
                         else
-                            if ACOCategory."Add Height Level Charge" then
-                                Factor := (2 * ACOProfile."Height Level" + ACOProfile."Circumference") / ACOProfile."Circumference"
-                            else
-                                if ACOCategory."Calculate Minimum Circumf." then
-                                    Factor := ACOPriceSchemePrice."Minimum Quantity" / ACOProfile."Circumference";
+                            if ACOCategory."Calculate Minimum Circumf." then
+                                Factor := ACOPriceSchemePrice."Minimum Quantity" / Rec."ACO Profile Circumference";
 
-                        Factor := ACOPriceSchemePrice."Minimum Quantity" / ACOProfile."Circumference";
+                    Factor := ACOPriceSchemePrice."Minimum Quantity" / Rec."ACO Profile Circumference";
 
-                        NewUnitPrice := NewUnitPrice * Factor;
-                    end;
-            end;
+                    NewUnitPrice := NewUnitPrice * Factor;
+                end;
 
-        Validate("Unit Price", NewUnitPrice);
+            Validate("Unit Price", NewUnitPrice);
+        end;
+    end;
+
+    procedure GetPricingPrice()
+    var
+        ACOPricing: Record "ACO Pricing";
+        NewUnitPrice: Decimal;
+    begin
+        ACOPricing.SetRange("Customer Price Group", Rec."Customer Price Group");
+        ACOPricing.SetRange("Pretreatment Code", Rec."ACO Pretreatment");
+        ACOPricing.SetRange("Layer Thickness Code", Rec."ACO Layer Thickness");
+        ACOPricing.SetRange("Color Code", Rec."ACO Color");
+        ACOPricing.SetRange("Posttreatment Code", Rec."ACO Posttreatment");
+        ACOPricing.SetRange("Particularity Code", Rec."ACO Particularity");
+        ACOPricing.SetRange("Category Code", Rec."ACO Profile Category");
+        ACOPricing.SetRange("Unit of Measure", Rec."Unit of Measure Code");
+        ACOPricing.SetFilter("Starting Date", '<%1', Today());
+        ACOPricing.SetFilter("Ending Date", '>%1', Today());
+        if ACOPricing.FindFirst() then
+            NewUnitPrice := ACOPricing."Unit Price"
+        else begin
+            ACOPricing.SetRange("Ending Date", 0D);
+            if ACOPricing.FindFirst() then
+                NewUnitPrice := ACOPricing."Unit Price";
+        end;
+
+        Rec.Validate("Unit Price", NewUnitPrice);
     end;
 
     procedure ACOCopyCustomFieldsFromSalesInvoiceLines(SalesInvoiceLine: Record "Sales Invoice Line");

@@ -63,6 +63,7 @@ codeunit 50000 "ACO Event Subscribers"
             if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
                 Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
                 Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
+                Rec.GetPricingPrice();
             end;
     end;
 
@@ -120,6 +121,8 @@ codeunit 50000 "ACO Event Subscribers"
                     Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
                     Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
                 end;
+
+                Rec."ACO Profile Category" := Item."ACO Category Code";
 
                 Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * Rec."ACO Profile Length" / 1000000);
 
@@ -288,7 +291,7 @@ codeunit 50000 "ACO Event Subscribers"
                 Error(ProfileInactiveErr, ACOProfile.Code, SalesHeader."Sell-to Customer No.");
 
             Rec."ACO Profile Description" := ACOProfile.Description;
-            Rec."ACO Profile Category" := ACOProfile.Category;
+            // Rec."ACO Profile Category" := ACOProfile.Category;
             Rec."ACO Correction Factor Profile" := ACOProfile."Correction Factor";
             Rec."ACO Height Level Profile" := ACOProfile."Height Level";
 
@@ -325,13 +328,18 @@ codeunit 50000 "ACO Event Subscribers"
         Rec.Quantity := Round(Rec.Quantity, 0.001);
         Rec.PlanPriceCalcByField(Rec.FieldNo(Quantity));
         if Rec."ACO Manual Unit Price" then
-            Rec.ACOSetACOUnitPrice(Rec."Unit Price");
+            Rec.ACOSetACOUnitPrice(Rec."Unit Price")
+        else
+            Rec."Unit Price" := 0;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Quantity', false, false)]
     local procedure SalesLine_OnAfterValidate_Quantity(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec.ClearFieldCausedPriceCalculation();
+
+        if Rec."Unit Price" = 0 then
+            Rec.GetPricingPrice();
 
         if Rec."ACO Manual Unit Price" then begin
             Rec.Validate("Unit Price", Rec.ACOGetACOUnitPrice());
@@ -391,7 +399,23 @@ codeunit 50000 "ACO Event Subscribers"
         SalesLine."Qty. Shipped Not Invoiced" := Round(SalesLine."Qty. Shipped Not Invoiced", 0.001);
         SalesLine."Qty. Shipped Not Invd. (Base)" := Round(SalesLine."Qty. Shipped Not Invd. (Base)", 0.001);
     end;
+    // /////
+    // [EventSubscriber(ObjectType::Table, Database::"Prod. Order Line", 'OnAfterInsertEvent', '', false, false)]
+    // local procedure ACOBathSheetLine_OnAfterInsert(var Rec: Record "Prod. Order Line"; RunTrigger: Boolean)
+    // var
+    //     Done: Integer;
+    // begin
+    //     Done := 1;
+    // end;
 
+    // [EventSubscriber(ObjectType::Table, Database::"Prod. Order Line", 'OnAfterModifyEvent', '', false, false)]
+    // local procedure ACOBathSheetLine_OnAfterModify(var Rec: Record "Prod. Order Line"; var xRec: Record "Prod. Order Line"; RunTrigger: Boolean)
+    // var
+    //     Done: Integer;
+    // begin
+    //     Done := 2;
+    // end;
+    // ////
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
     var
