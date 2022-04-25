@@ -26,7 +26,7 @@ page 50045 "ACO Linked Holders"
                 {
                     ApplicationArea = All;
                 }
-                field("Profile Code"; "Profile Code")
+                field("Profile Code"; "Item No.")
                 {
                     ApplicationArea = All;
                 }

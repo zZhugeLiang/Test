@@ -114,7 +114,7 @@ page 50010 "ACO Profile Customers"
                 Caption = 'Linked Holders';
                 Image = Category;
                 RunObject = Page "ACO Linked Holders";
-                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                RunPageLink = "Customer No." = field("Customer No."), "Item No." = field("Profile Code");
                 ApplicationArea = All;
                 Visible = false;
             }

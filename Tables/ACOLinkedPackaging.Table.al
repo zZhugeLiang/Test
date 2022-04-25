@@ -7,10 +7,10 @@ table 50026 "ACO Linked Packaging"
 
     fields
     {
-        field(1; "Profile Code"; Code[30])
+        field(1; "Item No."; Code[20])
         {
-            Caption = 'Profile Code';
-            TableRelation = "ACO Profile";
+            Caption = 'Item No.';
+            TableRelation = "Item";
             DataClassification = CustomerContent;
         }
         field(2; "Customer No."; Code[20])
@@ -183,7 +183,7 @@ table 50026 "ACO Linked Packaging"
 
     keys
     {
-        key(PK; "Profile Code", "Customer No.", "Code", Length)
+        key(PK; "Item No.", "Customer No.", "Code", Length)
         {
             Clustered = true;
         }

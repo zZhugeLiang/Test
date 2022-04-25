@@ -280,7 +280,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
     local procedure ACOSetCheckboxes()
     var
         ACOProfile: Record "ACO Profile";
+        DocumentAttachment: Record "Document Attachment";
+    // MediaFile: Record "Media";
     begin
+        // TODO Attachments
         if ACOProfile.Get(Rec."ACO Profile Code") then begin
             ACOProfile.CalcFields("Clamping Method File", "Packaging Instructions File");
 
@@ -291,4 +294,25 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             ACOHasPackagingInstructions := false;
         end;
     end;
+
+    // local procedure ACOFileHasValue(var DocumentAttachment: Record "Document Attachment"; ShowFileDialog: Boolean): Boolean
+    // var
+    //     TempBlob: Codeunit "Temp Blob";
+    //     FileManagement: Codeunit "File Management";
+    //     DocumentStream: OutStream;
+    //     FullFileName: Text;
+    // begin
+    //     if DocumentAttachment.ID = 0 then
+    //         exit;
+    //     // Ensure document has value in DB
+    //     if not DocumentAttachment."Document Reference ID".HasValue then
+    //         exit;
+
+    //     //OnBeforeExportAttachment(Rec);
+    //     FullFileName := DocumentAttachment."File Name" + '.' + DocumentAttachment."File Extension";
+    //     TempBlob.CreateOutStream(DocumentStream);
+    //     DocumentAttachment."Document Reference ID".ExportStream(DocumentStream);
+    //     DocumentStream.
+    //     //exit(FileManagement.BLOBExport(TempBlob, FullFileName, ShowFileDialog));
+    // end;
 }

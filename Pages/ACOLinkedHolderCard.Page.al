@@ -23,7 +23,7 @@ page 50046 "ACO Linked Holder Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Profile Code"; "Profile Code")
+                field("Profile Code"; "Item No.")
                 {
                     ApplicationArea = All;
                 }
@@ -79,7 +79,7 @@ page 50046 "ACO Linked Holder Card"
                 Caption = 'Linked Holders Types';
                 Image = Bin;
                 RunObject = Page "ACO Linked Holder Types";
-                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code"), Length = field(Length);
+                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Item No." = field("Item No."), Length = field(Length);
                 ApplicationArea = All;
             }
             action("ACO Linked Support Holders")
@@ -87,7 +87,7 @@ page 50046 "ACO Linked Holder Card"
                 Caption = 'Linked Support Holders';
                 Image = CreateMovement;
                 RunObject = Page "ACO Linked Support Holders";
-                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code"), Length = field(Length);
+                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Item No." = field("Item No."), Length = field(Length);
                 ApplicationArea = All;
             }
             action("ACO Linked Distance Holders")
@@ -95,7 +95,7 @@ page 50046 "ACO Linked Holder Card"
                 Caption = 'Linked Distance Holders';
                 Image = CreateBins;
                 RunObject = Page "ACO Linked Distance Holders";
-                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code"), Length = field(Length);
+                RunPageLink = "Holder Code" = field("Code"), "Customer No." = field("Customer No."), "Item No." = field("Item No."), Length = field(Length);
                 ApplicationArea = All;
             }
         }

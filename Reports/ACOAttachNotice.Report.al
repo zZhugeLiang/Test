@@ -506,7 +506,7 @@ report 50005 "ACO Attach Notice"
 
         ACOLinkedHolder.SetRange(Code, "Sales Line"."ACO Linked Holder");
         ACOLinkedHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
-        ACOLinkedHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+        ACOLinkedHolder.SetRange("Item No.", ACOProfileCustomer."Profile Code");
         if ItemVariant."ACO Number of Meters" <> 0 then
             ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
         if ACOLinkedHolder.FindFirst() then begin
@@ -515,7 +515,7 @@ report 50005 "ACO Attach Notice"
 
             ACOLinkedHolderType.SetRange("Holder Code", ACOLinkedHolder.Code);
             ACOLinkedHolderType.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
-            ACOLinkedHolderType.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+            ACOLinkedHolderType.SetRange("Item No.", ACOProfileCustomer."Profile Code");
             if ItemVariant."ACO Number of Meters" <> 0 then
                 ACOLinkedHolderType.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
@@ -537,7 +537,7 @@ report 50005 "ACO Attach Notice"
             Counter := 0;
             ACOLinkedDistanceHolder.SetRange("Holder Code", ACOLinkedHolder.Code);
             ACOLinkedDistanceHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
-            ACOLinkedDistanceHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+            ACOLinkedDistanceHolder.SetRange("Item No.", ACOProfileCustomer."Profile Code");
             if ItemVariant."ACO Number of Meters" <> 0 then
                 ACOLinkedDistanceHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 
@@ -559,7 +559,7 @@ report 50005 "ACO Attach Notice"
             Counter := 0;
             ACOLinkedSupportHolder.SetRange("Holder Code", ACOLinkedHolder.Code);
             ACOLinkedSupportHolder.SetRange("Customer No.", ACOProfileCustomer."Customer No.");
-            ACOLinkedSupportHolder.SetRange("Profile Code", ACOProfileCustomer."Profile Code");
+            ACOLinkedSupportHolder.SetRange("Item No.", ACOProfileCustomer."Profile Code");
             if ItemVariant."ACO Number of Meters" <> 0 then
                 ACOLinkedSupportHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
 

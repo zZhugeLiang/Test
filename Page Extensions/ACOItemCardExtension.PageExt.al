@@ -177,6 +177,24 @@ pageextension 50001 "ACO Item Card Extension" extends "Item Card"
                 ApplicationArea = All;
                 ToolTip = 'Executes the Categories action.';
             }
+
+            action("ACO Linked Holders")
+            {
+                Caption = 'Linked Holders';
+                Image = Category;
+                RunObject = Page "ACO Linked Holders";
+                RunPageLink = "Item No." = field("No.");
+                ApplicationArea = All;
+            }
+
+            action("ACO Linked Packaging List")
+            {
+                Caption = 'Linked Packaging List';
+                Image = CoupledItem;
+                RunObject = Page "ACO Linked Packaging List";
+                RunPageLink = "Item No." = field("No.");
+                ApplicationArea = All;
+            }
         }
     }
 }

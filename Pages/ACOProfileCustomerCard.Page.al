@@ -175,7 +175,7 @@ page 50011 "ACO Profile Customer Card"
                 Caption = 'Linked Holders';
                 Image = Category;
                 RunObject = Page "ACO Linked Holders";
-                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                RunPageLink = "Customer No." = field("Customer No."), "Item No." = field("Profile Code");
                 ApplicationArea = All;
             }
 
@@ -192,7 +192,7 @@ page 50011 "ACO Profile Customer Card"
                 Caption = 'Linked Packaging List';
                 Image = CoupledItem;
                 RunObject = Page "ACO Linked Packaging List";
-                RunPageLink = "Customer No." = field("Customer No."), "Profile Code" = field("Profile Code");
+                RunPageLink = "Customer No." = field("Customer No."), "Item No." = field("Profile Code");
                 ApplicationArea = All;
             }
         }

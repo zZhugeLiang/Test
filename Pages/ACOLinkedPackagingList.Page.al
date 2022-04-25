@@ -15,6 +15,10 @@ page 50034 "ACO Linked Packaging List"
                 {
                     ApplicationArea = All;
                 }
+                field("Customer No."; "Customer No.")
+                {
+                    ApplicationArea = All;
+                }
                 field("Length"; "Length")
                 {
                     ApplicationArea = All;

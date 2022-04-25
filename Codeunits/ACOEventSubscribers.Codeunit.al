@@ -89,6 +89,7 @@ codeunit 50000 "ACO Event Subscribers"
         ACOPretreatment: Record "ACO Pretreatment";
         ItemUnitofMeasure: Record "Item Unit of Measure";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+        ACOManagement: Codeunit "ACO Management";
     begin
         if Rec.IsTemporary() then
             exit;
@@ -123,12 +124,13 @@ codeunit 50000 "ACO Event Subscribers"
                 end;
 
                 Rec."ACO Profile Category" := Item."ACO Category Code";
-
                 Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * Rec."ACO Profile Length" / 1000000);
-
                 Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness Code");
+                Rec."ACO Charges per Bath Profile" := Item."ACO Charges per Bath Profile";
 
                 SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+
+                ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
             end;
 
         Rec.Validate("ACO Color", Item."ACO Color");
@@ -374,20 +376,20 @@ codeunit 50000 "ACO Event Subscribers"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Variant Code', false, false)]
-    local procedure SalesLine_OnAfterValidate_VariantCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
-    var
-        SalesHeader: Record "Sales Header";
-        ItemVariant: Record "Item Variant";
-        ACOManagement: Codeunit "ACO Management";
-    begin
-        if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-            Clear(ItemVariant);
+    // [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Variant Code', false, false)]
+    // local procedure SalesLine_OnAfterValidate_VariantCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    // var
+    //     SalesHeader: Record "Sales Header";
+    //     ItemVariant: Record "Item Variant";
+    //     ACOManagement: Codeunit "ACO Management";
+    // begin
+    //     if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
+    //         Clear(ItemVariant);
 
-        SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+    //     SalesHeader.Get(Rec."Document Type", Rec."Document No.");
 
-        ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
-    end;
+    //     ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterInitOutstandingQty', '', false, false)]
     local procedure SalesLine_OnAfterInitOutstandingQty(var SalesLine: Record "Sales Line");

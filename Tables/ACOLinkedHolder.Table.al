@@ -41,10 +41,10 @@ table 50021 "ACO Linked Holder"
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[30])
+        field(3; "Item No."; Code[20])
         {
-            Caption = 'Profile Code';
-            TableRelation = "ACO Profile";
+            Caption = 'Item No.';
+            TableRelation = "Item";
             DataClassification = CustomerContent;
         }
 
@@ -126,7 +126,7 @@ table 50021 "ACO Linked Holder"
 
     keys
     {
-        key(PK; "Code", "Customer No.", "Profile Code", Length)
+        key(PK; "Code", "Customer No.", "Item No.", Length)
         {
             Clustered = true;
         }

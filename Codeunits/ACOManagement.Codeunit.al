@@ -1,45 +1,44 @@
 codeunit 50003 "ACO Management"
 {
 
-    procedure CheckHolderAndPackaging(var Salesline: Record "Sales Line"; CustomerNo: Code[20])
+    procedure CheckHolderAndPackaging(var SalesLine: Record "Sales Line"; CustomerNo: Code[20])
     var
         SalesHeader: Record "Sales Header";
         ACOLinkedHolder: Record "ACO Linked Holder";
         ACOLinkedPackaging: Record "ACO Linked Packaging";
         Item: Record Item;
         ACOColor: Record "ACO Color";
-        ItemVariant: Record "Item Variant";
     begin
-        if not ItemVariant.Get(Salesline."No.", Salesline."Variant Code") then
-            Clear(ItemVariant);
+        if SalesLine.Type <> SalesLine.Type::Item then
+            exit;
 
-        ACOLinkedHolder.SetRange("Profile Code", Salesline."ACO Profile Code");
+        ACOLinkedHolder.SetRange("Item No.", SalesLine."No.");
         ACOLinkedHolder.SetRange("Customer No.", CustomerNo);
 
-        if Item.Get(Salesline."No.") then
+        if Item.Get(SalesLine."No.") then
             if ACOColor.Get(Item."ACO Color") then
                 ACOLinkedHolder.SetRange("Color Group Code", ACOColor."Color Group");
 
-        if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOLinkedHolder.SetRange(Length, ItemVariant."ACO Number of Meters" * 1000);
+        if SalesLine."ACO Profile Length" <> 0 then
+            ACOLinkedHolder.SetRange(Length, SalesLine."ACO Profile Length");
 
         if ACOLinkedHolder.FindFirst() then begin
-            SalesHeader.Get(Salesline."Document Type", SalesLine."Document No.");
-            if CheckStatusLinkedHolders(ACOLinkedHolder.Code, SalesHeader."Sell-to Customer No.", Salesline."ACO Profile Code", false) then
-                Salesline."ACO Linked Holder" := ACOLinkedHolder.Code;
+            SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
+            if CheckStatusLinkedHolders(ACOLinkedHolder.Code, SalesHeader."Sell-to Customer No.", SalesLine."ACO Profile Code", false) then
+                SalesLine."ACO Linked Holder" := ACOLinkedHolder.Code;
         end else
-            Salesline."ACO Linked Holder" := '';
+            SalesLine."ACO Linked Holder" := '';
 
-        ACOLinkedPackaging.SetRange("Profile Code", Salesline."ACO Profile Code");
+        ACOLinkedPackaging.SetRange("Item No.", SalesLine."No.");
         ACOLinkedPackaging.SetRange("Customer No.", CustomerNo);
-        if ItemVariant."ACO Number of Meters" <> 0 then
-            ACOLinkedPackaging.SetRange("Length", ItemVariant."ACO Number of Meters" * 1000);
+        if SalesLine."ACO Profile Length" <> 0 then
+            ACOLinkedPackaging.SetRange("Length", SalesLine."ACO Profile Length");
 
         if ACOLinkedPackaging.Count() = 1 then begin
             ACOLinkedPackaging.FindFirst();
-            Salesline."ACO Packaging" := ACOLinkedPackaging.Code;
+            SalesLine."ACO Packaging" := ACOLinkedPackaging.Code;
         end else
-            Salesline."ACO Packaging" := '';
+            SalesLine."ACO Packaging" := '';
     end;
 
     procedure CheckStatusLinkedHolders(HolderCode: Code[30]; CustomerNo: Code[20]; ProfileCode: Code[30]; ShowError: Boolean): Boolean
@@ -52,7 +51,7 @@ codeunit 50003 "ACO Management"
     begin
         ACOLinkedHolderType.SetRange("Holder Code", HolderCode);
         ACOLinkedHolderType.SetRange("Customer No.", CustomerNo);
-        ACOLinkedHolderType.SetRange("Profile Code", ProfileCode);
+        ACOLinkedHolderType.SetRange("Item No.", ProfileCode);
         ACOLinkedHolderType.SetRange(Status, ACOLinkedHolderType.Status::Inactive);
         if not ACOLinkedHolderType.IsEmpty() then begin
             if ShowError then
@@ -64,7 +63,7 @@ codeunit 50003 "ACO Management"
 
         ACOLinkedSupportHolder.SetRange("Holder Code", HolderCode);
         ACOLinkedSupportHolder.SetRange("Customer No.", CustomerNo);
-        ACOLinkedSupportHolder.SetRange("Profile Code", ProfileCode);
+        ACOLinkedSupportHolder.SetRange("Item No.", ProfileCode);
         ACOLinkedSupportHolder.SetRange(Status, ACOLinkedSupportHolder.Status::Inactive);
         if not ACOLinkedSupportHolder.IsEmpty() then begin
             if ShowError then
@@ -76,7 +75,7 @@ codeunit 50003 "ACO Management"
 
         ACOLinkedDistanceHolder.SetRange("Holder Code", HolderCode);
         ACOLinkedDistanceHolder.SetRange("Customer No.", CustomerNo);
-        ACOLinkedDistanceHolder.SetRange("Profile Code", ProfileCode);
+        ACOLinkedDistanceHolder.SetRange("Item No.", ProfileCode);
         ACOLinkedDistanceHolder.SetRange(Status, ACOLinkedDistanceHolder.Status::Inactive);
         if not ACOLinkedDistanceHolder.IsEmpty() then begin
             if ShowError then

@@ -19,10 +19,10 @@ table 50034 "ACO Linked Distance Holder"
             DataClassification = CustomerContent;
         }
 
-        field(3; "Profile Code"; Code[30])
+        field(3; "Item No."; Code[30])
         {
-            Caption = 'Profile Code';
-            TableRelation = "ACO Profile";
+            Caption = 'Item No.';
+            TableRelation = "Item";
             DataClassification = CustomerContent;
         }
 
@@ -84,7 +84,7 @@ table 50034 "ACO Linked Distance Holder"
 
     keys
     {
-        key(PK; "Holder Code", "Customer No.", "Profile Code", Length, "Distance Holder Code", "Line No.")
+        key(PK; "Holder Code", "Customer No.", "Item No.", Length, "Distance Holder Code", "Line No.")
         {
             Clustered = true;
         }
