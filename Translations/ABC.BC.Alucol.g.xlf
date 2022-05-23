@@ -8773,6 +8773,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Customer Item No. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2283624698 - Control 2307443177 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>Specifies the value of the Customer Item Reference field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Customer Item Reference - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2283624698 - Control 1505468035 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8798,6 +8803,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Number of Units - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2283624698 - Control 925859770 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>Specifies the value of the Particularity field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Particularity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2283624698 - Control 2078923811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>Specifies the value of the Posttreatment field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Posttreatment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2283624698 - Control 545940338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>Specifies the value of the  Pretreatment field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Pretreatment - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2283624698 - Control 2463751251 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8817,6 +8837,11 @@
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Profile Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2283624698 - Control 3166929750 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>Specifies the value of the Length [mm] Profile field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Inv Subf Ext - Control ACO Profile Length - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2283624698 - Control 873564940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
           <source> </source>
@@ -8888,6 +8913,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Customer Item No. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2482987348 - Control 2307443177 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Customer Item Reference field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Customer Item Reference - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2482987348 - Control 568115138 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8908,6 +8938,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Number of Units - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2482987348 - Control 925859770 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Particularity field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Particularity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2482987348 - Control 2078923811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Posttreatment field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Posttreatment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2482987348 - Control 545940338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the  Pretreatment field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Pretreatment - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2482987348 - Control 2463751251 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8927,6 +8972,11 @@
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Profile Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2482987348 - Control 3166929750 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Length [mm] Profile field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Posted Sales Shpt Subf Ext - Control ACO Profile Length - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2482987348 - Control 873564940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
           <source> </source>
@@ -10358,6 +10408,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Customer Item Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Customer Item Reference - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 568115138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Kundentour HUECK</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10378,6 +10433,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Number of Units - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 925859770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Particularity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Particularity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 2078923811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Posttreatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Posttreatment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source> Pretreatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Pretreatment - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 2463751251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Circumference [mm] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10397,6 +10467,11 @@
           <source>Profile Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Profile Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 3166929750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Length [mm] Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Profile Length - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 873564940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Project Color Code</source>
@@ -10442,6 +10517,11 @@
           <source>Type of Clamp Code Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Type of Clamp Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field Customer Item Ref. Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3705809330 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2903552224">
           <source>Area</source>
@@ -10873,6 +10953,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Upper Accuracy - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field Customer Item Ref. Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Area</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10898,6 +10983,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Customer Item Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Customer Item Reference - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 568115138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Kundentour HUECK</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10918,6 +11008,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Number of Units - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 925859770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Particularity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Particularity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 2078923811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Posttreatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Posttreatment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 545940338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source> Pretreatment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Pretreatment - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2463751251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Circumference [mm] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10937,6 +11042,11 @@
           <source>Profile Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Profile Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 3166929750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Length [mm] Profile</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Profile Length - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 873564940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Project Color Code</source>
@@ -10982,6 +11092,11 @@
           <source>Type of Clamp Code Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Type of Clamp Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field Customer Item Ref. Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 239546769 - Field 1013706845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
           <source>Own</source>
