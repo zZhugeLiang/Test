@@ -49,8 +49,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ProductionOrderLines.SetCurrentKey("ACO Charge No.", Status, "Prod. Order No.");
         if ProductionOrderLines.FindSet() then
             repeat
-                if ProductionOrderLines."Variant Code" = '' then
-                    Error(VariantCodeEmptyErr, ProductionOrderLines."ACO Charge No.");
+                // if ProductionOrderLines."Variant Code" = '' then
+                //     Error(VariantCodeEmptyErr, ProductionOrderLines."ACO Charge No.");
                 if ProductionOrderLines."ACO Quantity to Bath Sheet" = 0 then
                     Error(QuantityToBathSheetZeroErr, ProductionOrderLines."ACO Charge No.");
                 if ProductionOrderLines."ACO Charge No." = '' then
@@ -219,6 +219,16 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine.Rerun := ProductionOrderLine."ACO Rerun";
         ACOBathSheetLine."Rerun Reason" := ProductionOrderLine."ACO Rerun Reason";
         ACOBathSheetLine.Color := SalesLine."ACO Color";
+
+        ACOBathSheetLine."Pretreatment" := ProductionOrderLine."ACO Pretreatment";
+        ACOBathSheetLine."Layer Thickness" := ProductionOrderLine."ACO Layer Thickness";
+        ACOBathSheetLine."Color" := ProductionOrderLine."ACO Color";
+        ACOBathSheetLine."Posttreatment" := ProductionOrderLine."ACO Posttreatment";
+        ACOBathSheetLine."Particularity" := ProductionOrderLine."ACO Particularity";
+        ACOBathSheetLine."Customer Item Reference" := ProductionOrderLine."ACO Customer Item Reference";
+        ACOBathSheetLine."Profile Length" := ProductionOrderLine."ACO Profile Length";
+        ACOBathSheetLine."Profile Circumference" := ProductionOrderLine."ACO Profile Circumference";
+
 
         if SalesLine.Type = SalesLine.Type::Item then // is deze regel nodig?
             ACOBathSheetLine.Treatment := SalesLine."No.";

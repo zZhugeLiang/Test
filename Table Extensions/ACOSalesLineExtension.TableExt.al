@@ -9,8 +9,16 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                ACOLayerThickness: Record "ACO Layer Thickness";
+
             begin
                 Rec.GetPricingPrice();
+
+                if ACOLayerThickness.Get(Rec."ACO Layer Thickness") then begin
+                    Rec."ACO Maximum Current Density LT" := ACOLayerThickness."Maximum Current Density";
+                    Rec."ACO Minimum Current Density LT" := ACOLayerThickness."Minimum Current Density";
+                end;
             end;
         }
 
@@ -39,8 +47,20 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                SalesHeader: Record "Sales Header";
+                ACOColor: Record "ACO Color";
+                ACOManagement: Codeunit "ACO Management";
             begin
                 Rec.GetPricingPrice();
+
+                if ACOColor.Get(Rec."ACO Color") then begin
+                    Rec."ACO Max. Current Density Color" := ACOColor."Maximum Current Density";
+                    Rec."ACO Min. Current Density Color" := ACOColor."Minimum Current Density";
+                end;
+
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
             end;
         }
 
@@ -681,8 +701,15 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                ACOPretreatment: Record "ACO Pretreatment";
             begin
                 Rec.GetPricingPrice();
+
+                if ACOPretreatment.Get(Rec."ACO Pretreatment") then begin
+                    Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
+                    Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
+                end;
             end;
         }
 
@@ -727,6 +754,20 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOManagement.CheckHolderAndPackaging(Rec, SalesHeader."Sell-to Customer No.");
             end;
         }
+
+        field(50076; "ACO Customer Item Reference"; Text[50])
+        {
+            Caption = 'Customer Item Reference';
+            DataClassification = CustomerContent;
+        }
+
+        field(50077; "Customer Item Ref. Description"; Text[100])
+        {
+            Caption = 'Customer Item Reference Description';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("Item Reference".Description where("Reference No." = field("ACO Customer Item Reference")));
+        }
     }
 
     var
@@ -734,7 +775,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
     procedure ACOCalculateUnitPrice()
     var
-        ItemVariant: Record "Item Variant";
         SalesHeader: Record "Sales Header";
         ACOPriceScheme: Record "ACO Price Scheme";
         ACOPriceSchemePrice: Record "ACO Price Scheme Price";

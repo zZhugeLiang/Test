@@ -25,17 +25,20 @@ Page 50025 "ACO Selection Bath Sheet List"
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Source No. field.';
                 }
 
                 field("ACO Source Line No."; "ACO Source Line No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Source Line No. field.';
                 }
 
                 field("ACO Production Line"; "ACO Production Line")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Production Line field.';
                 }
 
                 field("Item No."; "Item No.")
@@ -48,6 +51,7 @@ Page 50025 "ACO Selection Bath Sheet List"
                 field("ACO Profile Code"; "ACO Profile Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Profile Code field.';
                 }
                 field("Variant Code"; "Variant Code")
                 {
@@ -160,31 +164,38 @@ Page 50025 "ACO Selection Bath Sheet List"
                 {
                     Editable = true;
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Charge No. field.';
                 }
                 field("ACO Quantity Charges"; "ACO Quantity Charges")
                 {
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Quantity Charges field.';
                 }
                 field("ACO Charges per Bath Profile"; "ACO Charges per Bath Profile")
                 {
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Charges per Bath Profile field.';
                 }
                 field("ACO Number of Units"; "ACO Number of Units")
                 {
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Number of Units field.';
                 }
                 field("ACO Remaining Quantity"; "ACO Remaining Quantity")
                 {
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Remaining Quantity field.';
                 }
                 field("ACO Quantity to Bath Sheet"; "ACO Quantity to Bath Sheet")
                 {
                     Editable = true;
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Quantity to Bath Sheet field.';
                 }
                 field("ACO Bath Sheet Qty."; "ACO Bath Sheet Qty.")
                 {
                     ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the value of the Bath Sheet Qty. field.';
                 }
                 field("Finished Quantity"; "Finished Quantity")
                 {
@@ -257,14 +268,54 @@ Page 50025 "ACO Selection Bath Sheet List"
                 field("ACO Rerun"; "ACO Rerun")
                 {
                     ApplicationArea = Manufacturing;
-                    ToolTip = ' ';
                     Editable = true;
+                    ToolTip = 'Specifies the value of the Rerun field.';
                 }
                 field("ACO Rerun Reason"; "ACO Rerun Reason")
                 {
                     ApplicationArea = Manufacturing;
-                    ToolTip = ' ';
                     Editable = true;
+                    ToolTip = 'Specifies the value of the Rerun Reason field.';
+                }
+                field("ACO Pretreatment"; Rec."ACO Pretreatment")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the  Pretreatment field.';
+                }
+                field("ACO Layer Thickness"; Rec."ACO Layer Thickness")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Layer Thickness field.';
+                }
+                field("ACO Color"; Rec."ACO Color")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Color field.';
+                }
+                field("ACO Posttreatment"; Rec."ACO Posttreatment")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posttreatment field.';
+                }
+                field("ACO Particularity"; Rec."ACO Particularity")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Particularity field.';
+                }
+                field("ACO Customer Item Reference"; Rec."ACO Customer Item Reference")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Customer Item Reference field.';
+                }
+                field("ACO Profile Length"; Rec."ACO Profile Length")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Length [mm] Profile field.';
+                }
+                field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Circumference [mm] Profile field.';
                 }
             }
         }
@@ -446,7 +497,7 @@ Page 50025 "ACO Selection Bath Sheet List"
     begin
         SetFilter("ACO Source No.", '<>%1', '');
         SetFilter("Item No.", '<>%1', '');
-        SetFilter("ACO Profile Code", '<>%1', '');
+        // SetFilter("ACO Profile Code", '<>%1', '');
     end;
 
     trigger OnAfterGetRecord()

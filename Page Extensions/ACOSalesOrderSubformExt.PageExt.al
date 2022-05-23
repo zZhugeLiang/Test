@@ -207,6 +207,10 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
+            field("ACO Customer Reference"; Rec."ACO Customer Item Reference")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 

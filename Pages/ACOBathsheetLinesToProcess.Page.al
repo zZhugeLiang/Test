@@ -13,125 +13,106 @@ page 50032 "ACO Bathsheet Lines To Process"
         {
             repeater(Group)
             {
-                field("Bath Sheet No."; "Bath Sheet No.")
+                field("Bath Sheet No."; Rec."Bath Sheet No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Production Order No."; "Production Order No.")
+                field("Production Order No."; Rec."Production Order No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Production Order Status"; "Production Order Status")
+                field("Production Order Status"; Rec."Production Order Status")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Production Order Line No."; "Production Order Line No.")
+                field("Production Order Line No."; Rec."Production Order Line No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Profile Code"; "Profile Code")
+                field("Profile Code"; Rec."Profile Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Profile Description"; "Profile Description")
+                field("Profile Description"; Rec."Profile Description")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Length"; "Length")
+                field("Length"; Rec."Length")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Circumference"; "Circumference")
+                field("Circumference"; Rec."Circumference")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Treatment"; "Treatment")
+                field("Treatment"; Rec."Treatment")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Rerun"; "Rerun")
+                field("Rerun"; Rec."Rerun")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Rerun Reason"; "Rerun Reason")
+                field("Rerun Reason"; Rec."Rerun Reason")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Color"; "Color")
+                field("Color"; Rec."Color")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("High End"; "High End")
+                field("High End"; Rec."High End")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Reject Quantity"; "Reject Quantity")
+                field("Reject Quantity"; Rec."Reject Quantity")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Charge No."; "Charge No.")
+                field("Charge No."; Rec."Charge No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Minimum Current Density"; "Minimum Current Density")
+                field("Minimum Current Density"; Rec."Minimum Current Density")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Maximum Current Density"; "Maximum Current Density")
+                field("Maximum Current Density"; Rec."Maximum Current Density")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Surface"; "Surface")
+                field("Surface"; Rec."Surface")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Quantity"; "Quantity")
+                field("Quantity"; Rec."Quantity")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
-                field("Remaining Quantity"; "Remaining Quantity")
+                field("Remaining Quantity"; Rec."Remaining Quantity")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-
                 field(ProcessedQuantity; ProcessedQuantity)
                 {
                     Caption = 'Processed Quantity';
@@ -139,24 +120,57 @@ page 50032 "ACO Bathsheet Lines To Process"
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Qty in Package"; "Qty in Package")
+                field("Qty in Package"; Rec."Qty in Package")
                 {
                     Editable = true;
                     ApplicationArea = All;
                 }
-                field("Sales Order No."; "Sales Order No.")
+                field("Sales Order No."; Rec."Sales Order No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Sales Order Line No."; "Sales Order Line No.")
+                field("Sales Order Line No."; Rec."Sales Order Line No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Layer Thickness"; Rec."Layer Thickness")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Profile Circumference"; Rec."Profile Circumference")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Pretreatment"; Rec."Pretreatment")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Posttreatment"; Rec."Posttreatment")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Particularity"; Rec."Particularity")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Profile Length"; Rec."Profile Length")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Customer Item Reference"; Rec."Customer Item Reference")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
             }
-
-
         }
         area(Factboxes)
         {
@@ -295,6 +309,14 @@ page 50032 "ACO Bathsheet Lines To Process"
                                     PackageLine.Length := BathLineTempRecord.Length;
                                     PackageLine.Treatment := BathLineTempRecord.Treatment;
                                     PackageLine.Quantity := BathLineTempRecord."Qty in Package";
+                                    PackageLine."Layer Thickness" := BathLineTempRecord."Layer Thickness";
+                                    PackageLine.Pretreatment := BathLineTempRecord.Pretreatment;
+                                    PackageLine.Posttreatment := BathLineTempRecord.Posttreatment;
+                                    PackageLine.Particularity := BathLineTempRecord.Particularity;
+                                    PackageLine."Profile Length" := BathLineTempRecord."Profile Length";
+                                    PackageLine."Profile Circumference" := BathLineTempRecord."Profile Circumference";
+                                    PackageLine."Customer Item Reference" := BathLineTempRecord."Customer Item Reference";
+                                    PackageLine.Color := BathLineTempRecord.Color;
                                     if SalesOrder.Get(SalesOrder."Document Type"::Order, "Sales Order No.") then begin
                                         PackageLine."Your Reference" := SalesOrder."Your Reference";
                                         PackageLine."External Document No." := SalesOrder."External Document No.";

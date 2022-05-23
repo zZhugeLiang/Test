@@ -204,9 +204,59 @@ table 50017 "ACO Bath Sheet Line"
             CalcFormula = lookup("ACO Bath Sheet Header".Complete where("No." = field("Bath Sheet No.")));
         }
 
+        field(50009; "Layer Thickness"; Code[10])
+        {
+            Caption = 'Layer Thickness';
+            TableRelation = "ACO Layer Thickness";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
         field(50016; "Remaining Quantity"; Decimal)
         {
             Caption = 'Remaining Quantity';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50019; "Profile Circumference"; Decimal)
+        {
+            Caption = 'Circumference [mm] Profile';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50072; "Pretreatment"; Code[10])
+        {
+            Caption = ' Pretreatment';
+            TableRelation = "ACO Pretreatment";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50073; "Posttreatment"; Code[20])
+        {
+            Caption = 'Posttreatment';
+            TableRelation = "ACO Posttreatment";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50074; "Particularity"; Code[20])
+        {
+            Caption = 'Particularity';
+            TableRelation = "ACO Particularity";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50075; "Profile Length"; Decimal)
+        {
+            Caption = 'Length [mm] Profile';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50076; "Customer Item Reference"; Text[50])
+        {
+            Caption = 'Customer Item Reference';
             Editable = false;
             DataClassification = CustomerContent;
         }

@@ -102,6 +102,25 @@ table 50024 "ACO Package Line"
         {
             DataClassification = CustomerContent;
         }
+        field(50000; "Color"; Code[20])
+        {
+            Caption = 'Color';
+            DataClassification = CustomerContent;
+        }
+        field(50009; "Layer Thickness"; Code[10])
+        {
+            Caption = 'Layer Thickness';
+            TableRelation = "ACO Layer Thickness";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50019; "Profile Circumference"; Decimal)
+        {
+            Caption = 'Circumference [mm] Profile';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
         field(50034; "Number of Units"; Decimal)
         {
             DataClassification = CustomerContent;
@@ -113,6 +132,46 @@ table 50024 "ACO Package Line"
         field(50065; "Profile Cust. Description"; Text[100])
         {
             DataClassification = CustomerContent;
+        }
+        field(50072; "Pretreatment"; Code[10])
+        {
+            Caption = ' Pretreatment';
+            TableRelation = "ACO Pretreatment";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50073; "Posttreatment"; Code[20])
+        {
+            Caption = 'Posttreatment';
+            TableRelation = "ACO Posttreatment";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50074; "Particularity"; Code[20])
+        {
+            Caption = 'Particularity';
+            TableRelation = "ACO Particularity";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50075; "Profile Length"; Decimal)
+        {
+            Caption = 'Length [mm] Profile';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50076; "Customer Item Reference"; Text[50])
+        {
+            Caption = 'Customer Item Reference';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50077; "Customer Item Ref. Description"; Text[100])
+        {
+            Caption = 'Customer Item Reference Description';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("Item Reference".Description where("Reference No." = field("Customer Item Reference")));
         }
     }
 

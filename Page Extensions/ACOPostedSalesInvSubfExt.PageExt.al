@@ -121,6 +121,32 @@ pageextension 50014 "ACO Posted Sales Inv Subf Ext" extends "Posted Sales Invoic
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
+            field("ACO Pretreatment"; Rec."ACO Pretreatment")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the  Pretreatment field.';
+            }
+            field("ACO Posttreatment"; Rec."ACO Posttreatment")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Posttreatment field.';
+            }
+            field("ACO Particularity"; Rec."ACO Particularity")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Particularity field.';
+            }
+            field("ACO Customer Item Reference"; Rec."ACO Customer Item Reference")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Customer Item Reference field.';
+            }
+            field("ACO Profile Length"; Rec."ACO Profile Length")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Length [mm] Profile field.';
+            }
+
         }
     }
 }

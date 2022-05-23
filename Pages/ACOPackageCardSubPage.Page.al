@@ -136,6 +136,51 @@ page 50031 "ACO Package Card SubPage"
                     ApplicationArea = All;
                     Tooltip = ' ';
                 }
+                field(Color; Rec.Color)
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("Layer Thickness"; Rec."Layer Thickness")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field(Pretreatment; Rec.Pretreatment)
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field(Posttreatment; Rec.Posttreatment)
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field(Particularity; Rec.Particularity)
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("Profile Length"; Rec."Profile Length")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("Profile Circumference"; Rec."Profile Circumference")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("Customer Item Reference"; Rec."Customer Item Reference")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("Customer Item Ref. Description"; "Customer Item Ref. Description")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
             }
         }
     }

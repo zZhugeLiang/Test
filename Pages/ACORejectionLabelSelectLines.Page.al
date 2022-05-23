@@ -191,6 +191,14 @@ page 50055 "ACO Rej. Label Select Lines"
                     PackageLine.Length := BathLineTempRecord.Length;
                     PackageLine.Treatment := BathLineTempRecord.Treatment;
                     PackageLine.Quantity := BathLineTempRecord."Qty in Package";
+                    PackageLine."Layer Thickness" := BathLineTempRecord."Layer Thickness";
+                    PackageLine.Pretreatment := BathLineTempRecord.Pretreatment;
+                    PackageLine.Posttreatment := BathLineTempRecord.Posttreatment;
+                    PackageLine.Particularity := BathLineTempRecord.Particularity;
+                    PackageLine."Profile Length" := BathLineTempRecord."Profile Length";
+                    PackageLine."Profile Circumference" := BathLineTempRecord."Profile Circumference";
+                    PackageLine."Customer Item Reference" := BathLineTempRecord."Customer Item Reference";
+                    PackageLine.Color := BathLineTempRecord.Color;
                     if SalesOrder.Get(SalesOrder."Document Type"::Order, BathLineTempRecord."Sales Order No.") then begin
                         PackageLine."Your Reference" := SalesOrder."Your Reference";
                         PackageLine."External Document No." := SalesOrder."External Document No.";

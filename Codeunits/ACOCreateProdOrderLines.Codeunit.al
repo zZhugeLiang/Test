@@ -194,7 +194,7 @@ codeunit 50005 "ACO Create Prod. Order Lines"
                 if RoutingNo <> '' then
                     ProdOrderLine.Validate("Routing No.", RoutingNo);
 
-                ProdOrderLine.TestField("Routing No.");
+                // ProdOrderLine.TestField("Routing No.");// Im here
                 ProdOrderLine.Modify();
             until (SalesPlanLine.Next = 0);
         exit(not ErrorOccured);

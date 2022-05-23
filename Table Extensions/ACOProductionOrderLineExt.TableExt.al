@@ -63,6 +63,14 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
             CalcFormula = Sum("ACO Bath Sheet Line".Quantity where("Production Order No." = field("Prod. Order No."), "Production Order Line No." = field("Line No."), Rerun = const(false)));
         }
 
+        field(50009; "ACO Layer Thickness"; Code[10])
+        {
+            Caption = 'Layer Thickness';
+            TableRelation = "ACO Layer Thickness";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
         field(50010; "ACO Charge No."; Code[10])
         {
             Caption = 'Charge No.';
@@ -130,6 +138,55 @@ tableextension 50005 "ACO Production Order Line Ext." extends "Prod. Order Line"
         {
             Caption = 'Rerun Reason';
             TableRelation = "Reason Code";
+            DataClassification = CustomerContent;
+        }
+        field(50019; "ACO Profile Circumference"; Decimal)
+        {
+            Caption = 'Circumference [mm] Profile';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50020; "ACO Color"; Code[20])
+        {
+            Caption = 'Color';
+            TableRelation = "ACO Color";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50072; "ACO Pretreatment"; Code[10])
+        {
+            Caption = ' Pretreatment';
+            TableRelation = "ACO Pretreatment";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50073; "ACO Posttreatment"; Code[20])
+        {
+            Caption = 'Posttreatment';
+            TableRelation = "ACO Posttreatment";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+
+        field(50074; "ACO Particularity"; Code[20])
+        {
+            Caption = 'Particularity';
+            TableRelation = "ACO Particularity";
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50075; "ACO Profile Length"; Decimal)
+        {
+            Caption = 'Length [mm] Profile';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(50076; "ACO Customer Item Reference"; Text[50])
+        {
+            Caption = 'Customer Item Reference';
+            Editable = false;
             DataClassification = CustomerContent;
         }
     }

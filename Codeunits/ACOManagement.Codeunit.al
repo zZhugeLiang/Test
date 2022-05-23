@@ -6,7 +6,6 @@ codeunit 50003 "ACO Management"
         SalesHeader: Record "Sales Header";
         ACOLinkedHolder: Record "ACO Linked Holder";
         ACOLinkedPackaging: Record "ACO Linked Packaging";
-        Item: Record Item;
         ACOColor: Record "ACO Color";
     begin
         if SalesLine.Type <> SalesLine.Type::Item then
@@ -15,9 +14,11 @@ codeunit 50003 "ACO Management"
         ACOLinkedHolder.SetRange("Item No.", SalesLine."No.");
         ACOLinkedHolder.SetRange("Customer No.", CustomerNo);
 
-        if Item.Get(SalesLine."No.") then
-            if ACOColor.Get(Item."ACO Color") then
-                ACOLinkedHolder.SetRange("Color Group Code", ACOColor."Color Group");
+        if ACOColor.Get(SalesLine."ACO Color") then
+            ACOLinkedHolder.SetRange("Color Group Code", ACOColor."Color Group");
+        // if Item.Get(SalesLine."No.") then
+        //     if ACOColor.Get(Item."ACO Color") then
+        //         ACOLinkedHolder.SetRange("Color Group Code", ACOColor."Color Group");
 
         if SalesLine."ACO Profile Length" <> 0 then
             ACOLinkedHolder.SetRange(Length, SalesLine."ACO Profile Length");

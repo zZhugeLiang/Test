@@ -13,39 +13,39 @@ page 50015 "ACO Bath Sheet Lines"
         {
             repeater(General)
             {
-                field("Bath Sheet No."; "Bath Sheet No.")
+                field("Bath Sheet No."; Rec."Bath Sheet No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Production Order No."; "Production Order No.")
+                field("Production Order No."; Rec."Production Order No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Production Order Status"; "Production Order Status")
+                field("Production Order Status"; Rec."Production Order Status")
                 {
                     ApplicationArea = All;
                 }
-                field("Production Order Line No."; "Production Order Line No.")
+                field("Production Order Line No."; Rec."Production Order Line No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Sales Order No."; "Sales Order No.")
+                field("Sales Order No."; Rec."Sales Order No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Sales Order Line No."; "Sales Order Line No.")
+                field("Sales Order Line No."; Rec."Sales Order Line No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer No."; "Customer No.")
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Profile Code"; "Profile Code")
+                field("Profile Code"; Rec."Profile Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Profile Description"; "Profile Description")
+                field("Profile Description"; Rec."Profile Description")
                 {
                     ApplicationArea = All;
                 }
@@ -69,7 +69,7 @@ page 50015 "ACO Bath Sheet Lines"
                 {
                     ApplicationArea = All;
                 }
-                field("Rerun Reason"; "Rerun Reason")
+                field("Rerun Reason"; Rec."Rerun Reason")
                 {
                     ApplicationArea = All;
                 }
@@ -77,23 +77,23 @@ page 50015 "ACO Bath Sheet Lines"
                 {
                     ApplicationArea = All;
                 }
-                field("High End"; "High End")
+                field("High End"; Rec."High End")
                 {
                     ApplicationArea = All;
                 }
-                field("Reject Quantity"; "Reject Quantity")
+                field("Reject Quantity"; Rec."Reject Quantity")
                 {
                     ApplicationArea = All;
                 }
-                field("Charge No."; "Charge No.")
+                field("Charge No."; Rec."Charge No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Minimum Current Density"; "Minimum Current Density")
+                field("Minimum Current Density"; Rec."Minimum Current Density")
                 {
                     ApplicationArea = All;
                 }
-                field("Maximum Current Density"; "Maximum Current Density")
+                field("Maximum Current Density"; Rec."Maximum Current Density")
                 {
                     ApplicationArea = All;
                 }
@@ -101,13 +101,48 @@ page 50015 "ACO Bath Sheet Lines"
                 {
                     ApplicationArea = All;
                 }
-                field("Bathsheet Complete"; "Bathsheet Complete")
+                field("Bathsheet Complete"; Rec."Bathsheet Complete")
                 {
                     ApplicationArea = All;
                 }
                 field(NumberOfUnits; GetNumberOfUnits())
                 {
                     Caption = 'Number of Units';
+                    ApplicationArea = All;
+                }
+                field("Layer Thickness"; Rec."Layer Thickness")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Profile Circumference"; Rec."Profile Circumference")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Pretreatment"; Rec."Pretreatment")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Posttreatment"; Rec."Posttreatment")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Particularity"; Rec."Particularity")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Profile Length"; Rec."Profile Length")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field("Customer Item Reference"; Rec."Customer Item Reference")
+                {
+                    Editable = false;
                     ApplicationArea = All;
                 }
             }

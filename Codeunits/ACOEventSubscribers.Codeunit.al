@@ -82,12 +82,14 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnAfterValidate_No(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
         Item: Record Item;
+        ItemReference: Record "Item Reference";
         SalesHeader: Record "Sales Header";
         RoutingLine: Record "Routing Line";
         ACOAppSetup: Record "ACO App Setup";
         ACOProfileCustomer: Record "ACO Profile Customer";
         ACOPretreatment: Record "ACO Pretreatment";
         ItemUnitofMeasure: Record "Item Unit of Measure";
+        ACOCategory: Record "ACO Category";
         ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
         ACOManagement: Codeunit "ACO Management";
     begin
@@ -106,13 +108,18 @@ codeunit 50000 "ACO Event Subscribers"
 
         if Rec.Type = Rec.Type::Item then
             if Item.Get(Rec."No.") then begin
-                if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
+                Rec."ACO Thin Staining Time Profile" := Item."ACO Thin Staining Time";
+                Rec."ACO Thick St. Time Profile" := Item."ACO Thick Staining Time";
+                Rec."ACO Max. Curr. Density Profile" := Item."ACO Maximum Current Density";
+                Rec."ACO Min. Curr. Density Profile" := Item."ACO Minimum Current Density";
+                Rec."ACO Pretreatment" := Item."ACO Pretreatment";
+
+                if ACOPretreatment.Get(Rec."ACO Pretreatment") then begin
                     Rec."ACO British Standard" := ACOPretreatment."British Standard";
                     Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
                     Rec."ACO Minimum Current Density PT" := ACOPretreatment."Minimum Current Density";
                 end;
 
-                Rec."ACO Pretreatment" := Item."ACO Pretreatment";
                 Rec."ACO Posttreatment" := Item."ACO Posttreatment";
                 Rec."ACO Particularity" := Item."ACO Particularity";
                 Rec."ACO Not Measurable" := Item."ACO Not Measurable";
@@ -124,6 +131,9 @@ codeunit 50000 "ACO Event Subscribers"
                 end;
 
                 Rec."ACO Profile Category" := Item."ACO Category Code";
+                if ACOCategory.Get(Rec."ACO Profile Category") then
+                    Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";
+
                 Rec.Validate("ACO Area Profile", Rec."ACO Profile Circumference" * Rec."ACO Profile Length" / 1000000);
                 Rec.Validate("ACO Layer Thickness", Item."ACO Layer Thickness Code");
                 Rec."ACO Charges per Bath Profile" := Item."ACO Charges per Bath Profile";
@@ -134,6 +144,7 @@ codeunit 50000 "ACO Event Subscribers"
             end;
 
         Rec.Validate("ACO Color", Item."ACO Color");
+        Rec."ACO Customer Item Reference" := Rec."Item Reference No.";
 
         if ACOAppSetup."Sawing Routing No." <> '' then begin
             RoutingLine.SetRange("Routing No.", Item."Routing No.");
@@ -149,7 +160,12 @@ codeunit 50000 "ACO Event Subscribers"
             Rec.Validate("ACO Profile Code");
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Item Reference No.', false, false)]
+    local procedure SalesLine_OnAfterValidate_ItemReferenceNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
+    begin
+        Rec."ACO Customer Item Reference" := Rec."Item Reference No.";
 
+    end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Shipment Date', false, false)]
     local procedure SalesLine_OnBeforeValidate_ShipmentDate(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
@@ -230,41 +246,38 @@ codeunit 50000 "ACO Event Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Color', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOColor(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
-        Item: Record Item;
         ACOColor: Record "ACO Color";
     begin
         if Rec.IsTemporary() then
             exit;
 
         if Rec.Type = Rec.Type::Item then
-            if Item.Get(Rec."No.") then
-                if ACOColor.Get(Item."ACO Color") then begin
-                    Rec."ACO Min. Current Density Color" := ACOColor."Minimum Current Density";
-                    Rec."ACO Max. Current Density Color" := ACOColor."Maximum Current Density";
-                end;
+            if ACOColor.Get(Rec."ACO Color") then begin
+                Rec."ACO Min. Current Density Color" := ACOColor."Minimum Current Density";
+                Rec."ACO Max. Current Density Color" := ACOColor."Maximum Current Density";
+            end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Layer Thickness', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOLayerThickness(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
-        Item: Record Item;
         ACOLayerThickness: Record "ACO Layer Thickness";
     begin
         if Rec.IsTemporary() then
             exit;
 
         if Rec.Type = Rec.Type::Item then
-            if Item.Get(Rec."No.") then
-                if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
-                    Rec."ACO Minimum Current Density LT" := ACOLayerThickness."Minimum Current Density";
-                    Rec."ACO Maximum Current Density LT" := ACOLayerThickness."Maximum Current Density";
-                end;
+            if ACOLayerThickness.Get(Rec."ACO Layer Thickness") then begin
+                Rec."ACO Minimum Current Density LT" := ACOLayerThickness."Minimum Current Density";
+                Rec."ACO Maximum Current Density LT" := ACOLayerThickness."Maximum Current Density";
+            end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'ACO Profile Code', false, false)]
     local procedure SalesLine_OnAfterValidate_ACOProfileCode(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     var
         SalesHeader: Record "Sales Header";
+        Item: Record Item;
         ACOProfile: Record "ACO Profile";
         ACOProfileCustomer: Record "ACO Profile Customer";
         ACOCategory: Record "ACO Category";
@@ -277,10 +290,15 @@ codeunit 50000 "ACO Event Subscribers"
         if Rec."ACO Profile Code" = '' then
             exit;
 
-        if ACOProfile.Get(Rec."ACO Profile Code") then begin
-            ACOProfile.TestField(Circumference);
+        // if ACOProfile.Get(Rec."ACO Profile Code") then begin
+        if Item.Get(Rec."No.") then begin
+            //ACOProfile.TestField(Circumference);
 
             SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+
+            //Rec."ACO Max. Curr. Density Profile" := Item."ACO Maximum Current Density";
+            Rec."ACO Max. Curr. Density Profile" := Item."ACO Maximum Current Density";
+            Rec."ACO Min. Curr. Density Profile" := Item."ACO Minimum Current Density";
 
             if not ACOProfileCustomer.Get(Rec."ACO Profile Code", SalesHeader."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
                 ACOProfileCustomer.SetRange("Profile Code", Rec."ACO Profile Code");
@@ -301,9 +319,6 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
 
-            Rec."ACO Max. Curr. Density Profile" := ACOProfileCustomer."Maximum Current Density";
-            Rec."ACO Min. Curr. Density Profile" := ACOProfileCustomer."Minimum Current Density";
-
             Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
             Rec."ACO Thin Staining Time Profile" := ACOProfileCustomer."Thin Staining Time";
             Rec."ACO Thick St. Time Profile" := ACOProfileCustomer."Thick Staining Time";
@@ -313,7 +328,7 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Profile Cust. Description" := ACOProfileCustomer."Profile Description";
             Rec."ACO Profile Customer PK" := ACOProfileCustomer."PK as a field";
 
-            if ACOCategory.Get(ACOProfile.Category) then
+            if ACOCategory.Get(Rec."ACO Profile Category") then
                 Rec."ACO Max. Cur. Density Category" := ACOCategory."Maximum Current Density";
         end;
     end;
@@ -546,6 +561,15 @@ codeunit 50000 "ACO Event Subscribers"
 
         if ProdOrderLine."ACO Number of Units" <> 0 then
             ProdOrderLine."ACO Profile m2 per Qty." := ProdOrderLine."ACO Total m2" / ProdOrderLine."ACO Number of Units";
+
+        ProdOrderLine."ACO Pretreatment" := SalesLine."ACO Pretreatment";
+        ProdOrderLine."ACO Layer Thickness" := SalesLine."ACO Layer Thickness";
+        ProdOrderLine."ACO Color" := SalesLine."ACO Color";
+        ProdOrderLine."ACO Posttreatment" := SalesLine."ACO Posttreatment";
+        ProdOrderLine."ACO Particularity" := SalesLine."ACO Particularity";
+        ProdOrderLine."ACO Customer Item Reference" := SalesLine."ACO Customer Item Reference";
+        ProdOrderLine."ACO Profile Length" := SalesLine."ACO Profile Length";
+        ProdOrderLine."ACO Profile Circumference" := SalesLine."ACO Profile Circumference";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnAfterCopySalesInvLine', '', false, false)]
