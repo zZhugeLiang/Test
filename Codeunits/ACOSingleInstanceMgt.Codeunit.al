@@ -101,6 +101,16 @@ codeunit 50001 "ACO Single Instance Mgt"
         exit(TotalRejectionQuantity);
     end;
 
+    procedure SetSkipAssignItemReference(NewSkipAssignItemReference: Boolean);
+    begin
+        SkipAssignItemReference := NewSkipAssignItemReference;
+    end;
+
+    procedure GetSkipAssignItemReference(): Boolean;
+    begin
+        exit(SkipAssignItemReference);
+    end;
+
     var
         TemporaryUserSetup: Record "User Setup" temporary;
         SalesLineProfileCode: Code[30];
@@ -112,4 +122,5 @@ codeunit 50001 "ACO Single Instance Mgt"
         BathSheetNo: Code[20];
         TotalRejectionQuantity: Decimal;
         PostProductionJournal: Boolean;
+        SkipAssignItemReference: Boolean;
 }

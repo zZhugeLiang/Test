@@ -67,7 +67,7 @@ table 50017 "ACO Bath Sheet Line"
 
         field(9; "Treatment"; Code[20])
         {
-            Caption = 'Treatment';
+            Caption = 'Item No.';
             Editable = false;
             DataClassification = CustomerContent;
         }

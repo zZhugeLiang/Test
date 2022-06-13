@@ -63,6 +63,7 @@ codeunit 50000 "ACO Event Subscribers"
             if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
                 Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
                 Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
+                Rec."ACO Correction Factor Profile" := ItemUnitofMeasure."ACO Correction Factor";
                 Rec.GetPricingPrice();
             end;
     end;
@@ -113,6 +114,7 @@ codeunit 50000 "ACO Event Subscribers"
                 Rec."ACO Max. Curr. Density Profile" := Item."ACO Maximum Current Density";
                 Rec."ACO Min. Curr. Density Profile" := Item."ACO Minimum Current Density";
                 Rec."ACO Pretreatment" := Item."ACO Pretreatment";
+                Rec."ACO Extra to Enumerate Profile" := Item."ACO Extra to Enumerate";
 
                 if ACOPretreatment.Get(Rec."ACO Pretreatment") then begin
                     Rec."ACO British Standard" := ACOPretreatment."British Standard";
@@ -128,6 +130,7 @@ codeunit 50000 "ACO Event Subscribers"
                 if ItemUnitofMeasure.Get(Rec."No.", Rec."Unit of Measure Code") then begin
                     Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
                     Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
+                    Rec."ACO Correction Factor Profile" := ItemUnitofMeasure."ACO Correction Factor";
                 end;
 
                 Rec."ACO Profile Category" := Item."ACO Category Code";
@@ -144,7 +147,8 @@ codeunit 50000 "ACO Event Subscribers"
             end;
 
         Rec.Validate("ACO Color", Item."ACO Color");
-        Rec."ACO Customer Item Reference" := Rec."Item Reference No.";
+        if not ACOSingleInstanceMgt.GetSkipAssignItemReference() then
+            Rec."ACO Customer Item Reference" := Rec."Item Reference No.";
 
         if ACOAppSetup."Sawing Routing No." <> '' then begin
             RoutingLine.SetRange("Routing No.", Item."Routing No.");
@@ -164,7 +168,6 @@ codeunit 50000 "ACO Event Subscribers"
     local procedure SalesLine_OnAfterValidate_ItemReferenceNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec."ACO Customer Item Reference" := Rec."Item Reference No.";
-
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Shipment Date', false, false)]
@@ -433,6 +436,24 @@ codeunit 50000 "ACO Event Subscribers"
     //     Done := 2;
     // end;
     // ////
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Reference Management", 'OnValidateSalesReferenceNoOnBeforeAssignNo', '', false, false)]
+    local procedure OnValidateSalesReferenceNoOnBeforeAssignNo(var SalesLine: Record "Sales Line"; ReturnedItemReference: Record "Item Reference");
+    var
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        ACOSingleInstanceMgt.SetSkipAssignItemReference(true);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Reference Management", 'OnValidateSalesReferenceNoOnAfterAssignNo', '', false, false)]
+    local procedure OnValidateSalesReferenceNoOnAfterAssignNo(var SalesLine: Record "Sales Line"; ReturnedItemReference: Record "Item Reference");
+    var
+        ACOSingleInstanceMgt: Codeunit "ACO Single Instance Mgt";
+    begin
+        SalesLine."ACO Customer Item Reference" := ReturnedItemReference."Reference No.";
+        ACOSingleInstanceMgt.SetSkipAssignItemReference(false);
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"ACO Bath Sheet Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure ACOBathSheetLine_OnAfterDelete(var Rec: Record "ACO Bath Sheet Line"; RunTrigger: Boolean)
     var

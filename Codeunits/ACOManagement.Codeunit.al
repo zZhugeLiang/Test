@@ -300,10 +300,10 @@ codeunit 50003 "ACO Management"
                             Clear(ItemVariant);
 
                         if SalesLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                            NewNumberOfUnits := SalesLine."Quantity Shipped" / ItemVariant."ACO Number of Meters";
+                            NewNumberOfUnits := SalesLine."Quantity Shipped" / SalesLine."ACO Profile Length" / 1000;
 
                         if SalesLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                            NewNumberOfUnits := SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters") * 1000;
+                            NewNumberOfUnits := SalesLine."Quantity Shipped" / (SalesLine."ACO Profile Circumference" * SalesLine."ACO Profile Length");
 
                         NewNumberOfUnits := TempSalesLine.Quantity + NewNumberOfUnits;
                         NewNumberOfUnits := Round(NewNumberOfUnits, 1);

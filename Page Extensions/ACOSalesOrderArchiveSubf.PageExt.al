@@ -29,16 +29,41 @@ pageextension 50016 "ACO Sales Order Archive Subf." extends "Sales Order Archive
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Code"; Rec."ACO Profile Code")
+            field("ACO Pretreatment"; Rec."ACO Pretreatment")
+            {
+                ApplicationArea = All;
+                ToolTip = ' ';
+            }
+            field("ACO Posttreatment"; Rec."ACO Posttreatment")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Description"; Rec."ACO Profile Description")
+            field("ACO Particularity"; Rec."ACO Particularity")
             {
                 ApplicationArea = All;
-                Tooltip = ' ';
+                ToolTip = ' ';
             }
+            field("ACO Customer Item Reference"; Rec."ACO Customer Item Reference")
+            {
+                ApplicationArea = All;
+                ToolTip = ' ';
+            }
+            field("ACO Profile Length"; Rec."ACO Profile Length")
+            {
+                ApplicationArea = ALl;
+                ToolTip = ' ';
+            }
+            // field("ACO Profile Code"; Rec."ACO Profile Code")
+            // {
+            //     ApplicationArea = All;
+            //     Tooltip = ' ';
+            // }
+            // field("ACO Profile Description"; Rec."ACO Profile Description")
+            // {
+            //     ApplicationArea = All;
+            //     Tooltip = ' ';
+            // }
             field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
             {
                 ApplicationArea = All;
@@ -49,11 +74,11 @@ pageextension 50016 "ACO Sales Order Archive Subf." extends "Sales Order Archive
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Cust. Description"; Rec."ACO Profile Cust. Description")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
+            // field("ACO Profile Cust. Description"; Rec."ACO Profile Cust. Description")
+            // {
+            //     ApplicationArea = All;
+            //     Tooltip = ' ';
+            // }
             field("ACO Attach Method Code Profile"; Rec."ACO Attach Method Code Profile")
             {
                 ApplicationArea = All;

@@ -80,6 +80,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         Customer: Record Customer;
+        CommentLine: Record "Comment Line";
         PreviousSourceNo: Code[20];
         CurrentSourceNo: Code[20];
         TotalCircumference: Decimal;
@@ -87,6 +88,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         MinThinStainingTime: Decimal;
         PreviousMinThinStainingTime: Decimal;
         PreviousMaxThickStainingTime: Decimal;
+        BathSheetComment: Text;
         First: Boolean;
         Measure: Boolean;
     begin
@@ -100,8 +102,18 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if ProductionOrderLines.FindSet() then
             repeat
                 if First then begin
-                    if ACOProfile.Get(ProductionOrderLines."ACO Profile Code") then //begin
-                        ACOBathSheetHeader."Bath Sheet Comment" := ACOProfile."Comment Bath Card";
+                    // if ACOProfile.Get(ProductionOrderLines."ACO Profile Code") then //begin
+                    //     ACOBathSheetHeader."Bath Sheet Comment" := ACOProfile."Comment Bath Card";
+                    BathSheetComment := '';
+                    CommentLine.SetRange("No.", ProductionOrderLines."Item No.");
+                    CommentLine.SetRange("ACO Source Document Type", CommentLine."ACO Source Document Type"::"Bath Sheet");
+                    if CommentLine.FindSet() then
+                        repeat
+                            BathSheetComment += CommentLine.Comment;
+                        until CommentLine.Next() = 0;
+
+                    ACOBathSheetHeader."Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment") - StrLen(ACOBathSheetHeader."Bath Sheet Comment"));
+
                     SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLines."ACO Source No.");
                     Customer.Get(SalesHeader."Sell-to Customer No.");
                     ACOBathSheetHeader."Note Bath Sheet" := Customer."ACO Comment Bath Card";
@@ -158,30 +170,25 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     procedure DetermineStainingTimes(SalesLine: Record "Sales Line"; var MinThinStainingTime: Decimal; var MaxThickStainingTime: Decimal; Customer: Record Customer)
     var
         SalesHeader: Record "Sales Header";
-        ACOProfileCustomer: Record "ACO Profile Customer";
-        Item: Record Item;
         ACOPretreatment: Record "ACO Pretreatment";
     begin
-        if Item.Get(SalesLine."No.") then
-            if ACOPretreatment.Get(Item."ACO Pretreatment") then begin
-                if ACOPretreatment."Thick Staining Time" <> -1 then
-                    if ACOPretreatment."Thick Staining Time" >= MaxThickStainingTime then
-                        MaxThickStainingTime := ACOPretreatment."Thick Staining Time";
+        if ACOPretreatment.Get(SalesLine."ACO Pretreatment") then begin
+            if ACOPretreatment."Thick Staining Time" <> -1 then
+                if ACOPretreatment."Thick Staining Time" >= MaxThickStainingTime then
+                    MaxThickStainingTime := ACOPretreatment."Thick Staining Time";
 
-                if ACOPretreatment."Thin Staining Time" <> -1 then
-                    if ACOPretreatment."Thin Staining Time" <= MinThinStainingTime then
-                        MinThinStainingTime := ACOPretreatment."Thin Staining Time";
-            end;
+            if ACOPretreatment."Thin Staining Time" <> -1 then
+                if ACOPretreatment."Thin Staining Time" <= MinThinStainingTime then
+                    MinThinStainingTime := ACOPretreatment."Thin Staining Time";
+        end;
 
         SalesHeader.Get(SalesLine."Document Type", SalesLine."Document No.");
-        if ACOProfileCustomer.Get(SalesLine."ACO Profile Code", SalesHeader."Sell-to Customer No.", SalesLine."ACO Customer Item No.") then begin
-            if ACOPretreatment."Thick Staining Time" = -1 then
-                if ACOProfileCustomer."Thick Staining Time" >= MaxThickStainingTime then
-                    MaxThickStainingTime := ACOProfileCustomer."Thick Staining Time";
-            if ACOPretreatment."Thin Staining Time" = -1 then
-                if ACOProfileCustomer."Thin Staining Time" <= MinThinStainingTime then
-                    MinThinStainingTime := ACOProfileCustomer."Thin Staining Time";
-        end;
+        if ACOPretreatment."Thick Staining Time" = -1 then
+            if SalesLine."ACO Thick St. Time Profile" >= MaxThickStainingTime then
+                MaxThickStainingTime := SalesLine."ACO Thick St. Time Profile";
+        if ACOPretreatment."Thin Staining Time" = -1 then
+            if SalesLine."ACO Thin Staining Time Profile" <= MinThinStainingTime then
+                MinThinStainingTime := SalesLine."ACO Thin Staining Time Profile";
     end;
 
     local procedure CreateBathSheetLines(ACOBathSheetHeaderNo: Code[20]; var ProductionOrderLines: Record "Prod. Order Line")
@@ -227,7 +234,9 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         ACOBathSheetLine."Particularity" := ProductionOrderLine."ACO Particularity";
         ACOBathSheetLine."Customer Item Reference" := ProductionOrderLine."ACO Customer Item Reference";
         ACOBathSheetLine."Profile Length" := ProductionOrderLine."ACO Profile Length";
+        ACOBathSheetLine.Length := ProductionOrderLine."ACO Profile Length";
         ACOBathSheetLine."Profile Circumference" := ProductionOrderLine."ACO Profile Circumference";
+        ACOBathSheetLine."Layer Thickness" := SalesLine."ACO Layer Thickness";
 
 
         if SalesLine.Type = SalesLine.Type::Item then // is deze regel nodig?
@@ -241,7 +250,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
         ACOBathSheetLine.Circumference := SalesLine."ACO Profile Circumference";
         if ItemVariant.Get(ProductionOrderLine."Item No.", ProductionOrderLine."Variant Code") then
-            ACOBathSheetLine.Length := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
+            ACOBathSheetLine.Length := Round(SalesLine."ACO Profile Length", 1);
 
         ACOBathSheetLine.CalculateSurface();
         ACOBathSheetLine."High End" := SalesLine."ACO High End";
@@ -254,28 +263,21 @@ codeunit 50002 "ACO Bath Sheet Mgt."
     end;
 
     procedure DetermineCurrentDensities(SalesLine: Record "Sales Line"; var MinCurrentDensity: Decimal; var MaxCurrentDensity: Decimal)
-    var
-        ACOProfileCustomer: Record "ACO Profile Customer";
-        CheckProfileCustomer: Boolean;
     begin
-        CheckProfileCustomer := ACOProfileCustomer.Get(SalesLine."ACO Profile Code", SalesLine."Sell-to Customer No.", SalesLine."ACO Customer Item No.");
-
         if SalesLine."ACO Min. Current Density Color" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Min. Current Density Color";
         if SalesLine."ACO Minimum Current Density LT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density LT";
         if SalesLine."ACO Minimum Current Density PT" >= MinCurrentDensity then
             MinCurrentDensity := SalesLine."ACO Minimum Current Density PT";
-        if CheckProfileCustomer then
-            if ACOProfileCustomer."Minimum Current Density" >= MinCurrentDensity then
-                MinCurrentDensity := ACOProfileCustomer."Minimum Current Density";
+        if SalesLine."ACO Min. Curr. Density Profile" >= MinCurrentDensity then
+            MinCurrentDensity := SalesLine."ACO Min. Curr. Density Profile";
 
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Current Density Color");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density LT");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Maximum Current Density PT");
         CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Cur. Density Category");
-        if CheckProfileCustomer then
-            CheckMaximumCurrentDensity(MaxCurrentDensity, ACOProfileCustomer."Maximum Current Density");
+        CheckMaximumCurrentDensity(MaxCurrentDensity, SalesLine."ACO Max. Curr. Density Profile");
     end;
 
     local procedure CheckMaximumCurrentDensity(var MaxCurrentDensity: Decimal; CurrentDensity: Decimal)

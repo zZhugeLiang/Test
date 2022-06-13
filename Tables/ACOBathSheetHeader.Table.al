@@ -482,9 +482,11 @@ table 50016 "ACO Bath Sheet Header"
         ACOAppSetup: Record "ACO App Setup";
         ACOLayerThickness: Record "ACO Layer Thickness";
         ACOBathSheetLine: Record "ACO Bath Sheet Line";
-        ACOProfile: Record "ACO Profile";
-        ACOProfileCustomer: Record "ACO Profile Customer";
+        // ACOProfile: Record "ACO Profile";
+        // ACOProfileCustomer: Record "ACO Profile Customer";
         SalesLine: Record "Sales Line";
+        CommentLine: Record "Comment Line";
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         BathSheetComment: Text;
         TotalSurfaceProfiles: Decimal;
         SurfaceAddition: Decimal;
@@ -506,17 +508,25 @@ table 50016 "ACO Bath Sheet Header"
                 ExtraToEnumerate := 0;
                 TotalSurfaceProfiles += ACOBathSheetLine.Surface;
 
-                if ACOProfile.Get(ACOBathSheetLine."Profile Code") and (StrLen(BathSheetComment) < MaxStrLen("Bath Sheet Comment")) then begin
-                    BathSheetComment += ACOProfile."Comment Bath Card";
-                    SurfaceAddition += (ACOProfile."Correction Factor" - 1) * ACOBathSheetLine.Surface;
+                BathSheetComment := '';
+                CommentLine.SetRange("No.", ACOBathSheetLine."Treatment");
+                CommentLine.SetRange("ACO Source Document Type", CommentLine."ACO Source Document Type"::"Bath Sheet");
+                if CommentLine.FindSet() then
+                    repeat
+                        BathSheetComment += CommentLine.Comment;
+                    until CommentLine.Next() = 0;
 
-                    if SalesLine.Get(SalesLine."Document Type"::Order, ACOBathSheetLine."Sales Order No.", ACOBathSheetLine."Sales Order Line No.") then
-                        if ACOProfileCustomer.Get(ACOProfile.Code, ACOBathSheetLine."Customer No.", SalesLine."ACO Customer Item No.") then
-                            ExtraToEnumerate := ACOProfileCustomer."Extra to Enumerate";
-                end;
+                if Item.Get(ACOBathSheetLine.Treatment) then begin
+                    if SalesLine.Get(SalesLine."Document Type"::Order, ACOBathSheetLine."Sales Order No.", ACOBathSheetLine."Sales Order Line No.") then begin
+                        ExtraToEnumerate := SalesLine."ACO Extra to Enumerate Profile";
+                        if ExtraToEnumerate > Rec."Extra to Enumerate" then
+                            Rec."Extra to Enumerate" := ExtraToEnumerate;
 
-                if Item.Get(ACOBathSheetLine.Treatment) then
-                    if ACOLayerThickness.Get(Item."ACO Layer Thickness Code") then begin
+                        if ItemUnitofMeasure.Get(ACOBathSheetLine.Treatment, SalesLine."Unit of Measure Code") then
+                            SurfaceAddition += (ItemUnitofMeasure."ACO Correction Factor" - 1) * ACOBathSheetLine.Surface;
+                    end;
+
+                    if ACOLayerThickness.Get(SalesLine."ACO Layer Thickness") then begin
                         CombinationLT := ACOLayerThickness."mu Value" + ExtraToEnumerate;
 
                         if First then begin
@@ -531,14 +541,16 @@ table 50016 "ACO Bath Sheet Header"
                         if CombinationLT < SmallestCombinationLT then
                             SmallestCombinationLT := CombinationLT;
                     end;
+                end;
             until ACOBathSheetLine.Next() = 0;
 
         if (LargestCombinationLT - SmallestCombinationLT > ACOAppSetup."Layer Thickness Tolerance") then
             Error(LayerThicknessToleranceExceededErr);
 
+
         "Layer Thickness" := LargestCombinationLT;
         "Total Surface Profiles" := Round(TotalSurfaceProfiles, 1);
-        "Bath Sheet Comment" += CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment") - StrLen("Bath Sheet Comment"));
+        "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment") - StrLen("Bath Sheet Comment"));
         "Surface Addition" := SurfaceAddition;
 
         CalculateTotalSurface();

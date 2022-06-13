@@ -12,107 +12,132 @@ pageextension 50025 "ACO Sales Invoice Subform Ext." extends "Sales Invoice Subf
 
         addlast(Control1)
         {
-            field("ACO Variant Code"; "Variant Code")
+            field("ACO Variant Code"; Rec."Variant Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Number of Units"; "ACO Number of Units")
+            field("ACO Number of Units"; Rec."ACO Number of Units")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO British Standard"; "ACO British Standard")
+            field("ACO British Standard"; Rec."ACO British Standard")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Layer Thickness"; "ACO Layer Thickness")
+            field("ACO Layer Thickness"; Rec."ACO Layer Thickness")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Color"; "ACO Color")
+            field("ACO Color"; Rec."ACO Color")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Code"; "ACO Profile Code")
+            field("ACO Pretreatment"; Rec."ACO Pretreatment")
+            {
+                ApplicationArea = All;
+                ToolTip = ' ';
+            }
+            field("ACO Posttreatment"; Rec."ACO Posttreatment")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Description"; "ACO Profile Description")
+            field("ACO Particularity"; Rec."ACO Particularity")
+            {
+                ApplicationArea = All;
+                ToolTip = ' ';
+            }
+            field("ACO Customer Item Reference"; Rec."ACO Customer Item Reference")
+            {
+                ApplicationArea = All;
+                ToolTip = ' ';
+            }
+            field("ACO Profile Length"; Rec."ACO Profile Length")
+            {
+                ApplicationArea = ALl;
+                ToolTip = ' ';
+            }
+            // field("ACO Profile Code"; Rec."ACO Profile Code")
+            // {
+            //     ApplicationArea = All;
+            //     Tooltip = ' ';
+            // }
+            // field("ACO Profile Description"; Rec."ACO Profile Description")
+            // {
+            //     ApplicationArea = All;
+            //     Tooltip = ' ';
+            // }
+            field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Circumference"; "ACO Profile Circumference")
+            field("ACO Customer Item No."; Rec."ACO Customer Item No.")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Customer Item No."; "ACO Customer Item No.")
+            // field("ACO Profile Cust. Description"; Rec."ACO Profile Cust. Description")
+            // {
+            //     ApplicationArea = All;
+            //     Tooltip = ' ';
+            // }
+            field("ACO Attach Method Code Profile"; Rec."ACO Attach Method Code Profile")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Profile Cust. Description"; "ACO Profile Cust. Description")
+            field("ACO Type of Clamp Code"; Rec."ACO Type of Clamp Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Attach Method Code Profile"; "ACO Attach Method Code Profile")
+            field("ACO Area"; Rec."ACO Area")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Type of Clamp Code"; "ACO Type of Clamp Code")
+            field("ACO Linked Holder"; Rec."ACO Linked Holder")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Area"; "ACO Area")
+            field("ACO Receipt Bag"; Rec."ACO Receipt Bag")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Linked Holder"; "ACO Linked Holder")
+            field("ACO Shipping Bag"; Rec."ACO Shipping Bag")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Receipt Bag"; "ACO Receipt Bag")
+            field("ACO Kundentour HUECK"; Rec."ACO Kundentour HUECK")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Shipping Bag"; "ACO Shipping Bag")
+            field("ACO Project Color Code"; Rec."ACO Project Color Code")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Kundentour HUECK"; "ACO Kundentour HUECK")
+            field("ACO Number of Units to Invoice"; Rec."ACO Number of Units to Invoice")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Project Color Code"; "ACO Project Color Code")
+            field("ACO Reject Billable Shipped"; Rec."ACO Reject Billable Shipped")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Number of Units to Invoice"; "ACO Number of Units to Invoice")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
-            field("ACO Reject Billable Shipped"; "ACO Reject Billable Shipped")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
-            field("ACO Rej. Not Billable Shipped"; "ACO Rej. Not Billable Shipped")
+            field("ACO Rej. Not Billable Shipped"; Rec."ACO Rej. Not Billable Shipped")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';

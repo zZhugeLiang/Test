@@ -652,8 +652,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Surface - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2117661045 - Field 2609919304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Treatment</source>
-          <target>Voorbehandeling</target>
+          <source>Item No.</source>
+          <target>Artikelnr.</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Treatment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1082493977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

@@ -123,5 +123,37 @@ tableextension 50012 "ACO Sales Cr.Memo Line Ext." extends "Sales Cr.Memo Line"
             Caption = 'Profile Customer Description';
             DataClassification = CustomerContent;
         }
+        field(50072; "ACO Pretreatment"; Code[10])
+        {
+            Caption = ' Pretreatment';
+            TableRelation = "ACO Pretreatment";
+            DataClassification = CustomerContent;
+        }
+
+        field(50073; "ACO Posttreatment"; Code[20])
+        {
+            Caption = 'Posttreatment';
+            TableRelation = "ACO Posttreatment";
+            DataClassification = CustomerContent;
+        }
+
+        field(50074; "ACO Particularity"; Code[20])
+        {
+            Caption = 'Particularity';
+            TableRelation = "ACO Particularity";
+            DataClassification = CustomerContent;
+        }
+
+        field(50075; "ACO Profile Length"; Decimal)
+        {
+            Caption = 'Length [mm] Profile';
+            DataClassification = CustomerContent;
+        }
+
+        field(50076; "ACO Customer Item Reference"; Text[50])
+        {
+            Caption = 'Customer Item Reference';
+            DataClassification = CustomerContent;
+        }
     }
 }

@@ -1,7 +1,15 @@
-pageextension 50015 "ACO Pstd Sales CrMemo Subf Ext" extends "Posted Sales Cr. Memo Subform"
+pageextension 50026 "ACO Sales Cr. Memo Subf. Ext." extends "Sales Cr. Memo Subform"
 {
     layout
     {
+        modify("Unit Price")
+        {
+            trigger OnAfterValidate()
+            begin
+                Rec."ACO Manual Unit Price" := true;
+            end;
+        }
+
         addlast(Control1)
         {
             field("ACO Variant Code"; Rec."Variant Code")
@@ -29,27 +37,6 @@ pageextension 50015 "ACO Pstd Sales CrMemo Subf Ext" extends "Posted Sales Cr. M
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            // field("ACO Profile Code"; Rec."ACO Profile Code")
-            // {
-            //     ApplicationArea = All;
-            //     Tooltip = ' ';
-            // }
-            // field("ACO Profile Description"; Rec."ACO Profile Description")
-            // {
-            //     ApplicationArea = All;
-            //     Tooltip = ' ';
-            // }
-            field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
-            field("ACO Customer Item No."; Rec."ACO Customer Item No.")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
-
             field("ACO Pretreatment"; Rec."ACO Pretreatment")
             {
                 ApplicationArea = All;
@@ -75,11 +62,18 @@ pageextension 50015 "ACO Pstd Sales CrMemo Subf Ext" extends "Posted Sales Cr. M
                 ApplicationArea = ALl;
                 ToolTip = ' ';
             }
-            // field("ACO Profile Cust. Description"; Rec."ACO Profile Cust. Description")
-            // {
-            //     ApplicationArea = All;
-            //     Tooltip = ' ';
-            // }
+
+            field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+            field("ACO Customer Item No."; Rec."ACO Customer Item No.")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+
             field("ACO Attach Method Code Profile"; Rec."ACO Attach Method Code Profile")
             {
                 ApplicationArea = All;
@@ -105,17 +99,7 @@ pageextension 50015 "ACO Pstd Sales CrMemo Subf Ext" extends "Posted Sales Cr. M
                 ApplicationArea = All;
                 Tooltip = ' ';
             }
-            field("ACO Receipt Shelf"; Rec."ACO Receipt Shelf")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
             field("ACO Shipping Bag"; Rec."ACO Shipping Bag")
-            {
-                ApplicationArea = All;
-                Tooltip = ' ';
-            }
-            field("ACO Shipping Shelf"; Rec."ACO Shipping Shelf")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
@@ -126,6 +110,21 @@ pageextension 50015 "ACO Pstd Sales CrMemo Subf Ext" extends "Posted Sales Cr. M
                 Tooltip = ' ';
             }
             field("ACO Project Color Code"; Rec."ACO Project Color Code")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+            field("ACO Number of Units to Invoice"; Rec."ACO Number of Units to Invoice")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+            field("ACO Reject Billable Shipped"; Rec."ACO Reject Billable Shipped")
+            {
+                ApplicationArea = All;
+                Tooltip = ' ';
+            }
+            field("ACO Rej. Not Billable Shipped"; Rec."ACO Rej. Not Billable Shipped")
             {
                 ApplicationArea = All;
                 Tooltip = ' ';
