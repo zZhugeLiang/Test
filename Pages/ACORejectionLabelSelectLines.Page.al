@@ -110,7 +110,8 @@ page 50055 "ACO Rej. Label Select Lines"
                         if SalesLineGet.Get(SalesLineGet."Document Type"::Order, ProdOrderLine."ACO Source No.", ProdOrderLine."ACO Source Line No.") then
                             if SalesLineGet.Type = SalesLineGet.Type::Item then begin
                                 BathLineTempRecord.Treatment := SalesLineGet."No.";
-                                BathLineTempRecord."Profile Length" := Round(SalesLine."ACO Profile Length", 1);
+                                BathLineTempRecord."Profile Length" := Round(SalesLineGet."ACO Profile Length", 1);
+                                BathLineTempRecord."Profile Circumference" := Round(SalesLineGet."ACO Profile Circumference", 1);
                             end;
                     end;
 

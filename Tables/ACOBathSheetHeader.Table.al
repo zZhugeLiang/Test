@@ -549,7 +549,7 @@ table 50016 "ACO Bath Sheet Header"
 
         "Layer Thickness" := LargestCombinationLT;
         "Total Surface Profiles" := Round(TotalSurfaceProfiles, 1);
-        "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment") - StrLen("Bath Sheet Comment"));
+        "Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen("Bath Sheet Comment"));
         "Surface Addition" := SurfaceAddition;
 
         CalculateTotalSurface();
