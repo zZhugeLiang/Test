@@ -76,11 +76,10 @@ codeunit 50002 "ACO Bath Sheet Mgt."
 
     local procedure CreateBathSheetHeader(var ACOBathSheetHeader: Record "ACO Bath Sheet Header"; var ProductionOrderLines: Record "Prod. Order Line")
     var
-        ACOProfile: Record "ACO Profile";
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         Customer: Record Customer;
-        CommentLine: Record "Comment Line";
+        // CommentLine: Record "Comment Line";
         PreviousSourceNo: Code[20];
         CurrentSourceNo: Code[20];
         TotalCircumference: Decimal;
@@ -88,7 +87,7 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         MinThinStainingTime: Decimal;
         PreviousMinThinStainingTime: Decimal;
         PreviousMaxThickStainingTime: Decimal;
-        BathSheetComment: Text;
+        // BathSheetComment: Text;
         First: Boolean;
         Measure: Boolean;
     begin
@@ -104,15 +103,15 @@ codeunit 50002 "ACO Bath Sheet Mgt."
                 if First then begin
                     // if ACOProfile.Get(ProductionOrderLines."ACO Profile Code") then //begin
                     //     ACOBathSheetHeader."Bath Sheet Comment" := ACOProfile."Comment Bath Card";
-                    BathSheetComment := '';
-                    CommentLine.SetRange("No.", ProductionOrderLines."Item No.");
-                    CommentLine.SetRange("ACO Source Document Type", CommentLine."ACO Source Document Type"::"Bath Sheet");
-                    if CommentLine.FindSet() then
-                        repeat
-                            BathSheetComment += CommentLine.Comment;
-                        until CommentLine.Next() = 0;
+                    // BathSheetComment := '';
+                    // CommentLine.SetRange("No.", ProductionOrderLines."Item No.");
+                    // CommentLine.SetRange("ACO Source Document Type", CommentLine."ACO Source Document Type"::"Bath Sheet");
+                    // if CommentLine.FindSet() then
+                    //     repeat
+                    //         BathSheetComment += CommentLine.Comment;
+                    //     until CommentLine.Next() = 0;
 
-                    ACOBathSheetHeader."Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment") - StrLen(ACOBathSheetHeader."Bath Sheet Comment"));
+                    // ACOBathSheetHeader."Bath Sheet Comment" := CopyStr(BathSheetComment, 1, MaxStrLen(ACOBathSheetHeader."Bath Sheet Comment") - StrLen(ACOBathSheetHeader."Bath Sheet Comment"));
 
                     SalesHeader.Get(SalesHeader."Document Type"::Order, ProductionOrderLines."ACO Source No.");
                     Customer.Get(SalesHeader."Sell-to Customer No.");

@@ -229,6 +229,41 @@ Page 50058 "ACO Sales Order Lines"
                     ApplicationArea = All;
                     Tooltip = ' ';
                 }
+                field("ACO Layer Thickness"; Rec."ACO Layer Thickness")
+                {
+                    ApplicationArea = All;
+                    Tooltip = ' ';
+                }
+                field("ACO Color"; Rec."ACO Color")
+                {
+                    ApplicationArea = All;
+                    Tooltip = ' ';
+                }
+                field("ACO Pretreatment"; Rec."ACO Pretreatment")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("ACO Posttreatment"; Rec."ACO Posttreatment")
+                {
+                    ApplicationArea = All;
+                    Tooltip = ' ';
+                }
+                field("ACO Particularity"; Rec."ACO Particularity")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("ACO Customer Item Reference"; Rec."ACO Customer Item Reference")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
+                field("ACO Profile Length"; Rec."ACO Profile Length")
+                {
+                    ApplicationArea = ALl;
+                    ToolTip = ' ';
+                }
                 field("ACO Profile Circumference"; Rec."ACO Profile Circumference")
                 {
                     ApplicationArea = All;
@@ -294,7 +329,6 @@ Page 50058 "ACO Sales Order Lines"
                     ApplicationArea = All;
                     Tooltip = ' ';
                 }
-
             }
         }
     }

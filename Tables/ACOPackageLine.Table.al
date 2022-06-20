@@ -168,7 +168,7 @@ table 50024 "ACO Package Line"
         }
         field(50077; "Customer Item Ref. Description"; Text[100])
         {
-            Caption = 'Customer Item Reference Description';
+            Caption = 'Description';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup("Item Reference".Description where("Reference No." = field("Customer Item Reference")));

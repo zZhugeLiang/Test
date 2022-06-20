@@ -313,7 +313,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 Item: Record Item;
-                ItemVariant: Record "Item Variant";
                 ACOAppSetup: Record "ACO App Setup";
                 NewQuantity: Decimal;
             begin
@@ -322,14 +321,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
                     NewQuantity := "ACO Number of Units to Ship";
 
-                    if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                        Clear(ItemVariant);
-
                     if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                        NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship";
+                        NewQuantity := Rec."ACO Profile Length" / 1000 * "ACO Number of Units to Ship";
 
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                        NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Ship" / 1000;
+                        NewQuantity := Rec."ACO Profile Circumference" * Rec."ACO Profile Length" * "ACO Number of Units to Ship" / 1000000;
 
                     NewQuantity := Round(NewQuantity, 0.001);
                     if Rec."Outstanding Quantity" + 0.001 = NewQuantity then
@@ -349,7 +345,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             trigger OnValidate()
             var
                 Item: Record Item;
-                ItemVariant: Record "Item Variant";
                 ACOAppSetup: Record "ACO App Setup";
                 NewQuantity: Decimal;
             begin
@@ -358,14 +353,11 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
                     NewQuantity := "ACO Number of Units to Invoice";
 
-                    if not ItemVariant.Get(Rec."No.", Rec."Variant Code") then
-                        Clear(ItemVariant);
-
                     if Rec."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                        NewQuantity := ItemVariant."ACO Number of Meters" * "ACO Number of Units to Invoice";
+                        NewQuantity := Rec."ACO Profile Length" / 1000 * "ACO Number of Units to Invoice";
 
                     if Rec."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                        NewQuantity := Rec."ACO Profile Circumference" * ItemVariant."ACO Number of Meters" * "ACO Number of Units to Invoice" / 1000;
+                        NewQuantity := Rec."ACO Profile Circumference" * Rec."ACO Profile Length" * "ACO Number of Units to Invoice" / 1000000;
 
                     NewQuantity := Round(NewQuantity, 0.001);
                     Validate("Qty. to Invoice", NewQuantity);

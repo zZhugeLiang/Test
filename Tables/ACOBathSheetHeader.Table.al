@@ -499,16 +499,15 @@ table 50016 "ACO Bath Sheet Header"
     begin
         "Total Surface Profiles" := 0;
         First := true;
+        BathSheetComment := '';
         ACOAppSetup.Get();
         ACOAppSetup.TestField("Layer Thickness Tolerance");
-
         ACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
         if ACOBathSheetLine.FindSet() then
             repeat
                 ExtraToEnumerate := 0;
                 TotalSurfaceProfiles += ACOBathSheetLine.Surface;
 
-                BathSheetComment := '';
                 CommentLine.SetRange("No.", ACOBathSheetLine."Treatment");
                 CommentLine.SetRange("ACO Source Document Type", CommentLine."ACO Source Document Type"::"Bath Sheet");
                 if CommentLine.FindSet() then

@@ -66,7 +66,7 @@ page 50055 "ACO Rej. Label Select Lines"
         SalesLine: Record "Sales Line";
         SalesLineGet: Record "Sales Line";
         BathLineTempRecord: Record "ACO Bath Sheet Line" temporary;
-        ItemVariant: Record "Item Variant";
+        // ItemVariant: Record "Item Variant";
         GenPackage: Page "ACO Generate Package Dialog";
         NumberSeriesManagement: Codeunit NoSeriesManagement;
         ACOManagement: Codeunit "ACO Management";
@@ -100,11 +100,11 @@ page 50055 "ACO Rej. Label Select Lines"
                         ACOBathSheetLine."Production Order Line No." := ProdOrderLine."Line No.";
                         BathLineTempRecord."Profile Code" := ProdOrderLine."ACO Profile Code";
                         // BathLineTempRecord."Profile Description" := ProdOrderLine.Profil desc; is this field ever filled?
-                        if ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code") then
-                            BathLineTempRecord.Length := Round(ItemVariant."ACO Number of Meters" * 1000, 1);
                         if SalesLineGet.Get(SalesLineGet."Document Type"::Order, ProdOrderLine."ACO Source No.", ProdOrderLine."ACO Source Line No.") then
-                            if SalesLineGet.Type = SalesLineGet.Type::Item then
-                                BathLineTempRecord.Treatment := SalesLine."No.";
+                            if SalesLineGet.Type = SalesLineGet.Type::Item then begin
+                                BathLineTempRecord.Treatment := SalesLineGet."No.";
+                                BathLineTempRecord.Length := Round(SalesLine."ACO Profile Length", 1);
+                            end;
                     end;
 
                 BathLineTempRecord."Qty in Package" := Rec.Quantity;
@@ -216,6 +216,9 @@ page 50055 "ACO Rej. Label Select Lines"
 
             Commit();
             // TODO Create Production Journal <<
+            if ProdOrderLine."Prod. Order No." = '' then
+                ProdOrderLine.Get(PackageLine."Production Order Status", PackageLine."Production Order No.", PackageLine."Production Order Line No.");
+
             SingleInstanceMgt.SetTotalRejectionQuantity(TotalRejectionQuantity);
             ACOManagement.PostProductionJournal(PackageHeader."No.", ProdOrderLine);
             SingleInstanceMgt.SetTotalRejectionQuantity(0);
@@ -239,8 +242,7 @@ page 50055 "ACO Rej. Label Select Lines"
         LineNo: Integer;
         IsReject: Boolean;
 
-    local procedure PrintPackageLabel(var
-                                          PackageHeader: Record "ACO Package Header")
+    local procedure PrintPackageLabel(var PackageHeader: Record "ACO Package Header")
     var
         ACOPackageLabel: Report "ACO Package Label";
     begin

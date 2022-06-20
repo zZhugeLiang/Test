@@ -229,7 +229,7 @@ codeunit 50003 "ACO Management"
         ACOAppSetup: Record "ACO App Setup";
         ReasonCode: Record "Reason Code";
         ProdOrderLine: Record "Prod. Order Line";
-        ItemVariant: Record "Item Variant";
+        // ItemVariant: Record "Item Variant";
         ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
         ACOSelectionPackageLines: Page "ACO Selection Package Lines";
         ProductionOrderStatus: Enum "Production Order Status";
@@ -296,8 +296,8 @@ codeunit 50003 "ACO Management"
 
                         NewNumberOfUnits := SalesLine."Quantity Shipped";
 
-                        if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
-                            Clear(ItemVariant);
+                        // if not ItemVariant.Get(SalesLine."No.", SalesLine."Variant Code") then
+                        //     Clear(ItemVariant);
 
                         if SalesLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
                             NewNumberOfUnits := SalesLine."Quantity Shipped" / SalesLine."ACO Profile Length" / 1000;
@@ -318,14 +318,14 @@ codeunit 50003 "ACO Management"
 
                                     FinishedNumberOfUnits := ProdOrderLine."Finished Quantity";
 
-                                    if not ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code") then
-                                        Clear(ItemVariant);
+                                    // if not ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code") then
+                                    //     Clear(ItemVariant);
 
                                     if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then
-                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" / ItemVariant."ACO Number of Meters";
+                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" / SalesLine."ACO Profile Length" * 1000;
 
                                     if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Area Unit of Measure Code" then
-                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" * 1000 / (SalesLine."ACO Profile Circumference" * ItemVariant."ACO Number of Meters");
+                                        FinishedNumberOfUnits := ProdOrderLine."Finished Quantity" * 1000 / (SalesLine."ACO Profile Circumference" * SalesLine."ACO Profile Length" * 1000);
 
                                     FinishedNumberOfUnits := Round(FinishedNumberOfUnits, 1);
 

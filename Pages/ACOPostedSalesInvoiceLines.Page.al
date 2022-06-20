@@ -252,6 +252,11 @@ page 50059 "ACO Posted Sales Invoice Lines"
                     ApplicationArea = All;
                     Tooltip = ' ';
                 }
+                field("ACO Project Color Code"; Rec."ACO Project Color Code")
+                {
+                    ApplicationArea = All;
+                    ToolTip = ' ';
+                }
             }
         }
     }

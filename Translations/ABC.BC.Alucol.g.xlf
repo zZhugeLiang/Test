@@ -1909,7 +1909,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Customer Item No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Item Reference Description</source>
+          <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Customer Item Ref. Description - Property Caption</note>
         </trans-unit>
@@ -3978,6 +3978,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Posted Sales Invoice Lines - Control ACO Profile Length - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 285665476 - Control 873564940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Posted Sales Invoice Lines - Control ACO Project Color Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 285665476 - Control 4185750204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4483,10 +4488,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO British Standard - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 290612570 - Control 4064269812 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Color - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 290612570 - Control 1376709893 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Customer Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 290612570 - Control 2307443177 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Customer Item Reference - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 290612570 - Control 2332128290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
@@ -4513,6 +4528,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Kundentour HUECK - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 290612570 - Control 4213692988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Layer Thickness - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 290612570 - Control 3220518104 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4538,6 +4558,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Number of Units - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 290612570 - Control 925859770 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Particularity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 290612570 - Control 2078923811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Posttreatment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 290612570 - Control 545940338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Pretreatment - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 290612570 - Control 2463751251 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4557,6 +4592,11 @@
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Profile Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 290612570 - Control 3166929750 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Profile Length - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 290612570 - Control 873564940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>

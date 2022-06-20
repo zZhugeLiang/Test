@@ -27,6 +27,10 @@ Page 50057 "ACO Selection Package Lines"
                 {
                     ApplicationArea = All;
                 }
+                field("Item No."; Rec."Item No.")
+                {
+                    ApplicationArea = All;
+                }
 
                 field(Quantity; Rec.Quantity)
                 {
@@ -38,7 +42,7 @@ Page 50057 "ACO Selection Package Lines"
                     ApplicationArea = All;
                 }
 
-                field(Length; Rec.Length)
+                field(Length; Rec."Profile Length")
                 {
                     ApplicationArea = All;
                 }
@@ -47,7 +51,14 @@ Page 50057 "ACO Selection Package Lines"
                 {
                     ApplicationArea = All;
                 }
-
+                field("Customer Item Reference"; Rec."Customer Item Reference")
+                {
+                    ApplicationArea = All;
+                }
+                field("Reject Reason Code"; Rec."Reject Reason Code")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
