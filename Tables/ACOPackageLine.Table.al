@@ -65,6 +65,7 @@ table 50024 "ACO Package Line"
         }
         field(13; "Treatment"; Code[20])
         {
+            Caption = 'Item No.';
             DataClassification = CustomerContent;
             TableRelation = Item;
         }

@@ -27,7 +27,7 @@ Page 50057 "ACO Selection Package Lines"
                 {
                     ApplicationArea = All;
                 }
-                field("Item No."; Rec."Item No.")
+                field("Treatment"; Rec."Treatment")
                 {
                     ApplicationArea = All;
                 }

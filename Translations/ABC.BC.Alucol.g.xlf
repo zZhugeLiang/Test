@@ -2039,7 +2039,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Ship - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4136019483 - Field 2609919304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Treatment</source>
+          <source>Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Package Line - Field Treatment - Property Caption</note>
         </trans-unit>

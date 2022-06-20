@@ -99,11 +99,18 @@ page 50055 "ACO Rej. Label Select Lines"
                         BathLineTempRecord."Production Order Status" := ProdOrderLine.Status.AsInteger();
                         ACOBathSheetLine."Production Order Line No." := ProdOrderLine."Line No.";
                         BathLineTempRecord."Profile Code" := ProdOrderLine."ACO Profile Code";
+                        BathLineTempRecord.Color := ProdOrderLine."ACO Color";
+                        BathLineTempRecord."Layer Thickness" := ProdOrderLine."ACO Layer Thickness";
+                        BathLineTempRecord.Pretreatment := ProdOrderLine."ACO Pretreatment";
+                        BathLineTempRecord.Posttreatment := ProdOrderLine."ACO Posttreatment";
+                        BathLineTempRecord.Particularity := ProdOrderLine."ACO Particularity";
+                        BathLineTempRecord."Customer Item Reference" := ProdOrderLine."ACO Customer Item Reference";
+
                         // BathLineTempRecord."Profile Description" := ProdOrderLine.Profil desc; is this field ever filled?
                         if SalesLineGet.Get(SalesLineGet."Document Type"::Order, ProdOrderLine."ACO Source No.", ProdOrderLine."ACO Source Line No.") then
                             if SalesLineGet.Type = SalesLineGet.Type::Item then begin
                                 BathLineTempRecord.Treatment := SalesLineGet."No.";
-                                BathLineTempRecord.Length := Round(SalesLine."ACO Profile Length", 1);
+                                BathLineTempRecord."Profile Length" := Round(SalesLine."ACO Profile Length", 1);
                             end;
                     end;
 
@@ -198,6 +205,7 @@ page 50055 "ACO Rej. Label Select Lines"
                     PackageLine."Profile Length" := BathLineTempRecord."Profile Length";
                     PackageLine."Profile Circumference" := BathLineTempRecord."Profile Circumference";
                     PackageLine."Customer Item Reference" := BathLineTempRecord."Customer Item Reference";
+                    PackageLine."Customer Item Ref. Description" := SalesLine.Description;
                     PackageLine.Color := BathLineTempRecord.Color;
                     if SalesOrder.Get(SalesOrder."Document Type"::Order, BathLineTempRecord."Sales Order No.") then begin
                         PackageLine."Your Reference" := SalesOrder."Your Reference";
