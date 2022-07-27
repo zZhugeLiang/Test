@@ -227,16 +227,9 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
 
                 trigger OnAction()
                 var
-                    ACOProfile: Record "ACO Profile";
-                    ACOProfileCustomer: Record "ACO Profile Customer";
+                    DestinationType: Enum "ACO Doc. Attach. Dest. Type";
                 begin
-                    if ACOProfileCustomer.Get(Rec."ACO Profile Code", Rec."Sell-to Customer No.", Rec."ACO Customer Item No.") then begin
-                        if not ACOProfileCustomer.DownloadPackagingInstructions() then
-                            if ACOProfile.Get(Rec."ACO Profile Code") then
-                                ACOProfile.DownloadPackagingInstructions();
-                    end else
-                        if ACOProfile.Get(Rec."ACO Profile Code") then
-                            ACOProfile.DownloadPackagingInstructions();
+                    ACODownloadFile(DestinationType::"Packing Instructions");
                 end;
             }
 
@@ -249,10 +242,9 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
 
                 trigger OnAction()
                 var
-                    ACOProfile: Record "ACO Profile";
+                    DestinationType: Enum "ACO Doc. Attach. Dest. Type";
                 begin
-                    if ACOProfile.Get(Rec."ACO Profile Code") then
-                        ACOProfile.DownloadClampingMethod();
+                    ACODownloadFile(DestinationType::"Clamping Method");
                 end;
             }
         }
@@ -283,40 +275,75 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
 
     local procedure ACOSetCheckboxes()
     var
-        ACOProfile: Record "ACO Profile";
+        Item: Record Item;
         DocumentAttachment: Record "Document Attachment";
-    // MediaFile: Record "Media";
     begin
         // TODO Attachments
-        if ACOProfile.Get(Rec."ACO Profile Code") then begin
-            ACOProfile.CalcFields("Clamping Method File", "Packaging Instructions File");
+        ACOHasClampingMethod := false;
+        ACOHasPackagingInstructions := false;
+        if Rec.Type <> Rec.Type::Item then
+            exit;
 
-            ACOHasClampingMethod := ACOProfile."Clamping Method File".HasValue();
-            ACOHasPackagingInstructions := ACOProfile."Packaging Instructions File".HasValue();
-        end else begin
-            ACOHasClampingMethod := false;
-            ACOHasPackagingInstructions := false;
+        if Item.Get(Rec."No.") then begin
+            DocumentAttachment.SetRange("Table ID", Database::Item);
+            DocumentAttachment.SetRange("No.", Rec."No.");
+            DocumentAttachment.SetRange("ACO Source Type", DocumentAttachment."ACO Source Type"::Customer);
+            DocumentAttachment.SetRange("ACO Source No.", Rec."Sell-to Customer No.");
+            DocumentAttachment.SetRange("ACO Destination Type", DocumentAttachment."ACO Destination Type"::"Clamping Method");
+            if DocumentAttachment.FindFirst() then
+                ACOHasClampingMethod := DocumentAttachment."Document Reference ID".HasValue();
+
+            DocumentAttachment.Reset();
+            DocumentAttachment.SetRange("Table ID", Database::Item);
+            DocumentAttachment.SetRange("No.", Rec."No.");
+            DocumentAttachment.SetRange("ACO Source Type", DocumentAttachment."ACO Source Type"::Customer);
+            DocumentAttachment.SetRange("ACO Source No.", Rec."Sell-to Customer No.");
+            DocumentAttachment.SetRange("ACO Destination Type", DocumentAttachment."ACO Destination Type"::"Packing Instructions");
+            if DocumentAttachment.FindFirst() then
+                ACOHasPackagingInstructions := DocumentAttachment."Document Reference ID".HasValue();
         end;
     end;
 
-    // local procedure ACOFileHasValue(var DocumentAttachment: Record "Document Attachment"; ShowFileDialog: Boolean): Boolean
-    // var
-    //     TempBlob: Codeunit "Temp Blob";
-    //     FileManagement: Codeunit "File Management";
-    //     DocumentStream: OutStream;
-    //     FullFileName: Text;
-    // begin
-    //     if DocumentAttachment.ID = 0 then
-    //         exit;
-    //     // Ensure document has value in DB
-    //     if not DocumentAttachment."Document Reference ID".HasValue then
-    //         exit;
+    local procedure ACODownloadFile(DestinationType: enum "ACO Doc. Attach. Dest. Type")
+    var
+        Item: Record Item;
+        DocumentAttachment: Record "Document Attachment";
+    begin
+        if Rec.Type <> Rec.Type::Item then
+            exit;
 
-    //     //OnBeforeExportAttachment(Rec);
-    //     FullFileName := DocumentAttachment."File Name" + '.' + DocumentAttachment."File Extension";
-    //     TempBlob.CreateOutStream(DocumentStream);
-    //     DocumentAttachment."Document Reference ID".ExportStream(DocumentStream);
-    //     DocumentStream.
-    //     //exit(FileManagement.BLOBExport(TempBlob, FullFileName, ShowFileDialog));
-    // end;
+        if Item.Get(Rec."No.") then begin
+            DocumentAttachment.SetRange("Table ID", Database::Item);
+            DocumentAttachment.SetRange("No.", Rec."No.");
+            DocumentAttachment.SetRange("ACO Source Type", DocumentAttachment."ACO Source Type"::Customer);
+            DocumentAttachment.SetRange("ACO Source No.", Rec."Sell-to Customer No.");
+            DocumentAttachment.SetRange("ACO Destination Type", DestinationType);
+            if DocumentAttachment.FindFirst() then
+                ACOExport(DocumentAttachment, true)
+            else begin
+                DocumentAttachment.SetRange("ACO Source No.");
+                if DocumentAttachment.FindFirst() then
+                    ACOExport(DocumentAttachment, true)
+            end;
+        end;
+    end;
+
+    procedure ACOExport(var DocumentAttachment: Record "Document Attachment"; ShowFileDialog: Boolean): Text
+    var
+        TempBlob: Codeunit "Temp Blob";
+        FileManagement: Codeunit "File Management";
+        DocumentStream: OutStream;
+        FullFileName: Text;
+    begin
+        if DocumentAttachment.ID = 0 then
+            exit;
+
+        if not DocumentAttachment."Document Reference ID".HasValue then
+            exit;
+
+        FullFileName := DocumentAttachment."File Name" + '.' + DocumentAttachment."File Extension";
+        TempBlob.CreateOutStream(DocumentStream);
+        DocumentAttachment."Document Reference ID".ExportStream(DocumentStream);
+        exit(FileManagement.BLOBExport(TempBlob, FullFileName, ShowFileDialog));
+    end;
 }

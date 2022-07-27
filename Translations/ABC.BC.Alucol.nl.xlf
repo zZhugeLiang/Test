@@ -7552,7 +7552,7 @@
         </trans-unit>
 	<trans-unit id="TableExtension 993637128 - Field 564975995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Reject Not Billable Shipped</source>
-          <target>Afkeur facturabel niet verzonden</target>
+          <target>Afkeur niet facturabel verzonden</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Rej. Not Billable Shipped - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 879046660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">

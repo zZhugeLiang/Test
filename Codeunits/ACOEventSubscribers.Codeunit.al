@@ -517,6 +517,8 @@ codeunit 50000 "ACO Event Subscribers"
         SalesInvLine."ACO Number of Units" := SalesLine."ACO Number of Units to Invoice";
         SalesInvLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable";
         SalesInvLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Reject Not Billable";
+        SalesInvLine."ACO Reject Billable Shipped" := SalesLine."ACO Reject Billable Shipped";
+        SalesInvLine."ACO Rej. Not Billable Shipped" := SalesLine."ACO Rej. Not Billable Shipped";
     end;
 
 
@@ -703,9 +705,10 @@ codeunit 50000 "ACO Event Subscribers"
                         ACOAppSetup."Length Unit of Measure Code":
                             begin
                                 if ProdOrderLine."Unit of Measure Code" = ACOAppSetup."Length Unit of Measure Code" then begin
-                                    ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code");
-                                    if ItemVariant."ACO Number of Meters" <> 0 then
-                                        NewQuantity := QtyInPackage * ItemVariant."ACO Number of Meters"; //6,5
+                                    // ItemVariant.Get(ProdOrderLine."Item No.", ProdOrderLine."Variant Code");
+                                    // if ItemVariant."ACO Number of Meters" <> 0 then
+                                    // NewQuantity := QtyInPackage * ItemVariant."ACO Number of Meters"; //6,5
+                                    NewQuantity := QtyInPackage * ProdOrderLine."ACO Profile Length" / 1000;
                                 end;
                             end;
                         ACOAppSetup."Area Unit of Measure Code":
@@ -784,6 +787,7 @@ codeunit 50000 "ACO Event Subscribers"
         SalesLine."ACO Reject Not Billable" := 0;
         SalesLine."ACO Reject Billable Shipped" := SalesShptLine."ACO Reject Billable Shipped";
         SalesLine."ACO Rej. Not Billable Shipped" := SalesShptLine."ACO Rej. Not Billable Shipped";
+        SalesLine."ACO Number of Units to Invoice" := SalesLine."ACO Number of Units";
         if (SalesLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price") <> 0 then
             NewLineDiscountAmount := SalesShptLine.Quantity / SalesShptLine."ACO Number of Units" * SalesShptLine."ACO Rej. Not Billable Shipped" * SalesLine."Unit Price";
 

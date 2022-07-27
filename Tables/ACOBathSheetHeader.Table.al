@@ -512,7 +512,10 @@ table 50016 "ACO Bath Sheet Header"
                 CommentLine.SetRange("ACO Source Document Type", CommentLine."ACO Source Document Type"::"Bath Sheet");
                 if CommentLine.FindSet() then
                     repeat
-                        BathSheetComment += CommentLine.Comment;
+                        if BathSheetComment = '' then
+                            BathSheetComment += CommentLine.Comment
+                        else
+                            BathSheetComment += ' ' + CommentLine.Comment
                     until CommentLine.Next() = 0;
 
                 if Item.Get(ACOBathSheetLine.Treatment) then begin
