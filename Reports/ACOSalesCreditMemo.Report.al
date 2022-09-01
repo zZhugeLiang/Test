@@ -35,6 +35,9 @@ report 50011 "ACO Sales - Credit Memo"
             column(SalesCrMemoLineDiscCaption; SalesCrMemoLineDiscCaptionLbl)
             {
             }
+            column(UseNewLayout; "Sales Cr.Memo Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -573,6 +576,15 @@ report 50011 "ACO Sales - Credit Memo"
                         column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                         column(ACOSawing_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Sawing") { }
                         column(ACONumberofUnits_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Number of Units") { }
+                        column(ACOCustomerItemReference_SalesInvLine; "Sales Cr.Memo Line"."ACO Customer Item Reference") { }
+                        column(ACOCustomerItemRefDesc_SalesInvLine; "Sales Cr.Memo Line"."ACO Customer Item Ref. Desc.") { }
+                        column(ACOPretreatment_SalesInvLine; "Sales Cr.Memo Line"."ACO Pretreatment") { }
+                        column(ACOLayerThickness_SalesInvLine; "Sales Cr.Memo Line"."ACO Layer Thickness") { }
+                        column(ACOColor_SalesInvLine; "Sales Cr.Memo Line"."ACO Color") { }
+                        column(ACOProfileLength_SalesInvLine; "Sales Cr.Memo Line"."ACO Profile Length") { }
+                        column(ACOPosttreatment_SalesInvLine; "Sales Cr.Memo Line"."ACO Posttreatment") { }
+                        column(ACOParticularity_SalesInvLine; "Sales Cr.Memo Line"."ACO Particularity") { }
+                        column(ACOProfileCircumference_SalesInvLine; "Sales Cr.Memo Line"."ACO Profile Circumference") { }
 
                         dataitem(DimensionLoop2; "Integer")
                         {

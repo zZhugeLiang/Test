@@ -5,7 +5,6 @@ report 50018 "ACO Pick Instruction 2"
 
     dataset
     {
-
         dataitem("Sales Header"; "Sales Header")
         {
             DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
@@ -87,7 +86,9 @@ report 50018 "ACO Pick Instruction 2"
             column(NumberOfPacks; NumberOfPacks) { }
             column(NumberOfBundles; NumberOfBundles) { }
             column(UserID; UserID()) { }
-
+            column(UseNewLayout; "Sales Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -150,6 +151,10 @@ report 50018 "ACO Pick Instruction 2"
                         column(NetGrossWeightFactor_ACOAppSetup; ACOAppSetup."Net/Gross Weight Factor")
                         {
                         }
+                        column(CustomerItemReference_ACOPackageLine; ACOPackageLine."Customer Item Reference") { }
+                        column(CustomerItemRefDescription_ACOPackageLine; ACOPackageLine."Customer Item Ref. Description") { }
+                        column(ProfileLength_ACOPackageLine; ACOPackageLine."Profile Length") { }
+                        column(ACOWeightpermeter_ItemUnitofMeasure; ItemUnitofMeasure."ACO Weight per meter") { }
 
                         trigger OnAfterGetRecord()
                         begin
@@ -172,6 +177,9 @@ report 50018 "ACO Pick Instruction 2"
                                 end else
                                     Clear(ACOProfile);
                             end;
+
+                            if not ItemUnitofMeasure.Get(SalesLine."No.", SalesLine."Unit of Measure Code") then
+                                Clear(ItemUnitofMeasure);
 
                             SalesOrderNo := "ACO Package Line"."Sales Order No.";
                             YourReference := "Sales Header"."Your Reference";
@@ -310,6 +318,7 @@ report 50018 "ACO Pick Instruction 2"
         ACOPackageHeader: Record "ACO Package Header";
         SalesLine: Record "Sales Line";
         TempACOPackageHeader: Record "ACO Package Header" temporary;
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         NoOfCopies: Integer;
         NumberOfBundles: Integer;
         NumberOfPacks: Integer;

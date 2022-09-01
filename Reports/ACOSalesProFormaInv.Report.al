@@ -228,6 +228,9 @@ report 50017 "ACO Sales - Pro Forma Inv"
             column(Amount_Including_VAT; "Amount Including VAT")
             {
             }
+            column(UseNewLayout; "Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem(Line; "Sales Line")
             {
                 DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
@@ -299,6 +302,15 @@ report 50017 "ACO Sales - Pro Forma Inv"
                 column(Amount_Including_VAT_SalesLin; "Amount Including VAT") { }
                 column(ACO_Number_of_Units; "ACO Number of Units") { }
                 column(Unit_of_Measure_Code; "Unit of Measure Code") { }
+                column(ACOCustomerItemReference_SalesLine; Line."ACO Customer Item Reference") { }
+                column(ACOCustomerItemRefDesc_SalesLine; Line."ACO Customer Item Ref. Desc.") { }
+                column(ACOPretreatment_SalesLine; Line."ACO Pretreatment") { }
+                column(ACOLayerThickness_SalesLine; Line."ACO Layer Thickness") { }
+                column(ACOColor_SalesLine; Line."ACO Color") { }
+                column(ACOProfileLength_SalesLine; Line."ACO Profile Length") { }
+                column(ACOPosttreatment_SalesLine; Line."ACO Posttreatment") { }
+                column(ACOParticularity_SalesLine; Line."ACO Particularity") { }
+                column(ACOProfileCircumference_SalesLine; Line."ACO Profile Circumference") { }
                 // Values >>
 
                 trigger OnAfterGetRecord()

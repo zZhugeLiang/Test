@@ -15,6 +15,9 @@ report 50014 "ACO CMR - Sales Shipment"
             column(Sales_Shipment_Header_No_; "No.")
             {
             }
+            column(UseNewLayout; "Sales Shipment Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem("Sales Shipment Line"; "Sales Shipment Line")
             {
                 DataItemLink = "Document No." = FIELD("No.");
@@ -143,6 +146,11 @@ report 50014 "ACO CMR - Sales Shipment"
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                 column(ACOSawing_SalesShptLine; "Sales Shipment Line"."ACO Sawing") { }
                 column(DocumentNo_SalesShptLine; "Sales Shipment Line"."Document No.") { }
+                column(ProfileCircumference_SalesShptLine; "Sales Shipment Line"."ACO Profile Circumference") { }
+                column(ACOCustomerItemReference_SalesShptLine; "Sales Shipment Line"."ACO Customer Item Reference") { }
+                column(ACOProfileLength_SalesShptLine; "Sales Shipment Line"."ACO Profile Length") { }
+                column(ACOWeightpermeter_ItemUnitofMeasure; ItemUnitofMeasure."ACO Weight per meter") { }
+
                 trigger OnAfterGetRecord()
                 begin
                     if "Units per Parcel" <> 0 then begin
@@ -161,6 +169,9 @@ report 50014 "ACO CMR - Sales Shipment"
 
                     if not ACOProfile.Get("ACO Profile Code") then
                         Clear(ACOProfile);
+
+                    if not ItemUnitofMeasure.Get("Sales Shipment Line"."No.", "Sales Shipment Line"."Unit of Measure Code") then
+                        Clear(ItemUnitofMeasure);
                 end;
             }
 
@@ -234,6 +245,7 @@ report 50014 "ACO CMR - Sales Shipment"
                             NetWeight := 0;
                             GrossWeight := 0;
                         end;
+
                         if not RejectReasonCode.Get("ACO Package Line"."Reject Reason Code") then
                             Clear(RejectReasonCode);
                     end;
@@ -314,6 +326,7 @@ report 50014 "ACO CMR - Sales Shipment"
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
         RejectReasonCode: Record "Reason Code";
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         SenderAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         ShipTo: Text[80];

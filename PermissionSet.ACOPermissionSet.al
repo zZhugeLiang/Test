@@ -183,9 +183,7 @@ permissionset 50000 "ACO Permission Set"
         report "ACO Unattach Notice" = X,
         report "ACO Work Order" = X,
         report "ACO Pick Instruction" = X,
-        report "ACO Sales - Credit Memo4" = X,
         report "ACO Pick Instruction 2" = X,
         report "ACO Sales - Credit Memo" = X,
-        report "ACO Std. Sales - Credit Memo" = X,
         xmlport "ACO Aucos Export" = X;
 }

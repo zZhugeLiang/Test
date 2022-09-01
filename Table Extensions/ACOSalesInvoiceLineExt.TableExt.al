@@ -166,7 +166,7 @@ tableextension 50011 "ACO Sales Invoice Line Ext." extends "Sales Invoice Line"
             Caption = 'Customer Item Reference';
             DataClassification = CustomerContent;
         }
-        field(50077; "Customer Item Ref. Description"; Text[100])
+        field(50077; "ACO Customer Item Ref. Desc."; Text[100])
         {
             Caption = 'Customer Item Reference Description';
             Editable = false;

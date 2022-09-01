@@ -1239,6 +1239,9 @@ End Function
         <Field Name="Reject">
           <DataField>Reject</DataField>
         </Field>
+        <Field Name="UseNewLayout">
+          <DataField>UseNewLayout</DataField>
+        </Field>
         <Field Name="Profile_no_">
           <DataField>Profile_no_</DataField>
         </Field>
@@ -1337,6 +1340,39 @@ End Function
         </Field>
         <Field Name="Description_SalesLine">
           <DataField>Description_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOWeightpermeter_ItemUnitofMeasure">
+          <DataField>ACOWeightpermeter_ItemUnitofMeasure</DataField>
+        </Field>
+        <Field Name="ACOWeightpermeter_ItemUnitofMeasureFormat">
+          <DataField>ACOWeightpermeter_ItemUnitofMeasureFormat</DataField>
+        </Field>
+        <Field Name="ACOPosttreatment_SalesLine">
+          <DataField>ACOPosttreatment_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOParticularity_SalesLine">
+          <DataField>ACOParticularity_SalesLine</DataField>
+        </Field>
+        <Field Name="CustomerItemReference_ACOPackageLine">
+          <DataField>CustomerItemReference_ACOPackageLine</DataField>
+        </Field>
+        <Field Name="CustomerItemRefDescription_ACOPackageLine">
+          <DataField>CustomerItemRefDescription_ACOPackageLine</DataField>
+        </Field>
+        <Field Name="ProfileLength_ACOPackageLine">
+          <DataField>ProfileLength_ACOPackageLine</DataField>
+        </Field>
+        <Field Name="ProfileLength_ACOPackageLineFormat">
+          <DataField>ProfileLength_ACOPackageLineFormat</DataField>
+        </Field>
+        <Field Name="Color_ACOPackageLine">
+          <DataField>Color_ACOPackageLine</DataField>
+        </Field>
+        <Field Name="LayerThickness_ACOPackageLine">
+          <DataField>LayerThickness_ACOPackageLine</DataField>
+        </Field>
+        <Field Name="Pretreatment_ACOPackageLine">
+          <DataField>Pretreatment_ACOPackageLine</DataField>
         </Field>
         <Field Name="EntryNo_ACOAddEDIInfoCustomer">
           <DataField>EntryNo_ACOAddEDIInfoCustomer</DataField>

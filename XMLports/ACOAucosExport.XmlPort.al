@@ -67,11 +67,8 @@ xmlport 50000 "ACO Aucos Export"
                     textelement(profileDescription)
                     {
                         trigger OnBeforePassVariable()
-                        var
-                            ACOProfile: Record "ACO Profile";
                         begin
-                            if ACOProfile.Get(ACOBathSheetLine."Profile Code") then
-                                profileDescription := CopyStr(ACOProfile."Description", 1, 40);
+                            profileDescription := CopyStr(ACOBathSheetLine."Profile Description", 1, 40);
                         end;
                     }
                     textelement(quantity_Line)
@@ -85,7 +82,7 @@ xmlport 50000 "ACO Aucos Export"
                     {
                         trigger OnBeforePassVariable()
                         begin
-                            length_Line := FormatAndRound(ACOBathSheetLine.Length);
+                            length_Line := FormatAndRound(ACOBathSheetLine."Profile Length");
                         end;
                     }
                     textelement(circumference_Line)
@@ -104,8 +101,7 @@ xmlport 50000 "ACO Aucos Export"
                             ACOBathSheetLineAll: Record "ACO Bath Sheet Line";
                             AucosFlush: Boolean;
                         begin
-                            if Item.Get(ACOBathSheetLine.Treatment) then
-                                ablageNo := 'n/' + Item."ACO Pretreatment";
+                            ablageNo := 'n/' + ACOBathSheetLine."Pretreatment";
 
                             ACOBathSheetLineAll.SetRange("Bath Sheet No.", ACOBathSheetLine."Bath Sheet No.");
                             if ACOBathSheetLineAll.FindSet() then
@@ -134,14 +130,11 @@ xmlport 50000 "ACO Aucos Export"
                     {
                     }
 
-                    textelement(itemDescription)
+                    textelement(treatment)
                     {
                         trigger OnBeforePassVariable()
-                        var
-                            Item: Record Item;
                         begin
-                            if Item.Get(ACOBathSheetLine.Treatment) then
-                                itemDescription := Item.Description;
+                            treatment := ACOBathSheetLine.Pretreatment + '/' + ACOBathSheetLine."Layer Thickness" + '/' + ACOBathSheetLine.Color;
                         end;
                     }
 

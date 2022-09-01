@@ -213,12 +213,23 @@ report 50020 "ACO Work Order"
                 column(BuildupMaximumHeight_ACOLinkedPackaging; Format(ACOLinkedPackaging."Build-up Maximum Height")) { }
                 column(RemarkCaption; RemarkCaptionLbl) { }
                 column(Remark_ACOLinkedPackaging; ACOLinkedPackaging.Remark) { }
-
                 // Packaging >>      
+                column(ACOCustomerItemReference_SalesLine; "Sales Line"."ACO Customer Item Reference") { }
+                column(ACOCustomerItemRefDesc_SalesLine; "Sales Line"."ACO Customer Item Ref. Desc.") { }
+                column(ACOPretreatment_SalesLine; "Sales Line"."ACO Pretreatment") { }
+                column(ACOProfileCircumference_SalesLine; "Sales Line"."ACO Profile Circumference") { }
+                column(ACOProfileLength_SalesLine; "Sales Line"."ACO Profile Length") { }
+                column(ACOLayerThickness_SalesLine; "Sales Line"."ACO Layer Thickness") { }
+                column(ACOColorCode_SalesLine; "Sales Line"."ACO Color") { }
+                column(ACOPosttreatment_SalesLine; "Sales Line"."ACO Posttreatment") { }
+                column(ACOParticularity_SalesLine; "Sales Line"."ACO Particularity") { }
+                column(No_SalesLine; "Sales Line"."No.") { }
+                column(Picture_SalesLine; Item."Picture") { }
+                column(ACOWeightpermeter_ItemUnitofMeasure; ItemUnitofMeasure."ACO Weight per meter") { }
 
                 trigger OnAfterGetRecord()
                 var
-                    Item: Record Item;
+                    // Item: Record Item;
                     RoutingLine: Record "Routing Line";
                     Customer: Record Customer;
                     ACOBathSheetMgt: Codeunit "ACO Bath Sheet Mgt.";
@@ -232,15 +243,19 @@ report 50020 "ACO Work Order"
                     if not ItemVariant.Get("No.", "Variant Code") then
                         Clear(ItemVariant);
 
-                    if Type = Type::Item then
-                        if Item.Get("No.") then begin
-                            if Item."ACO Color" = '' then begin
-                                NumberOfSkippedLines += 1;
-                                CurrReport.Skip();
-                            end;
+                    if Type = Type::Item then begin
+                        if "Sales Line"."ACO Color" = '' then begin
+                            NumberOfSkippedLines += 1;
+                            CurrReport.Skip();
+                        end;
+
+                        if Item.Get("No.") then
                             if Item."ACO Charges per Bath Profile" <> 0 then
                                 NumberOfBaths := "ACO Number of Units" / Item."ACO Charges per Bath Profile";
-                        end;
+
+                        // if Item.Picture.Count() > 0 then
+                        //     Item.CalcFields(Picture);
+                    end;
 
                     ThinStainingTime := 99999;
                     ThickStainingTime := -1;
@@ -262,6 +277,9 @@ report 50020 "ACO Work Order"
 
                     if not ACOColorProjectHeader.Get("ACO Project Color Code") then
                         Clear(ACOColorProjectHeader);
+
+                    if not ItemUnitofMeasure.Get("Sales Line"."No.", "Sales Line"."Unit of Measure Code") then
+                        Clear(ItemUnitofMeasure);
 
                     ProdOrderLine.Reset();
                     ProdOrderLine.SetRange("ACO Source No.", "Sales Line"."Document No.");
@@ -359,6 +377,7 @@ report 50020 "ACO Work Order"
 
     var
         User: Record User;
+        Item: Record Item;
         ACOProfileCustomer: Record "ACO Profile Customer";
         ItemVariant: Record "Item Variant";
         ACOProfile: Record "ACO Profile";
@@ -389,6 +408,7 @@ report 50020 "ACO Work Order"
         ACOAttachMethod: Record "ACO Attach Method";
         ProdOrderLine: Record "Prod. Order Line";
         ACOLinkedPackaging: Record "ACO Linked Packaging";
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         BagDescriptionsText: Text;
         TotalArea: Decimal; //New
         MaxLength: Decimal; //New

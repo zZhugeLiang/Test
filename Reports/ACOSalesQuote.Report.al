@@ -39,6 +39,9 @@ report 50008 "ACO Sales - Quote"
             column(SalesLineAllowInvoiceDiscCaption; SalesLineAllowInvoiceDiscCaptionLbl)
             {
             }
+            column(UseNewLayout; "Sales Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -813,6 +816,13 @@ report 50008 "ACO Sales - Quote"
                         column(ACOCustomerItemNo_SalesLine; "Sales Line"."ACO Customer Item No.") { }
                         column(ACOProfileCustDescription_SalesLine; SalesLine."ACO Profile Cust. Description") { }
                         column(ACONumberofMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
+                        column(ACOCustomerItemReference_SalesLine; SalesLine."ACO Customer Item Reference") { }
+                        column(ACOCustomerItemRefDesc_SalesLine; SalesLine."ACO Customer Item Ref. Desc.") { }
+                        column(ACOPretreatment_SalesLine; SalesLine."ACO Pretreatment") { }
+                        column(ACOProfileLength_SalesLine; SalesLine."ACO Profile Length") { }
+                        column(ACOPosttreatment_SalesLine; SalesLine."ACO Posttreatment") { }
+                        column(ACOParticularity_SalesLine; SalesLine."ACO Particularity") { }
+
                         ///// Values >>
                         ///// Added Fields from Page >>
                         dataitem(DimensionLoop2; "Integer")

@@ -335,7 +335,7 @@ page 50020 "ACO Bath Sheet"
 
                             Item.Get(ACOBathSheetLine.Treatment);
 
-                            ACOPretreatment.Get(Item."ACO Pretreatment");
+                            ACOPretreatment.Get(ACOBathSheetLine."Pretreatment");
 
                             if LastPretreatmentCode <> '' then
                                 if LastPretreatmentCode <> Item."ACO Pretreatment" then
@@ -406,7 +406,7 @@ page 50020 "ACO Bath Sheet"
 
                             Item.Get(ACOBathSheetLine.Treatment);
 
-                            ACOPretreatment.Get(Item."ACO Pretreatment");
+                            ACOPretreatment.Get(ACOBathSheetLine."Pretreatment");
 
                             if LastPretreatmentCode <> '' then
                                 if LastPretreatmentCode <> Item."ACO Pretreatment" then

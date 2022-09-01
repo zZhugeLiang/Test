@@ -53,6 +53,9 @@ report 50010 "ACO Sales - Invoice"
             column(DisplayAdditionalFeeNote; DisplayAdditionalFeeNote)
             {
             }
+            column(UseNewLayout; "Sales Invoice Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -658,6 +661,15 @@ report 50010 "ACO Sales - Invoice"
                         column(ACOSawing_SalesInvLine; "Sales Invoice Line"."ACO Sawing") { }
                         column(ACORejectBillableShipped_SalesInvLine; "Sales Invoice Line"."ACO Reject Billable Shipped") { }
                         column(ACO_RejNotBillableShippedSalesInvLine; "Sales Invoice Line"."ACO Rej. Not Billable Shipped") { }
+                        column(ACOCustomerItemReference_SalesInvLine; "Sales Invoice Line"."ACO Customer Item Reference") { }
+                        column(ACOCustomerItemRefDesc_SalesInvLine; "Sales Invoice Line"."ACO Customer Item Ref. Desc.") { }
+                        column(ACOPretreatment_SalesInvLine; "Sales Invoice Line"."ACO Pretreatment") { }
+                        column(ACOLayerThickness_SalesInvLine; "Sales Invoice Line"."ACO Layer Thickness") { }
+                        column(ACOColor_SalesInvLine; "Sales Invoice Line"."ACO Color") { }
+                        column(ACOProfileLength_SalesInvLine; "Sales Invoice Line"."ACO Profile Length") { }
+                        column(ACOPosttreatment_SalesInvLine; "Sales Invoice Line"."ACO Posttreatment") { }
+                        column(ACOParticularity_SalesInvLine; "Sales Invoice Line"."ACO Particularity") { }
+                        column(ACOProfileCircumference_SalesInvLine; "Sales Invoice Line"."ACO Profile Circumference") { }
                         ///// Values >>
                         dataitem("Sales Shipment Buffer"; "Integer")
                         {

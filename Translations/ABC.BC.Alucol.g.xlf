@@ -6698,236 +6698,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo - Control ShowInternalInfo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2588589973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Credit Memo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 976774305" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType AmountCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyInfoBankAccNoCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3907868757" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyInfoBankNameCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 217522315" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Email</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyINfoEmailCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 4010998532" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Giro No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyInfoGiroNoCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 164013595" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Home Page</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyInfoHomePageCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 4264908145" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyInfoPhoneNoCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3448977668" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Reg. No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType CompanyInfoVATRegNoCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1155328579" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType DocumentDateLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3652186792" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Header Dimensions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType HeaderDimCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3828308903" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Discount Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType InvDiscAmt_SalesCrMemoLineCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1820188381" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Discount on VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType LineAmtInvDiscAmt_SalesCrMemoLineCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1559168207" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line Dimensions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType LineDimCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1457731004" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Credit Memo No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType No1_SalesCrMemoHeaderCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Page %1 of %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType PageCaptionCap</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 4256140942" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posted Return Receipt Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType PostedReceiptDateCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 2869466049" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType SalesCrMemoHeaderPostDtCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3483640192" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Discount %</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType SalesCrMemoLineDiscCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3515368888" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Address</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType ShiptoAddressCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 69252687" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Subtotal</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType SubtotalCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>(Applies to %1 %2)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType Text003</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Credit Memo %1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType Text005</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount Specification in </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType Text008</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Local Currency</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType Text009</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Exchange rate: %1/%2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType Text010</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Prepmt. Credit Memo %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType Text011</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3896701571" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType TotalCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 4190945604" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unit Price</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType UnitPriceCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3729099473" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Discount Base Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineInvDiscBaseAmtCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3294671814" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Discount Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineInvoiceDiscAmtCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 772663164" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineLineAmtCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 1029123599" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineVATAmtCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 2717656980" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Base</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineVATBaseCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3805154887" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT %</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineVATCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 2523555250" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Identifier</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtLineVATIdentifierCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount Specification</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATAmtSpecificationCptnLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Clause</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - NamedType VATClausesCap</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - ReportDataItem 552782286 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posted Sales Credit Memo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - ReportDataItem Sales Cr.Memo Header - Property RequestFilterHeading</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Options</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control Options - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 816368762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies that interactions with the contact are logged.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control LogInteraction - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Log Interaction</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control LogInteraction - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 2578066365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies how many copies of the document to print.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control NoOfCopies - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No. of Copies</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control NoOfCopies - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 316520822 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if you want the printed report to show information that is only for internal use.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control ShowInternalInfo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 2588589973 - Control 316520822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Show Internal Information</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sales - Credit Memo4 - Control ShowInternalInfo - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 452218179 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7857,281 +7627,6 @@
           <source>Unit of Measure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Sawing Notice - NamedType UOMCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Credit Memo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3743528138" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Applies to Document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType AppliesToTextLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1851005282" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bill-to Contact E-Mail</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType BillToContactEmailLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2423794985" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bill-to Contact Mobile Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType BillToContactMobilePhoneNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 24137681" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bill-to Contact Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType BillToContactPhoneNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1908025102" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thank you for your business. Your credit memo is attached to this message.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType BodyLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2771379227" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sincerely</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType ClosingLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3280613231" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType CompanyInfoBankAccNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3338143750" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType CompanyInfoBankNameLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1810908995" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Giro No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType CompanyInfoGiroNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1970452706" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType CompanyInfoPhoneNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3701423681" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copy</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType CopyLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1198791402" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Email</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType EMailLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3642584667" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Exchange rate: %1/%2</source>
-          <note from="Developer" annotates="general" priority="2">%1 and %2 are both amounts.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType ExchangeRateTxt</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 514421613" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Hello</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType GreetingLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1243851074" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Home Page</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType HomePageLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3479778493" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Discount Base Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType InvDiscBaseAmtLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3079811618" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Discount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType InvDiscountAmtLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 259914550" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Credit Memo No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType InvNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1448166496" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Discount on VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType LineAmtAfterInvDiscLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2284888724" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Local Currency</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType LocalCurrencyLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2491107794" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You must specify one or more filters to avoid accidently printing all documents.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType NoFilterSetErr</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1877187315" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Page</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType PageLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 36769898" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Method</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType PaymentMethodDescLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2906320672" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Terms</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType PaymentTermsDescLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3763377721" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType PostedShipmentDateLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 730897359" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Credit Memo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SalesCreditMemoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1911833152" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Credit Memo %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SalesCreditMemoNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2105550444" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Discount %</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SalesInvLineDiscLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1075159697" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales person</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SalespersonLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 802366685" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales - Prepmt. Credit Memo %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SalesPrepCreditMemoNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2518404021" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sell-to Contact E-Mail</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SellToContactEmailLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 689955230" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sell-to Contact Mobile Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SellToContactMobilePhoneNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1096796838" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sell-to Contact Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SellToContactPhoneNoLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2531235046" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType ShipmentLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2039684796" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Address</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType ShiptoAddrLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2175793069" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shipment Method</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType ShptMethodDescLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3014721408" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Subtotal</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType SubtotalLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2410138484" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType TotalLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 803899421" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount (LCY)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATAmountLCYLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3751533915" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATAmtLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3978645464" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount Specification</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATAmtSpecificationLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 3259128960" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Base</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATBaseLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 282000566" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Base (LCY)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATBaseLCYLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 2760006609" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Clause</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATClausesLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1071970054" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Identifier</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATIdentifierLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - NamedType 1532992371" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT %</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - NamedType VATPercentageLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - ReportDataItem 552782286 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posted Sales Credit Memo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - ReportDataItem Sales Cr.Memo Header - Property RequestFilterHeading</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Options</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control Options - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 1885540899 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if you want the report to include information about components that were used in linked assembly orders that supplied the item(s) being sold.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control DisplayAsmInformation - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 1885540899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Show Assembly Components</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control DisplayAsmInformation - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 4222219250 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies that shipments are shown on the document.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control DisplayShipmentInformation - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 4222219250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Show Shipments</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control DisplayShipmentInformation - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 816368762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies that interactions with the contact are logged.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control LogInteraction - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 1840354334 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Log Interaction</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Std. Sales - Credit Memo - Control LogInteraction - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 287955129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unattach Notice</source>
@@ -10573,6 +10068,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 469018315 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Customer Item Ref. Desc. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 469018315 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Customer Item Reference</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10818,6 +10318,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4107270599 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Customer Item Ref. Desc. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Customer Item Reference</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10927,11 +10432,6 @@
           <source>Type of Clamp Code Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Type of Clamp Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 4107270599 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field Customer Item Ref. Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3705809330 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2903552224">
           <source>Area</source>
@@ -11092,6 +10592,11 @@
           <source>Customer Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 632998638 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item Ref. Desc. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Customer Item Reference</source>
@@ -11388,11 +10893,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Upper Accuracy - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field Customer Item Ref. Description - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2955995662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Area</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11417,6 +10917,11 @@
           <source>Customer Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Customer Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 993637128 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Customer Item Reference Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Customer Item Ref. Desc. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Customer Item Reference</source>
@@ -11527,11 +11032,6 @@
           <source>Type of Clamp Code Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Type of Clamp Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 993637128 - Field 1448437476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field Customer Item Ref. Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 239546769 - Field 1013706845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
           <source>Own</source>

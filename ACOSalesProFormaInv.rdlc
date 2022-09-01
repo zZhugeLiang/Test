@@ -286,6 +286,9 @@ End Function
         <Field Name="Amount_Including_VATFormat">
           <DataField>Amount_Including_VATFormat</DataField>
         </Field>
+        <Field Name="UseNewLayout">
+          <DataField>UseNewLayout</DataField>
+        </Field>
         <Field Name="LineNo">
           <DataField>LineNo</DataField>
         </Field>
@@ -420,6 +423,39 @@ End Function
         </Field>
         <Field Name="Unit_of_Measure_Code">
           <DataField>Unit_of_Measure_Code</DataField>
+        </Field>
+        <Field Name="ACOCustomerItemReference_SalesLine">
+          <DataField>ACOCustomerItemReference_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOCustomerItemRefDesc_SalesLine">
+          <DataField>ACOCustomerItemRefDesc_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOPretreatment_SalesLine">
+          <DataField>ACOPretreatment_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOLayerThickness_SalesLine">
+          <DataField>ACOLayerThickness_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOColor_SalesLine">
+          <DataField>ACOColor_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOProfileLength_SalesLine">
+          <DataField>ACOProfileLength_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOProfileLength_SalesLineFormat">
+          <DataField>ACOProfileLength_SalesLineFormat</DataField>
+        </Field>
+        <Field Name="ACOPosttreatment_SalesLine">
+          <DataField>ACOPosttreatment_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOParticularity_SalesLine">
+          <DataField>ACOParticularity_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOProfileCircumference_SalesLine">
+          <DataField>ACOProfileCircumference_SalesLine</DataField>
+        </Field>
+        <Field Name="ACOProfileCircumference_SalesLineFormat">
+          <DataField>ACOProfileCircumference_SalesLineFormat</DataField>
         </Field>
         <Field Name="TotalWeight">
           <DataField>TotalWeight</DataField>

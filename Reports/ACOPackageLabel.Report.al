@@ -6,7 +6,6 @@ report 50001 "ACO Package Label"
     {
         dataitem(ACOPackageHeader; "ACO Package Header")
         {
-
             column(CompanyName; CompanyInfo.Name) { }
             column(CompanyAddress; CompanyInfo.Address) { }
             column(CompanyCity; CompanyInfo.City) { }
@@ -67,29 +66,30 @@ report 50001 "ACO Package Label"
             column(No_SalesLineCaption; SalesLine.FieldCaption("No.")) { }
             column(Description_SalesLineCaption; SalesLine.FieldCaption("Description")) { }
             column(Reject; Reject) { }
+            column(UseNewLayout; DT2Date(ACOPackageHeader."Date-Time") >= 20220926D) { }
             dataitem(ACOPackageLine; "ACO Package Line")
             {
                 DataItemLinkReference = ACOPackageHeader;
                 DataItemLink = "Package No." = field("No.");
 
-                column(Profile_no_; "Profile no.") { }
-                column(Profile_description; "Profile description") { }
+                column(Profile_no_; ACOPackageLine."Profile no.") { }
+                column(Profile_description; ACOPackageLine."Profile description") { }
                 column(CustomerItemNo_ACOProfileCustomer; ACOProfileCustomer."Customer Item No.") { }
                 column(ProfileDescription_ACOProfileCustomer; ACOProfileCustomer."Profile Description") { }
-                column(Quantity; Quantity) { }
-                column(Length; Length) { }
-                column(External_Document_No_; "External Document No.") { }
-                column(Your_Reference; "Your Reference") { }
-                column(Sales_Order_No_; "Sales Order No.") { }
-                column(Treatment_Description; "Treatment Description") { }
-                column(Customer_Item_No_; "Customer Item No.") { }
-                column(Profile_Cust__Description; "Profile Cust. Description") { }
-                column(Number_of_Units; "Number of Units") { }
+                column(Quantity; ACOPackageLine.Quantity) { }
+                column(Length; ACOPackageLine.Length) { }
+                column(External_Document_No_; ACOPackageLine."External Document No.") { }
+                column(Your_Reference; ACOPackageLine."Your Reference") { }
+                column(Sales_Order_No_; ACOPackageLine."Sales Order No.") { }
+                column(Treatment_Description; ACOPackageLine."Treatment Description") { }
+                column(Customer_Item_No_; ACOPackageLine."Customer Item No.") { }
+                column(Profile_Cust__Description; ACOPackageLine."Profile Cust. Description") { }
+                column(Number_of_Units; ACOPackageLine."Number of Units") { }
                 column(NumberOfMeters_ItemVariant; ItemVariant."ACO Number of Meters") { }
                 column(ACOKundentourHUECK_SalesLine; SalesLine."ACO Kundentour HUECK") { }
                 column(Weightpermeter_ACOProfile; ACOProfile."Weight per meter") { }
                 column(PictureFile_ACOProfile; ACOProfile."Picture File") { }
-                column(Reject_Reason_Code; "Reject Reason Code") { }
+                column(Reject_Reason_Code; ACOPackageLine."Reject Reason Code") { }
                 column(DescriptionRejectReasonCode; RejectReasonCode.Description) { }
                 column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                 column(ShiptoCode_SalesHeader; SalesHeader."Ship-to Code") { }
@@ -100,6 +100,15 @@ report 50001 "ACO Package Label"
                 column(ShiptoCountryRegionCode_SalesHeader; SalesHeader."Ship-to Country/Region Code") { }
                 column(No_SalesLine; SalesLine."No.") { }
                 column(Description_SalesLine; SalesLine."Description") { }
+                column(ACOWeightpermeter_ItemUnitofMeasure; ItemUnitofMeasure."ACO Weight per meter") { }
+                column(ACOPosttreatment_SalesLine; SalesLine."ACO Posttreatment") { }
+                column(ACOParticularity_SalesLine; SalesLine."ACO Particularity") { }
+                column(CustomerItemReference_ACOPackageLine; ACOPackageLine."Customer Item Reference") { }
+                column(CustomerItemRefDescription_ACOPackageLine; ACOPackageLine."Customer Item Ref. Description") { }
+                column(ProfileLength_ACOPackageLine; ACOPackageLine."Profile Length") { }
+                column(Color_ACOPackageLine; ACOPackageLine."Color") { }
+                column(LayerThickness_ACOPackageLine; ACOPackageLine."Layer Thickness") { }
+                column(Pretreatment_ACOPackageLine; ACOPackageLine."Pretreatment") { }
                 column(EntryNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Entry No.") { }
                 column(SalesOrderNo_ACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sales Order No") { }
                 column(SalesOrderLineNoACOAddEDIInfoCustomer; ACOAddEDIInfoCustomer."Sales Order Line No.") { }
@@ -145,6 +154,9 @@ report 50001 "ACO Package Label"
 
                     if not RejectReasonCode.Get("Reject Reason Code") then
                         Clear(RejectReasonCode);
+
+                    if not ItemUnitofMeasure.Get(SalesLine."No.", SalesLine."Unit of Measure Code") then
+                        Clear(ItemUnitofMeasure);
 
                     ACOAddEDIInfoCustomer.SetRange("Sales Order No", ACOPackageLine."Sales Order No.");
                     ACOAddEDIInfoCustomer.SetRange("Sales Order Line No.", Format(ACOPackageLine."Sales Line No"));
@@ -195,6 +207,7 @@ report 50001 "ACO Package Label"
             }
         }
     }
+
     trigger OnInitReport()
     begin
         CompanyInfo.Get();
@@ -212,6 +225,7 @@ report 50001 "ACO Package Label"
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
         RejectReasonCode: Record "Reason Code";
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         ACOAddEDIInfoCustomer: Record "ACO Add EDI Info Customer";
         ItemLbl: Label 'Item';
         AmountLbl: Label 'Amount';

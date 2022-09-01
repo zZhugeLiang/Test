@@ -18,6 +18,9 @@ report 50012 "ACO Sales - Shipment"
             column(PageCaption; PageCaptionCap)
             {
             }
+            column(UseNewLayout; "Sales Shipment Header"."Document Date" >= 20220926D)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -473,7 +476,16 @@ report 50012 "ACO Sales - Shipment"
                         column(Circumference_ACOProfile; ACOProfile.Circumference) { }
                         column(ACOSawing_SalesShptLine; "Sales Shipment Line"."ACO Sawing") { }
                         column(ACONumberofUnits_SalesShptLine; "Sales Shipment Line"."ACO Number of Units") { }
-                        column(ProfileCircumference_SalesShptLine; "Sales Shipment Line"."ACO Profile Circumference") { }
+                        column(ACOProfileCircumference_SalesShptLine; "Sales Shipment Line"."ACO Profile Circumference") { }
+                        column(ACOCustomerItemReference_SalesShptLine; "Sales Shipment Line"."ACO Customer Item Reference") { }
+                        column(ACOCustomerItemRefDesc_SalesShptLine; "Sales Shipment Line"."ACO Customer Item Ref. Desc.") { }
+                        column(ACOPretreatment_SalesShptLine; "Sales Shipment Line"."ACO Pretreatment") { }
+                        column(ACOLayerThickness_SalesShptLine; "Sales Shipment Line"."ACO Layer Thickness") { }
+                        column(ACOColor_SalesShptLine; "Sales Shipment Line"."ACO Color") { }
+                        column(ACOProfileLength_SalesShptLine; "Sales Shipment Line"."ACO Profile Length") { }
+                        column(ACOPosttreatment_SalesShptLine; "Sales Shipment Line"."ACO Posttreatment") { }
+                        column(ACOParticularity_SalesShptLine; "Sales Shipment Line"."ACO Particularity") { }
+                        column(ACOWeightpermeter_ItemUnitofMeasure; ItemUnitofMeasure."ACO Weight per meter") { }
                         ///// Values >>
                         ///// Fields on Subform Page >>
                         dataitem(DimensionLoop2; "Integer")
@@ -580,6 +592,9 @@ report 50012 "ACO Sales - Shipment"
 
                             if not ACOProfile.Get("ACO Profile Code") then
                                 Clear(ACOProfile);
+
+                            if not ItemUnitofMeasure.Get("Sales Shipment Line"."No.", "Sales Shipment Line"."Unit of Measure Code") then
+                                Clear(ItemUnitofMeasure);
                         end;
 
                         trigger OnPostDataItem()
@@ -995,6 +1010,7 @@ report 50012 "ACO Sales - Shipment"
         ACOProfile: Record "ACO Profile";
         ACOAppSetup: Record "ACO App Setup";
         RejectReasonCode: Record "Reason Code";
+        ItemUnitofMeasure: Record "Item Unit of Measure";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";

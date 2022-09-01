@@ -753,7 +753,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50077; "Customer Item Ref. Description"; Text[100])
+        field(50077; "ACO Customer Item Ref. Desc."; Text[100])
         {
             Caption = 'Customer Item Reference Description';
             Editable = false;

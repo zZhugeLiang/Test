@@ -986,6 +986,9 @@ End Function
         <Field Name="Sales_Shipment_Header_No_">
           <DataField>Sales_Shipment_Header_No_</DataField>
         </Field>
+        <Field Name="UseNewLayout">
+          <DataField>UseNewLayout</DataField>
+        </Field>
         <Field Name="ACOAppSetup_NetGrossWeightFactorCaption">
           <DataField>ACOAppSetup_NetGrossWeightFactorCaption</DataField>
         </Field>
@@ -1192,6 +1195,27 @@ End Function
         </Field>
         <Field Name="DocumentNo_SalesShptLine">
           <DataField>DocumentNo_SalesShptLine</DataField>
+        </Field>
+        <Field Name="ProfileCircumference_SalesShptLine">
+          <DataField>ProfileCircumference_SalesShptLine</DataField>
+        </Field>
+        <Field Name="ProfileCircumference_SalesShptLineFormat">
+          <DataField>ProfileCircumference_SalesShptLineFormat</DataField>
+        </Field>
+        <Field Name="ACOCustomerItemReference_SalesShptLine">
+          <DataField>ACOCustomerItemReference_SalesShptLine</DataField>
+        </Field>
+        <Field Name="ACOProfileLength_SalesShptLine">
+          <DataField>ACOProfileLength_SalesShptLine</DataField>
+        </Field>
+        <Field Name="ACOProfileLength_SalesShptLineFormat">
+          <DataField>ACOProfileLength_SalesShptLineFormat</DataField>
+        </Field>
+        <Field Name="ACOWeightpermeter_ItemUnitofMeasure">
+          <DataField>ACOWeightpermeter_ItemUnitofMeasure</DataField>
+        </Field>
+        <Field Name="ACOWeightpermeter_ItemUnitofMeasureFormat">
+          <DataField>ACOWeightpermeter_ItemUnitofMeasureFormat</DataField>
         </Field>
         <Field Name="No_">
           <DataField>No_</DataField>
