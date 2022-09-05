@@ -165,7 +165,6 @@ report 50007 "ACO Unattach Notice"
                 column(ACO_British_Standard; Format("ACO British Standard")) { }
                 column(WrapCaption; WrapCaptionLbl) { }
                 column(IsWrap; Format(IsWrap)) { }
-                column(HighEndCaption; HighEndCaptionLbl) { }
                 column(MeasureReportCaption; MeasureReportCaptionLbl) { }
                 column(ACO_Measure_Report; Format("ACO Measure Report")) { }
                 column(KundentourCaption; KundentourCaptionLbl) { }

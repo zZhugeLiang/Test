@@ -26,9 +26,6 @@ report 50000 "ACO Bath Sheet"
             column(MEASUREText; MEASUREText)
             {
             }
-            column(HighEndText; HighEndText)
-            {
-            }
             column(ThickStainingCaption; ThickStainingCaptionLbl) { }
             column(ThinStainingCaption; ThinStainingCaptionLbl) { }
             column(ThickStaining; Thick)
@@ -244,7 +241,6 @@ report 50000 "ACO Bath Sheet"
                 CRLF: Text[2];
             begin
                 MeasureText := DONOTMEASURECaptionLbl;
-                HighEndText := '';
                 AllComments := '';
                 RerunText := '';
 
@@ -279,7 +275,7 @@ report 50000 "ACO Bath Sheet"
                         if RerunText = '' then
                             if ACOBathSheetLine.Rerun then
                                 RerunText := RERUNUpperCaseCaptionLbl;
-                    until (ACOBathSheetLine.Next() = 0) or ((HighEndText = HighEndCaptionLbl) and (MeasureText = MEASURECaptionLbl) and (RerunText = RERUNUpperCaseCaptionLbl));
+                    until (ACOBathSheetLine.Next() = 0) or ((MeasureText = MEASURECaptionLbl) and (RerunText = RERUNUpperCaseCaptionLbl));
 
                 if TempCustomer.FindSet() then
                     repeat
@@ -322,7 +318,6 @@ report 50000 "ACO Bath Sheet"
         CustomerName: Text[100];
         ItemDescription: Text;
         MeasureText: Text;
-        HighEndText: Text;
         AllComments: Text;
         RerunText: Text;
         MaxThickStainingTime: Decimal;

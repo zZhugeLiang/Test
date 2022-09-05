@@ -8609,7 +8609,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!HighEndCaption.Value</Value>
+                                                    <Value />
                                                     <Style>
                                                       <FontFamily>Calibri</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -12412,9 +12412,6 @@ End Function
         </Field>
         <Field Name="IsWrap">
           <DataField>IsWrap</DataField>
-        </Field>
-        <Field Name="HighEndCaption">
-          <DataField>HighEndCaption</DataField>
         </Field>
         <Field Name="ACO_High_End">
           <DataField>ACO_High_End</DataField>
