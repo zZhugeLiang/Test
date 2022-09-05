@@ -4992,7 +4992,6 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!EurasCaption.Value</Value>
                                                         <Style>
                                                           <FontFamily>Calibri</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
@@ -5026,7 +5025,6 @@
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value>=Fields!Euras_ACOProfileCustomer.Value</Value>
                                                             <Style>
                                                               <FontFamily>Calibri</FontFamily>
                                                               <FontWeight>Bold</FontWeight>
@@ -13952,12 +13950,6 @@ End Function
         </Field>
         <Field Name="RemoveFoil">
           <DataField>RemoveFoil</DataField>
-        </Field>
-        <Field Name="EurasCaption">
-          <DataField>EurasCaption</DataField>
-        </Field>
-        <Field Name="Euras_ACOProfileCustomer">
-          <DataField>Euras_ACOProfileCustomer</DataField>
         </Field>
         <Field Name="NetWeightCaption">
           <DataField>NetWeightCaption</DataField>

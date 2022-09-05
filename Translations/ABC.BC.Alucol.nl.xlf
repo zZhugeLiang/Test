@@ -286,11 +286,6 @@
           <target>Aangemaakt jaar</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Creation Year - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1438845102 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <target>Euras</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1438845102 - Field 2094665391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate</source>
           <target>Extra uittellen</target>
@@ -2286,11 +2281,6 @@
           <target>Klant van klant</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer of Customer - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <target>Euras</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1025398750 - Field 2094665391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate [mm]</source>
           <target>Extra uittellen [mm]</target>
@@ -2951,11 +2941,6 @@
           <source>High End</source>
           <target>High End</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType HighEndCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 371732247 - NamedType 3627709840" size-unit="char" translate="yes" xml:space="preserve">
-          <source>E U R A S</source>
-          <target>E U R A S</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType EURASCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1329453236" size-unit="char" translate="yes" xml:space="preserve">
           <source>Thick Staining</source>
@@ -4158,11 +4143,6 @@
           <source>Remove Foil</source>
           <target>Folie verwijderen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType RemoveFoilCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <target>Euras</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType EurasCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3373067010" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gross Weight</source>
@@ -6165,11 +6145,6 @@
           <target>Folie verwijderen</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType RemoveFoilCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 287955129 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <target>Euras</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType EurasCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 3373067010" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gross Weight</source>
           <target>Bruto gewicht</target>
@@ -6795,11 +6770,6 @@
           <target>Eigen</target>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Shipping Agents Extension - Control ACO Own - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2847388252 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <target>Euras</target>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3612838068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate [mm]</source>
           <target>Extra uittellen [mm]</target>
@@ -7029,11 +6999,6 @@
           <source>Profile Customer Description</source>
           <target>Productklant omschrijving</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Profile Cust. Description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3445842965 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
-          <source>Euras Customer</source>
-          <target>Euras klant</target>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Euras - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 3612838068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate [mm] Customer</source>
@@ -7299,11 +7264,6 @@
           <source>Thick Staining Time [min] Profile</source>
           <target>Dikke Beitstijd [min] Product</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Thick St. Time Profile - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 2332128290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras Profile</source>
-          <target>Euras product</target>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Euras Profile - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 4229778773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate [mm] Profile</source>

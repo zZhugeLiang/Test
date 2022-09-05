@@ -124,10 +124,6 @@ page 50020 "ACO Bath Sheet"
                 {
                     ApplicationArea = All;
                 }
-                field(Euras; Euras)
-                {
-                    ApplicationArea = All;
-                }
                 field("Total Surface Profiles"; "Total Surface Profiles")
                 {
                     ApplicationArea = All;

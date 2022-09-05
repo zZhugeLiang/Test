@@ -2,12 +2,6 @@ tableextension 50002 "ACO Sales Header Extension" extends "Sales Header"
 {
     fields
     {
-        field(50001; "ACO Euras"; Boolean)
-        {
-            Caption = 'Euras Customer';
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
         field(50002; "ACO Extra to Enumerate"; Integer)
         {
             Caption = 'Extra to Enumerate [mm] Customer';

@@ -109,10 +109,6 @@ page 50011 "ACO Profile Customer Card"
                         Modify();
                     end;
                 }
-                field(Euras; Euras)
-                {
-                    ApplicationArea = All;
-                }
                 field("High End"; Rec."High End")
                 {
                     ApplicationArea = All;

@@ -50,12 +50,6 @@ pageextension 50001 "ACO Item Card Extension" extends "Item Card"
                     ToolTip = 'Specifies the value of the Sawing field.';
                 }
 
-                field("ACO Euras"; Rec."ACO Euras")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Euras field.';
-                }
-
                 field("ACO Extra to Enumerate"; Rec."ACO Extra to Enumerate")
                 {
                     ApplicationArea = All;

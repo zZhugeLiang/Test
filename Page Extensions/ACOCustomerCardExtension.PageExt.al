@@ -7,11 +7,6 @@ pageextension 50000 "ACO Customer Card Extension" extends "Customer Card"
             group("ACO Production")
             {
                 Caption = 'Production';
-                field("ACO Euras"; "ACO Euras")
-                {
-                    ApplicationArea = All;
-                }
-
                 field("ACO Extra to Enumerate"; "ACO Extra to Enumerate")
                 {
                     ApplicationArea = All;

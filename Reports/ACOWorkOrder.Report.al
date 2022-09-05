@@ -68,7 +68,6 @@ report 50020 "ACO Work Order"
                 column(ACO_Extra_to_Enumerate_Profile; "ACO Extra to Enumerate Profile") { }
                 column(IsFoil; Format(IsFoil)) { }
                 column(RemoveFoil; Format(RemoveFoil)) { }
-                column(Euras_ACOProfileCustomer; Format(ACOProfileCustomer.Euras)) { }
                 column(NetWeight; NetWeight) { }
                 column(GrossWeight; GrossWeight) { }
                 column(ACO_Charges_per_Bath_Profile; "ACO Charges per Bath Profile") { }

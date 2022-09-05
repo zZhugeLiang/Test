@@ -223,9 +223,6 @@ End Function
         <Field Name="RemoveFoil">
           <DataField>RemoveFoil</DataField>
         </Field>
-        <Field Name="Euras_ACOProfileCustomer">
-          <DataField>Euras_ACOProfileCustomer</DataField>
-        </Field>
         <Field Name="NetWeight">
           <DataField>NetWeight</DataField>
         </Field>

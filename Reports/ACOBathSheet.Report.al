@@ -29,9 +29,6 @@ report 50000 "ACO Bath Sheet"
             column(HighEndText; HighEndText)
             {
             }
-            column(EURASText; EURASText)
-            {
-            }
             column(ThickStainingCaption; ThickStainingCaptionLbl) { }
             column(ThinStainingCaption; ThinStainingCaptionLbl) { }
             column(ThickStaining; Thick)
@@ -248,7 +245,6 @@ report 50000 "ACO Bath Sheet"
             begin
                 MeasureText := DONOTMEASURECaptionLbl;
                 HighEndText := '';
-                EURASText := '';
                 AllComments := '';
                 RerunText := '';
 
@@ -301,9 +297,6 @@ report 50000 "ACO Bath Sheet"
                 if (AllComments[1] = ',') and (StrLen(AllComments) > 1) then
                     AllComments := CopyStr(AllComments, 2, StrLen(AllComments) - 1);
 
-                if Euras then
-                    EURASText := EURASCaptionLbl;
-
                 FirstACOBathSheetLine.SetRange("Bath Sheet No.", "No.");
                 if not FirstACOBathSheetLine.FindFirst() then
                     Clear(FirstACOBathSheetLine);
@@ -333,7 +326,6 @@ report 50000 "ACO Bath Sheet"
         ItemDescription: Text;
         MeasureText: Text;
         HighEndText: Text;
-        EURASText: Text;
         AllComments: Text;
         RerunText: Text;
         MaxThickStainingTime: Decimal;
@@ -353,7 +345,6 @@ report 50000 "ACO Bath Sheet"
         MEASURECaptionLbl: Label 'M E A S U R E';
         DONOTMEASURECaptionLbl: Label 'D O  N O T  M E A S U R E';
         HighEndCaptionLbl: Label 'High End';
-        EURASCaptionLbl: Label 'E U R A S';
         RERUNUpperCaseCaptionLbl: Label 'R E R U N';
         ThickStainingCaptionLbl: Label 'Thick Staining';
         ThinStainingCaptionLbl: Label 'Thin Staining';

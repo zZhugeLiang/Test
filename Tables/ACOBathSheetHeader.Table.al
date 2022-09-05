@@ -251,13 +251,6 @@ table 50016 "ACO Bath Sheet Header"
             DataClassification = CustomerContent;
         }
 
-        field(33; "Euras"; Boolean)
-        {
-            Caption = 'Euras';
-            Editable = false;
-            DataClassification = CustomerContent;
-        }
-
         field(34; "Total Surface Profiles"; Decimal)
         {
             Caption = 'Total Surface Profiles';

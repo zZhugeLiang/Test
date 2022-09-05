@@ -75,12 +75,6 @@ tableextension 50001 "ACO Item Extension" extends Item
             DataClassification = CustomerContent;
         }
 
-        field(50006; "ACO Euras"; Boolean)
-        {
-            Caption = 'Euras';
-            DataClassification = CustomerContent;
-        }
-
         field(50007; "ACO Extra to Enumerate"; Integer)
         {
             Caption = 'Extra to Enumerate [mm]';

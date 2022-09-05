@@ -11,7 +11,6 @@ codeunit 50000 "ACO Event Subscribers"
             exit;
 
         if Customer.Get(Rec."Sell-to Customer No.") then begin
-            Rec."ACO Euras" := Customer."ACO Euras";
             Rec."ACO Extra to Enumerate" := Customer."ACO Extra to Enumerate";
             Rec."ACO Thick Staining Time" := Customer."ACO Thick Staining Time";
             Rec."ACO Thin Staining Time" := Customer."ACO Thin Staining Time";
@@ -322,7 +321,6 @@ codeunit 50000 "ACO Event Subscribers"
             Rec."ACO Type of Clamp Code" := ACOProfile."Type of Clamp Code";
             Rec."ACO Holders Profile" := ACOProfile.Holders;
 
-            Rec."ACO Euras Profile" := ACOProfileCustomer.Euras;
             Rec."ACO Thin Staining Time Profile" := ACOProfileCustomer."Thin Staining Time";
             Rec."ACO Thick St. Time Profile" := ACOProfileCustomer."Thick Staining Time";
             Rec."ACO Extra to Enumerate Profile" := ACOProfileCustomer."Extra to Enumerate";
@@ -718,8 +716,8 @@ codeunit 50000 "ACO Event Subscribers"
                                         NewQuantity := QtyInPackage * ProdOrderLine."ACO Profile m2 per Qty.";
                             end;
                         else begin
-                                NewQuantity := QtyInPackage;
-                            end;
+                            NewQuantity := QtyInPackage;
+                        end;
                     end;
                     ItemJnlLine.Validate("Output Quantity", Round(NewQuantity, 0.001));
                     ItemJnlLine.Modify(true);

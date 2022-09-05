@@ -66,11 +66,6 @@ page 50010 "ACO Profile Customers"
                 {
                     ApplicationArea = All;
                 }
-                field(Euras; Rec.Euras)
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
                 field("High End"; Rec."High End")
                 {
                     ApplicationArea = All;

@@ -677,7 +677,6 @@ report 50008 "ACO Sales - Quote"
                         column(ACONotMeasurable_SalesLineCaption; SalesLine.FieldCaption("ACO Not Measurable")) { }
                         column(ACOExtraFlushing_SalesLineCaption; SalesLine.FieldCaption("ACO Extra Flushing")) { }
                         column(ACOAreaProfile_SalesLineCaption; SalesLine.FieldCaption("ACO Area Profile")) { }
-                        column(ACOEurasProfile_SalesLineCaption; SalesLine.FieldCaption("ACO Euras Profile")) { }
                         column(ACOHighEnd_SalesLineCaption; SalesLine.FieldCaption("ACO High End")) { }
                         column(ACOMeasureReport_SalesLineCaption; SalesLine.FieldCaption("ACO Measure Report")) { }
                         column(ACOAttachMethodCodeProfile_SalesLineCaption; SalesLine.FieldCaption("ACO Attach Method Code Profile")) { }
@@ -792,7 +791,6 @@ report 50008 "ACO Sales - Quote"
                         column(ACONotMeasurable_SalesLine; SalesLine."ACO Not Measurable") { }
                         column(ACOExtraFlushing_SalesLine; SalesLine."ACO Extra Flushing") { }
                         column(ACOAreaProfile_SalesLine; SalesLine."ACO Area Profile") { }
-                        column(ACOEurasProfile_SalesLine; SalesLine."ACO Euras Profile") { }
                         column(ACOHighEnd_SalesLine; SalesLine."ACO High End") { }
                         column(ACOMeasureReport_SalesLine; SalesLine."ACO Measure Report") { }
                         column(ACOAttachMethodCodeProfile_SalesLine; SalesLine."ACO Attach Method Code Profile") { }

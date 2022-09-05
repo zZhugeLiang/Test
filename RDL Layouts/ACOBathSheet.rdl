@@ -1607,7 +1607,6 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!EURASText.Value</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -7753,9 +7752,6 @@ End Function
         </Field>
         <Field Name="HighEndText">
           <DataField>HighEndText</DataField>
-        </Field>
-        <Field Name="EURASText">
-          <DataField>EURASText</DataField>
         </Field>
         <Field Name="ThickStainingCaption">
           <DataField>ThickStainingCaption</DataField>

@@ -106,8 +106,6 @@ report 50005 "ACO Attach Notice"
                 column(IsFoil; Format(IsFoil)) { }
                 column(RemoveFoilCaption; RemoveFoilCaptionLbl) { }
                 column(RemoveFoil; Format(RemoveFoil)) { }
-                column(EurasCaption; EurasCaptionLbl) { }
-                column(Euras_ACOProfileCustomer; Format(ACOProfileCustomer.Euras)) { }
                 column(NetWeightCaption; NetWeightCaptionLbl) { }
                 column(NetWeight; NetWeight) { }
                 column(GrossWeightCaption; GrossWeightCaptionLbl) { }
@@ -450,7 +448,6 @@ report 50005 "ACO Attach Notice"
         ExtraToEnumerateCaptionLbl: Label 'Extra to Enumerate (mm)';
         FoilCaptionLbl: Label 'Add Foil';
         RemoveFoilCaptionLbl: Label 'Remove Foil';
-        EurasCaptionLbl: Label 'Euras';
         GrossWeightCaptionLbl: Label 'Gross Weight';
         NetWeightCaptionLbl: Label 'Net Weight';
         ChargesPerBathCaptionLbl: Label 'Charge per Bath';

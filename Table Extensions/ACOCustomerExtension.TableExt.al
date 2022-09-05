@@ -2,12 +2,6 @@ tableextension 50000 "ACO Customer Extension" extends Customer
 {
     fields
     {
-        field(50001; "ACO Euras"; Boolean)
-        {
-            Caption = 'Euras';
-            DataClassification = CustomerContent;
-        }
-
         field(50002; "ACO Extra to Enumerate"; Integer)
         {
             Caption = 'Extra to Enumerate [mm]';

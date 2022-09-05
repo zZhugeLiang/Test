@@ -29,7 +29,6 @@ table 50009 "ACO Profile Customer"
                     Address := Customer.Address;
                     "Post Code" := Customer."Post Code";
                     City := Customer.City;
-                    "Euras" := Customer."ACO Euras";
                     "Extra to Enumerate" := Customer."ACO Extra to Enumerate";
                     "Thick Staining Time" := Customer."ACO Thick Staining Time";
                     "Thin Staining Time" := Customer."ACO Thin Staining Time";
@@ -39,7 +38,6 @@ table 50009 "ACO Profile Customer"
                     Address := '';
                     "Post Code" := '';
                     City := '';
-                    "Euras" := false;
                     "Extra to Enumerate" := 0;
                     "Thick Staining Time" := 0;
                     "Thin Staining Time" := 0;
@@ -117,12 +115,6 @@ table 50009 "ACO Profile Customer"
         field(11; "City"; Text[30])
         {
             Caption = 'City';
-            DataClassification = CustomerContent;
-        }
-
-        field(13; "Euras"; Boolean)
-        {
-            Caption = 'Euras';
             DataClassification = CustomerContent;
         }
 

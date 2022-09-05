@@ -120,10 +120,6 @@ page 50053 "ACO WS Bath Sheets with Color"
                 {
                     ApplicationArea = All;
                 }
-                field(Euras; Euras)
-                {
-                    ApplicationArea = All;
-                }
                 field("Total Surface Profiles"; "Total Surface Profiles")
                 {
                     ApplicationArea = All;

@@ -246,12 +246,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50032; "ACO Euras Profile"; Boolean)
-        {
-            Caption = 'Euras Profile';
-            DataClassification = CustomerContent;
-        }
-
         field(50033; "ACO Extra to Enumerate Profile"; Integer)
         {
             Caption = 'Extra to Enumerate [mm] Profile';
