@@ -59,9 +59,8 @@ xmlport 50000 "ACO Aucos Export"
                         end;
                     }
 
-                    fieldelement(profileCode; ACOBathSheetLine."Profile Code")
+                    fieldelement(customerItemReference; ACOBathSheetLine."Customer Item Reference")
                     {
-
                     }
 
                     textelement(profileDescription)
@@ -114,20 +113,17 @@ xmlport 50000 "ACO Aucos Export"
                                 ablageNo += 's';
                         end;
                     }
-
-                    textelement(itemPretreatment)
+                    fieldelement(pretreatment; ACOBathSheetLine."Pretreatment")
                     {
-                        trigger OnBeforePassVariable()
-                        var
-                            Item: Record Item;
-                        begin
-                            if Item.Get(ACOBathSheetLine.Treatment) then
-                                itemPretreatment := Item."ACO Pretreatment";
-                        end;
                     }
 
-                    fieldelement(color; ACOBathSheetLine."Color")
+                    textelement(color)
                     {
+                        trigger OnBeforePassVariable()
+                        begin
+                            color := ACOBathSheetLine."Color";
+                            color := color.TrimEnd('LL');
+                        end;
                     }
 
                     textelement(treatment)
