@@ -117,7 +117,6 @@ report 50020 "ACO Work Order"
                 column(IsVEC; Format(IsVEC)) { }
                 column(ACO_British_Standard; Format("ACO British Standard")) { }
                 column(IsWrap; Format(IsWrap)) { }
-                column(ACO_High_End; Format("ACO High End")) { }
                 column(ACO_Measure_Report; Format("ACO Measure Report")) { }
                 column(ACO_Kundentour_HUECK; "ACO Kundentour HUECK") { }
                 // Done >>

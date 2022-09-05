@@ -263,9 +263,6 @@ report 50000 "ACO Bath Sheet"
                                 TempCustomer.Insert();
                             end;
 
-                        if ACOBathSheetLine."High End" then
-                            HighEndText := HighEndCaptionLbl;
-
                         if ACOProfile.Get(ACOBathSheetLine."Profile Code") then begin
                             if not TempACOProfile.Get(ACOBathSheetLine."Profile Code") and (ACOProfile."Comment Bath Card" <> '') then begin
                                 TempACOProfile."Code" := ACOProfile."Code";
@@ -344,7 +341,6 @@ report 50000 "ACO Bath Sheet"
         TreatmentCaptionLbl: Label 'Treatment';
         MEASURECaptionLbl: Label 'M E A S U R E';
         DONOTMEASURECaptionLbl: Label 'D O  N O T  M E A S U R E';
-        HighEndCaptionLbl: Label 'High End';
         RERUNUpperCaseCaptionLbl: Label 'R E R U N';
         ThickStainingCaptionLbl: Label 'Thick Staining';
         ThinStainingCaptionLbl: Label 'Thin Staining';

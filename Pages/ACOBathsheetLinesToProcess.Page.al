@@ -73,11 +73,6 @@ page 50032 "ACO Bathsheet Lines To Process"
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("High End"; Rec."High End")
-                {
-                    Editable = false;
-                    ApplicationArea = All;
-                }
                 field("Reject Quantity"; Rec."Reject Quantity")
                 {
                     Editable = false;

@@ -111,12 +111,6 @@ tableextension 50001 "ACO Item Extension" extends Item
             DataClassification = CustomerContent;
         }
 
-        field(50013; "ACO High End"; Boolean)
-        {
-            Caption = 'High End';
-            DataClassification = CustomerContent;
-        }
-
         field(50014; "ACO Not Measurable"; Boolean)
         {
             Caption = 'Not Measurable';

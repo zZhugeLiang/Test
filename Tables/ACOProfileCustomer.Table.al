@@ -154,12 +154,6 @@ table 50009 "ACO Profile Customer"
             DataClassification = CustomerContent;
         }
 
-        field(20; "High End"; Boolean)
-        {
-            Caption = 'High End';
-            DataClassification = CustomerContent;
-        }
-
         field(21; "Last DateTime Modified"; DateTime)
         {
             Caption = 'Last DateTime Modified';

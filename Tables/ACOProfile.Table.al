@@ -135,12 +135,6 @@ table 50008 "ACO Profile"
             DataClassification = CustomerContent;
         }
 
-        // field(33; "High End"; Boolean)
-        // {
-        //     Caption = 'High End';
-        //     DataClassification = CustomerContent;
-        // }
-
         field(34; "Type of Clamp Code"; Code[10])
         {
             Caption = 'Type of Clamp Code';

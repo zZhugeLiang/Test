@@ -105,12 +105,6 @@ table 50017 "ACO Bath Sheet Line"
             DataClassification = CustomerContent;
         }
 
-        field(14; "High End"; Boolean)
-        {
-            Caption = 'High End';
-            DataClassification = CustomerContent;
-        }
-
         field(15; "Reject Quantity"; Decimal)
         {
             Caption = 'Reject Quantity';

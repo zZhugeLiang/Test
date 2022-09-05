@@ -86,12 +86,6 @@ pageextension 50001 "ACO Item Card Extension" extends "Item Card"
                     ToolTip = 'Specifies the value of the Maximum Current Density [A/dm²] field.';
                 }
 
-                field("ACO High End"; Rec."ACO High End")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the High End field.';
-                }
-
                 field("ACO Not Measurable"; Rec."ACO Not Measurable")
                 {
                     ApplicationArea = All;

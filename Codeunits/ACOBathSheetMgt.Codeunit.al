@@ -244,7 +244,6 @@ codeunit 50002 "ACO Bath Sheet Mgt."
             ACOBathSheetLine.Length := Round(SalesLine."ACO Profile Length", 1);
 
         ACOBathSheetLine.CalculateSurface();
-        ACOBathSheetLine."High End" := SalesLine."ACO High End";
         ACOBathSheetLine.Insert();
 
         if not ProductionOrderLine."ACO Rerun" then

@@ -77,10 +77,6 @@ page 50015 "ACO Bath Sheet Lines"
                 {
                     ApplicationArea = All;
                 }
-                field("High End"; Rec."High End")
-                {
-                    ApplicationArea = All;
-                }
                 field("Reject Quantity"; Rec."Reject Quantity")
                 {
                     ApplicationArea = All;

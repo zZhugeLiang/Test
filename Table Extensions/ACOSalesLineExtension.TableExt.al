@@ -515,12 +515,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             DataClassification = CustomerContent;
         }
 
-        field(50056; "ACO High End"; Boolean)
-        {
-            Caption = 'High End';
-            DataClassification = CustomerContent;
-        }
-
         field(50057; "ACO Measure Report"; Boolean)
         {
             Caption = 'Measure Report';

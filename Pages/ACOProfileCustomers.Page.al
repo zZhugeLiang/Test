@@ -66,11 +66,6 @@ page 50010 "ACO Profile Customers"
                 {
                     ApplicationArea = All;
                 }
-                field("High End"; Rec."High End")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
                 field("Extra to Enumerate"; Rec."Extra to Enumerate")
                 {
                     ApplicationArea = All;

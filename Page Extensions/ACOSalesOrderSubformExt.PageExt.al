@@ -80,10 +80,6 @@ pageextension 50003 "ACO Sales Order Subform Ext." extends "Sales Order Subform"
             {
                 ApplicationArea = All;
             }
-            field("ACO High End"; "ACO High End")
-            {
-                ApplicationArea = All;
-            }
             field("ACO Measure Report"; "ACO Measure Report")
             {
                 ApplicationArea = All;

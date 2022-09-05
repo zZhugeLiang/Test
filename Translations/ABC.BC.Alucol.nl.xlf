@@ -541,11 +541,6 @@
           <target>Klantnummer</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Customer No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2117661045 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field High End - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Length</source>
           <target>Lengte</target>
@@ -2191,11 +2186,6 @@
           <target>Peilhoogte [mm]</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field Height Level - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3974017570 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile - Field High End - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3974017570 - Field 3705274901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holders</source>
           <target>Houders</target>
@@ -2285,11 +2275,6 @@
           <source>Extra to Enumerate [mm]</source>
           <target>Extra uittellen [mm]</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Extra to Enumerate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field High End - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 3342707286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last DateTime Modified</source>
@@ -2936,11 +2921,6 @@
           <source>D O  N O T  M E A S U R E</source>
           <target>NIET METEN</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType DONOTMEASURECaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 371732247 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType HighEndCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1329453236" size-unit="char" translate="yes" xml:space="preserve">
           <source>Thick Staining</source>
@@ -4178,11 +4158,6 @@
           <source>VEC</source>
           <target>VEC</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType VECCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HighEndCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 2535608774" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measure Report</source>
@@ -6230,11 +6205,6 @@
           <target>VEC</target>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType VECCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 287955129 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HighEndCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 2535608774" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measure Report</source>
           <target>Meetrapport</target>
@@ -7359,11 +7329,6 @@
           <source>Project Color Code</source>
           <target>Projectkleur code</target>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Project Color Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 1311655072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <target>High End</target>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO High End - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 1606446469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Measure Report</source>

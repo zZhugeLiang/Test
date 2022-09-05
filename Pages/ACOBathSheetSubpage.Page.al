@@ -71,10 +71,6 @@ page 50021 "ACO Bath Sheet Subpage"
                 {
                     ApplicationArea = All;
                 }
-                field("High End"; Rec."High End")
-                {
-                    ApplicationArea = All;
-                }
                 field("Reject Quantity"; Rec."Reject Quantity")
                 {
                     ApplicationArea = All;

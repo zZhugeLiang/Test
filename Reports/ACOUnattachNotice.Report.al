@@ -166,7 +166,6 @@ report 50007 "ACO Unattach Notice"
                 column(WrapCaption; WrapCaptionLbl) { }
                 column(IsWrap; Format(IsWrap)) { }
                 column(HighEndCaption; HighEndCaptionLbl) { }
-                column(ACO_High_End; Format("ACO High End")) { }
                 column(MeasureReportCaption; MeasureReportCaptionLbl) { }
                 column(ACO_Measure_Report; Format("ACO Measure Report")) { }
                 column(KundentourCaption; KundentourCaptionLbl) { }
@@ -416,7 +415,6 @@ report 50007 "ACO Unattach Notice"
         BSCaptionLbl: Label 'BS';
         WrapCaptionLbl: Label 'Wrap';
         VECCaptionLbl: Label 'VEC';
-        HighEndCaptionLbl: Label 'High End';
         MeasureReportCaptionLbl: Label 'Measure Report';
         KundentourCaptionLbl: Label 'Kundentour';
         PackagingInstructionsCaptionLbl: Label 'Packaging Instructions';

@@ -284,11 +284,6 @@ Page 50058 "ACO Sales Order Lines"
                     ApplicationArea = All;
                     Tooltip = ' ';
                 }
-                field("ACO High End"; Rec."ACO High End")
-                {
-                    ApplicationArea = All;
-                    Tooltip = ' ';
-                }
                 field("ACO Measure Report"; Rec."ACO Measure Report")
                 {
                     ApplicationArea = All;
