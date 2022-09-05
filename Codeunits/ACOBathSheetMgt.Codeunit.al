@@ -241,6 +241,8 @@ codeunit 50002 "ACO Bath Sheet Mgt."
         if SalesLine.Type = SalesLine.Type::Item then // is deze regel nodig?
             ACOBathSheetLine.Treatment := SalesLine."No.";
 
+        ACOBathSheetLine."Profile Description" := SalesLine.Description;
+
         MinCurrentDensity := 0;
         MaxCurrentDensity := 1000;
         DetermineCurrentDensities(SalesLine, MinCurrentDensity, MaxCurrentDensity);

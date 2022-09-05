@@ -47,8 +47,9 @@ table 50017 "ACO Bath Sheet Line"
         {
             Caption = 'Profile Description';
             Editable = false;
-            FieldClass = FlowField;
-            CalcFormula = Lookup("ACO Profile".Description where("Code" = field("Profile Code")));
+            DataClassification = CustomerContent;
+            // FieldClass = FlowField;
+            // CalcFormula = Lookup("ACO Profile".Description where("Code" = field("Profile Code")));
         }
 
         field(7; "Length"; Decimal)

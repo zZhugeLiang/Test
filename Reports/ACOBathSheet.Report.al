@@ -164,6 +164,9 @@ report 50000 "ACO Bath Sheet"
                 column(ProfileCode; ACOBathSheetLine."Profile Code")
                 {
                 }
+                column(Customer_Item_Reference; ACOBathSheetLine."Customer Item Reference")
+                {
+                }
                 column(ColorCaption; ColorCaptionLbl) { }
                 column(Color; ACOColor.Description)
                 {
@@ -205,7 +208,7 @@ report 50000 "ACO Bath Sheet"
                     if not Item.Get("Treatment") then
                         Clear(Item);
 
-                    ItemDescription := Item.Description;
+                    ItemDescription := ACOBathSheetLine.Pretreatment + '/' + ACOBathSheetLine."Layer Thickness" + '/' + ACOBathSheetLine.Color + '/' + ACOBathSheetLine.Particularity;
 
                     if not ACOColor.Get(Color) then
                         Clear(ACOColor);
@@ -327,7 +330,7 @@ report 50000 "ACO Bath Sheet"
         ACOColor: Record "ACO Color";
         ACOProjectColorHeader: Record "ACO Project Color Header";
         CustomerName: Text[100];
-        ItemDescription: Text[100];
+        ItemDescription: Text;
         MeasureText: Text;
         HighEndText: Text;
         EURASText: Text;

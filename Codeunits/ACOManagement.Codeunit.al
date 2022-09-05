@@ -183,6 +183,8 @@ codeunit 50003 "ACO Management"
         SalesLine: Record "Sales Line";
         Item: Record Item;
         SKU: Record "Stockkeeping Unit";
+        ACORoutingSelection: Record "ACO Routing Selection";
+        RoutingHeader: Record "Routing Header";
         Counter: Integer;
         DoCreateProdOrder: Boolean;
         EndLoop: Boolean;
@@ -215,6 +217,9 @@ codeunit 50003 "ACO Management"
                     Counter += 1;
                 end;
             end;
+            ACORoutingSelection.Get(SalesLine."ACO Pretreatment", SalesLine."ACO Layer Thickness", SalesLine."ACO Color", SalesLine."ACO Posttreatment", SalesLine."ACO Particularity");
+            RoutingHeader.Get(ACORoutingSelection."Routing No.");
+
         until (SalesLine.Next = 0) or EndLoop;
 
         Message(ProductionOrdersCreated, Format(Counter));

@@ -1217,7 +1217,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ProfileCode.Value</Value>
+                                  <Value>=Fields!Customer_Item_Reference.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
@@ -8005,6 +8005,9 @@ End Function
         </Field>
         <Field Name="ProfileCode">
           <DataField>ProfileCode</DataField>
+        </Field>
+        <Field Name="Customer_Item_Reference">
+          <DataField>Customer_Item_Reference</DataField>
         </Field>
         <Field Name="ColorCaption">
           <DataField>ColorCaption</DataField>
