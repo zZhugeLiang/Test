@@ -388,11 +388,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Creation Year - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1438845102 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Header - Field Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1438845102 - Field 2094665391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2558,11 +2553,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Customer of Customer - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 331744716 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1025398750 - Field 2094665391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra to Enumerate [mm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4503,11 +4493,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Customer Item Reference - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 290612570 - Control 2332128290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Euras Profile - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 290612570 - Control 1755502757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5238,11 +5223,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType DeliveryIDCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType EurasCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra Flushing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5547,11 +5527,6 @@
           <source>D O  N O T  M E A S U R E</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType DONOTMEASURECaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 371732247 - NamedType 3627709840" size-unit="char" translate="yes" xml:space="preserve">
-          <source>E U R A S</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType EURASCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 3399400147" size-unit="char" translate="yes" xml:space="preserve">
           <source>GSX 1</source>
@@ -7708,11 +7683,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType DeliveryIDCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 287955129 - NamedType 277415888" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Euras</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType EurasCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 1723813398" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra Flushing</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8322,11 +8292,6 @@
           <source>Specifies the value of the Color field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Card Extension - Control ACO Color - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1518967375 - Control 1455407855 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
-          <source>Specifies the value of the Euras field.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Card Extension - Control ACO Euras - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1518967375 - Control 1755502757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Specifies the value of the Extra Flushing field.</source>
@@ -9693,11 +9658,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Comment Sales Order - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2847388252 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>Euras</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Customer Extension - Field ACO Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2847388252 - Field 3612838068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Extra to Enumerate [mm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9777,11 +9737,6 @@
           <source>Color</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Color - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 607252771 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
-          <source>Euras</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Euras - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 607252771 - Field 1755502757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Extra Flushing</source>
@@ -10218,11 +10173,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Document Date Year - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3445842965 - Field 1455407855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
-          <source>Euras Customer</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Header Extension - Field ACO Euras - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3445842965 - Field 3612838068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Extra to Enumerate [mm] Customer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10602,11 +10552,6 @@
           <source>Customer Item Reference</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item Reference - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 2332128290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Euras Profile</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Euras Profile - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 1755502757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Extra Flushing Profile</source>

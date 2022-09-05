@@ -4992,6 +4992,7 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
+                                                        <Value />
                                                         <Style>
                                                           <FontFamily>Calibri</FontFamily>
                                                           <FontWeight>Bold</FontWeight>
@@ -5025,6 +5026,7 @@
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
+                                                            <Value />
                                                             <Style>
                                                               <FontFamily>Calibri</FontFamily>
                                                               <FontWeight>Bold</FontWeight>

@@ -1607,6 +1607,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
+                                  <Value />
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
