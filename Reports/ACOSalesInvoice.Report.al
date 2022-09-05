@@ -662,7 +662,6 @@ report 50010 "ACO Sales - Invoice"
                         column(ACORejectBillableShipped_SalesInvLine; "Sales Invoice Line"."ACO Reject Billable Shipped") { }
                         column(ACO_RejNotBillableShippedSalesInvLine; "Sales Invoice Line"."ACO Rej. Not Billable Shipped") { }
                         column(ACOCustomerItemReference_SalesInvLine; "Sales Invoice Line"."ACO Customer Item Reference") { }
-                        column(ACOCustomerItemRefDesc_SalesInvLine; "Sales Invoice Line"."ACO Customer Item Ref. Desc.") { }
                         column(ACOPretreatment_SalesInvLine; "Sales Invoice Line"."ACO Pretreatment") { }
                         column(ACOLayerThickness_SalesInvLine; "Sales Invoice Line"."ACO Layer Thickness") { }
                         column(ACOColor_SalesInvLine; "Sales Invoice Line"."ACO Color") { }

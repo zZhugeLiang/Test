@@ -213,7 +213,6 @@ report 50020 "ACO Work Order"
                 column(Remark_ACOLinkedPackaging; ACOLinkedPackaging.Remark) { }
                 // Packaging >>      
                 column(ACOCustomerItemReference_SalesLine; "Sales Line"."ACO Customer Item Reference") { }
-                column(ACOCustomerItemRefDesc_SalesLine; "Sales Line"."ACO Customer Item Ref. Desc.") { }
                 column(ACOPretreatment_SalesLine; "Sales Line"."ACO Pretreatment") { }
                 column(ACOProfileCircumference_SalesLine; "Sales Line"."ACO Profile Circumference") { }
                 column(ACOProfileLength_SalesLine; "Sales Line"."ACO Profile Length") { }

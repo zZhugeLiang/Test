@@ -427,9 +427,6 @@ End Function
         <Field Name="ACOCustomerItemReference_SalesLine">
           <DataField>ACOCustomerItemReference_SalesLine</DataField>
         </Field>
-        <Field Name="ACOCustomerItemRefDesc_SalesLine">
-          <DataField>ACOCustomerItemRefDesc_SalesLine</DataField>
-        </Field>
         <Field Name="ACOPretreatment_SalesLine">
           <DataField>ACOPretreatment_SalesLine</DataField>
         </Field>

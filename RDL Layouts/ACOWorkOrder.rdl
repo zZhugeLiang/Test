@@ -331,9 +331,6 @@ End Function
         <Field Name="IsWrap">
           <DataField>IsWrap</DataField>
         </Field>
-        <Field Name="ACO_High_End">
-          <DataField>ACO_High_End</DataField>
-        </Field>
         <Field Name="ACO_Measure_Report">
           <DataField>ACO_Measure_Report</DataField>
         </Field>
@@ -657,9 +654,6 @@ End Function
         </Field>
         <Field Name="ACOCustomerItemReference_SalesLine">
           <DataField>ACOCustomerItemReference_SalesLine</DataField>
-        </Field>
-        <Field Name="ACOCustomerItemRefDesc_SalesLine">
-          <DataField>ACOCustomerItemRefDesc_SalesLine</DataField>
         </Field>
         <Field Name="ACOPretreatment_SalesLine">
           <DataField>ACOPretreatment_SalesLine</DataField>

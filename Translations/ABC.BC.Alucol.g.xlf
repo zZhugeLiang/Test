@@ -648,11 +648,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field Customer No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2117661045 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Bath Sheet Line - Field High End - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2117661045 - Field 3046449967 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2557,11 +2552,6 @@
           <source>Extra to Enumerate [mm]</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field Extra to Enumerate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1025398750 - Field 3769253107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ACO Profile Customer - Field High End - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1025398750 - Field 3342707286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last DateTime Modified</source>
@@ -4503,11 +4493,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO Head Cut - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 290612570 - Control 1311655072 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ACO Sales Order Lines - Control ACO High End - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 290612570 - Control 568115138 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5253,11 +5238,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HeightLevelCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 2678580552 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Attach Notice - NamedType HighEndCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 2678580552 - NamedType 3791581256" size-unit="char" translate="yes" xml:space="preserve">
           <source>Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5547,11 +5527,6 @@
           <source>GSX LL</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType GSXLLCaptionLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 371732247 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Bath Sheet - NamedType HighEndCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 371732247 - NamedType 1443601883" size-unit="char" translate="yes" xml:space="preserve">
           <source>Layer Thickness</source>
@@ -7713,11 +7688,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HeightLevelCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 287955129 - NamedType 2173052431" size-unit="char" translate="yes" xml:space="preserve">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ACO Unattach Notice - NamedType HighEndCaptionLbl</note>
-        </trans-unit>
         <trans-unit id="Report 287955129 - NamedType 985419202" size-unit="char" translate="yes" xml:space="preserve">
           <source>Hollow Factor</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8302,11 +8272,6 @@
           <source>Specifies the value of the Extra to Enumerate [mm] field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Card Extension - Control ACO Extra to Enumerate - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1518967375 - Control 1311655072 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
-          <source>Specifies the value of the High End field.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ACO Item Card Extension - Control ACO High End - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1518967375 - Control 4213692988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Specifies the value of the Layer Thickness field.</source>
@@ -9748,11 +9713,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO Extra to Enumerate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 607252771 - Field 1311655072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Item Extension - Field ACO High End - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 607252771 - Field 1537599719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Layer Thickness</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10023,11 +9983,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 469018315 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Cr.Memo Line Ext. - Field ACO Customer Item Ref. Desc. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 469018315 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Customer Item Reference</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10267,11 +10222,6 @@
           <source>Customer Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Customer Item No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 4107270599 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Invoice Line Ext. - Field ACO Customer Item Ref. Desc. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4107270599 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Customer Item Reference</source>
@@ -10543,11 +10493,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Customer Item Ref. Desc. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Customer Item Reference</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10572,11 +10517,6 @@
           <source>Height Level [mm] Profile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO Height Level Profile - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 632998638 - Field 1311655072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
-          <source>High End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Line Extension - Field ACO High End - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 632998638 - Field 582131879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Holders Profile</source>
@@ -10862,11 +10802,6 @@
           <source>Customer Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Customer Item No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 993637128 - Field 942926848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
-          <source>Customer Item Reference Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ACO Sales Shipment Line Ext. - Field ACO Customer Item Ref. Desc. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 993637128 - Field 2307443177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
           <source>Customer Item Reference</source>

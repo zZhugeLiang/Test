@@ -14118,9 +14118,6 @@ End Function
         <Field Name="IsWrap">
           <DataField>IsWrap</DataField>
         </Field>
-        <Field Name="ACO_High_End">
-          <DataField>ACO_High_End</DataField>
-        </Field>
         <Field Name="MeasureReportCaption">
           <DataField>MeasureReportCaption</DataField>
         </Field>

@@ -577,7 +577,6 @@ report 50011 "ACO Sales - Credit Memo"
                         column(ACOSawing_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Sawing") { }
                         column(ACONumberofUnits_SalesCrMemoLine; "Sales Cr.Memo Line"."ACO Number of Units") { }
                         column(ACOCustomerItemReference_SalesInvLine; "Sales Cr.Memo Line"."ACO Customer Item Reference") { }
-                        column(ACOCustomerItemRefDesc_SalesInvLine; "Sales Cr.Memo Line"."ACO Customer Item Ref. Desc.") { }
                         column(ACOPretreatment_SalesInvLine; "Sales Cr.Memo Line"."ACO Pretreatment") { }
                         column(ACOLayerThickness_SalesInvLine; "Sales Cr.Memo Line"."ACO Layer Thickness") { }
                         column(ACOColor_SalesInvLine; "Sales Cr.Memo Line"."ACO Color") { }

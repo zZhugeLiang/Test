@@ -303,7 +303,6 @@ report 50017 "ACO Sales - Pro Forma Inv"
                 column(ACO_Number_of_Units; "ACO Number of Units") { }
                 column(Unit_of_Measure_Code; "Unit of Measure Code") { }
                 column(ACOCustomerItemReference_SalesLine; Line."ACO Customer Item Reference") { }
-                column(ACOCustomerItemRefDesc_SalesLine; Line."ACO Customer Item Ref. Desc.") { }
                 column(ACOPretreatment_SalesLine; Line."ACO Pretreatment") { }
                 column(ACOLayerThickness_SalesLine; Line."ACO Layer Thickness") { }
                 column(ACOColor_SalesLine; Line."ACO Color") { }

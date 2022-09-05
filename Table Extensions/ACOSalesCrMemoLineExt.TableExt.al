@@ -156,12 +156,5 @@ tableextension 50012 "ACO Sales Cr.Memo Line Ext." extends "Sales Cr.Memo Line"
             DataClassification = CustomerContent;
         }
 
-        field(50077; "ACO Customer Item Ref. Desc."; Text[100])
-        {
-            Caption = 'Customer Item Reference Description';
-            Editable = false;
-            FieldClass = FlowField;
-            CalcFormula = lookup("Item Reference".Description where("Reference No." = field("ACO Customer Item Reference")));
-        }
     }
 }

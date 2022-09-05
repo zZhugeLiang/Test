@@ -478,7 +478,6 @@ report 50012 "ACO Sales - Shipment"
                         column(ACONumberofUnits_SalesShptLine; "Sales Shipment Line"."ACO Number of Units") { }
                         column(ACOProfileCircumference_SalesShptLine; "Sales Shipment Line"."ACO Profile Circumference") { }
                         column(ACOCustomerItemReference_SalesShptLine; "Sales Shipment Line"."ACO Customer Item Reference") { }
-                        column(ACOCustomerItemRefDesc_SalesShptLine; "Sales Shipment Line"."ACO Customer Item Ref. Desc.") { }
                         column(ACOPretreatment_SalesShptLine; "Sales Shipment Line"."ACO Pretreatment") { }
                         column(ACOLayerThickness_SalesShptLine; "Sales Shipment Line"."ACO Layer Thickness") { }
                         column(ACOColor_SalesShptLine; "Sales Shipment Line"."ACO Color") { }

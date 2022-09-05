@@ -13,7 +13,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOLayerThickness: Record "ACO Layer Thickness";
 
             begin
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
 
                 if ACOLayerThickness.Get(Rec."ACO Layer Thickness") then begin
                     Rec."ACO Maximum Current Density LT" := ACOLayerThickness."Maximum Current Density";
@@ -52,7 +52,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
                 ACOColor: Record "ACO Color";
                 ACOManagement: Codeunit "ACO Management";
             begin
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
 
                 if ACOColor.Get(Rec."ACO Color") then begin
                     Rec."ACO Max. Current Density Color" := ACOColor."Maximum Current Density";
@@ -161,7 +161,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             trigger OnValidate()
             begin
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
             end;
         }
 
@@ -684,7 +684,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
             var
                 ACOPretreatment: Record "ACO Pretreatment";
             begin
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
 
                 if ACOPretreatment.Get(Rec."ACO Pretreatment") then begin
                     Rec."ACO Maximum Current Density PT" := ACOPretreatment."Maximum Current Density";
@@ -701,7 +701,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             trigger OnValidate()
             begin
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
             end;
         }
 
@@ -713,7 +713,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
 
             trigger OnValidate()
             begin
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
             end;
         }
 
@@ -739,14 +739,6 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         {
             Caption = 'Customer Item Reference';
             DataClassification = CustomerContent;
-        }
-
-        field(50077; "ACO Customer Item Ref. Desc."; Text[100])
-        {
-            Caption = 'Customer Item Reference Description';
-            Editable = false;
-            FieldClass = FlowField;
-            CalcFormula = lookup("Item Reference".Description where("Reference No." = field("ACO Customer Item Reference")));
         }
     }
 
@@ -842,7 +834,7 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         end;
     end;
 
-    procedure GetPricingPrice()
+    procedure ACOGetPricingPrice()
     var
         ACOPricing: Record "ACO Pricing";
         NewUnitPrice: Decimal;
@@ -877,6 +869,18 @@ tableextension 50003 "ACO Sales Line Extension" extends "Sales Line"
         Rec."ACO Customer Item No." := SalesInvoiceLine."ACO Customer Item No.";
         Rec."ACO Profile Cust. Description" := SalesInvoiceLine."ACO Profile Cust. Description";
         Rec.Modify(true);
+    end;
+
+    procedure ACOSetDescription()
+    var
+        ItemReference: Record "Item Reference";
+        Item: Record Item;
+    begin
+        if Rec.Type = Rec.Type::Item then
+            if ItemReference.Get(Rec."No.", Rec."Variant Code", Rec."Unit of Measure Code", Rec."Item Reference Type", Rec."Item Reference Type No.", Rec."Item Reference No.") then
+                if ItemReference.Description = '' then
+                    if Item.Get(Rec."No.") then
+                        Rec.Description := Item.Description;
     end;
 
     procedure ACOSetACOUnitPrice(NewACOUnitPrice: Decimal);

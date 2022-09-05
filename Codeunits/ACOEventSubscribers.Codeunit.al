@@ -63,7 +63,7 @@ codeunit 50000 "ACO Event Subscribers"
                 Rec."ACO Profile Length" := ItemUnitofMeasure."ACO Length";
                 Rec."ACO Profile Circumference" := ItemUnitofMeasure."ACO Circumference";
                 Rec."ACO Correction Factor Profile" := ItemUnitofMeasure."ACO Correction Factor";
-                Rec.GetPricingPrice();
+                Rec.ACOGetPricingPrice();
             end;
     end;
 
@@ -161,12 +161,15 @@ codeunit 50000 "ACO Event Subscribers"
         ACOProfileCustomer.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
         if not ACOProfileCustomer.IsEmpty() then
             Rec.Validate("ACO Profile Code");
+
+        Rec.ACOSetDescription();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Item Reference No.', false, false)]
     local procedure SalesLine_OnAfterValidate_ItemReferenceNo(var Rec: Record "Sales Line"; var xRec: Record "Sales Line")
     begin
         Rec."ACO Customer Item Reference" := Rec."Item Reference No.";
+        Rec.ACOSetDescription();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeValidateEvent', 'Shipment Date', false, false)]
@@ -356,7 +359,7 @@ codeunit 50000 "ACO Event Subscribers"
         Rec.ClearFieldCausedPriceCalculation();
 
         if Rec."Unit Price" = 0 then
-            Rec.GetPricingPrice();
+            Rec.ACOGetPricingPrice();
 
         if Rec."ACO Manual Unit Price" then begin
             Rec.Validate("Unit Price", Rec.ACOGetACOUnitPrice());
